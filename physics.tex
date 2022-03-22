@@ -1,0 +1,3084 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}     % Unicode support (Umlaute etc.)
+\usepackage[ngerman]{babel}     % deutsche Silbentrennung
+\usepackage{a4}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings} 	        % Für Code-Segmente
+\usepackage{color}
+\usepackage{caption}
+\usepackage{dblfloatfix}    % To enable figures at the bottom of page
+\usepackage{subcaption}
+\usepackage{stackengine}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{mathtools}
+\usepackage{svg}
+\usepackage[margin=2cm,footskip=1cm]{geometry}
+%\usepackage{tabularx}
+
+\definecolor{darkblue}{rgb}{0,0,0.45}
+
+\hypersetup{
+    colorlinks,
+    citecolor=darkblue,
+    filecolor=darkblue,
+    linkcolor=darkblue,
+    urlcolor=darkblue
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\lstset{frame=tb,
+  language=C,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\author{Moritz Geßner}
+
+\DeclareMathOperator*{\SumInt}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+  \newcommand{\xrowht}[2][0]
+  {
+    \addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}
+  }
+	\newcommand{\diff}
+	{
+		\mathrm{d}
+	}
+	\newcommand{\binomkoeff}[2]
+	{
+		\left(\begin{matrix}#1\\#2\end{matrix}\right)
+	}
+  \newcommand{\pvec}[1]
+  {
+    \vec{#1}\mkern2mu\vphantom{#1} % primed Vector
+  }
+  \newcommand{\tder}[2] % total derivative
+  {
+    \frac{\diff #1}{\diff #2}
+  }
+  \newcommand{\pder}[2] % partial derivative
+  {
+    \frac{\partial #1}{\partial #2}
+  }
+  \newcommand{\dpder}[2] % default size partial derivative
+  {
+    \dfrac{\partial #1}{\partial #2}
+  }
+  \newcommand{\Nabla}
+  {
+    \vec{\nabla}
+  }
+  \newcommand{\unitvec}[1]
+  {
+    \vec{e}_{#1}
+  }
+  \newcommand{\com}[2]
+  {
+    \left[#1,#2\right]
+  }
+  \newcommand{\konst}
+  {
+    \mathrm{konst.}
+  }
+  \newcommand{\customEq}[1]
+  {
+    \stackrel{#1}{=}
+  }
+  \newcommand*{\rom}[1]
+  {
+    \uppercase\expandafter{\romannumeral #1\relax}
+  }
+
+
+	\begin{center}
+   	\Large\textbf{Zusammenfassung zur Theoretischen Physik} \\
+		\large\textit{Moritz Geßner} \\
+	\end{center}
+
+	\tableofcontents
+  \newpage
+
+	\section{Relativität}
+		\subsection{Grundlagen}
+			\subsubsection{Symmetrien des Raumes}
+        \begin{itemize}
+          \item Homogenität der Zeit
+          \item Homogenität des Raumes
+          \item Isotropie des Raumes
+          \item Isotropie der Zeit
+        \end{itemize}
+			\subsubsection{Einstein'sche Postulate}
+        \begin{description}
+          \item[Relativitätsprinzip]\hfill \\
+            Die Gesetze der Physik sind in allen Inertialsystemen gleich.
+          \item[Konstanz der Lichtgeschwindigkeit]\hfill \\
+            Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.
+          \item[Starkes Äquivalenzprinzip]\hfill \\
+            Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.
+        \end{description}
+
+      \subsubsection{Metrischer Tensor}
+        Metrischer Tensor und Lorentz-invariantes Raumzeit-Intervall:
+        \begin{equation}
+          \diff s^2 = c^2 \diff \tau^2 = \diff x^\mu \diff x_\mu = g_{\mu\nu} \diff x^\mu \diff x^\nu
+        \end{equation}
+
+      \subsection{Allgemeine Relativität}
+        \subsubsection{Definitionen}
+          Partielle Ableitungen:
+          \begin{equation}
+            \pder{\phi}{x^\mu} = \partial_\mu \phi = \phi_{,\mu}
+          \end{equation}
+
+          Christoffelsymbole (Mit einem lokalen Inertialsystem mit Koordinaten $\xi^\alpha$):
+          \begin{equation}
+            \Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
+          \end{equation}
+          Die Christoffelsymbole sind symmetrisch in den unteren Indizes $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In frei fallenden, lokalen Koordinatensystemen sind die Christoffelsymbole null.
+
+          Eigenzeit:
+          \begin{equation}
+            \Delta\tau := \frac{1}{c}\int_A^B\sqrt{g_{\mu\nu}\diff x^\mu \diff x^\nu}
+          \end{equation}
+
+          Kovariante Ableitung:
+          \begin{equation}
+            D_\lambda T^{\alpha ...}_{\beta...} =
+            T^{\alpha ...}_{\beta...;\lambda} = T^{\alpha...}_{\beta ...,\lambda}
+            + \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
+            -\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
+          \end{equation}
+          In frei fallenden Bezugssystemen verschwindet der zweite Term und die kovariante Ableitung wird zur partiellen Ableitung.
+
+          Riemann'scher Krümmungstensor:
+          \begin{equation}
+            \begin{aligned}
+              R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu} &= \Gamma^{\lambda}_{\phantom{\lambda}\nu\sigma,\mu}
+              + \Gamma^{\lambda}_{\phantom{\lambda}\mu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\nu\sigma}
+              -
+              \Gamma^{\lambda}_{\phantom{\lambda}\mu\sigma,\nu}
+              + \Gamma^{\lambda}_{\phantom{\lambda}\nu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\mu\sigma} \\
+              R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\left(
+                g_{\lambda\nu,\sigma,\mu} - g_{\lambda\mu,\sigma,\nu} + g_{\sigma\mu,\lambda,\nu} - g_{\sigma\nu,\lambda,\mu}
+              \right)
+              + g_{\alpha\beta} \left(
+                \Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda}
+              \right)
+              \\
+              R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu}v^\sigma &= \left(D_\mu D_\nu - D_\nu D_\mu \right) v^\lambda
+            \end{aligned}
+          \end{equation}
+
+          Symmetrien des Krümmungstensors:
+          \begin{equation}
+            \begin{aligned}
+              R_{\lambda\sigma\mu\nu} &= - R_{\lambda\sigma\nu\mu} \\
+              R_{\lambda\sigma\mu\nu} &= R_{\mu\nu\lambda\sigma} \\
+              R_{\lambda\sigma\mu\nu} &= -
+              R_{\sigma\lambda\mu\nu} \\
+            \end{aligned}
+          \end{equation}
+
+          Bianchi-Identitäten:
+          \begin{equation}
+            \begin{aligned}
+              R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} &= 0 \\
+              R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta;\gamma} + R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma;\alpha} + R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha;\beta} &= 0 \\
+            \end{aligned}
+          \end{equation}
+
+          Ricci-Tensor:
+          \begin{equation}
+            R_{\mu\nu} = R^\lambda_{\phantom{\lambda}\mu\lambda\nu}
+          \end{equation}
+
+          Krümmungsskalar
+          \begin{equation}
+            R = R^\mu_{\phantom{\mu}\mu}
+          \end{equation}
+
+        \subsubsection{Feldgleichungen}
+          Einstein Hilbert-Wirkung:
+          \begin{equation}
+            \mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det{g_{\mu\nu}(x)}\right|} R(g_{\mu\nu}(x))\;\diff^4 x
+          \end{equation}
+
+          Einstein'sche Feldgleichungen:
+          \begin{equation}
+            R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+          \end{equation}
+
+          Alternativ:
+          \begin{equation}
+            R_{\mu\nu} = \frac{8\pi G}{c^4} \left( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} \right)
+          \end{equation}
+
+
+        \subsubsection{Geodäten}
+          Wirkung eines freien Teilchens:
+          \begin{equation}
+            \mathcal{S} = -\int_A^B mc^2\;\diff \tau = -\int_A^B mc\sqrt{g_{\mu\nu} \tder{x^\mu}{\tau} \tder{x^\nu}{\tau}} \;\diff \tau
+          \end{equation}
+
+          Bewegungsgleichungen eines freien Teilchens (Zeitartige Geodäte):
+          \begin{equation}
+            \frac{\mathrm{d}^2 x^\kappa}{\mathrm{d}\tau^2}=-\Gamma_{\mu\nu}^{\kappa}\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau}\frac{\mathrm{d}x^\nu}{\mathrm{d}\tau}
+          \end{equation}
+
+      \subsection{Spezielle Relativität}
+        Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit, in ihr wird der metrische Tensor konstant.
+
+        Minkowski-Metrik:
+        \begin{equation}
+          g_{\mu\nu} = \eta_{\mu\nu}
+          = \left( \begin{matrix}
+            \pm1 & 0    & 0    & 0    \\
+            0    & \mp1 & 0    & 0    \\
+            0    & 0    & \mp1 & 0    \\
+            0    & 0    & 0    & \mp1 \\
+          \end{matrix} \right)
+        \end{equation}
+
+        \subsubsection{Definitionen}
+          Lorentz-faktor ($\beta = \frac{v}{c}$):
+          \begin{equation}
+            \gamma = \frac{1}{\sqrt{1-\beta^2}}
+          \end{equation}
+
+          Viererimpuls:
+          \begin{equation}
+            P^\mu =
+            \left(\begin{matrix}
+              E \\ \vec{p}
+            \end{matrix}\right)
+            = \left(\begin{matrix}
+              m\gamma c \\ m\gamma\vec{v}
+            \end{matrix}\right)
+            = \left(\begin{matrix}
+              \frac{mc}{\sqrt{1-\beta^2}} \\ \frac{m\vec{v}}{\sqrt{1-\beta^2}}
+            \end{matrix}\right)
+            = m u^\mu
+          \end{equation}
+
+        \subsubsection{Lorentztransformation}
+          Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
+          \begin{equation}
+            \begin{aligned}
+              x'^\mu &=          \Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
+              x'_\mu &= \overline{\Lambda}_\mu^{\nu}(\vec{v}) x_\nu \\
+              \Lambda^{\mu}_{\nu}(\vec{v}) = \Lambda^{\mu}_{\phantom{\mu}\nu}(\vec{v}) &= \Lambda^{\phantom{\nu}\mu}_{\nu}(\vec{v}) = \overline{\Lambda}^{\mu}_{\nu}(-\vec{v})
+            \end{aligned}
+          \end{equation}
+
+
+          Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Grupppe $\mathcal{L}$):
+          \begin{equation}
+            \begin{aligned}
+              x'^\mu &= \Lambda^\mu_{\nu} x^\nu + b^\mu \\
+              \Lambda \in \mathcal{L} &= \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-
+            \end{aligned}
+          \end{equation}
+
+          Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
+          \begin{equation}
+            \Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
+             \;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
+          \end{equation}
+
+          Klassifikation der homogenen Lorentztransformation:
+          \begin{itemize}
+            \item ''Orthochrone'' Lorentztransformation $\mathcal{L}^\uparrow$: $\Lambda^0_0 > 1$
+            \item ''Nicht orthochrone'' Lorentztransformation $\mathcal{L}^\downarrow$: $\Lambda^0_0 < 1$
+            \item ''Eigentliche'' Lorentztransformation $\mathcal{L}_+$: $\det\Lambda = 1$
+            \item ''Uneigentliche'' Lorentztransformation $\mathcal{L}_-$: $\det\Lambda = -1$
+          \end{itemize}
+
+          Lorentz-Boost ($\Lambda\in\mathcal{L}^\uparrow_+$) zwischen zwei Inertialsystemen mit parallelen Koordinatenachsen ($\vec{v}=c\vec{\beta}$):
+          \begin{equation}
+            \Lambda(\vec{v}) = \left( \begin{matrix}
+              \gamma & -\gamma\dfrac{\pvec{v}^T}{c} \\[6pt]
+              -\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
+              \end{matrix} \right)
+              =
+              \left(\begin{matrix}
+                \gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
+                -\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
+                -\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
+                -\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
+              \end{matrix}\right)
+          \end{equation}
+
+        \subsubsection{Folgen der Speziellen Relativität}
+          Eigenzeit in der speziellen Relativitätstheorie:
+          \begin{equation}
+            \Delta\tau = \int_A^B \frac{\diff t}{\gamma}
+          \end{equation}
+
+          Relativistischer Doppler-effekt (Signale werden von Betrachter aus gemessen mit Winkel $\theta$ ausgesendet):
+          \begin{equation}
+            \omega = \omega_0\frac{\sqrt{1-\beta^2}}{1+\beta\cos\theta}
+          \end{equation}
+
+          Geschwindigkeitsaddition (Mit Rapiditäten $\psi = \mathrm{artanh}\left(\frac{v}{c}\right)$):
+          \begin{equation}
+            \begin{aligned}
+              \psi_{ges} &= \psi_1+\psi_2 \\
+              \vec{v}_{ges} &= \frac{\vec{v}_1+\vec{v}_{2\parallel}+\vec{v}_{2\perp}\sqrt{1-\dfrac{\vec{v}_1^2}{c^2}}}{1+\dfrac{\vec{v}_1\cdot\vec{v}_2}{c^2}} \\
+              \vec{v}_1\parallel\vec{v}_2 \;\Rightarrow\; v_{ges} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
+            \end{aligned}
+          \end{equation}
+
+          Relativistische Aberration:
+          \begin{equation}
+            \tan\left(\frac{\theta}{2}\right) = \sqrt{\frac{1-\beta}{1+\beta}}\tan\left(\frac{\theta'}{2}\right)
+          \end{equation}
+
+          Energie-Impuls-Relation:
+          \begin{equation}
+            \begin{aligned}
+              P^\mu P_\mu &= m^2 c^2\\
+              E^2 &= p^2 c^2 + m^2 c^4 \\
+            \end{aligned}
+          \end{equation}
+
+
+  \newpage
+	\section{Elektromagnetismus}
+		\subsection{Bewegungsgleichungen}
+			Wirkung eines freien Teilchens in einem Elektromagnetischen Feld:
+			\begin{equation}
+				\mathcal{S}=-\int_{a}^{b}\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
+        + q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)\;\diff\tau
+			\end{equation}
+
+			Lagrange Funktion mit Parametrisierung $\tau$ (Zum Beispiel durch die Eigenzeit):
+			\begin{equation}
+				\mathcal{L} (\tau,x,u) =-\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
+				+ q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)
+			\end{equation}
+
+			Nicht-relativistische Lagrange Funktion:
+			\begin{equation}
+				\mathcal{L}(t,\vec{x},\dot{\vec{x}}) = \frac{1}{2}m\dot{\vec{x}}^2 - q\phi(t,\vec{x}) - \dot{\vec{x}}\cdot\vec{A}(t,\vec{x})
+			\end{equation}
+
+			Lorentzkraft (relativistische Minkowski-Kraft und Newton'sche Kraft):
+			\begin{equation}
+        \begin{aligned}
+          \frac{\diff P^\mu}{\diff \tau} &= q F^{\mu\nu}\frac{\diff x_\nu}{\diff \tau} \\
+          \vec{F} &= q\left(\vec{E}+\vec{v}\times\vec{B}\right) \\
+        \end{aligned}
+			\end{equation}
+
+		\subsection{Feldgleichungen}
+      Lagrange-Dichte:
+      \begin{equation}
+        \mathcal{L} = -\frac{1}{4\mu_0}F^{\mu\nu} F_{\mu\nu} - A_\mu J^\mu
+      \end{equation}
+
+      Allgemeine (ungeeichte) Entwicklungsgleichung:
+      \begin{equation}
+        \Box A^\mu-\partial^\mu\left(\partial_\nu A^\nu\right) = \partial_\nu F^{\nu\mu} =  \mu_0 J^\mu
+      \end{equation}
+
+			Maxwell-Gleichungen im Vakuum:
+			\begin{equation}
+			\begin{array}{rl}
+				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
+				&\;\; \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
+				\vec{\nabla}\times\vec{B} - \mu_0 \epsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
+				&\;\; \vec{\nabla}\cdot\vec{B} = 0 \\
+			\end{array}
+			\end{equation}
+
+			Maxwell-Gleichungen in Materie:
+			\begin{equation}
+			\begin{array}{rl}
+				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_f}
+				&\;\; \vec{\nabla}\cdot\vec{D} = \rho_f\\ \xrowht{40pt}
+				\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_f
+				&\;\; \vec{\nabla}\cdot\vec{B} = 0 \\
+			\end{array}
+			\end{equation}
+
+			Elektrische Flussdichte und Magnetische Feldstärke:
+			\begin{equation} \label{eq:flussdichte-feldstärke}
+			\begin{array}{cc}
+				\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
+				&\;\; \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
+			\end{array}
+			\end{equation}
+
+
+			Globale Maxwell-Gleichungen (Mit elektrischer Spannung $U(\Gamma)=\int_\Gamma \vec{E}\cdot\diff\vec{l}$, Elektrischem Fluss $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\diff A$, magnetischer Spannung $V(\Gamma)=\int_\Gamma \vec{H}\cdot\diff\vec{l}$ und magnetischem Fluss $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\diff A$):
+			\begin{equation}
+			\begin{array}{rl}
+				U(\partial \mathcal{A}) + \cfrac{\diff\Phi}{\diff t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
+				&\;\; \Psi(\partial\mathcal{V}) = Q_f(\mathcal{V}) \\ \xrowht{40pt}
+				V(\partial \mathcal{A}) - \cfrac{\diff \Psi}{\diff t}(\mathcal{A}) = I_f(\mathcal{A})
+				&\;\; \Phi(\partial\mathcal{V}) = 0 \\
+			\end{array}
+			\end{equation}
+
+      \subsubsection{Diskontinuitätsgleichungen}
+  			Randbedingungen im Vakuum:
+  			\begin{equation}
+  			\begin{array}{cc}
+  				\vec{E}^2 - \vec{E}^1 = \cfrac{\sigma}{\varepsilon_0}\Vec{n}^2
+  				&\;\; \vec{B}^2 - \vec{B}^1 = \mu_0\vec{K}\times\Vec{n}^2
+  			\end{array}
+  			\end{equation}
+
+  			Randbedingungen in Materie:
+  			\begin{equation}
+  			\begin{array}{cc}
+  				D_\perp^2 - D_\perp^1 = \sigma_f
+  				&\;\; \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_f\times\Vec{n}^2
+  			\end{array}
+  			\end{equation}
+
+    \subsection{Elektrodynamik}
+      Kontinuitätsgleichung (direkte Folge der Maxwell-Glechungen):
+      \begin{equation}
+        \partial_\mu J^\mu = \pder{\rho}{t} + \Nabla\cdot\vec{j} = 0
+      \end{equation}
+
+      \subsubsection{Elektromagnetische Energie und Impuls}
+        Energiedichte:
+        \begin{equation}
+          \rho_{EM}=\frac{1}{2}\epsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
+        \end{equation}
+
+        Poynting-Vektor / Energiestromdichte:
+        \begin{equation}
+          \vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B}
+        \end{equation}
+
+        Impulsdichte:
+        \begin{equation}
+          \vec{\pi} = \tder{\vec{p}_{EM}}{V} = \frac{1}{c^2}\vec{S}
+        \end{equation}
+
+        Energieerhaltung und Impulserhaltung (Mit Kraft $F$, Leistung $P$, Poynting-Vektor $S_i$, Spannungstensor $T_{ij}$, Impulsdichte $\pi_i$ und Maxwell'schem Spannungstensor $\sigma_{ij}$):
+        \begin{equation}
+          \begin{aligned}
+            \pder{\rho_{EM}}{t} &= \tder{P}{V} - \pder{S_j}{x_j} \\
+            \pder{\pi_i}{t} &=  \tder{F_i}{V} - \pder{\sigma_{ij}}{x_j}
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Elektromagnetischer Energie-Impuls-Tensor}
+        Definition des Energie-Impuls-Tensors (Wobei $\sigma_{ij}$ der Maxwell'sche Spannungstensor ist):
+        \begin{equation}
+          T^{\mu\nu} = \frac{1}{\mu_0}\left(g^{\mu\alpha} F_{\alpha\beta} F^{\beta\nu} +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} \right)
+          = \left( \begin{matrix}
+            \rho_{EM} & S_1/c & S_2/c & S_3/c \\
+            S_1/c & -\sigma_{11} & -\sigma_{12} & -\sigma_{13} \\
+            S_2/c  & -\sigma_{21} & -\sigma_{22} & -\sigma_{23} \\
+            S_3/c & -\sigma_{31} & -\sigma_{32} & -\sigma_{33}
+          \end{matrix} \right)
+        \end{equation}
+
+        Eigenschaften:
+        \begin{equation}
+          \begin{aligned}
+            T^{\mu\nu} &= T^{\nu\mu} \\
+            T^\mu_{\phantom{\mu}\mu} &= 0 \\
+          \end{aligned}
+        \end{equation}
+
+        Energie und Impulserhaltung:
+        \begin{equation}
+          \partial_\mu T^{\mu\nu} = 0
+        \end{equation}
+
+
+      \subsubsection{Elektromagnetische Wellen im Vakuum}
+        Wellengleichung im Vakuum:
+        \begin{equation}
+          \Box\psi = \frac{1}{c^2} \frac{\partial^2 \psi}{\partial t^2} - \Nabla^2 \psi = 0
+        \end{equation}
+
+        Vektorwelle (In der Elektrodynamik $\vec{\psi}=\vec{E}$ und $ \vec{\psi}=\vec{B}$):
+        \begin{equation}
+          \vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \diff^3\vec{k}
+        \end{equation}
+
+        Orthogonalität des Wellenvektors (Elektromagnetische Wellen im Vakuum sind immer transversal):
+        \begin{equation}
+          \tilde{\vec{B}} = \frac{1}{c}\hat{\vec{k}}\times\tilde{\vec{E}} = \frac{1}{\omega}\vec{k}\times\tilde{\vec{E}}
+        \end{equation}
+
+        Energiedichte einer linear polarisierten Welle:
+        \begin{equation}
+          \rho_{EM} = \frac{1}{2}\epsilon_0\vec{E}^2
+        \end{equation}
+
+        Energiedichte einer zirkular polarisierten Welle:
+        \begin{equation}
+          \rho_{EM} = \epsilon_0\vec{E}^2
+        \end{equation}
+
+        Energiestromdichte einer elektromagnetischen Welle:
+        \begin{equation}
+          \vec{S} = \rho_{EM}c\hat{\vec{k}}
+        \end{equation}
+
+        Intensität einer linear polarisierten Welle:
+        \begin{equation}
+          I = \langle|\vec{S}|\rangle = \frac{1}{2}c\epsilon_0\vec{E}^2
+        \end{equation}
+
+        Intensität einer zirkular polarisierten Welle:
+        \begin{equation}
+          I = \langle|\vec{S}|\rangle = c\epsilon_0\vec{E}^2
+        \end{equation}
+
+        Abgestrahlte Welle eines oszillierenden Dipols $\vec{p} = \vec{p}_0 e^{-i\omega t}$ (Mit retardierter Zeit $\tilde{t} = t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}$):
+        \begin{equation}
+          \begin{aligned}
+            \vec{E}(t,\vec{r}) &= -\frac{\mu_0}{4\pi r c}  \left(\vec{n}\times\ddot{\vec{p}}(\tilde{t})\right) \times \vec{n} \\
+            \vec{B}(t,\vec{r}) &= -\frac{\mu_0}{4\pi r c} \phantom{\Big(}\vec{n}\times\ddot{\vec{p}}(\tilde{t}) \\
+          \end{aligned}
+        \end{equation}
+
+        Larmor'sche Formel (für die von einem nicht-relativistischen Teilchen mit retardierter Beschleunigung $a(\tilde{t}$ abgestrahlte Energie):
+        \begin{equation}
+          P(t) = \frac{q^2 \mu_0}{6\pi c}a^2(\tilde{t})
+        \end{equation}
+
+      \subsubsection{Elektromagnetische Wellen in Medien}
+        Definition des Brechungsindex (Mit Phasengeschwindigkeit $v_{PH}$):
+        \begin{equation}
+          n(k) := \frac{c}{v_{PH}(k)} = \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
+        \end{equation}
+
+        Snellius'sches Brechungsgesetz:
+        \begin{equation}
+          \frac{\sin\alpha_1}{\sin\alpha_2} = \frac{n_2}{n_1}
+        \end{equation}
+
+
+
+      \subsubsection{Elektrotechnik}
+        Ohm'sches Gesetz (Mit spezifischer Leitfähigkeit $\sigma$ und Widerstand $R$, die beide als linear angenommen werden):
+        \begin{equation}
+          \begin{aligned}
+            \vec{j} &= \sigma\vec{E} \\
+            U &= R I
+          \end{aligned}
+        \end{equation}
+
+        Kirchhoff'sche Regeln:
+        \begin{description}
+          \item[1. Knotenregel]\hfill \\
+            An jedem Knoten ist die Summe der einfließenden elektrischen und ausfließenden elektrischen Ströme gleich null (Kontinuitätsgleichung).
+          \item[2. Maschenregel]\hfill \\
+            Alle Teilspannungen eines Umlaufs bzw. einer Masche addieren sich zu null (Elektrostatik)
+        \end{description}
+
+        Joule'sches Wärmegesetz (Wärmeerzeugung in einem ohm'schen Leiter):
+        \begin{equation}
+          P = UI = RI^2 = \frac{U^2}{R}
+        \end{equation}
+
+
+
+    \subsection{Definitionen für die Elektrodynamik}
+      Lichtgeschwindigkeit:
+      \begin{equation}
+        c=\frac{1}{\sqrt{\epsilon_0 \mu_0}}
+      \end{equation}
+
+      D'Alembert'scher Operator:
+      \begin{equation}
+        \Box = \partial^\mu \partial_\mu = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \vec{\nabla}^2
+      \end{equation}
+
+      Viererstromdichte:
+      \begin{equation}
+        J^\mu = \binomkoeff{c\rho}{\vec{j}} = \binomkoeff{c\tder{q}{V}}{\vec{v}\tder{q}{V}}
+      \end{equation}
+
+      Viererpotential:
+      \begin{equation}
+        A^\mu = \binomkoeff{\phi/c}{\vec{A}}
+      \end{equation}
+
+      Faraday-Tensor / Feldstärken tensor:
+      \begin{equation}
+        F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
+        = \left( \begin{matrix}
+          0 & -E_x/c & -E_y/c & -E_z/c \\
+          E_x/c & 0 & -B_z & B_y \\
+          E_y/c  & B_z & 0 & -B_x \\
+          E_z/c & -B_y & B_x & 0
+        \end{matrix} \right)
+      \end{equation}
+
+      Elektrische Feldstärke:
+      \begin{equation}
+        \vec{E} = -\Nabla\phi-\pder{\vec{A}}{t}
+      \end{equation}
+
+      Magnetische Flussdichte:
+      \begin{equation}
+        \vec{B} = \Nabla\times\vec{A}
+      \end{equation}
+
+    \subsection{Eichtransformation}
+      Eichtransformation:
+      \begin{equation}
+        A^\mu \rightarrow A^\mu-\partial^\mu \lambda
+      \end{equation}
+
+      \subsubsection{Lorenz-Eichung}
+        Lorenz-Eichung:
+        \begin{equation}
+          \partial_\mu A^\mu = \frac{1}{c}\frac{\partial \vec{A}}{\partial t} - \vec{\nabla}\cdot\vec{A} = 0
+        \end{equation}
+
+        Maxwellgleichungen in der Lorentz-Eichung:
+        \begin{equation}
+          \Box A^\mu = \mu_0 J^\mu \;\Leftrightarrow\;
+          \Box \phi = \dfrac{\rho}{\epsilon_0} \;\wedge\;
+          \Box \vec{A} = \mu_0 \vec{j}
+        \end{equation}
+
+      \subsubsection{Coulomb-Eichung}
+        Coulomb-Eichung (nicht eindeutig):
+        \begin{equation}
+          \Nabla\cdot\vec{A}(t,\vec{r})=0
+        \end{equation}
+
+    \subsection{Spezielle Lösungen der Feldgleichungen}
+
+      \subsubsection{Retardierte Potentiale}
+        Retardierte Potentiale (Allgemeine Lösung der nicht-statischen Maxwellgleichungen mit Lorenz-Eichung für Strom- und Ladungsverteilung die zu jedem Zeitpunkt bekannt sind):
+        \begin{equation}
+          \begin{aligned}
+            \phi\left(t,\vec{r}\right)
+            = \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff^3 \pvec{r}'
+            &=  \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\,\diff^3 \pvec{r}'\diff t' \\
+            \vec{A}\left(t,\vec{r}\right)
+            = \phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\,\diff^3 \pvec{r}'
+            &=  \phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\;\diff^3 \pvec{r}'\diff t' \\
+            \tilde{t}&=t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Liénard-Wiechert-Potentiale}
+
+        Lösung der Feldgleichungen für eine bewegte Punktladung mit Ort $\vec{u}(\tilde{t})$ und Geschwindigkeit $\vec{v}(\tilde{t})$ mit der retardierten Zeit $\tilde{t}$. Liénard-Wiechert-Potentiale:
+        \begin{equation}
+          \begin{aligned}
+            \phi(t,\vec{r}) & =\frac{q c}{4\pi \epsilon_0}\frac{1}{c \left|\vec{r}-\vec{u}(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{u}(\tilde{t})\right)} \\
+            \vec{A}(t,\vec{r}) &= \frac{1}{c^2}\vec{v}(\tilde{t})\phi(t,\vec{r}) \\
+          \end{aligned}
+        \end{equation}
+
+    \subsection{Elektrostatik}
+      \subsubsection{Allgemeines}
+
+        Coulomb-Kraft (Die von Ladung 2 auf Ladung 1 wirkt):
+        \begin{equation}
+          \vec{F}_1 = \frac{q_1 q_2}{4\pi\varepsilon_0}\frac{\vec{r}_1-\vec{r}_2}{\left|\vec{r}_1-\vec{r}_2\right|^3}
+        \end{equation}
+
+        Poisson-Gleichung der Elektrostatik:
+        \begin{equation}
+          \Nabla^2\phi = -\frac{\rho}{\epsilon_0}
+        \end{equation}
+
+        Elektrisches Potential in der Elektrostatik (folgt aus zeitunabhängigem retardiertem Potential):
+        \begin{equation}
+          \phi\left(t,\vec{r}\right)
+          = \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff^3 \pvec{r}'
+        \end{equation}
+
+      \subsubsection{Lösen der Poisson-Gleichung}
+        Dirichlet-Green'sche Funktion $G_D$:
+        \begin{equation}
+          \forall\pvec{r}\in\mathcal{V}': \left\{\begin{array}{ll}
+              \forall\vec{r}\in\mathcal{V}\phantom\partial:
+              \Nabla^2 G_D(\vec{r},\pvec{r}') = \delta(\vec{r}-\pvec{r}') \\
+              \forall\vec{r}\in\partial\mathcal{V}:
+              \phantom{\Nabla^2}G_D(\vec{r},\pvec{r}') = 0
+            \end{array}\right.
+        \end{equation}
+
+      \subsubsection{Multipolentwicklung}
+        Multipolentwicklung in kartesischen Koordinaten (Entwicklung der allgemeinen Lösung in $\frac{r'}{r}=0$):
+        \begin{equation}
+          \begin{aligned}
+            \phi(\vec{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff \pvec{r}'
+            &= \frac{1}{4\pi\epsilon_0}\left(\frac{Q}{r} + \frac{\vec{r}\cdot\vec{p}}{r^3} + \frac{1}{2}\frac{r_i r_j Q_{ij}}{r^5} + \mathcal{O} \left(\frac{1}{r^4}\right)\right) \\
+            &= \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\;\diff \pvec{r}' \\
+            &+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\diff \pvec{r}' \\
+            &+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\diff \pvec{r}' \\
+            &+ \mathcal{O}\left(\;\;\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\diff \pvec{r}'\right) \\
+          \end{aligned}
+        \end{equation}
+        Mit Monopol $Q$, Dipol $\vec{p}$ und Quadropol $Q_{ij}$:
+        \begin{equation}
+          \begin{aligned}
+            Q &= \int \rho(\pvec{r}') \;\diff^3 \pvec{r}' \\
+            \vec{p} &= \int \rho(\pvec{r}')\pvec{r}' \;\diff^3 \pvec{r}' \\
+            Q_{ij} &= \int \rho(\pvec{r}')\left(3r'_i r'_j - \delta_{ij} r'^2 \right)  \;\diff^3 \pvec{r}' \\
+          \end{aligned}
+        \end{equation}
+
+        Entwicklung des Abstandes in Kugelflächenfunktionen:
+        \begin{equation}
+          \frac{1}{\left|\vec{r}-\pvec{r}'\right|}=\sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{4\pi}{2l+1}\frac{r'^l}{r^{l+1}} Y^{*}_{lm}(\theta',\varphi')Y_{lm}(\theta,\varphi)
+        \end{equation}
+
+        Multipolentwicklung in sphärischen Koordinaten:
+        \begin{equation}
+          \begin{aligned}
+            \phi(r,\theta,\varphi) &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{b_{lm}}{r^{l+1}}Y_{lm}(\theta,\varphi) \\
+            b_{lm} &= \frac{1}{(2l+1)\epsilon_0}\int\rho(\pvec{r}')r'^lY^{*}_{lm}(\theta',\varphi')\;\diff^3\pvec{r}'
+          \end{aligned}
+        \end{equation}
+
+        Elektrisches Dipolmoment zweier Punktladung mit Abstandsvektor $\vec{d}$ von der negativen zur positiven Ladung:
+        \begin{equation}
+          \vec{p}=q\vec{d}
+        \end{equation}
+
+        Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
+        \begin{equation}
+          \begin{aligned}
+            \vec{F} &= \Nabla\left(\vec{p}\cdot\vec{E}\right) \\
+            \vec{D}(\vec{r}_m) &= \vec{p}\times\vec{E} \\
+            \mathcal{E}_{pot} &= -\vec{p}\cdot\vec{E} \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Lösungen der Laplace-Gleichung mit sphärischer Symmetrie}
+        Lösungen der Laplace-Gleichung mit Axialsymmetrie (Mit Legendre-Polynomen $P_l$ (\ref{eq:legendre-polynome})):
+        \begin{equation}
+          \phi(r,\theta)=\sum_{l=0}^\infty \left(A_l r^l + \frac{B_l}{r^{l+1}}\right)P_l(\cos\theta)
+        \end{equation}
+
+        Lösungen der Laplace-Gleichung ohne Axialsymmetrie (Mit Kugelflächenfunktionen $Y_{lm}$ (\ref{eq:kugelflächenfunktionen})):
+        \begin{equation}
+          \phi(r,\theta,\varphi) = \sum_{l=0}^{\infty}\sum_{m=-l}^{m=l} \left(a_{lm} r^l + \frac{b_{lm}}{r^{l+1}}\right) Y_{lm}(\theta, \varphi)
+        \end{equation}
+
+      \subsubsection{Kapazität}
+        Kapazität:
+        \begin{equation}
+          C=\frac{Q}{U}
+        \end{equation}
+
+        Kapazität eines Plattenkondensators mit Fläche $A$, Plattenabstand $d$ und Dielektrikum mit Permittivität $\epsilon$:
+        \begin{equation}
+          C=\epsilon \frac{A}{d}
+        \end{equation}
+
+        Energie eines Kondensators:
+        \begin{equation}
+          \mathcal{E} = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}CU^2
+        \end{equation}
+
+      \subsubsection{Dielektrika}
+        In Materialien gilt allgemein (\ref{eq:flussdichte-feldstärke}), wobei $\vec{P}$ von $\vec{E}$, $\vec{r}$, $T$, ... abhängen kann. \\
+
+        Gebundene Ladungsdichte und gebundene Oberflächenladungsdichte:
+        \begin{equation}
+          \begin{aligned}
+            \rho_P(\vec{r}) &= -\Nabla \cdot\vec{P}(\vec{r}) \\
+            \sigma_P(\vec{r}) &= \vec{n}(\vec{r})\cdot P(\vec{r})
+          \end{aligned}
+        \end{equation}
+
+        In homogenen, isotropen, linearen Dielektrika (mit elektrischer Suszeptibilität $\chi_e$) gilt für die Polarisationsdichte $P$:
+        \begin{equation}
+          \begin{aligned}
+            \vec{P} &= \epsilon_0 \chi_e \vec{E} \\
+            \epsilon &= \epsilon_0 \epsilon_r = \epsilon_0(1+\chi_e) \\
+            \vec{D} &= \epsilon \vec{E} \\
+          \end{aligned}
+        \end{equation}
+
+
+    \subsection{Magnetostatik}
+      \subsubsection{Allgemeines}
+        Biot-Savart'sches Gesetz:
+        \begin{equation}
+          \begin{aligned}
+            \vec{B}(\vec{r}) &= \frac{\mu_0}{4\pi}\int_{\mathcal{V}} \vec{j}(\pvec{r}')\times\frac{\vec{r}-\pvec{r}'}{\left|\vec{r}-\pvec{r}'\right|^3}\;\diff^3\pvec{r}' \\
+            \vec{A}(\vec{r}) &= \frac{\mu_0}{4\pi} \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
+          \end{aligned}
+        \end{equation}
+
+        geladene Teilchen im homogenen magnetischen Feld bewegen sich auf Kreisen mit Radius:
+        \begin{equation}
+          R=\frac{p}{qB}
+        \end{equation}
+
+      \subsubsection{Multipolentwicklung}
+        Multipolentwicklung (Entwicklung der allgemeinen Lösung in $\frac{r'}{r}=0$):
+        \begin{equation}
+          \begin{aligned}
+            \vec{A}(\vec{r}) = \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
+            =& \frac{\mu_0}{4\pi} \left(\frac{\vec{m}\times\vec{r}}{r^3} + \mathcal{O}\left(\frac{1}{r^3}\right)\right) \\
+            =& \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\;\diff \pvec{r}' \\
+            &+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\diff \pvec{r}' \\
+            &+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\diff \pvec{r}' \\
+            &+ \mathcal{O}\left(\;\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\diff \pvec{r}'\right) \\
+          \end{aligned}
+        \end{equation}
+
+        Magnetisches Dipolmoment $\vec{m}$:
+        \begin{equation}
+          \begin{aligned}
+            \vec{m} = \frac{1}{2}\int \pvec{r}'\times\vec{j}(\pvec{r}')\;\diff^3\pvec{r}'
+          \end{aligned}
+        \end{equation}
+
+        Magnetisches Dipolmoment einer Stromschleife mit Flächeninhalt $A$ in der ein Strom $I$ fließt:
+        \begin{equation}
+          \vec{m} = IA\vec{n}
+        \end{equation}
+
+        Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
+        \begin{equation}
+          \begin{aligned}
+            \vec{F} &= \Nabla\left(\vec{m}\cdot\vec{B}\right) \\
+            \vec{D}(\vec{r}_m) &= \vec{m}\times\vec{B} \\
+            \mathcal{E}_{pot} &= -\vec{m}\cdot\vec{B} \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Magnete}
+        Gebunde Stromdichte und gebundene Oberflächenstromdichte:
+        \begin{equation}
+          \begin{aligned}
+            \vec{j}_m(\vec{r}) &= \Nabla\times\vec{M}(\vec{r}) \\
+            \vec{K}_m(\vec{r}) &= \vec{M}(\vec{r})\times \vec{n}(\vec{r}) \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{lineare Medien}
+        In linearen, homogenen, isotropen, magnetischen Medien (Mit magnetischer Suszeptibilität $\chi_m$, Permabilität $\mu$) gilt für die magnetisierungsdichte $M$:
+        \begin{equation}
+          \begin{aligned}
+            \vec{M} &= \chi_m\vec{H} \\
+            \mu &= \mu_0 \mu_r = \mu_0(1+\chi_m) \\
+            \vec{B} &= \mu \vec{H} \\
+          \end{aligned}
+        \end{equation}
+
+      \newpage
+    \section{Klassische Mechanik}
+
+      \subsection{Allgemeines}
+        Definition Virial:
+        \begin{equation}
+          \sum_j \vec{x}_j\cdot\vec{p}_j
+        \end{equation}
+
+      \subsection{Rotation}
+        Definition des Trägheitstensors:
+        \begin{equation}
+          \Theta_{ij}=\int_{\mathcal{V}} \left[r^2\delta_{ij}-r_i r_j\right] \;\diff^3\vec{r}
+        \end{equation}
+
+        Drehimpuls und Trägheitstensor:
+        \begin{equation}
+          \vec{L}=\Theta\vec{\omega}
+        \end{equation}
+
+        Zentripetalbeschleunigung:
+        \begin{equation}
+          a_Z = \frac{v^2}{r} = \omega^2 r
+        \end{equation}
+
+      \subsection{Gravitation}
+        Newton'sche Gravitationskraft (Die von Masse 2 auf Masse 1 wirkt):
+        \begin{equation}
+          \vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\left|\vec{r}_1-\vec{r}_2\right|^3}
+        \end{equation}
+
+        Bewegungsgleichungen des Newton'schen Gravitationsgesetz':
+        \begin{equation}
+          \vec{F}=-m\Nabla\phi
+        \end{equation}
+
+        Feldgleichungen des Newton'schen Gravitationspotentials:
+        \begin{equation}
+          \Nabla^2\phi=-4\pi G\rho
+        \end{equation}
+
+    \subsection{Lagrange-Formalismus}
+      \subsubsection{Allgemeines}
+        Wirkung:
+        \begin{equation}
+          \mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\;\mathrm{d} t
+        \end{equation}
+
+        Hamilton'sches Prinzip / Prinzip der kleinsten (stationären) Wirkung:
+        \begin{equation}
+          \delta \mathcal{S}=0
+        \end{equation}
+
+        Euler-Lagrange-Gleichung
+        \begin{equation}
+           \frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0
+        \end{equation}
+
+        kanonisch-konjugierte Impulse:
+        \begin{equation}
+          p_i=\frac{\partial \mathcal{L}}{\partial\dot{q_i}}
+        \end{equation}
+
+        Hamilton-Funktion:
+        \begin{equation}
+          \mathcal{H}(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
+        \end{equation}
+
+        Hamilton'sche Bewegungsgleichungen:
+        \begin{equation}
+          \begin{aligned}
+            \dot{q}_k &= \phantom{-}\pder{\mathcal{H}}{p_k} \\
+            \dot{p}_k &= -\pder{\mathcal{H}}{q_k} \\
+            \pder{\mathcal{H}}{t} &= -\pder{\mathcal{L}}{t} \\
+          \end{aligned}
+        \end{equation}
+
+        Poisson-Klammer:
+        \begin{equation}
+          \lbrace A, B \rbrace = \sum_k \left(
+            \pder{A}{q_k}\pder{B}{p_k} - \pder{A}{p_k}\pder{B}{q_k}
+          \right)
+        \end{equation}
+
+      \subsubsection{Noether-Theorem}
+        Kontinuierliche Transformation (mit infinitesimalem $\varepsilon$):
+        \begin{equation}
+          \begin{aligned}
+          x_i \rightarrow x_{i}^{\prime} &= x_i+\varepsilon\psi_i\left(x,\dot{x},t\right) \\
+            t\rightarrow t^{\prime}\, &= t+\varepsilon\varphi\left(x,\dot{x},t\right) \\
+          \end{aligned}
+        \end{equation}
+
+        Invarianz-Bedingung:
+        \begin{equation}
+          \frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{x}}^{\,\prime},\frac{d {\vec{x}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{x}, t)}{dt}
+        \end{equation}
+
+        Resultierende Erhaltungsgröße:
+        \begin{equation}
+          \begin{aligned}
+            S &\sim S' \;\Rightarrow\;
+            \tder{}{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
+            Q\left(\vec{x},\dot{\vec{x}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}{\dot{x}}_i}\right)\varphi - f\left(\vec{x},t\right).
+          \end{aligned}
+        \end{equation}
+
+  \newpage
+	\section{Klassische Feldtheorie}
+    \subsection{Lagrange-Formalismus}
+      \subsubsection{Allgemeines}
+
+      Wirkung und Lagrangedichte $\mathcal{L}$:
+      \begin{equation}
+        \mathcal{S} = \int_{\mathbb{R}^4} \mathcal{L}(A^\nu(x),\partial_\mu A^\nu(x)) \;\diff^4 x
+      \end{equation}
+
+      Euler-Lagrange-Gleichung:
+      \begin{equation}
+        \delta\mathcal{S} = 0
+        \;\Rightarrow\; \partial_\mu \left(\pder{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}\right) - \pder{\mathcal{L}}{A^\nu} = 0 \;\;\forall \nu
+      \end{equation}
+
+      \subsubsection{Noether-Theorem}
+      Kontinuierliche Transformation:
+      \begin{equation}
+        \phi(x)\rightarrow\phi'(x) = \phi(x) + \varepsilon \delta \phi(x)
+      \end{equation}
+
+      Invarianzbedingung:
+      \begin{equation}
+        \delta\mathcal{L} = \partial_\mu F^\mu(\phi)
+      \end{equation}
+
+      Resultierender erhaltener Strom und Erhaltene Ladung:
+      \begin{equation}
+        \begin{aligned}
+          S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \left( \phi(x), \partial_\nu\phi(x) \right) = \pder{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\
+          \tder{Q}{t} = 0;&\; Q = \int_{\mathbb{R}^3} j^0\;\diff^3\vec{x}
+        \end{aligned}
+      \end{equation}
+
+
+
+  \newpage
+	\section{Quantenmechanik}
+    \subsection{Postulate}
+
+      \begin{description} % skript Seite 75
+        \item[Postulat 1]\hfill \\
+          Jedem abgeschlossenen Quantensystem ist ein Hilbertraum $\mathcal{H}$ zugeordnet. Der Zustand des Systems zu einer festen Zeit $t$ wird durch ein Element $\Ket{\psi(t)} \in \mathcal{H}$ beschrieben, welches auf Eins normiert ist, d.h. $\braket{\psi(t)|\psi(t)} = 1$.
+        \item[Postulat 2]\hfill \\
+          Jede messbare physikalische Größe $\mathcal{A}$ wird durch einen linearen selbstadjungierten Operator $\hat{A}$ auf $\mathcal{H}$ beschrieben. $\hat{A}$ hat ein vollständiges System von Eigenvektoren, d.h. es existiert eine Zerlegung der Eins und eine Spektraldarstellung des Operators aus den Eigenvektoren:
+          \begin{equation}
+            \begin{aligned}
+              \hat{1} &= \SumInt_n \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu} \\
+              \hat{A} &= \SumInt_n \SumInt_\nu a_n\Ket{a_n,\nu}\Bra{a_n,\nu}. \\
+            \end{aligned}
+          \end{equation}
+          Man nennt $\hat{A}$ eine Observable.
+        \item[Postulat 3]\hfill \\
+          Die möglichen Messwerte von $\mathcal{A}$ sind die Eigenwerte von $\hat{A}$.
+        \item[Postulat 4]\hfill \\
+          Misst man die Obersvable $\mathcal{A}$ an einem System im Zustand $\Ket{\psi}$ so ist die Wahrscheinlichkeit den Eigenwert
+          \begin{itemize}
+            \item[i)] $a_n$ zu messen, wenn $a_n$ ein nicht-entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n}$ ist, durch
+            \begin{equation}
+              w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2
+            \end{equation}
+            gegeben.
+            \item[ii)] $a_n$ zu messen, wenn $a_n$ ein entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n,\nu}$ ist, durch
+            \begin{equation}
+              w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2
+            \end{equation}
+            \item[iii)] $a$ zu messen, wenn $a$ ein nicht-entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a}$ ist, durch
+            \begin{equation}
+              \diff w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \diff a
+            \end{equation}
+            \item[iv)] $a$ zu messen, wenn $a$ ein entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a, \nu}$ ist, durch
+            \begin{equation}
+              \diff w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \diff a
+            \end{equation}
+          \end{itemize}
+          gegeben. Wobei Summiert bzw. integriert wird, je nachdem, ob es sich um ein diskreten oder kontinuierlichen Parameter $\nu$ handelt.
+        \item[Postulat 5]\hfill \\
+          Ergibt die Messung einer Observablen $\hat{A}$ den Eigenwert $a_n$, so befindet sich das System nach der Messung in einem Zustand, der durch die normierte Projektion auf den entsprechenden Unterraum zu $a_n$ gegeben ist
+          \begin{equation}
+            \begin{aligned}
+              \Ket{\psi} &\rightarrow \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
+              \hat{P}_n &:= \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu} \\
+            \end{aligned}
+          \end{equation}
+        \item[Postulat 6]\hfill \\
+          Die zeitliche Entwicklung eines abgeschlossenen Quantensystems ist durch die Schrödingergleichung
+          \begin{equation}
+            i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
+          \end{equation}
+          gegeben, wobei der Hamiltonoperator $\hat{H}$ die Observable ist, die mit der Gesamtenergie des Systems verknüpft ist.
+        \item[Postulat 7]\hfill \\
+          Der Hilbertraum des Gesamtsystems ist durch das Tensorprodukt der Hilberträume der Teilsysteme gegeben
+          \begin{equation}
+            \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2
+          \end{equation}
+        \item[Postulat 8]\hfill \\
+          Mikroobjekte mit identischen Eigenschaften werden entweder durch totalsymmetrische (Bosonen) oder durch totalantisymmetrische (Fermionen) Zustandsvektoren beschrieben. Fermionen haben halbzahligen, Bosonen ganzzahligen Spin.
+      \end{description}
+
+    \subsection{Allgemeines}
+      Schrödingergleichung:
+      \begin{equation}
+        i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
+      \end{equation}
+
+      De Broglie Wellenlänge:
+      \begin{equation}
+        \begin{aligned}
+          p &= \frac{h}{\lambda} \\
+          \vec{p} &= \hbar \vec{k} \\
+        \end{aligned}
+      \end{equation}
+
+      Compton Wellenlänge:
+      \begin{equation}
+        \lambda = \frac{h}{mc}
+      \end{equation}
+
+      Energie eines Photons:
+      \begin{equation}
+        E_\gamma = \hbar\omega = h\nu
+      \end{equation}
+
+      Klassische Schrödingergleichung in Ortsdarstellung:
+      \begin{equation}
+        i\hbar\pder{}{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
+      \end{equation}
+
+      Heisenberg'sche Unschärferelation:
+      \begin{equation}
+        \begin{aligned}
+          \Delta_{\Ket{\psi}}(\hat{A}) \Delta_{\Ket{\psi}}(\hat{B}) &\ge
+          \frac{1}{2} \left|\Bra{\psi} \com{\hat{A}}{\hat{B}} \Ket{\psi}\right| \\
+          \Delta_{\Ket{\psi}}(\hat{x}) \Delta_{\Ket{\psi}}(\hat{p}) &\ge
+          \frac{\hbar}{2}
+        \end{aligned}
+      \end{equation}
+
+      Energie-Zeit Unschärfe ($\Delta t$ entspricht der benötigten Messzeit für die Reduktion der Energieunsicherheit auf $\Delta E$):
+      \begin{equation}
+        \Delta E \Delta t \ge \frac{\hbar}{2}
+      \end{equation}
+
+      Unitarität:
+      \begin{equation}
+        \begin{aligned}
+          \Ket{\psi(t)} &= \hat{U}(t) \Ket{\psi(0)} \\
+          \hat{1} &= \hat{U}(t)\hat{U}^\dagger(t) = \hat{U}^\dagger(t)\hat{U}(t) \\
+        \end{aligned}
+      \end{equation}
+
+      Orts- und Impulsdarstellung:
+      \begin{equation}
+        \begin{aligned}
+          \Braket{\vec{x} | \psi} &= \psi(\vec{x}) \\
+          \Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) \\
+          \Braket{\vec{x} | \pvec{x}'} &= \delta(\vec{x} - \pvec{x}') \\
+          \Braket{\vec{p} | \pvec{p}'} &= \delta(\vec{p} - \pvec{p}') \\
+          \Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{i \vec{p}\cdot\vec{x} / \hbar} \\
+        \end{aligned}
+      \end{equation}
+
+    \subsection{Operatoren}
+      Ortsoperator:
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}}\;\diff^n\vec{x} \\
+          \Bra{\vec{x}}\hat{\vec{x}}\Ket{\psi} =& \vec{x}\, \psi(\vec{x}) \\
+          \Bra{\vec{p}}\hat{\vec{x}}\Ket{\psi} =& i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
+        \end{aligned}
+      \end{equation}
+
+      Impulsoperator:
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}}\;\diff^n\vec{p} \\
+          \Bra{\vec{p}}\hat{\vec{p}}\Ket{\psi} =& \vec{p}\, \tilde{\psi}(\vec{p}) \\
+          \Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
+        \end{aligned}
+      \end{equation}
+
+      Klassischer (nicht relativistischer) Hamiltonoperator:
+      \begin{equation}
+        \hat{H} = \frac{\hat{p}^2}{2m}+\hat{V}(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2} + V(\vec{x})
+      \end{equation}
+
+      Zeitentwicklungsoperator (Für $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; der zweite Fall folgt aus $\pder{\hat{H}}{t}=0$):
+      \begin{equation}
+        \begin{aligned}
+          \hat{U}(t) &= \exp{\left(-\frac{i}{\hbar}\int_0^t \hat{H}(t')\;\diff t'\right)} \\
+          \hat{U}(t) &= \exp{\left(-i\frac{\hat{H} t}{\hbar}\right)} \\
+          %&= \SumInt_E \SumInt_{\nu} e^{-iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\diff E \\
+          %&= \int_\mathbb{R} e^{-i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\diff p \\
+        \end{aligned}
+      \end{equation}
+
+      Kanonische Kommutator-Relationen
+      \begin{equation}
+        \begin{aligned}
+          \left[ \hat{x}_i, \hat{x}_j \right] &= \left[ \hat{p}_i, \hat{p}_j \right] = 0 \\
+          \left[ \hat{x}_i, \hat{p}_j \right] &= i\hbar\, \delta_{ij}\hat{1} \\
+        \end{aligned}
+      \end{equation}
+
+      Paritätsoperator und Eigenschaften (Definition, Selbstadjungiertheit, Unitarität, EW, EV):
+      \begin{equation}
+        \begin{aligned}
+          \Bra{\vec{x}} \hat{\Pi} \Ket{\Psi} :=& \Braket{-\vec{x} | \psi} = \psi(-\vec{x}) \\
+          \hat{\Pi} =& \hat{\Pi}^\dagger\\
+          1 =& \hat{\Pi} \,\hat{\Pi}^\dagger = \hat{\Pi}^\dagger \hat{\Pi} \\
+          \psi(\vec{x}) = \psi(-\vec{x}) \Rightarrow&\; \hat{\Pi}\Ket{\psi} = \Ket{\psi} \\
+          \psi(\vec{x}) = -\psi(-\vec{x}) \Rightarrow&\; \hat{\Pi}\Ket{\psi} = -\Ket{\psi} \\
+        \end{aligned}
+      \end{equation}
+
+      Translationsoperator:
+      \begin{equation}
+        \begin{aligned}
+          \hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = e^{-i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
+        \end{aligned}
+      \end{equation}
+
+    \subsubsection{Drehimpulsoperatoren}
+      Definierende Eigenschaft (Drehimpuls-Kommutatorrelationen):
+      \begin{equation}
+        \left[ \hat{j}_i, \hat{j}_j \right] = i\hbar\, \epsilon_{ijk} \hat{j}_k
+      \end{equation}
+
+      Bahndrehimpulsoperator:
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-i\hbar\pder{}{\vec{x}}\right)  \\
+          \left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
+          \left< \hat{L}_z \right> &= m_l \hbar \\
+        \end{aligned}
+      \end{equation}
+
+      Spinoperator (Bei Magnetfeld $\vec{B}\parallel\vec{e}_z$):
+      \begin{equation}
+        \begin{aligned}
+          \left<\hat{\pvec{S}}^2\right> &= s(s+1)\hbar^2 \\
+          \left<\hat{S}_z\right> &= m_s \hbar \\
+        \end{aligned}
+      \end{equation}
+
+      Spin-Repräsentation in $\vec{e}_3$-Basis: $\mathcal{B} = \{ \Ket{\vec{e}_3,+}, \Ket{\vec{e}_3,-} \}$:
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{\sigma}} \cdot \vec{n} &\doteq
+          \left( \begin{matrix}
+            \cos\theta & e^{-i\phi}\sin\theta \\
+            e^{i\phi}\sin\theta & -\cos\theta \\
+          \end{matrix} \right) \\
+          \exp\left( i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
+        \end{aligned}
+      \end{equation}
+
+      Pauli Spinmatrizen (Spinoperator $\hat{\vec{s}} = \frac{\hbar}{2} \hat{\vec{\sigma}}$):
+      \begin{equation}
+        \begin{aligned}
+          \hat{\sigma}_1 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+          \hat{\sigma}_2 &= -i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+          \hat{\sigma}_3 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
+        \end{aligned}
+      \end{equation}
+
+
+
+      Gesamtdrehimpulsoperator
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
+          \left< \hat{\vec{J}}^2 \right> &= j(j+1)\hbar^2 \\
+          \left< \hat{J}_z \right> &= m_j\hbar \\
+        \end{aligned}
+      \end{equation}
+
+      \subsubsection{Kommutator}
+        Definition des Kommutators:
+        \begin{equation}
+          \com{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}
+        \end{equation}
+
+        Rechenregeln:
+        \begin{equation}
+          \begin{aligned}
+            \com{\hat{A}}{\hat{B}\hat{C}}
+            &= \hat{B}\com{\hat{A}}{\hat{C}} + \com{\hat{A}}{\hat{B}}\hat{C} \\
+            \com{\hat{A}}{f(\hat{B})}
+            &= \com{\hat{A}}{\hat{B}}\tder{f}{\hat{B}}(\hat{B})
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Operatoren im Heisenberg Bild}
+        Zeitabhängige Operatoren:
+        \begin{equation}
+          \begin{aligned}
+            \hat{A}_H(t) &= \hat{U}^\dagger \hat{A} \hat{U} \\
+            \langle \hat{A} \rangle_{\Ket{\psi(t)}} &= \Bra{\psi(0)}\hat{A}_H(t)\Ket{\psi(0)}
+          \end{aligned}
+        \end{equation}
+        Zeitentwicklung von Observablen:
+        \begin{equation}
+          i\hbar \tder{}{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pder{}{t} \hat{A}\right)_H (t)
+        \end{equation}
+
+        Ehrenfest-Theorem:
+        \begin{equation}
+          \begin{aligned}
+            \tder{}{t} \hat{\vec{x}}_H(t) &= \frac{1}{m}\hat{\vec{p}}_H(t) \\
+            \tder{}{t} \hat{\vec{p}}_H(t) &= - \pder{}{\vec{x}} V \left(\hat{\vec{x}}_H(t)\right) \\
+          \end{aligned}
+        \end{equation}
+
+        Ehrenfest-Gleichungen:
+        \begin{equation}
+          \begin{aligned}
+            \tder{}{t} \langle \hat{\vec{x}} \,\rangle_{\Ket{\psi(t)}} &= \frac{1}{m} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} \\
+            \tder{}{t} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} &= - \left\langle \pder{}{\vec{x}} V(\hat{\vec{x}}) \,\right\rangle_{\Ket{\psi(t)}} \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Erhaltungsgrößen}
+        Symmetrietransformation mit selbstadjungiertem Generator $\hat{G}$ ($\hat{T}$ ist unitär):
+        \begin{equation}
+          \hat{T}(\nu) = e^{-i\hat{G}\nu/\hbar}
+        \end{equation}
+
+        Invarianzbedingung und Erhaltunggröße (Heisenberg-Bild):
+        \begin{equation}
+          \hat{H} =\hat{T}^\dagger(\nu)\hat{H} \hat{T}(\nu) \Leftrightarrow \com{\hat{H}}{\hat{G}} = 0
+        \end{equation}
+
+    \subsection{Kontinuitätsgleichung}
+      Wahrscheinlichkeitsdichte und Wahrscheinlichtkeitsstromdichte:
+      \begin{equation}
+        \begin{aligned}
+          \rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
+          j(t,x) :=& \frac{\hbar}{2mi}\left(
+            \psi^*(t,x)\pder{}{x}\psi(t,x) - \psi(t,x)\pder{}{x}\psi^*(t,x)
+          \right) \\
+          =& \frac{\hbar}{m} \mathrm{Im}\left(
+            \psi^*(t,x) \pder{}{x}\psi(t,x)
+          \right)\\
+        \end{aligned}
+      \end{equation}
+
+      Kontinuitätsgleichung:
+      \begin{equation}
+        \pder{}{t}\rho(t,x) + \pder{}{x}j(t,x) = 0
+      \end{equation}
+
+    \subsection{Gebundene Zustände}
+      \subsubsection{Allgemeines}
+        Gebundene Zustände haben negative Wechselwirkungsenergie $E<0$ und diskrete Energieeigenwerte. Bei zeitunabhängigen Hamiltonoperatoren ist die Aufenthaltswahrscheinlichkeit zeitlich konstant $\left|\psi(x)\right|^2=\konst$
+
+      \subsubsection{Wellenfunktion des Elektrons im Atom}
+        Im Wasserstoffatom:
+        \begin{equation}
+          \begin{aligned}
+            \Braket{\vec{r}|n,l,m_l,m_s} &= \psi_{n,l,m}\left(r,\theta,\phi\right)\chi(m_s)
+            = R_{n,l}\left(r\right) Y_l^m\left(\theta,\phi\right)\chi(m_s) \\
+            R_{n,l}\left(r\right)
+            &= \left(\frac{1}{n\rho}\right)^{\frac{3}{2}}
+            \sum_{j=0}^{n-l-1} a_j \left(\frac{r}{n\rho}\right)^{j+l} \exp\left({-\frac{r}{n\rho}}\right) \\
+            a_j &= 2\frac{j+l-n}{j(j+2l+1)} a_{j-1} \\
+          \end{aligned}
+        \end{equation}
+
+        Quantenzahlen:
+        \begin{itemize}
+          \item Hauptquantenzahl $n \in \mathbb{N}$
+          \item Drehimpulsquantenzahl $l \in \mathbb{Z};\; \left|l\right| < n$
+          \item Magnetische Quantenzahl $m_l \in \mathbb{Z};\; \left|m\right| \le \left|l\right|$
+          \item Spinquantenzahl $s = \frac{1}{2}$ (Für Fermionen)
+          \item Spinprojektion $m_s = \pm \frac{1}{2}$ (Für Fermionen)
+        \end{itemize}
+
+        Energiezustände eines einzelnen Elektrons im Atom mit Ordnungszahl $Z$:
+        \begin{equation}
+          \mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = - \frac{m_e e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
+        \end{equation}
+
+        Besetzungsregeln:
+        \begin{itemize}
+          \item Pauli-Prinzip: Die Gesamtwellenfunktion eines Systems aus mehreren Elektronen ist immer antisymmetrisch  gegen die Vertauschung zweier Elektronen.
+          \item Madelung-Energieschema: Im Grundzustand werden Orbitale mit dem kleinsten Wert für $n+l$ zuerst aufgefüllt.
+          \item Hund'sche Regel: Im Grundzustand eines Atoms hat der Gesamtspin den größtmöglichen Wert, der mit dem Pauli-Prinzip verträgtlich ist.
+        \end{itemize}
+
+        Auswahlregeln für Übergänge durch Emission oder Absorption eines Photons:
+        \begin{itemize}
+          \item $\Delta l = \pm 1$
+          \item $\Delta m = 0, \pm 1$
+          \item $\Delta S = 0$
+          \item $\Delta J = 0, \pm 1$
+          \item $\Delta L = \pm 1$
+          \item $J=0 \nrightarrow J=0$
+        \end{itemize}
+
+      \subsubsection{Quantenmechanischer Harmonischer Oszillator}
+        Hamiltonoperator und Konstruktion aus Leiteroperatoren (Aufsteigeoperator $\hat{a}^\dagger$ und Absteigeoperator $\hat{a}$):
+        \begin{equation}
+          \begin{aligned}
+            \hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
+            \hat{a} :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+            \hat{a}^\dagger :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+          \end{aligned}
+        \end{equation}
+
+        Darstellung von Orts- und Impulsoperator aus den Leiteroperatoren:
+        \begin{equation}
+          \begin{aligned}
+            \hat{x} &= \sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^\dagger + \hat{a} \right) \\
+            \hat{p} &= i\sqrt{\frac{m\hbar\omega}{2}}\left(\hat{a}^\dagger - \hat{a} \right) \\
+          \end{aligned}
+        \end{equation}
+
+        Eigenschaften der Leiteroperatoren:
+        \begin{equation}
+          \begin{aligned}
+            \hat{a}\Ket{n} &= \sqrt{n}\Ket{n-1} \\
+            \hat{a}^\dagger\Ket{n} &= \sqrt{n+1}\Ket{n+1} \\
+            \Bra{m}\hat{a}\Ket{n} &= \sqrt{n} \,\delta_{m,n-1} \\
+            \Bra{m}\hat{a}^\dagger\Ket{n} &= \sqrt{n+1} \,\delta_{m,n+1} \\
+          \end{aligned}
+        \end{equation}
+
+        Eigenzustände und Energiewerte (Mit der Substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ und den Hermitpolynomen $H_n(q)$ (Gl. \ref{eq:Hermitpolynome})):
+        \begin{equation}
+          \begin{aligned}
+            \Ket{n} &= \frac{1}{\sqrt{n!}}\left(\hat{a}^\dagger\right)^n\Ket{0} \\
+            \Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} e^{-\frac{q^2}{2}} H_n(q) \\
+          \end{aligned}
+        \end{equation}
+
+
+  \newpage
+	\section{Quantenfeldtheorie}
+    % \subsection{Postulate}
+    %   \subsubsection{Symmetrien?}
+    %     Lokalität
+    %     CPT
+    %     ...
+
+    \subsection{Wechselwirkungen}
+      \subsubsection{Mandelstam Variablen}
+        Lorentzskalare bei Streuprozess der Form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+        \begin{itemize}\itemsep -0pt  % reduce space between items
+          \item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Quadrat der Schwerpunktsenergie)}
+          \item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Quadrat des Viererimpuls-Übertrags)}
+          \item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Viererimpuls-Übertrag auf Rückstoßteilchen)}
+        \end{itemize}
+
+        Zusammenhang:
+        \begin{equation}
+          s+t+u = \sum_i m_i^2
+        \end{equation}
+
+
+
+
+
+
+
+
+
+  \newpage
+  \section{Statistische Physik}
+    \subsection{Thermodynamik}
+      \subsubsection{Definitionen}
+        Im \emph{Thermodynamisches Gleichgewicht} sind makroskopische Eigenschaften eines Systems zeitlich konstant. Thermodynamische Gleichgewichte verdanken ihre Stabilität gemäß dem \emph{Prinzip von le Chatelier} einer rückstellenden Kraft, die sich bei Fluktuationen ausbildet. \\
+
+        Die \emph{Innere Energie} $U$ ist die Energie eines Vielteilchesystems, welches durch ein äußeres Potential auf ein Volumen $V$ begrenzt wird und damit einen verschwindenden makroskopischen Gesamtimpuls $\vec{P}=0$ und Gesamtdrehimpuls $\vec{L} = 0$ besitzt, sodass die gesamte kinetische Energie in internen Eigenschaften liegt.\\
+
+        Definition des unvollständigen Differentials ($\delta$) der \emph{Arbeit} über kontrollierte \emph{Arbeitskoordinaten} $Z_\alpha$ und \emph{Gleichgewichtsgrößen} $g_\alpha$. Die Wahl der Arbeitskoordinaten (d.h. des Zugriffs über das System) legt die Arbeit als nutzbare Energieform fest. Und legt Eigenschaften wie Entropie und Temperatur fest, die nicht-Eindeutigkeit dieser Wahl wird als \emph{relative Objektivität} bezeichnet.
+        \begin{equation}
+          \delta W = \sum_\alpha g_\alpha \diff Z_\alpha
+        \end{equation}\\
+
+        Die \emph{Zustandsgrößen} $\vec{Z}=\left(U, Z_1,... \right)$ sind die makroskopisch beobachtbaren bzw. zugreifbaren Größen und legen einen Gleichgewichtszustand eindeutig fest.\\
+
+        \emph{Intensive Variablen}: Homogen vom Grad $0$ ($T$, $p$, ...).\\
+
+        \emph{Extensive Variablen}: Homogen vom Grad $1$ ($S$, $U$, $V$, ...). Diese sind insbesondere Additiv.\\
+
+        \begin{table}[h]
+          \begin{center}
+          \begin{tabular}{ l | l l l l l l }
+            $g_\alpha$ & $-p$ & $\mu$ & $\sigma$ & $E_0$ & $B_0$ & $\Phi$ \\ \hline
+            $\diff Z_\alpha$ & $\diff V$ & $\diff N$ & $\diff A$ & $\diff \mathcal{P}$ & $\diff \mathcal{M}$ & $\diff Q$ \\
+            \end{tabular}
+          \caption{Arbeitskoordinaten und zugehörige Gleichgewichtsgrößen. $\sigma$: Oberflächenspannung, $A$: Oberfläche, $B_0$: magnetische Feld, $\mathcal{M}$: Gesamtmagnetisierung, $\mu$ chemisches Potential (Arbeit, die geleistet werden muss, um dem System ein Teilchen hinzuzufügen), $N$: Teilchenzahl...}
+          \label{tab:ArbeitskoordinatenUndGleichgewichtsgroessen}
+          \end{center}
+        \end{table}
+
+        \emph{Thermodynamischer Grenzfall}: Deterministisches Verhalten bei $U,V,N\rightarrow\infty$ unter $U/N,V/N=\konst$. \\
+
+
+        \emph{Thermische Wellenlänge}
+        \begin{equation}
+          \lambda_T = \frac{h}{\sqrt{2\pi m k_B T}}
+        \end{equation}
+
+        \emph{Fugazität}
+        \begin{equation}
+          z = e^{\beta\mu}
+        \end{equation}
+
+      \subsubsection{Hauptsätze}
+        \textbf{Nullter Hauptsatz}: Existenz und Transitivität des Gleichgewichtzustandes\\
+          \indent \emph{Das Thermodynamische Gleichgewicht ist eine Äquivalenzrelation unter thermodynamischen Systemen (Gleichgewicht zwischen $A \sim B$ und $A \sim C$ impliziert $ B \sim C$).} \\
+        \textbf{Erster Hauptsatz}: Energiesatz\\
+          \begin{equation}
+            \label{eq:FirstLawOfThermodynamics}
+            \diff U = \delta Q + \delta W
+          \end{equation}
+          \indent Innere Energie $\diff U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$.\\
+        \textbf{Zweiter Hauptsatz}: Entropiesatz\\
+          \begin{equation}
+            \label{eq:SecondLawOfThermodynamics}
+            \Delta S  \ge 0
+          \end{equation}
+          \indent Kelvin: \emph{Es ist unmöglich, durch bloße Abkühlung eines einzelnen Wärmebades zyklisch Arbeit zu erzeugen. }\\
+        \textbf{Dritter Hauptsatz}: Nernstscher Wärmesatz\\
+          \indent \emph{Nernst: Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
+
+      \subsubsection{Gibbs'sche Fundamentalgleichung}
+        Gibbs'sche Fundamentalgleichung (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
+        \begin{equation}
+          \label{eq:GibbsFundamental}
+          \diff S = \frac{1}{T} \diff U - \frac{1}{T} \sum_{\alpha} g_\alpha \diff Z_\alpha
+        \end{equation}
+
+        Eulersche Homogenitätsrelation (folgt aus Homogenität von $S(\vec{Z})$):
+        \begin{equation}
+          \label{eq:EulerHomogenity}
+          S(\vec{Z}) = U\pder{S}{U} + \sum_\alpha Z_\alpha\pder{S}{Z_\alpha}
+          = \frac{1}{T} \left( U-\sum_\alpha g_\alpha Z_\alpha \right)
+        \end{equation}
+
+        Gibbs-Duhen Beziehung (folgt aus Gl. \ref{eq:GibbsFundamental} und Gl. \ref{eq:EulerHomogenity}):
+        \begin{equation}
+          0 = S \diff T + \sum_\alpha Z_\alpha \diff g_\alpha
+        \end{equation}
+
+        Zusammenhang zwischen thermischer und kalorischer Zustandsgleichung:
+        \begin{equation}
+          \left(\pder{U}{V}\right)_T = T\left(\pder{p}{T}\right)_V - p
+        \end{equation}
+
+        $T \diff S$-Gleichungen
+        \begin{equation}
+          \begin{aligned}
+            T \diff S &= C_V \diff T + \frac{\alpha T}{\kappa_T} \diff V \\
+            T \diff S &= C_p \diff T - \alpha T V \diff p
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Entropie}
+        Thermodynamische Definition (Zusätzlich $\lim_{T\rightarrow 0} S := 0$):
+        \begin{equation}
+          \diff S := \frac{\delta Q_{rev}}{T}
+        \end{equation}
+
+        Eigenschaften der Entropie (Folgen des zweiten Hauptsatzes):
+        \begin{itemize}\itemsep -0pt  % reduce space between items
+          \item $\Delta S = S(t>t_0)-S(t_0) \ge 0$ \hfill{(Entropiezunahme in isolierten Systemen)}
+          \item $S(\vec{Z}_1 + \vec{Z}_2) \ge S(\vec{Z}_1) + S(\vec{Z}_2)$ \hfill{(Superadditivität)}
+          \item $\partial^2 S \le 0,\;\diff S = 0$ \hfill{(Maximum im Gleichgewicht)}
+        \end{itemize}
+
+      \subsubsection{Kreisprozesse}
+        Idealisierte Prozesse:
+        \begin{itemize}
+          \item Isotherme: $\diff T = 0$
+          \item Isochore: $\diff V = 0$
+          \item Isobare: $\diff p = 0$
+          \item Adiabate: $\delta Q = 0$
+          \item Isentrope: $\diff S = 0$ (adiabatischer Prozess, der zusätzlich reversibel ist)
+        \end{itemize}
+
+        Kreisprozess (Gleichheit für reversible, Ungleichheit für irreversible Prozesse):
+        \begin{equation}
+          \oint \frac{\delta Q_{rev}}{T} \le 0
+        \end{equation}\\
+
+        Carnot Prozess: Einzig möglicher reversibler Kreisprozess, er besteht aus zwei Adiabaten und zwei Isothermen, zwischen den Temperaturen $T_1$, $T_2$ mit $T_1 < T_2$. Jede reale Wärmekraftmaschine hat einen Wirkungsgrad, der kleiner ist als der Carnot Wirkungsgrad:
+        \begin{equation}
+          \eta_C = 1-\frac{T_1}{T_2}
+        \end{equation}
+
+      \subsubsection{Antwortgrößen}
+        Definition der Antwortgrößen (Wärmekapazität bei konstantem Volumen $C_V$ und bei konstantem Druck $C_p$, sowie spezifische Wärmekapazitäten $c_V$ und $c_p$, Ausdehnungskoeffizient $\alpha$, Spannungskoeffizient $\beta$, isothermische Kompressibilität $\kappa_T$, adiabatische Kompressibilität $\kappa_S$):
+        \begin{equation}
+          \begin{aligned}
+            N c_V = C_V &= \left( \pder{Q}{T} \right)_V = T \left( \pder{S}{T} \right)_V \\
+            N c_p = C_p &= \left( \pder{Q}{T} \right)_p = T \left( \pder{S}{T} \right)_p \\
+            \alpha &= \frac{1}{V} \left( \pder{V}{T} \right)_p \\
+            \beta &= \frac{1}{p} \left( \pder{p}{T} \right)_V \\
+            \kappa_T &= -\frac{1}{V} \left( \pder{V}{p} \right)_T \\
+            \kappa_S &= -\frac{1}{V} \left( \pder{V}{p} \right)_S \\
+          \end{aligned}
+        \end{equation}
+
+        Beziehungen (Es folgt also insbesondere $c_p > c_V$ und
+        $\kappa_T > \kappa_S$):
+        \begin{equation}
+          \begin{aligned}
+            \beta &= \frac{\alpha}{p \kappa_T} \\
+            C_p - C_V &= \frac{TV\alpha^2}{\kappa_T} \\
+            \frac{c_p}{c_V} &= \frac{\kappa_T}{\kappa_S} \\
+          \end{aligned}
+        \end{equation}
+
+        Joule-Thomsom-Koeffizient:
+        \begin{equation}
+          \mu_{JT} = \left( \pder{T}{p} \right)_H = \frac{V}{C_p}\left(\alpha T - 1\right)
+        \end{equation}
+
+        Für Magnetismus ist das Analogon zur Kompressibilität die magnetische Suszeptibilität $\chi_{T/S}$:
+        \begin{equation}
+          \chi_{S/T} = \left(\pder{\mathcal{M}}{B_0}\right)_{S/T}
+        \end{equation}
+
+      \subsubsection{Thermodynamische Potentiale}
+        Guggenheim Quadrat:
+        Unheimlich Viele Forscher Trinken Gerne pils Hinterm Schreibtisch.
+
+        \begin{table}[h]
+          \begin{center}
+          \begin{tabular}{ r | l | l | l }
+            Name & Relation & Differential & Maxwellbeziehung \\ \hline \xrowht{26pt}
+            Entropie & $S(U,V)$ & $\diff S = \frac{1}{T} \diff U + \frac{p}{T} \diff V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+            Innere Energie & $U(S,V)$ & $\diff U = T \diff S - p \diff V$ & $\left( \dpder{T}{V} \right)_S =  - \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
+            Freie Energie & $F(V,T) = U - TS$ & $\diff F = -S \diff T - p \diff V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+            Gibbs-Energie & $G(T,p) = U - TS + pV$ & $\diff G = -S \diff T - V \diff p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
+            Enthalpie & $H(p,S) = U + pV$ & $\diff H = T \diff S + V \diff p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
+            Großes Potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\diff \Omega = -S \diff T - p \diff V -N \diff \mu$ &  \\ \hline
+            \end{tabular}
+          \caption{Liste nützlicher thermodynamischer Potentiale}
+          \label{tab:ThermodynamischePotentiale}
+          \end{center}
+        \end{table}
+
+        Für homogene Systeme:
+        \begin{equation}
+          \begin{aligned}
+            G(T,p) &= \phantom{-}N\mu(T,p) \\
+            \Omega(T,V,\mu) &= -V p(T,\mu) \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Chemische Gleichgewichte}
+        $s$ verschiedene chemische Reaktion von $r$ verschiedenen Stoffen mit chemischen Symbolen $S_i$, charaktierisiert durch die stöchiometrischen Koeffizienten $\nu_i^k\in\mathbb{Z}$, $\forall k\in\lbrace1,...,s\rbrace$:
+        \begin{equation}
+            \sum_{i=1}^r \nu_i^k S_i = 0
+        \end{equation}
+
+        Chemische Umwandlung mit beliebiger Umsatzvariable $\diff \lambda_k$:
+        \begin{equation}
+          \diff N_i = \sum_{k=1}^s \nu_i^k \diff \lambda_k
+        \end{equation}
+
+        Im thermodynamischen Gleichgewicht wird die Gibbs-Energie minimal:
+        \begin{equation}
+            0 = \diff G = \sum_{i=1}^r \mu_i \diff N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \;\forall k\in\lbrace1,...,s\rbrace
+        \end{equation}
+
+        Massenwirkungsgesetz (mit Teilchenkonzentrationen $c_i = N_i/N$ und Massenwirkungskonstante $K$):
+        \begin{equation}
+          \prod_{i=1}^r  c_i^{\nu_i} = \exp\left( -\frac{1}{k_B T}\sum_{i=1}^r \nu_i\mu_i^0(T,p) \right) =: K(T,p)
+        \end{equation}
+
+      \subsubsection{Phasenübergänge}
+        Clausius-Clapeyron-Beziehung:
+        \begin{equation}
+          \tder{p}{T} = \frac{\Delta S}{\Delta V} = \frac{S_g - S_{fl}}{V_g - V_{fl}}
+        \end{equation}
+
+        Latente Wärme pro Teilchen:
+        \begin{equation}
+          l = \frac{\Delta H}{N} = T\frac{\Delta S}{N}
+        \end{equation}
+
+        Gibbssche Phasenregel (für die Freiheitsgrade $f$ bei $r$ Komponenten verteilt in $\nu$ Phasen):
+        \begin{equation}
+          f = 2 + r - \nu
+        \end{equation}
+
+      \subsubsection{Nichtgleichgewicht}
+        Annahme: Hinreichend schnelle Prozesse erzeugen zu jedem Punkt eine \emph{lokales Gleichgewicht}, sodass lokale Gleichgewichtsgrößen $T(t,\vec{r})$, $p(t,\vec{r})$,... existieren. \\
+        Kontinuitätsgleichung für die Energiedichte $u(t,\vec{r})$ und die Wärmestromdichte $\vec{j}^q$:
+        \begin{equation}
+          \pder{u}{t} + \Nabla\cdot\vec{j}^q = 0
+        \end{equation}
+
+        Das \emph{Fourier Gesetz} bringt die Wärmestromdichte über die Wärmeleitfähigkeit $\kappa >0$ mit dem Temperaturgradienten in Verbindung:
+        \begin{equation}
+          \vec{j}^q = -\kappa \Nabla T
+        \end{equation}
+
+        Für $\diff u = nc_V \diff T$ (also z.B. in guter Näherung in Festkörpern) gilt die \emph{Wärmeleitungsgleichung} (Mit der Diffusionskonstanten $D=\kappa/nc_V$):
+        \begin{equation}
+          \pder{T}{t} = D\Nabla^2 T
+        \end{equation}
+
+        Der Wärmetransport ist irreversibel, für die Entropiedichte $s(t,\vec{r})$ und die Entropiestromdichte $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ gilt (Mit der \emph{Entropieerzeugungsrate} $\dot{s}$):
+        \begin{equation}
+          \dot{s} = \pder{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
+        \end{equation}
+
+        Onsager Reziprozitätsbeziehung: Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.\\
+
+        Thermoelektrische Effekte: In Systemen mit Ladungsträgern ist es sinnvoll ein elektrochemisches Potential $\mu_{EC}$ einzuführen, da eine Veränderung der Teilchenzahl auch eine Veränderung der Ladung im Potential impliziert, sodass (mit dem \emph{Peltier-Koeffizienten} $\Pi$, der \emph{Thermokraft} $\epsilon$, dem elektrischen Strom $\vec{j} = q\vec{j}^n$ und der spezifischen Leitfähigkeit $\sigma$, die letzte Gleichung folgt aus der Reziprozitätsbeziehung):
+        \begin{equation}
+          \begin{aligned}
+            \delta W &= \mu \diff N + \Phi \diff Q = (\mu+q\Phi)\diff N = \mu_{EC} \diff N \\
+            \Nabla \mu_{EC} &= -q\vec{\mathcal{E}} \\
+            \vec{j}^q &= - \kappa \Nabla T + \Pi \vec{j} \\
+            \vec{\mathcal{E}} &= \vec{E} - \frac{1}{q} \Nabla \mu = \frac{1}{\sigma} \vec{j} + \epsilon \Nabla T \\
+            \Pi &= \epsilon T \\
+          \end{aligned}
+        \end{equation}
+
+
+    \subsection{Statistische Mechanik}
+      \subsubsection{Allgemeines}
+        Äquipartitionstheorem $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
+        \begin{equation}
+          \overline{ z_i \pder{H}{z_j}} = k_B T \delta_{ij}
+        \end{equation}
+
+      \subsubsection{Definition der Entropie}
+        Boltzmann Entropie (mit mikrokanonischer Zustandssumme $\Gamma$ und Zustandsvektor $\vec{Z}=(U,V,N,...)$)
+        \begin{equation}
+          S_{B}(\vec{Z}) = k_B \ln\Gamma(\vec{Z})
+        \end{equation}
+
+        Gibbs Entropie:
+        \begin{equation}
+          S_{G} = -k_B \sum_i p_i \ln p_i
+        \end{equation}
+
+        Shannon Entropie:
+        \begin{equation}
+          S_{Sh} = -\sum_i p_i\log_2{p_i} \ge 0
+        \end{equation}
+
+        Von Neumann Entropie:
+        \begin{equation}
+          S_{vN} = -\mathrm{tr}(\hat{\rho}\log_2\hat{\rho})
+        \end{equation}
+
+        Äquivalenz der Entropien:
+        \begin{equation}
+          S = -k_B\,\mathrm{tr}(\hat{\rho} \ln \hat{\rho}) = S_B = S_G = k_B\ln(2) S_{Sh} = k_B\ln(2) S_{vN}
+        \end{equation}
+
+      \subsubsection{Dichtematrix}
+        Definition der Dichtematrix (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten sind):
+        \begin{equation}
+          \hat{\rho} = \sum_i p_i \Ket{\psi_i}\Bra{\psi_i}
+        \end{equation}
+
+        Axiome der Dichtematrix:
+        \begin{itemize}\itemsep -0pt  % reduce space between items
+          \item $\hat{\rho} = \hat{\rho}^\dagger$ \hfill{(hermitesch)}
+          \item $\hat{\rho} \ge 0 $ \hfill{(positiv semidefinit)}
+          \item $\mathrm{tr} \hat{\rho} = 1$ \hfill{(Spur 1)}
+        \end{itemize}
+
+        Erwartungswert einer Observablen $\mathcal{A}$:
+        \begin{equation}
+          \overline{A} = \sum_i p_i \Bra{\psi_i}\hat{A}\Ket{\psi_i} = \mathrm{tr} (\hat{\rho}\hat{A})
+        \end{equation}
+
+        Von-Neumann-Gleichung:
+        \begin{equation}
+          \tder{}{t}\hat{\rho(t)} = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
+        \end{equation}
+
+      \subsubsection{Mikrokanonisches Ensemble}
+        Axiome für die mikrokanonische Zustandssumme $\Gamma$:
+        \begin{itemize}\itemsep -0pt  % reduce space between items
+          \item $\pder{}{t}\Gamma(\vec{Z}) = 0$ \hfill{(stationär)}
+          \item $\Gamma(\vec{Z}_1,\vec{Z}_2) = \Gamma(\vec{Z}_1)\Gamma(\vec{Z}_2) $ \hfill{(multiplikativ)}
+          \item $\ln\Gamma(\vec{Z}) \propto N$ \hfill{(extensiv)}
+        \end{itemize}
+        Wobei der dritte Punkt für Thermodynamik jedoch nicht für statistische Mechanik im Allgemeinen notwendig wird.
+
+        Berechnung von $\Gamma$ ($\Delta$ wird im thermodynamischen Grenzfall irrelevant. Das $\Gamma(\vec{Z})$ stationär bleibt ist durch die unitäre Zeitentwicklung im quantenmechanischen Fall bzw. durch den Satz von Liouville im klassischen Fall garantiert.):
+        \begin{equation}
+          \begin{aligned}
+            \Gamma(\vec{Z}) = \langle \delta_\Delta (U-H) \rangle
+              &= \begin{cases}
+                  \SumInt_n \delta_\Delta(U-E_n) & \text{quantenmechanisch} \\
+                  \int \diff \Gamma_N \delta_\Delta(U-E_n) & \text{klassisch}
+                \end{cases} \\
+            \delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
+            \diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!}
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Kanonisches Ensemble}
+        Kanonische Zustandssumme ($\beta = \frac{1}{k_B T}$):
+        \begin{equation}
+          Z_N=\langle e^{-\beta H} \rangle
+            = \begin{cases}
+                \SumInt_n e^{-\beta E_n} & \text{quantenmechanisch} \\
+                \int \diff \Gamma_N e^{-\beta H} & \text{klassisch}
+              \end{cases} \\
+        \end{equation}
+
+        Zusammenhang zur Freien Energie $F$:
+        \begin{equation}
+          F(T, V, N) = -k_B T \ln{Z_N(T)}
+        \end{equation}
+
+        % Bose Einstein Verteilung (Mittlere Besetzungszahl bei harmonischen Oszillatoren):
+        % \begin{equation}
+        %     \overline{n}_\nu = \frac{1}{e^{\hbar \omega_\nu / k_B T} - 1}
+        % \end{equation}
+
+        Innere Energie im kanonischen Ensemble:
+        \begin{equation}
+          U = \overline{H} = \frac{1}{Z_N}\langle He^{-\beta H}\rangle = -\frac{1}{Z_N}\pder{Z_N}{\beta} = -\pder{\ln Z_N}{\beta}
+        \end{equation}
+
+      \subsubsection{Großkanonisches Ensemble}
+        großkanonische Zustandssumme (Die Spur im quantenmechanischen Fall wird nun über den Fock-Raum gebildet):
+        \begin{equation}
+          \mathcal{Z} = \sum_N z^N Z_N(\beta) = \langle e^{-\beta(H-\mu N)} \rangle
+        \end{equation}
+
+        Zusammenhang zum großen Potential $\Omega$:
+        \begin{equation}
+          \Omega(\beta,z) = -k_B T \ln \mathcal{Z}(\beta,z)
+        \end{equation}
+
+
+      \subsubsection{Gibbs'sches Variationsprinzip}
+        Wahrscheinlichkeiten $p_i$ sind so verteilt, dass die Entropie im thermodynamischen Gleichgewicht unter den gegebenen Nebenbedingungen $g_k(p_i) = 0$ maximiert wird.
+        \begin{equation}
+          0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
+        \end{equation}\\
+
+        Für mikrokanonisches Ensemble folgt die Gleichverteilung (Nebenbedingung $\sum_i p_i = 1$):
+        \begin{equation}
+          \begin{aligned}
+            0 &= \diff \big( S - \lambda \sum_i p_i \big) \\
+            p_i &= e^{-1-\lambda} = \konst \\
+            \hat{\rho} &= \frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
+          \end{aligned}
+        \end{equation}
+
+        Für kanonisches Ensemble folgt die Boltzmannverteilung (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = \overline{H} = U$):
+        \begin{equation}
+          \begin{aligned}
+            0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i \big) \\
+            p_i &= e^{-1-\lambda-\beta H_i} \propto e^{-\beta H_i} \\
+            \hat{\rho} &= \frac{e^{-\beta \hat{H}}}{Z_N} \\
+          \end{aligned}
+        \end{equation}
+
+        Großkanonisches Ensemble (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = U$; $\sum_i p_i N_i = \overline{N} = N$, Für den Teilchenzahloperator $\hat{N}$ muss die Spur über den Fockraum gebildet werden):
+        \begin{equation}
+          \begin{aligned}
+            0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i - \beta\mu \sum_i p_i N_i \big) \\
+            p_i &= e^{-1-\lambda-\beta H_i-\beta\mu N} \propto e^{-\beta H_i - \beta\mu N} \\
+            \hat{\rho} &= \frac{e^{-\beta (\hat{H} - \mu \hat{N})}}{\mathcal{Z}} \\
+          \end{aligned}
+        \end{equation}
+
+        Äquivalenz der Ensembles (Laplace Transformation zwischen Ensembles entspricht Legendre Transformation zwischen zugehörigen Thermodynamischen Potentialen):
+        \begin{equation}
+          \int \frac{\Gamma(U)}{\Delta} e^{-\beta U} \diff U = Z_N(\beta)
+        \end{equation}
+
+
+
+    \subsection{Modelle}
+      \subsubsection{Klassisches ideales Gas}
+        Ein \emph{ideales Gas} ist ein System von $N$ identischen Teilchen im Volumen $V$, die nicht untereinander wechselwirken. \\
+
+        Thermische Zustandsgleichung
+        \begin{equation}
+          pV = N k_B T
+        \end{equation}
+
+        Kalorische Zustandsgleichung:
+        \begin{equation}
+          U = \frac{3}{2} N k_B T
+        \end{equation}
+
+        Entropie:
+        \begin{equation}
+          S(T,p) = N k_B \ln{\left[ \frac{V}{N}\left( \frac{4\pi m  U}{3 h^2 N} \right)^{\frac{3}{2}} \right]} + \frac{5}{2} N k_B
+        \end{equation}
+
+        Adiabatengleichung (gilt bei konstanten Wärmekapazitäten mit Adiabatenkoeffizient $\gamma = \frac{c_p}{c_V} = \frac{c_V + k_B}{c_V}$)
+        \begin{equation}
+          p V^\gamma = \konst
+        \end{equation}
+
+      \subsubsection{Quantenmechanisches ideales Gas}
+        Modell: Ununterscheidbare, wechselwirkungsfreie Teilchen (Fermionen oder Bosonen) mit Spinentartung. \\
+
+        Großkanonische Zustandssumme (Mit $\varepsilon_\alpha = \frac{\hbar^2 \vec{k}^2}{2m}$ der Energie im Zustand $\alpha=(\vec{k},\sigma)$):
+        \begin{equation}
+          \mathcal{Z} = \prod_{\alpha}
+            \begin{cases}
+              \left( 1-e^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosonen)} \\
+              \phantom{\big(} 1+e^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermionen)}
+            \end{cases}
+        \end{equation}
+
+        Mittlere Besetzungszahl:
+        \begin{equation}
+          \overline{n_\alpha} =
+              \begin{cases}
+                \dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosonen)} \\
+                \dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermionen)}
+              \end{cases} \\
+        \end{equation}
+
+        Entropie:
+        \begin{equation}
+          S= -k_B\sum_\alpha
+            \begin{cases}
+              \overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosonen)} \\
+              \overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermionen)}
+            \end{cases} \\
+        \end{equation}
+
+        Innere Energie, Teilchenzahl:
+        \begin{equation}
+          \begin{aligned}
+            U &= \sum_\alpha \overline{n_\alpha} \varepsilon_\alpha \\
+            N &= \sum_\alpha \overline{n_\alpha}
+          \end{aligned}
+        \end{equation}
+
+        Kalorische Zustandsgleichung:
+        \begin{equation}
+          U=\frac{3}{2}pV
+        \end{equation}
+
+        Thermische Zustandsgleichung:
+        \begin{equation}
+          \frac{pV}{N k_B T} = \frac{\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}{\tder{}{\ln z}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}
+        \end{equation}
+
+      \subsubsection{Van-der-Waals-Gas}
+        Zustandsgleichung des Van-der-Waals-Gas (Mit Kovolumen $b \ge 0$, Kohäsionsdruckparameter $a \ge 0$):
+        \begin{equation}
+          \left( p+\frac{a}{v^2} \right) \left( v-b \right) = k_B T
+        \end{equation}
+
+      \subsubsection{Phononengas}
+        Hamiltonfunktion eines Festkörpers mit $N$ Atomen:
+        \begin{equation}
+          H=\sum_i \frac{\pvec{p}_i^2}{2m} + \frac{1}{2}m\sum_{\stackrel{i,j}{\alpha,\beta}} D_{\alpha\beta}(\vec{r}_i - \vec{r}_j)u_{i,\alpha}u_{j,\beta}
+        \end{equation}
+
+        Die Hamiltonfunktion lässt sich separieren, sodass $3N$ Eigenmoden durch ein harmonisches Oszillatorpotential mit $\omega_\nu$ beschrieben werden. Für die Zustandssumme, mittlere Besetzungszahl $\overline{n}_\nu$ (Bose-Einstein-Verteilung) und innere Energie $U$ folgt:
+        \begin{equation}
+          \begin{aligned}
+            Z_\nu &= \sum_{n_\nu=0}^\infty e^{-\beta E_{n_\nu}} \\
+            Z &= \prod_\nu Z_\nu = \frac{1}{2\sinh{\left( \frac{\hbar\omega_\nu}{2 k_B T} \right)}} \\
+            \overline{n}_\nu &= \frac{1}{e^{\hbar\omega_\nu/k_B T} - 1} \\
+            U &= \sum_\nu \hbar\omega_\nu \left(\overline{n}_\nu + \frac{1}{2}\right)
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Hohlraumstrahlung}
+        Ähnlich dem Phononengas existiert in Planck's Beschreibung des schwarzen Strahlers ein Photonengas. \\
+
+        Innere Energie (Mit Stefan-Boltzmann-Konstante $\sigma$):
+        \begin{equation}
+          U = \frac{4\sigma}{c} V T^4
+        \end{equation}
+
+        Zustandsgleichung des Photonengas:
+        \begin{equation}
+          p(T) = \frac{U}{3V}
+        \end{equation}
+
+        Planck'sches Strahlungsgesetz (Spektrale Energiedichte $u(\omega,T) = \pder{U}{\omega}$):
+        \begin{equation}
+          u(\omega,T) = \frac{2 \omega^2}{\pi^2 c^3} \frac{\hbar \omega}{e^{\hbar \omega / k_B T} - 1}
+        \end{equation}
+
+        Stefan-Boltzmann-Gesetz (Intensität / Strahlungsleistung pro Fläche $I$, Stefan-Boltzmann-Konstante $\sigma$ und Emissionskoeffizient $\epsilon$; $\epsilon=1$ für Schwarzen Strahler):
+        \begin{equation}
+          I = \epsilon\sigma T^4
+        \end{equation}
+
+        Wien'sches Verschiebungsgesetz (Für die Wellenlänge $\lambda_{max}$ des Strahlungsmaximums):
+        \begin{equation}
+          \lambda_{max} T = \mathrm{konst}.
+        \end{equation}
+
+      \subsubsection{Idealer Paramagnetismus}
+        Zeemann-Energie im äußeren Feld $\vec{B}_0$:
+        \begin{equation}
+          H_B = -\sum_{i=1}^N \vec{m}_i \cdot \vec{B}_0
+        \end{equation}
+
+        Für Ising Spins ($s_i\in\lbrace +1, -1\rbrace$ mit $|\vec{m}_i| = \mu$) folgen Zustandssumme, Gibbs-Energie und Magnetisierung:
+        \begin{equation}
+          \begin{aligned}
+            Z(T,B_0) &= 2^N \cosh^N (\beta\mu B_0) \\
+            G(T,B_0) &= -k_B T \ln Z \\
+            \mathcal{M}(T,B_0) &= -\left(\pder{G}{B_0}\right)_T = N\mu \tanh(\mu B_0 /k_B T)
+          \end{aligned}
+        \end{equation}
+
+        Curie-Gesetz ($k_B T \gg \mu B_0$):
+        \begin{equation}
+          \mathcal{M} \propto \frac{1}{T}
+        \end{equation}
+
+      \subsubsection{Ising-Modell}
+        Wechselwirkungsenergie (Häufig nur mit Wechselwirkung direkter Nachbarn $J_{ij} = J \delta_{i,j\pm 1}$):
+        \begin{equation}
+          H = -\frac{1}{2}\sum_{i,j} J_{ij} s_i s_j -\mu B_0 \sum_i s_i
+        \end{equation}
+
+        Molekularfeldnäherung: Ersetzung von $s_i s_j \rightarrow s_i m$ wobei $m = \overline{s}$ das Molekularfeld ist. Vernachlässigung von Korrelationen $\overline{(s_i-m)(s_j-m)}\ll m^2$. \\
+        Molekularfeldnäherung und Selbstkonsistenzgleichung (in $D$ Dimensionen, $h:=\mu B_0$):
+        \begin{equation}
+          \begin{aligned}
+            H_{MF} &= -(h + 2 D J m) \sum_i s_i + D N J m^2 \\
+            m &= -\frac{1}{N}\pder{G}{h} = \tanh\left({\beta(h + 2 D J m)}\right)
+          \end{aligned}
+        \end{equation}
+
+
+
+  \newpage
+	\section{Formelsammlung}
+    \subsection{Analysis}
+  	  \subsubsection{Exponentialfunktion}
+
+  			Definition der Exponentialfunktion:
+  			\begin{equation}
+  				e^x=\exp{(x)}=\lim_{n\rightarrow \infty}\left(1+\frac{x}{n}\right)^n
+  			\end{equation}
+
+  		\subsubsection{Trigonometrische Funktionen}
+  				Identitäten
+  				\begin{equation}
+  					\begin{split}
+  						e^{i x}&=\cos x+i\sin x \\
+  						1&=\sin^{2}x+\cos^{2}x \\
+  						\cos{x}&=\frac{e^{i x}+e^{-i x}}{2} \\
+  						\sin{ x}&=\frac{e^{i x}-e^{-i x}}{2i} \\
+  					\end{split}
+  				\end{equation}
+
+  				Additionstheoreme:
+  				\begin{equation}
+  					\begin{split}
+  						\sin\left( x\pm y\right)&=\sin\left( x\right)\cos\left( y\right)\pm\cos\left( x\right)\sin\left( y\right) \\
+  						\cos\left( x\pm y\right)&=\cos\left( x\right)\cos\left( y\right)\mp\sin\left( x\right)\sin\left( y\right) \\
+  						2\cos( x)\cos( y)&=\cos( x+ y)+\cos( x- y) \\
+  						2\sin( x)\cos( y)&=\sin( x+ y)+\sin( x- y) \\
+  						2\sin( x)\sin( y)&=\cos( x- y)-\cos( x+ y) \\
+  					\end{split}
+  				\end{equation}
+
+  				Komposition Trigonometrischer Funktionen:
+          \begin{center}
+    				\begin{tabular}{| c || c | c | c |}
+      				\hline\xrowht{10pt}
+      				$\mathrm{trig}(\mathrm{arctrig}(x))$ & $\sin$ & $\cos$ & $\tan$ \\
+      				\hline
+      				\hline\xrowht{24pt}
+              $\arcsin(x)$ & $x$ & $\sqrt{1-x^2}$ & $\dfrac{x}{\sqrt{1-x^2}}$ \\
+      				\hline\xrowht{24pt}
+              $\arccos(x)$ & $\sqrt{1-x^2}$ & $x$ & $\dfrac{\sqrt{1-x^2}}{x}$ \\
+      				\hline\xrowht{24pt}
+              $\arctan(x)$ & $\dfrac{x}{\sqrt{x^2+1}}$ & $\dfrac{1}{\sqrt{x^2+1}}$ & $x$ \\
+      				\hline
+    				\end{tabular}
+  				\end{center}
+
+  				Standardwerte trigonometrischer Funktionen:
+  				\begin{center}
+  				\begin{tabular}{| c c || l l l |}
+  				\hline
+  				Bogenmaß & Grad & Sinus & Kosinus & Tangens \\
+  				\hline
+  				\hline\xrowht{12pt}
+  				$0$ & $0^\circ$ & $\sin\left(0\right)=0$ & $\cos\left(0\right)=1$ & $\tan\left(0\right)=0$ \\
+  				\hline\xrowht{12pt}
+  				$\frac{\pi}{6}$ & $30^\circ$ & $\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}$ & $\cos\left(\frac{\pi}{6}\right)=\frac{\sqrt{3}}{2}$ & $\tan\left(\frac{\pi}{6}\right)=\frac{1}{\sqrt{3}}$ \\
+  				\hline\xrowht{12pt}
+  				$\frac{\pi}{4}$ & $45^\circ$ & $\sin\left(\frac{\pi}{4}\right)=\frac{1}{\sqrt{2}}$ & $\cos\left(\frac{\pi}{4}\right)=\frac{1}{\sqrt{2}}$ & $\tan\left(\frac{\pi}{4}\right)=1$ \\
+  				\hline\xrowht{12pt}
+  				$\frac{\pi}{3}$ & $60^\circ$ & $\sin\left(\frac{\pi}{3}\right)=\frac{\sqrt{3}}{2}$ & $\cos\left(\frac{\pi}{3}\right)=\frac{1}{2}$ & $\tan\left(\frac{\pi}{3}\right)=\sqrt{3}$ \\
+  				\hline\xrowht{12pt}
+  				$\frac{\pi}{2}$ & $90^\circ$ & $\sin\left(\frac{\pi}{2}\right)=1$ & $\cos\left(\frac{\pi}{2}\right)=0$ & $\tan\left(\frac{\pi}{2}\right)=\pm\infty$ \\
+  				\hline
+  				\end{tabular}
+  				\end{center}
+
+
+  		\subsubsection{Hyperbolische Funktionen}
+  				Identitäten
+  				\begin{equation}
+  					\begin{split}
+  						e^{ x}&=\cosh x+\sinh x \\
+  						1&=\cosh^2{x}-\sinh^2{x} \\
+  						\cosh{ x}&=\frac{e^{ x}+e^{- x}}{2} \\
+  						\sinh{ x}&=\frac{e^{ x}-e^{- x}}{2} \\
+  						\sinh( x) &= -i \sin(i x)\\
+  						\cosh( x) &= \cos(i x)
+  					\end{split}
+  				\end{equation}
+
+  				Additionstheoreme:
+  				\begin{equation}
+  					\begin{split}
+  						\sinh\left( x\pm y\right)&=\sinh\left( x\right)\cosh\left( y\right)\pm\cosh\left( x\right)\sinh\left( y\right) \\
+  						\cosh\left( x\pm y\right)&=\cosh\left( x\right)\cosh\left( y\right)\pm\sinh\left( x\right)\sinh\left( y\right) \\
+  						\sinh{2x}&=2\sinh{x}\cosh{x} \\
+  						 \cosh{2x}&=2\cosh^2{x}+\sinh^2{x}
+  					\end{split}
+  				\end{equation}
+
+          Komposition hyperbolischer Funktionen:
+          \begin{center}
+    				\begin{tabular}{| c || c | c | c |}
+      				\hline\xrowht{10pt}
+      				$\mathrm{trigh}(\mathrm{artrigh}(x))$ & $\sinh$ & $\cosh$ & $\tanh$ \\
+      				\hline
+      				\hline\xrowht{24pt}
+              $\mathrm{arsinh}(x)$ & $x$ & $\sqrt{x^2+1}$ & $\dfrac{x}{\sqrt{x^2+1}}$ \\
+      				\hline\xrowht{24pt}
+              $\mathrm{arcosh}(x)$ & $\sqrt{\dfrac{x-1}{x+1}}(x+1)$ & $x$ & $\sqrt{\dfrac{x-1}{x+1}}\dfrac{(x+1)}{x}$ \\
+      				\hline\xrowht{24pt}
+              $\mathrm{artanh}(x)$ & $\dfrac{x}{\sqrt{1-x^2}}$ & $\dfrac{1}{\sqrt{1-x^2}}$ & $x$ \\
+      				\hline
+    				\end{tabular}
+  				\end{center}
+
+          Inverse Hyperbolische Funktionen:
+          \begin{equation}
+            \begin{aligned}
+              \mathrm{arsinh}(x) &= \ln\left(x+\sqrt{x^2+1}\right) \\
+              \mathrm{arcosh}(x) &= \ln\left(x+\sqrt{x^2-1}\right) \\
+              \mathrm{artanh}(x) &= \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right) \\
+            \end{aligned}
+          \end{equation}
+
+  		\subsubsection{Differentiation}
+        Kettenregel:
+        \begin{equation}
+          \pder{\vec{f}(\vec{g}(\vec{x}))}{x^k} = \sum_j \pder{ \vec{f}(\vec{g}(\vec{x}))}{g^j} \pder{g^j(\vec{x})}{x^k}
+        \end{equation}
+
+        Satz von Schwartz ($f(x,y)\in C^2$, d.h. $f$ ist zweimal stetig differenzierbar):
+        \begin{equation}
+          \frac{\partial^2 }{\partial x \partial y} f(x,y) = \frac{\partial^2 }{\partial y \partial x} f(x,y)
+        \end{equation}
+
+        Für Verknüpfte Größen $x(y,z), y(x,z), z(x,y)$ und eine umkehrbare Funktion $w(y,z)$:
+        \begin{equation}
+          \begin{aligned}
+            \left( \pder{x}{y} \right)_z &= \frac{1}{\left( \pder{y}{x} \right)_z} \\
+            -1 &= \left( \pder{x}{y} \right)_z \left( \pder{z}{x} \right)_y \left( \pder{y}{z} \right)_x \\
+            \left( \pder{x}{w} \right)_z &= \left( \pder{x}{y} \right)_z \left( \pder{y}{w} \right)_z \\
+            \left( \pder{x}{y} \right)_z &= \left( \pder{x}{y} \right)_w + \left( \pder{x}{w} \right)_y \left( \pder{w}{y} \right)_z \\
+          \end{aligned}
+        \end{equation}
+
+				Trigonometrische und hyperbolische Ableitungen:
+				\begin{equation}
+					\begin{split}
+						\frac{\diff}{\diff x}\arcsin x &= \frac{\pm 1}{\sqrt{1-x^2}} \\
+						\frac{\diff}{\diff x}\arccos x &= \frac{\mp 1}{\sqrt{1-x^2}} \\
+						\frac{\diff}{\diff x}\arctan x &= \frac{1}{x^2+1} \\
+						\frac{\diff}{\diff x}\mathrm{arsinh}\,x &= \frac{1}{\sqrt{1+x^2}} \\
+						\frac{\diff}{\diff x}\mathrm{arcosh}\,x &= \frac{\pm 1}{\sqrt{x^2-1}} \\
+						\frac{\diff}{\diff x}\mathrm{artanh}\,x &= \frac{1}{1-x^2} \\
+					\end{split}
+				\end{equation}
+
+        Jacobi Formel:
+        \begin{equation}
+          \tder{}{t}\mathrm{det} A(t) = \mathrm{tr}\left(A^T \tder{}{t} A\right)
+        \end{equation}
+
+  		\subsubsection{Integration}
+        Leibnitzregel für Parameterintegrale:
+        \begin{equation}
+          \tder{}{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\diff x = \int_{\alpha(y)}^{\beta(y)} \pder{f}{y}(x,y)\;\diff x + f(\beta(y),y)\tder{\beta}{y}(y)-f(\alpha(y),y)\tder{\alpha}{y}(y)
+        \end{equation}
+
+        Cauchy Integralsatz (für eine geschlossene Kurve $\partial \mathcal{A}$ und eine holomorphe Funktion $f(z)$ auf einem einfach zusammenhängenden Gebiet $G \subseteq \mathbb{C}$):
+        \begin{equation}
+          \int_{\partial \mathcal{A}} f(z)\;\diff z = 0
+        \end{equation}
+
+        Cauchy-Integralformel (für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
+        \begin{equation}
+          \frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
+        \end{equation}
+
+  			Trigonometrische Integrale:
+  			\begin{equation}
+  				\begin{split}
+  					\int \sin^2 x\;\diff x &= \frac{1}{2}( x-\sin  x\cos  x) \\
+  					\int \cos^2 x\;\diff x &= \frac{1}{2}( x+\sin  x\cos  x) \\
+  					\int{\sin x\cos x\;\diff x} &= -\frac{1}{2}\cos^2( x) \\
+  					\int \sin^3 x\;\diff x &= -\frac{1}{3}\cos{ x}\sin^2{ x}-\frac{2}{3}\cos{ x}
+            = \frac{1}{12}\cos{3 x}-\frac{3}{4}\cos{ x} \\
+  					\int \cos^3 x\;\diff x &= \phantom{-}\frac{1}{3}\sin x \cos^2 x+\frac{2}{3}\sin  x
+            = \frac{1}{12}\sin{3 x}+\frac{3}{4}\sin{ x} \\
+  				\end{split}
+  			\end{equation}
+
+        Bedeutende Integrale (Gauß-Integral, Integral über Sinus Cardinalis):
+        \begin{equation}
+          \begin{aligned}
+            \int_\mathbb{R} e^{-x^2}\;\diff x &= \sqrt{\pi} \\
+            \int_\mathbb{R} \frac{\sin x}{x}\;\diff x &= \pi \\
+          \end{aligned}
+        \end{equation}
+
+        Faltung ($f*g:\mathbb{R}^n \rightarrow \mathbb{C}$):
+
+        \begin{equation}
+          (f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\diff t
+        \end{equation}
+
+      \subsubsection{Distributionen}
+        Dirac-distribution / Dirac-Delta / Dirac-Funktion $\delta(x)$:
+        \begin{equation}
+          \int_\Omega f(x)\delta(x)\;\diff x = f(0)\;\forall\, \Omega\ni 0
+        \end{equation}
+
+        Dirac-Distribution einer nichtlinearen Funktion $f(x)$ mit Nullstellen $x_{0,i}$:
+        \begin{equation}
+          \delta(f(x)) = \sum_i \frac{1}{\left|\pder{f}{x}(x_{0,i})\right|}\delta(x-x_{0,i})
+        \end{equation}
+
+        Heavyside-Funktion $\Theta(x)$ und ihre Eigenschaften:
+        \begin{equation}
+          \begin{aligned}
+            \Theta(x) :=& \left\{\begin{array}{ll}
+                1 & x\ge 0 \\
+                0 & x<0 \\
+              \end{array}\right. \\
+              \tder{\Theta}{x}(x) =&\; \delta(x) \\
+              \int_{\mathbb{R}} f(x)\Theta(x)\;\diff x =& \int_{0}^{\infty} f(x)\;\diff x
+            \end{aligned}
+        \end{equation}
+
+  		\subsubsection{Gamma-Funktion}
+    			Definition:
+    			\begin{equation}
+    				\Gamma(z)=\int_0^{\infty}e^{-t}t^{z-1}\,dt
+    			\end{equation}
+
+    			Eigenschaften ($\forall n\in\mathbb{N}_0$):
+    			\begin{equation}
+      			\begin{array}{cc}
+      				\Gamma(z+1)=z\Gamma(z);
+      				&\;\; \Gamma\left(1 \right)=1; \\
+      				\Gamma(n+1) = n!
+      				&\;\; \Gamma\left(\frac{1}{2} \right)=\sqrt{\pi} \\
+      			\end{array}
+    			\end{equation}
+
+          Stirling Formel (Näherung für $n\rightarrow\infty$):
+          \begin{equation}
+            n! = \Gamma(n+1) \approx \sqrt{2\pi n} \left( \frac{n}{e} \right)^{n}
+          \end{equation}
+
+
+      \subsubsection{Funktionenräume}
+        $D$ ist eine Definitionsmenge.
+        \begin{itemize}
+          \item $C^p(D)$, Raum der $p$-fach stetig differenzierbaren Funktionen
+          \item $L^p(D)$, Raum der Äquivalenzklassen (bezügl. niederdimensionaler Ausnahmemengen) von Funktionen deren $p$-Norm Lebesque-integrierbar sind
+          \item $S(\mathbb{R})$, Raum der Funktionen die schneller fallen als jede Polynomfunktion (Schwartz-Raum)
+        \end{itemize}
+
+      \subsubsection{Folgen und Reihen}
+          Geometrische Summenformel ($\forall q \ne 1$):
+          \begin{equation}
+            \sum_{k=0}^n q^k=\frac{1-q^{n+1}}{1-q}
+          \end{equation}
+
+          Geometrische Reihe ($\forall \left|q\right| < 1$):
+          \begin{equation}
+            \sum_{k=0}^\infty q^k= \frac{1}{1-q}
+          \end{equation}
+
+          Binomischer Satz ($n\in\mathbb{R}$):
+          \begin{equation}
+            (x+y)^n=\sum_{k=0}^{n}\binomkoeff{n}{k}x^k y^{n-k}
+          \end{equation}
+
+          Identitäten:
+          \begin{equation}
+            \lim_{n\rightarrow\infty} \sqrt[n]{n} = 1
+          \end{equation}
+
+          Euler-McLaurin Formel:
+          \begin{equation}
+            \sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\diff x
+            + \frac{1}{2}   \left.\frac{\diff   f}{\diff x  } \right|_{a}^{b}
+            + \frac{1}{12}  \left.\frac{\diff^2 f}{\diff x^2} \right|_{a}^{b}
+            + \frac{1}{720} \left.\frac{\diff^3 f}{\diff x^3} \right|_{a}^{b}
+            + ...
+          \end{equation}
+
+        \subsubsection{Potenzreihen}
+          Potenzreihe:
+          \begin{equation}
+            f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n
+          \end{equation}
+
+          Konvergenzradius:
+          \begin{equation}
+            r = \frac{1}{\limsup\limits_{n\rightarrow\infty} \sqrt[n]{\left|a_n\right|}} = \lim_{n\rightarrow\infty}\left|\frac{a_n}{a_{n+1}}\right|
+          \end{equation}
+
+          Taylor-Entwicklung im Punkt $x_0$:
+          \begin{equation}
+            f\left(x\right)=\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\diff^{n}f\left(x_0\right)}{\diff x^{n}}\left(x-x_0\right)^{n}
+          \end{equation}
+
+    			Potenzreihe der Exponentialfunktion:
+    			\begin{equation}
+    				e^x=\sum_{k=0}^{\infty}{\frac{x^k}{k!}}
+    			\end{equation}
+
+          Potenzreihen von Sinus und Kosinus:
+          \begin{equation}
+            \begin{aligned}
+              \sin(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k+1}}{(2k+1)!} \\
+              \cos(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k}}{(2k)!} \\
+            \end{aligned}
+          \end{equation}
+
+    \subsection{Funktionsbasen}
+      Hermitesches ``Skalarprodukt'' im Vektorraum $R([0,2\pi],\mathbb{C})$:
+      \begin{equation}
+        \left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\diff x
+      \end{equation}
+
+      \subsubsection{Fourier Transformation}
+        Komplex-trigonometrische Basisfunktion:
+        \begin{equation}
+          \hat{e}_k(x):=e^{ikx}
+        \end{equation}
+
+        Diskrete komplexe Fourier Transformation:
+        \begin{equation}
+          (Tf)(x)=\sum_{k\in\mathbb{Z}}c_k e^{ikx}
+        \end{equation}
+
+        Komplexe Fourierkoeffizienten:
+        \begin{equation}
+          c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-ikx}\;\diff x
+        \end{equation}
+
+        Diskrete reelle Fourier Transformation:
+        \begin{equation}
+          (Tf)(x)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left[a_k \cos(kx) + b_k \sin(kx) \right]
+        \end{equation}
+
+        Beziehung zwischen komplexen und reellen Fourierkoeffizienten:
+        \begin{equation}
+          \begin{array}{clc}
+            c_0 = \dfrac{a_0}{2} & a_k = c_k+c_{-k} & \phantom{_{-}}c_k = \dfrac{1}{2}\left(a_k-ib_k\right) \\ [6pt]
+            & b_k = \dfrac{1}{i}\left(c_{-k}-c_{k}\right) & c_{-k} = \dfrac{1}{2}\left(a_k+ib_k\right) \\
+          \end{array}
+        \end{equation}
+
+        Kontinuierliche Fouriertransformation und Rücktransformation:
+        \begin{equation}
+          \begin{aligned}
+            (\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-i\vec{k}\cdot\vec{x}}\;\diff\vec{x} \\
+            \phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{i\vec{k}\cdot\vec{x}}\;\diff \vec{k} \\
+          \end{aligned}
+        \end{equation}
+
+        Identitäten der kontinuierlichen Fourier-Transformation (wobei $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
+        \begin{equation}
+          \begin{aligned}
+            \mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(x) \\
+            \mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pder{}{x}f(x) \\
+            \int_{\mathbb{R}} f^{*}(x) g(x)\;\diff x &=
+            \int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\diff k \\
+            \delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{ikx}\;\diff k \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Legendre Transformation}
+        Legendre Transformation (Selbstadjungierte Isometrie konvexer Funktionen)
+        \begin{equation}
+          (\mathcal{L}f)(p)=\max_x\left\lbrace xp-f(x) \right\rbrace
+        \end{equation}
+
+
+      \subsubsection{Laurent-Reihe}
+        Laurent-Reihe:
+        \begin{equation}
+          f(z)=\sum_{n\in\mathbb{Z}} a_n(z-z_0)^n
+        \end{equation}
+
+        Bestimmung der Koeffizienten:
+        \begin{equation}
+          a_n = \frac{1}{2 \pi i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\diff z
+        \end{equation}
+
+      \subsubsection{Kugelflächenfunktionen}
+        Entwicklung in Kugelflächenfunktionen:
+        \begin{equation}
+          f(\theta, \phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} f_{lm} Y_{lm}(\theta,\phi)
+        \end{equation}
+
+        Bestimmung der Koeffizienten:
+        \begin{equation}
+          f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\diff\theta\diff\phi
+        \end{equation}
+
+    \subsection{Differentialgleichungen (DGLs)}
+      \subsubsection{Allgemeines}
+        Für komplexe Funktionen $f(z)=u(z)+iv(z)$ mit $z=x+iy$, wobei $x,y,u,v\in\mathbb{R}$ gelten die Cauchy-Riemann'schen Differentialgleichungen:
+        \begin{equation}
+          \begin{aligned}
+            \pder{u}{x} &= \phantom{-}\pder{v}{y} \\
+            \pder{u}{y} &= -\pder{v}{x} \\
+          \end{aligned}
+        \end{equation}
+
+
+      \subsubsection{Green-Funktionen}
+        $\mathrm{D}$ ist ein willkürlicher linearer Differentialoperator, dann ist die Green-Funktion $G$ die Lösung der Gleichung:
+        \begin{equation}
+          \mathrm{D}_{\pvec{r}}\, G\left(\vec{r},\pvec{r}'\right) = \delta\left(\vec{r} - \pvec{r}'\right)
+        \end{equation}
+        Für die allgemeine Lösung der DGL $\mathrm{D}_{\pvec{r}}\, \phi = f\left(\vec{r}\right)$ folgt dann:
+        \begin{equation}
+          \phi\left(\vec{r}\right) = \int G\left(\vec{r},\pvec{r}'\right)f\left(\pvec{r}'\right)\;\diff^3\pvec{r}'
+        \end{equation}
+
+      \subsubsection{Harmonischer Oszillator}
+        Differentialgleichung:
+        \begin{equation}
+          \ddot{x}+\omega_0^2 x = 0
+        \end{equation}
+
+        Lösung:
+        \begin{equation}
+          x(t)=x_0 e^{\pm i\omega_0 t}
+        \end{equation}
+
+      \subsubsection{Angetriebener, gedämpfter harmonischer Oszillator}
+        Differentialgleichung:
+        \begin{equation}
+          m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x = F_0 e^{-i\omega t}
+        \end{equation}
+
+        Lösung:
+        \begin{equation}
+          x(t) = \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-i\omega t}
+        \end{equation}
+
+      \subsubsection{Bessel'sche Differentialgleichungen}
+        Differentialgleichung:
+        \begin{equation}
+          B_\nu f = x^2\frac{\diff^2 f}{\diff x^2} + x\tder{f}{x}+\left(x^2-\nu^2\right)f = 0
+        \end{equation}
+
+        Bessel-Funktion erster Gattung:
+        \begin{equation}
+          J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{i(x\sin\varphi-\nu\varphi)}\;\diff\varphi
+        \end{equation}
+
+      \subsubsection{Poisson-Gleichung}
+        Poisson-Gleichung der Elektrostatik:
+        \begin{equation}
+          \Nabla^2\phi = -\frac{\rho}{\epsilon_0}
+        \end{equation}
+
+        Ausreichende Bedingungen für Existenz und Eindeutigkeit von Lösungen der Poisson-Gleichung:
+        \begin{description}
+          \item[Dirichlet-Randbedingungen]\hfill \\
+            Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und das Potential $\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
+          \item[Neumann-Randbedingungen]\hfill \\
+            Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und der Normalengradient des Potentials $\vec{n}(\vec{r})\cdot\Nabla\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
+          \item[Randbedingungen mit Leitern bekannter Gesamtladungen]\hfill \\
+            Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und die Gesamtladungen $Q_j$ von Leitern die durch $\partial\mathcal{V}$ begrenzt werden sind bekannt.
+        \end{description}
+
+      \subsubsection{Laplace-Gleichung}
+        Laplace-Gleichung
+        \begin{equation}
+          \Delta\phi=\Nabla^2\phi = 0
+        \end{equation}
+
+      \subsubsection{Legendre' Differentialgleichung}
+        Legendre'sche Differentialgleichung ($l>0$):
+        \begin{equation}
+          \pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+l\left(l+1\right)f
+          = \frac{\partial^2 f}{\partial x^2} - \frac{2x}{1-x^2}\pder{f}{x} + \frac{l(l+1)}{1-x^2}f = 0
+        \end{equation}
+
+        Lösungen (Legendre-Polynome) / Rodrigues' Formel:
+        \begin{equation} \label{eq:legendre-polynome}
+          \begin{aligned}
+            P_0(x) &= 1 \\
+            P_1(x) &= x \\
+            P_2(x) &= \frac{1}{2}\left(3x^2-1\right) \\
+            P_l(x) &= \frac{1}{2^l l!}\frac{\diff^l}{\diff x^l}\left(x^2-1\right)^l \\
+          \end{aligned}
+        \end{equation}
+
+        Explizite Darstellung mit Binomialkoeffizient:
+        \begin{equation}
+          P_l(x)=\frac{1}{2^l} \sum_{k=0}^{l}\binomkoeff{l}{k}^2(x+1)^k(x-1)^{l-k}
+        \end{equation}
+
+        Orthogonalität der Legendre-Polynome:
+        \begin{equation}
+          \int_{-1}^1 P_l(x) P_k(x)\;\diff x = \delta_{lk} \frac{2}{2l+1}
+        \end{equation}
+
+      \subsubsection{Verallgemeinerte Legendre-Differentialgleichung}
+        Differentialgleichung ($l\in\mathbb{N}$ und $m\in\mathbb{Z}, -l\le m\le l$)
+        \begin{equation}
+          \pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+\left(l\left(l+1\right)-\frac{m^2}{1-x^2}\right)f= 0
+        \end{equation}
+
+        Lösungen (Legendre-Funktionen)
+        \begin{equation}
+          \begin{aligned}
+            P_l^m(x) &= \frac{(-1)^m}{2^l l!}\sqrt{1-x^2}^m
+            \frac{\diff^{l+m}}{\diff x^{l+m}}\left(x^2-1\right)^l \\
+            &= (-1)^m \frac{(m+l)!}{2^l l! (l-m)!}\frac{1}{\sqrt{1-x^2}^m}
+            \frac{\diff^{l-m}}{\diff x^{l-m}}\left(x^2-1\right)^l \\
+          \end{aligned}
+        \end{equation}
+
+      \subsubsection{Kugelflächenfunktionen}
+        Differentialgleichung:
+        \begin{equation}
+          -\left(
+            \frac{1}{\sin\theta}\pder{}{\theta}\sin\theta\pder{}{\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}
+          \right)
+          Y_{lm}(\theta,\phi) = l(l+1)Y_{lm}(\theta,\phi)
+        \end{equation}
+
+        Lösungen (Kugelflächenfunktionen):
+        \begin{equation} \label{eq:kugelflächenfunktionen}
+          Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} e^{im\varphi} P_l^m(\cos\theta)
+        \end{equation}
+
+        Orthonormalität der Kugelflächenfunktionen:
+        \begin{equation}
+          \int_0^{2\pi}\diff\varphi \int_0^{\pi}\diff\theta \sin\theta\,  Y_{lm}(\theta,\varphi) Y^{*}_{l'm'}(\theta,\varphi) = \delta_{ll'}\delta_{mm'}
+        \end{equation}
+
+      \subsubsection{Hermitesche Differentialgleichung}
+        Hermitesche Differentialgleichung ($n\in\mathbb{N}_0$):
+        \begin{equation}
+          \frac{\diff^2}{\diff x^2} H_n(x) -2x\tder{}{x} H_n+2 n H_n(x)=0
+        \end{equation}
+
+        Lösungen (Hermitpolynome):
+        \begin{equation} \label{eq:Hermitpolynome}
+          \begin{aligned}
+            H_n(x) &= (-1)^n e^{x^2} \frac{\diff^n}{\diff x^n}e^{-x^2} \\
+            &= e^{x^2/2}\left(x-\tder{}{x}\right)^n e^{-x^2/2} \\
+          \end{aligned}
+        \end{equation}
+
+        Orthogonalität der Hermitpolynome:
+        \begin{equation}
+          \int_{\mathbb{R}} H_m(x) H_n(x) e^{-x^2}\;\diff x = \sqrt{\pi}\,2^n n!\delta_{nm}
+        \end{equation}
+
+      \subsubsection{Laguerre'sche Differentialgleichung}
+        Differentialgleichung ($x>0$, $n\in\mathbb{N}_0$):
+        \begin{equation}
+          x\frac{\diff^2}{\diff x^2}L_n(x) +(1-x)\tder{}{x}L_n(x) + nL_n(x) = 0
+        \end{equation}
+
+        Lösung (Laguerre-Polynome):
+        \begin{equation}
+          L_n(x) = \frac{e^x}{n!}\frac{\diff^n}{\diff x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
+        \end{equation}
+
+        Orthogonalität der Laguerre-Polynome:
+        \begin{equation}
+          \int_0^\infty e^{-x} L_n(x) L_m(x)\;\diff x = \delta_{nm}
+        \end{equation}
+
+        Zugeordnete Laguerre-Polynome ($k\in\mathbb{N}_0$):
+        \begin{equation}
+          L_n^k(x) = (-1)^k\frac{\diff^k}{\diff x^k} L_{n+k}(x)
+        \end{equation}
+
+    \subsection{Geometrie}
+      \subsubsection{Allgemeines}
+        Volumen eine $n$-dimensionaler Kugel:
+        \begin{equation}
+          \Omega_n = \frac{\sqrt{\pi}^n}{\left(\frac{n}{2}\right)!}R^n
+            = \frac{\sqrt{\pi}^n}{\Gamma\left(\frac{n}{2}+1\right)}R^n
+        \end{equation}
+
+
+      \subsubsection{Raumwinkel}
+        Raumwinkel-Definition als Oberfläche-Anteil einer Kugel:
+        \begin{equation}
+          \Omega = \frac{A}{R^2}
+        \end{equation}
+
+        Differentieller Raumwinkel in Kugelkoordinaten:
+        \begin{equation}
+          \diff \Omega = \sin\theta\;\diff \theta \,\diff \phi
+        \end{equation}
+
+        Raumwinkel eines Kegels mit Öffnungswinkel $2\theta$:
+        \begin{equation}
+          \Omega = 4\pi\sin^2\left(\frac{\theta}{2}\right)
+        \end{equation}
+
+      \subsubsection{Dreiecke}
+        Sinussatz:
+        \begin{equation}
+          \frac{a}{\sin\alpha} = \frac{b}{\sin\beta} = \frac{c}{\sin\gamma}
+        \end{equation}
+
+        Kosinussatz ($\gamma$ gegenüber von $c$):
+        \begin{equation}
+          c^2 = a^2 + b^2 -2ab \cos\gamma
+        \end{equation}
+
+
+		\subsection{Vektoranalysis}
+      \subsubsection{Integration auf Mannigfaltigkeiten}
+        Allgemeiner Satz von Stokes ($\mathcal{M}$ orientierbare $n$-dimensionale Mannigfaltigkeit, $\omega$ stetig differenzierbare alternierende Differentialform der Ordnung $n-1$):
+        \begin{equation}
+          \int_\mathcal{M} \diff \omega = \int_{\partial\mathcal{M}} \omega
+        \end{equation}
+
+        Satz von Gauß / Gauß'scher Integralsatz:
+        \begin{equation}
+          \oint_{\partial\mathcal{V}}\vec{f}\cdot\vec{n}\,\mathrm{d}A=\int_{\mathcal{V}}\vec{\nabla}\cdot\vec{f}\;\mathrm{d}V
+        \end{equation}
+
+        Satz von Stokes / Stokes'scher Integralsatz:
+        \begin{equation}
+          \oint_{\partial\mathcal{A}}\vec{f}\cdot\mathrm{d}\vec{s}=\int_{\mathcal{A}}\left(\vec{\nabla}\times\pvec{f}\right)\cdot\vec{n}\;\mathrm{d}A
+        \end{equation}
+
+      \subsubsection{Vektor-Identitäten}
+        bac-cab:
+        \begin{equation}
+          \vec{a}\times\big(\vec{b}\times\vec{c}\big) = \vec{b}\big(\vec{a}\cdot\vec{c}\big) - \vec{c}\big(\vec{a}\cdot\vec{b}\big)
+        \end{equation}
+
+        Graßmann Identität:
+        \begin{equation}
+          \varepsilon_{ijk}\,\varepsilon_{imn}=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}
+        \end{equation}
+
+        Spatprodukt:
+        \begin{equation}
+          \vec{a}\cdot\left(\vec{b}\times\vec{c}\right) = \det\left(\vec{a},\vec{b},\vec{c}\right)
+        \end{equation}
+
+    		Jacobi-Matrix und Jacobideterminante:
+    		\begin{equation}
+    			D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
+    			= \left(\begin{matrix}
+    			\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
+    			\vdots & \ddots & \vdots \\
+    			\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
+    			\end{matrix}\right);\;\;J_f(x)=\left|\det\left(D\vec{f}(x)\right)\right|
+    		\end{equation}
+
+        Identitäten im Zusammenhang mit Gradienten, Divergenz und Rotation:
+    		\begin{equation}
+          \begin{aligned}
+            \Nabla\cdot\left(\Nabla\times\vec{A}\right) &= 0 \\
+            \Nabla\times\left(\Nabla\psi\right) &= 0 \\
+            \Nabla\cdot\left(\Nabla\psi\right) &= \Nabla^2\psi \\
+            \Nabla\times\left(\Nabla\times\vec{A}\right) &= \Nabla\left(\Nabla\cdot\vec{A}\right) -\Nabla^2\vec{A} \\
+            \Nabla\cdot\left(\psi\vec{A}\right) &= \Nabla\psi\cdot\vec{A} + \psi\Nabla\cdot\vec{A}\\
+            \Nabla\times\left(\psi\vec{A}\right) &= \Nabla\psi\times\vec{A} + \psi\Nabla\times\vec{A} \\
+            \Nabla\cdot\left(\vec{A}\times\vec{B}\right) &= \vec{B}\cdot\left(\Nabla\times\vec{A}\right) - \vec{A}\cdot\left(\Nabla\times\vec{B}\right) \\
+            \Nabla\times\left(\vec{A}\times\vec{B}\right) &= \vec{A}\left(\Nabla\cdot\vec{B}\right) - \vec{B}\left(\Nabla\cdot{A}\right) + \left(\vec{B}\cdot\Nabla\right)\vec{A} - \left(\vec{A}\cdot\Nabla\right)\vec{B} \\
+          \end{aligned}
+    		\end{equation}
+
+        Helmholtz-Zerlegung:
+    		\begin{equation}
+          \forall \vec{v}(\vec{r}):\; \exists\left(\phi\left(\vec{r}\right),\vec{A}(\vec{r})\right):\;\vec{v} = \Nabla\phi(\vec{r}) + \Nabla\times\vec{A}(\vec{r})
+    		\end{equation}
+
+      \subsubsection{Koordinatentransformationen}
+        Transformation zwischen kartesischen, zylindrischen und sphärischen Koordinaten:
+        \begin{center}
+          \begin{tabular}{| r || l | l | l |}
+            \hline\xrowht{10pt}
+            Koordinaten & Kartesisch & Zylindrisch & Sphärisch \\
+            \hline\hline\xrowht{45pt}
+            Kartesisch & $\begin{aligned}  x &= x \\  y &= y \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= \rho \cos\varphi \\  y &= \rho \sin\varphi \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= r \sin\theta \cos\varphi \\  y &= r \sin\theta \sin\varphi \\  z &= r \cos\theta\end{aligned}$ \\
+            \hline\xrowht{45pt}
+            Zylindrisch & ${\displaystyle {\begin{aligned}\rho &={\sqrt {x^{2}+y^{2}}}\\\varphi &=\arctan \left({\frac {y}{x}}\right)\\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=\rho \\\varphi &=\varphi \\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=r\sin \theta \\\varphi &=\varphi \\z&=r\cos \theta \end{aligned}}}$ \\
+            \hline\xrowht{70pt}
+            Sphärisch & ${\displaystyle {\begin{aligned}r&={\sqrt {x^{2}+y^{2}+z^{2}}}\\\theta &=\arctan \left({\frac {\sqrt {x^{2}+y^{2}}}{z}}\right)\\\varphi &=\arctan \left({\frac {y}{x}}\right)\end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&={\sqrt {\rho ^{2}+z^{2}}}\\\theta &=\arctan {\left({\frac {\rho }{z}}\right)}\\\varphi &=\varphi \end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&=r\\\theta &=\theta \\\varphi &=\varphi \\\end{aligned}}}$ \\
+            \hline
+          \end{tabular}
+        \end{center}
+
+        \begin{center}
+          \begin{tabular}{| r || l | l | l |}
+            \hline\xrowht{10pt}
+            Einheitsvektoren & Kartesisch & Zylindrisch & Sphärisch \\
+            \hline\hline\xrowht{45pt}
+            Kartesisch & N/A & $\begin{aligned}  \hat{\mathbf x} &= \cos\varphi \hat{\boldsymbol \rho} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\varphi \hat{\boldsymbol \rho} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \hat{\mathbf z}\end{aligned}$ & $\begin{aligned}  \hat{\mathbf x} &= \sin\theta \cos\varphi \hat{\mathbf r} + \cos\theta \cos\varphi \hat{\boldsymbol \theta} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\theta \sin\varphi \hat{\mathbf r} + \cos\theta \sin\varphi \hat{\boldsymbol \theta} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \cos\theta \hat{\mathbf r} - \sin\theta \hat{\boldsymbol \theta}\end{aligned}$ \\
+            \hline\xrowht{45pt}
+            Zylindrisch & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\mathbf {z} }}&={\hat {\mathbf {z} }}\end{aligned}}}$ & N/A & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&=\sin \theta {\hat {\mathbf {r} }}+\cos \theta {\hat {\boldsymbol {\theta }}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\\{\hat {\mathbf {z} }}&=\cos \theta {\hat {\mathbf {r} }}-\sin \theta {\hat {\boldsymbol {\theta }}}\end{aligned}}}$ \\
+            \hline\xrowht{70pt}
+            Sphärisch & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}+z{\hat {\mathbf {z} }}}{\sqrt {x^{2}+y^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {\left(x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}\right)z-\left(x^{2}+y^{2}\right){\hat {\mathbf {z} }}}{{\sqrt {x^{2}+y^{2}+z^{2}}}{\sqrt {x^{2}+y^{2}}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\end{aligned}}}$ & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {\rho {\hat {\boldsymbol {\rho }}}+z{\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {z{\hat {\boldsymbol {\rho }}}-\rho {\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\end{aligned}}}$ & N/A \\
+            \hline
+          \end{tabular}
+        \end{center}
+
+        Gradient:
+        \begin{equation}
+          \begin{aligned}
+            \Nabla f = \pder{f}{\vec{x}} &= \frac{\partial f}{\partial x}\hat{\mathbf x} + \frac{\partial f}{\partial y}\hat{\mathbf y}+ \frac{\partial f}{\partial z}\hat{\mathbf z} \\
+            &= \frac{\partial f}{\partial \rho}\hat{\boldsymbol \rho}+ \frac{1}{\rho}\frac{\partial f}{\partial \varphi}\hat{\boldsymbol \varphi}+ \frac{\partial f}{\partial z}\hat{\mathbf z} \\
+            &= \frac{\partial f}{\partial r}\hat{\mathbf r}+ \frac{1}{r}\frac{\partial f}{\partial \theta}\hat{\boldsymbol \theta}+ \frac{1}{r\sin\theta}\frac{\partial f}{\partial \varphi}\hat{\boldsymbol \varphi} \\
+          \end{aligned}
+        \end{equation}
+
+        Divergenz:
+        \begin{equation}
+          \begin{aligned}
+            \Nabla\cdot\vec{A} &= \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z} \\
+            &= \frac{1}{\rho}\frac{\partial \left( \rho A_\rho  \right)}{\partial \rho}+ \frac{1}{\rho}\frac{\partial A_\varphi}{\partial \varphi}+ \frac{\partial A_z}{\partial z} \\
+            &= \frac{1}{r^2}\frac{\partial \left( r^2 A_r \right)}{\partial r}+ \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta} \left(  A_\theta\sin\theta \right)+ \frac{1}{r\sin\theta}\frac{\partial A_\varphi}{\partial \varphi} \\
+          \end{aligned}
+        \end{equation}
+
+        Rotation:
+        \begin{equation}
+          \begin{aligned}
+            \Nabla\times\vec{A} &= \left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right) \hat{\mathbf x} + \left(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}\right) \hat{\mathbf y} + \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right) \hat{\mathbf z} \\
+            &= {\displaystyle {\left({\frac {1}{\rho }}{\frac {\partial A_{z}}{\partial \varphi }}-{\frac {\partial A_{\varphi }}{\partial z}}\right){\hat {\boldsymbol {\rho }}}+\left({\frac {\partial A_{\rho }}{\partial z}}-{\frac {\partial A_{z}}{\partial \rho }}\right){\hat {\boldsymbol {\varphi }}}+{\frac {1}{\rho }}\left({\frac {\partial \left(\rho A_{\varphi }\right)}{\partial \rho }}-{\frac {\partial A_{\rho }}{\partial \varphi }}\right){\hat {\mathbf {z} }}}} \\
+            &= {\displaystyle {{\frac {1}{r\sin \theta }}\left({\frac {\partial }{\partial \theta }}\left(A_{\varphi }\sin \theta \right)-{\frac {\partial A_{\theta }}{\partial \varphi }}\right){\hat {\mathbf {r} }}+\frac{1}{r}\left({\frac {1}{\sin \theta }}{\frac {\partial A_{r}}{\partial \varphi }}-{\frac {\partial }{\partial r}}\left(rA_{\varphi }\right)\right){\hat {\boldsymbol {\theta }}}+{\frac {1}{r}}\left({\frac {\partial }{\partial r}}\left(rA_{\theta }\right)-{\frac {\partial A_{r}}{\partial \theta }}\right){\hat {\boldsymbol {\varphi }}}}} \\
+          \end{aligned}
+        \end{equation}
+
+      Skalarer Laplace-Operator:
+      \begin{equation}
+        \begin{aligned}
+          \Delta f = \Nabla^2 f &= \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} \\
+          &= \frac{1}{\rho} \frac{\partial}{\partial \rho}\left(\rho \frac{\partial f}{\partial \rho}\right)+ \frac{1}{\rho^2} \frac{\partial^2 f}{\partial \varphi^2}+ \frac{\partial^2 f}{\partial z^2} \\
+          &= {\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial f}{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial f}{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}f}{\partial \varphi ^{2}}}
+        \end{aligned}
+      \end{equation}
+
+
+		\subsection{Stochastik}
+      \subsubsection{Allgemeines}
+        Fakultät:
+  			\begin{equation}
+  				n!=\Gamma(n+1)=\prod_{k=1}^{n}k=(n)(n-1)(n-2)...
+  			\end{equation}
+
+  			Binomialkoeffizient ($n\ge k$):
+  			\begin{equation}
+  				\binomkoeff{n}{k} = \frac{k!}{\left(n-k\right)!\,k!}
+  			\end{equation}
+
+  			Eigenschaften des Binomialkoeffizienten:
+  			\begin{equation}
+  			\begin{array}{cl}
+  				\binomkoeff{n}{0}=\binomkoeff{n}{n} = 1 & \binomkoeff{n}{k} = \binomkoeff{n}{n-k}\\ [8pt]
+  				\binomkoeff{n+1}{k+1}=\binomkoeff{n}{k}+\binomkoeff{n}{k+1}\\
+  			\end{array}
+  			\end{equation}
+
+      \subsubsection{Erwartungswert und Varianz}
+        Definiton des Erwartungswerts:
+        \begin{equation}
+          \mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\;\diff x
+        \end{equation}
+
+        Definiton der Varianz und Standardabweichung:
+        \begin{equation}
+          \sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\;\diff x = E\left[X^2\right]-E^2\left[X\right]
+        \end{equation}
+
+        Arithmetische Mittel:
+        \begin{equation}
+          \bar{x}=\frac{1}{n}\sum_{j=1}^n x_i
+        \end{equation}
+
+        Gewichtetes Mittel:
+        \begin{equation}
+          \begin{aligned}
+            \hat{x} &= \frac{\sum_{j=1}^n \frac{x_j}{\sigma_j^2}}{\sum_{j=1}^n \frac{1}{\sigma_j^2}} \\
+            \sigma_{\hat{x}}^2 &= \frac{1}{\sum_{j=1}^n \frac{1}{\sigma_j^2}}
+          \end{aligned}
+        \end{equation}
+
+        Empirische Varianz:
+        \begin{equation}
+          s^2 = \frac{1}{n-1}\sum_{j=1}^n (x_j-\bar{x})^2
+        \end{equation}
+
+        Definition der Kovarianz:
+        \begin{equation}
+          V_{xy} = E\left[(x-\mu_x)(y-\mu_y)\right] = E\left[xy\right]-\mu_x\mu_y
+        \end{equation}
+
+        Korrelationskoeffizient ($-1\le\rho_{xy}\le 1$):
+        \begin{equation}
+          \rho_{xy} = \frac{V_{xy}}{\sigma_x\sigma_y}
+        \end{equation}
+
+        Rechnen mit Erwartungswerten und Varianzen (Die letzte Gleichung gilt nur für unabhängige $X, Y$.):
+        \begin{equation}
+  			\begin{array}{rl}
+  				E\left[aX\right] = \phantom{^2}a E\left[X\right]
+  				&\;\;
+          E\left[X+Y\right] = E\left[X\right] + E\left[Y\right]
+          \\
+          V\left[aX\right] = a^2 V\left[X\right]
+          &\;\;
+          V\left[X+Y\right] = E\left[X\right] + E\left[Y\right]
+          \\
+  			\end{array}
+  			\end{equation}
+
+      \subsubsection{Erzeugende-Funktionen}
+        Für Zufallsgröße $X$ ist die \emph{Erzeugende} definiert als
+        \begin{equation}
+          Z(\lambda) = E\left[ \exp(\lambda X) \right]
+        \end{equation}
+
+        Die \emph{Momente} der Zufallsvariable sind definiert als
+        \begin{equation}
+          E\left[X^n\right] = \left.\frac{\diff^n Z}{\diff \lambda^n}\right|_{\lambda=0}
+        \end{equation}
+
+        Aus der \emph{kumulantenerzeugende Funktion} $F(\lambda)=\ln Z(\lambda)$ erhält man
+        \begin{equation}
+          \begin{aligned}
+            F(0) &= 0 \\
+            \tder{F}{\lambda}(0) &= E\left[X\right] \\
+            \frac{\diff^2 F}{\diff \lambda^2}(0) &= V\left[X\right] \\
+          \end{aligned}
+        \end{equation}
+
+
+      \subsubsection{Fehlerfortpflanzung}
+        Gauß'sches Fehlerfortpflanzungsgesetz:
+        \begin{equation}
+          \sigma_y^2 = \sum_{j,k=1}^n \left[\pder{y}{x_j}\pder{y}{x_k}\right]_{\vec{x}=\vec{\mu}} V_{jk}
+        \end{equation}
+
+        Gauß'sches Fehlerfortpflanzungsgesetz für unkorrelierte $x_i$ (d.h. $V_{jj} = \sigma_{j}^2$ und $V_{jk} = 0 \;\forall j\ne k$):
+        \begin{equation}
+          \sigma_y^2 = \sum_{j=1}^n \left[\pder{y}{x_j}\right]^2_{\vec{x}=\vec{\mu}} \sigma_j^2
+        \end{equation}
+
+
+      \subsubsection{Bedingte Wahrscheinlichkeiten}
+        Definition bedingter Wahrscheinlichkeiten:
+        \begin{equation}
+          P(A|B) := \frac{P(A \cap B)}{P(B)}
+        \end{equation}
+
+        Satz von Bayes:
+        \begin{equation}
+          P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+        \end{equation}
+
+      \subsubsection{Diskrete Verteilungen}
+        Binomialverteilung ($k$ aus $n$ bei Bernoulli-Experiment):
+        \begin{equation}
+          \begin{aligned}
+            P(k)&=\binomkoeff{n}{k}p^k(1-p)^{n-k} \\
+            \mu &= np \\
+            \sigma^2 &= np(1-p)
+          \end{aligned}
+        \end{equation}
+
+        Poisson-Verteilung:
+        \begin{equation}
+          \begin{aligned}
+            \rho(k) &= \frac{\nu^k}{k!} e^{-\nu} \\
+            \mu &= \sigma^2 = \nu
+          \end{aligned}
+        \end{equation}
+
+        Hypergeometrische Verteilung ($k$ aus $M\le N$ von $n$ Zügen):
+        \begin{equation}
+          P(x)=\frac{\binomkoeff{M}{k}\binomkoeff{N-M}{n-k}}{\binomkoeff{N}{n}}
+        \end{equation}
+
+      \subsubsection{kontinuierliche Verteilungen}
+        Zentraler Grenzwertsatz: \par
+        \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \\
+
+        Normalverteilung:
+  			\begin{equation}
+  				\rho(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+  			\end{equation}
+
+        Gleichverteilung:
+        \begin{equation}
+          \begin{aligned}
+            \rho(x) =& \left\{\begin{array}{ll}
+                \frac{1}{\beta-\alpha} & \alpha\le x\le \beta \\
+                0 & \text{sonst} \\
+              \end{array}\right. \\
+              \mu =& \frac{1}{2}(\alpha+\beta) \\
+              \sigma^2 =& \frac{1}{12}(\beta-\alpha)^2 \\
+            \end{aligned}
+        \end{equation}
+
+
+  \newpage
+	\section{Konstanten}
+		\subsection{Fundamentale physikalische Konstanten}
+			\begin{center}
+  			\begin{tabular}{| L{.5\textwidth} C{.1\textwidth} L{.3\textwidth} |}
+    			\hline
+    			Name & Symbol & Wert \\
+    			\hline
+    			\hline\xrowht{12pt}
+    			Lichtgeschwindigkeit im Vakuum & $c$ & $299\,792\,458\;\frac{\mathrm{m}}{\mathrm{s}}$ (exakt) \\
+    			\hline\xrowht{12pt}
+    			Planck'sches Wirkungsquantum & $h$ & $6.626\,070\,15\cdot 10^{-34}\;\mathrm{J\,s}$  (exakt) \\
+    			\hline\xrowht{12pt}
+    			Newton'sche Gravitationskonstante & $G$ & $6.674\,30(15)\cdot 10^{-11}\;\frac{\mathrm{m^3}}{\mathrm{kg\,s^2}} $ \\
+    			\hline\xrowht{12pt}
+    			Elementarladung & $e$ & $1.602\,176\,634\cdot 10^{-19}\;\mathrm{C}$ (exakt) \\
+    			\hline\xrowht{12pt}
+    			Elektrische Feldkonstante / Vakuum-Permittivität & $\varepsilon_0$ & $8.854\,187\,812\,8(13)\cdot 10^{-12}\;\frac{\mathrm{A\,s}}{\mathrm{V\,m}}$ \\
+    			\hline\xrowht{12pt}
+    			Magnetische Feldkonstante / Vakuum-Permeabilität & $\mu_0$ & $1.256\,637\,062\,12(19)\cdot 10^{-6}\;\frac{\mathrm{N}}{\mathrm{m^2}}$ \\
+    			\hline\xrowht{12pt}
+    			Boltzmann-Konstante & $k_B$ & $1.380\,649\cdot 10^{-23}\;\frac{\mathrm{J}}{\mathrm{K}}$ (exakt) \\
+    			\hline\xrowht{12pt}
+    			Avogadro-Konstante & $N_A$ & $6.022\,140\,76\cdot 10^{23}\;\frac{1}{\mathrm{mol}}$ (exakt) \\
+    			\hline
+  			\end{tabular}
+			\end{center}
+
+		\subsection{Konstanten von Elementarteilchen}
+			\begin{center}
+  			\begin{tabular}{|  L{.4\textwidth} C{.1\textwidth} L{.4\textwidth}  |}
+    			\hline
+    			Name & Symbol & $\phantom{-}$Wert \\
+    			\hline
+    			\hline\xrowht{12pt}
+    			Elektronenmasse & $m_e$ & $\phantom{-}9.109\,383\,701\,5(28)\cdot 10^{-31}\;\mathrm{kg}$ \\
+    			\hline\xrowht{12pt}
+    			Protonenmasse & $m_p$ & $\phantom{-}1.672\,621\,923\,69(51)\cdot 10^{-27}\;\mathrm{kg}$ \\
+    			\hline\xrowht{12pt}
+    			Neutronenmasse & $m_n$ & $\phantom{-}1.674\,927\,498\, 04(95)\cdot 10^{-27}\;\mathrm{kg}$ \\
+    			\hline\xrowht{12pt}
+    			Landé-Faktor des Elektrons & $g_e$ & $\phantom{-}2.002\,319\,304\,362\,56(35)$ \\
+    			\hline\xrowht{12pt}
+    			Landé-Faktor des Protons & $g_p$ & $\phantom{-}5.585\,694\,689\,3(1\,6)$ \\
+    			\hline\xrowht{12pt}
+    			Landé-Faktor des Neutrons & $g_n$ & $- 3.826\,085\,45(90)$ \\
+    			\hline
+  			\end{tabular}
+			\end{center}
+
+    \subsection{Zusammengesetzte Konstanten}
+      \begin{center}
+        \begin{tabular}{| L{.45\textwidth} L{.15\textwidth} L{.3\textwidth} |}
+          \hline
+          Name & Definition & Wert \\
+          \hline
+          \hline\xrowht{23pt}
+          Reduziertes Planck'sches Wirkungsquantum & $\hbar:=\dfrac{h}{2\pi}$ & $1.054\,571\,817...\cdot 10^{-34}\;\mathrm{J\,s}$ \\
+          \hline\xrowht{23pt}
+          Stefan-Boltzmann-Konstante & $\sigma:=\dfrac{2\pi^5 k_B^4}{15h^3c^2}$ & $5.670\,374\,419...\cdot 10^{-8}\;\frac{\mathrm{W}}{\mathrm{m^2\,K^4}}$ \\
+          \hline\xrowht{23pt}
+          Rydberg-Konstante & $R_\infty := \dfrac{m_e e^4}{8 c h^2 \varepsilon_0^2}$ & $1.097\,373\,156\,816\,0(2\,1)\cdot 10^{7}\;\frac{1}{\mathrm{m}}$ \\
+          \hline\xrowht{23pt}
+          Rydberg-Energie & $R^* := \dfrac{m_e e^4}{8 h^2 \varepsilon_0^2}$ & $2.179\,872\,361\,103\,5(4\,2)\cdot 10^{-18}\;\mathrm{J}$ \\
+          \hline\xrowht{23pt}
+          Bohr'scher Radius & $\rho := \dfrac{4\pi\hbar^2\varepsilon_0}{m_e e^2}$ & $5.291\,772\,109\,03(80) \cdot 10^{-11}\;\mathrm{m}$ \\
+          \hline\xrowht{23pt}
+          Feinstrukturkonstante & $\alpha := \dfrac{e^2}{4\pi\varepsilon_0\hbar c}$ & $7.297\,352\,537\,6(5\,0) \cdot 10^{-3} \approx\frac{1}{137}$ \\
+          \hline\xrowht{23pt}
+          Bohrsche Magneton & $\mu_B := \dfrac{e \hbar}{2 m_e}$ & $9.274\,009\,994\,(57)\cdot 10^{-24}\;\frac{\mathrm{J}}{\mathrm{T}}$ \\
+          \hline\xrowht{23pt}
+          Kern-Magneton & $\mu_K := \dfrac{e \hbar}{2 m_p}$ & $5.050\,783\,746\,1(1\,5)\cdot 10^{-27}\;\frac{\mathrm{J}}{\mathrm{T}}$ \\
+          \hline
+        \end{tabular}
+      \end{center}
+
+		\subsection{Astronomische Konstanten}
+			\begin{center}
+  			\begin{tabular}{|  L{.5\textwidth} C{.1\textwidth} L{.3\textwidth}  |}
+    			\hline
+    			Name & Symbol & Wert \\
+    			\hline
+    			\hline\xrowht{12pt}
+    			Sonnenmasse & $M_\odot$ & $1.988\,92(25)\cdot 10^{30}\;\mathrm{kg}$ \\
+    			\hline\xrowht{12pt}
+    			Erdmasse & $M_\oplus$ & $5.972\,2(6) \cdot 10^{24}\;\mathrm{kg}$ \\
+    			\hline\xrowht{12pt}
+    			mittlerer Erdradius & $R_\oplus$ & $6.3781 \cdot 10^{6}\;\mathrm{m}$ \\
+    			\hline\xrowht{12pt}
+    			Solarkonstante & $E_0$ & $1361 \;\mathrm{\frac{W}{m^2}}$ \\
+    			\hline\xrowht{12pt}
+    			Gegenwärtige Hubblekonstante & $H_0$ & $2.33 \cdot 10^{-18} \;\mathrm{\frac{1}{s}}$ \\
+    			\hline\xrowht{12pt}
+    			Kosmologische Konstante & $\Lambda$ & $1.088(30)\cdot 10^{-52} \;\mathrm{\frac{1}{m^2}}$ \\
+    			\hline
+  			\end{tabular}
+			\end{center}
+
+      Liste von Standard Gravitationsparametern: \url{https://en.wikipedia.org/wiki/Standard_gravitational_parameter}
+
+    \subsection{Einheiten}
+      \begin{center}
+        \begin{tabular}{| L{.4\textwidth} L{.1\textwidth} L{.4\textwidth} |}
+          \hline
+          Name & Symbol & Definierter Wert \\
+          \hline
+          \hline\xrowht{23pt}
+          Astronomische Einheit & $\mathrm{AE}$, $\mathrm{AU}$ & $149\,597\,870\,700\;\mathrm{m}$ \\
+          \hline\xrowht{23pt}
+          Parsec & $\mathrm{pc}$ & $\dfrac{648000}{\pi}\,\mathrm{AE} = 3.085\,677\,581...\cdot{10^{16}}\;\mathrm{m}$ \\
+          \hline\xrowht{23pt}
+          Lichtjahr & $\mathrm{ly}$ & $9\,460\,730\,472\,580\,800\;\mathrm{m}$ \\
+          \hline\xrowht{23pt}
+          \r{A}ngström & ${\mbox{\normalfont\AA}}$ & $10^{-10}\;\mathrm{m}$ \\
+          \hline\xrowht{23pt}
+          Barn & $\mathrm{b}$ & $10^{-18}\;\mathrm{m^2}$ \\
+          \hline\xrowht{23pt}
+          Atomare Masseneinheit & $\mathrm{u}$ & $\frac{1}{12}m(\prescript{12}{6}{\mathbf{C}})=1.660\,539\,066\,60(50)\cdot 10^{-27}\;\mathrm{kg}$ \\
+          \hline\xrowht{23pt}
+          Bar & $\mathrm{bar}$ & $10^5\;\mathrm{Pa}$ \\
+          \hline\xrowht{23pt}
+          Atmosphäre & $\mathrm{atm}$ & $101\,325\;\mathrm{Pa}$ \\
+          \hline\xrowht{23pt}
+          Gauß & $\mathrm{Gs}$ & $10^{-4}\;\mathrm{T}$ \\
+          \hline\xrowht{23pt}
+          Mol & $\mathrm{mol}$ & $6.022\,140\,76\cdot 10^{23}$ \\
+          \hline
+        \end{tabular}
+      \end{center}
+\end{document}

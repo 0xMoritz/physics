@@ -1,0 +1,8 @@
+*.gz
+*.yaml
+*.toc
+*.fls
+*.pdf
+*.fdb_latexmk
+*.aux
+*.out
