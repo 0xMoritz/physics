@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  27 MAR 2022 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  28 MAR 2022 12:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -674,21 +674,15 @@ tional _
  []
 
 [56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3087.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3089.
 [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3087.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3089.
 (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3087.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3087.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3089.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3089.
 
-
-Package rerunfilecheck Warning: File `physics.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `physics.out':
-(rerunfilecheck)             Before: A4477374CF831CD08E5E0A5C0CE2D129;11416
-(rerunfilecheck)             After:  A8E5B986BF84C10B9D2C829A8650B4E7;11402.
+Package rerunfilecheck Info: File `physics.out' has not changed.
+(rerunfilecheck)             Checksum: A8E5B986BF84C10B9D2C829A8650B4E7;11402.
  ) 
 Here is how much of TeX's memory you used:
  13200 strings out of 482502
@@ -717,7 +711,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1095.pfb>
-Output written on physics.pdf (57 pages, 443028 bytes).
+Output written on physics.pdf (57 pages, 443149 bytes).
 PDF statistics:
  1569 PDF objects out of 1728 (max. 8388607)
  1476 compressed objects within 15 object streams
