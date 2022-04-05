@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  28 MAR 2022 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  5 APR 2022 12:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -664,12 +664,12 @@ tional _
  []
 
 [56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3089.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3091.
 [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3089.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3091.
 (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3089.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3089.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3091.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3091.
 
 Package rerunfilecheck Info: File `physics.out' has not changed.
 (rerunfilecheck)             Checksum: A8E5B986BF84C10B9D2C829A8650B4E7;11402.
@@ -701,7 +701,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1095.pfb>
-Output written on physics.pdf (57 pages, 443149 bytes).
+Output written on physics.pdf (57 pages, 443194 bytes).
 PDF statistics:
  1569 PDF objects out of 1728 (max. 8388607)
  1476 compressed objects within 15 object streams
