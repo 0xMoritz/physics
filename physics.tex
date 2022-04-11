@@ -2325,6 +2325,14 @@
             \lim_{n\rightarrow\infty} \sqrt[n]{n} = 1
           \end{equation}
 
+          Abelscher Grenzwertsatz:
+          \begin{equation}
+            \begin{aligned}
+              \lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty e^{-\eta t} f(t) \,\diff t \\
+              \lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} e^{+\eta t} f(t) \,\diff t \\
+            \end{aligned}
+          \end{equation}
+
           Euler-McLaurin Formel:
           \begin{equation}
             \sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\diff x
