@@ -1284,7 +1284,7 @@
       \begin{equation}
         \begin{aligned}
           \hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
-          \left< \hat{\vec{J}}^2 \right> &= j(j+1)\hbar^2 \\
+          \left< \hat{\pvec{J}}^2 \right> &= j(j+1)\hbar^2 \\
           \left< \hat{J}_z \right> &= m_j\hbar \\
         \end{aligned}
       \end{equation}
@@ -1447,6 +1447,12 @@
             \Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} e^{-\frac{q^2}{2}} H_n(q) \\
           \end{aligned}
         \end{equation}
+
+    \subsection{Streuung}
+      Lippmann-Schwinger-Gleichung
+      \begin{equation}
+        \Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta\rightarrow 0} G_0(\epsilon_{\vec{p},\mu}\pm i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
+      \end{equation}
 
 
   \newpage
@@ -2222,6 +2228,11 @@
         Cauchy-Integralformel (für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
         \begin{equation}
           \frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
+        \end{equation}
+
+        Residuensatz (für eine einfache, geschlossene, stückweise stetig differenzierbare Kontour $\gamma:\left[a,b\right]\rightarrow G$ und $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorph mit Polen $a_1, a_2, .., a_n$, und Residuen $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ für $f(z)=\frac{g(z)}{(z-a)^k}$ in der Nähe von $a$:
+        \begin{equation}
+          \int_\gamma f(z)\,\diff z = 2\pi i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
         \end{equation}
 
   			Trigonometrische Integrale:

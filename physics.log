@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  11 APR 2022 08:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  11 APR 2022 10:01
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -556,27 +556,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 819--820
  []
 
 [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1486--1487
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1488--1489
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1495--1496
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
 
  []
 
@@ -586,32 +571,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 1499--1500
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1512--1513
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1526--1529
+Underfull \hbox (badness 10000) in paragraph at lines 1503--1504
 
  []
 
-[29]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1518--1519
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1532--1535
 
  []
 
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1538--1541
+
+ []
+
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1601--1602
+Underfull \hbox (badness 10000) in paragraph at lines 1607--1608
 
  []
 
 [31]
-Overfull \hbox (13.9997pt too wide) in paragraph at lines 1647--1656
+Overfull \hbox (13.9997pt too wide) in paragraph at lines 1653--1662
  [] 
  []
 
 [32]
-Overfull \hbox (6.59421pt too wide) in paragraph at lines 1723--1724
+Overfull \hbox (6.59421pt too wide) in paragraph at lines 1729--1730
 []\OT1/cmr/m/n/10.95 Der W[]armetransport ist ir-re-ver-si-bel, f[]ur die Entro
 -pie-dich-te $\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t; [
 ]\OT1/cmr/m/n/10.95 )$ und die Entro-pie-strom-dich-te $[](\OML/cmm/m/it/10.95 
@@ -619,78 +619,88 @@ t; []\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1728--1729
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1735
 
  []
 
 [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1861--1862
+Underfull \hbox (badness 10000) in paragraph at lines 1867--1868
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1899--1900
+Underfull \hbox (badness 10000) in paragraph at lines 1905--1906
 
  []
 
 
-Overfull \hbox (0.25671pt too wide) in paragraph at lines 1916--1917
+Overfull \hbox (0.25671pt too wide) in paragraph at lines 1922--1923
 []\OT1/cmr/m/n/10.95 Adiabatengleichung (gilt bei kon-stan-ten W[]armekapazit[]
 aten mit Adia-ba-ten-ko-ef-fi-zi-ent $\OML/cmm/m/it/10.95 ^^M \OT1/cmr/m/n/10.9
 5 = [] = []$) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1922--1923
+Underfull \hbox (badness 10000) in paragraph at lines 1928--1929
 
  []
 
 [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1992--1993
+Underfull \hbox (badness 10000) in paragraph at lines 1998--1999
 
  []
 
 [38]
-Overfull \hbox (3.95258pt too wide) in paragraph at lines 2045--2047
+Overfull \hbox (3.95258pt too wide) in paragraph at lines 2051--2053
 []\OT1/cmr/m/n/10.95 Molekularfeldn[]aherung: Er-set-zung von $\OML/cmm/m/it/10
 .95 s[]s[] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 s[]m$ \OT1/cmr/m/n/10.95 w
 o-bei $\OML/cmm/m/it/10.95 m \OT1/cmr/m/n/10.95 = []$ das Mo-le-ku-lar-feld ist
 . Ver-nachl[]assigung
  []
 
-[39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
-Overfull \hbox (68.66566pt too wide) in paragraph at lines 2751--2762
+[39] [40] [41]
+Overfull \hbox (2.77629pt too wide) in paragraph at lines 2233--2234
+\OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/10.95 : \OML/cmm/m/i
+t/10.95 G\OMS/cmsy/m/n/10.95 nf\OML/cmm/m/it/10.95 a[]; a[]; ::; a[]\OMS/cmsy/m
+/n/10.95 g ! \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 ho-lo-morph mit Po-len $\OM
+L/cmm/m/it/10.95 a[]; a[]; ::; a[]$\OT1/cmr/m/n/10.95 , und Re-si-du-en $[](\OM
+L/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 a[]\OT1/cmr/m/n/10.9
+5 ) = [][][][]$
+ []
+
+[42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+Overfull \hbox (68.66566pt too wide) in paragraph at lines 2762--2773
  [] 
  []
 
-[51] [52] [53] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 2943--2944
+[52] [53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 2954--2955
 
  []
 
 [55] [56]
-Overfull \hbox (32.76355pt too wide) in paragraph at lines 3064--3065
+Overfull \hbox (32.76355pt too wide) in paragraph at lines 3075--3076
 []\OT1/cmr/m/n/10.95 Liste von Stan-dard Gra-vi-ta-ti-ons-pa-ra-me-tern: [][]$\
 OT1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki / Standard _ gravita
 tional _
  []
 
 [57]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3099.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3110.
 [58]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3099.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3110.
 (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3099.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3099.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3110.
 
 Package rerunfilecheck Info: File `physics.out' has not changed.
-(rerunfilecheck)             Checksum: A8E5B986BF84C10B9D2C829A8650B4E7;11402.
+(rerunfilecheck)             Checksum: 746336FFCC15262199B711B05B78568E;11461.
  ) 
 Here is how much of TeX's memory you used:
- 13291 strings out of 482502
- 202876 string characters out of 5950353
+ 13295 strings out of 482502
+ 202933 string characters out of 5950353
  710791 words of memory out of 5000000
- 27653 multiletter control sequences out of 15000+600000
+ 27654 multiletter control sequences out of 15000+600000
  542168 words of font info for 59 fonts, out of 8000000 for 9000
  331 hyphenation exceptions out of 8191
  41i,24n,52p,917b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -713,10 +723,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1095.pfb>
-Output written on physics.pdf (58 pages, 443826 bytes).
+Output written on physics.pdf (58 pages, 446026 bytes).
 PDF statistics:
- 1574 PDF objects out of 1728 (max. 8388607)
- 1480 compressed objects within 15 object streams
- 568 named destinations out of 1000 (max. 500000)
- 1193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1582 PDF objects out of 1728 (max. 8388607)
+ 1488 compressed objects within 15 object streams
+ 571 named destinations out of 1000 (max. 500000)
+ 1201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
