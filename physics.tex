@@ -21,15 +21,14 @@
 \usepackage[margin=2cm,footskip=1cm]{geometry}
 %\usepackage{tabularx}
 
-\definecolor{darkblue}{rgb}{0,0,0.45}
-
-\hypersetup{
-    colorlinks,
-    citecolor=darkblue,
-    filecolor=darkblue,
-    linkcolor=darkblue,
-    urlcolor=darkblue
-}
+%\definecolor{darkblue}{rgb}{0,0,0.45}
+% \hypersetup{
+%     colorlinks,
+%     citecolor=darkblue,
+%     filecolor=darkblue,
+%     linkcolor=darkblue,
+%     urlcolor=darkblue
+% }
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -121,6 +120,28 @@
   {
     \uppercase\expandafter{\romannumeral #1\relax}
   }
+
+  \newcommand{\br}[1] % normal brackets
+  {
+    \left( #1 \right)
+  }
+  \newcommand{\cbr}[1] % curly brackets
+  {
+    \left\lbrace #1 \right\rbrace
+  }
+  \newcommand{\rbr}[1] % rectangudlar brackets
+  {
+    \left[ #1 \right]
+  }
+  \newcommand{\abr}[1] % angled brackets
+  {
+    \left\langle #1 \right\rangle
+  }
+  \newcommand{\vbr}[1] % vertical brackets
+  {
+    \left| #1 \right|
+  }
+  % \br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 
 	\begin{center}
@@ -1462,6 +1483,20 @@
     %     Lokalität
     %     CPT
     %     ...
+    %\subsection{Pfadintegral}
+    \subsection{Bosonen}
+      \subsubsection{Klein-Gordon-Gleichung}
+        Klein Gordon Gleichung (spin $s=0$)
+        \begin{equation}
+          \left(\partial^\mu\partial_\mu+m^2\right) \phi(x) = 0
+        \end{equation}
+
+        Lösung (ebene Wellen):
+        \begin{equation}
+          {\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
+        \end{equation}
+
+
 
     \subsection{Wechselwirkungen}
       \subsubsection{Mandelstam Variablen}

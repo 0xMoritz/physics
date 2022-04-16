@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  11 APR 2022 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  16 APR 2022 19:12
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -428,9 +428,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen179
 \Gm@layoutvoffset=\dimen180
 \Gm@dimlist=\toks26
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 32.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
@@ -441,22 +439,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.aux)
 \openout1 = `physics.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count296
@@ -484,7 +482,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 71.
+Package hyperref Info: Link coloring OFF on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -494,9 +492,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count303
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.out) (/home/m
 oritz/Documents/Studium/Zusammenfassungen/Physics/physics.out)
 \@outlinefile=\write3
@@ -551,67 +549,67 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `physics.toc'.
 
 [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 819--820
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
 
  []
 
 [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
+Underfull \hbox (badness 10000) in paragraph at lines 1530--1531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1499--1500
+Underfull \hbox (badness 10000) in paragraph at lines 1537--1538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1501--1502
+Underfull \hbox (badness 10000) in paragraph at lines 1539--1540
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1503--1504
+Underfull \hbox (badness 10000) in paragraph at lines 1541--1542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
+Underfull \hbox (badness 10000) in paragraph at lines 1543--1544
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1519
+Underfull \hbox (badness 10000) in paragraph at lines 1556--1557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1532--1535
+Underfull \hbox (badness 10000) in paragraph at lines 1570--1573
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1538--1541
+Underfull \hbox (badness 10000) in paragraph at lines 1576--1579
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1607--1608
+Underfull \hbox (badness 10000) in paragraph at lines 1645--1646
 
  []
 
 [31]
-Overfull \hbox (13.9997pt too wide) in paragraph at lines 1653--1662
+Overfull \hbox (13.9997pt too wide) in paragraph at lines 1691--1700
  [] 
  []
 
 [32]
-Overfull \hbox (6.59421pt too wide) in paragraph at lines 1729--1730
+Overfull \hbox (6.59421pt too wide) in paragraph at lines 1767--1768
 []\OT1/cmr/m/n/10.95 Der W[]armetransport ist ir-re-ver-si-bel, f[]ur die Entro
 -pie-dich-te $\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t; [
 ]\OT1/cmr/m/n/10.95 )$ und die Entro-pie-strom-dich-te $[](\OML/cmm/m/it/10.95 
@@ -619,88 +617,78 @@ t; []\OT1/cmr/m/n/10.95 ) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1734--1735
+Underfull \hbox (badness 10000) in paragraph at lines 1772--1773
 
  []
 
 [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1867--1868
-
- []
-
-[35]
 Underfull \hbox (badness 10000) in paragraph at lines 1905--1906
 
  []
 
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1943--1944
 
-Overfull \hbox (0.25671pt too wide) in paragraph at lines 1922--1923
+ []
+
+
+Overfull \hbox (0.25671pt too wide) in paragraph at lines 1960--1961
 []\OT1/cmr/m/n/10.95 Adiabatengleichung (gilt bei kon-stan-ten W[]armekapazit[]
 aten mit Adia-ba-ten-ko-ef-fi-zi-ent $\OML/cmm/m/it/10.95 ^^M \OT1/cmr/m/n/10.9
 5 = [] = []$) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1928--1929
+Underfull \hbox (badness 10000) in paragraph at lines 1966--1967
 
  []
 
 [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1998--1999
+Underfull \hbox (badness 10000) in paragraph at lines 2036--2037
 
  []
 
 [38]
-Overfull \hbox (3.95258pt too wide) in paragraph at lines 2051--2053
+Overfull \hbox (3.95258pt too wide) in paragraph at lines 2089--2091
 []\OT1/cmr/m/n/10.95 Molekularfeldn[]aherung: Er-set-zung von $\OML/cmm/m/it/10
 .95 s[]s[] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 s[]m$ \OT1/cmr/m/n/10.95 w
 o-bei $\OML/cmm/m/it/10.95 m \OT1/cmr/m/n/10.95 = []$ das Mo-le-ku-lar-feld ist
 . Ver-nachl[]assigung
  []
 
-[39] [40] [41]
-Overfull \hbox (2.77629pt too wide) in paragraph at lines 2233--2234
-\OT1/cmr/m/n/10.95 und $\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/10.95 : \OML/cmm/m/i
-t/10.95 G\OMS/cmsy/m/n/10.95 nf\OML/cmm/m/it/10.95 a[]; a[]; ::; a[]\OMS/cmsy/m
-/n/10.95 g ! \U/msb/m/n/10.95 C$ \OT1/cmr/m/n/10.95 ho-lo-morph mit Po-len $\OM
-L/cmm/m/it/10.95 a[]; a[]; ::; a[]$\OT1/cmr/m/n/10.95 , und Re-si-du-en $[](\OM
-L/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 ; \OML/cmm/m/it/10.95 a[]\OT1/cmr/m/n/10.9
-5 ) = [][][][]$
- []
-
-[42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
-Overfull \hbox (68.66566pt too wide) in paragraph at lines 2762--2773
+[39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+Overfull \hbox (68.66566pt too wide) in paragraph at lines 2800--2811
  [] 
  []
 
 [52] [53] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 2954--2955
+Underfull \hbox (badness 10000) in paragraph at lines 2992--2993
 
  []
 
 [55] [56]
-Overfull \hbox (32.76355pt too wide) in paragraph at lines 3075--3076
-[]\OT1/cmr/m/n/10.95 Liste von Stan-dard Gra-vi-ta-ti-ons-pa-ra-me-tern: [][]$\
-OT1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki / Standard _ gravita
-tional _
+Overfull \hbox (32.76355pt too wide) in paragraph at lines 3113--3114
+[]\OT1/cmr/m/n/10.95 Liste von Stan-dard Gra-vi-ta-ti-ons-pa-ra-me-tern: []$\OT
+1/cmtt/m/n/10.95 https : / / en . wikipedia . org / wiki / Standard _ gravitati
+onal _
  []
 
 [57]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3110.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3148.
 [58]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3148.
 (/home/moritz/Documents/Studium/Zusammenfassungen/Physics/physics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3110.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3110.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3148.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3148.
 
 Package rerunfilecheck Info: File `physics.out' has not changed.
-(rerunfilecheck)             Checksum: 746336FFCC15262199B711B05B78568E;11461.
+(rerunfilecheck)             Checksum: 35A920DA754F7AF66C8BFFF2515BE761;11602.
  ) 
 Here is how much of TeX's memory you used:
- 13295 strings out of 482502
- 202933 string characters out of 5950353
- 710791 words of memory out of 5000000
- 27654 multiletter control sequences out of 15000+600000
+ 13305 strings out of 482502
+ 203019 string characters out of 5950353
+ 710716 words of memory out of 5000000
+ 27659 multiletter control sequences out of 15000+600000
  542168 words of font info for 59 fonts, out of 8000000 for 9000
  331 hyphenation exceptions out of 8191
  41i,24n,52p,917b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -723,10 +711,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1095.pfb>
-Output written on physics.pdf (58 pages, 446026 bytes).
+Output written on physics.pdf (58 pages, 447598 bytes).
 PDF statistics:
- 1582 PDF objects out of 1728 (max. 8388607)
- 1488 compressed objects within 15 object streams
- 571 named destinations out of 1000 (max. 500000)
- 1201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1596 PDF objects out of 1728 (max. 8388607)
+ 1501 compressed objects within 16 object streams
+ 576 named destinations out of 1000 (max. 500000)
+ 1217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
