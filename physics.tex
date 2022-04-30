@@ -141,6 +141,10 @@
   {
     \left| #1 \right|
   }
+  \newcommand{\tr}
+  {
+    \mathrm{tr}
+  }
   % \br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 
@@ -1299,6 +1303,18 @@
         \end{aligned}
       \end{equation}
 
+      Eigenschaften der Pauli-matrizen:
+      \begin{equation}
+        \begin{aligned}
+          \det\br{\hat{\sigma^j}} &= -1 \\
+          \tr\br{\hat{\sigma^j}} &= 0 \\
+          \br{\hat{\sigma}_1}^2 = \br{\hat{\sigma}_2}^2 = \br{\hat{\sigma}_3}^2 &= -i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+          \hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + i\varepsilon_{jkl}\hat{\sigma}_l
+          %\com{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
+          %\hat{\sigma}_\mu \hat{\sigma}_\nu \hat{\sigma}_\lambda = i\varepsilon_{\}\hat{\sigma}_\xi
+        \end{aligned}
+      \end{equation}
+
 
 
       Gesamtdrehimpulsoperator
@@ -1477,7 +1493,7 @@
 
 
   \newpage
-	\section{Quantenfeldtheorie}
+	\section{Quantenfeldtheorie} % QFt
     % \subsection{Postulate}
     %   \subsubsection{Symmetrien?}
     %     Lokalität
@@ -1496,7 +1512,27 @@
           {\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
         \end{equation}
 
-
+        Paulimatrizen:
+        \begin{equation}
+          \begin{aligned}
+            \sigma^0 = \left(\begin{matrix}
+              1 & 0 \\
+              0 & 1 \\
+            \end{matrix}\right) &&
+            \sigma^1 = \left(\begin{matrix}
+              0 & 1 \\
+              1 & 0 \\
+            \end{matrix}\right) &&
+            \sigma^2 = \left(\begin{matrix}
+              0 & -i \\
+              i & 0 \\
+            \end{matrix}\right) &&
+            \sigma^3 = \left(\begin{matrix}
+              1 & 0 \\
+              0 & -1 \\
+            \end{matrix}\right)
+          \end{aligned}
+        \end{equation}
 
     \subsection{Wechselwirkungen}
       \subsubsection{Mandelstam Variablen}
@@ -2287,6 +2323,7 @@
         \begin{equation}
           \begin{aligned}
             \int_\mathbb{R} e^{-x^2}\;\diff x &= \sqrt{\pi} \\
+            \int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\diff x &= \sqrt{\pi\sigma} \;\forall c\in\mathbb{C} \\
             \int_\mathbb{R} \frac{\sin x}{x}\;\diff x &= \pi \\
           \end{aligned}
         \end{equation}
@@ -2319,6 +2356,8 @@
               \int_{\mathbb{R}} f(x)\Theta(x)\;\diff x =& \int_{0}^{\infty} f(x)\;\diff x
             \end{aligned}
         \end{equation}
+
+        Siehe Eq.~\ref{eq:fourierIdentities}
 
   		\subsubsection{Gamma-Funktion}
     			Definition:
@@ -2463,11 +2502,21 @@
         Identitäten der kontinuierlichen Fourier-Transformation (wobei $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
         \begin{equation}
           \begin{aligned}
-            \mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(x) \\
+            \mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(k) \\
             \mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pder{}{x}f(x) \\
             \int_{\mathbb{R}} f^{*}(x) g(x)\;\diff x &=
             \int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\diff k \\
             \delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{ikx}\;\diff k \\
+            \label{eq:fourierIdentities}
+          \end{aligned}
+        \end{equation}
+
+        Weitere Eigenschaften:
+        \begin{equation}
+          \begin{aligned}
+            f\in\mathbb{R}
+            &\Rightarrow \tilde{f}(-k)=\tilde{f}^*(k) \\
+            TODO: even odd fcts
           \end{aligned}
         \end{equation}
 
