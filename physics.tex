@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}     % Unicode support (Umlaute etc.)
 \usepackage[ngerman]{babel}     % deutsche Silbentrennung
+\usepackage[utf8]{inputenc}     % Unicode support (Umlaute etc.)
 \usepackage{a4}
 \usepackage{array}
 \usepackage{amsmath}
@@ -18,6 +18,7 @@
 \usepackage{placeins}
 \usepackage{mathtools}
 \usepackage{svg}
+\usepackage{slashed}  % Feynman slash notation
 \usepackage[margin=2cm,footskip=1cm]{geometry}
 %\usepackage{tabularx}
 
@@ -104,9 +105,13 @@
   {
     \vec{e}_{#1}
   }
-  \newcommand{\com}[2]
+  \newcommand{\com}[2] % Commutator
   {
     \left[#1,#2\right]
+  }
+  \newcommand{\anticom}[2] % Anticommutator
+  {
+    \left[#1,#2\right]_{+}
   }
   \newcommand{\konst}
   {
@@ -1335,6 +1340,11 @@
           \com{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}
         \end{equation}
 
+        Definition des Antikommutators:
+        \begin{equation}
+          \anticom{\hat{A}}{\hat{B}} = \hat{A}\hat{B} + \hat{B}\hat{A}
+        \end{equation}
+
         Rechenregeln:
         \begin{equation}
           \begin{aligned}
@@ -1497,14 +1507,86 @@
 
   \newpage
 	\section{Quantenfeldtheorie} % QFt
-    % \subsection{Postulate}
-    %   \subsubsection{Symmetrien?}
-    %     Lokalität
-    %     CPT
-    %     ...
-    %\subsection{Pfadintegral}
+    \subsection{Postulate}
+      \subsubsection{Symmetrien?}
+        Lokalität
+        CPT
+        ...
+        TODO
+    \subsection{Definitionen}
+      \begin{equation}
+        \slashed{A} := \gamma_\mu A^\mu
+      \end{equation}
+
+      Paulimatrizen:
+      \begin{equation}
+        \begin{aligned}
+          \sigma^0 = \left(\begin{matrix}
+            1 & 0 \\
+            0 & 1 \\
+          \end{matrix}\right) &&\hspace{30pt}
+          \sigma^1 = \left(\begin{matrix}
+            0 & 1 \\
+            1 & 0 \\
+          \end{matrix}\right) &&\hspace{30pt}
+          \sigma^2 = \left(\begin{matrix}
+            0 & -i \\
+              i & 0 \\
+          \end{matrix}\right) &&\hspace{30pt}
+          \sigma^3 = \left(\begin{matrix}
+            1 & 0 \\
+            0 & -1 \\
+          \end{matrix}\right)
+        \end{aligned}
+      \end{equation}
+
+      \subsubsection{Gamma Matrizen}
+        Definierende Eigenschaft:
+        \begin{equation}
+          \anticom{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
+        \end{equation}
+
+        Weitere Eigenschaften:
+        \begin{equation}
+          \begin{aligned}
+            \br{\gamma^0}^\dagger &= +\gamma^0 \\
+            \br{\gamma^j}^\dagger &= -\gamma^j \\
+            \gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with mathbb{1}
+            \gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
+            \br{\gamma^\mu}^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
+          \end{aligned}
+        \end{equation}
+
+        Transformation ($U$ unitär $U U^\dagger=1_4$):
+        \begin{equation}
+          \tilde{\gamma} = U \gamma^\mu U^\dagger
+        \end{equation}
+
+        $\gamma^5$-Matrix:
+        \begin{equation}
+          \gamma^5 = \gamma_5 = \gamma_5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\varepsilon_{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+        \end{equation}
+
+        Eigenschaften der $\gamma^5$-Matrix:
+        \begin{equation}
+          \begin{aligned}
+            \gamma_5^\dagger &= \gamma_5 \\
+            \gamma_5 \gamma_5 &= 1_4 \\
+            \anticom{\gamma^\mu}{\gamma^5} &= 0 \\
+          \end{aligned}
+        \end{equation}
+
+        $\sigma^{\mu\nu}$ Matrizen:
+        \begin{equation}
+          \sigma^{\mu\nu} = \frac{i}{2}\com{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
+        \end{equation}
+
+
+    \subsection{Pfadintegral}
+      TODO
+
     \subsection{Bosonen}
-      \subsubsection{Klein-Gordon-Gleichung}
+      \subsubsection{Freie Klein-Gordon-Gleichung}
         Klein Gordon Gleichung (spin $s=0$)
         \begin{equation}
           \left(\partial^\mu\partial_\mu+m^2\right) \phi(x) = 0
@@ -1515,27 +1597,16 @@
           {\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
         \end{equation}
 
-        Paulimatrizen:
+    \subsection{Fermionen}
+      \subsubsection{Freie Dirac-Gleichung}
+        Dirac-Gleichung (Spin $s=1/2$):
         \begin{equation}
-          \begin{aligned}
-            \sigma^0 = \left(\begin{matrix}
-              1 & 0 \\
-              0 & 1 \\
-            \end{matrix}\right) &&\hspace{30pt}
-            \sigma^1 = \left(\begin{matrix}
-              0 & 1 \\
-              1 & 0 \\
-            \end{matrix}\right) &&\hspace{30pt}
-            \sigma^2 = \left(\begin{matrix}
-              0 & -i \\
-              i & 0 \\
-            \end{matrix}\right) &&\hspace{30pt}
-            \sigma^3 = \left(\begin{matrix}
-              1 & 0 \\
-              0 & -1 \\
-            \end{matrix}\right)
-          \end{aligned}
+          \br{ i\slashed{\partial} - m } \psi\br{x} = 0
         \end{equation}
+
+
+
+
 
     \subsection{Wechselwirkungen}
       \subsubsection{Mandelstam Variablen}
@@ -1555,6 +1626,14 @@
 
 
 
+        \subsection{TEMP TODO:remove}
+        \begin{equation}
+          \begin{aligned}
+            j=1:\hspace{20pt} x_i' &= x_i + \varepsilon \rbr{\dot{x}_i x_1 - \frac{1}{2}x_i \dot{x}_1 -\frac{1}{2}\delta_{i1} \sum_{k=1}^3 x_k \dot{x}_k } \\
+            j=2:\hspace{20pt} x_i' &= x_i + \varepsilon \rbr{\dot{x}_i x_2 - \frac{1}{2}x_i \dot{x}_2 -\frac{1}{2}\delta_{i2} \sum_{k=1}^3 x_k \dot{x}_k } \\
+            j=3:\hspace{20pt} x_i' &= x_i + \varepsilon \rbr{\dot{x}_i x_3 - \frac{1}{2}x_i \dot{x}_3 -\frac{1}{2}\delta_{i3} \sum_{k=1}^3 x_k \dot{x}_k } \\
+          \end{aligned}
+        \end{equation}
 
 
 
