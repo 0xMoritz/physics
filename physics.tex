@@ -466,10 +466,10 @@
 
 			Elektrische Flussdichte und Magnetische Feldstärke:
 			\begin{equation} \label{eq:flussdichte-feldstärke}
-			\begin{array}{cc}
-				\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
-				&\;\; \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
-			\end{array}
+  			\begin{array}{cc}
+  				\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
+  				&\;\; \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
+  			\end{array}
 			\end{equation}
 
 
@@ -1042,6 +1042,36 @@
             \tder{}{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
             Q\left(\vec{x},\dot{\vec{x}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}{\dot{x}}_i}\right)\varphi - f\left(\vec{x},t\right).
           \end{aligned}
+        \end{equation}
+
+      \subsubsection{Kepler Problem}
+        Gravitationsparameter $\mu$, Exzentrizität $\epsilon$ und $\rho_0$
+        \begin{equation}
+          \begin{aligned}
+            \mu &= G m \\
+            \epsilon &= \sqrt{1+\frac{2 E L^2}{m \mu^2}} \\
+            \rho_0 &= \frac{L^2}{m\mu} \\
+          \end{aligned}
+        \end{equation}
+
+        Lagrange Funktion ($\mu$ ist der Gravitationsparameter des Systems, für Zentralkörper $\mu=GM$, \url{https://en.wikipedia.org/wiki/Standard_gravitational_parameter}):
+        \begin{equation}
+          \mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\pvec{r}}^2 + \frac{\mu}{r}
+        \end{equation}
+
+        Erhaltener Runge Lenz-Vektor:
+        \begin{equation}
+          \vec{A} = \dot{\vec{r}}\times\vec{L} - \frac{\mu \vec{r}}{r}
+        \end{equation}
+
+        Orbit Parametrisierung (In Zylinderkoordinaten $\rho, \varphi$):
+        \begin{equation}
+          \rho = \frac{\rho_0}{1+\epsilon \cos\varphi}
+        \end{equation}
+
+        Große Halbachse $a$:
+        \begin{equation}
+          a = \frac{p}{1-\epsilon^2}
         \end{equation}
 
   \newpage
