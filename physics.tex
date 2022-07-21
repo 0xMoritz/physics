@@ -126,31 +126,47 @@
     \uppercase\expandafter{\romannumeral #1\relax}
   }
 
-  \newcommand{\br}[1] % normal brackets
+  \newcommand{\Br}[1] % normal brackets
   {
     \left( #1 \right)
   }
-  \newcommand{\cbr}[1] % curly brackets
+  \newcommand{\cBr}[1] % curly brackets
   {
     \left\lbrace #1 \right\rbrace
   }
-  \newcommand{\rbr}[1] % rectangudlar brackets
+  \newcommand{\cbr}[1] % curly brackets
+  {
+    \lbrace #1 \rbrace
+  }
+  \newcommand{\rBr}[1] % rectangudlar brackets
   {
     \left[ #1 \right]
   }
-  \newcommand{\abr}[1] % angled brackets
+  \newcommand{\rbr}[1] % rectangudlar brackets
+  {
+    [ #1 ]
+  }
+  \newcommand{\aBr}[1] % angled brackets
   {
     \left\langle #1 \right\rangle
   }
-  \newcommand{\vbr}[1] % vertical brackets
+  \newcommand{\abr}[1] % angled brackets
+  {
+    \langle #1 \rangle
+  }
+  \newcommand{\vBr}[1] % vertical brackets
   {
     \left| #1 \right|
+  }
+  \newcommand{\vbr}[1] % vertical brackets
+  {
+    | #1 |
   }
   \newcommand{\tr}
   {
     \mathrm{tr}
   }
-  % \br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
+  % \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 
 	\begin{center}
@@ -171,14 +187,22 @@
           \item Isotropie der Zeit
         \end{itemize}
 			\subsubsection{Einstein'sche Postulate}
-        \begin{description}
-          \item[Relativitätsprinzip]\hfill \\
-            Die Gesetze der Physik sind in allen Inertialsystemen gleich.
-          \item[Konstanz der Lichtgeschwindigkeit]\hfill \\
-            Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.
-          \item[Starkes Äquivalenzprinzip]\hfill \\
-            Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.
-        \end{description}
+
+        \textbf{Erstes Postulat}: Relativitätsprinzip \\
+          \indent \emph{Die Gesetze der Physik sind in allen Inertialsystemen gleich.} \\ \\
+        \textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit\\
+          \indent \emph{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.} \\ \\
+        \textbf{Drittes Postulat}: Starkes Äquivalenzprinzip\\
+          \indent \emph{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.} \\
+
+        % \begin{description}
+        %   \item[Relativitätsprinzip]\hfill \\
+        %     Die Gesetze der Physik sind in allen Inertialsystemen gleich.
+        %   \item[Konstanz der Lichtgeschwindigkeit]\hfill \\
+        %     Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.
+        %   \item[Starkes Äquivalenzprinzip]\hfill \\
+        %     Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.
+        % \end{description}
 
       \subsubsection{Metrischer Tensor}
         Metrischer Tensor und Lorentz-invariantes Raumzeit-Intervall:
@@ -939,11 +963,32 @@
 
       \newpage
     \section{Klassische Mechanik}
+      \subsection{Newton'sche Kraftgesetze}
+
+        \textbf{Erstes Axiom / lex prima}: Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \\
+          \indent \emph{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \\ \\
+        \textbf{Zweites Axiom / lex secunda}: Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz \\
+          \begin{equation}
+            \tder{\vec{p}}{t} = \vec{F}
+          \end{equation}
+          \indent \emph{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \\ \\
+        \textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \\
+          \indent Kelvin: \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).}\\
 
       \subsection{Allgemeines}
         Definition Virial:
         \begin{equation}
           \sum_j \vec{x}_j\cdot\vec{p}_j
+        \end{equation}
+
+        Drallsatz (Drehmoment / Torque $\vec{M}$):
+        \begin{equation}
+          \tder{\vec{L}}{t} = \vec{M}
+        \end{equation}
+
+        Flächensatz / Zweites Kepler'sches Gesetz (Für Teilchen im Zentralpotential):
+        \begin{equation}
+          \tder{A}{t} = \frac{\vbr{\vec{L}}}{2 m} = \konst
         \end{equation}
 
       \subsection{Rotation}
@@ -952,9 +997,9 @@
           \Theta_{ij}=\int_{\mathcal{V}} \rho \left[r^2\delta_{ij}-r_i r_j\right] \;\diff^3\vec{r}
         \end{equation}
 
-        Satz von Steiner ($\Theta_{ij}$ ist der Trägheitstensor für eine Drehung mit Drehachse im Schwepunkt. Verläuft die Drehachse stattdessen durch einen um $\vec{a}$ verschobenen Punkt transformiert sich der Trägheitstensor zu $\Theta'_{ij}$):
+        Satz von Steiner ($\Theta_{ij}$ ist der Trägheitstensor für eine Drehung mit Drehachse im Schwerpunkt. Verläuft die Drehachse stattdessen durch einen um $\vec{a}$ verschobenen Punkt transformiert sich der Trägheitstensor zu $\Theta'_{ij}$, wobei $M$ die Gesamtmasse ist):
         \begin{equation}
-          \Theta'_{ij} = \Theta_{ij} + M\br{\vec{a}^2\delta_{ij} - a_i a_j}
+          \Theta'_{ij} = \Theta_{ij} + M\Br{\vec{a}^2\delta_{ij} - a_i a_j}
         \end{equation}
 
         Drehimpuls und Trägheitstensor:
@@ -1349,9 +1394,9 @@
       Eigenschaften der Pauli-matrizen:
       \begin{equation}
         \begin{aligned}
-          \det\br{\hat{\sigma^j}} &= -1 \\
-          \tr\br{\hat{\sigma^j}} &= 0 \\
-          \br{\hat{\sigma}_1}^2 = \br{\hat{\sigma}_2}^2 = \br{\hat{\sigma}_3}^2 &= -i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+          \det\Br{\hat{\sigma^j}} &= -1 \\
+          \tr\Br{\hat{\sigma^j}} &= 0 \\
+          \Br{\hat{\sigma}_1}^2 = \Br{\hat{\sigma}_2}^2 = \Br{\hat{\sigma}_3}^2 &= -i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
           \hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + i\varepsilon_{jkl}\hat{\sigma}_l
           %\com{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
           %\hat{\sigma}_\mu \hat{\sigma}_\nu \hat{\sigma}_\lambda = i\varepsilon_{\}\hat{\sigma}_\xi
@@ -1584,11 +1629,11 @@
         Weitere Eigenschaften:
         \begin{equation}
           \begin{aligned}
-            \br{\gamma^0}^\dagger &= +\gamma^0 \\
-            \br{\gamma^j}^\dagger &= -\gamma^j \\
+            \Br{\gamma^0}^\dagger &= +\gamma^0 \\
+            \Br{\gamma^j}^\dagger &= -\gamma^j \\
             \gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with mathbb{1}
             \gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
-            \br{\gamma^\mu}^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
+            \Br{\gamma^\mu}^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
           \end{aligned}
         \end{equation}
 
@@ -1636,7 +1681,7 @@
       \subsubsection{Freie Dirac-Gleichung}
         Dirac-Gleichung (Spin $s=1/2$):
         \begin{equation}
-          \br{ i\slashed{\partial} - m } \psi\br{x} = 0
+          \Br{ i\slashed{\partial} - m } \psi\Br{x} = 0
         \end{equation}
 
 
@@ -1719,7 +1764,7 @@
           \end{equation}
           \indent Kelvin: \emph{Es ist unmöglich, durch bloße Abkühlung eines einzelnen Wärmebades zyklisch Arbeit zu erzeugen. }\\
         \textbf{Dritter Hauptsatz}: Nernstscher Wärmesatz\\
-          \indent \emph{Nernst: Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
+          \indent Nernst: \emph{Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
 
       \subsubsection{Gibbs'sche Fundamentalgleichung}
         Gibbs'sche Fundamentalgleichung (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
@@ -1825,6 +1870,7 @@
 
         \begin{table}[h]
           \begin{center}
+          \makebox[1\textwidth][c]{
           \begin{tabular}{ r | l | l | l }
             Name & Relation & Differential & Maxwellbeziehung \\ \hline \xrowht{26pt}
             Entropie & $S(U,V)$ & $\diff S = \frac{1}{T} \diff U + \frac{p}{T} \diff V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
@@ -1833,7 +1879,7 @@
             Gibbs-Energie & $G(T,p) = U - TS + pV$ & $\diff G = -S \diff T - V \diff p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
             Enthalpie & $H(p,S) = U + pV$ & $\diff H = T \diff S + V \diff p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
             Großes Potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\diff \Omega = -S \diff T - p \diff V -N \diff \mu$ &  \\ \hline
-            \end{tabular}
+            \end{tabular}}
           \caption{Liste nützlicher thermodynamischer Potentiale}
           \label{tab:ThermodynamischePotentiale}
           \end{center}
@@ -1901,7 +1947,7 @@
           \pder{T}{t} = D\Nabla^2 T
         \end{equation}
 
-        Der Wärmetransport ist irreversibel, für die Entropiedichte $s(t,\vec{r})$ und die Entropiestromdichte $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ gilt (Mit der \emph{Entropieerzeugungsrate} $\dot{s}$):
+        Der Wärmetransport ist irreversibel, für die Entropiedichte $s(t,\vec{r})$ und die Entropiestromdichte \linebreak $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ gilt (Mit der \emph{Entropieerzeugungsrate} $\dot{s}$):
         \begin{equation}
           \dot{s} = \pder{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
         \end{equation}
@@ -2908,7 +2954,7 @@
     			\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
     			\vdots & \ddots & \vdots \\
     			\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
-    			\end{matrix}\right);\;\;J_f(x)=\left|\det\left(D\vec{f}(x)\right)\right|
+    			\end{matrix}\right);\;\;J_f(\pvec{x})=\left|\det\left(D\vec{f}(\pvec{x})\right)\right|
     		\end{equation}
 
         Identitäten im Zusammenhang mit Gradienten, Divergenz und Rotation:
@@ -2927,8 +2973,15 @@
 
         Helmholtz-Zerlegung:
     		\begin{equation}
-          \forall \vec{v}(\vec{r}):\; \exists\left(\phi\left(\vec{r}\right),\vec{A}(\vec{r})\right):\;\vec{v} = \Nabla\phi(\vec{r}) + \Nabla\times\vec{A}(\vec{r})
+          \forall \,\vec{v}(\pvec{r}):\; \exists\left(\phi\left(\pvec{r}\right),\vec{A}(\pvec{r})\right):\;\vec{v} = \Nabla\phi(\pvec{r}) + \Nabla\times\vec{A}(\pvec{r})
     		\end{equation}
+
+        Poincaré-Lemma $\forall\, \vec{r}\in\mathcal{G}$ ($\mathcal{G}$ einfach zusammenhängendes Gebiet):
+        \begin{equation}
+          \exists U(\vec{r}): \vec{v}(\pvec{r}) = -\Nabla U(\pvec{r})
+          \Leftrightarrow \vec{v}(\pvec{r}) \text{ ist konservativ }
+          \Leftrightarrow \Nabla\times\vec{v}(\pvec{r}) = 0
+        \end{equation}
 
       \subsubsection{Koordinatentransformationen}
         Transformation zwischen kartesischen, zylindrischen und sphärischen Koordinaten:
@@ -2946,7 +2999,9 @@
           \end{tabular}
         \end{center}
 
+
         \begin{center}
+          \makebox[1\textwidth][c]{
           \begin{tabular}{| r || l | l | l |}
             \hline\xrowht{10pt}
             Einheitsvektoren & Kartesisch & Zylindrisch & Sphärisch \\
@@ -2957,8 +3012,9 @@
             \hline\xrowht{70pt}
             Sphärisch & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}+z{\hat {\mathbf {z} }}}{\sqrt {x^{2}+y^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {\left(x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}\right)z-\left(x^{2}+y^{2}\right){\hat {\mathbf {z} }}}{{\sqrt {x^{2}+y^{2}+z^{2}}}{\sqrt {x^{2}+y^{2}}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\end{aligned}}}$ & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {\rho {\hat {\boldsymbol {\rho }}}+z{\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {z{\hat {\boldsymbol {\rho }}}-\rho {\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\end{aligned}}}$ & N/A \\
             \hline
-          \end{tabular}
+          \end{tabular}}
         \end{center}
+
 
         Gradient:
         \begin{equation}
@@ -3260,7 +3316,7 @@
   			\end{tabular}
 			\end{center}
 
-      Liste von Standard Gravitationsparametern: \url{https://en.wikipedia.org/wiki/Standard_gravitational_parameter}
+      Liste von Standard Gravitationsparametern: \\ \url{https://en.wikipedia.org/wiki/Standard_gravitational_parameter}
 
     \subsection{Einheiten}
       \begin{center}
