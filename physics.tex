@@ -186,8 +186,10 @@
           \item Isotropie des Raumes
           \item Isotropie der Zeit
         \end{itemize}
-			\subsubsection{Einstein'sche Postulate}
+        Inertialsystem \\
+          \indent \emph{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
 
+			\subsubsection{Einstein'sche Postulate}
         \textbf{Erstes Postulat}: Relativitätsprinzip \\
           \indent \emph{Die Gesetze der Physik sind in allen Inertialsystemen gleich.} \\ \\
         \textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit\\
@@ -973,7 +975,12 @@
           \end{equation}
           \indent \emph{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \\ \\
         \textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \\
-          \indent Kelvin: \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).}\\
+          \indent \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \\ \\
+        \textbf{Zusatz}: Superpositionsprinzip \\
+          \indent \emph{Kräfte sind additiv.}
+          \begin{equation}
+            \vec{F}_{\mathrm{ges}} = \sum_{i=1}^{N} \vec{F}_i
+          \end{equation} \\
 
       \subsection{Allgemeines}
         Definition Virial:
@@ -1011,6 +1018,27 @@
         \begin{equation}
           a_Z = \frac{v^2}{r} = \omega^2 r
         \end{equation}
+
+      \subsection{Bewegte Bezugssysteme}
+        Beschleunigtes Bezugssystemn $K'$ und Inertialsystem $K$:
+        \begin{equation}
+          \begin{aligned}
+            \pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) \\
+            \tder{\vec{x}'}{t} &= \tder{\vec{x}}{t}-\vec{\omega}\times\vec{x} \\
+            m\tder{\vec{p}}{t} &= \vec{F} \\
+            m\tder{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
+          \end{aligned}
+        \end{equation}
+        Mit den Scheinkräften: Translationskraft $\vec{F}_T$, Zentrifugalkraft $\vec{F}_Z$, Linearkraft $\vec{F}_L$, Corioliskraft $\vec{F}_C$
+        \begin{equation}
+          \begin{aligned}
+            \vec{F}_T &= -m\frac{\diff^2 \vec{x}_0}{\diff t^2} \\
+            \vec{F}_Z &= -m\vec{\omega}\times\Br{\vec{\omega}\times\pvec{x}'} \\
+            \vec{F}_L &= -m\tder{\vec{\omega}}{t}\times\pvec{x}' \\
+            \vec{F}_C &= -2m\vec{\omega}\times\tder{\pvec{x}'}{t} \\
+          \end{aligned}
+        \end{equation}
+
 
       \subsection{Gravitation}
         Newton'sche Gravitationskraft (Die von Masse 2 auf Masse 1 wirkt):
