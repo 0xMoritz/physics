@@ -166,6 +166,14 @@
   {
     \mathrm{tr}
   }
+  \newcommand{\vsp}
+  {
+    \vspace{10pt}
+  }
+  \newcommand{\nl}
+  {
+    \vsp \newline
+  }
   % \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 
@@ -190,12 +198,12 @@
           \indent \emph{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
 
 			\subsubsection{Einstein'sche Postulate}
-        \textbf{Erstes Postulat}: Relativitätsprinzip \\
-          \indent \emph{Die Gesetze der Physik sind in allen Inertialsystemen gleich.} \\ \\
-        \textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit\\
-          \indent \emph{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.} \\ \\
-        \textbf{Drittes Postulat}: Starkes Äquivalenzprinzip\\
-          \indent \emph{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.} \\
+        \textbf{Erstes Postulat}: Relativitätsprinzip \newline
+          \indent \textit{Die Gesetze der Physik sind in allen Inertialsystemen gleich.}  \nl
+        \textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit \newline
+          \indent \textit{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.}  \nl
+        \textbf{Drittes Postulat}: Starkes Äquivalenzprinzip \newline
+          \indent \textit{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.}  \vsp
 
         % \begin{description}
         %   \item[Relativitätsprinzip]\hfill \\
@@ -532,15 +540,27 @@
         \partial_\mu J^\mu = \pder{\rho}{t} + \Nabla\cdot\vec{j} = 0
       \end{equation}
 
+      In integrierter Form:
+      \begin{equation}
+        \dot{Q}(\mathcal{V}) = I(\partial\mathcal{V})
+      \end{equation}
+
       \subsubsection{Elektromagnetische Energie und Impuls}
         Energiedichte:
         \begin{equation}
-          \rho_{EM}=\frac{1}{2}\epsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
+          u_{EM}=\frac{1}{2}\epsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
         \end{equation}
 
         Poynting-Vektor / Energiestromdichte:
         \begin{equation}
           \vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B}
+        \end{equation}
+
+        Poynting-Theorem / Energie-Kontinuität:
+        \begin{equation}
+          -\Nabla\cdot\vec{S}
+          = \pder{u_{\mathrm{mech}}}{t} + \pder{u_{EM}}{t}
+          = \vec{j}\cdot\vec{E} + \frac{1}{2}\pder{}{t}\Br{\varepsilon_0\vec{E}^2 + \frac{1}{\mu_0}\vec{B}^2}
         \end{equation}
 
         Impulsdichte:
@@ -872,7 +892,7 @@
         \end{equation}
 
       \subsubsection{Dielektrika}
-        In Materialien gilt allgemein (\ref{eq:flussdichte-feldstärke}), wobei $\vec{P}$ von $\vec{E}$, $\vec{r}$, $T$, ... abhängen kann. \\
+        In Materialien gilt allgemein (\ref{eq:flussdichte-feldstärke}), wobei $\vec{P}$ von $\vec{E}$, $\vec{r}$, $T$, ... abhängen kann. \vspace{10pt}
 
         Gebundene Ladungsdichte und gebundene Oberflächenladungsdichte:
         \begin{equation}
@@ -966,21 +986,20 @@
       \newpage
     \section{Klassische Mechanik}
       \subsection{Newton'sche Kraftgesetze}
-
-        \textbf{Erstes Axiom / lex prima}: Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \\
-          \indent \emph{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \\ \\
-        \textbf{Zweites Axiom / lex secunda}: Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz \\
+        \textbf{Erstes Axiom / lex prima}: Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \newline
+          \indent \emph{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \nl
+        \textbf{Zweites Axiom / lex secunda}: Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz
           \begin{equation}
             \tder{\vec{p}}{t} = \vec{F}
           \end{equation}
-          \indent \emph{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \\ \\
-        \textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \\
-          \indent \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \\ \\
-        \textbf{Zusatz}: Superpositionsprinzip \\
+          \indent \emph{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
+        \textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \newline
+          \indent \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
+        \textbf{Zusatz}: Superpositionsprinzip \newline
           \indent \emph{Kräfte sind additiv.}
           \begin{equation}
             \vec{F}_{\mathrm{ges}} = \sum_{i=1}^{N} \vec{F}_i
-          \end{equation} \\
+          \end{equation}
 
       \subsection{Allgemeines}
         Definition Virial:
@@ -1009,14 +1028,12 @@
           \Theta'_{ij} = \Theta_{ij} + M\Br{\vec{a}^2\delta_{ij} - a_i a_j}
         \end{equation}
 
-        Drehimpuls und Trägheitstensor:
+        Berechnung von Drehimpuls und Energie mit dem  Trägheitstensor:
         \begin{equation}
-          L^i = \Theta^i_j \omega^j
-        \end{equation}
-
-        Zentripetalbeschleunigung:
-        \begin{equation}
-          a_Z = \frac{v^2}{r} = \omega^2 r
+          \begin{aligned}
+            L^i &= \Theta^i_j \omega^j \\
+            T_{\mathrm{rot}} &= \frac{1}{2}\vec{\omega}^T \Theta \vec{\omega}
+          \end{aligned}
         \end{equation}
 
       \subsection{Bewegte Bezugssysteme}
@@ -1086,17 +1103,20 @@
         Hamilton'sche Bewegungsgleichungen:
         \begin{equation}
           \begin{aligned}
-            \dot{q}_k &= \phantom{-}\pder{\mathcal{H}}{p_k} \\
-            \dot{p}_k &= -\pder{\mathcal{H}}{q_k} \\
-            \pder{\mathcal{H}}{t} &= -\pder{\mathcal{L}}{t} \\
+            \dot{q}_k &= \phantom{-}\pder{\mathcal{H}}{p_k}, &&\hspace{30pt}
+            \dot{p}_k &= -\pder{\mathcal{H}}{q_k}, &&\hspace{30pt}
+            \pder{\mathcal{H}}{t} &= -\pder{\mathcal{L}}{t}
           \end{aligned}
         \end{equation}
 
         Poisson-Klammer:
         \begin{equation}
-          \lbrace A, B \rbrace = \sum_k \left(
-            \pder{A}{q_k}\pder{B}{p_k} - \pder{A}{p_k}\pder{B}{q_k}
-          \right)
+          \begin{aligned}
+            \lbrace A, B \rbrace &= \sum_k \left(
+              \pder{A}{q_k}\pder{B}{p_k} - \pder{A}{p_k}\pder{B}{q_k}
+            \right) \\
+            \tder{A}{t} &= \cBr{A, H} + \pder{A}{t}
+          \end{aligned}
         \end{equation}
 
       \subsubsection{Noether-Theorem}
@@ -1737,20 +1757,20 @@
   \section{Statistische Physik}
     \subsection{Thermodynamik}
       \subsubsection{Definitionen}
-        Im \emph{Thermodynamisches Gleichgewicht} sind makroskopische Eigenschaften eines Systems zeitlich konstant. Thermodynamische Gleichgewichte verdanken ihre Stabilität gemäß dem \emph{Prinzip von le Chatelier} einer rückstellenden Kraft, die sich bei Fluktuationen ausbildet. \\
+        Im \emph{Thermodynamisches Gleichgewicht} sind makroskopische Eigenschaften eines Systems zeitlich konstant. Thermodynamische Gleichgewichte verdanken ihre Stabilität gemäß dem \emph{Prinzip von le Chatelier} einer rückstellenden Kraft, die sich bei Fluktuationen ausbildet. \vsp
 
-        Die \emph{Innere Energie} $U$ ist die Energie eines Vielteilchesystems, welches durch ein äußeres Potential auf ein Volumen $V$ begrenzt wird und damit einen verschwindenden makroskopischen Gesamtimpuls $\vec{P}=0$ und Gesamtdrehimpuls $\vec{L} = 0$ besitzt, sodass die gesamte kinetische Energie in internen Eigenschaften liegt.\\
+        Die \emph{Innere Energie} $U$ ist die Energie eines Vielteilchesystems, welches durch ein äußeres Potential auf ein Volumen $V$ begrenzt wird und damit einen verschwindenden makroskopischen Gesamtimpuls $\vec{P}=0$ und Gesamtdrehimpuls $\vec{L} = 0$ besitzt, sodass die gesamte kinetische Energie in internen Eigenschaften liegt. \vsp
 
         Definition des unvollständigen Differentials ($\delta$) der \emph{Arbeit} über kontrollierte \emph{Arbeitskoordinaten} $Z_\alpha$ und \emph{Gleichgewichtsgrößen} $g_\alpha$. Die Wahl der Arbeitskoordinaten (d.h. des Zugriffs über das System) legt die Arbeit als nutzbare Energieform fest. Und legt Eigenschaften wie Entropie und Temperatur fest, die nicht-Eindeutigkeit dieser Wahl wird als \emph{relative Objektivität} bezeichnet.
         \begin{equation}
           \delta W = \sum_\alpha g_\alpha \diff Z_\alpha
-        \end{equation}\\
+        \end{equation} \vsp
 
-        Die \emph{Zustandsgrößen} $\vec{Z}=\left(U, Z_1,... \right)$ sind die makroskopisch beobachtbaren bzw. zugreifbaren Größen und legen einen Gleichgewichtszustand eindeutig fest.\\
+        Die \emph{Zustandsgrößen} $\vec{Z}=\left(U, Z_1,... \right)$ sind die makroskopisch beobachtbaren bzw. zugreifbaren Größen und legen einen Gleichgewichtszustand eindeutig fest. \vsp
 
-        \emph{Intensive Variablen}: Homogen vom Grad $0$ ($T$, $p$, ...).\\
+        \emph{Intensive Variablen}: Homogen vom Grad $0$ ($T$, $p$, ...). \vsp
 
-        \emph{Extensive Variablen}: Homogen vom Grad $1$ ($S$, $U$, $V$, ...). Diese sind insbesondere Additiv.\\
+        \emph{Extensive Variablen}: Homogen vom Grad $1$ ($S$, $U$, $V$, ...). Diese sind insbesondere Additiv. \vsp
 
         \begin{table}[h]
           \begin{center}
@@ -1761,37 +1781,37 @@
           \caption{Arbeitskoordinaten und zugehörige Gleichgewichtsgrößen. $\sigma$: Oberflächenspannung, $A$: Oberfläche, $B_0$: magnetische Feld, $\mathcal{M}$: Gesamtmagnetisierung, $\mu$ chemisches Potential (Arbeit, die geleistet werden muss, um dem System ein Teilchen hinzuzufügen), $N$: Teilchenzahl...}
           \label{tab:ArbeitskoordinatenUndGleichgewichtsgroessen}
           \end{center}
-        \end{table}
+        \end{table} \vsp
 
-        \emph{Thermodynamischer Grenzfall}: Deterministisches Verhalten bei $U,V,N\rightarrow\infty$ unter $U/N,V/N=\konst$. \\
+        \emph{Thermodynamischer Grenzfall}: \newline Deterministisches Verhalten bei $U,V,N\rightarrow\infty$ unter $U/N,V/N=\konst$. \vsp
 
 
         \emph{Thermische Wellenlänge}
         \begin{equation}
           \lambda_T = \frac{h}{\sqrt{2\pi m k_B T}}
-        \end{equation}
+        \end{equation} \vsp
 
         \emph{Fugazität}
         \begin{equation}
           z = e^{\beta\mu}
-        \end{equation}
+        \end{equation} \vsp
 
       \subsubsection{Hauptsätze}
-        \textbf{Nullter Hauptsatz}: Existenz und Transitivität des Gleichgewichtzustandes\\
-          \indent \emph{Das Thermodynamische Gleichgewicht ist eine Äquivalenzrelation unter thermodynamischen Systemen (Gleichgewicht zwischen $A \sim B$ und $A \sim C$ impliziert $ B \sim C$).} \\
-        \textbf{Erster Hauptsatz}: Energiesatz\\
+        \textbf{Nullter Hauptsatz}: Existenz und Transitivität des Gleichgewichtzustandes\newline
+          \indent \emph{Das Thermodynamische Gleichgewicht ist eine Äquivalenzrelation unter thermodynamischen Systemen (Gleichgewicht zwischen $A \sim B$ und $A \sim C$ impliziert $ B \sim C$).} \nl
+        \textbf{Erster Hauptsatz}: Energiesatz
           \begin{equation}
             \label{eq:FirstLawOfThermodynamics}
             \diff U = \delta Q + \delta W
           \end{equation}
-          \indent Innere Energie $\diff U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$.\\
-        \textbf{Zweiter Hauptsatz}: Entropiesatz\\
+          \indent Innere Energie $\diff U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$. \nl
+        \textbf{Zweiter Hauptsatz}: Entropiesatz
           \begin{equation}
             \label{eq:SecondLawOfThermodynamics}
             \Delta S  \ge 0
           \end{equation}
-          \indent Kelvin: \emph{Es ist unmöglich, durch bloße Abkühlung eines einzelnen Wärmebades zyklisch Arbeit zu erzeugen. }\\
-        \textbf{Dritter Hauptsatz}: Nernstscher Wärmesatz\\
+          \indent Kelvin: \emph{Es ist unmöglich, durch bloße Abkühlung eines einzelnen Wärmebades zyklisch Arbeit zu erzeugen. }\nl
+        \textbf{Dritter Hauptsatz}: Nernstscher Wärmesatz\newline
           \indent Nernst: \emph{Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
 
       \subsubsection{Gibbs'sche Fundamentalgleichung}
@@ -1852,7 +1872,7 @@
         Kreisprozess (Gleichheit für reversible, Ungleichheit für irreversible Prozesse):
         \begin{equation}
           \oint \frac{\delta Q_{rev}}{T} \le 0
-        \end{equation}\\
+        \end{equation}
 
         Carnot Prozess: Einzig möglicher reversibler Kreisprozess, er besteht aus zwei Adiabaten und zwei Isothermen, zwischen den Temperaturen $T_1$, $T_2$ mit $T_1 < T_2$. Jede reale Wärmekraftmaschine hat einen Wirkungsgrad, der kleiner ist als der Carnot Wirkungsgrad:
         \begin{equation}
@@ -1980,7 +2000,7 @@
           \dot{s} = \pder{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
         \end{equation}
 
-        Onsager Reziprozitätsbeziehung: Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.\\
+        Onsager Reziprozitätsbeziehung: Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.\vsp
 
         Thermoelektrische Effekte: In Systemen mit Ladungsträgern ist es sinnvoll ein elektrochemisches Potential $\mu_{EC}$ einzuführen, da eine Veränderung der Teilchenzahl auch eine Veränderung der Ladung im Potential impliziert, sodass (mit dem \emph{Peltier-Koeffizienten} $\Pi$, der \emph{Thermokraft} $\epsilon$, dem elektrischen Strom $\vec{j} = q\vec{j}^n$ und der spezifischen Leitfähigkeit $\sigma$, die letzte Gleichung folgt aus der Reziprozitätsbeziehung):
         \begin{equation}
@@ -2113,7 +2133,7 @@
         Wahrscheinlichkeiten $p_i$ sind so verteilt, dass die Entropie im thermodynamischen Gleichgewicht unter den gegebenen Nebenbedingungen $g_k(p_i) = 0$ maximiert wird.
         \begin{equation}
           0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
-        \end{equation}\\
+        \end{equation}
 
         Für mikrokanonisches Ensemble folgt die Gleichverteilung (Nebenbedingung $\sum_i p_i = 1$):
         \begin{equation}
@@ -2151,7 +2171,7 @@
 
     \subsection{Modelle}
       \subsubsection{Klassisches ideales Gas}
-        Ein \emph{ideales Gas} ist ein System von $N$ identischen Teilchen im Volumen $V$, die nicht untereinander wechselwirken. \\
+        Ein \emph{ideales Gas} ist ein System von $N$ identischen Teilchen im Volumen $V$, die nicht untereinander wechselwirken. \vsp
 
         Thermische Zustandsgleichung
         \begin{equation}
@@ -2168,13 +2188,13 @@
           S(T,p) = N k_B \ln{\left[ \frac{V}{N}\left( \frac{4\pi m  U}{3 h^2 N} \right)^{\frac{3}{2}} \right]} + \frac{5}{2} N k_B
         \end{equation}
 
-        Adiabatengleichung (gilt bei konstanten Wärmekapazitäten mit Adiabatenkoeffizient $\gamma = \frac{c_p}{c_V} = \frac{c_V + k_B}{c_V}$)
+        Adiabatengleichung \newline(gilt bei konstanten Wärmekapazitäten mit Adiabatenkoeffizient $\gamma = \frac{c_p}{c_V} = \frac{c_V + k_B}{c_V}$)
         \begin{equation}
           p V^\gamma = \konst
         \end{equation}
 
       \subsubsection{Quantenmechanisches ideales Gas}
-        Modell: Ununterscheidbare, wechselwirkungsfreie Teilchen (Fermionen oder Bosonen) mit Spinentartung. \\
+        Modell: Ununterscheidbare, wechselwirkungsfreie Teilchen (Fermionen oder Bosonen) mit Spinentartung. \vsp
 
         Großkanonische Zustandssumme (Mit $\varepsilon_\alpha = \frac{\hbar^2 \vec{k}^2}{2m}$ der Energie im Zustand $\alpha=(\vec{k},\sigma)$):
         \begin{equation}
@@ -2244,7 +2264,7 @@
         \end{equation}
 
       \subsubsection{Hohlraumstrahlung}
-        Ähnlich dem Phononengas existiert in Planck's Beschreibung des schwarzen Strahlers ein Photonengas. \\
+        Ähnlich dem Phononengas existiert in Planck's Beschreibung des schwarzen Strahlers ein Photonengas. \vsp
 
         Innere Energie (Mit Stefan-Boltzmann-Konstante $\sigma$):
         \begin{equation}
@@ -2297,7 +2317,7 @@
           H = -\frac{1}{2}\sum_{i,j} J_{ij} s_i s_j -\mu B_0 \sum_i s_i
         \end{equation}
 
-        Molekularfeldnäherung: Ersetzung von $s_i s_j \rightarrow s_i m$ wobei $m = \overline{s}$ das Molekularfeld ist. Vernachlässigung von Korrelationen $\overline{(s_i-m)(s_j-m)}\ll m^2$. \\
+        Molekularfeldnäherung: \newline Ersetzung von $s_i s_j \rightarrow s_i m$ wobei $m = \overline{s}$ das Molekularfeld ist. Vernachlässigung von Korrelationen $\overline{(s_i-m)(s_j-m)}\ll m^2$. \nl        
         Molekularfeldnäherung und Selbstkonsistenzgleichung (in $D$ Dimensionen, $h:=\mu B_0$):
         \begin{equation}
           \begin{aligned}
@@ -3223,7 +3243,7 @@
 
       \subsubsection{kontinuierliche Verteilungen}
         Zentraler Grenzwertsatz: \par
-        \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \\
+        \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 
         Normalverteilung:
   			\begin{equation}
