@@ -77,6 +77,14 @@
 	{
 		\mathrm{d}
 	}
+  \newcommand{\ii}
+  {
+    \imath
+  }
+  \renewcommand{\i}
+  {
+    \imath
+  }
 	\newcommand{\binomkoeff}[2]
 	{
 		\left(\begin{matrix}#1\\#2\end{matrix}\right)
@@ -323,7 +331,7 @@
           \end{equation}
 
       \subsection{Spezielle Relativität}
-        Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit, in ihr wird der metrische Tensor konstant.
+        Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit $G\rightarrow 0$, in ihr wird der metrische Tensor konstant.
 
         Minkowski-Metrik:
         \begin{equation}
@@ -334,6 +342,15 @@
             0    & 0    & \mp1 & 0    \\
             0    & 0    & 0    & \mp1 \\
           \end{matrix} \right)
+        \end{equation}
+
+        Klassischer Grenzfall:
+        \begin{equation}
+          c \rightarrow \infty
+        \end{equation}
+        Ultrarelativistischer Grenzfall:
+        \begin{equation}
+          v\rightarrow c
         \end{equation}
 
         \subsubsection{Definitionen}
@@ -1299,7 +1316,7 @@
         \item[Postulat 7]\hfill \\
           Der Hilbertraum des Gesamtsystems ist durch das Tensorprodukt der Hilberträume der Teilsysteme gegeben
           \begin{equation}
-            \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2
+            \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2.
           \end{equation}
         \item[Postulat 8]\hfill \\
           Mikroobjekte mit identischen Eigenschaften werden entweder durch totalsymmetrische (Bosonen) oder durch totalantisymmetrische (Fermionen) Zustandsvektoren beschrieben. Fermionen haben halbzahligen, Bosonen ganzzahligen Spin.
@@ -1334,7 +1351,7 @@
         i\hbar\pder{}{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
       \end{equation}
 
-      Heisenberg'sche Unschärferelation:
+      Heisenberg'sche Unschärferelation ($\Delta_{\Ket{\psi}} (\hat{A}) = \sqrt{\Bra{\psi}\hat{A}^2\Ket{\psi} - \Bra{\psi}\hat{A}\Ket{\psi}^2}$):
       \begin{equation}
         \begin{aligned}
           \Delta_{\Ket{\psi}}(\hat{A}) \Delta_{\Ket{\psi}}(\hat{B}) &\ge
@@ -1368,6 +1385,11 @@
         \end{aligned}
       \end{equation}
 
+      Klassischer Grenzfall:
+      \begin{equation}
+        \hbar \rightarrow 0
+      \end{equation}
+
     \subsection{Operatoren}
       Ortsoperator:
       \begin{equation}
@@ -1395,8 +1417,8 @@
       Zeitentwicklungsoperator (Für $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; der zweite Fall folgt aus $\pder{\hat{H}}{t}=0$):
       \begin{equation}
         \begin{aligned}
-          \hat{U}(t) &= \exp{\left(-\frac{i}{\hbar}\int_0^t \hat{H}(t')\;\diff t'\right)} \\
-          \hat{U}(t) &= \exp{\left(-i\frac{\hat{H} t}{\hbar}\right)} \\
+          \hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\diff t'\right)} \\
+          \hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\right)\hat{H} t} \\
           %&= \SumInt_E \SumInt_{\nu} e^{-iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\diff E \\
           %&= \int_\mathbb{R} e^{-i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\diff p \\
         \end{aligned}
@@ -1406,7 +1428,7 @@
       \begin{equation}
         \begin{aligned}
           \left[ \hat{x}_i, \hat{x}_j \right] &= \left[ \hat{p}_i, \hat{p}_j \right] = 0 \\
-          \left[ \hat{x}_i, \hat{p}_j \right] &= i\hbar\, \delta_{ij}\hat{1} \\
+          \left[ \hat{x}_i, \hat{p}_j \right] &= \i\hbar\, \delta_{ij}\hat{1} \\
         \end{aligned}
       \end{equation}
 
@@ -1424,20 +1446,20 @@
       Translationsoperator:
       \begin{equation}
         \begin{aligned}
-          \hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = e^{-i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
+          \hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = e^{-\i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
         \end{aligned}
       \end{equation}
 
     \subsubsection{Drehimpulsoperatoren}
       Definierende Eigenschaft (Drehimpuls-Kommutatorrelationen):
       \begin{equation}
-        \left[ \hat{j}_i, \hat{j}_j \right] = i\hbar\, \epsilon_{ijk} \hat{j}_k
+        \left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \epsilon_{ijk} \hat{j}_k
       \end{equation}
 
       Bahndrehimpulsoperator:
       \begin{equation}
         \begin{aligned}
-          \hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-i\hbar\pder{}{\vec{x}}\right)  \\
+          \hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pder{}{\vec{x}}\right)  \\
           \left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
           \left< \hat{L}_z \right> &= m_l \hbar \\
         \end{aligned}
@@ -1456,10 +1478,10 @@
         \begin{aligned}
           \hat{\vec{\sigma}} \cdot \vec{n} &\doteq
           \left( \begin{matrix}
-            \cos\theta & e^{-i\phi}\sin\theta \\
-            e^{i\phi}\sin\theta & -\cos\theta \\
+            \cos\theta & e^{-\i\phi}\sin\theta \\
+            e^{\i\phi}\sin\theta & -\cos\theta \\
           \end{matrix} \right) \\
-          \exp\left( i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
+          \exp\left( \i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + \i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
         \end{aligned}
       \end{equation}
 
@@ -1467,7 +1489,7 @@
       \begin{equation}
         \begin{aligned}
           \hat{\sigma}_1 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
-          \hat{\sigma}_2 &= -i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+          \hat{\sigma}_2 &= -\i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
           \hat{\sigma}_3 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
         \end{aligned}
       \end{equation}
@@ -1475,10 +1497,10 @@
       Eigenschaften der Pauli-matrizen:
       \begin{equation}
         \begin{aligned}
-          \det\Br{\hat{\sigma^j}} &= -1 \\
-          \tr\Br{\hat{\sigma^j}} &= 0 \\
-          \Br{\hat{\sigma}_1}^2 = \Br{\hat{\sigma}_2}^2 = \Br{\hat{\sigma}_3}^2 &= -i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
-          \hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + i\varepsilon_{jkl}\hat{\sigma}_l
+          \det\Br{\hat{\sigma}_j} &= -1 \\
+          \tr\Br{\hat{\sigma}_j} &= 0 \\
+          \Br{\hat{\sigma}_1}^2 = \Br{\hat{\sigma}_2}^2 = \Br{\hat{\sigma}_3}^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+          \hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\varepsilon_{jkl}\hat{\sigma}_l
           %\com{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
           %\hat{\sigma}_\mu \hat{\sigma}_\nu \hat{\sigma}_\lambda = i\varepsilon_{\}\hat{\sigma}_\xi
         \end{aligned}
@@ -1524,7 +1546,7 @@
             \langle \hat{A} \rangle_{\Ket{\psi(t)}} &= \Bra{\psi(0)}\hat{A}_H(t)\Ket{\psi(0)}
           \end{aligned}
         \end{equation}
-        Zeitentwicklung von Observablen:
+        Zeitentwicklung von Observablen (Heisenberggleichung):
         \begin{equation}
           i\hbar \tder{}{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pder{}{t} \hat{A}\right)_H (t)
         \end{equation}
@@ -2688,7 +2710,7 @@
           \end{equation}
 
     \subsection{Funktionsbasen}
-      Hermitesches ``Skalarprodukt'' im Vektorraum $R([0,2\pi],\mathbb{C})$:
+      Hermitesches Skalarprodukt im Vektorraum $R([0,2\pi],\mathbb{C})$:
       \begin{equation}
         \left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\diff x
       \end{equation}
@@ -3315,7 +3337,7 @@
     			\hline\xrowht{12pt}
     			Elektrische Feldkonstante / Vakuum-Permittivität & $\varepsilon_0$ & $8.854\,187\,812\,8(13)\cdot 10^{-12}\;\frac{\mathrm{A\,s}}{\mathrm{V\,m}}$ \\
     			\hline\xrowht{12pt}
-    			Magnetische Feldkonstante / Vakuum-Permeabilität & $\mu_0$ & $1.256\,637\,062\,12(19)\cdot 10^{-6}\;\frac{\mathrm{N}}{\mathrm{m^2}}$ \\
+    			Magnetische Feldkonstante / Vakuum-Permeabilität & $\mu_0$ & $1.256\,637\,062\,12(19)\cdot 10^{-6}\;\frac{\mathrm{N}}{\mathrm{A^2}}$ \\
     			\hline\xrowht{12pt}
     			Boltzmann-Konstante & $k_B$ & $1.380\,649\cdot 10^{-23}\;\frac{\mathrm{J}}{\mathrm{K}}$ (exakt) \\
     			\hline\xrowht{12pt}
