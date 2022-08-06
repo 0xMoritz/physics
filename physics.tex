@@ -83,7 +83,8 @@
   }
   \renewcommand{\i}
   {
-    \imath
+    %\imath
+    \mathrm{i}
   }
 	\newcommand{\binomkoeff}[2]
 	{
@@ -872,7 +873,7 @@
 
         Vektorwelle (In der Elektrodynamik $\vec{\psi}=\vec{E}$ und $ \vec{\psi}=\vec{B}$):
         \begin{equation}
-          \vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \diff^3\vec{k}
+          \vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \diff^3\vec{k}
         \end{equation}
 
         Orthogonalität des Wellenvektors (Elektromagnetische Wellen im Vakuum sind immer transversal):
@@ -905,7 +906,7 @@
           I = \langle|\vec{S}|\rangle = c\epsilon_0\vec{E}^2
         \end{equation}
 
-        Abgestrahlte Welle eines oszillierenden Dipols $\vec{p} = \vec{p}_0 e^{-i\omega t}$ (Mit retardierter Zeit $\tilde{t} = t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}$):
+        Abgestrahlte Welle eines oszillierenden Dipols $\vec{p} = \vec{p}_0 e^{-\i\omega t}$ (Mit retardierter Zeit $\tilde{t} = t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}$):
         \begin{equation}
           \begin{aligned}
             \vec{E}(t,\vec{r}) &= -\frac{\mu_0}{4\pi r c}  \left(\vec{n}\times\ddot{\vec{p}}(\tilde{t})\right) \times \vec{n} \\
@@ -1310,7 +1311,7 @@
         \item[Postulat 6]\hfill \\
           Die zeitliche Entwicklung eines abgeschlossenen Quantensystems ist durch die Schrödingergleichung
           \begin{equation}
-            i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
+            \i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
           \end{equation}
           gegeben, wobei der Hamiltonoperator $\hat{H}$ die Observable ist, die mit der Gesamtenergie des Systems verknüpft ist.
         \item[Postulat 7]\hfill \\
@@ -1325,7 +1326,7 @@
     \subsection{Allgemeines}
       Schrödingergleichung:
       \begin{equation}
-        i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
+        \i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
       \end{equation}
 
       De Broglie Wellenlänge:
@@ -1348,7 +1349,7 @@
 
       Klassische Schrödingergleichung in Ortsdarstellung:
       \begin{equation}
-        i\hbar\pder{}{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
+        \i\hbar\pder{}{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
       \end{equation}
 
       Heisenberg'sche Unschärferelation ($\Delta_{\Ket{\psi}} (\hat{A}) = \sqrt{\Bra{\psi}\hat{A}^2\Ket{\psi} - \Bra{\psi}\hat{A}\Ket{\psi}^2}$):
@@ -1381,7 +1382,7 @@
           \Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) \\
           \Braket{\vec{x} | \pvec{x}'} &= \delta(\vec{x} - \pvec{x}') \\
           \Braket{\vec{p} | \pvec{p}'} &= \delta(\vec{p} - \pvec{p}') \\
-          \Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{i \vec{p}\cdot\vec{x} / \hbar} \\
+          \Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
         \end{aligned}
       \end{equation}
 
@@ -1395,8 +1396,8 @@
       \begin{equation}
         \begin{aligned}
           \hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}}\;\diff^n\vec{x} \\
-          \Bra{\vec{x}}\hat{\vec{x}}\Ket{\psi} =& \vec{x}\, \psi(\vec{x}) \\
-          \Bra{\vec{p}}\hat{\vec{x}}\Ket{\psi} =& i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
+          \Bra{\vec{x}}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) \\
+          \Bra{\vec{p}}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
         \end{aligned}
       \end{equation}
 
@@ -1404,8 +1405,8 @@
       \begin{equation}
         \begin{aligned}
           \hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}}\;\diff^n\vec{p} \\
-          \Bra{\vec{p}}\hat{\vec{p}}\Ket{\psi} =& \vec{p}\, \tilde{\psi}(\vec{p}) \\
-          \Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
+          \Bra{\vec{p}}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) \\
+          \Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
         \end{aligned}
       \end{equation}
 
@@ -1419,8 +1420,8 @@
         \begin{aligned}
           \hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\diff t'\right)} \\
           \hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\right)\hat{H} t} \\
-          %&= \SumInt_E \SumInt_{\nu} e^{-iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\diff E \\
-          %&= \int_\mathbb{R} e^{-i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\diff p \\
+          %&= \SumInt_E \SumInt_{\nu} e^{-\iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\diff E \\
+          %&= \int_\mathbb{R} e^{-\i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\diff p \\
         \end{aligned}
       \end{equation}
 
@@ -1459,9 +1460,18 @@
       Bahndrehimpulsoperator:
       \begin{equation}
         \begin{aligned}
-          \hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pder{}{\vec{x}}\right)  \\
+          \hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pder{}{\vec{x}}\right) \\
           \left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
           \left< \hat{L}_z \right> &= m_l \hbar \\
+        \end{aligned}
+      \end{equation}
+
+      Zusammenhang zum Laplace Operator:
+      \begin{equation}
+        \begin{aligned}
+          \hat{\vec{p}}^{\,2} &= -\hbar^2 \Nabla^2 = \hat{\vec{p}}_r^{\,2} + \frac{1}{r^2} \hat{\vec{L}}^2 \\
+          &= -\hbar^2 \rBr{{\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial }{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial }{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}}{\partial \varphi ^{2}}}}\\
+          \hat{\vec{p}}_r &= -\i\hbar\frac{1}{r}\pder{}{r}r \\
         \end{aligned}
       \end{equation}
 
@@ -1570,7 +1580,7 @@
       \subsubsection{Erhaltungsgrößen}
         Symmetrietransformation mit selbstadjungiertem Generator $\hat{G}$ ($\hat{T}$ ist unitär):
         \begin{equation}
-          \hat{T}(\nu) = e^{-i\hat{G}\nu/\hbar}
+          \hat{T}(\nu) = e^{-\i\hat{G}\nu/\hbar}
         \end{equation}
 
         Invarianzbedingung und Erhaltunggröße (Heisenberg-Bild):
@@ -1680,6 +1690,13 @@
             \Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} e^{-\frac{q^2}{2}} H_n(q) \\
           \end{aligned}
         \end{equation}
+
+    \subsection{Störungstheorie}
+      Fermis goldene Regel für die Übergangsrate $P_{fi}$ von $\Ket{i}$ nach $\Ket{f}$ periodische Störungen der Form $\hat{H}' e^{\pm\i\omega}$ in erster Ordnung:
+      \begin{equation}
+        P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \vBr{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\Br{E_f^0 - E_i^0 \pm \hbar\omega}
+      \end{equation}
+
 
     \subsection{Streuung}
       Lippmann-Schwinger-Gleichung
@@ -1869,8 +1886,8 @@
         \textbf{Dritter Hauptsatz}: Nernstscher Wärmesatz\newline
           \indent Nernst: \emph{Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
 
-      \subsubsection{Gibbs'sche Fundamentalgleichung}
-        Gibbs'sche Fundamentalgleichung (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
+      \subsubsection{Gibbssche Fundamentalgleichung}
+        Gibbssche Fundamentalgleichung (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
         \begin{equation}
           \label{eq:GibbsFundamental}
           \diff S = \frac{1}{T} \diff U - \frac{1}{T} \sum_{\alpha} g_\alpha \diff Z_\alpha
@@ -2103,7 +2120,7 @@
         \end{equation}
 
       \subsubsection{Dichtematrix}
-        Definition der Dichtematrix (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten sind):
+        Definition der Dichtematrix / des Dichteoperators (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten für den Zustand $\Ket{\psi_i}$ sind):
         \begin{equation}
           \hat{\rho} = \sum_i p_i \Ket{\psi_i}\Bra{\psi_i}
         \end{equation}
@@ -2112,7 +2129,7 @@
         \begin{itemize}\itemsep -0pt  % reduce space between items
           \item $\hat{\rho} = \hat{\rho}^\dagger$ \hfill{(hermitesch)}
           \item $\hat{\rho} \ge 0 $ \hfill{(positiv semidefinit)}
-          \item $\mathrm{tr} \hat{\rho} = 1$ \hfill{(Spur 1)}
+          \item $\mathrm{tr} \hat{\rho} = 1$ \hfill{(normiert)}
         \end{itemize}
 
         Erwartungswert einer Observablen $\mathcal{A}$:
@@ -2122,7 +2139,12 @@
 
         Von-Neumann-Gleichung:
         \begin{equation}
-          \tder{}{t}\hat{\rho(t)} = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
+          \tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
+        \end{equation}
+
+        Liouville-Gleichung (Analogon der Von-Neumann-Gleichung für klassische Systeme):
+        \begin{equation}
+          \tder{\rho}{t} = \pder{\rho}{t}+\cBr{\rho,H}
         \end{equation}
 
       \subsubsection{Mikrokanonisches Ensemble}
@@ -2143,7 +2165,8 @@
                   \int \diff \Gamma_N \delta_\Delta(U-E_n) & \text{klassisch}
                 \end{cases} \\
             \delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
-            \diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!}
+            \diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!} \\
+            \hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\diff\psi
           \end{aligned}
         \end{equation}
 
@@ -2184,7 +2207,7 @@
         \end{equation}
 
 
-      \subsubsection{Gibbs'sches Variationsprinzip}
+      \subsubsection{Gibbssches Variationsprinzip}
         Wahrscheinlichkeiten $p_i$ sind so verteilt, dass die Entropie im thermodynamischen Gleichgewicht unter den gegebenen Nebenbedingungen $g_k(p_i) = 0$ maximiert wird.
         \begin{equation}
           0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
@@ -2260,7 +2283,7 @@
             \end{cases}
         \end{equation}
 
-        Mittlere Besetzungszahl:
+        Mittlere Besetzungszahl (Bose-Einstein Statistik, Fermi-Dirac Statistik):
         \begin{equation}
           \overline{n_\alpha} =
               \begin{cases}
@@ -2397,10 +2420,10 @@
   				Identitäten
   				\begin{equation}
   					\begin{split}
-  						e^{i x}&=\cos x+i\sin x \\
+  						e^{\i x}&=\cos x+i\sin x \\
   						1&=\sin^{2}x+\cos^{2}x \\
-  						\cos{x}&=\frac{e^{i x}+e^{-i x}}{2} \\
-  						\sin{ x}&=\frac{e^{i x}-e^{-i x}}{2i} \\
+  						\cos{x}&=\frac{e^{\i x}+e^{-\i x}}{2} \\
+  						\sin{ x}&=\frac{e^{\i x}-e^{-\i x}}{2i} \\
   					\end{split}
   				\end{equation}
 
@@ -2549,14 +2572,14 @@
           \int_{\partial \mathcal{A}} f(z)\;\diff z = 0
         \end{equation}
 
-        Cauchy-Integralformel (für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
+        Cauchy-Integralformel (für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
         \begin{equation}
-          \frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
+          \frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
         \end{equation}
 
         Residuensatz (für eine einfache, geschlossene, stückweise stetig differenzierbare Kontour $\gamma:\left[a,b\right]\rightarrow G$ und $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorph mit Polen $a_1, a_2, .., a_n$, und Residuen $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ für $f(z)=\frac{g(z)}{(z-a)^k}$ in der Nähe von $a$:
         \begin{equation}
-          \int_\gamma f(z)\,\diff z = 2\pi i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
+          \int_\gamma f(z)\,\diff z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
         \end{equation}
 
   			Trigonometrische Integrale:
@@ -2718,17 +2741,17 @@
       \subsubsection{Fourier Transformation}
         Komplex-trigonometrische Basisfunktion:
         \begin{equation}
-          \hat{e}_k(x):=e^{ikx}
+          \hat{e}_k(x):=e^{\i kx}
         \end{equation}
 
         Diskrete komplexe Fourier Transformation:
         \begin{equation}
-          (Tf)(x)=\sum_{k\in\mathbb{Z}}c_k e^{ikx}
+          (Tf)(x)=\sum_{k\in\mathbb{Z}}c_k e^{\i kx}
         \end{equation}
 
         Komplexe Fourierkoeffizienten:
         \begin{equation}
-          c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-ikx}\;\diff x
+          c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-\i kx}\;\diff x
         \end{equation}
 
         Diskrete reelle Fourier Transformation:
@@ -2747,8 +2770,8 @@
         Kontinuierliche Fouriertransformation und Rücktransformation:
         \begin{equation}
           \begin{aligned}
-            (\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-i\vec{k}\cdot\vec{x}}\;\diff\vec{x} \\
-            \phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{i\vec{k}\cdot\vec{x}}\;\diff \vec{k} \\
+            (\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-\i\vec{k}\cdot\vec{x}}\;\diff\vec{x} \\
+            \phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{\i\vec{k}\cdot\vec{x}}\;\diff \vec{k} \\
           \end{aligned}
         \end{equation}
 
@@ -2759,7 +2782,7 @@
             \mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pder{}{x}f(x) \\
             \int_{\mathbb{R}} f^{*}(x) g(x)\;\diff x &=
             \int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\diff k \\
-            \delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{ikx}\;\diff k \\
+            \delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\diff k \\
             \label{eq:fourierIdentities}
           \end{aligned}
         \end{equation}
@@ -2788,7 +2811,7 @@
 
         Bestimmung der Koeffizienten:
         \begin{equation}
-          a_n = \frac{1}{2 \pi i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\diff z
+          a_n = \frac{1}{2 \pi \i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\diff z
         \end{equation}
 
       \subsubsection{Kugelflächenfunktionen}
@@ -2831,18 +2854,18 @@
 
         Lösung:
         \begin{equation}
-          x(t)=x_0 e^{\pm i\omega_0 t}
+          x(t)=x_0 e^{\pm \i\omega_0 t}
         \end{equation}
 
       \subsubsection{Angetriebener, gedämpfter harmonischer Oszillator}
         Differentialgleichung:
         \begin{equation}
-          m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x = F_0 e^{-i\omega t}
+          m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x = F_0 e^{-\i\omega t}
         \end{equation}
 
         Lösung:
         \begin{equation}
-          x(t) = \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-i\omega t}
+          x(t) = \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-\i\omega t}
         \end{equation}
 
       \subsubsection{Bessel'sche Differentialgleichungen}
@@ -2853,7 +2876,7 @@
 
         Bessel-Funktion erster Gattung:
         \begin{equation}
-          J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{i(x\sin\varphi-\nu\varphi)}\;\diff\varphi
+          J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{\i(x\sin\varphi-\nu\varphi)}\;\diff\varphi
         \end{equation}
 
       \subsubsection{Poisson-Gleichung}
@@ -2932,7 +2955,7 @@
 
         Lösungen (Kugelflächenfunktionen):
         \begin{equation} \label{eq:kugelflächenfunktionen}
-          Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} e^{im\varphi} P_l^m(\cos\theta)
+          Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} e^{\i m\varphi} P_l^m(\cos\theta)
         \end{equation}
 
         Orthonormalität der Kugelflächenfunktionen:
