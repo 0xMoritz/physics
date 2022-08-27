@@ -1012,7 +1012,13 @@
       \subsubsection{Lorenz-Eichung}
         Lorenz-Eichung:
         \begin{equation}
-          \partial_\mu A^\mu = \frac{1}{c}\frac{\partial \vec{A}}{\partial t} - \vec{\nabla}\cdot\vec{A} = 0
+          \partial_\mu A^\mu = \frac{1}{c}\frac{\partial \phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0
+        \end{equation}
+
+        tests
+        \begin{equation}
+          \left<\psi|\hat{A}\phi\right> = \left<\hat{A}^{\dagger}\psi|\phi\right> =
+\left<\hat{A}\psi|\phi\right>
         \end{equation}
 
         Maxwellgleichungen in der Lorentz-Eichung:
@@ -1827,6 +1833,166 @@
 
   \newpage
   \section{Statistische Physik}
+      \subsection{Statistische Mechanik}
+        \subsubsection{Allgemeines}
+          Äquipartitionstheorem $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
+          \begin{equation}
+            \overline{ z_i \pder{H}{z_j}} = k_B T \delta_{ij}
+          \end{equation}
+
+        \subsubsection{Definition der Entropie}
+          Boltzmann Entropie (mit mikrokanonischer Zustandssumme $\Gamma$ und Zustandsvektor $\vec{Z}=(U,V,N,...)$)
+          \begin{equation}
+            S_{B}(\vec{Z}) = k_B \ln\Gamma(\vec{Z})
+          \end{equation}
+
+          Gibbs Entropie:
+          \begin{equation}
+            S_{G} = -k_B \sum_i p_i \ln p_i
+          \end{equation}
+
+          Shannon Entropie:
+          \begin{equation}
+            S_{Sh} = -\sum_i p_i\log_2{p_i} \ge 0
+          \end{equation}
+
+          Von Neumann Entropie:
+          \begin{equation}
+            S_{vN} = -\mathrm{tr}(\hat{\rho}\log_2\hat{\rho})
+          \end{equation}
+
+          Äquivalenz der Entropien:
+          \begin{equation}
+            S = -k_B\,\mathrm{tr}(\hat{\rho} \ln \hat{\rho}) = S_B = S_G = k_B\ln(2) S_{Sh} = k_B\ln(2) S_{vN}
+          \end{equation}
+
+        \subsubsection{Dichtematrix}
+          Definition der Dichtematrix / des Dichteoperators (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten für den Zustand $\Ket{\psi_i}$ sind):
+          \begin{equation}
+            \hat{\rho} = \sum_i p_i \Ket{\psi_i}\Bra{\psi_i}
+          \end{equation}
+
+          Axiome der Dichtematrix:
+          \begin{itemize}\itemsep -0pt  % reduce space between items
+            \item $\hat{\rho} = \hat{\rho}^\dagger$ \hfill{(hermitesch)}
+            \item $\hat{\rho} \ge 0 $ \hfill{(positiv semidefinit)}
+            \item $\mathrm{tr} \hat{\rho} = 1$ \hfill{(normiert)}
+          \end{itemize}
+
+          Erwartungswert einer Observablen $\mathcal{A}$:
+          \begin{equation}
+            \overline{A} = \sum_i p_i \Bra{\psi_i}\hat{A}\Ket{\psi_i} = \mathrm{tr} (\hat{\rho}\hat{A})
+          \end{equation}
+
+          Von-Neumann-Gleichung:
+          \begin{equation}
+            \tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
+          \end{equation}
+
+          Liouville-Gleichung (Analogon der Von-Neumann-Gleichung für klassische Systeme):
+          \begin{equation}
+            \tder{\rho}{t} = \pder{\rho}{t}+\cBr{\rho,H}
+          \end{equation}
+
+        \subsubsection{Mikrokanonisches Ensemble}
+          Axiome für die mikrokanonische Zustandssumme $\Gamma$:
+          \begin{itemize}\itemsep -0pt  % reduce space between items
+            \item $\pder{}{t}\Gamma(\vec{Z}) = 0$ \hfill{(stationär)}
+            \item $\Gamma(\vec{Z}_1,\vec{Z}_2) = \Gamma(\vec{Z}_1)\Gamma(\vec{Z}_2) $ \hfill{(multiplikativ)}
+            \item $\ln\Gamma(\vec{Z}) \propto N$ \hfill{(extensiv)}
+          \end{itemize}
+          Wobei der dritte Punkt für Thermodynamik jedoch nicht für statistische Mechanik im Allgemeinen notwendig wird.
+
+          Berechnung von $\Gamma$ ($\Delta$ wird im thermodynamischen Grenzfall irrelevant. Das $\Gamma(\vec{Z})$ stationär bleibt ist durch die unitäre Zeitentwicklung im quantenmechanischen Fall bzw. durch den Satz von Liouville im klassischen Fall garantiert.):
+          \begin{equation}
+            \begin{aligned}
+              \Gamma(\vec{Z}) = \langle \delta_\Delta (U-H) \rangle
+                &= \begin{cases}
+                    \SumInt_n \delta_\Delta(U-E_n) & \text{quantenmechanisch} \\
+                    \int \diff \Gamma_N \delta_\Delta(U-E_n) & \text{klassisch}
+                  \end{cases} \\
+              \delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
+              \diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!} \\
+              \hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\diff\psi
+            \end{aligned}
+          \end{equation}
+
+        \subsubsection{Kanonisches Ensemble}
+          Kanonische Zustandssumme ($\beta = \frac{1}{k_B T}$):
+          \begin{equation}
+            Z_N=\langle e^{-\beta H} \rangle
+              = \begin{cases}
+                  \SumInt_n e^{-\beta E_n} & \text{quantenmechanisch} \\
+                  \int \diff \Gamma_N e^{-\beta H} & \text{klassisch}
+                \end{cases} \\
+          \end{equation}
+
+          Zusammenhang zur Freien Energie $F$:
+          \begin{equation}
+            F(T, V, N) = -k_B T \ln{Z_N(T)}
+          \end{equation}
+
+          % Bose Einstein Verteilung (Mittlere Besetzungszahl bei harmonischen Oszillatoren):
+          % \begin{equation}
+          %     \overline{n}_\nu = \frac{1}{e^{\hbar \omega_\nu / k_B T} - 1}
+          % \end{equation}
+
+          Innere Energie im kanonischen Ensemble:
+          \begin{equation}
+            U = \overline{H} = \frac{1}{Z_N}\langle He^{-\beta H}\rangle = -\frac{1}{Z_N}\pder{Z_N}{\beta} = -\pder{\ln Z_N}{\beta}
+          \end{equation}
+
+        \subsubsection{Großkanonisches Ensemble}
+          großkanonische Zustandssumme (Die Spur im quantenmechanischen Fall wird nun über den Fock-Raum gebildet):
+          \begin{equation}
+            \mathcal{Z} = \sum_N z^N Z_N(\beta) = \langle e^{-\beta(H-\mu N)} \rangle
+          \end{equation}
+
+          Zusammenhang zum großen Potential $\Omega$:
+          \begin{equation}
+            \Omega(\beta,z) = -k_B T \ln \mathcal{Z}(\beta,z)
+          \end{equation}
+
+
+        \subsubsection{Gibbssches Variationsprinzip}
+          Wahrscheinlichkeiten $p_i$ sind so verteilt, dass die Entropie im thermodynamischen Gleichgewicht unter den gegebenen Nebenbedingungen $g_k(p_i) = 0$ maximiert wird.
+          \begin{equation}
+            0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
+          \end{equation}
+
+          Für mikrokanonisches Ensemble folgt die Gleichverteilung (Nebenbedingung $\sum_i p_i = 1$):
+          \begin{equation}
+            \begin{aligned}
+              0 &= \diff \big( S - \lambda \sum_i p_i \big) \\
+              p_i &= e^{-1-\lambda} = \konst \\
+              \hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ %\frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
+            \end{aligned}
+          \end{equation}
+
+          Für kanonisches Ensemble folgt die Boltzmannverteilung (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = \overline{H} = U$):
+          \begin{equation}
+            \begin{aligned}
+              0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i \big) \\
+              p_i &= e^{-1-\lambda-\beta H_i} \propto e^{-\beta H_i} \\
+              \hat{\rho} &= \frac{e^{-\beta \hat{H}}}{Z_N} \\
+            \end{aligned}
+          \end{equation}
+
+          Großkanonisches Ensemble (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = U$; $\sum_i p_i N_i = \overline{N} = N$, Für den Teilchenzahloperator $\hat{N}$ muss die Spur über den Fockraum gebildet werden):
+          \begin{equation}
+            \begin{aligned}
+              0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i - \beta\mu \sum_i p_i N_i \big) \\
+              p_i &= e^{-1-\lambda-\beta H_i-\beta\mu N} \propto e^{-\beta H_i - \beta\mu N} \\
+              \hat{\rho} &= \frac{e^{-\beta (\hat{H} - \mu \hat{N})}}{\mathcal{Z}} \\
+            \end{aligned}
+          \end{equation}
+
+          Äquivalenz der Ensembles (Laplace Transformation zwischen Ensembles entspricht Legendre Transformation zwischen zugehörigen Thermodynamischen Potentialen):
+          \begin{equation}
+            \int \frac{\Gamma(U)}{\Delta} e^{-\beta U} \diff U = Z_N(\beta)
+          \end{equation}
+
+
     \subsection{Thermodynamik}
       \subsubsection{Definitionen}
         Im \emph{Thermodynamisches Gleichgewicht} sind makroskopische Eigenschaften eines Systems zeitlich konstant. Thermodynamische Gleichgewichte verdanken ihre Stabilität gemäß dem \emph{Prinzip von le Chatelier} einer rückstellenden Kraft, die sich bei Fluktuationen ausbildet. \vsp
@@ -1887,7 +2053,7 @@
           \indent Nernst: \emph{Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
 
       \subsubsection{Gibbssche Fundamentalgleichung}
-        Gibbssche Fundamentalgleichung (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
+        Gibbssche Fundamentalgleichung / Gibbssche Fundamentalform (folgt aus 1. und 2. Hauptsatz, Gl. \ref{eq:FirstLawOfThermodynamics} und Gl. \ref{eq:SecondLawOfThermodynamics})
         \begin{equation}
           \label{eq:GibbsFundamental}
           \diff S = \frac{1}{T} \diff U - \frac{1}{T} \sum_{\alpha} g_\alpha \diff Z_\alpha
@@ -2086,177 +2252,16 @@
         \end{equation}
 
 
-    \subsection{Statistische Mechanik}
-      \subsubsection{Allgemeines}
-        Äquipartitionstheorem $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
-        \begin{equation}
-          \overline{ z_i \pder{H}{z_j}} = k_B T \delta_{ij}
-        \end{equation}
-
-      \subsubsection{Definition der Entropie}
-        Boltzmann Entropie (mit mikrokanonischer Zustandssumme $\Gamma$ und Zustandsvektor $\vec{Z}=(U,V,N,...)$)
-        \begin{equation}
-          S_{B}(\vec{Z}) = k_B \ln\Gamma(\vec{Z})
-        \end{equation}
-
-        Gibbs Entropie:
-        \begin{equation}
-          S_{G} = -k_B \sum_i p_i \ln p_i
-        \end{equation}
-
-        Shannon Entropie:
-        \begin{equation}
-          S_{Sh} = -\sum_i p_i\log_2{p_i} \ge 0
-        \end{equation}
-
-        Von Neumann Entropie:
-        \begin{equation}
-          S_{vN} = -\mathrm{tr}(\hat{\rho}\log_2\hat{\rho})
-        \end{equation}
-
-        Äquivalenz der Entropien:
-        \begin{equation}
-          S = -k_B\,\mathrm{tr}(\hat{\rho} \ln \hat{\rho}) = S_B = S_G = k_B\ln(2) S_{Sh} = k_B\ln(2) S_{vN}
-        \end{equation}
-
-      \subsubsection{Dichtematrix}
-        Definition der Dichtematrix / des Dichteoperators (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten für den Zustand $\Ket{\psi_i}$ sind):
-        \begin{equation}
-          \hat{\rho} = \sum_i p_i \Ket{\psi_i}\Bra{\psi_i}
-        \end{equation}
-
-        Axiome der Dichtematrix:
-        \begin{itemize}\itemsep -0pt  % reduce space between items
-          \item $\hat{\rho} = \hat{\rho}^\dagger$ \hfill{(hermitesch)}
-          \item $\hat{\rho} \ge 0 $ \hfill{(positiv semidefinit)}
-          \item $\mathrm{tr} \hat{\rho} = 1$ \hfill{(normiert)}
-        \end{itemize}
-
-        Erwartungswert einer Observablen $\mathcal{A}$:
-        \begin{equation}
-          \overline{A} = \sum_i p_i \Bra{\psi_i}\hat{A}\Ket{\psi_i} = \mathrm{tr} (\hat{\rho}\hat{A})
-        \end{equation}
-
-        Von-Neumann-Gleichung:
-        \begin{equation}
-          \tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
-        \end{equation}
-
-        Liouville-Gleichung (Analogon der Von-Neumann-Gleichung für klassische Systeme):
-        \begin{equation}
-          \tder{\rho}{t} = \pder{\rho}{t}+\cBr{\rho,H}
-        \end{equation}
-
-      \subsubsection{Mikrokanonisches Ensemble}
-        Axiome für die mikrokanonische Zustandssumme $\Gamma$:
-        \begin{itemize}\itemsep -0pt  % reduce space between items
-          \item $\pder{}{t}\Gamma(\vec{Z}) = 0$ \hfill{(stationär)}
-          \item $\Gamma(\vec{Z}_1,\vec{Z}_2) = \Gamma(\vec{Z}_1)\Gamma(\vec{Z}_2) $ \hfill{(multiplikativ)}
-          \item $\ln\Gamma(\vec{Z}) \propto N$ \hfill{(extensiv)}
-        \end{itemize}
-        Wobei der dritte Punkt für Thermodynamik jedoch nicht für statistische Mechanik im Allgemeinen notwendig wird.
-
-        Berechnung von $\Gamma$ ($\Delta$ wird im thermodynamischen Grenzfall irrelevant. Das $\Gamma(\vec{Z})$ stationär bleibt ist durch die unitäre Zeitentwicklung im quantenmechanischen Fall bzw. durch den Satz von Liouville im klassischen Fall garantiert.):
-        \begin{equation}
-          \begin{aligned}
-            \Gamma(\vec{Z}) = \langle \delta_\Delta (U-H) \rangle
-              &= \begin{cases}
-                  \SumInt_n \delta_\Delta(U-E_n) & \text{quantenmechanisch} \\
-                  \int \diff \Gamma_N \delta_\Delta(U-E_n) & \text{klassisch}
-                \end{cases} \\
-            \delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
-            \diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!} \\
-            \hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\diff\psi
-          \end{aligned}
-        \end{equation}
-
-      \subsubsection{Kanonisches Ensemble}
-        Kanonische Zustandssumme ($\beta = \frac{1}{k_B T}$):
-        \begin{equation}
-          Z_N=\langle e^{-\beta H} \rangle
-            = \begin{cases}
-                \SumInt_n e^{-\beta E_n} & \text{quantenmechanisch} \\
-                \int \diff \Gamma_N e^{-\beta H} & \text{klassisch}
-              \end{cases} \\
-        \end{equation}
-
-        Zusammenhang zur Freien Energie $F$:
-        \begin{equation}
-          F(T, V, N) = -k_B T \ln{Z_N(T)}
-        \end{equation}
-
-        % Bose Einstein Verteilung (Mittlere Besetzungszahl bei harmonischen Oszillatoren):
-        % \begin{equation}
-        %     \overline{n}_\nu = \frac{1}{e^{\hbar \omega_\nu / k_B T} - 1}
-        % \end{equation}
-
-        Innere Energie im kanonischen Ensemble:
-        \begin{equation}
-          U = \overline{H} = \frac{1}{Z_N}\langle He^{-\beta H}\rangle = -\frac{1}{Z_N}\pder{Z_N}{\beta} = -\pder{\ln Z_N}{\beta}
-        \end{equation}
-
-      \subsubsection{Großkanonisches Ensemble}
-        großkanonische Zustandssumme (Die Spur im quantenmechanischen Fall wird nun über den Fock-Raum gebildet):
-        \begin{equation}
-          \mathcal{Z} = \sum_N z^N Z_N(\beta) = \langle e^{-\beta(H-\mu N)} \rangle
-        \end{equation}
-
-        Zusammenhang zum großen Potential $\Omega$:
-        \begin{equation}
-          \Omega(\beta,z) = -k_B T \ln \mathcal{Z}(\beta,z)
-        \end{equation}
-
-
-      \subsubsection{Gibbssches Variationsprinzip}
-        Wahrscheinlichkeiten $p_i$ sind so verteilt, dass die Entropie im thermodynamischen Gleichgewicht unter den gegebenen Nebenbedingungen $g_k(p_i) = 0$ maximiert wird.
-        \begin{equation}
-          0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
-        \end{equation}
-
-        Für mikrokanonisches Ensemble folgt die Gleichverteilung (Nebenbedingung $\sum_i p_i = 1$):
-        \begin{equation}
-          \begin{aligned}
-            0 &= \diff \big( S - \lambda \sum_i p_i \big) \\
-            p_i &= e^{-1-\lambda} = \konst \\
-            \hat{\rho} &= \frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
-          \end{aligned}
-        \end{equation}
-
-        Für kanonisches Ensemble folgt die Boltzmannverteilung (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = \overline{H} = U$):
-        \begin{equation}
-          \begin{aligned}
-            0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i \big) \\
-            p_i &= e^{-1-\lambda-\beta H_i} \propto e^{-\beta H_i} \\
-            \hat{\rho} &= \frac{e^{-\beta \hat{H}}}{Z_N} \\
-          \end{aligned}
-        \end{equation}
-
-        Großkanonisches Ensemble (Nebenbedingungen $\sum_i p_i = 1$; $\sum_i p_i H_i = U$; $\sum_i p_i N_i = \overline{N} = N$, Für den Teilchenzahloperator $\hat{N}$ muss die Spur über den Fockraum gebildet werden):
-        \begin{equation}
-          \begin{aligned}
-            0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i - \beta\mu \sum_i p_i N_i \big) \\
-            p_i &= e^{-1-\lambda-\beta H_i-\beta\mu N} \propto e^{-\beta H_i - \beta\mu N} \\
-            \hat{\rho} &= \frac{e^{-\beta (\hat{H} - \mu \hat{N})}}{\mathcal{Z}} \\
-          \end{aligned}
-        \end{equation}
-
-        Äquivalenz der Ensembles (Laplace Transformation zwischen Ensembles entspricht Legendre Transformation zwischen zugehörigen Thermodynamischen Potentialen):
-        \begin{equation}
-          \int \frac{\Gamma(U)}{\Delta} e^{-\beta U} \diff U = Z_N(\beta)
-        \end{equation}
-
-
-
     \subsection{Modelle}
       \subsubsection{Klassisches ideales Gas}
         Ein \emph{ideales Gas} ist ein System von $N$ identischen Teilchen im Volumen $V$, die nicht untereinander wechselwirken. \vsp
 
-        Thermische Zustandsgleichung
+        Thermische Zustandsgleichung $p(T, N, V)$:
         \begin{equation}
           pV = N k_B T
         \end{equation}
 
-        Kalorische Zustandsgleichung:
+        Kalorische Zustandsgleichung $U(T, N, V)$:
         \begin{equation}
           U = \frac{3}{2} N k_B T
         \end{equation}
@@ -2364,9 +2369,9 @@
           I = \epsilon\sigma T^4
         \end{equation}
 
-        Wien'sches Verschiebungsgesetz (Für die Wellenlänge $\lambda_{max}$ des Strahlungsmaximums):
+        Wien'sches Verschiebungsgesetz (Für die Wellenlänge $\lambda_{\max}$ des Strahlungsmaximums):
         \begin{equation}
-          \lambda_{max} T = \mathrm{konst}.
+          \lambda_{\max} T = \mathrm{konst}.
         \end{equation}
 
       \subsubsection{Idealer Paramagnetismus}
