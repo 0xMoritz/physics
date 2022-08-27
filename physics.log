@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  11 AUG 2022 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.20)  27 AUG 2022 17:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -547,12 +547,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3485.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3484.
  [61]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3485.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3484.
  (./physics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3485.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3485.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3484.
 Package rerunfilecheck Info: File `physics.out' has not changed.
 (rerunfilecheck)             Checksum: 48D10CA11CAA895F4B180961B6EB24AE;12372.
  ) 
