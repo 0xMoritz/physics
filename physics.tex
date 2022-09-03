@@ -2358,9 +2358,12 @@
           p(T) = \frac{U}{3V}
         \end{equation}
 
-        Planck'sches Strahlungsgesetz (Spektrale Energiedichte $u(\omega,T) = \pder{U}{\omega}$):
+        Planck'sches Strahlungsgesetz (Für die spektrale Energiedichte $\pder{u}{\omega}$):
         \begin{equation}
-          u(\omega,T) = \frac{2 \omega^2}{\pi^2 c^3} \frac{\hbar \omega}{e^{\hbar \omega / k_B T} - 1}
+            \begin{aligned}
+                \pder{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega / k_B T} - 1} \\
+                \pder{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / k_B T} - 1} \\
+            \end{aligned}
         \end{equation}
 
         Stefan-Boltzmann-Gesetz (Intensität / Strahlungsleistung pro Fläche $I$, Stefan-Boltzmann-Konstante $\sigma$ und Emissionskoeffizient $\epsilon$; $\epsilon=1$ für Schwarzen Strahler):
