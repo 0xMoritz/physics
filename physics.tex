@@ -1,4 +1,4 @@
-		\documentclass[11pt]{article}
+\documentclass[11pt]{article}
 \usepackage[ngerman]{babel}	 % deutsche Silbentrennung
 \usepackage[utf8]{inputenc}	 % Unicode support (Umlaute etc.)
 \usepackage{a4}
@@ -6,7 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{listings} 			% Für Code-Segmente
+\usepackage{listings} 		% Für Code-Segmente
 \usepackage{color}
 \usepackage{caption}
 \usepackage{dblfloatfix}	% To enable figures at the bottom of page
@@ -18,7 +18,9 @@
 \usepackage{placeins}
 \usepackage{mathtools}
 \usepackage{svg}
-\usepackage{slashed}  % Feynman slash notation
+\usepackage{siunitx}	% SI units \SI{1+-2}{\micro e V}
+\usepackage{slashed}	% Feynman slash notation \slashed{}
+\usepackage{ulem} 		% strike through text horizontally with \sout{}
 \usepackage[margin=2cm,footskip=1cm]{geometry}
 %\usepackage{tabularx}
 
@@ -69,119 +71,35 @@
 \numberwithin{equation}{section}
 
 \begin{document}
-	\newcommand{\xrowht}[2][0]
-	{
-		\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}
-		}
-	\newcommand{\diff}
-	{
-		\mathrm{d}
-	}
-	\newcommand{\ii}
-	{
-		\imath
-		}
-	\renewcommand{\i}
-	{
-		%\imath
-		\mathrm{i}
-	}
-   \newcommand{\binomkoeff}[2]
-	{
-		\left(\begin{matrix}#1\\#2\end{matrix}\right)
-	}
-	\newcommand{\pvec}[1]
-	{
-		\vec{#1}\mkern2mu\vphantom{#1} % primed Vector
-	}
-	\newcommand{\tder}[2] % total derivative
-	{
-		\frac{\diff #1}{\diff #2}
-	}
-	\newcommand{\pder}[2] % partial derivative
-	{
-		\frac{\partial #1}{\partial #2}
-	}
-	\newcommand{\dpder}[2] % default size partial derivative
-	{
-		\dfrac{\partial #1}{\partial #2}
-	}
-	\newcommand{\Nabla}
-	{
-		\vec{\nabla}
-	}
-	\newcommand{\unitvec}[1]
-	{
-		\vec{e}_{#1}
-	}
-	\newcommand{\com}[2] % Commutator
-	{
-		\left[#1,#2\right]
-	}
-	\newcommand{\anticom}[2] % Anticommutator
-	{
-		\left[#1,#2\right]_{+}
-	}
-	\newcommand{\konst}
-	{
-		\mathrm{konst.}
-	}
-	\newcommand{\customEq}[1]
-	{
-		\stackrel{#1}{=}
-	}
-	\newcommand*{\rom}[1]
-	{
-		\uppercase\expandafter{\romannumeral #1\relax}
-	}
-	\newcommand{\Br}[1] % normal brackets
-	{
-		\left( #1 \right)
-	}
-	\newcommand{\cBr}[1] % curly brackets
-	{
-		\left\lbrace #1 \right\rbrace
-	}
-	\newcommand{\cbr}[1] % curly brackets
-	{
-		\lbrace #1 \rbrace
-	}
-	\newcommand{\rBr}[1] % rectangudlar brackets
-	{
-		\left[ #1 \right]
-	}
-	\newcommand{\rbr}[1] % rectangudlar brackets
-	{
-		[ #1 ]
-	}
-	\newcommand{\aBr}[1] % angled brackets
-	{
-		\left\langle #1 \right\rangle
-	}
-	\newcommand{\abr}[1] % angled brackets
-	{
-		\langle #1 \rangle
-	}
-	\newcommand{\vBr}[1] % vertical brackets
-	{
-		\left| #1 \right|
-	}
-	\newcommand{\vbr}[1] % vertical brackets
-	{
-		| #1 |
-	}
-	\newcommand{\tr}
-	{
-		\mathrm{tr}
-	}
-	\newcommand{\vsp}
-	{
-		\vspace{10pt}
-	}
-	\newcommand{\nl}
-	{
-		\vsp \newline
-	}
+	\renewcommand{\i}			{ \mathrm{i} } %\imath
+	\newcommand{\xrowht}[2][0]	{ \addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}} }
+	\newcommand{\diff}			{ \mathrm{d} }
+	\newcommand{\ii}			{ \imath }
+	\newcommand{\binomkoeff}[2]	{ \left(\begin{matrix}#1\\#2\end{matrix}\right) }
+	\newcommand{\pvec}[1]		{ \vec{#1}\mkern2mu\vphantom{#1} } % primed Vector
+	\newcommand{\tder}[2] 		{ \frac{\diff #1}{\diff #2} }% total derivative
+	\newcommand{\pder}[2]		{ \frac{\partial #1}{\partial #2} } % partial derivative
+	\newcommand{\dpder}[2]		{ \dfrac{\partial #1}{\partial #2} } % default size partial derivative
+	\newcommand{\Nabla}			{ \vec{\nabla} }
+	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} }
+	\newcommand{\com}[2]		{ \left[#1,#2\right] }% Commutator
+	\newcommand{\anticom}[2]	{ \left[#1,#2\right]_{+} } % Anticommutator
+	\newcommand{\konst}			{ \mathrm{konst.} }
+	\newcommand{\customEq}[1]	{ \stackrel{#1}{=} }
+	\newcommand*{\rom}[1]	{ \uppercase\expandafter{\romannumeral #1\relax} }
+	\newcommand{\Br}[1]		{ \left( #1 \right) } % normal brackets
+	\newcommand{\cBr}[1]	{ \left\lbrace #1 \right\rbrace } % curly brackets
+	\newcommand{\cbr}[1]	{ \lbrace #1 \rbrace } % curly brackets
+	\newcommand{\rBr}[1]	{ \left[ #1 \right] } % rectangudlar brackets
+	\newcommand{\rbr}[1]	{ [ #1 ] } % rectangudlar brackets
+	\newcommand{\aBr}[1]	{ \left\langle #1 \right\rangle } % angled brackets
+	\newcommand{\abr}[1]	{ \langle #1 \rangle } % angled brackets
+	\newcommand{\vBr}[1]	{ \left| #1 \right| } % vertical brackets
+	\newcommand{\vbr}[1]	{ | #1 | } % vertical brackets
+	\newcommand{\tr}		{ \mathrm{tr} }
+	\newcommand{\vsp}		{ \vspace{10pt} }
+	\newcommand{\nl}		{ \vsp \newline }
+	\newcommand{\rmmu}		{ \SI{}{\micro\nothing} }
 	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 
@@ -196,22 +114,24 @@
 	\section{Relativität}
 		\subsection{Grundlagen}
 			\subsubsection{Symmetrien des Raumes}
-		\begin{itemize}
-			\item Homogenität der Zeit
-			\item Homogenität des Raumes
-			\item Isotropie des Raumes
-			\item Isotropie der Zeit
-		\end{itemize}
-		Inertialsystem \\
-			\indent \emph{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
+				\begin{itemize}
+					\item Homogenität der Zeit
+					\item Homogenität des Raumes
+					\item Isotropie des Raumes
+					\item Isotropie der Zeit
+				\end{itemize}
+
+				\noindent
+				Inertialsystem \\
+					\indent \emph{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
 
 			\subsubsection{Einstein'sche Postulate}
-		\textbf{Erstes Postulat}: Relativitätsprinzip \newline
-			\indent \textit{Die Gesetze der Physik sind in allen Inertialsystemen gleich.}  \nl
-		\textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit \newline
-			\indent \textit{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.}  \nl
-		\textbf{Drittes Postulat}: Starkes Äquivalenzprinzip \newline
-			\indent \textit{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.}  \vsp
+				\textbf{Erstes Postulat}: Relativitätsprinzip \newline
+					\indent \textit{Die Gesetze der Physik sind in allen Inertialsystemen gleich.}  \nl
+				\textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit \newline
+					\indent \textit{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.}  \nl
+				\textbf{Drittes Postulat}: Starkes Äquivalenzprinzip \newline
+					\indent \textit{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.}  \vsp
 
 		% \begin{description}
 		%   \item[Relativitätsprinzip]\hfill \\
@@ -1890,6 +1810,12 @@
 				\Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta\rightarrow 0} G_0(\epsilon_{\vec{p},\mu}\pm i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
 			\end{equation}
 
+			Rutherford Streuquerschnitt (Formfaktor $F(\pvec{q}) = \int_{\mathbb{R}^3} \rho(\pvec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \diff^3 \vec{r} $):
+			\begin{equation}
+				\tder{\sigma}{\Omega} = \frac{1}{4} \Br{\frac{e}{4\pi\epsilon_0 m v^2}}^2
+				\frac{1}{\sin^4\frac{\theta}{2}} \vbr{F}^2(\pvec{q})
+			\end{equation}
+
 
 	\newpage
 	\section{Quantenfeldtheorie} % QFt
@@ -2608,6 +2534,25 @@
 					\end{aligned}
 				\end{equation}
 
+
+				\noindent
+				Emission und Absorption nach Modell von Einstein:
+				\begin{equation}
+					\begin{aligned}
+						\frac{\diff N_1}{\diff t} &= -B_{12}N_1 \frac{\diff w}{\diff \omega}(\omega_{12}) \\
+						\frac{\diff N_2}{\diff t} &= -B_{21}N_2 \frac{\diff w}{\diff \omega}(\omega_{21}) \\
+						\frac{\diff N_2}{\diff t} &= -A_{21}N_2\\
+					\end{aligned}
+				\end{equation}
+				Wobei \\
+				\indent $N_1$: Besetzungszahl des Grundzustandes,\\
+				\indent $N_2$: Besetzungszahl des angeregten Zustands,\\
+				\indent $B_{12}$: Einstein'scher B-Koeffizient für Absorption,\\
+				\indent $B_{21} = B_{12}$: Einstein'scher B-Koeffizient für stimulierte Emission,\\
+				\indent $A_{21}$: Einstein'scher A-Koeffizient für die spontane Emission,\\
+				\indent $\tau_{R}=A_{21}^{-1}$: Strahlende Lebensdauer,\\
+				\indent $\frac{\diff w}{\diff \omega}(\omega)$: spektrale Energiedichte.\\
+
 			\subsubsection{Hohlraumstrahlung}
 				\noindent
 				Ähnlich dem Phononengas existiert in Planck's Beschreibung des schwarzen Strahlers ein Photonengas. \vsp
@@ -2645,7 +2590,7 @@
 					\lambda_{\max} T = \mathrm{konst}.
 				\end{equation}
 
-				\subsubsection{Idealer Paramagnetismus}
+			\subsubsection{Idealer Paramagnetismus}
 				\noindent
 				Zeemann-Energie im äußeren Feld $\vec{B}_0$:
 				\begin{equation}
