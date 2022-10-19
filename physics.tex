@@ -1460,6 +1460,27 @@
 				\hbar \rightarrow 0
 			\end{equation}
 
+			\subsubsection{Kontinuitätsgleichung}
+				\noindent
+				Wahrscheinlichkeitsdichte und Wahrscheinlichtkeitsstromdichte:
+				\begin{equation}
+					\begin{aligned}
+						\rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
+						j(t,x) :=& \frac{\hbar}{2mi}\left(
+							\psi^*(t,x)\pder{}{x}\psi(t,x) - \psi(t,x)\pder{}{x}\psi^*(t,x)
+						\right) \\
+						=& \frac{\hbar}{m} \mathrm{Im}\left(
+							\psi^*(t,x) \pder{}{x}\psi(t,x)
+						\right)\\
+					\end{aligned}
+				\end{equation}
+
+				\noindent
+				Kontinuitätsgleichung:
+				\begin{equation}
+					\pder{}{t}\rho(t,x) + \pder{}{x}j(t,x) = 0
+				\end{equation}
+
 		\subsection{Operatoren}
 			\noindent
 			Ortsoperator:
@@ -1680,27 +1701,6 @@
 					\hat{H} =\hat{T}^\dagger(\nu)\hat{H} \hat{T}(\nu) \Leftrightarrow \com{\hat{H}}{\hat{G}} = 0
 				\end{equation}
 
-		\subsection{Kontinuitätsgleichung}
-			\noindent
-			Wahrscheinlichkeitsdichte und Wahrscheinlichtkeitsstromdichte:
-			\begin{equation}
-				\begin{aligned}
-					\rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
-					j(t,x) :=& \frac{\hbar}{2mi}\left(
-						\psi^*(t,x)\pder{}{x}\psi(t,x) - \psi(t,x)\pder{}{x}\psi^*(t,x)
-					\right) \\
-					=& \frac{\hbar}{m} \mathrm{Im}\left(
-						\psi^*(t,x) \pder{}{x}\psi(t,x)
-					\right)\\
-				\end{aligned}
-			\end{equation}
-
-			\noindent
-			Kontinuitätsgleichung:
-			\begin{equation}
-				\pder{}{t}\rho(t,x) + \pder{}{x}j(t,x) = 0
-			\end{equation}
-
 		\subsection{Gebundene Zustände}
 			\subsubsection{Allgemeines}
 				\noindent
@@ -1731,9 +1731,9 @@
 				\end{itemize}
 
 				\noindent
-				Energiezustände eines einzelnen Elektrons im Atom mit Ordnungszahl $Z$:
+				Energiezustände eines einzelnen Elektrons im Atom mit Ordnungszahl $Z$ (Rydbergenergie $\left.R^*=R_y\right|_{m_e\rightarrow m}$ mit der reduzierten Masse $m$ des Atoms):
 				\begin{equation}
-					\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = - \frac{m_e e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
+					\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = - \frac{m e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
 				\end{equation}
 
 				\noindent
@@ -1794,6 +1794,10 @@
 						\Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} e^{-\frac{q^2}{2}} H_n(q) \\
 					\end{aligned}
 				\end{equation}
+
+		\subsection{Zeemann- und Starkeffekt}
+			
+
 
 		\subsection{Störungstheorie}
 			\noindent
@@ -3755,9 +3759,9 @@
 				\hline\xrowht{23pt}
 				Stefan-Boltzmann-Konstante & $\sigma:=\dfrac{2\pi^5 k_B^4}{15h^3c^2}$ & $5.670\,374\,419...\cdot 10^{-8}\;\frac{\mathrm{W}}{\mathrm{m^2\,K^4}}$ \\
 				\hline\xrowht{23pt}
-				Rydberg-Konstante & $R_\infty := \dfrac{m_e e^4}{8 c h^2 \varepsilon_0^2}$ & $1.097\,373\,156\,816\,0(2\,1)\cdot 10^{7}\;\frac{1}{\mathrm{m}}$ \\
+				Rydberg-Konstante & $R_\infty := \dfrac{m_e e^4}{8 c h^3 \varepsilon_0^2}$ & $1.097\,373\,156\,816\,0(2\,1)\cdot 10^{7}\;\frac{1}{\mathrm{m}}$ \\
 				\hline\xrowht{23pt}
-				Rydberg-Energie & $R^* := \dfrac{m_e e^4}{8 h^2 \varepsilon_0^2}$ & $2.179\,872\,361\,103\,5(4\,2)\cdot 10^{-18}\;\mathrm{J}$ \\
+				Rydberg-Energie & $R_y := \dfrac{m_e e^4}{8 h^2 \varepsilon_0^2}$ & $2.179\,872\,361\,103\,5(4\,2)\cdot 10^{-18}\;\mathrm{J}$ \\
 				\hline\xrowht{23pt}
 				Bohr'scher Radius & $\rho := \dfrac{4\pi\hbar^2\varepsilon_0}{m_e e^2}$ & $5.291\,772\,109\,03(80) \cdot 10^{-11}\;\mathrm{m}$ \\
 				\hline\xrowht{23pt}
