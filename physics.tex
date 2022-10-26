@@ -72,6 +72,7 @@
 
 \begin{document}
 	\renewcommand{\i}			{ \mathrm{i} } %\imath
+	\renewcommand{\emph}		{ \textit } %\imath
 	\newcommand{\xrowht}[2][0]	{ \addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}} }
 	\newcommand{\diff}			{ \mathrm{d} }
 	\newcommand{\ii}			{ \imath }
@@ -123,7 +124,7 @@
 
 				\noindent
 				Inertialsystem \\
-					\indent \emph{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
+					\indent \textit{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
 
 			\subsubsection{Einstein'sche Postulate}
 				\textbf{Erstes Postulat}: Relativitätsprinzip \newline
@@ -408,16 +409,16 @@
 	\section{Klassische Mechanik}
 		\subsection{Newton'sche Kraftgesetze}
 			\textbf{Erstes Axiom / lex prima}: Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \newline
-				\indent \emph{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \nl
+				\indent \textit{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \nl
 			\textbf{Zweites Axiom / lex secunda}: Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz
 				\begin{equation}
 					\tder{\vec{p}}{t} = \vec{F}
 				\end{equation}
-				\indent \emph{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
+				\indent \textit{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
 			\textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \newline
-				\indent \emph{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
+				\indent \textit{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
 			\textbf{Zusatz}: Superpositionsprinzip \newline
-				\indent \emph{Kräfte sind additiv.}
+				\indent \textit{Kräfte sind additiv.}
 				\begin{equation}
 					\vec{F}_{\mathrm{ges}} = \sum_{i=1}^{N} \vec{F}_i
 				\end{equation}
@@ -468,9 +469,9 @@
 			Beschleunigtes Bezugssystemn $K'$ und Inertialsystem $K$:
 			\begin{equation}
 				\begin{aligned}
-					\pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) \\
-					\tder{\vec{x}'}{t} &= \tder{\vec{x}}{t}-\vec{\omega}\times\vec{x} \\
+					\pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hspace{30pt}
 					m\tder{\vec{p}}{t} &= \vec{F} \\
+					\tder{\vec{x}'}{t} &= \tder{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hspace{30pt}
 					m\tder{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
 				\end{aligned}
 			\end{equation}
@@ -479,9 +480,9 @@
 			Mit den Scheinkräften: Translationskraft $\vec{F}_T$, Zentrifugalkraft $\vec{F}_Z$, Linearkraft $\vec{F}_L$, Corioliskraft $\vec{F}_C$
 			\begin{equation}
 				\begin{aligned}
-					\vec{F}_T &= -m\frac{\diff^2 \vec{x}_0}{\diff t^2} \\
+					\vec{F}_T &= -m\frac{\diff^2 \vec{x}_0}{\diff t^2} &\hspace{30pt}
 					\vec{F}_Z &= -m\vec{\omega}\times\Br{\vec{\omega}\times\pvec{x}'} \\
-					\vec{F}_L &= -m\tder{\vec{\omega}}{t}\times\pvec{x}' \\
+					\vec{F}_L &= -m\tder{\vec{\omega}}{t}\times\pvec{x}' &\hspace{30pt}
 					\vec{F}_C &= -2m\vec{\omega}\times\tder{\pvec{x}'}{t} \\
 				\end{aligned}
 			\end{equation}
@@ -590,8 +591,8 @@
 				Gravitationsparameter $\mu$, Exzentrizität $\epsilon$ und $\rho_0$
 				\begin{equation}
 					\begin{aligned}
-						\mu &= G m \\
-						\epsilon &= \sqrt{1+\frac{2 E L^2}{m \mu^2}} \\
+						\mu &= G m &\hspace{30pt}
+						\epsilon &= \sqrt{1+\frac{2 E L^2}{m \mu^2}} &\hspace{30pt}
 						\rho_0 &= \frac{L^2}{m\mu} \\
 					\end{aligned}
 				\end{equation}
@@ -710,9 +711,9 @@
 			\begin{equation}
 			\begin{array}{rl}
 				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
-				&\;\; \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
+				&\hspace{30pt} \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
 				\vec{\nabla}\times\vec{B} - \mu_0 \epsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
-				&\;\; \vec{\nabla}\cdot\vec{B} = 0 \\
+				&\hspace{30pt} \vec{\nabla}\cdot\vec{B} = 0 \\
 			\end{array}
 			\end{equation}
 
@@ -721,9 +722,9 @@
 			\begin{equation}
 			\begin{array}{rl}
 				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_f}
-				&\;\; \vec{\nabla}\cdot\vec{D} = \rho_f\\ \xrowht{40pt}
+				&\hspace{20pt} \vec{\nabla}\cdot\vec{D} = \rho_f\\ \xrowht{40pt}
 				\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_f
-				&\;\; \vec{\nabla}\cdot\vec{B} = 0 \\
+				&\hspace{20pt} \vec{\nabla}\cdot\vec{B} = 0 \\
 			\end{array}
 			\end{equation}
 
@@ -732,7 +733,7 @@
 			\begin{equation} \label{eq:flussdichte-feldstärke}
 			\begin{array}{cc}
 				\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
-				&\;\; \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
+				&\hspace{20pt} \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
 			\end{array}
 			\end{equation}
 
@@ -742,9 +743,9 @@
 			\begin{equation}
 			\begin{array}{rl}
 				U(\partial \mathcal{A}) + \cfrac{\diff\Phi}{\diff t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
-				&\;\; \Psi(\partial\mathcal{V}) = Q_f(\mathcal{V}) \\ \xrowht{40pt}
+				&\hspace{20pt} \Psi(\partial\mathcal{V}) = Q_f(\mathcal{V}) \\ \xrowht{40pt}
 				V(\partial \mathcal{A}) - \cfrac{\diff \Psi}{\diff t}(\mathcal{A}) = I_f(\mathcal{A})
-				&\;\; \Phi(\partial\mathcal{V}) = 0 \\
+				&\hspace{20pt} \Phi(\partial\mathcal{V}) = 0 \\
 			\end{array}
 			\end{equation}
 
@@ -754,7 +755,7 @@
 			\begin{equation}
 			\begin{array}{cc}
 				\vec{E}^2 - \vec{E}^1 = \cfrac{\sigma}{\varepsilon_0}\Vec{n}^2
-				&\;\; \vec{B}^2 - \vec{B}^1 = \mu_0\vec{K}\times\Vec{n}^2
+				&\hspace{20pt} \vec{B}^2 - \vec{B}^1 = \mu_0\vec{K}\times\Vec{n}^2
 			\end{array}
 			\end{equation}
 
@@ -763,7 +764,7 @@
 			\begin{equation}
 			\begin{array}{cc}
 				D_\perp^2 - D_\perp^1 = \sigma_f
-				&\;\; \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_f\times\Vec{n}^2
+				&\hspace{20pt} \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_f\times\Vec{n}^2
 			\end{array}
 			\end{equation}
 
@@ -854,7 +855,7 @@
 				Eigenschaften:
 				\begin{equation}
 					\begin{aligned}
-						T^{\mu\nu} &= T^{\nu\mu} \\
+						T^{\mu\nu} &= T^{\nu\mu} &\hspace{20pt}
 						T^\mu_{\phantom{\mu}\mu} &= 0 \\
 					\end{aligned}
 				\end{equation}
@@ -1446,10 +1447,14 @@
 			Orts- und Impulsdarstellung:
 			\begin{equation}
 				\begin{aligned}
-					\Braket{\vec{x} | \psi} &= \psi(\vec{x}) \\
-					\Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) \\
+					\Braket{\vec{x} | \psi} &= \psi(\vec{x}) &\hspace{20pt}
 					\Braket{\vec{x} | \pvec{x}'} &= \delta(\vec{x} - \pvec{x}') \\
+					\Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) &\hspace{20pt}
 					\Braket{\vec{p} | \pvec{p}'} &= \delta(\vec{p} - \pvec{p}') \\
+				\end{aligned}
+			\end{equation}
+			\begin{equation}
+				\begin{aligned}
 					\Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
 				\end{aligned}
 			\end{equation}
@@ -1486,9 +1491,9 @@
 			Ortsoperator:
 			\begin{equation}
 				\begin{aligned}
-					\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}}\;\diff^n\vec{x} \\
-					\Bra{\vec{x}}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) \\
-					\Bra{\vec{p}}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
+					\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\diff^n\vec{x} &\hspace{20pt}
+					\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hspace{20pt}
+					\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
 				\end{aligned}
 			\end{equation}
 
@@ -1496,8 +1501,8 @@
 			Impulsoperator:
 			\begin{equation}
 				\begin{aligned}
-					\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}}\;\diff^n\vec{p} \\
-					\Bra{\vec{p}}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) \\
+					\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\diff^n\vec{p} &\hspace{20pt}
+					\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hspace{20pt}
 					\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
 				\end{aligned}
 			\end{equation}
@@ -1708,9 +1713,13 @@
 
 			\subsubsection{Wellenfunktion des Elektrons im Atom}
 				\noindent
-				Im Wasserstoffatom:
+				Im Wasserstoffatom (Bohr Radius $\rho$, Normierungskonstante $a_0$):
 				\begin{equation}
 					\begin{aligned}
+						\cBr{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\pvec{r})
+						&= \cBr{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pder{}{r}\Br{r^2\pder{}{r}} + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\pvec{r})
+						= E \psi\Br{\pvec{r}}
+						\\
 						\Braket{\vec{r}|n,l,m_l,m_s} &= \psi_{n,l,m}\left(r,\theta,\phi\right)\chi(m_s)
 						= R_{n,l}\left(r\right) Y_l^m\left(\theta,\phi\right)\chi(m_s) \\
 						R_{n,l}\left(r\right)
@@ -1731,9 +1740,9 @@
 				\end{itemize}
 
 				\noindent
-				Energiezustände eines einzelnen Elektrons im Atom mit Ordnungszahl $Z$ (Rydbergenergie $\left.R^*=R_y\right|_{m_e\rightarrow m}$ mit der reduzierten Masse $m$ des Atoms):
+				Energiezustände eines einzelnen Elektrons im Atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) mit Ordnungszahl $Z$ (Rydbergenergie $\left.R^*=R_y\right|_{m_e\rightarrow \mu}$ mit der reduzierten Masse $\mu$ des Atom-Systems):
 				\begin{equation}
-					\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = - \frac{m e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
+					\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = -R^* \frac{\mu}{m_e} Z^2 \frac{1}{n^2} = - \frac{\mu e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
 				\end{equation}
 
 				\noindent
@@ -1795,8 +1804,21 @@
 					\end{aligned}
 				\end{equation}
 
-		\subsection{Zeemann- und Starkeffekt}
-			
+		\subsection{Energiezustände im Atom}
+			\subsubsection{Zeemann Effekt}
+				\noindent
+				Magnetisches Dipolmoment des Elektronen Orbits bzw. Spins:
+				\begin{equation}
+					\begin{aligned}
+						\mu_l = -g_l\Br{\frac{\vec{l}}{\hbar}} &&
+						\mu_s = -g_s\Br{\frac{\vec{s}}{\hbar}} \\
+					\end{aligned}
+				\end{equation}
+
+				Interaktionsenergie:
+				\begin{equation}
+					V = -\vec{\mu} \cdot \vec{B}
+				\end{equation}
 
 
 		\subsection{Störungstheorie}
@@ -2885,6 +2907,10 @@
 					\end{aligned}
 				\end{equation}
 
+				\begin{equation}
+					\Nabla^2\frac{1}{\left|\vec{r} - \pvec{r}'\right|} = -4\pi\delta\left(\vec{r} - \pvec{r}'\right)
+				\end{equation}
+
 				\noindent
 				Siehe Eq.~\ref{eq:fourierIdentities}
 
@@ -2900,9 +2926,9 @@
 				\begin{equation}
 					\begin{array}{cc}
 						\Gamma(z+1)=z\Gamma(z);
-						&\;\; \Gamma\left(1 \right)=1; \\
+						&\hspace{20pt} \Gamma\left(1 \right)=1; \\
 						\Gamma(n+1) = n!
-						&\;\; \Gamma\left(\frac{1}{2} \right)=\sqrt{\pi} \\
+						&\hspace{20pt} \Gamma\left(\frac{1}{2} \right)=\sqrt{\pi} \\
 					\end{array}
 				\end{equation}
 
@@ -3583,11 +3609,11 @@
 				\begin{equation}
 					\begin{array}{rl}
 						E\left[aX\right] = \phantom{^2}a E\left[X\right]
-						&\;\;
+						&\hspace{20pt}
 						E\left[X+Y\right] = E\left[X\right] + E\left[Y\right]
 						\\
 						V\left[aX\right] = a^2 V\left[X\right]
-						&\;\;
+						&\hspace{20pt}
 						V\left[X+Y\right] = E\left[X\right] + E\left[Y\right]
 						\\
 					\end{array}
@@ -3815,6 +3841,8 @@
 				\r{A}ngström & ${\mbox{\normalfont\AA}}$ & $10^{-10}\;\mathrm{m}$ \\
 				\hline\xrowht{23pt}
 				Barn & $\mathrm{b}$ & $10^{-18}\;\mathrm{m^2}$ \\
+				\hline\xrowht{23pt}
+				Kayser & $\mathrm{K}$ & $10^2\;\mathrm{m^{-1}}$ \\
 				\hline\xrowht{23pt}
 				Atomare Masseneinheit & $\mathrm{u}$ & $\frac{1}{12}m(\prescript{12}{6}{\mathbf{C}})=1.660\,539\,066\,60(50)\cdot 10^{-27}\;\mathrm{kg}$ \\
 				\hline\xrowht{23pt}
