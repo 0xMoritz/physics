@@ -1,24 +1,25 @@
-\section{Relativity\index{Relativität}}
-	\subsection{Grundlagen}
-		\subsubsection{Symmetrien des Raumes}
+% !TEX root = ../physics.tex
+\section{Relativity}
+	\subsection{Basics}
+		\subsubsection{Symmetries of Flat Spacetime}
 			\begin{itemize}
-				\item Homogenität der Zeit
-				\item Homogenität des Raumes
-				\item Isotropie des Raumes
-				\item Isotropie der Zeit
+				\item Homogenity of spacetime
+				\item Isotropy of spacetime
+				\item Lorentz invariance
 			\end{itemize}
 
 			\noindent
-			Inertialsystem \\
-				\indent \textit{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
+			Inertial frame of reference\index{Inertialsystem} \\
+				\indent \textit{Frame of reference in which spacetime is homogeneous and isotropic.}
 
-		\subsubsection{Einstein'sche Postulate}
-			\textbf{Erstes Postulat}: Relativitätsprinzip \newline
-				\indent \textit{Die Gesetze der Physik sind in allen Inertialsystemen gleich.}  \nl
-			\textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit \newline
-				\indent \textit{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.}  \nl
-			\textbf{Drittes Postulat}: Starkes Äquivalenzprinzip \newline
-				\indent \textit{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.}  \vsp
+		\subsubsection{Einstein Postulates}
+			\textbf{First Postulate}: Principle of Relativity\index{Relativitätsprinzip} \newline
+				\indent \textit{The laws of nature are forminvariant in all intertial frames of reference.}  \nl
+			\textbf{Second Postulate}: Constancy of the Speed of Light\index{Konstanz der Lichtgeschwindigkeit} \newline
+				\indent \textit{The maximum propagation speed of information is equal to $c$ in all frames of reference.}
+				\label{post:c}\nl
+			\textbf{Third Postulate}: Strong Equivalence Principle\index{Starkes Äquivalenzprinzip} \newline
+				\indent \textit{Spacetime is locally flat, i.e. the laws of special relativity hold in local inertial frames of reference.}  \vsp
 
 	% \begin{description}
 	%   \item[Relativitätsprinzip]\hfill \\
@@ -29,45 +30,46 @@
 	%	 Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.
 	% \end{description}
 
-	\subsubsection{Metrischer Tensor}
-		Metrischer Tensor und Lorentz-invariantes Raumzeit-Intervall:
+	\subsubsection{Metric Tensor\index{Metrischer Tensor}}
+		Metric Tensor and Lorentz invariant spacetime intervall:
 		\begin{equation}
 			\diff s^2 = c^2 \diff \tau^2 = \diff x^\mu \diff x_\mu = g_{\mu\nu} \diff x^\mu \diff x^\nu
 		\end{equation}
 
-	\subsection{Allgemeine Relativität}
-		\subsubsection{Definitionen}
+	\subsection{General Relativity\index{Allgemeine Relativität}}
+		\subsubsection{Definitions}
 			\noindent
-			Partielle Ableitungen:
+			Partial derivatives:
 			\begin{equation}
 				\pder{\phi}{x^\mu} = \partial_\mu \phi = \phi_{,\mu}
 			\end{equation}
 
 			\noindent
-			Christoffelsymbole (Mit einem lokalen Inertialsystem mit Koordinaten $\xi^\alpha$):
+			Christoffel symbols\index{Christoffelsymbole} (local inertial frame with coordinates $\xi^\alpha$):
 			\begin{equation}
-				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
+				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}
+				=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
 			\end{equation}
-			Die Christoffelsymbole sind symmetrisch in den unteren Indizes $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In frei fallenden, lokalen Koordinatensystemen sind die Christoffelsymbole null.
+			The Christoffel symbols are symmetric in the lower indices $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. They are zero in all free falling local frames of reference.
 
 			\noindent
-			Eigenzeit:
+			Proper time\index{Eigenzeit}:
 			\begin{equation}
 				\Delta\tau := \frac{1}{c}\int_A^B\sqrt{g_{\mu\nu}\diff x^\mu \diff x^\nu}
 			\end{equation}
 
 			\noindent
-			Kovariante Ableitung:
+			Covariant derivative\index{Kovariante Ableitung}:
 			\begin{equation}
 				D_\lambda T^{\alpha ...}_{\beta...} =
 				T^{\alpha ...}_{\beta...;\lambda} = T^{\alpha...}_{\beta ...,\lambda}
 				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
 				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
 			\end{equation}
-			In frei fallenden Bezugssystemen verschwindet der zweite Term und die kovariante Ableitung wird zur partiellen Ableitung.
+			The second term vanishes in all free falling frames of reference and the covariant derivative becomes a partial derivative, %In frei fallenden Bezugssystemen verschwindet der zweite Term und die kovariante Ableitung wird zur partiellen Ableitung.
 
 			\noindent
-			Riemann'scher Krümmungstensor:
+			Riemann curvature tensor\index{Riemann'scher Krümmungstensor}:
 			\begin{equation}
 				\begin{aligned}
 					R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu} &= \Gamma^{\lambda}_{\phantom{\lambda}\nu\sigma,\mu}
@@ -87,7 +89,7 @@
 			\end{equation}
 
 			\noindent
-			Symmetrien des Krümmungstensors:
+			Symmetries of the curvature tensor:%Symmetrien des Krümmungstensors:
 			\begin{equation}
 				\begin{aligned}
 					R_{\lambda\sigma\mu\nu} &= - R_{\lambda\sigma\nu\mu} \\
@@ -97,7 +99,7 @@
 			\end{equation}
 
 			\noindent
-			Bianchi-Identitäten:
+			Bianchi Identities\index{Bianchi-Identitäten}:
 			\begin{equation}
 				\begin{aligned}
 					R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} &= 0 \\
@@ -106,56 +108,56 @@
 			\end{equation}
 
 			\noindent
-			Ricci-Tensor:
+			Ricci-Tensor\index{Ricci-Tensor}:
 			\begin{equation}
 				R_{\mu\nu} = R^\lambda_{\phantom{\lambda}\mu\lambda\nu}
 			\end{equation}
 
 			\noindent
-			Krümmungsskalar
+			Curvature scalar\index{Krümmungsskalar}:
 			\begin{equation}
 				R = R^\mu_{\phantom{\mu}\mu}
 			\end{equation}
 
 		\subsubsection{Feldgleichungen}
 			\noindent
-			Einstein Hilbert-Wirkung:
+			Einstein-Hilbert Action\index{Einstein!-Hilbert Wirkung}:
 			\begin{equation}
 				\mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det{g_{\mu\nu}(x)}\right|} R(g_{\mu\nu}(x))\;\diff^4 x
 			\end{equation}
 
 			\noindent
-			Einstein'sche Feldgleichungen:
+			Einstein field equations\index{Einstein!Feldgleichungen}:
 			\begin{equation}
 				R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
 			\end{equation}
 
 			\noindent
-			Alternativ:
+			Alternative Formulation of the field equations:
 			\begin{equation}
 				R_{\mu\nu} = \frac{8\pi G}{c^4} \left( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} \right)
 			\end{equation}
 
 
-		\subsubsection{Geodäten}
+		\subsubsection{Geodesics\index{Geodäten}}
 			\noindent
-			Wirkung eines freien Teilchens:
+			Action of a free particle%Wirkung eines freien Teilchens:
 			\begin{equation}
 				\mathcal{S} = -\int_A^B mc^2\;\diff \tau = -\int_A^B mc\sqrt{g_{\mu\nu} \tder{x^\mu}{\tau} \tder{x^\nu}{\tau}} \;\diff \tau
 			\end{equation}
 
 			\noindent
-			Bewegungsgleichungen eines freien Teilchens (Zeitartige Geodäte):
+			Equations of motion for a free particle (time-like geodesic\index{Zeitartige Geodäte}):%Bewegungsgleichungen eines freien Teilchens (Zeitartige Geodäte):
 			\begin{equation}
 				\frac{\mathrm{d}^2 x^\kappa}{\mathrm{d}\tau^2}=-\Gamma_{\mu\nu}^{\kappa}\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau}\frac{\mathrm{d}x^\nu}{\mathrm{d}\tau}
 			\end{equation}
 
 	\subsection{Spezielle Relativität}
 		\noindent
-		Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit $G\rightarrow 0$, in ihr wird der metrische Tensor konstant.
+		Special Relativity\index{Spezielle Relativität} is a limiting case of General Relativity for flat spacetime, it can be realized by $G \rightarrow 0$. In Special Relativity the Metric\index{Metrischer Tensor}is constant.%Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit $G\rightarrow 0$, in ihr wird der metrische Tensor konstant.
 
 		\noindent
-		Minkowski-Metrik:
+		Minkowski-Metric\index{Minkowski-Metrik} (Sign is dependent on convention):
 		\begin{equation}
 			g_{\mu\nu} = \eta_{\mu\nu}
 			= \left( \begin{matrix}
@@ -167,26 +169,26 @@
 		\end{equation}
 
 		\noindent
-		Klassischer Grenzfall:
+		Classical Limit\index{Klassischer Grenzfall}:
 		\begin{equation}
 			c \rightarrow \infty
 		\end{equation}
 
 		\noindent
-		Ultrarelativistischer Grenzfall:
+		Ultrarelativistic limit\index{Ultrarelativistischer Grenzfall}:
 		\begin{equation}
 			v\rightarrow c
 		\end{equation}
 
 		\subsubsection{Definitionen}
 			\noindent
-			Lorentz-faktor ($\beta = \frac{v}{c}$):
+			Lorentz-factor\index{Lorentz-faktor} ($\beta = \frac{v}{c}$):
 			\begin{equation}
 				\gamma = \frac{1}{\sqrt{1-\beta^2}}
 			\end{equation}
 
 			\noindent
-			Viererimpuls:
+			Four-momentum\index{Viererimpuls}:
 			\begin{equation}
 				P^\mu =
 				\left(\begin{matrix}
@@ -203,17 +205,17 @@
 
 		\subsubsection{Lorentztransformation}
 			\noindent
-			Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
+			Homogeneous Lorentz transformation\index{Lorentz!-Transformation} und back-transformation of tensors (defining property of Lorentz Tensors\index{Lorentz!-tensor}\index{Tensor}):%Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
 			\begin{equation}
 				\begin{aligned}
-					x'^\mu &=					\Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
+					x'^\mu &= \Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
 					x'_\mu &= \overline{\Lambda}_\mu^{\nu}(\vec{v}) x_\nu \\
 					\Lambda^{\mu}_{\nu}(\vec{v}) = \Lambda^{\mu}_{\phantom{\mu}\nu}(\vec{v}) &= \Lambda^{\phantom{\nu}\mu}_{\nu}(\vec{v}) = \overline{\Lambda}^{\mu}_{\nu}(-\vec{v})
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Grupppe $\mathcal{L}$):
+			General (inhomogeneous) Lorentztransformation\index{Lorentz!-Transformation} (Poincaré group\index{Poincaré!-Gruppe} $\mathcal{L}$%Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Gruppe $\mathcal{L}$):
 			\begin{equation}
 				\begin{aligned}
 					x'^\mu &= \Lambda^\mu_{\nu} x^\nu + b^\mu \\
@@ -222,7 +224,7 @@
 			\end{equation}
 
 			\noindent
-			Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
+			Condition for the Lorentz Transformation following from the constancy of the speed of light \ref{post:c}:%Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
 			\begin{equation}
 				\Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
 				 \;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
