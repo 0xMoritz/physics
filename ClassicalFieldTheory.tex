@@ -1,0 +1,37 @@
+\section{Klassische Feldtheorie}
+	\subsection{Lagrange-Formalismus}
+		\subsubsection{Allgemeines}
+			\noindent
+			Wirkung und Lagrangedichte $\mathcal{L}$:
+			\begin{equation}
+				\mathcal{S} = \int_{\mathbb{R}^4} \mathcal{L}(A^\nu(x),\partial_\mu A^\nu(x)) \;\diff^4 x
+			\end{equation}
+
+			\noindent
+			Euler-Lagrange-Gleichung:
+			\begin{equation}
+				\delta\mathcal{S} = 0
+				\;\Rightarrow\; \partial_\mu \left(\pder{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}\right) - \pder{\mathcal{L}}{A^\nu} = 0 \;\;\forall \nu
+			\end{equation}
+
+		\subsubsection{Noether-Theorem}
+			\noindent
+			Kontinuierliche Transformation:
+			\begin{equation}
+				\phi(x)\rightarrow\phi'(x) = \phi(x) + \varepsilon \delta \phi(x)
+			\end{equation}
+
+			\noindent
+			Invarianzbedingung:
+			\begin{equation}
+				\delta\mathcal{L} = \partial_\mu F^\mu(\phi)
+			\end{equation}
+
+			\noindent
+			Resultierender erhaltener Strom und Erhaltene Ladung:
+			\begin{equation}
+				\begin{aligned}
+					S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \left( \phi(x), \partial_\nu\phi(x) \right) = \pder{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\
+					\tder{Q}{t} = 0;&\; Q = \int_{\mathbb{R}^3} j^0\;\diff^3\vec{x}
+				\end{aligned}
+			\end{equation}

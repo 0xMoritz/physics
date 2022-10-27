@@ -1,0 +1,214 @@
+\section{Klassische Mechanik}
+	\subsection{Newton'sche Kraftgesetze}
+		\textbf{Erstes Axiom / lex prima}: Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \newline
+			\indent \textit{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \nl
+		\textbf{Zweites Axiom / lex secunda}: Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz
+			\begin{equation}
+				\tder{\vec{p}}{t} = \vec{F}
+			\end{equation}
+			\indent \textit{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
+		\textbf{Drittes Axiom / lex tertia}: Actio und Reactio / Reaktionsprinzip \newline
+			\indent \textit{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
+		\textbf{Zusatz}: Superpositionsprinzip \newline
+			\indent \textit{Kräfte sind additiv.}
+			\begin{equation}
+				\vec{F}_{\mathrm{ges}} = \sum_{i=1}^{N} \vec{F}_i
+			\end{equation}
+
+	\subsection{Allgemeines}
+		\noindent
+		Definition Virial:
+		\begin{equation}
+			\sum_j \vec{x}_j\cdot\vec{p}_j
+		\end{equation}
+
+		\noindent
+		Drallsatz (Drehmoment / Torque $\vec{M}$):
+		\begin{equation}
+			\tder{\vec{L}}{t} = \vec{M}
+		\end{equation}
+
+		\noindent
+		Flächensatz / Zweites Kepler'sches Gesetz (Für Teilchen im Zentralpotential):
+		\begin{equation}
+			\tder{A}{t} = \frac{\vbr{\vec{L}}}{2 m} = \konst
+		\end{equation}
+
+	\subsection{Rotation}
+		\noindent
+		Definition des Trägheitstensors:
+		\begin{equation}
+			\Theta_{ij}=\int_{\mathcal{V}} \rho \left[r^2\delta_{ij}-r_i r_j\right] \;\diff^3\vec{r}
+		\end{equation}
+
+		\noindent
+		Satz von Steiner ($\Theta_{ij}$ ist der Trägheitstensor für eine Drehung mit Drehachse im Schwerpunkt. Verläuft die Drehachse stattdessen durch einen um $\vec{a}$ verschobenen Punkt transformiert sich der Trägheitstensor zu $\Theta'_{ij}$, wobei $M$ die Gesamtmasse ist):
+		\begin{equation}
+			\Theta'_{ij} = \Theta_{ij} + M\Br{\vec{a}^2\delta_{ij} - a_i a_j}
+		\end{equation}
+
+		\noindent
+		Berechnung von Drehimpuls und Energie mit dem	Trägheitstensor:
+		\begin{equation}
+			\begin{aligned}
+				L^i &= \Theta^i_j \omega^j \\
+				T_{\mathrm{rot}} &= \frac{1}{2}\vec{\omega}^T \Theta \vec{\omega}
+			\end{aligned}
+		\end{equation}
+
+	\subsection{Bewegte Bezugssysteme}
+		\noindent
+		Beschleunigtes Bezugssystemn $K'$ und Inertialsystem $K$:
+		\begin{equation}
+			\begin{aligned}
+				\pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hspace{30pt}
+				m\tder{\vec{p}}{t} &= \vec{F} \\
+				\tder{\vec{x}'}{t} &= \tder{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hspace{30pt}
+				m\tder{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Mit den Scheinkräften: Translationskraft $\vec{F}_T$, Zentrifugalkraft $\vec{F}_Z$, Linearkraft $\vec{F}_L$, Corioliskraft $\vec{F}_C$
+		\begin{equation}
+			\begin{aligned}
+				\vec{F}_T &= -m\frac{\diff^2 \vec{x}_0}{\diff t^2} &\hspace{30pt}
+				\vec{F}_Z &= -m\vec{\omega}\times\Br{\vec{\omega}\times\pvec{x}'} \\
+				\vec{F}_L &= -m\tder{\vec{\omega}}{t}\times\pvec{x}' &\hspace{30pt}
+				\vec{F}_C &= -2m\vec{\omega}\times\tder{\pvec{x}'}{t} \\
+			\end{aligned}
+		\end{equation}
+
+
+	\subsection{Gravitation}
+		\noindent
+		Newton'sche Gravitationskraft (Die von Masse 2 auf Masse 1 wirkt):
+		\begin{equation}
+			\vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\left|\vec{r}_1-\vec{r}_2\right|^3}
+		\end{equation}
+
+		\noindent
+		Bewegungsgleichungen des Newton'schen Gravitationsgesetz':
+		\begin{equation}
+			\vec{F}=-m\Nabla\phi
+		\end{equation}
+
+		\noindent
+		Feldgleichungen des Newton'schen Gravitationspotentials:
+		\begin{equation}
+			\Nabla^2\phi=-4\pi G\rho
+		\end{equation}
+
+	\subsection{Lagrange-Formalismus}
+		\subsubsection{Allgemeines}
+			\noindent
+			Wirkung:
+			\begin{equation}
+				\mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\;\mathrm{d} t
+			\end{equation}
+
+			\noindent
+			Hamilton'sches Prinzip / Prinzip der kleinsten (stationären) Wirkung:
+			\begin{equation}
+				\delta \mathcal{S}=0
+			\end{equation}
+
+			\noindent
+			Euler-Lagrange-Gleichung
+			\begin{equation}
+				 \frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0
+			\end{equation}
+
+			\noindent
+			kanonisch-konjugierte Impulse:
+			\begin{equation}
+				p_i=\frac{\partial \mathcal{L}}{\partial\dot{q_i}}
+			\end{equation}
+
+			\noindent
+			Hamilton-Funktion:
+			\begin{equation}
+				\mathcal{H}(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
+			\end{equation}
+
+			\noindent
+			Hamilton'sche Bewegungsgleichungen:
+			\begin{equation}
+				\begin{aligned}
+					\dot{q}_k &= \phantom{-}\pder{\mathcal{H}}{p_k}, &&\hspace{30pt}
+					\dot{p}_k &= -\pder{\mathcal{H}}{q_k}, &&\hspace{30pt}
+					\pder{\mathcal{H}}{t} &= -\pder{\mathcal{L}}{t}
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Poisson-Klammer:
+			\begin{equation}
+				\begin{aligned}
+					\lbrace A, B \rbrace &= \sum_k \left(
+						\pder{A}{q_k}\pder{B}{p_k} - \pder{A}{p_k}\pder{B}{q_k}
+					\right) \\
+					\tder{A}{t} &= \cBr{A, H} + \pder{A}{t}
+				\end{aligned}
+			\end{equation}
+
+		\subsubsection{Noether-Theorem}
+			\noindent
+			Kontinuierliche Transformation (mit infinitesimalem $\varepsilon$):
+			\begin{equation}
+				\begin{aligned}
+				x_i \rightarrow x_{i}^{\prime} &= x_i+\varepsilon\psi_i\left(x,\dot{x},t\right) \\
+					t\rightarrow t^{\prime}\, &= t+\varepsilon\varphi\left(x,\dot{x},t\right) \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Invarianz-Bedingung:
+			\begin{equation}
+				\frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{x}}^{\,\prime},\frac{d {\vec{x}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{x}, t)}{dt}
+			\end{equation}
+
+			\noindent
+			Resultierende Erhaltungsgröße:
+			\begin{equation}
+				\begin{aligned}
+					S &\sim S' \;\Rightarrow\;
+					\tder{}{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
+					Q\left(\vec{x},\dot{\vec{x}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}{\dot{x}}_i}\right)\varphi - f\left(\vec{x},t\right).
+				\end{aligned}
+			\end{equation}
+
+		\subsubsection{Kepler Problem}
+			\noindent
+			Gravitationsparameter $\mu$, Exzentrizität $\epsilon$ und $\rho_0$
+			\begin{equation}
+				\begin{aligned}
+					\mu &= G m &\hspace{30pt}
+					\epsilon &= \sqrt{1+\frac{2 E L^2}{m \mu^2}} &\hspace{30pt}
+					\rho_0 &= \frac{L^2}{m\mu} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Lagrange Funktion ($\mu$ ist der Gravitationsparameter des Systems, für Zentralkörper $\mu=GM$, siehe \ref{Gravitationsparameter}):
+			\begin{equation}
+				\mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\pvec{r}}^2 + \frac{\mu}{r}
+			\end{equation}
+
+			\noindent
+			Erhaltener Runge Lenz-Vektor:
+			\begin{equation}
+				\vec{A} = \dot{\vec{r}}\times\vec{L} - \frac{\mu \vec{r}}{r}
+			\end{equation}
+
+			\noindent
+			Orbit Parametrisierung (In Zylinderkoordinaten $\rho, \varphi$):
+			\begin{equation}
+				\rho = \frac{\rho_0}{1+\epsilon \cos\varphi}
+			\end{equation}
+
+			\noindent
+			Große Halbachse $a$:
+			\begin{equation}
+				a = \frac{p}{1-\epsilon^2}
+			\end{equation}

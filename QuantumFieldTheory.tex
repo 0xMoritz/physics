@@ -1,0 +1,127 @@
+\section{Quantenfeldtheorie} % QFt
+	\subsection{Postulate}
+		\subsubsection{Symmetrien?}
+			Lokalität
+			CPT
+			...
+			TODO
+	\subsection{Definitionen}
+		\begin{equation}
+			\slashed{A} := \gamma_\mu A^\mu
+		\end{equation}
+
+		\noindent
+		Paulimatrizen:
+		\begin{equation}
+			\begin{aligned}
+				\sigma^0 = \left(\begin{matrix}
+					1 & 0 \\
+					0 & 1 \\
+				\end{matrix}\right) &&\hspace{30pt}
+				\sigma^1 = \left(\begin{matrix}
+					0 & 1 \\
+					1 & 0 \\
+				\end{matrix}\right) &&\hspace{30pt}
+				\sigma^2 = \left(\begin{matrix}
+					0 & -i \\
+						i & 0 \\
+				\end{matrix}\right) &&\hspace{30pt}
+				\sigma^3 = \left(\begin{matrix}
+					1 & 0 \\
+					0 & -1 \\
+				\end{matrix}\right)
+			\end{aligned}
+		\end{equation}
+
+		\subsubsection{Gamma Matrizen}
+			\noindent
+			Definierende Eigenschaft:
+			\begin{equation}
+				\anticom{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
+			\end{equation}
+
+			\noindent
+			Weitere Eigenschaften:
+			\begin{equation}
+				\begin{aligned}
+					\Br{\gamma^0}^\dagger &= +\gamma^0 \\
+					\Br{\gamma^j}^\dagger &= -\gamma^j \\
+					\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with mathbb{1}
+					\gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
+					\Br{\gamma^\mu}^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Transformation ($U$ unitär $U U^\dagger=1_4$):
+			\begin{equation}
+				\tilde{\gamma} = U \gamma^\mu U^\dagger
+			\end{equation}
+
+			\noindent
+			$\gamma^5$-Matrix:
+			\begin{equation}
+				\gamma^5 = \gamma_5 = \gamma_5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\varepsilon_{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+			\end{equation}
+
+			\noindent
+			Eigenschaften der $\gamma^5$-Matrix:
+			\begin{equation}
+				\begin{aligned}
+					\gamma_5^\dagger &= \gamma_5 \\
+					\gamma_5 \gamma_5 &= 1_4 \\
+					\anticom{\gamma^\mu}{\gamma^5} &= 0 \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			$\sigma^{\mu\nu}$ Matrizen:
+			\begin{equation}
+				\sigma^{\mu\nu} = \frac{i}{2}\com{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
+			\end{equation}
+
+
+	\subsection{Pfadintegral}
+		TODO
+
+	\subsection{Bosonen}
+		\subsubsection{Freie Klein-Gordon-Gleichung}
+			\noindent
+			Klein Gordon Gleichung (spin $s=0$)
+			\begin{equation}
+				\left(\partial^\mu\partial_\mu+m^2\right) \phi(x) = 0
+			\end{equation}
+
+			\noindent
+			Lösung (ebene Wellen):
+			\begin{equation}
+				{\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
+			\end{equation}
+
+	\subsection{Fermionen}
+		\subsubsection{Freie Dirac-Gleichung}
+			\noindent
+			Dirac-Gleichung (Spin $s=1/2$):
+			\begin{equation}
+				\Br{ i\slashed{\partial} - m } \psi\Br{x} = 0
+			\end{equation}
+
+
+
+
+
+	\subsection{Wechselwirkungen}
+		\subsubsection{Mandelstam Variablen}
+			\noindent
+			Lorentzskalare bei Streuprozess der Form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+			\begin{itemize}\itemsep -0pt	% reduce space between items
+				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Quadrat der Schwerpunktsenergie)}
+				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Quadrat des Viererimpuls-Übertrags)}
+				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Viererimpuls-Übertrag auf Rückstoßteilchen)}
+			\end{itemize}
+
+			\noindent
+			Zusammenhang:
+			\begin{equation}
+				s+t+u = \sum_i m_i^2
+			\end{equation}

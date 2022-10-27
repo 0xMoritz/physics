@@ -1,0 +1,293 @@
+\section{Relativität}
+	\subsection{Grundlagen}
+		\subsubsection{Symmetrien des Raumes}
+			\begin{itemize}
+				\item Homogenität der Zeit
+				\item Homogenität des Raumes
+				\item Isotropie des Raumes
+				\item Isotropie der Zeit
+			\end{itemize}
+
+			\noindent
+			Inertialsystem \\
+				\indent \textit{Ein Bezugssystem, bezüglich dessen die oben genannten Symmetrien erfüllt sind.}
+
+		\subsubsection{Einstein'sche Postulate}
+			\textbf{Erstes Postulat}: Relativitätsprinzip \newline
+				\indent \textit{Die Gesetze der Physik sind in allen Inertialsystemen gleich.}  \nl
+			\textbf{Zweites Postulat}: Konstanz der Lichtgeschwindigkeit \newline
+				\indent \textit{Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.}  \nl
+			\textbf{Drittes Postulat}: Starkes Äquivalenzprinzip \newline
+				\indent \textit{Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.}  \vsp
+
+	% \begin{description}
+	%   \item[Relativitätsprinzip]\hfill \\
+	%	 Die Gesetze der Physik sind in allen Inertialsystemen gleich.
+	%   \item[Konstanz der Lichtgeschwindigkeit]\hfill \\
+	%	 Die maximale Ausbreitungsgeschwindigkeit von Informationen ist in allen Bezugssystemen gleich $c$.
+	%   \item[Starkes Äquivalenzprinzip]\hfill \\
+	%	 Die Raumzeit ist lokal flach, d.h. in lokalen Inertialsystemen gelten die Gesetze der Speziellen Relativitätstheorie.
+	% \end{description}
+
+	\subsubsection{Metrischer Tensor}
+		Metrischer Tensor und Lorentz-invariantes Raumzeit-Intervall:
+		\begin{equation}
+			\diff s^2 = c^2 \diff \tau^2 = \diff x^\mu \diff x_\mu = g_{\mu\nu} \diff x^\mu \diff x^\nu
+		\end{equation}
+
+	\subsection{Allgemeine Relativität}
+		\subsubsection{Definitionen}
+			\noindent
+			Partielle Ableitungen:
+			\begin{equation}
+				\pder{\phi}{x^\mu} = \partial_\mu \phi = \phi_{,\mu}
+			\end{equation}
+
+			\noindent
+			Christoffelsymbole (Mit einem lokalen Inertialsystem mit Koordinaten $\xi^\alpha$):
+			\begin{equation}
+				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
+			\end{equation}
+			Die Christoffelsymbole sind symmetrisch in den unteren Indizes $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In frei fallenden, lokalen Koordinatensystemen sind die Christoffelsymbole null.
+
+			\noindent
+			Eigenzeit:
+			\begin{equation}
+				\Delta\tau := \frac{1}{c}\int_A^B\sqrt{g_{\mu\nu}\diff x^\mu \diff x^\nu}
+			\end{equation}
+
+			\noindent
+			Kovariante Ableitung:
+			\begin{equation}
+				D_\lambda T^{\alpha ...}_{\beta...} =
+				T^{\alpha ...}_{\beta...;\lambda} = T^{\alpha...}_{\beta ...,\lambda}
+				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
+				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
+			\end{equation}
+			In frei fallenden Bezugssystemen verschwindet der zweite Term und die kovariante Ableitung wird zur partiellen Ableitung.
+
+			\noindent
+			Riemann'scher Krümmungstensor:
+			\begin{equation}
+				\begin{aligned}
+					R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu} &= \Gamma^{\lambda}_{\phantom{\lambda}\nu\sigma,\mu}
+					+ \Gamma^{\lambda}_{\phantom{\lambda}\mu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\nu\sigma}
+					-
+					\Gamma^{\lambda}_{\phantom{\lambda}\mu\sigma,\nu}
+					+ \Gamma^{\lambda}_{\phantom{\lambda}\nu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\mu\sigma} \\
+					R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\left(
+					g_{\lambda\nu,\sigma,\mu} - g_{\lambda\mu,\sigma,\nu} + g_{\sigma\mu,\lambda,\nu} -	 g_{\sigma\nu,\lambda,\mu}
+					\right)
+					+ g_{\alpha\beta} \left(
+					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda}
+					\right)
+					\\
+					R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu}v^\sigma &= \left(D_\mu D_\nu - D_\nu D_\mu \right) v^\lambda
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Symmetrien des Krümmungstensors:
+			\begin{equation}
+				\begin{aligned}
+					R_{\lambda\sigma\mu\nu} &= - R_{\lambda\sigma\nu\mu} \\
+					R_{\lambda\sigma\mu\nu} &= \phantom{-} R_{\mu\nu\lambda\sigma} \\
+					R_{\lambda\sigma\mu\nu} &= - R_{\sigma\lambda\mu\nu} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Bianchi-Identitäten:
+			\begin{equation}
+				\begin{aligned}
+					R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} &= 0 \\
+					R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta;\gamma} + R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma;\alpha} + R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha;\beta} &= 0 \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Ricci-Tensor:
+			\begin{equation}
+				R_{\mu\nu} = R^\lambda_{\phantom{\lambda}\mu\lambda\nu}
+			\end{equation}
+
+			\noindent
+			Krümmungsskalar
+			\begin{equation}
+				R = R^\mu_{\phantom{\mu}\mu}
+			\end{equation}
+
+		\subsubsection{Feldgleichungen}
+			\noindent
+			Einstein Hilbert-Wirkung:
+			\begin{equation}
+				\mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det{g_{\mu\nu}(x)}\right|} R(g_{\mu\nu}(x))\;\diff^4 x
+			\end{equation}
+
+			\noindent
+			Einstein'sche Feldgleichungen:
+			\begin{equation}
+				R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+			\end{equation}
+
+			\noindent
+			Alternativ:
+			\begin{equation}
+				R_{\mu\nu} = \frac{8\pi G}{c^4} \left( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} \right)
+			\end{equation}
+
+
+		\subsubsection{Geodäten}
+			\noindent
+			Wirkung eines freien Teilchens:
+			\begin{equation}
+				\mathcal{S} = -\int_A^B mc^2\;\diff \tau = -\int_A^B mc\sqrt{g_{\mu\nu} \tder{x^\mu}{\tau} \tder{x^\nu}{\tau}} \;\diff \tau
+			\end{equation}
+
+			\noindent
+			Bewegungsgleichungen eines freien Teilchens (Zeitartige Geodäte):
+			\begin{equation}
+				\frac{\mathrm{d}^2 x^\kappa}{\mathrm{d}\tau^2}=-\Gamma_{\mu\nu}^{\kappa}\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau}\frac{\mathrm{d}x^\nu}{\mathrm{d}\tau}
+			\end{equation}
+
+	\subsection{Spezielle Relativität}
+		\noindent
+		Die Spezielle Relativität ist der Spezialfall der flachen bzw. ungekrümmten Raumzeit $G\rightarrow 0$, in ihr wird der metrische Tensor konstant.
+
+		\noindent
+		Minkowski-Metrik:
+		\begin{equation}
+			g_{\mu\nu} = \eta_{\mu\nu}
+			= \left( \begin{matrix}
+				\pm1 & 0		& 0		& 0		\\
+				0		& \mp1 & 0		& 0		\\
+				0		& 0		& \mp1 & 0		\\
+				0		& 0		& 0		& \mp1 \\
+			\end{matrix} \right)
+		\end{equation}
+
+		\noindent
+		Klassischer Grenzfall:
+		\begin{equation}
+			c \rightarrow \infty
+		\end{equation}
+
+		\noindent
+		Ultrarelativistischer Grenzfall:
+		\begin{equation}
+			v\rightarrow c
+		\end{equation}
+
+		\subsubsection{Definitionen}
+			\noindent
+			Lorentz-faktor ($\beta = \frac{v}{c}$):
+			\begin{equation}
+				\gamma = \frac{1}{\sqrt{1-\beta^2}}
+			\end{equation}
+
+			\noindent
+			Viererimpuls:
+			\begin{equation}
+				P^\mu =
+				\left(\begin{matrix}
+					E \\ \vec{p}
+				\end{matrix}\right)
+				= \left(\begin{matrix}
+					m\gamma c \\ m\gamma\vec{v}
+				\end{matrix}\right)
+				= \left(\begin{matrix}
+					\frac{mc}{\sqrt{1-\beta^2}} \\ \frac{m\vec{v}}{\sqrt{1-\beta^2}}
+				\end{matrix}\right)
+				= m u^\mu
+			\end{equation}
+
+		\subsubsection{Lorentztransformation}
+			\noindent
+			Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
+			\begin{equation}
+				\begin{aligned}
+					x'^\mu &=					\Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
+					x'_\mu &= \overline{\Lambda}_\mu^{\nu}(\vec{v}) x_\nu \\
+					\Lambda^{\mu}_{\nu}(\vec{v}) = \Lambda^{\mu}_{\phantom{\mu}\nu}(\vec{v}) &= \Lambda^{\phantom{\nu}\mu}_{\nu}(\vec{v}) = \overline{\Lambda}^{\mu}_{\nu}(-\vec{v})
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Grupppe $\mathcal{L}$):
+			\begin{equation}
+				\begin{aligned}
+					x'^\mu &= \Lambda^\mu_{\nu} x^\nu + b^\mu \\
+					\Lambda \in \mathcal{L} &= \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
+			\begin{equation}
+				\Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
+				 \;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
+			\end{equation}
+
+			\noindent
+			Klassifikation der homogenen Lorentztransformation:
+			\begin{itemize}
+				\item ''Orthochrone'' Lorentztransformation $\mathcal{L}^\uparrow$: $\Lambda^0_0 > 1$
+				\item ''Nicht orthochrone'' Lorentztransformation $\mathcal{L}^\downarrow$: $\Lambda^0_0 < 1$
+				\item ''Eigentliche'' Lorentztransformation $\mathcal{L}_+$: $\det\Lambda = 1$
+				\item ''Uneigentliche'' Lorentztransformation $\mathcal{L}_-$: $\det\Lambda = -1$
+			\end{itemize}
+
+			\noindent
+			Lorentz-Boost ($\Lambda\in\mathcal{L}^\uparrow_+$) zwischen zwei Inertialsystemen mit parallelen Koordinatenachsen ($\vec{v}=c\vec{\beta}$):
+			\begin{equation}
+				\Lambda(\vec{v}) = \left( \begin{matrix}
+					\gamma & -\gamma\dfrac{\pvec{v}^T}{c} \\[6pt]
+					-\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
+					\end{matrix} \right)
+					=
+					\left(\begin{matrix}
+						\gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
+						-\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
+						-\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
+						-\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
+					\end{matrix}\right)
+			\end{equation}
+
+		\subsubsection{Folgen der Speziellen Relativität}
+			\noindent
+			Eigenzeit in der speziellen Relativitätstheorie:
+			\begin{equation}
+				\Delta\tau = \int_A^B \frac{\diff t}{\gamma}
+			\end{equation}
+
+			\noindent
+			Relativistischer Doppler-effekt (Signale werden von Betrachter aus gemessen mit Winkel $\theta$ ausgesendet):
+			\begin{equation}
+				\omega = \omega_0\frac{\sqrt{1-\beta^2}}{1+\beta\cos\theta}
+			\end{equation}
+
+			\noindent
+			Geschwindigkeitsaddition (Mit Rapiditäten $\psi = \mathrm{artanh}\left(\frac{v}{c}\right)$):
+			\begin{equation}
+				\begin{aligned}
+					\psi_{ges} &= \psi_1+\psi_2 \\
+					\vec{v}_{ges} &= \frac{\vec{v}_1+\vec{v}_{2\parallel}+\vec{v}_{2\perp}\sqrt{1-\dfrac{\vec{v}_1^2}{c^2}}}{1+\dfrac{\vec{v}_1\cdot\vec{v}_2}{c^2}} \\
+					\vec{v}_1\parallel\vec{v}_2 \;\Rightarrow\; v_{ges} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Relativistische Aberration:
+			\begin{equation}
+				\tan\left(\frac{\theta}{2}\right) = \sqrt{\frac{1-\beta}{1+\beta}}\tan\left(\frac{\theta'}{2}\right)
+			\end{equation}
+
+			\noindent
+			Energie-Impuls-Relation:
+			\begin{equation}
+				\begin{aligned}
+					P^\mu P_\mu &= m^2 c^2\\
+					E^2 &= p^2 c^2 + m^2 c^4 \\
+				\end{aligned}
+			\end{equation}
+			\newpage
