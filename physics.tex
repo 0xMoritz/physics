@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\usepackage[ngerman]{babel}	 % deutsche Silbentrennung
+%\usepackage[ngerman]{babel}	 % deutsche Silbentrennung
 \usepackage[utf8]{inputenc}	 % Unicode support (Umlaute etc.)
 \usepackage{a4}
 \usepackage{array}
@@ -12,7 +12,6 @@
 \usepackage{dblfloatfix}	% To enable figures at the bottom of page
 \usepackage{subcaption}
 \usepackage{stackengine}
-\usepackage{hyperref}
 \usepackage{braket}
 \usepackage{float}
 \usepackage{placeins}
@@ -22,7 +21,11 @@
 \usepackage{slashed}	% Feynman slash notation \slashed{}
 \usepackage{ulem} 		% strike through text horizontally with \sout{}
 \usepackage[margin=2cm,footskip=1cm]{geometry}
+\usepackage{imakeidx}	% For indexing keywords
+\usepackage{hyperref}
 %\usepackage{tabularx}
+\makeindex[intoc, columns=3, title=German Index]
+
 
 %\definecolor{darkblue}{rgb}{0,0,0.45}
 % \hypersetup{
@@ -105,13 +108,12 @@
 
 
 	\begin{center}
-		\Large\textbf{Zusammenfassung zur Theoretischen Physik} \\
+		\Large\textbf{Theoretical Physics Formulary} \\
 		\large\textit{Moritz Geßner} \\
 	\end{center}
 
 	\tableofcontents
 	\newpage
-
 	\input{Relativity.tex}
 	\newpage
 	\input{ClassicalMechanics.tex}
@@ -130,3 +132,5 @@
 	\newpage
 	\input{Constants.tex}
 	\newpage
+	\printindex
+\end{document}

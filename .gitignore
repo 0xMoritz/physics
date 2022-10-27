@@ -8,3 +8,6 @@
 *.out
 *.xdv
 *.log
+*.idx
+*.ilg
+*.ind
