@@ -151,7 +151,7 @@
 			\begin{equation}
 				\begin{aligned}
 					0 &= \diff \big( S - \lambda \sum_i p_i \big) \\
-					p_i &= e^{-1-\lambda} = \konst \\
+					p_i &= e^{-1-\lambda} = \const \\
 					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ %\frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
 				\end{aligned}
 			\end{equation}
@@ -200,7 +200,7 @@
 
 			\emph{Extensive Variablen}: Homogen vom Grad $1$ ($S$, $U$, $V$, ...). Diese sind insbesondere Additiv. \vsp
 
-			\begin{table}[h]
+			\begin{table}[ht]
 				\begin{center}
 				\begin{tabular}{ l | l l l l l l }
 					$g_\alpha$ & $-p$ & $\mu$ & $\sigma$ & $E_0$ & $B_0$ & $\Phi$ \\ \hline
@@ -212,7 +212,7 @@
 			\end{table} \vsp
 
 			\noindent
-			\emph{Thermodynamischer Grenzfall}: \newline Deterministisches Verhalten bei $U,V,N\rightarrow\infty$ unter $U/N,V/N=\konst$. \vsp
+			\emph{Thermodynamischer Grenzfall}: \newline Deterministisches Verhalten bei $U,V,N\rightarrow\infty$ unter $U/N,V/N=\const$. \vsp
 
 
 			\noindent
@@ -362,7 +362,7 @@
 			Guggenheim Quadrat:
 			Unheimlich Viele Forscher Trinken Gerne pils Hinterm Schreibtisch.
 
-			\begin{table}[h]
+			\begin{table}[ht]
 				\begin{center}
 				\makebox[1\textwidth][c]{
 				\begin{tabular}{ r | l | l | l }
@@ -453,13 +453,14 @@
 			\end{equation}
 
 			\noindent
-			Der Wärmetransport ist irreversibel, für die Entropiedichte $s(t,\vec{r})$ und die Entropiestromdichte \linebreak $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ gilt (Mit der \emph{Entropieerzeugungsrate} $\dot{s}$):
+			Der Wärmetransport ist irreversibel, für die Entropiedichte $s(t,\vec{r})$ und die Entropiestromdichte $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ gilt (Mit der \emph{Entropieerzeugungsrate} $\dot{s}$):
 			\begin{equation}
 				\dot{s} = \pder{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
 			\end{equation}
 
 			\noindent
-			Onsager Reziprozitätsbeziehung: Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.\vsp
+			Onsager Reziprozitätsbeziehung:
+			\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.}\vsp
 
 			\noindent
 			Thermoelektrische Effekte: In Systemen mit Ladungsträgern ist es sinnvoll ein elektrochemisches Potential $\mu_{EC}$ einzuführen, da eine Veränderung der Teilchenzahl auch eine Veränderung der Ladung im Potential impliziert, sodass (mit dem \emph{Peltier-Koeffizienten} $\Pi$, der \emph{Thermokraft} $\epsilon$, dem elektrischen Strom $\vec{j} = q\vec{j}^n$ und der spezifischen Leitfähigkeit $\sigma$, die letzte Gleichung folgt aus der Reziprozitätsbeziehung):
@@ -500,7 +501,7 @@
 			\noindent
 			Adiabatengleichung \newline(gilt bei konstanten Wärmekapazitäten mit Adiabatenkoeffizient $\gamma = \frac{c_p}{c_V} = \frac{c_V + k_B}{c_V}$)
 			\begin{equation}
-				p V^\gamma = \konst
+				p V^\gamma = \const
 			\end{equation}
 
 		\subsubsection{Quantenmechanisches ideales Gas}
@@ -593,14 +594,19 @@
 					\frac{\diff N_2}{\diff t} &= -A_{21}N_2\\
 				\end{aligned}
 			\end{equation}
-			Wobei \\
-			\indent $N_1$: Besetzungszahl des Grundzustandes,\\
-			\indent $N_2$: Besetzungszahl des angeregten Zustands,\\
-			\indent $B_{12}$: Einstein'scher B-Koeffizient für Absorption,\\
-			\indent $B_{21} = B_{12}$: Einstein'scher B-Koeffizient für stimulierte Emission,\\
-			\indent $A_{21}$: Einstein'scher A-Koeffizient für die spontane Emission,\\
-			\indent $\tau_{R}=A_{21}^{-1}$: Strahlende Lebensdauer,\\
-			\indent $\frac{\diff w}{\diff \omega}(\omega)$: spektrale Energiedichte.\\
+
+			\noindent
+			Wobei
+			\begin{itemize}
+  				\setlength\itemsep{0pt}
+				\item[] $N_1$: Besetzungszahl des Grundzustandes,
+				\item[] $N_2$: Besetzungszahl des angeregten Zustands,
+				\item[] $B_{12}$: Einstein'scher B-Koeffizient für Absorption,
+				\item[] $B_{21} = B_{12}$: Einstein'scher B-Koeffizient für stimulierte Emission,
+				\item[] $A_{21}$: Einstein'scher A-Koeffizient für die spontane Emission,
+				\item[] $\tau_{R}=A_{21}^{-1}$: Strahlende Lebensdauer,
+				\item[] $\frac{\diff w}{\diff \omega}(\omega)$: spektrale Energiedichte.
+			\end{itemize}
 
 		\subsubsection{Hohlraumstrahlung}
 			\noindent

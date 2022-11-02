@@ -1,35 +1,35 @@
 % !TEX root = ../physics.tex
-\section{Klassische Feldtheorie}
-	\subsection{Lagrange-Formalismus}
-		\subsubsection{Allgemeines}
+\section{Classical field theory\index{Klassische Feldtheorie}}
+	\subsection{Lagrange Formalism}
+		\subsubsection{Basics}
 			\noindent
-			Wirkung und Lagrangedichte $\mathcal{L}$:
+			Action\index{Wirkung} and Lagrange density\index{Lagrangedichte} $\mathcal{L}$:
 			\begin{equation}
 				\mathcal{S} = \int_{\mathbb{R}^4} \mathcal{L}(A^\nu(x),\partial_\mu A^\nu(x)) \;\diff^4 x
 			\end{equation}
 
 			\noindent
-			Euler-Lagrange-Gleichung:
+			Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}:
 			\begin{equation}
 				\delta\mathcal{S} = 0
 				\;\Rightarrow\; \partial_\mu \left(\pder{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}\right) - \pder{\mathcal{L}}{A^\nu} = 0 \;\;\forall \nu
 			\end{equation}
 
-		\subsubsection{Noether-Theorem}
+		\subsubsection{Noether's Theorem\index{Noether Theorem}}
 			\noindent
-			Kontinuierliche Transformation:
+			Continuous transformation:%Kontinuierliche Transformation:
 			\begin{equation}
 				\phi(x)\rightarrow\phi'(x) = \phi(x) + \varepsilon \delta \phi(x)
 			\end{equation}
 
 			\noindent
-			Invarianzbedingung:
+			Condition of invariance:%Invarianzbedingung:
 			\begin{equation}
 				\delta\mathcal{L} = \partial_\mu F^\mu(\phi)
 			\end{equation}
 
 			\noindent
-			Resultierender erhaltener Strom und Erhaltene Ladung:
+			Resulting conserved current and conserved charge:%Resultierender erhaltener Strom und Erhaltene Ladung:
 			\begin{equation}
 				\begin{aligned}
 					S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \left( \phi(x), \partial_\nu\phi(x) \right) = \pder{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\

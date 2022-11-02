@@ -1,28 +1,28 @@
 % !TEX root = ../physics.tex
-\section{Elektromagnetismus}
-	\subsection{Bewegungsgleichungen}
+\section{Electromagnetism\index{Elektromagnetismus}}
+	\subsection{Equations of motion}
 		\noindent
-		Wirkung eines freien Teilchens in einem Elektromagnetischen Feld:
+		Action of a free particle in an electromagnetic field:%Wirkung eines freien Teilchens in einem Elektromagnetischen Feld:
 		\begin{equation}
 			\mathcal{S}=-\int_{a}^{b}\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
 	+ q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)\;\diff\tau
 		\end{equation}
 
 		\noindent
-		Lagrange Funktion mit Parametrisierung $\tau$ (Zum Beispiel durch die Eigenzeit):
+		Lagrangian with parametrization $\tau$ (e.g. proper time):%Lagrange Funktion mit Parametrisierung $\tau$ (Zum Beispiel durch die Eigenzeit):
 		\begin{equation}
 			\mathcal{L} (\tau,x,u) =-\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
 			+ q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)
 		\end{equation}
 
 		\noindent
-		Nicht-relativistische Lagrange Funktion:
+		Non-relativistic Lagrangian:%Nicht-relativistische Lagrange Funktion:
 		\begin{equation}
 			\mathcal{L}(t,\vec{x},\dot{\vec{x}}) = \frac{1}{2}m\dot{\vec{x}}^2 - q\phi(t,\vec{x}) - \dot{\vec{x}}\cdot\vec{A}(t,\vec{x})
 		\end{equation}
 
 		\noindent
-		Lorentzkraft (relativistische Minkowski-Kraft und Newton'sche Kraft):
+		Lorentz force\index{Lorentzkraft} (relativistic Minkowski force\index{Minkowskikraft} and Newtonian force):
 		\begin{equation}
 			\begin{aligned}
 				\frac{\diff P^\mu}{\diff \tau} &= q F^{\mu\nu}\frac{\diff x_\nu}{\diff \tau} \\
@@ -30,21 +30,21 @@
 			\end{aligned}
 		\end{equation}
 
-	\subsection{Feldgleichungen}
+	\subsection{Field equations}
 		\noindent
-		Lagrangedichte:
+		Lagrange density:
 		\begin{equation}
 			\mathcal{L} = -\frac{1}{4\mu_0}F^{\mu\nu} F_{\mu\nu} - A_\mu J^\mu
 		\end{equation}
 
 		\noindent
-		Allgemeine (ungeeichte) Entwicklungsgleichung:
+		General field equations without gauge \index{Entwicklungsgleichung}:
 		\begin{equation}
 			\Box A^\mu-\partial^\mu\left(\partial_\nu A^\nu\right) = \partial_\nu F^{\nu\mu} =  \mu_0 J^\mu
 		\end{equation}
 
 		\noindent
-		Maxwell-Gleichungen im Vakuum:
+		Maxwell's equations\index{Maxwell!Gleichungen} in a vacuum:
 		\begin{equation}
 		\begin{array}{rl}
 			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
@@ -55,7 +55,7 @@
 		\end{equation}
 
 		\noindent
-		Maxwell-Gleichungen in Materie:
+		Maxwell's equations\index{Maxwell!Gleichungen} in matter:
 		\begin{equation}
 		\begin{array}{rl}
 			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_f}
@@ -66,8 +66,8 @@
 		\end{equation}
 
 		\noindent
-		Elektrische Flussdichte und Magnetische Feldstärke:
-		\begin{equation} \label{eq:flussdichte-feldstärke}
+		Electric flux density and magnetic field strength:%Elektrische Flussdichte und Magnetische Feldstärke:
+		\begin{equation} \label{Eq:FluxDensityFieldStrength}
 		\begin{array}{cc}
 			\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
 			&\hspace{20pt} \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
@@ -76,7 +76,7 @@
 
 
 		\noindent
-		Globale Maxwell-Gleichungen (Mit elektrischer Spannung $U(\Gamma)=\int_\Gamma \vec{E}\cdot\diff\vec{l}$, Elektrischem Fluss $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\diff A$, magnetischer Spannung $V(\Gamma)=\int_\Gamma \vec{H}\cdot\diff\vec{l}$ und magnetischem Fluss $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\diff A$):
+		Maxwell's equations\index{Maxwell!Gleichungen} in their integrated form (Electric voltage $U(\Gamma)=\int_\Gamma \vec{E}\cdot\diff\vec{l}$, electric flux $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\diff A$, magnetic voltage $V(\Gamma)=\int_\Gamma \vec{H}\cdot\diff\vec{l}$ and magnetic flux $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\diff A$):
 		\begin{equation}
 		\begin{array}{rl}
 			U(\partial \mathcal{A}) + \cfrac{\diff\Phi}{\diff t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
@@ -86,9 +86,9 @@
 		\end{array}
 		\end{equation}
 
-		\subsubsection{Diskontinuitätsgleichungen}
+		\subsubsection{Discontinuity Equations\index{Diskontinuitätsgleichungen}}
 			\noindent
-			Randbedingungen im Vakuum (Oberflächenladungsdichte $\sigma$, Oberflächenladungsstromdichte $\vec{K}$):
+			Boundary conditions in a vacuum (Surface charge density $\sigma$, surface charge current density $\vec{K}$):
 		\begin{equation}
 		\begin{array}{cc}
 			\vec{E}^2 - \vec{E}^1 = \cfrac{\sigma}{\varepsilon_0}\Vec{n}^2
@@ -97,7 +97,7 @@
 		\end{equation}
 
 			\noindent
-			Randbedingungen in Materie:
+			Boundary conditions in matter:
 		\begin{equation}
 		\begin{array}{cc}
 			D_\perp^2 - D_\perp^1 = \sigma_f
@@ -105,21 +105,21 @@
 		\end{array}
 		\end{equation}
 
-	\subsection{Elektrodynamik}
+	\subsection{Electrodynamics\index{Elektrodynamik}}
 		\noindent
-		Kontinuitätsgleichung (direkte Folge der Maxwell-Glechungen):
+		Continuity equation\index{Kontinuitätsgleichung}:
 		\begin{equation}
 			\partial_\mu J^\mu = \pder{\rho}{t} + \Nabla\cdot\vec{j} = 0
 		\end{equation}
 
 		\noindent
-		In integrierter Form:
+		Integrated form:
 		\begin{equation}
 			\dot{Q}(\mathcal{V}) = I(\partial\mathcal{V})
 		\end{equation}
 
 		\noindent
-		Lorentz-Invarianten des Elektromagnetische Feldes:
+		Lorentz invariants of the electromagnetic field:
 		\begin{equation}
 			\begin{aligned}
 				F_{\mu\nu} F^{\mu\nu} = \mathrm{invariant} &\Rightarrow \vec{E}^2 - \vec{B}^2 = \mathrm{invariant} \\
@@ -127,21 +127,21 @@
 			\end{aligned}
 		\end{equation}
 
-		\subsubsection{Elektromagnetische Energie und Impuls}
+		\subsubsection{Electromagnetic Energy and Momentum}
 			\noindent
-			Energiedichte:
+			Energy density:
 			\begin{equation}
 				u_{EM}=\frac{1}{2}\epsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
 			\end{equation}
 
 			\noindent
-			Poynting Vektor / Energiestromdichte:
+			Poynting tector\index{Poynting!Vektor} / Energy flux density:
 			\begin{equation}
 				\vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B}
 			\end{equation}
 
 			\noindent
-			Poynting Theorem / Energie-Kontinuität:
+			Poynting theorem\index{Poyngint!Theorem} / Energy continuity:
 			\begin{equation}
 				-\Nabla\cdot\vec{S}
 				= \pder{u_{\mathrm{mech}}}{t} + \pder{u_{EM}}{t}
@@ -149,19 +149,19 @@
 			\end{equation}
 
 			\noindent
-			Impulsdichte:
+			Momentum density:
 			\begin{equation}
 				\vec{\pi} = \tder{\vec{p}_{EM}}{V} = \frac{1}{c^2}\vec{S}
 			\end{equation}
 
 			\noindent
-			Impulserhaltung (Maxwellscher Spannungstensor $T$):
+			Conservation of Momentum (Maxwell stress tensor\index{Maxwell!Spannungstensor} $T$):
 			\begin{equation}
 				\pder{\vec{p}_{EM}}{t} - \Nabla\cdot T + \rho \vec{E} + \vec{J}\times\vec{B} = 0
 			\end{equation}
 
 			\noindent
-			Energieerhaltung und Impulserhaltung (Mit Kraft $F$, Leistung $P$, Poynting-Vektor $S_i$, Spannungstensor $T_{ij}$, Impulsdichte $\pi_i$):
+			Conservation of energy and momentum (Force $F$, power $P$, Poynting vector $S_i$, stress tensor $T_{ij}$, momentum density $\pi_i$):
 			\begin{equation}
 				\begin{aligned}
 					\pder{u_{EM}}{t} &= \tder{P}{V} - \pder{S_j}{x_j} \\
@@ -169,9 +169,9 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Elektromagnetischer Energie-Impuls-Tensor}
+		\subsubsection{Electromagnetic energy-momentum tensor\index{Energie-Impuls-Tensor}}
 			\noindent
-			Energie-Impuls-Tensor (Wobei $T_{ij}$ der Maxwell'sche Spannungstensor ist):
+			Energy-momentum tensor (Maxwell stress tensor $T_{ij}$):
 			\begin{equation}
 				T^{\mu\nu} = \frac{1}{\mu_0}\left(g^{\mu\alpha} F_{\alpha\beta} F^{\beta\nu} +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} \right)
 				= \left( \begin{matrix}
@@ -183,13 +183,10 @@
 			\end{equation}
 
 			\noindent
-			Maxwell'scher Spannungstensor:
+			Maxwell stress tensor\index{Maxwell!Spannungstensor} and properties
 			\begin{equation}
 				T_{ij} = \varepsilon_0 \Br{ E_i E_j + c^2 B_i B_j - \frac{\delta_{ij}}{2}\Br{ \vec{E}^2 + c^2 \vec{B}^2 } }
 			\end{equation}
-
-			\noindent
-			Eigenschaften:
 			\begin{equation}
 				\begin{aligned}
 					T^{\mu\nu} &= T^{\nu\mu} &\hspace{20pt}
@@ -198,7 +195,7 @@
 			\end{equation}
 
 			\noindent
-			Energie und Impulserhaltung:
+			Conservation of energy and momentum:
 			\begin{equation}
 				\begin{aligned}
 					\partial_\mu T^{\mu\nu} + F^{\nu\lambda} J_\lambda &= 0
@@ -207,57 +204,51 @@
 			\end{equation}
 
 
-		\subsubsection{Elektromagnetische Wellen im Vakuum}
+		\subsubsection{Electromagnetic waves in a vacuum}
 			\noindent
-			Wellengleichung im Vakuum:
+			Wave equation in a vacuum\index{Wellengleichung}:
 			\begin{equation}
 				\Box\psi = \frac{1}{c^2} \frac{\partial^2 \psi}{\partial t^2} - \Nabla^2 \psi = 0
 			\end{equation}
 
 			\noindent
-			Vektorwelle (In der Elektrodynamik $\vec{\psi}=\vec{E}$ und $ \vec{\psi}=\vec{B}$):
+			General vector wave (e.g. $\vec{\psi}=\vec{E}$ or $ \vec{\psi}=\vec{B}$):
 			\begin{equation}
 				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \diff^3\vec{k}
 			\end{equation}
 
 			\noindent
-			Orthogonalität des Wellenvektors (Elektromagnetische Wellen im Vakuum sind immer transversal):
+			Orthogonaliy of the wave vector (Electromagnetic waves in a vacuum are always transversal):
 			\begin{equation}
 				\tilde{\vec{B}} = \frac{1}{c}\hat{\vec{k}}\times\tilde{\vec{E}} = \frac{1}{\omega}\vec{k}\times\tilde{\vec{E}}
 			\end{equation}
 
 			\noindent
-			Energiedichte einer linear polarisierten Welle:
-			\begin{equation}
-				u_{EM} = \frac{1}{2}\epsilon_0\vec{E}^2
-			\end{equation}
-
-			\noindent
-			Energiedichte einer zirkular polarisierten Welle:
-			\begin{equation}
-				u_{EM} = \epsilon_0\vec{E}^2
-			\end{equation}
-
-			\noindent
-			Energiestromdichte einer elektromagnetischen Welle:
+			Energy flux density of an electromagnetic wave:
 			\begin{equation}
 				\vec{S} = u_{EM}c\hat{\vec{k}}
 			\end{equation}
 
 			\noindent
-			Intensität einer linear polarisierten Welle:
+			Energy density and intensity of a linearly polarized wave:
 			\begin{equation}
-				I = \langle|\vec{S}|\rangle = \frac{1}{2}c\epsilon_0\vec{E}^2
+				\begin{aligned}
+					u_{EM} &= \frac{1}{2}\epsilon_0\vec{E}^2 &\hspace{20pt}
+					I &= \langle|\vec{S}|\rangle = \frac{1}{2}c\epsilon_0\vec{E}^2
+				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Intensität einer zirkular polarisierten Welle:
+			Energy density and intensity of a circularly polarized wave:
 			\begin{equation}
-				I = \langle|\vec{S}|\rangle = c\epsilon_0\vec{E}^2
+				\begin{aligned}
+					u_{EM} &= \epsilon_0\vec{E}^2 &\hspace{20pt}
+					I &= \langle|\vec{S}|\rangle = c\epsilon_0\vec{E}^2
+				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Abgestrahlte Welle eines oszillierenden Dipols $\vec{p} = \vec{p}_0 e^{-\i\omega t}$ (Mit retardierter Zeit $\tilde{t} = t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}$):
+			Emitted wave of an oscillating dipole\index{Dipol!Strahlung} $\vec{p} = \vec{p}_0 e^{-\i\omega t}$ (Retarded time $\tilde{t} = t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{E}(t,\vec{r}) &= -\frac{\mu_0}{4\pi r c}	\left(\vec{n}\times\ddot{\vec{p}}(\tilde{t})\right) \times \vec{n} \\
@@ -266,29 +257,29 @@
 			\end{equation}
 
 			\noindent
-			Larmor'sche Formel (für die von einem nicht-relativistischen Teilchen mit retardierter Beschleunigung $a(\tilde{t}$ abgestrahlte Energie):
+			Larmor formula\index{Larmor!Formel} (Emitted energy of a non-relativistic particle, retarded acceleration $a(\tilde{t}$):
 			\begin{equation}
 				P(t) = \frac{q^2 \mu_0}{6\pi c}a^2(\tilde{t})
 			\end{equation}
 
-		\subsubsection{Elektromagnetische Wellen in Medien}
+		\subsubsection{Electromagnetic waves in matter}
 			\noindent
-			Definition des Brechungsindex (Mit Phasengeschwindigkeit $v_{PH}$):
+			Definition index of refraction\index{Brechungsindex} (phase velocity $v_{PH}$):
 			\begin{equation}
 				n(k) := \frac{c}{v_{PH}(k)} = \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
 			\end{equation}
 
 			\noindent
-			Snellius'sches Brechungsgesetz:
+			Snell's law\index{Snellius!Brechungsgesetz}:
 			\begin{equation}
 				\frac{\sin\alpha_1}{\sin\alpha_2} = \frac{n_2}{n_1}
 			\end{equation}
 
 
 
-		\subsubsection{Elektrotechnik}
+		\subsubsection{Electrical Engineering}
 			\noindent
-			Ohm'sches Gesetz (Mit spezifischer Leitfähigkeit $\sigma$ und Widerstand $R$, die beide als linear angenommen werden):
+			Ohm's law\index{Ohm!Gesetz} (Specific conductivity $\sigma$, resistance $R$, both assumed linear):
 			\begin{equation}
 				\begin{aligned}
 					\vec{j} &= \sigma\vec{E} \\
@@ -297,49 +288,53 @@
 			\end{equation}
 
 			\noindent
-			Kirchhoff'sche Regeln:
+			Kirchhoff's circuit laws\index{Kirchhoff!Regeln}:
 			\begin{description}
-				\item[1. Knotenregel]\hfill \\
-					An jedem Knoten ist die Summe der einfließenden elektrischen und ausfließenden elektrischen Ströme gleich null (Kontinuitätsgleichung).
-				\item[2. Maschenregel]\hfill \\
-					Alle Teilspannungen eines Umlaufs bzw. einer Masche addieren sich zu null (Elektrostatik)
+				\item[1. Kirchhoff's current law\index{Kirchhoff!Knotenregel}] \hfill \\
+					{\textit{The algebraic sum of currents in a network of conductors meeting at a point is zero.} \\(special case of continuity equation)}
+				%\item[1. Knotenregel]\hfill \\
+				%	An jedem Knoten ist die Summe der einfließenden elektrischen und ausfließenden elektrischen Ströme gleich null (Kontinuitätsgleichung).
+				\item[2. Kirchhoff's voltage law\index{Kirchhoff!Maschenregel}] \hfill \\
+					{\textit{The directed sum of the potential differences (voltages) around any closed loop is zero.} \\(electrostatics)}
+				%\item[2. Maschenregel]\hfill \\
+				%	Alle Teilspannungen eines Umlaufs bzw. einer Masche addieren sich zu null (Elektrostatik)
 			\end{description}
 
 			\noindent
-			Joule'sches Wärmegesetz (Wärmeerzeugung in einem ohm'schen Leiter):
+			Joule heating\index{Joule!Wärmegesetz} (Heat generation in an ohmic conductor):
 			\begin{equation}
 				P = UI = RI^2 = \frac{U^2}{R}
 			\end{equation}
 
 
 
-	\subsection{Definitionen für die Elektrodynamik}
+	\subsection{Definitions}
 		\noindent
-		Lichtgeschwindigkeit:
+		Speed of light\index{Lichtgeschwindigkeit}:
 		\begin{equation}
 			c=\frac{1}{\sqrt{\epsilon_0 \mu_0}}
 		\end{equation}
 
 		\noindent
-		D'Alembert'scher Operator:
+		D'Alembert operator\index{d'Alembert!Operator}:
 		\begin{equation}
 			\Box = \partial^\mu \partial_\mu = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \vec{\nabla}^2
 		\end{equation}
 
 		\noindent
-		Viererstromdichte:
+		Four-current\index{Viererstromdichte}:
 		\begin{equation}
 			J^\mu = \binomkoeff{c\rho}{\vec{j}} = \binomkoeff{c\tder{q}{V}}{\vec{v}\tder{q}{V}}
 		\end{equation}
 
 		\noindent
-		Viererpotential:
+		Four-potential\index{Viererpotential}:
 		\begin{equation}
 			A^\mu = \binomkoeff{\phi/c}{\vec{A}}
 		\end{equation}
 
 		\noindent
-		Faraday-Tensor / Feldstärken tensor:
+		Faraday tensor\index{Faraday!tensor} / electromagnetic tensor / field strength tensor\index{Faraday!Feldstärkentensor}:
 		\begin{equation}
 			F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
 			= \left( \begin{matrix}
@@ -351,57 +346,58 @@
 		\end{equation}
 
 		\noindent
-		Dualer Feldstärkentensor:
+		Hodge Dual\index{Faraday!Dualer Feldstärkentensor}:
 		\begin{equation}
 			\tilde{F}^{\mu\nu} = \frac{1}{2}\varepsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}
 		\end{equation}
 
 		\noindent
-		Elektrische Feldstärke:
+		Electric field strength:
 		\begin{equation}
 			\vec{E} = -\Nabla\phi-\pder{\vec{A}}{t}
 		\end{equation}
 
 		\noindent
-		Magnetische Flussdichte:
+		Magnetic flux density:
 		\begin{equation}
 			\vec{B} = \Nabla\times\vec{A}
 		\end{equation}
 
-	\subsection{Eichtransformation}
+	\subsection{Gauge Transformation\index{Eichtransformation}}
 		\noindent
-		Eichtransformation:
+		Gauge transformation\index{Eichtransformation}:
 		\begin{equation}
 			A^\mu \rightarrow A^\mu-\partial^\mu \lambda
 		\end{equation}
 
-		\subsubsection{Lorenz-Eichung}
+		\subsubsection{Lorenz gauge\index{Lorenz!gauge}}
 			\noindent
-			Lorenz-Eichung:
+			Lorenz gauge\index{Lorenz!Eichung}:
 			\begin{equation}
 				\partial_\mu A^\mu = \frac{1}{c}\frac{\partial \phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0
 			\end{equation}
 
 			\noindent
-			Maxwellgleichungen in der Lorentz-Eichung:
+			Maxwell equations using Lorenz gauge \index{Maxwell!Gleichungen}:
 			\begin{equation}
 				\Box A^\mu = \mu_0 J^\mu \;\Leftrightarrow\;
 				\Box \phi = \dfrac{\rho}{\epsilon_0} \;\wedge\;
 				\Box \vec{A} = \mu_0 \vec{j}
 			\end{equation}
 
-		\subsubsection{Coulomb-Eichung}
+		\subsubsection{Coulomb gauge \index{Coulomb!Eichung}}
 			\noindent
-			Coulomb-Eichung (nicht eindeutig):
+			Coulomb gauge (not unique):
 			\begin{equation}
 				\Nabla\cdot\vec{A}(t,\vec{r})=0
 			\end{equation}
 
-	\subsection{Spezielle Lösungen der Feldgleichungen}
-
-		\subsubsection{Retardierte Potentiale}
+	\subsection{Special Solutions of the field equations}
+		\subsubsection{Retarded potentials\index{Retardierte Potentiale}}
+			\label{Sec:RetardedPotentials}
 			\noindent
-			Retardierte Potentiale (Allgemeine Lösung der nicht-statischen Maxwellgleichungen mit Lorenz-Eichung für Strom- und Ladungsverteilung die zu jedem Zeitpunkt bekannt sind):
+			Retarded potentials (general solutions of the non-static Maxwell's equations with Lorenz gauge for known charge and current distributions for all times):
+			%Retardierte Potentiale (Allgemeine Lösung der nicht-statischen Maxwellgleichungen mit Lorenz-Eichung für Strom- und Ladungsverteilung die zu jedem Zeitpunkt bekannt sind):
 			\begin{equation}
 				\begin{aligned}
 					\phi\left(t,\vec{r}\right)
@@ -414,10 +410,10 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Liénard-Wiechert-Potentiale}
-
+		\subsubsection{Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale}}
 			\noindent
-			Lösung der Feldgleichungen für eine bewegte Punktladung mit Ort $\vec{u}(\tilde{t})$ und Geschwindigkeit $\vec{v}(\tilde{t})$ mit der retardierten Zeit $\tilde{t}$. Liénard-Wiechert-Potentiale:
+			Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale} (Solutions of the field equations for a moving point charge at $\vec{u}(\tilde{t})$ and velocity $\vec{v}(\tilde{t})$; retarded time $\tilde{t}$):
+			%Lösung der Feldgleichungen für eine bewegte Punktladung mit Ort $\vec{u}(\tilde{t})$ und Geschwindigkeit $\vec{v}(\tilde{t})$ mit der retardierten Zeit $\tilde{t}$. Liénard-Wiechert-Potentiale:
 			\begin{equation}
 				\begin{aligned}
 					\phi(t,\vec{r}) & =\frac{q c}{4\pi \epsilon_0}\frac{1}{c \left|\vec{r}-\vec{u}(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{u}(\tilde{t})\right)} \\
@@ -425,31 +421,31 @@
 				\end{aligned}
 			\end{equation}
 
-	\subsection{Elektrostatik}
-		\subsubsection{Allgemeines}
-
+	\subsection{Electrostatics\index{Elektrostatik}}
+		\subsubsection{Basics}
 			\noindent
-			Coulomb-Kraft (Die von Ladung 2 auf Ladung 1 wirkt):
+			Coulomb force\index{Coulomb!Kraft} (Acting on charge 1):
 			\begin{equation}
 				\vec{F}_1 = \frac{q_1 q_2}{4\pi\varepsilon_0}\frac{\vec{r}_1-\vec{r}_2}{\left|\vec{r}_1-\vec{r}_2\right|^3}
 			\end{equation}
 
 			\noindent
-			Poisson-Gleichung der Elektrostatik:
+			Poisson equation\index{Poisson!Gleichung} of electrostatics:
 			\begin{equation}
 				\Nabla^2\phi = -\frac{\rho}{\epsilon_0}
+				\label{Eq:Poisson}
 			\end{equation}
 
 			\noindent
-			Elektrisches Potential in der Elektrostatik (folgt aus zeitunabhängigem retardiertem Potential):
+			Electrical potential for static systems (Resulting from the retarded potentials Sec.~\ref{Sec:RetardedPotentials}):
 			\begin{equation}
 				\phi\left(t,\vec{r}\right)
 				= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff^3 \pvec{r}'
 			\end{equation}
 
-		\subsubsection{Lösen der Poisson-Gleichung}
+		\subsubsection{Solving the Poisson Equation\index{Poisson!Gleichung}}
 			\noindent
-			Dirichlet-Green'sche Funktion $G_D$:
+			Dirichlet-Green function\index{Dirichlet!-Green Function} $G_D$:
 			\begin{equation}
 				\forall\pvec{r}\in\mathcal{V}': \left\{\begin{array}{ll}
 						\forall\vec{r}\in\mathcal{V}\phantom\partial:
@@ -459,9 +455,9 @@
 					\end{array}\right.
 			\end{equation}
 
-		\subsubsection{Multipolentwicklung}
+		\subsubsection{Multipole Expansion\index{Multipolentwicklung}}
 			\noindent
-			Multipolentwicklung in kartesischen Koordinaten (Entwicklung der allgemeinen Lösung in $\frac{r'}{r}=0$):
+			Multipole expansion\index{Multipolentwicklung} in cartesian coordinates (expansion of the general solution in $\frac{r'}{r}=0$):
 			\begin{equation}
 				\begin{aligned}
 					\phi(\pvec{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff \pvec{r}'
@@ -472,7 +468,7 @@
 					&+ \mathcal{O}\left(\;\;\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\diff \pvec{r}'\right) \\
 				\end{aligned}
 			\end{equation}
-			Mit Monopol $Q$, Dipol $\vec{p}$ und Quadropol $Q_{ij}$:
+			Monopole $Q$, dipole $\vec{p}$, Quadrupole $Q_{ij}$:
 			\begin{equation}
 				\begin{aligned}
 					Q &= \int \rho(\pvec{r}') \;\diff^3 \pvec{r}' \\
@@ -482,13 +478,13 @@
 			\end{equation}
 
 			\noindent
-			Entwicklung des Abstandes in Kugelflächenfunktionen:
+			Expansion of the distance in spherical harmonics\index{Kugelflächenfunktionen}:
 			\begin{equation}
 				\frac{1}{\left|\vec{r}-\pvec{r}'\right|}=\sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{4\pi}{2l+1}\frac{r'^l}{r^{l+1}} Y^{*}_{lm}(\theta',\varphi')Y_{lm}(\theta,\varphi)
 			\end{equation}
 
 			\noindent
-			Multipolentwicklung in sphärischen Koordinaten:
+			Multipole expansion in spherical harmonics:
 			\begin{equation}
 				\begin{aligned}
 					\phi(r,\theta,\varphi) &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{b_{lm}}{r^{l+1}}Y_{lm}(\theta,\varphi) \\
@@ -497,13 +493,13 @@
 			\end{equation}
 
 			\noindent
-			Elektrisches Dipolmoment zweier Punktladung mit Abstandsvektor $\vec{d}$ von der negativen zur positiven Ladung:
+			Electric dipole moment\index{Elektrisches Dipolmoment} of two point charges with a distance vector $\vec{d}$ spanning from the negative to the positive charge:%zweier Punktladung mit Abstandsvektor $\vec{d}$ von der negativen zur positiven Ladung:
 			\begin{equation}
 				\vec{p}=q\vec{d}
 			\end{equation}
 
 			\noindent
-			Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
+			Force, torque (with respect to the center of mass) and potential energy of an electric dipole:%Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{F} &= \Nabla\left(\vec{p}\cdot\vec{E}\right) \\
@@ -512,44 +508,50 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Lösungen der Laplace-Gleichung mit sphärischer Symmetrie}
+		\subsubsection{Solving the Laplace Equation}
 			\noindent
-			Lösungen der Laplace-Gleichung mit Axialsymmetrie (Mit Legendre-Polynomen $P_l$ (\ref{eq:legendre-polynome})):
+			Laplace equation\index{Laplace!Gleichung} (harmonic Poisson equation\index{Poisson!Gleichung} \ref{Eq:Poisson})
+			\begin{equation}
+				\Nabla^2 \phi = 0
+			\end{equation}
+
+			\noindent
+			Solution of the Laplace equation\index{Laplace!Gleichung} in systems with spherical and axial symmetry (Legendre polynomials\index{Legendre!Polynome} $P_l$): \ref{Eq:LegendrePolynomials})%Lösungen der Laplace-Gleichung mit Axialsymmetrie (Mit Legendre-Polynomen $P_l$ (\ref{Eq:LegendrePolynomials})):
 			\begin{equation}
 				\phi(r,\theta)=\sum_{l=0}^\infty \left(A_l r^l + \frac{B_l}{r^{l+1}}\right)P_l(\cos\theta)
 			\end{equation}
 
 			\noindent
-			Lösungen der Laplace-Gleichung ohne Axialsymmetrie (Mit Kugelflächenfunktionen $Y_{lm}$ (\ref{eq:kugelflächenfunktionen})):
+			Solutions of the Laplace equation\index{Laplace!Gleichung} with spherical but without axial symmetry (spherical harmonics\index{Kugelflächenfunktionen} $Y_{lm}$ (\ref{Eq:SphericalHarmonics})):
 			\begin{equation}
 				\phi(r,\theta,\varphi) = \sum_{l=0}^{\infty}\sum_{m=-l}^{m=l} \left(a_{lm} r^l + \frac{b_{lm}}{r^{l+1}}\right) Y_{lm}(\theta, \varphi)
 			\end{equation}
 
-		\subsubsection{Kapazität}
+		\subsubsection{Capacitance\index{Kapazität}}
 			\noindent
-			Kapazität:
+			Capacitance\index{Kapazität}:
 			\begin{equation}
 				C=\frac{Q}{U}
 			\end{equation}
 
 			\noindent
-			Kapazität eines Plattenkondensators mit Fläche $A$, Plattenabstand $d$ und Dielektrikum mit Permittivität $\epsilon$:
+			Capacity\index{Kapazität} between two plates with surface area $A$, distance $d$ and dielectric\index{Dielektrikum} with permittivity \index{Permittivität} $\epsilon$:
 			\begin{equation}
 				C=\epsilon \frac{A}{d}
 			\end{equation}
 
 			\noindent
-			Energie eines Kondensators:
+			Energy of a capacitor:
 			\begin{equation}
 				\mathcal{E} = \frac{1}{2}\frac{Q^2}{C} = \frac{1}{2}CU^2
 			\end{equation}
 
-		\subsubsection{Dielektrika}
+		\subsubsection{Dielectric\index{Dielektrikum}}
 			\noindent
-			In Materialien gilt allgemein (\ref{eq:flussdichte-feldstärke}), wobei $\vec{P}$ von $\vec{E}$, $\vec{r}$, $T$, ... abhängen kann. \vspace{10pt}
+			Generally, Eq.~\ref{Eq:FluxDensityFieldStrength} holds, where $\vec{P}$ depends on $\vec{E}$, $\vec{r}$, $T$, ... \vspace{10pt}
 
 			\noindent
-			Gebundene Ladungsdichte und gebundene Oberflächenladungsdichte:
+			Bound charge density and bound surface charge density:
 			\begin{equation}
 				\begin{aligned}
 					\rho_P(\vec{r}) &= -\Nabla \cdot\vec{P}(\vec{r}) \\
@@ -558,7 +560,8 @@
 			\end{equation}
 
 			\noindent
-			In homogenen, isotropen, linearen Dielektrika (mit elektrischer Suszeptibilität $\chi_e$) gilt für die Polarisationsdichte $P$:
+			Polarization density in homogeneous, isotropic, linear dielectrics (Electric susceptibility\index{Suszeptibilität} $\chi_e$):
+			%In homogenen, isotropen, linearen Dielektrika (mit elektrischer Suszeptibilität $\chi_e$) gilt für die Polarisationsdichte $P$:
 			\begin{equation}
 				\begin{aligned}
 					\vec{P} &= \epsilon_0 \chi_e \vec{E} \\
@@ -568,28 +571,29 @@
 			\end{equation}
 
 
-	\subsection{Magnetostatik}
-		\subsubsection{Allgemeines}
+	\subsection{Magnetostatics\index{Magnetostatik}}
+		\subsubsection{Basics}
 			\noindent
-			Biot-Savart'sches Gesetz:
+			Biot-Savart law\index{Biot!-Savart Gesetz}:
 			\begin{equation}
 				\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi}\int_{\mathcal{V}} \vec{j}(\pvec{r}')\times\frac{\vec{r}-\pvec{r}'}{\left|\vec{r}-\pvec{r}'\right|^3}\;\diff^3\pvec{r}'
 			\end{equation}
 
 			\noindent
-			Statische Potentialgleichung
+			Static potential equation
 			\begin{equation}
 				\Nabla^2 \vec{A} = - \mu_0 \vec{j}
 			\end{equation}
 
 			\noindent
-			Statisches Vektorpotential (folgt aus zeitunabhängigem retardiertem Vektorpotential):
+			Vector potential for static systems (Resulting from the retarded potentials Sec.~\ref{Sec:RetardedPotentials}):
 			\begin{equation}
 				\vec{A}(\vec{r}) = \frac{\mu_0}{4\pi} \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
 			\end{equation}
 
 			\noindent
-			Geladene Teilchen im homogenen magnetischen Feld bewegen sich auf Kreisen mit dem Larmor-Radius $r_L$ und der Zyklotronfrequenz / Gyrationsfrequenz $\omega$:
+			Charged particles in a homogeneous magnetic field move on circles with Larmor radius\index{Larmor!Radius} $r_L$ and gyration frequency\index{Zyklotronfrequenz} $\omega$:
+			%Geladene Teilchen im homogenen magnetischen Feld bewegen sich auf Kreisen mit dem Larmor-Radius $r_L$ und der Zyklotronfrequenz / Gyrationsfrequenz $\omega$:
 			\begin{equation}
 				\begin{aligned}
 					r_L = \frac{p}{qB} &&\hspace{30pt} % horizontal space
@@ -597,9 +601,9 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Multipolentwicklung}
+		\subsubsection{Multipole expansion}
 			\noindent
-			Multipolentwicklung (Entwicklung der allgemeinen Lösung in $\frac{r'}{r}=0$):
+			Multipole expansion\index{Multipolentwicklung} (Expansion of the general solution in $\frac{r'}{r}=0$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{A}(\vec{r}) = \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
@@ -612,7 +616,7 @@
 			\end{equation}
 
 			\noindent
-			Magnetisches Dipolmoment $\vec{m}$:
+			Magnetic dipole moment\index{Magnetisches Dipolmoment} $\vec{m}$:
 			\begin{equation}
 				\begin{aligned}
 					\vec{m} = \frac{1}{2}\int \pvec{r}'\times\vec{j}(\pvec{r}')\;\diff^3\pvec{r}'
@@ -620,13 +624,15 @@
 			\end{equation}
 
 			\noindent
-			Magnetisches Dipolmoment einer Stromschleife mit Flächeninhalt $A$ in der ein Strom $I$ fließt:
+			Magnetic dipole moment\index{Magnetisches Dipolmoment} of a current $I$ encirceling a surface $A$:
+			%Magnetisches Dipolmoment einer Stromschleife mit Flächeninhalt $A$ in der ein Strom $I$ fließt:
 			\begin{equation}
 				\vec{m} = IA\vec{n}
 			\end{equation}
 
 			\noindent
-			Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
+			Force, dipole moment (with respect to the center of mass) and potential energy of a magnetic dipole\index{Magnetisches Dipolmoment}:
+			%Kraft, Drehmoment und potentielle Energie eines Dipols (Drehmoment in Bezug auf den Massenschwerpunkt $\vec{r}_m$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{F} &= \Nabla\left(\vec{m}\cdot\vec{B}\right) \\
@@ -635,9 +641,10 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Magnete}
+		\subsubsection{Magnets}
 			\noindent
-			Gebunde Stromdichte und gebundene Oberflächenstromdichte:
+			Bound current density and boud surface current density:
+			%Gebunde Stromdichte und gebundene Oberflächenstromdichte:
 			\begin{equation}
 				\begin{aligned}
 					\vec{j}_m(\vec{r}) &= \Nabla\times\vec{M}(\vec{r}) \\
@@ -645,9 +652,10 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{lineare Medien}
+		\subsubsection{Linear Medium}
 			\noindent
-			In linearen, homogenen, isotropen, magnetischen Medien (Mit magnetischer Suszeptibilität $\chi_m$, Permabilität $\mu$) gilt für die magnetisierungsdichte $M$:
+			Magnetization density $M$ in linear, homogeneous, isotropic, magnetic materials (Magnetic susceptibility\index{Magnetische Suszeptibilität} $\chi_m$, permeability $\mu$):
+			%In linearen, homogenen, isotropen, magnetischen Medien (Mit magnetischer Suszeptibilität $\chi_m$, Permabilität $\mu$) gilt für die magnetisierungsdichte $M$:
 			\begin{equation}
 				\begin{aligned}
 					\vec{M} &= \chi_m\vec{H} \\
