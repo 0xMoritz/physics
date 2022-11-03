@@ -105,13 +105,26 @@
 	\newcommand{\nl}			{ \vsp \newline }
 	\newcommand{\rmmu}			{ \SI{}{\micro\nothing} }
 	\newcommand{\exact}			{ \;\mathrm{(exact)} }
+	\newcommand{\M}				{ \phantom{-}}
+	%\newcommand{\-}				{ \phantom{-}}
 	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
-	\begin{center}
+	\begin{center} % Title
 		\Large\textbf{Theoretical Physics Formulary} \\
 		\large\textit{Moritz Geßner} \\
 	\end{center}
+
+	\begin{center}
+		\begin{minipage}{10cm}
+			\begin{quotation}
+				\textit{\center{I would rather have questions that can't be \\answered than answers that can't be questioned.}} \\
+				\raggedleft{---\,Richard Feynman}
+			\end{quotation}
+		\end{minipage}
+	\end{center}
+
 	\tableofcontents
+
 	\newpage
 	\input{Contents/Relativity.tex}
 	\newpage
@@ -131,5 +144,6 @@
 	\newpage
 	\input{Contents/Constants.tex}
 	\newpage
+
 	\printindex
 \end{document}
