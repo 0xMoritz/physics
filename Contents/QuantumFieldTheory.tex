@@ -1,18 +1,19 @@
 % !TEX root = ../physics.tex
 \section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFt
-	\subsection{Postulate}
-		\subsubsection{Symmetrien?}
-			Lokalität
+	\subsection{Postulates}
+		\subsubsection{Symmetries?}
+			Locality
 			CPT
 			...
 			TODO
-	\subsection{Definitionen}
+	\subsection{Definitions}
+		Feynman slash notation\index{Feynman!Slash Notation}
 		\begin{equation}
 			\slashed{A} := \gamma_\mu A^\mu
 		\end{equation}
 
 		\noindent
-		Paulimatrizen:
+		Pauli matrices\index{Pauli!Matrizen}:
 		\begin{equation}
 			\begin{aligned}
 				\sigma^0 = \left(\begin{matrix}
@@ -34,15 +35,15 @@
 			\end{aligned}
 		\end{equation}
 
-		\subsubsection{Gamma Matrizen}
+		\subsubsection{Gamma Matrices}
 			\noindent
-			Definierende Eigenschaft:
+			Defining properties:
 			\begin{equation}
 				\anticom{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
 			\end{equation}
 
 			\noindent
-			Weitere Eigenschaften:
+			Further properties:
 			\begin{equation}
 				\begin{aligned}
 					\Br{\gamma^0}^\dagger &= +\gamma^0 \\
@@ -54,7 +55,7 @@
 			\end{equation}
 
 			\noindent
-			Transformation ($U$ unitär $U U^\dagger=1_4$):
+			Transformation ($U$ unitary: $U U^\dagger=1_4$):
 			\begin{equation}
 				\tilde{\gamma} = U \gamma^\mu U^\dagger
 			\end{equation}
@@ -66,7 +67,7 @@
 			\end{equation}
 
 			\noindent
-			Eigenschaften der $\gamma^5$-Matrix:
+			Properties of the $\gamma^5$-matrix:
 			\begin{equation}
 				\begin{aligned}
 					\gamma_5^\dagger &= \gamma_5 \\
@@ -76,53 +77,82 @@
 			\end{equation}
 
 			\noindent
-			$\sigma^{\mu\nu}$ Matrizen:
+			$\sigma^{\mu\nu}$ matrices:
 			\begin{equation}
 				\sigma^{\mu\nu} = \frac{i}{2}\com{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
 			\end{equation}
 
+			\noindent
+			Dirac $\gamma$-matrices\index{Dirac!Gamma Matrizen}:
+			\begin{equation}
+				\begin{aligned}
+					\gamma^0 = \left( \begin{matrix}
+						 1 &  0 &  0 &  0 \\
+						 0 &  1 &  0 &  0 \\
+						 0 &  0 & -1 &  0 \\
+						 0 &  0 &  0 & -1 \\
+					\end{matrix} \right)
+					&\hspace{20pt}
+					\gamma^1 = \left( \begin{matrix}
+						 0 &  0 &  0 &  1 \\
+						 0 &  0 &  1 &  0 \\
+						 0 & -1 &  0 &  0 \\
+						-1 &  0 &  0 &  0 \\
+					\end{matrix} \right) \\[5pt]
+					\gamma^2 = \left( \begin{matrix}
+						  0 &   0 &   0 & -\i \\
+						  0 &   0 &  \i &   0 \\
+						  0 &  \i &   0 &   0 \\
+						-\i &   0 &   0 &   0 \\
+					\end{matrix} \right)
+					&\hspace{20pt}
+					\gamma^3 = \left( \begin{matrix}
+						 0 &  0 &  1 &  0 \\
+						 0 &  0 &  0 & -1 \\
+						-1 &  0 &  0 &  0 \\
+						 0 &  1 &  0 &  0 \\
+					\end{matrix} \right) \\
+				\end{aligned}
+			\end{equation}
 
-	\subsection{Pfadintegral}
+
+	\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
 		TODO
 
-	\subsection{Bosonen}
-		\subsubsection{Freie Klein-Gordon-Gleichung}
+	\subsection{Bosons}
+		\subsubsection{Free Klein-Gordon Equation\index{Klein!-Gordon Gleichung}}
 			\noindent
-			Klein Gordon Gleichung (spin $s=0$)
+			Klein-Gordon Equation (spin $s=0$)
 			\begin{equation}
 				\left(\partial^\mu\partial_\mu+m^2\right) \phi(x) = 0
 			\end{equation}
 
 			\noindent
-			Lösung (ebene Wellen):
+			Solution (plane waves):
 			\begin{equation}
 				{\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
 			\end{equation}
 
-	\subsection{Fermionen}
-		\subsubsection{Freie Dirac-Gleichung}
+	\subsection{Fermions}
+		\subsubsection{Free Dirac Equation\index{Dirac!Gleichung}}
 			\noindent
-			Dirac-Gleichung (Spin $s=1/2$):
+			Dirac Equation\index{Dirac!Equation} (Spin $s=1/2$):
 			\begin{equation}
 				\Br{ i\slashed{\partial} - m } \psi\Br{x} = 0
 			\end{equation}
 
-
-
-
-
-	\subsection{Wechselwirkungen}
-		\subsubsection{Mandelstam Variablen}
+	\subsection{Interaction}
+		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
 			\noindent
-			Lorentzskalare bei Streuprozess der Form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+			Lorentz scalars\index{Lorentz!Skalare} in scattering processes if the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
 			\begin{itemize}\itemsep -0pt	% reduce space between items
-				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Quadrat der Schwerpunktsenergie)}
-				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Quadrat des Viererimpuls-Übertrags)}
-				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Viererimpuls-Übertrag auf Rückstoßteilchen)}
+				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
+				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
+				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
 			\end{itemize}
 
 			\noindent
-			Zusammenhang:
+			Connection:
 			\begin{equation}
 				s+t+u = \sum_i m_i^2
 			\end{equation}
