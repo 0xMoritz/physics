@@ -1,16 +1,16 @@
 % !TEX root = ../physics.tex
-\section{Formelsammlung}
+\section{Mathematical Formulary}
 	\subsection{Analysis}
-		\subsubsection{Exponentialfunktion}
+		\subsubsection{Exponential Function}
 			\noindent
-			Definition der Exponentialfunktion
+			Definition:
 			\begin{equation}
 				e^x=\exp{(x)}=\lim_{n\rightarrow \infty}\left(1+\frac{x}{n}\right)^n
 			\end{equation}
 
-		\subsubsection{Trigonometrische Funktionen}
+		\subsubsection{Trigonometrc Functions}
 			\noindent
-			Identitäten
+			Identities:
 			\begin{equation}
 				\begin{split}
 					e^{\i x}&=\cos x+i\sin x \\
@@ -22,7 +22,7 @@
 
 			\noindent
 
-			Additionstheoreme:
+			Addition formulae\index{Additionstheoreme}:
 			\begin{equation}
 				\begin{split}
 					\sin\left( x\pm y\right)&=\sin\left( x\right)\cos\left( y\right)\pm\cos\left( x\right)\sin\left( y\right) \\
@@ -34,7 +34,7 @@
 			\end{equation}
 
 			\noindent
-			Komposition Trigonometrischer Funktionen:
+			Composition of trigonometric functions:
 			\begin{center}
 				\begin{tabular}{| c || c | c | c |}
 					\hline\xrowht{10pt}
@@ -51,11 +51,11 @@
 			\end{center}
 
 			\noindent
-			Standardwerte trigonometrischer Funktionen:
+			Standard values for trigonometric functions:
 			\begin{center}
 				\begin{tabular}{| c c || l l l |}
 					\hline
-					Bogenmaß & Grad & Sinus & Kosinus & Tangens \\
+					Radian & Degree & Sinus & Kosinus & Tangens \\
 					\hline
 					\hline\xrowht{12pt}
 					$0$ & $0^\circ$ & $\sin\left(0\right)=0$ & $\cos\left(0\right)=1$ & $\tan\left(0\right)=0$ \\
@@ -71,9 +71,9 @@
 				\end{tabular}
 			\end{center}
 
-		\subsubsection{Hyperbolische Funktionen}
+		\subsubsection{Hyperbolic Functions}
 			\noindent
-			Identitäten
+			Identities
 			\begin{equation}
 				\begin{split}
 					e^{ x}&=\cosh x+\sinh x \\
@@ -86,7 +86,7 @@
 			\end{equation}
 
 			\noindent
-			Additionstheoreme:
+			Addition formulae\index{Additionstheoreme}:
 			\begin{equation}
 				\begin{split}
 					\sinh\left( x\pm y\right)&=\sinh\left( x\right)\cosh\left( y\right)\pm\cosh\left( x\right)\sinh\left( y\right) \\
@@ -97,7 +97,7 @@
 			\end{equation}
 
 			\noindent
-			Komposition hyperbolischer Funktionen:
+			Composition of hyperbolic functions:
 			\begin{center}
 				\begin{tabular}{| c || c | c | c |}
 					\hline\xrowht{10pt}
@@ -114,7 +114,7 @@
 			\end{center}
 
 			\noindent
-			Inverse Hyperbolische Funktionen:
+			Inverse hyperbolic functions:
 			\begin{equation}
 				\begin{aligned}
 					\mathrm{arsinh}(x) &= \ln\left(x+\sqrt{x^2+1}\right) \\
@@ -125,19 +125,19 @@
 
 		\subsubsection{Differentiation}
 			\noindent
-			Kettenregel:
+			Chain rule:
 			\begin{equation}
 				\pder{\vec{f}(\vec{g}(\vec{x}))}{x^k} = \sum_j \pder{ \vec{f}(\vec{g}(\vec{x}))}{g^j} \pder{g^j(\vec{x})}{x^k}
 			\end{equation}
 
 			\noindent
-			Satz von Schwartz ($f(x,y)\in C^2$, d.h. $f$ ist zweimal stetig differenzierbar):
+			Schwarz's theorem\index{Schwartz!Satz} ($f(x,y)\in C^2$, i.e. $f$ is two times differentiable):
 			\begin{equation}
 				\frac{\partial^2 }{\partial x \partial y} f(x,y) = \frac{\partial^2 }{\partial y \partial x} f(x,y)
 			\end{equation}
 
 			\noindent
-			Für Verknüpfte Größen $x(y,z), y(x,z), z(x,y)$ und eine umkehrbare Funktion $w(y,z)$:
+			For connected quantities $x(y,z), y(x,z), z(x,y)$ and an invertable function $w(y,z)$:
 			\begin{equation}
 				\begin{aligned}
 					\left( \pder{x}{y} \right)_z &= \frac{1}{\left( \pder{y}{x} \right)_z} \\
@@ -148,7 +148,7 @@
 			\end{equation}
 
 			\noindent
-			Trigonometrische und hyperbolische Ableitungen:
+			Derivatives of trigonomectric and hyperbolic functions:
 			\begin{equation}
 				\begin{split}
 					\frac{\diff}{\diff x}\arcsin x &= \frac{\pm 1}{\sqrt{1-x^2}} \\
@@ -161,38 +161,41 @@
 			\end{equation}
 
 			\noindent
-			Jacobi Formel:
+			Jacobi's formula\index{Jacobi!Formel}:
 			\begin{equation}
 				\tder{}{t}\mathrm{det} A(t) = \mathrm{tr}\left(A^T \tder{}{t} A\right)
 			\end{equation}
 
 		\subsubsection{Integration}
 			\noindent
-			Leibnitzregel für Parameterintegrale:
+			Leibniz integral rule\index{Leibniz!Regel für Parameterintegrale}:
 			\begin{equation}
 				\tder{}{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\diff x = \int_{\alpha(y)}^{\beta(y)} \pder{f}{y}(x,y)\;\diff x + f(\beta(y),y)\tder{\beta}{y}(y)-f(\alpha(y),y)\tder{\alpha}{y}(y)
 			\end{equation}
 
 			\noindent
-			Cauchy Integralsatz (für eine geschlossene Kurve $\partial \mathcal{A}$ und eine holomorphe Funktion $f(z)$ auf einem einfach zusammenhängenden Gebiet $G \subseteq \mathbb{C}$):
+			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \mathbb{C}$):
+			%(für eine geschlossene Kurve $\partial \mathcal{A}$ und eine holomorphe Funktion $f(z)$ auf einem einfach zusammenhängenden Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
 				\int_{\partial \mathcal{A}} f(z)\;\diff z = 0
 			\end{equation}
 
 			\noindent
-			Cauchy-Integralformel (für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
+			Cauchy integral formula\index{Cauchy!Integralformel} (for a positivley oriented circlular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
+			%(für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
 				\frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
 			\end{equation}
 
 			\noindent
-			Residuensatz (für eine einfache, geschlossene, stückweise stetig differenzierbare Kontour $\gamma:\left[a,b\right]\rightarrow G$ und $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorph mit Polen $a_1, a_2, .., a_n$, und Residuen $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ für $f(z)=\frac{g(z)}{(z-a)^k}$ in der Nähe von $a$:
+			Residue theorem\index{Residuensatz} (for a simple, closed piecewise continously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorphic,
+			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$:
 			\begin{equation}
 				\int_\gamma f(z)\,\diff z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
 			\end{equation}
 
 			\noindent
-			Trigonometrische Integrale:
+			Trigonometric integrals:
 			\begin{equation}
 				\begin{split}
 					\int \sin^2 x\;\diff x &= \frac{1}{2}( x-\sin  x\cos  x) \\
@@ -206,7 +209,7 @@
 			\end{equation}
 
 			\noindent
-			Bedeutende Integrale (Gauß-Integral, Integral über Sinus Cardinalis):
+			Famous integrals (Gauß integral\index{Gauß!Integral}, $\sinc$-integral\index{Sinus Cardinalis}):
 			\begin{equation}
 				\begin{aligned}
 					\int_\mathbb{R} e^{-x^2}\;\diff x &= \sqrt{\pi} \\
@@ -216,26 +219,26 @@
 			\end{equation}
 
 			\noindent
-			Faltung ($f*g:\mathbb{R}^n \rightarrow \mathbb{C}$):
+			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \rightarrow \mathbb{C}$):
 			\begin{equation}
 				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\diff t
 			\end{equation}
 
-		\subsubsection{Distributionen}
+		\subsubsection{Distributions}
 			\noindent
-			Dirac-distribution / Dirac-Delta / Dirac-Funktion $\delta(x)$:
+			Dirac distribution / Dirac delta / Dirac function\index{Dirac!Distribution} $\delta(x)$:
 			\begin{equation}
 				\int_\Omega f(x)\delta(x)\;\diff x = f(0)\;\forall\, \Omega\ni 0
 			\end{equation}
 
 			\noindent
-			Dirac-Distribution einer nichtlinearen Funktion $f(x)$ mit Nullstellen $x_{0,i}$:
+			Dirac distribution of a function $f(x)$ zeros $x_{0,i}$:
 			\begin{equation}
 				\delta(f(x)) = \sum_i \frac{1}{\left|\pder{f}{x}(x_{0,i})\right|}\delta(x-x_{0,i})
 			\end{equation}
 
 			\noindent
-			Heavyside-Funktion $\Theta(x)$ und ihre Eigenschaften:
+			Heaviside function\index{Heaviside!Funktion} $\Theta(x)$ and its properties:
 			\begin{equation}
 				\begin{aligned}
 					\Theta(x) :=& \left\{\begin{array}{ll}
@@ -252,9 +255,9 @@
 			\end{equation}
 
 			\noindent
-			Siehe Eq.~\ref{eq:fourierIdentities}
+			See Eq.~\ref{Eq:FourierIdentities}
 
-		\subsubsection{Gamma-Funktion}
+		\subsubsection{Gamma Function\index{Gamma Funktion}}
 			\noindent
 			Definition:
 			\begin{equation}
@@ -262,7 +265,7 @@
 			\end{equation}
 
 			\noindent
-			Eigenschaften ($\forall n\in\mathbb{N}_0$):
+			Properties ($\forall n\in\mathbb{N}_0$):
 			\begin{equation}
 				\begin{array}{cc}
 					\Gamma(z+1)=z\Gamma(z);
@@ -273,48 +276,50 @@
 			\end{equation}
 
 			\noindent
-			Stirling Formel (Näherung für $n\rightarrow\infty$):
+			Stirling Formula\index{Stirling!Formula} (Approximation for $n\rightarrow\infty$):
 			\begin{equation}
 				n! = \Gamma(n+1) \approx \sqrt{2\pi n} \left( \frac{n}{e} \right)^{n}
 			\end{equation}
 
 
-		\subsubsection{Funktionenräume}
+		\subsubsection{Function space\index{Funktionenraum}}
 			\noindent
-			$D$ ist eine Definitionsmenge.
+			$D$ is a definition space.
 			\begin{itemize}
-				\item $C^p(D)$, Raum der $p$-fach stetig differenzierbaren Funktionen
-				\item $L^p(D)$, Raum der Äquivalenzklassen (bezügl. niederdimensionaler Ausnahmemengen) von Funktionen deren $p$-Norm Lebesque-integrierbar sind
-				\item $S(\mathbb{R})$, Raum der Funktionen die schneller fallen als jede Polynomfunktion (Schwartz-Raum)
+				\item $C^p(D)$, space of $p$-times continously differentiable functions
+				\item $L^p(D)$, space of equivalence classes (with respect to lower-dimensional exceptions) of functions which $p$-Norm is Lebesque integrable\index{Lebesque!integrierbar}
+				%Raum der Äquivalenzklassen (bezügl. niederdimensionaler Ausnahmemengen) von Funktionen deren $p$-Norm Lebesque-integrierbar sind
+				\item $S(\mathbb{R})$, space of functions that decrease faster than any polynomial function (Schwartz space\index{Schwartz!Raum})
+				%Raum der Funktionen die schneller fallen als jede Polynomfunktion (Schwartz-Raum)
 			\end{itemize}
 
-		\subsubsection{Folgen und Reihen}
+		\subsubsection{Sequences\index{Folge} and Series\index{Reihe}}
 			\noindent
-			Geometrische Summenformel ($\forall q \ne 1$):
+			Geometric summation formula\index{Geometrische Summenformel} ($\forall q \ne 1$):
 			\begin{equation}
 				\sum_{k=0}^n q^k=\frac{1-q^{n+1}}{1-q}
 			\end{equation}
 
 			\noindent
-			Geometrische Reihe ($\forall \left|q\right| < 1$):
+			Geometric series\index{Geometrische Reihe} ($\forall \left|q\right| < 1$):
 			\begin{equation}
 				\sum_{k=0}^\infty q^k= \frac{1}{1-q}
 			\end{equation}
 
 			\noindent
-			Binomischer Satz ($n\in\mathbb{R}$):
+			Binomial theorem\index{Binomischer Satz} ($n\in\mathbb{R}$):
 			\begin{equation}
 				(x+y)^n=\sum_{k=0}^{n}\binomkoeff{n}{k}x^k y^{n-k}
 			\end{equation}
 
 			\noindent
-			Identitäten:
+			Identities:
 			\begin{equation}
 				\lim_{n\rightarrow\infty} \sqrt[n]{n} = 1
 			\end{equation}
 
 			\noindent
-			Abelscher Grenzwertsatz:
+			\href{https://en.wikipedia.org/wiki/Abel%27s_theorem}{Abel limit theorem}\index{Abel!Grenzwertsatz}:
 			\begin{equation}
 				\begin{aligned}
 					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty e^{-\eta t} f(t) \,\diff t \\
@@ -323,7 +328,7 @@
 			\end{equation}
 
 			\noindent
-			Euler-McLaurin Formel:
+			\href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula}{Euler-Maclaurin formula}\index{Euler!-McLaurin Formel}:
 			\begin{equation}
 				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\diff x
 				+ \frac{1}{2} \left.\frac{\diff f}{\diff x} \right|_{a}^{b}
@@ -332,74 +337,69 @@
 				+ ...
 			\end{equation}
 
-		\subsubsection{Potenzreihen}
+		\subsubsection{Taylor Series\index{Potenzreihe}\index{Taylor!Reihe}}
 			\noindent
-			Potenzreihe:
+			Polynomial sequence:
 			\begin{equation}
 				f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n
 			\end{equation}
 
 			\noindent
-			Konvergenzradius:
+			Radius of convergence\index{Konvergenzradius}:
 			\begin{equation}
 				r = \frac{1}{\limsup\limits_{n\rightarrow\infty} \sqrt[n]{\left|a_n\right|}} = \lim_{n\rightarrow\infty}\left|\frac{a_n}{a_{n+1}}\right|
 			\end{equation}
 
 			\noindent
-			Taylor-Entwicklung im Punkt $x_0$:
+			Taylor expansion\index{Taylor!Entwicklung} at $x_0$:
 			\begin{equation}
 				f\left(x\right)=\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\diff^{n}f\left(x_0\right)}{\diff x^{n}}\left(x-x_0\right)^{n}
 			\end{equation}
 
 			\noindent
-			Potenzreihe der Exponentialfunktion:
-			\begin{equation}
-				e^x=\sum_{k=0}^{\infty}{\frac{x^k}{k!}}
-			\end{equation}
-
-			\noindent
-			Potenzreihen von Sinus und Kosinus:
+			Polynomial sequence of important functions:
 			\begin{equation}
 				\begin{aligned}
+					e^x &= \sum_{k=0}^{\infty}{\frac{x^k}{k!}} \\
 					\sin(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k+1}}{(2k+1)!} \\
 					\cos(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k}}{(2k)!} \\
 				\end{aligned}
 			\end{equation}
 
-	\subsection{Funktionsbasen}
+	\subsection{Basis Functions}
 		\noindent
-		Hermitesches Skalarprodukt im Vektorraum $R([0,2\pi],\mathbb{C})$:
+		Complex inner product\index{Hermitesches Skalarprodukt} in $R([0,2\pi],\mathbb{C})$:
 		\begin{equation}
 			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\diff x
 		\end{equation}
 
-		\subsubsection{Fourier Transformation}
+		\subsubsection{Fourier Analysis\index{Fourier!Analyse}}
 			\noindent
-			Komplex-trigonometrische Basisfunktion:
+			Complex trigonometric basis functions:
 			\begin{equation}
 				\hat{e}_k(x):=e^{\i kx}
 			\end{equation}
 
 			\noindent
-			Diskrete komplexe Fourier Transformation:
+			Discrete complex Fourier transformation\index{Fourier!Transformation}:
 			\begin{equation}
 				(Tf)(x)=\sum_{k\in\mathbb{Z}}c_k e^{\i kx}
 			\end{equation}
 
 			\noindent
-			Komplexe Fourierkoeffizienten:
+			Complex Fourier coefficients:
 			\begin{equation}
 				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-\i kx}\;\diff x
 			\end{equation}
 
 			\noindent
-			Diskrete reelle Fourier Transformation:
+			Discrete real Fourier transformation\index{Fourier!Transformation}:
 			\begin{equation}
 				(Tf)(x)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left[a_k \cos(kx) + b_k \sin(kx) \right]
 			\end{equation}
 
 			\noindent
-			Beziehung zwischen komplexen und reellen Fourierkoeffizienten:
+			Relation between complex and real coefficients:
 			\begin{equation}
 				\begin{array}{clc}
 					c_0 = \dfrac{a_0}{2} & a_k = c_k+c_{-k} & \phantom{_{-}}c_k = \dfrac{1}{2}\left(a_k-ib_k\right) \\ [6pt]
@@ -408,7 +408,7 @@
 			\end{equation}
 
 			\noindent
-			Kontinuierliche Fouriertransformation und Rücktransformation:
+			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
 					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-\i\vec{k}\cdot\vec{x}}\;\diff\vec{x} \\
@@ -417,7 +417,7 @@
 			\end{equation}
 
 			\noindent
-			Identitäten der kontinuierlichen Fourier-Transformation (wobei $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
+			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
 			\begin{equation}
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(k) \\
@@ -425,58 +425,58 @@
 					\int_{\mathbb{R}} f^{*}(x) g(x)\;\diff x &=
 					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\diff k \\
 					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\diff k \\
-					\label{eq:fourierIdentities}
+					\label{Eq:FourierIdentities}
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Weitere Eigenschaften:
+			Further properties:
 			\begin{equation}
 				\begin{aligned}
 					f\in\mathbb{R}
 					&\Rightarrow \tilde{f}(-k)=\tilde{f}^*(k) \\
-					TODO: even odd fcts
+					\mathrm{TODO:\;even\;odd\;fcts}
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Legendre Transformation}
+		\subsubsection{Legendre Transformation\index{Legendre!Transformation}}
 			\noindent
-			Legendre Transformation (Selbstadjungierte Isometrie konvexer Funktionen)
+			Legendre transformation (self-adjoint isometry between convex functions)
 			\begin{equation}
 				(\mathcal{L}f)(p)=\max_x\left\lbrace xp-f(x) \right\rbrace
 			\end{equation}
 
 
-		\subsubsection{Laurent-Reihe}
+		\subsubsection{Laurent Series\index{Laurent!Reihe}}
 			\noindent
-			Laurent-Reihe:
+			Laurent Series\index{Laurent Reihe}:
 			\begin{equation}
 				f(z)=\sum_{n\in\mathbb{Z}} a_n(z-z_0)^n
 			\end{equation}
 
 			\noindent
-			Bestimmung der Koeffizienten:
+			Coefficients:
 			\begin{equation}
 				a_n = \frac{1}{2 \pi \i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\diff z
 			\end{equation}
 
-		\subsubsection{Kugelflächenfunktionen}
+		\subsubsection{Spherical Harmonics\index{Kugelflächenfunktionen}}
 			\noindent
-			Entwicklung in Kugelflächenfunktionen:
+			Expansion in spherical harmonics\index{Kugelflächenfunktionen}:
 			\begin{equation}
 				f(\theta, \phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} f_{lm} Y_{lm}(\theta,\phi)
 			\end{equation}
 
 			\noindent
-			Bestimmung der Koeffizienten:
+			Coefficients:
 			\begin{equation}
 				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\diff\theta\diff\phi
 			\end{equation}
 
-	\subsection{Differentialgleichungen (DGLs)}
-		\subsubsection{Allgemeines}
+	\subsection{Differential Equations}
+		\subsubsection{General}
 			\noindent
-			Für komplexe Funktionen $f(z)=u(z)+iv(z)$ mit $z=x+iy$, wobei $x,y,u,v\in\mathbb{R}$ gelten die Cauchy-Riemann'schen Differentialgleichungen:
+			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+iv(z)$ with $z=x+iy$, where $x,y,u,v\in\mathbb{R}$)
 			\begin{equation}
 				\begin{aligned}
 					\pder{u}{x} &= \phantom{-}\pder{v}{y} \\
@@ -485,91 +485,92 @@
 			\end{equation}
 
 
-		\subsubsection{Green-Funktionen}
+		\subsubsection{Green's Functions\index{Green!Funktion}}
 			\noindent
-			$\mathrm{D}$ ist ein willkürlicher linearer Differentialoperator, dann ist die Green-Funktion $G$ die Lösung der Gleichung:
+			Green's Function\index{Green!Funktion} ($\mathrm{D}$ is an arbitrary linear differential operator):
 			\begin{equation}
 				\mathrm{D}_{\pvec{r}}\, G\left(\vec{r},\pvec{r}'\right) = \delta\left(\vec{r} - \pvec{r}'\right)
 			\end{equation}
-			Für die allgemeine Lösung der DGL $\mathrm{D}_{\pvec{r}}\, \phi = f\left(\vec{r}\right)$ folgt dann:
+			General solution of the differential equation $\mathrm{D}_{\pvec{r}}\, \phi = f\left(\vec{r}\right)$:
 			\begin{equation}
 				\phi\left(\vec{r}\right) = \int G\left(\vec{r},\pvec{r}'\right)f\left(\pvec{r}'\right)\;\diff^3\pvec{r}'
 			\end{equation}
 
-		\subsubsection{Harmonischer Oszillator}
+		\subsubsection{Harmonic Oscillator\index{Harmonischer Oszillator}}
 			\noindent
-			Differentialgleichung:
+			Differential equation and solution:
 			\begin{equation}
-				\ddot{x}+\omega_0^2 x = 0
+				\begin{aligned}
+					\ddot{x}+\omega_0^2 x &= 0 \\
+					x(t) &= x_0 e^{\pm \i\omega_0 t}
+				\end{aligned}
 			\end{equation}
 
+		\subsubsection{Forced, Damped Harmonic Oscillator}
 			\noindent
-			Lösung:
+			Differential equation and solution:
 			\begin{equation}
-				x(t)=x_0 e^{\pm \i\omega_0 t}
+				\begin{aligned}
+					m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x &= F_0 e^{-\i\omega t} \\
+					x(t) &= \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-\i\omega t}
+				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Angetriebener, gedämpfter harmonischer Oszillator}
+		\subsubsection{Bessel Differential Equation\index{Bessel!Differentialgleichung}}
 			\noindent
-			Differentialgleichung:
-			\begin{equation}
-				m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x = F_0 e^{-\i\omega t}
-			\end{equation}
-
-			\noindent
-			Lösung:
-			\begin{equation}
-				x(t) = \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-\i\omega t}
-			\end{equation}
-
-		\subsubsection{Bessel'sche Differentialgleichungen}
-			\noindent
-			Differentialgleichung:
+			Differential equation:
 			\begin{equation}
 				B_\nu f = x^2\frac{\diff^2 f}{\diff x^2} + x\tder{f}{x}+\left(x^2-\nu^2\right)f = 0
 			\end{equation}
 
 			\noindent
-			Bessel-Funktion erster Gattung:
+			Bessel function\index{Bessel!Funktion} of the first kind:
 			\begin{equation}
 				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} 	e^{\i(x\sin\varphi-\nu\varphi)}\;\diff\varphi
 			\end{equation}
 
-		\subsubsection{Poisson-Gleichung}
+		\subsubsection{Poisson Equation\index{Poisson!Gleichung}}
 			\noindent
-			Poisson-Gleichung der Elektrostatik:
+			Poisson equation\index{Poisson!Gleichung} of electrostatics:
 			\begin{equation}
 				\Nabla^2\phi = -\frac{\rho}{\epsilon_0}
 			\end{equation}
 
 			\noindent
-			Ausreichende Bedingungen für Existenz und Eindeutigkeit von Lösungen der Poisson-Gleichung:
+			Sufficient conditions for the existence and uniqueness of solutions of the Poisson equation:
+			%Ausreichende Bedingungen für Existenz und Eindeutigkeit von Lösungen der Poisson-Gleichung:
 			\begin{description}
-				\item[Dirichlet-Randbedingungen]\hfill \\
-					Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und das Potential $\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
-				\item[Neumann-Randbedingungen]\hfill \\
-					Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und der Normalengradient des Potentials $\vec{n}(\vec{r})\cdot\Nabla\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
-				\item[Randbedingungen mit Leitern bekannter Gesamtladungen]\hfill \\
-					Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und die Gesamtladungen $Q_j$ von Leitern die durch $\partial\mathcal{V}$ begrenzt werden sind bekannt.
+				\item[Dirichlet boundary conditions\index{Dirichlet!Randbedingungen}]\hfill \\
+					The charge density $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ and the potential $\phi(\vec{r})$ on $\vec{r}\in\partial\mathcal{V}$ are known.
+				\item[Neumann boundary conditions\index{Neumann!Randbedingungen}]\hfill \\
+					The charge density  $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ and the normal gradient of the potential  $\vec{n}(\vec{r})\cdot\Nabla\phi(\vec{r})$ on $\vec{r}\in\partial\mathcal{V}$ are known.
+				\item[Boundary conditions with conductors of known total charge]\hfill \\
+					The charge density $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ and the total charge $Q_j$ of conductors restricted by $\partial\mathcal{V}$ are known.
 			\end{description}
+				% \item[Dirichlet-Randbedingungen]\hfill \\
+				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und das Potential $\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
+				% \item[Neumann-Randbedingungen]\hfill \\
+				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und der Normalengradient des Potentials $\vec{n}(\vec{r})\cdot\Nabla\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
+				% \item[Randbedingungen mit Leitern bekannter Gesamtladungen]\hfill \\
+				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und die Gesamtladungen $Q_j$ von Leitern die durch $\partial\mathcal{V}$ begrenzt werden sind bekannt.
 
-		\subsubsection{Laplace-Gleichung}
+		\subsubsection{Laplace Equation}
 			\noindent
-			Laplace-Gleichung
+			Laplace equation\index{Laplace!Gleichung}
 			\begin{equation}
 				\Delta\phi=\Nabla^2\phi = 0
 			\end{equation}
 
-		\subsubsection{Legendre' Differentialgleichung}
+		\subsubsection{Legendre Differential Equation}
 			\noindent
-			Legendre'sche Differentialgleichung ($l>0$):
+			Legendre differential equation\index{Legendre!Differentialgleichung} ($l>0$):
 			\begin{equation}
 				\pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+l\left(l+1\right)f
 				= \frac{\partial^2 f}{\partial x^2} - \frac{2x}{1-x^2}\pder{f}{x} + \frac{l(l+1)}{1-x^2}f = 0
 			\end{equation}
 
 			\noindent
-			Lösungen (Legendre-Polynome) / Rodrigues' Formel:
+			Solutions (Legendre Polynomials\index{Legendre!Polynome}) / Rodrigues Formula\index{Rodrigues!Formel}:
 			\begin{equation} \label{Eq:LegendrePolynomials}
 				\begin{aligned}
 					P_0(x) &= 1 \\
@@ -580,26 +581,26 @@
 			\end{equation}
 
 			\noindent
-			Explizite Darstellung mit Binomialkoeffizient:
+			Explicit construction using the binomial coefficient:
 			\begin{equation}
 				P_l(x)=\frac{1}{2^l} \sum_{k=0}^{l}\binomkoeff{l}{k}^2(x+1)^k(x-1)^{l-k}
 			\end{equation}
 
 			\noindent
-			Orthogonalität der Legendre-Polynome:
+			Orthogonality:
 			\begin{equation}
 				\int_{-1}^1 P_l(x) P_k(x)\;\diff x = \delta_{lk} \frac{2}{2l+1}
 			\end{equation}
 
-		\subsubsection{Verallgemeinerte Legendre-Differentialgleichung}
+		\subsubsection{Generalized Legendre Differential Equation}
 			\noindent
-			Differentialgleichung ($l\in\mathbb{N}$ und $m\in\mathbb{Z}, -l\le m\le l$)
+			Differential equation ($l\in\mathbb{N}$ and $m\in\mathbb{Z}, -l\le m\le l$)
 			\begin{equation}
 				\pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+\left(l\left(l+1\right)-\frac{m^2}{1-x^2}\right)f= 0
 			\end{equation}
 
 			\noindent
-			Lösungen (Legendre-Funktionen)
+			Solutions (Legendre Functions\index{Legendre!Funktionen})
 			\begin{equation}
 				\begin{aligned}
 					P_l^m(x) &= \frac{(-1)^m}{2^l l!}\sqrt{1-x^2}^m
@@ -609,9 +610,9 @@
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Kugelflächenfunktionen}
+		\subsubsection{Spherical Harmonics}
 			\noindent
-			Differentialgleichung:
+			Differential equation:
 			\begin{equation}
 				-\left(
 				\frac{1}{\sin\theta}\pder{}{\theta}\sin\theta\pder{}{\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}
@@ -620,26 +621,26 @@
 			\end{equation}
 
 			\noindent
-			Lösungen (Kugelflächenfunktionen):
+			Solutions (Spherical Harmonics):
 			\begin{equation} \label{Eq:SphericalHarmonics}
 				Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} e^{\i m\varphi} P_l^m(\cos\theta)
 			\end{equation}
 
 			\noindent
-			Orthonormalität der Kugelflächenfunktionen:
+			Orthogonality:
 			\begin{equation}
 				\int_0^{2\pi}\diff\varphi \int_0^{\pi}\diff\theta \sin\theta\, Y_{lm}(\theta,\varphi) Y^{*}_{l'm'}(\theta,\varphi) = 	\delta_{ll'}\delta_{mm'}
 			\end{equation}
 
-		\subsubsection{Hermitesche Differentialgleichung}
+		\subsubsection{Hermite's Differential Equation}
 			\noindent
-			Hermitesche Differentialgleichung ($n\in\mathbb{N}_0$):
+			Differential equation\index{Hermite!Differentialgleichung} ($n\in\mathbb{N}_0$):
 			\begin{equation}
 				\frac{\diff^2}{\diff x^2} H_n(x) -2x\tder{}{x} H_n+2 n H_n(x)=0
 			\end{equation}
 
 			\noindent
-			Lösungen (Hermitpolynome):
+			Solutions (Hermite polynomials\index{Hermite!Polynome}):
 			\begin{equation} \label{Eq:HermitePolynomials}
 				\begin{aligned}
 					H_n(x) &= (-1)^n e^{x^2} \frac{\diff^n}{\diff x^n}e^{-x^2} \\
@@ -648,120 +649,120 @@
 			\end{equation}
 
 			\noindent
-			Orthogonalität der Hermitpolynome:
+			Orthogonality:
 			\begin{equation}
 				\int_{\mathbb{R}} H_m(x) H_n(x) e^{-x^2}\;\diff x = \sqrt{\pi}\,2^n n!\delta_{nm}
 			\end{equation}
 
-		\subsubsection{Laguerre'sche Differentialgleichung}
+		\subsubsection{Laguerre Differential Equation}
 			\noindent
-			Differentialgleichung ($x>0$, $n\in\mathbb{N}_0$):
+			Differential Equation\index{Laguerre!Differentialgleichung} ($x>0$, $n\in\mathbb{N}_0$):
 			\begin{equation}
 				x\frac{\diff^2}{\diff x^2}L_n(x) +(1-x)\tder{}{x}L_n(x) + nL_n(x) = 0
 			\end{equation}
 
 			\noindent
-			Lösung (Laguerre-Polynome):
+			Solutinos (Laguerre Polynomials\index{Laguerre!Polynome}):
 			\begin{equation}
 				L_n(x) = \frac{e^x}{n!}\frac{\diff^n}{\diff x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
 			\end{equation}
 
 			\noindent
-			Orthogonalität der Laguerre-Polynome:
+			Orthogonality:
 			\begin{equation}
 				\int_0^\infty e^{-x} L_n(x) L_m(x)\;\diff x = \delta_{nm}
 			\end{equation}
 
 			\noindent
-			Zugeordnete Laguerre-Polynome ($k\in\mathbb{N}_0$):
+			Associated Laguerre Polynomials ($k\in\mathbb{N}_0$):
 			\begin{equation}
 				L_n^k(x) = (-1)^k\frac{\diff^k}{\diff x^k} L_{n+k}(x)
 			\end{equation}
 
-	\subsection{Geometrie}
-		\subsubsection{Allgemeines}
+	\subsection{Geometry}
+		\subsubsection{General}
 			\noindent
-			Volumen eine $n$-dimensionaler Kugel:
+			Volume of a $n$-dimensional Sphere:
 			\begin{equation}
 				\Omega_n = \frac{\sqrt{\pi}^n}{\left(\frac{n}{2}\right)!}R^n
 				= \frac{\sqrt{\pi}^n}{\Gamma\left(\frac{n}{2}+1\right)}R^n
 			\end{equation}
 
 
-		\subsubsection{Raumwinkel}
+		\subsubsection{Solid Angle\index{Raumwinkel}}
 			\noindent
-			Raumwinkel-Definition als Oberfläche-Anteil einer Kugel:
+			Solid angle definition (partial Surface of the unit sphere):
 			\begin{equation}
 				\Omega = \frac{A}{R^2}
 			\end{equation}
 
 			\noindent
-			Differentieller Raumwinkel in Kugelkoordinaten:
+			Differential solid angle in spherical coordinates:
 			\begin{equation}
 				\diff \Omega = \sin\theta\;\diff \theta \,\diff \phi
 			\end{equation}
 
 			\noindent
-			Raumwinkel eines Kegels mit Öffnungswinkel $2\theta$:
+			Solid angle of a cone with opening angle $2\theta$:
 			\begin{equation}
 				\Omega = 4\pi\sin^2\left(\frac{\theta}{2}\right)
 			\end{equation}
 
-		\subsubsection{Dreiecke}
+		\subsubsection{Triangles}
 			\noindent
-			Sinussatz:
+			Law of sines\index{Sinussatz}:
 			\begin{equation}
 				\frac{a}{\sin\alpha} = \frac{b}{\sin\beta} = \frac{c}{\sin\gamma}
 			\end{equation}
 
 			\noindent
-			Kosinussatz:
+			Law of cosines\index{Kosinussatz}:
 			\begin{equation}
 				c^2 = a^2 + b^2 -2ab \cos\gamma
 			\end{equation}
 
 
-	\subsection{Vektoranalysis}
-		\subsubsection{Integration auf Mannigfaltigkeiten}
+	\subsection{Vector analysis}
+		\subsubsection{Integration on Manifolds}
 			\noindent
-			Allgemeiner Satz von Stokes ($\mathcal{M}$ orientierbare $n$-dimensionale Mannigfaltigkeit, $\omega$ stetig differenzierbare alternierende Differentialform der Ordnung $n-1$):
+			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continously differentiable alternierende differential form of order $n-1$):
 			\begin{equation}
 				\int_\mathcal{M} \diff \omega = \int_{\partial\mathcal{M}} \omega
 			\end{equation}
 
 			\noindent
-			Satz von Gauß / Gauß'scher Integralsatz:
+			Divergence theorem / Gauß theorem\index{Gauß!Integralsatz}:
 			\begin{equation}
 				\oint_{\partial\mathcal{V}}\vec{f}\cdot\vec{n}\,\mathrm{d}A=\int_{\mathcal{V}}\vec{\nabla}\cdot\vec{f}\;\mathrm{d}V
 			\end{equation}
 
 			\noindent
-			Satz von Stokes / Stokes'scher Integralsatz:
+			Green's theorem\index{Green!Integralsatz}:
 			\begin{equation}
 				\oint_{\partial\mathcal{A}}\vec{f}\cdot\mathrm{d}\vec{s}=\int_{\mathcal{A}}\left(\vec{\nabla}\times\pvec{f}\right)\cdot\vec{n}\;\mathrm{d}A
 			\end{equation}
 
-		\subsubsection{Vektor-Identitäten}
+		\subsubsection{Vector Identities}
 			\noindent
-			bac-cab:
+			Graßmann identity\index{Graßmann!Identität}\index{bac-cab Regel}:
 			\begin{equation}
 				\vec{a}\times\big(\vec{b}\times\vec{c}\big) = \vec{b}\big(\vec{a}\cdot\vec{c}\big) - \vec{c}\big(\vec{a}\cdot\vec{b}\big)
 			\end{equation}
 
 			\noindent
-			Graßmann Identität:
+			Graßmann identity\index{Graßmann!Identität} in index notation:
 			\begin{equation}
 				\varepsilon_{ijk}\,\varepsilon_{imn}=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}
 			\end{equation}
 
 			\noindent
-			Spatprodukt:
+			Triple product\index{Spatprodukt}:
 			\begin{equation}
 				\vec{a}\cdot\left(\vec{b}\times\vec{c}\right) = \det\left(\vec{a},\vec{b},\vec{c}\right)
 			\end{equation}
 
 			\noindent
-			Jacobi-Matrix und Jacobideterminante:
+			Jacobi matrix\index{Jacobi!Matrix} and Jacobi determinant\index{Jacobi!Determinante}:
 			\begin{equation}
 				D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
 				= \left(\begin{matrix}
@@ -772,7 +773,7 @@
 			\end{equation}
 
 			\noindent
-			Identitäten im Zusammenhang mit Gradienten, Divergenz und Rotation:
+			Identities in connection with the gradient, divergence and rotation of vector fields:
 			\begin{equation}
 				\begin{aligned}
 					\Nabla\cdot\left(\Nabla\times\vec{A}\right) &= 0 \\
@@ -787,48 +788,49 @@
 			\end{equation}
 
 			\noindent
-			Helmholtz-Zerlegung:
+			Helmholtz decomposition\index{Helmholtz!Zerlegung}:
 			\begin{equation}
 				\forall \,\vec{v}(\pvec{r}):\; \exists\left(\phi\left(\pvec{r}\right),\vec{A}(\pvec{r})\right):\;\vec{v} = \Nabla\phi(\pvec{r}) + 	\Nabla\times\vec{A}(\pvec{r})
 			\end{equation}
 
 			\noindent
-			Poincaré-Lemma $\forall\, \vec{r}\in\mathcal{G}$ ($\mathcal{G}$ einfach zusammenhängendes Gebiet):
+			Poincaré Lemma\index{Poincaré!Lemma} $\forall\, \vec{r}\in\mathcal{G}$ ($\mathcal{G}$ connected domain):
 			\begin{equation}
 				\exists U(\vec{r}): \vec{v}(\pvec{r}) = -\Nabla U(\pvec{r})
 				\Leftrightarrow \vec{v}(\pvec{r}) \text{ ist konservativ }
 				\Leftrightarrow \Nabla\times\vec{v}(\pvec{r}) = 0
 			\end{equation}
 
-		\subsubsection{Koordinatentransformationen}
+		\subsubsection{Coordinate Transformations}
 			\noindent
-			Transformation zwischen kartesischen, zylindrischen und sphärischen Koordinaten:
+			Transformation between cartesian, cylindrical and spherical coordinates:
 			\begin{center}
 				\begin{tabular}{| r || l | l | l |}
 					\hline\xrowht{10pt}
-					Koordinaten & Kartesisch & Zylindrisch & Sphärisch \\
+					Coordinates & Cartesian & Cylindrical & Spherical \\
 					\hline\hline\xrowht{45pt}
-					Kartesisch & $\begin{aligned}  x &= x \\  y &= y \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= \rho \cos\varphi \\  y &= \rho \sin\varphi \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= r \sin\theta \cos\varphi \\  y &= r \sin\theta \sin\varphi \\  z &= r \cos\theta\end{aligned}$ \\
+					Cartesian & $\begin{aligned}  x &= x \\  y &= y \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= \rho \cos\varphi \\  y &= \rho \sin\varphi \\  z &= z\end{aligned}$ & $\begin{aligned}  x &= r \sin\theta \cos\varphi \\  y &= r \sin\theta \sin\varphi \\  z &= r \cos\theta\end{aligned}$ \\
 					\hline\xrowht{45pt}
-					Zylindrisch & ${\displaystyle {\begin{aligned}\rho &={\sqrt {x^{2}+y^{2}}}\\\varphi &=\arctan \left({\frac {y}{x}}\right)\\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=\rho \\\varphi &=\varphi \\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=r\sin \theta \\\varphi &=\varphi \\z&=r\cos \theta \end{aligned}}}$ \\
+					Cylindrical & ${\displaystyle {\begin{aligned}\rho &={\sqrt {x^{2}+y^{2}}}\\\varphi &=\arctan \left({\frac {y}{x}}\right)\\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=\rho \\\varphi &=\varphi \\z&=z\end{aligned}}}$ & ${\displaystyle {\begin{aligned}\rho &=r\sin \theta \\\varphi &=\varphi \\z&=r\cos \theta \end{aligned}}}$ \\
 					\hline\xrowht{70pt}
-					Sphärisch & ${\displaystyle {\begin{aligned}r&={\sqrt {x^{2}+y^{2}+z^{2}}}\\\theta &=\arctan \left({\frac {\sqrt {x^{2}+y^{2}}}{z}}\right)\\\varphi &=\arctan \left({\frac {y}{x}}\right)\end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&={\sqrt {\rho ^{2}+z^{2}}}\\\theta &=\arctan {\left({\frac {\rho }{z}}\right)}\\\varphi &=\varphi \end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&=r\\\theta &=\theta \\\varphi &=\varphi \\\end{aligned}}}$ \\
+					Spherical & ${\displaystyle {\begin{aligned}r&={\sqrt {x^{2}+y^{2}+z^{2}}}\\\theta &=\arctan \left({\frac {\sqrt {x^{2}+y^{2}}}{z}}\right)\\\varphi &=\arctan \left({\frac {y}{x}}\right)\end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&={\sqrt {\rho ^{2}+z^{2}}}\\\theta &=\arctan {\left({\frac {\rho }{z}}\right)}\\\varphi &=\varphi \end{aligned}}}$ & ${\displaystyle {\begin{aligned}r&=r\\\theta &=\theta \\\varphi &=\varphi \\\end{aligned}}}$ \\
 					\hline
 				\end{tabular}
 			\end{center}
+			\href{https://en.wikipedia.org/wiki/Vector_calculus_identities}{Vector calculus identities (en.wikipedia.org/wiki/Vector\_calculus\_identities)}
 
 
 			\begin{center}
 				\makebox[1\textwidth][c]{
 				\begin{tabular}{| r || l | l | l |}
 					\hline\xrowht{10pt}
-					Einheitsvektoren & Kartesisch & Zylindrisch & Sphärisch \\
+					Unit vectors & Cartesian & Cylindrical & Spherical \\
 					\hline\hline\xrowht{45pt}
-					Kartesisch & N/A & $\begin{aligned}  \hat{\mathbf x} &= \cos\varphi \hat{\boldsymbol \rho} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\varphi \hat{\boldsymbol \rho} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \hat{\mathbf z}\end{aligned}$ & $\begin{aligned}  \hat{\mathbf x} &= \sin\theta \cos\varphi \hat{\mathbf r} + \cos\theta \cos\varphi \hat{\boldsymbol \theta} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\theta \sin\varphi \hat{\mathbf r} + \cos\theta \sin\varphi \hat{\boldsymbol \theta} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \cos\theta \hat{\mathbf r} - \sin\theta \hat{\boldsymbol \theta}\end{aligned}$ \\
+					Cartesian & N/A & $\begin{aligned}  \hat{\mathbf x} &= \cos\varphi \hat{\boldsymbol \rho} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\varphi \hat{\boldsymbol \rho} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \hat{\mathbf z}\end{aligned}$ & $\begin{aligned}  \hat{\mathbf x} &= \sin\theta \cos\varphi \hat{\mathbf r} + \cos\theta \cos\varphi \hat{\boldsymbol \theta} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\theta \sin\varphi \hat{\mathbf r} + \cos\theta \sin\varphi \hat{\boldsymbol \theta} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \cos\theta \hat{\mathbf r} - \sin\theta \hat{\boldsymbol \theta}\end{aligned}$ \\
 					\hline\xrowht{45pt}
-					Zylindrisch & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\mathbf {z} }}&={\hat {\mathbf {z} }}\end{aligned}}}$ & N/A & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&=\sin \theta {\hat {\mathbf {r} }}+\cos \theta {\hat {\boldsymbol {\theta }}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\\{\hat {\mathbf {z} }}&=\cos \theta {\hat {\mathbf {r} }}-\sin \theta {\hat {\boldsymbol {\theta }}}\end{aligned}}}$ \\
+					Cylindrial & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\mathbf {z} }}&={\hat {\mathbf {z} }}\end{aligned}}}$ & N/A & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&=\sin \theta {\hat {\mathbf {r} }}+\cos \theta {\hat {\boldsymbol {\theta }}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\\{\hat {\mathbf {z} }}&=\cos \theta {\hat {\mathbf {r} }}-\sin \theta {\hat {\boldsymbol {\theta }}}\end{aligned}}}$ \\
 					\hline\xrowht{70pt}
-					Sphärisch & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}+z{\hat {\mathbf {z} }}}{\sqrt {x^{2}+y^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {\left(x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}\right)z-\left(x^{2}+y^{2}\right){\hat {\mathbf {z} }}}{{\sqrt {x^{2}+y^{2}+z^{2}}}{\sqrt {x^{2}+y^{2}}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\end{aligned}}}$ & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {\rho {\hat {\boldsymbol {\rho }}}+z{\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {z{\hat {\boldsymbol {\rho }}}-\rho {\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\end{aligned}}}$ & N/A \\
+					Spherical & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}+z{\hat {\mathbf {z} }}}{\sqrt {x^{2}+y^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {\left(x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}\right)z-\left(x^{2}+y^{2}\right){\hat {\mathbf {z} }}}{{\sqrt {x^{2}+y^{2}+z^{2}}}{\sqrt {x^{2}+y^{2}}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\end{aligned}}}$ & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {\rho {\hat {\boldsymbol {\rho }}}+z{\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {z{\hat {\boldsymbol {\rho }}}-\rho {\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\end{aligned}}}$ & N/A \\
 					\hline
 				\end{tabular}}
 			\end{center}
@@ -845,7 +847,7 @@
 			\end{equation}
 
 			\noindent
-			Divergenz:
+			Divergence:
 			\begin{equation}
 				\begin{aligned}
 					\Nabla\cdot\vec{A} &= \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z} \\
@@ -865,7 +867,7 @@
 			\end{equation}
 
 			\noindent
-			Skalarer Laplace-Operator:
+			Scalar Laplace operator\index{Laplace!Operator}:
 			\begin{equation}
 				\begin{aligned}
 					\Delta f = \Nabla^2 f &= \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} \\
@@ -875,22 +877,22 @@
 			\end{equation}
 
 
-	\subsection{Stochastik}
-		\subsubsection{Allgemeines}
+	\subsection{Stochastic}
+		\subsubsection{General}
 			\noindent
-			Fakultät:
+			Factorial:
 			\begin{equation}
 				n!=\Gamma(n+1)=\prod_{k=1}^{n}k=(n)(n-1)(n-2)...
 			\end{equation}
 
 			\noindent
-			Binomialkoeffizient ($n\ge k$):
+			Binomial coefficient ($n\ge k$):
 			\begin{equation}
 				\binomkoeff{n}{k} = \frac{k!}{\left(n-k\right)!\,k!}
 			\end{equation}
 
 			\noindent
-			Eigenschaften des Binomialkoeffizienten:
+			Properties of the binomial coefficient:
 			\begin{equation}
 				\begin{array}{cl}
 					\binomkoeff{n}{0}=\binomkoeff{n}{n} = 1 & \binomkoeff{n}{k} = \binomkoeff{n}{n-k}\\ [8pt]
@@ -898,27 +900,27 @@
 				\end{array}
 			\end{equation}
 
-		\subsubsection{Erwartungswert und Varianz}
+		\subsubsection{Expectation Value and Variance}
 			\noindent
-			Definiton des Erwartungswerts:
+			Definition of the expectation value:
 			\begin{equation}
 				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\;\diff x
 			\end{equation}
 
 			\noindent
-			Definiton der Varianz und Standardabweichung:
+			Definition of variance and standard deviation:
 			\begin{equation}
 				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\;\diff x = E\left[X^2\right]-E^2\left[X\right]
 			\end{equation}
 
 			\noindent
-			Arithmetische Mittel:
+			Arithmetic mean:
 			\begin{equation}
 				\bar{x}=\frac{1}{n}\sum_{j=1}^n x_i
 			\end{equation}
 
 			\noindent
-			Gewichtetes Mittel:
+			Weighed mean:
 			\begin{equation}
 				\begin{aligned}
 					\hat{x} &= \frac{\sum_{j=1}^n \frac{x_j}{\sigma_j^2}}{\sum_{j=1}^n \frac{1}{\sigma_j^2}} \\
@@ -927,25 +929,25 @@
 			\end{equation}
 
 			\noindent
-			Empirische Varianz:
+			Empirical variance:
 			\begin{equation}
 				s^2 = \frac{1}{n-1}\sum_{j=1}^n (x_j-\bar{x})^2
 			\end{equation}
 
 			\noindent
-			Definition der Kovarianz:
+			Definition of variance:
 			\begin{equation}
 				V_{xy} = E\left[(x-\mu_x)(y-\mu_y)\right] = E\left[xy\right]-\mu_x\mu_y
 			\end{equation}
 
 			\noindent
-			Korrelationskoeffizient ($-1\le\rho_{xy}\le 1$):
+			Correlation coefficient ($-1\le\rho_{xy}\le 1$):
 			\begin{equation}
 				\rho_{xy} = \frac{V_{xy}}{\sigma_x\sigma_y}
 			\end{equation}
 
 			\noindent
-			Rechnen mit Erwartungswerten und Varianzen (Die letzte Gleichung gilt nur für unabhängige $X, Y$.):
+			Properties of expectation value and variance (The last equation is only valid for independant $X, Y$):
 			\begin{equation}
 				\begin{array}{rl}
 					E\left[aX\right] = \phantom{^2}a E\left[X\right]
@@ -959,21 +961,21 @@
 				\end{array}
 			\end{equation}
 
-		\subsubsection{Erzeugende-Funktionen}
+		\subsubsection{Probability-Generating Function}
 			\noindent
-			Für Zufallsgröße $X$ ist die \emph{Erzeugende} definiert als
+			For a random quantity $X$, the probability generating function is defined as:
 			\begin{equation}
 				Z(\lambda) = E\left[ \exp(\lambda X) \right]
 			\end{equation}
 
 			\noindent
-			Die \emph{Momente} der Zufallsvariable sind definiert als
+			The $n$\textsuperscript{th} raw moment is defined as:
 			\begin{equation}
 				E\left[X^n\right] = \left.\frac{\diff^n Z}{\diff \lambda^n}\right|_{\lambda=0}
 			\end{equation}
 
 			\noindent
-			Aus der \emph{kumulantenerzeugende Funktion} $F(\lambda)=\ln Z(\lambda)$ erhält man
+			From the Moment-generating function $F(\lambda)=\ln Z(\lambda)$ one can extract
 			\begin{equation}
 				\begin{aligned}
 					F(0) &= 0 \\
@@ -983,36 +985,36 @@
 			\end{equation}
 
 
-		\subsubsection{Fehlerfortpflanzung}
+		\subsubsection{Propagation of Uncertainty}
 			\noindent
-			Gauß'sches Fehlerfortpflanzungsgesetz:
+			Gaußian error propagation\index{Gauß!Fehlerfortpflanzungsgesetz}:
 			\begin{equation}
 				\sigma_y^2 = \sum_{j,k=1}^n \left[\pder{y}{x_j}\pder{y}{x_k}\right]_{\vec{x}=\vec{\mu}} V_{jk}
 			\end{equation}
 
 			\noindent
-			Gauß'sches Fehlerfortpflanzungsgesetz für unkorrelierte $x_i$ (d.h. $V_{jj} = \sigma_{j}^2$ und $V_{jk} = 0 \;\forall j\ne k$):
+			Gaußain error propagation\index{Gauß!Fehlerfortpflanzungsgesetz} for uncorrelated  $x_i$ (i.e. $V_{jj} = \sigma_{j}^2$ and $V_{jk} = 0 \;\forall j\ne k$):
 			\begin{equation}
 				\sigma_y^2 = \sum_{j=1}^n \left[\pder{y}{x_j}\right]^2_{\vec{x}=\vec{\mu}} \sigma_j^2
 			\end{equation}
 
 
-		\subsubsection{Bedingte Wahrscheinlichkeiten}
+		\subsubsection{Conditional Probabilities}
 			\noindent
-			Definition bedingter Wahrscheinlichkeiten:
+			Definition of conditional probability:
 			\begin{equation}
 				P(A|B) := \frac{P(A \cap B)}{P(B)}
 			\end{equation}
 
 			\noindent
-			Satz von Bayes:
+			Bayes theorem\index{Bayes!Satz}:
 			\begin{equation}
 				P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 			\end{equation}
 
-		\subsubsection{Diskrete Verteilungen}
+		\subsubsection{Discrete Distributions}
 			\noindent
-			Binomialverteilung ($k$ aus $n$ bei Bernoulli-Experiment):
+			Binomial distribution\index{Binomialverteilung} ($k$ of $n$ of a Bernoulli experiment\index{Bernoulli!Experiment}):
 			\begin{equation}
 				\begin{aligned}
 					P(k)&=\binomkoeff{n}{k}p^k(1-p)^{n-k} \\
@@ -1022,7 +1024,7 @@
 			\end{equation}
 
 			\noindent
-			Poisson-Verteilung:
+			Poisson distribution\index{Poisson!Verteilung}:
 			\begin{equation}
 				\begin{aligned}
 					\rho(k) &= \frac{\nu^k}{k!} e^{-\nu} \\
@@ -1031,24 +1033,25 @@
 			\end{equation}
 
 			\noindent
-			Hypergeometrische Verteilung ($k$ aus $M\le N$ von $n$ Zügen):
+			Hypergeometric distribution ($k$ of $M\le N$ of $n$ draws):
 			\begin{equation}
 				P(x)=\frac{\binomkoeff{M}{k}\binomkoeff{N-M}{n-k}}{\binomkoeff{N}{n}}
 			\end{equation}
 
-		\subsubsection{kontinuierliche Verteilungen}
+		\subsubsection{Continuous Distributions}
 			\noindent
-			Zentraler Grenzwertsatz: \par
-				\emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
+			Central limit theorem\index{Zentraler Grenzwertsatz}: \par
+				\emph{The sum of $n$ independant continuous random varialbes with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n\rightarrow \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
+				% \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 
 			\noindent
-			Normalverteilung:
+			Normal distribution\index{Gauß!Verteilung}:
 			\begin{equation}
 				\rho(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 			\end{equation}
 
 			\noindent
-			Gleichverteilung:
+			Uniform distribution:
 			\begin{equation}
 				\begin{aligned}
 					\rho(x) =& \left\{\begin{array}{ll}
