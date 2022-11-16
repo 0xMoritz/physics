@@ -638,7 +638,7 @@
 
 	\subsection{Perturbation theory\index{Störungstheorie}}
 		\noindent
-		Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
+		Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic pertubation of the form $\hat{H}' e^{\pm\i\omega}$):
 		%für die Übergangsrate $P_{fi}$ von $\Ket{i}$ nach $\Ket{f}$ periodische Störungen der Form $\hat{H}' e^{\pm\i\omega}$ in erster Ordnung:
 		\begin{equation}
 			P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \vBr{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\Br{E_f^0 - E_i^0 \pm \hbar\omega}

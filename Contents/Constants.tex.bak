@@ -45,11 +45,11 @@
 			\href{https://en.wikipedia.org/wiki/Neutron}{Neutron mass} & $m_n$ & $\phantom{-}1.674\,927\,498\, 04(95)\cdot 10^{-27}\;\mathrm{kg}$ \\
 			& & $\phantom{-}939.565\,420\,52(54)\;\mathrm{MeV/c^2}$\\
 			\hline\xrowht{12pt}
-			Landé-Faktor of the Electron & $g_e$ & $\phantom{-}2.002\,319\,304\,362\,56(35)$ \\
+			Landé-Faktor des Elektrons & $g_e$ & $\phantom{-}2.002\,319\,304\,362\,56(35)$ \\
 			\hline\xrowht{12pt}
-			Landé-Faktor of the Proton & $g_p$ & $\phantom{-}5.585\,694\,689\,3(1\,6)$ \\
+			Landé-Faktor des Protons & $g_p$ & $\phantom{-}5.585\,694\,689\,3(1\,6)$ \\
 			\hline\xrowht{12pt}
-			Landé-Faktor of the Neutron & $g_n$ & $- 3.826\,085\,45(90)$ \\
+			Landé-Faktor des Neutrons & $g_n$ & $- 3.826\,085\,45(90)$ \\
 			\hline
 		\end{tabular}
 		\end{center}
@@ -60,7 +60,7 @@
 		\begin{center}
 		\begin{tabular}{| L{.35\textwidth} L{.15\textwidth} L{.4\textwidth} |}
 			\hline
-			Name & Definition & Value \\
+			Name & Definition & Wert \\
 			\hline
 			\hline\xrowht{23pt}
 			\href{https://en.wikipedia.org/wiki/Planck_constant#Reduced_Planck_constant}{Reduced Planck's Constant} & $\hbar:=\dfrac{h}{2\pi}$ & $1.054\,571\,817...\cdot 10^{-34}\;\mathrm{J\,s}$ \\

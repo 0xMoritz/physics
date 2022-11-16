@@ -8,17 +8,17 @@
 				\tder{\vec{p}}{t} = \vec{F}
 			\end{equation}
 			\indent \textit{The change of motion of an object is proportional to the force impressed; and is made in the direction of the straight line in which the force is impressed.}\nl%\textit{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
-		\textbf{Third Axiom / lex tertia} \newline %Actio und Reactio / Reaktionsprinzip \newline
+		\textbf{Thrid Axiom / lex tertia} \newline %Actio und Reactio / Reaktionsprinzip \newline
 			\indent \textit{To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts.} \nl%\textit{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
 		\textbf{Additional}: Principle of Superposition \newline%Superpositionsprinzip \newline
 			\indent \textit{Forces are additive.}%\textit{Kräfte sind additiv.}
 			\begin{equation}
-				\vec{F}_{\mathrm{tot}} = \sum_{i=1}^{N} \vec{F}_i
+				\vec{F}_{\mathrm{ges}} = \sum_{i=1}^{N} \vec{F}_i
 			\end{equation}
 
 	\subsection{Basics}
 		\noindent
-		Definition virial:
+		Definition Virial:
 		\begin{equation}
 			\sum_j \vec{x}_j\cdot\vec{p}_j
 		\end{equation}
@@ -37,7 +37,7 @@
 
 	\subsection{Rotation}
 		\noindent
-		Definition of the Inertia Tensor\index{Trägheitstensor}:
+		Definition of the Inertia Tensor\index{Trägheitstensors}:
 		\begin{equation}
 			\Theta_{ij}=\int_{\mathcal{V}} \rho \left[r^2\delta_{ij}-r_i r_j\right] \;\diff^3\vec{r}
 		\end{equation}

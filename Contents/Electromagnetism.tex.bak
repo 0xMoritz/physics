@@ -316,7 +316,7 @@
 		\end{equation}
 
 		\noindent
-		D'Alembert operator\index{D'Alembert!Operator}:
+		D'Alembert operator\index{d'Alembert!Operator}:
 		\begin{equation}
 			\Box = \partial^\mu \partial_\mu = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \vec{\nabla}^2
 		\end{equation}
@@ -624,7 +624,7 @@
 			\end{equation}
 
 			\noindent
-			Magnetic dipole moment\index{Magnetisches Dipolmoment} of a current $I$ encircling a surface $A$:
+			Magnetic dipole moment\index{Magnetisches Dipolmoment} of a current $I$ encirceling a surface $A$:
 			%Magnetisches Dipolmoment einer Stromschleife mit Flächeninhalt $A$ in der ein Strom $I$ fließt:
 			\begin{equation}
 				\vec{m} = IA\vec{n}

@@ -3,7 +3,7 @@
 	\subsection{Basics}
 		\subsubsection{Symmetries of Flat Spacetime}
 			\begin{itemize}
-				\item Homogeneity of spacetime
+				\item Homogenity of spacetime
 				\item Isotropy of spacetime
 				\item Lorentz invariance
 			\end{itemize}
@@ -14,7 +14,7 @@
 
 		\subsubsection{Einstein Postulates}
 			\textbf{First Postulate}: Principle of Relativity\index{Relativitätsprinzip} \newline
-				\indent \textit{The laws of nature are forminvariant in all inertial frames of reference.}  \nl
+				\indent \textit{The laws of nature are forminvariant in all intertial frames of reference.}  \nl
 			\textbf{Second Postulate}: Constancy of the Speed of Light\index{Konstanz der Lichtgeschwindigkeit} \newline
 				\indent \textit{The maximum propagation speed of information is equal to $c$ in all frames of reference.\index{Lichtgeschwindigkeit}}
 				\label{post:c}\nl
@@ -31,7 +31,7 @@
 	% \end{description}
 
 	\subsubsection{Metric Tensor\index{Metrischer Tensor}}
-		Metric Tensor and Lorentz invariant spacetime interval:
+		Metric Tensor and Lorentz invariant spacetime intervall:
 		\begin{equation}
 			\diff s^2 = c^2 \diff \tau^2 = \diff x^\mu \diff x_\mu = g_{\mu\nu} \diff x^\mu \diff x^\nu
 		\end{equation}
@@ -205,7 +205,7 @@
 
 		\subsubsection{Lorentz Transformations}
 			\noindent
-			Homogeneous Lorentz transformation\index{Lorentz!Transformation} and back-transformation of tensors (defining property of Lorentz Tensors\index{Lorentz!Tensor}\index{Tensor}):%Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
+			Homogeneous Lorentz transformation\index{Lorentz!Transformation} und back-transformation of tensors (defining property of Lorentz Tensors\index{Lorentz!Tensor}\index{Tensor}):%Homogene Lorentztransformation und Rücktransformation von Tensoren (definierende Eigenschaft eines Tensors):
 			\begin{equation}
 				\begin{aligned}
 					x'^\mu &= \Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
@@ -215,7 +215,7 @@
 			\end{equation}
 
 			\noindent
-			General (inhomogeneous) Lorentz transformation\index{Lorentz!Transformation} (Poincaré group\index{Poincaré!Gruppe} $\mathcal{L}$%Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Gruppe $\mathcal{L}$):
+			General (inhomogeneous) Lorentztransformation\index{Lorentz!Transformation} (Poincaré group\index{Poincaré!Gruppe} $\mathcal{L}$%Allgemeine (inhomogene) Lorentz-transformation (Mit Poincaré Gruppe $\mathcal{L}$):
 			\begin{equation}
 				\begin{aligned}
 					x'^\mu &= \Lambda^\mu_{\nu} x^\nu + b^\mu \\
@@ -224,14 +224,14 @@
 			\end{equation}
 
 			\noindent
-			Condition for the Lorentz transformation\index{Lorentz!Transformation} following from the constancy of the speed of light \ref{post:c}:%Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
+			Condition for the Lorentz Transformation\index{Lorentz!Transformation} following from the constancy of the speed of light \ref{post:c}:%Bedingung an die Lorentztransformation als Folge der Konstanz der Lichtgeschwindigkeit:
 			\begin{equation}
 				\Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
 				 \;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
 			\end{equation}
 
 			\noindent
-			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation}:%Klassifikation der homogenen Lorentztransformation:
+			Classification of the homogeneous Lorentz Transformations\index{Lorentz!Transformation}:%Klassifikation der homogenen Lorentztransformation:
 			\begin{itemize}
 				\item Chronus Lorentz Transformation $\mathcal{L}^\uparrow$: $\Lambda^0_0 > 1$
 				\item Antichronus Lorentz Transformation $\mathcal{L}^\downarrow$: $\Lambda^0_0 < 1$
@@ -240,7 +240,7 @@
 			\end{itemize}
 
 			\noindent
-			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes ($\vec{v}=c\vec{\beta}$):%Lorentz Boost ($\Lambda\in\mathcal{L}^\uparrow_+$) zwischen zwei Inertialsystemen mit parallelen Koordinatenachsen ($\vec{v}=c\vec{\beta}$):
+			Lorentz Boost ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes ($\vec{v}=c\vec{\beta}$):%Lorentz Boost ($\Lambda\in\mathcal{L}^\uparrow_+$) zwischen zwei Inertialsystemen mit parallelen Koordinatenachsen ($\vec{v}=c\vec{\beta}$):
 			\begin{equation}
 				\Lambda(\vec{v}) = \left( \begin{matrix}
 					\gamma & -\gamma\dfrac{\pvec{v}^T}{c} \\[6pt]
@@ -263,7 +263,7 @@
 			\end{equation}
 
 			\noindent
-			Relativistic Doppler effect\index{Doppler!Effekt} (Signals are sent with angle $\vartheta$ as seen from the emitter):%Relativistischer Doppler-effekt (Signale werden von Betrachter aus gemessen mit Winkel $\theta$ ausgesendet):
+			Relativistic Doppler effect (Signals are sent with angle $\vartheta$ as seen from the emitter):%Relativistischer Doppler-effekt (Signale werden von Betrachter aus gemessen mit Winkel $\theta$ ausgesendet):
 			\begin{equation}
 				\omega = \omega_0\frac{\sqrt{1-\beta^2}}{1+\beta\cos\vartheta}
 			\end{equation}

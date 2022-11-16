@@ -137,7 +137,7 @@
 			\end{equation}
 
 			\noindent
-			For connected quantities $x(y,z), y(x,z), z(x,y)$ and an inevitable function $w(y,z)$:
+			For connected quantities $x(y,z), y(x,z), z(x,y)$ and an invertable function $w(y,z)$:
 			\begin{equation}
 				\begin{aligned}
 					\left( \pder{x}{y} \right)_z &= \frac{1}{\left( \pder{y}{x} \right)_z} \\
@@ -148,7 +148,7 @@
 			\end{equation}
 
 			\noindent
-			Derivatives of trigonometric and hyperbolic functions:
+			Derivatives of trigonomectric and hyperbolic functions:
 			\begin{equation}
 				\begin{split}
 					\frac{\diff}{\diff x}\arcsin x &= \frac{\pm 1}{\sqrt{1-x^2}} \\
@@ -181,14 +181,14 @@
 			\end{equation}
 
 			\noindent
-			Cauchy integral formula\index{Cauchy!Integralformel} (for a positively oriented circular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
+			Cauchy integral formula\index{Cauchy!Integralformel} (for a positivley oriented circlular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
 			%(für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
 				\frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
 			\end{equation}
 
 			\noindent
-			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorphic,
+			Residue theorem\index{Residuensatz} (for a simple, closed piecewise continously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorphic,
 			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$:
 			\begin{equation}
 				\int_\gamma f(z)\,\diff z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
@@ -286,7 +286,7 @@
 			\noindent
 			$D$ is a definition space.
 			\begin{itemize}
-				\item $C^p(D)$, space of $p$-times continuously differentiable functions
+				\item $C^p(D)$, space of $p$-times continously differentiable functions
 				\item $L^p(D)$, space of equivalence classes (with respect to lower-dimensional exceptions) of functions which $p$-Norm is Lebesque integrable\index{Lebesque!integrierbar}
 				%Raum der Äquivalenzklassen (bezügl. niederdimensionaler Ausnahmemengen) von Funktionen deren $p$-Norm Lebesque-integrierbar sind
 				\item $S(\mathbb{R})$, space of functions that decrease faster than any polynomial function (Schwartz space\index{Schwartz!Raum})
@@ -662,7 +662,7 @@
 			\end{equation}
 
 			\noindent
-			Solutions (Laguerre Polynomials\index{Laguerre!Polynome}):
+			Solutinos (Laguerre Polynomials\index{Laguerre!Polynome}):
 			\begin{equation}
 				L_n(x) = \frac{e^x}{n!}\frac{\diff^n}{\diff x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
 			\end{equation}
@@ -725,7 +725,7 @@
 	\subsection{Vector analysis}
 		\subsubsection{Integration on Manifolds}
 			\noindent
-			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continuously differentiable alternating differential form of order $n-1$):
+			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continously differentiable alternierende differential form of order $n-1$):
 			\begin{equation}
 				\int_\mathcal{M} \diff \omega = \int_{\partial\mathcal{M}} \omega
 			\end{equation}
@@ -797,7 +797,7 @@
 			Poincaré Lemma\index{Poincaré!Lemma} $\forall\, \vec{r}\in\mathcal{G}$ ($\mathcal{G}$ connected domain):
 			\begin{equation}
 				\exists U(\vec{r}): \vec{v}(\pvec{r}) = -\Nabla U(\pvec{r})
-				\Leftrightarrow \vec{v}(\pvec{r}) \text{ is conservative }
+				\Leftrightarrow \vec{v}(\pvec{r}) \text{ ist konservativ }
 				\Leftrightarrow \Nabla\times\vec{v}(\pvec{r}) = 0
 			\end{equation}
 
@@ -828,7 +828,7 @@
 					\hline\hline\xrowht{45pt}
 					Cartesian & N/A & $\begin{aligned}  \hat{\mathbf x} &= \cos\varphi \hat{\boldsymbol \rho} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\varphi \hat{\boldsymbol \rho} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \hat{\mathbf z}\end{aligned}$ & $\begin{aligned}  \hat{\mathbf x} &= \sin\theta \cos\varphi \hat{\mathbf r} + \cos\theta \cos\varphi \hat{\boldsymbol \theta} - \sin\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf y} &= \sin\theta \sin\varphi \hat{\mathbf r} + \cos\theta \sin\varphi \hat{\boldsymbol \theta} + \cos\varphi \hat{\boldsymbol \varphi} \\  \hat{\mathbf z} &= \cos\theta \hat{\mathbf r} - \sin\theta \hat{\boldsymbol \theta}\end{aligned}$ \\
 					\hline\xrowht{45pt}
-					Cylindrical & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\mathbf {z} }}&={\hat {\mathbf {z} }}\end{aligned}}}$ & N/A & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&=\sin \theta {\hat {\mathbf {r} }}+\cos \theta {\hat {\boldsymbol {\theta }}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\\{\hat {\mathbf {z} }}&=\cos \theta {\hat {\mathbf {r} }}-\sin \theta {\hat {\boldsymbol {\theta }}}\end{aligned}}}$ \\
+					Cylindrial & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\\{\hat {\mathbf {z} }}&={\hat {\mathbf {z} }}\end{aligned}}}$ & N/A & ${\displaystyle {\begin{aligned}{\hat {\boldsymbol {\rho }}}&=\sin \theta {\hat {\mathbf {r} }}+\cos \theta {\hat {\boldsymbol {\theta }}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\\{\hat {\mathbf {z} }}&=\cos \theta {\hat {\mathbf {r} }}-\sin \theta {\hat {\boldsymbol {\theta }}}\end{aligned}}}$ \\
 					\hline\xrowht{70pt}
 					Spherical & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}+z{\hat {\mathbf {z} }}}{\sqrt {x^{2}+y^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {\left(x{\hat {\mathbf {x} }}+y{\hat {\mathbf {y} }}\right)z-\left(x^{2}+y^{2}\right){\hat {\mathbf {z} }}}{{\sqrt {x^{2}+y^{2}+z^{2}}}{\sqrt {x^{2}+y^{2}}}}}\\{\hat {\boldsymbol {\varphi }}}&={\frac {-y{\hat {\mathbf {x} }}+x{\hat {\mathbf {y} }}}{\sqrt {x^{2}+y^{2}}}}\end{aligned}}}$ & ${\displaystyle {\begin{aligned}{\hat {\mathbf {r} }}&={\frac {\rho {\hat {\boldsymbol {\rho }}}+z{\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\theta }}}&={\frac {z{\hat {\boldsymbol {\rho }}}-\rho {\hat {\mathbf {z} }}}{\sqrt {\rho ^{2}+z^{2}}}}\\{\hat {\boldsymbol {\varphi }}}&={\hat {\boldsymbol {\varphi }}}\end{aligned}}}$ & N/A \\
 					\hline
@@ -993,7 +993,7 @@
 			\end{equation}
 
 			\noindent
-			Gaußian error propagation\index{Gauß!Fehlerfortpflanzungsgesetz} for uncorrelated  $x_i$ (i.e. $V_{jj} = \sigma_{j}^2$ and $V_{jk} = 0 \;\forall j\ne k$):
+			Gaußain error propagation\index{Gauß!Fehlerfortpflanzungsgesetz} for uncorrelated  $x_i$ (i.e. $V_{jj} = \sigma_{j}^2$ and $V_{jk} = 0 \;\forall j\ne k$):
 			\begin{equation}
 				\sigma_y^2 = \sum_{j=1}^n \left[\pder{y}{x_j}\right]^2_{\vec{x}=\vec{\mu}} \sigma_j^2
 			\end{equation}
@@ -1041,7 +1041,7 @@
 		\subsubsection{Continuous Distributions}
 			\noindent
 			Central limit theorem\index{Zentraler Grenzwertsatz}: \par
-				\emph{The sum of $n$ independent continuous random variables with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n\rightarrow \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
+				\emph{The sum of $n$ independent continuous random varialbes with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n\rightarrow \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 				% \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 
 			\noindent
@@ -1056,7 +1056,7 @@
 				\begin{aligned}
 					\rho(x) =& \left\{\begin{array}{ll}
 					\frac{1}{\beta-\alpha} & \alpha\le x\le \beta \\
-					0 & \text{else} \\
+					0 & \text{sonst} \\
 					\end{array}\right. \\
 					\mu =& \frac{1}{2}(\alpha+\beta) \\
 					\sigma^2 =& \frac{1}{12}(\beta-\alpha)^2 \\

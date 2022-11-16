@@ -497,7 +497,7 @@
 	\subsection{Models}
 		\subsubsection{Classical Ideal Gas}
 			\noindent
-			An ideal gas is a system of $N$ identical particles in a volume $V$, that don not interact with one another.\vsp
+			An ideal gas is a system of $N$ identical particles in a volume $V$, that don not interact with oneanother.\vsp
 
 			\noindent
 			Ideal Gas Law\index{Thermische Zustandsgleichung!Ideales Gas} $p(T, N, V)$:
@@ -594,7 +594,7 @@
 			\end{equation}
 
 			\noindent
-			The Hamilton function is separable, such that $3N$ eigenmodes are described by harmonic oscillator potentials with $\omega_\nu$. For the ensemble, mean occupation number $\overline{n}_\nu$ (Bose-Einstein statistic) and internal Energy $U$, it follows:
+			The Hamilton function is seperable, such that $3N$ Eigenmodes are described by harmonic oscillator potentials with $\omega_\nu$. For the ensemble, mean occupation number $\overline{n}_\nu$ (Bose-Einstein statistic) and internal Energy $U$, it follows:
 			\begin{equation}
 				\begin{aligned}
 					Z_\nu &= \sum_{n_\nu=0}^\infty e^{-\beta E_{n_\nu}} \\
@@ -670,7 +670,7 @@
 
 		\subsubsection{Ideal Paramagnetism}
 			\noindent
-			Zeemann energy\index{Zeemann!Energie} in an external field in an external field $\vec{B}_0$:
+			Zeemann energy\index{Zeemann!Energie} in an external field im äußeren Feld $\vec{B}_0$:
 			\begin{equation}
 				H_B = -\sum_{i=1}^N \vec{m}_i \cdot \vec{B}_0
 			\end{equation}
@@ -693,7 +693,7 @@
 
 		\subsubsection{Ising Model\index{Ising!Modell}}
 			\noindent
-			Interaction energy (Usually, just the interaction to the directly neighboring spins are considered: $J_{ij} = J \delta_{i,j\pm 1}$):
+			Interaction energy (Usually, just the interaction to the directly neighbouring spins are considered: $J_{ij} = J \delta_{i,j\pm 1}$):
 			\begin{equation}
 				H = -\frac{1}{2}\sum_{i,j} J_{ij} s_i s_j -\mu B_0 \sum_i s_i
 			\end{equation}
