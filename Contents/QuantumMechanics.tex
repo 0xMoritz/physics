@@ -588,7 +588,7 @@
 			\end{equation}
 
 			\noindent
-			Eigenstates and energy eigenvalues (With the substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ and the Hermite polynomials\index{Hermit!Polynome} $H_n(q)$ (Gl. \ref{Eq:HermitePolynomials})):
+			Eigenstates and energy eigenvalues (With the substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ and the Hermite polynomials\index{Hermite!Polynome} $H_n(q)$ (Gl. \ref{Eq:HermitePolynomials})):
 			%Eigenzustände und Energiewerte (Mit der Substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ und den Hermitpolynomen $H_n(q)$ (Gl. \ref{eq:Hermitpolynome})):
 			\begin{equation}
 				\begin{aligned}
@@ -600,25 +600,41 @@
 	\subsection{States in the Atom}
 		\subsubsection{Zeeman Effect\index{Zeeman!Effekt}}
 			\noindent
-			Magnetic dipole moment of the electron orbit and spin respectively:
+			Ordinary Zeemann effect: $\vec{s} = 0$ \\
+			Anomalous Zeemann effect: $\vec{s}\ne 0$ \\
+			\noindent
+			Magnetic dipole moment of the electron orbit and spin respectively and energy shift in case of $\vec{j}=\vec{l}$ or $\vec{j}=\vec{s}$ respectively (Sec.~\ref{Sec:ParticleConstants}):
 			%Magnetisches Dipolmoment des Elektronen Orbits bzw. Spins:
 			\begin{equation}
 				\begin{aligned}
-					\mu_l = -g_l\Br{\frac{\vec{l}}{\hbar}} &&
-					\mu_s = -g_s\Br{\frac{\vec{s}}{\hbar}} \\
+					\vec{\mu}_l &= -\mu_B g_l \vec{l} &\hspace{20pt} V_l &= m_l g_l \mu_B B\\
+					\vec{\mu}_s &= -\mu_B g_s \vec{s} &\hspace{20pt} V_s &= m_s g_s \mu_B B\\
 				\end{aligned}
 			\end{equation}
 
-			Interaction Energy:
+			\noindent
+			Interaction Energy (see Eq.~\ref{Eq:MagneticDipoleInteraction}:
 			\begin{equation}
-				V = -\vec{\mu} \cdot \vec{B}
+				\begin{aligned}
+					V_l &= -\vec{\mu} \cdot \vec{B} \\
+				\end{aligned}
 			\end{equation}
 
-			Landé factor\index{Landé!Faktor} / g-factor:
+			\noindent
+			Landé factor\index{Landé!Faktor} / g-factor (For $g_s\approx 2$ approximation):
 			\begin{equation}
-				g_j = 1+\frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)}
+				\begin{aligned}
+					\vBr{\Br{\vec{\mu}_j}_j} &= \mu_B\frac{3j(j+1)+s(s+1)-l(l+1)}{2\sqrt{j(j+1)}} = \mu_B g_j \frac{\vBr{\vec{j}}}{\hbar}\\
+					g_j &= 1+\frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)} \\
+				\end{aligned}
 			\end{equation}
 
+			\noindent
+			Paschen-Back effect\index{Paschen!-Back Effekt}: For strong magnetic fields, spin and orbital angular momentum decouple and precess independently around the magnetic field. In this case:
+			\begin{equation}
+				V_{m_s,m_l} = -\Br{\vec{\mu}_s + \vec{\mu}_l}\cdot\vec{B}
+				=\Br{g_s m_s + g_l m_l} \mu_B B
+			\end{equation}
 
 	\subsection{Perturbation theory\index{Störungstheorie}}
 		\noindent
