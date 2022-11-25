@@ -27,6 +27,20 @@
 \makeindex[intoc, columns=2, title=German Index]
 
 
+% Custom Section titles prefixes
+\makeatletter
+% use \prefix@<level> only if it is defined
+\renewcommand{\@seccntformat}[1]{%
+  \ifcsname prefix@#1\endcsname
+    \csname prefix@#1\endcsname
+  \else
+    \csname the#1\endcsname\quad
+  \fi}
+\newcommand{\prefix@section}{\thesection\quad }
+\newcommand{\prefix@subsection}{\thesubsection\quad }
+\newcommand{\prefix@subsubsection}{\thesubsubsection\quad }
+\makeatother
+
 %\definecolor{darkblue}{rgb}{0,0,0.45}
 % \hypersetup{
 %	 colorlinks,
@@ -106,9 +120,10 @@
 	\newcommand{\nl}			{ \vsp \newline }
 	\newcommand{\rmmu}			{ \SI{}{\micro\nothing} }
 	\newcommand{\exact}			{ \hfill(exact) }
-	\newcommand{\M}				{ \phantom{-}}
-	\newcommand{\sinc}			{ \mathrm{sinc}}
-	%\newcommand{\-}				{ \phantom{-}}
+	\newcommand{\M}				{ \phantom{-} }
+	\newcommand{\sinc}			{ \mathrm{sinc} }
+	\newcommand{\MU}			{ \SI{}{\micro G} }
+	\newcommand{\e}[1]			{ \times 10^{#1} }
 	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 	\begin{center} % Title
