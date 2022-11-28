@@ -4,15 +4,15 @@
 		\noindent
 		Action of a free particle in an electromagnetic field:%Wirkung eines freien Teilchens in einem Elektromagnetischen Feld:
 		\begin{equation}
-			\mathcal{S}=-\int_{a}^{b}\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
-	+ q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)\;\diff\tau
+			\mathcal{S}=-\int_{a}^{b}\left(mc\sqrt{g_{\mu\nu}\frac{\dd x^\mu}{\dd \tau}\frac{\dd x^\nu}{\dd \tau}}
+	+ q\frac{\dd x^\mu}{\dd \tau}A_\mu(x)\right)\;\dd\tau
 		\end{equation}
 
 		\noindent
 		Lagrangian with parametrization $\tau$ (e.g. proper time):%Lagrange Funktion mit Parametrisierung $\tau$ (Zum Beispiel durch die Eigenzeit):
 		\begin{equation}
-			\mathcal{L} (\tau,x,u) =-\left(mc\sqrt{g_{\mu\nu}\frac{\diff x^\mu}{\diff \tau}\frac{\diff x^\nu}{\diff \tau}}
-			+ q\frac{\diff x^\mu}{\diff \tau}A_\mu(x)\right)
+			\mathcal{L} (\tau,x,u) =-\left(mc\sqrt{g_{\mu\nu}\frac{\dd x^\mu}{\dd \tau}\frac{\dd x^\nu}{\dd \tau}}
+			+ q\frac{\dd x^\mu}{\dd \tau}A_\mu(x)\right)
 		\end{equation}
 
 		\noindent
@@ -25,7 +25,7 @@
 		Lorentz force\index{Lorentz!Kraft} (relativistic Minkowski force\index{Minkowski!Kraft} and Newtonian force):
 		\begin{equation}
 			\begin{aligned}
-				\frac{\diff P^\mu}{\diff \tau} &= q F^{\mu\nu}\frac{\diff x_\nu}{\diff \tau} \\
+				\frac{\dd P^\mu}{\dd \tau} &= q F^{\mu\nu}\frac{\dd x_\nu}{\dd \tau} \\
 				\vec{F} &= q\left(\vec{E}+\vec{v}\times\vec{B}\right) \\
 			\end{aligned}
 		\end{equation}
@@ -76,12 +76,12 @@
 
 
 		\noindent
-		Maxwell's equations\index{Maxwell!Gleichungen} in their integrated form (Electric voltage $U(\Gamma)=\int_\Gamma \vec{E}\cdot\diff\vec{l}$, electric flux $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\diff A$, magnetic voltage $V(\Gamma)=\int_\Gamma \vec{H}\cdot\diff\vec{l}$ and magnetic flux $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\diff A$):
+		Maxwell's equations\index{Maxwell!Gleichungen} in their integrated form (Electric voltage $U(\Gamma)=\int_\Gamma \vec{E}\cdot\dd\vec{l}$, electric flux $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\dd A$, magnetic voltage $V(\Gamma)=\int_\Gamma \vec{H}\cdot\dd\vec{l}$ and magnetic flux $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\dd A$):
 		\begin{equation}
 		\begin{array}{rl}
-			U(\partial \mathcal{A}) + \cfrac{\diff\Phi}{\diff t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
+			U(\partial \mathcal{A}) + \cfrac{\dd\Phi}{\dd t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
 			&\hspace{20pt} \Psi(\partial\mathcal{V}) = Q_f(\mathcal{V}) \\ \xrowht{40pt}
-			V(\partial \mathcal{A}) - \cfrac{\diff \Psi}{\diff t}(\mathcal{A}) = I_f(\mathcal{A})
+			V(\partial \mathcal{A}) - \cfrac{\dd \Psi}{\dd t}(\mathcal{A}) = I_f(\mathcal{A})
 			&\hspace{20pt} \Phi(\partial\mathcal{V}) = 0 \\
 		\end{array}
 		\end{equation}
@@ -214,7 +214,7 @@
 			\noindent
 			General vector wave (e.g. $\vec{\psi}=\vec{E}$ or $ \vec{\psi}=\vec{B}$):
 			\begin{equation}
-				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \diff^3\vec{k}
+				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \dd^3\vec{k}
 			\end{equation}
 
 			\noindent
@@ -401,11 +401,11 @@
 			\begin{equation}
 				\begin{aligned}
 					\phi\left(t,\vec{r}\right)
-					= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff^3 \pvec{r}'
-					&=	\frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\,\diff^3 \pvec{r}'\diff t' \\
+					= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\dd^3 \pvec{r}'
+					&=	\frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\,\dd^3 \pvec{r}'\dd t' \\
 					\vec{A}\left(t,\vec{r}\right)
-					= \phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\,\diff^3 \pvec{r}'
-					&=	\phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\;\diff^3 \pvec{r}'\diff t' \\
+					= \phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\,\dd^3 \pvec{r}'
+					&=	\phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\pvec{r}'\right|\right)\;\dd^3 \pvec{r}'\dd t' \\
 					\tilde{t}&=t-\frac{\left|\vec{r}-\pvec{r}'\right|}{c}
 				\end{aligned}
 			\end{equation}
@@ -440,7 +440,7 @@
 			Electrical potential for static systems (Resulting from the retarded potentials Sec.~\ref{Sec:RetardedPotentials}):
 			\begin{equation}
 				\phi\left(t,\vec{r}\right)
-				= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff^3 \pvec{r}'
+				= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\dd^3 \pvec{r}'
 			\end{equation}
 
 		\subsubsection{Solving the Poisson Equation\index{Poisson!Gleichung}}
@@ -460,20 +460,20 @@
 			Multipole expansion\index{Multipolentwicklung} in cartesian coordinates (expansion of the general solution in $\frac{r'}{r}=0$):
 			\begin{equation}
 				\begin{aligned}
-					\phi(\pvec{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\diff \pvec{r}'
+					\phi(\pvec{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|}\;\dd \pvec{r}'
 					&= \frac{1}{4\pi\epsilon_0}\left(\frac{Q}{r} + \frac{\vec{r}\cdot\vec{p}}{r^3} + \frac{1}{2}\frac{r_i r_j Q_{ij}}{r^5} + \mathcal{O} \left(\frac{1}{r^4}\right)\right) \\
-					&= \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\;\diff \pvec{r}' \\
-					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\diff \pvec{r}' \\
-					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\diff \pvec{r}' \\
-					&+ \mathcal{O}\left(\;\;\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\diff \pvec{r}'\right) \\
+					&= \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\;\dd \pvec{r}' \\
+					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\dd \pvec{r}' \\
+					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\dd \pvec{r}' \\
+					&+ \mathcal{O}\left(\;\;\frac{1}{r}\int\rho(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\dd \pvec{r}'\right) \\
 				\end{aligned}
 			\end{equation}
 			Monopole $Q$, dipole $\vec{p}$, Quadrupole $Q_{ij}$:
 			\begin{equation}
 				\begin{aligned}
-					Q &= \int \rho(\pvec{r}') \;\diff^3 \pvec{r}' \\
-					\vec{p} &= \int \rho(\pvec{r}')\pvec{r}' \;\diff^3 \pvec{r}' \\
-					Q_{ij} &= \int \rho(\pvec{r}')\left(3r'_i r'_j - \delta_{ij} r'^2 \right)	\;\diff^3 \pvec{r}' \\
+					Q &= \int \rho(\pvec{r}') \;\dd^3 \pvec{r}' \\
+					\vec{p} &= \int \rho(\pvec{r}')\pvec{r}' \;\dd^3 \pvec{r}' \\
+					Q_{ij} &= \int \rho(\pvec{r}')\left(3r'_i r'_j - \delta_{ij} r'^2 \right)	\;\dd^3 \pvec{r}' \\
 				\end{aligned}
 			\end{equation}
 
@@ -488,7 +488,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\phi(r,\theta,\varphi) &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{b_{lm}}{r^{l+1}}Y_{lm}(\theta,\varphi) \\
-					b_{lm} &= \frac{1}{(2l+1)\epsilon_0}\int\rho(\pvec{r}')r'^lY^{*}_{lm}(\theta',\varphi')\;\diff^3\pvec{r}'
+					b_{lm} &= \frac{1}{(2l+1)\epsilon_0}\int\rho(\pvec{r}')r'^lY^{*}_{lm}(\theta',\varphi')\;\dd^3\pvec{r}'
 				\end{aligned}
 			\end{equation}
 
@@ -576,7 +576,7 @@
 			\noindent
 			Biot-Savart law\index{Biot!-Savart Gesetz}:
 			\begin{equation}
-				\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi}\int_{\mathcal{V}} \vec{j}(\pvec{r}')\times\frac{\vec{r}-\pvec{r}'}{\left|\vec{r}-\pvec{r}'\right|^3}\;\diff^3\pvec{r}'
+				\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi}\int_{\mathcal{V}} \vec{j}(\pvec{r}')\times\frac{\vec{r}-\pvec{r}'}{\left|\vec{r}-\pvec{r}'\right|^3}\;\dd^3\pvec{r}'
 			\end{equation}
 
 			\noindent
@@ -588,7 +588,7 @@
 			\noindent
 			Vector potential for static systems (Resulting from the retarded potentials Sec.~\ref{Sec:RetardedPotentials}):
 			\begin{equation}
-				\vec{A}(\vec{r}) = \frac{\mu_0}{4\pi} \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
+				\vec{A}(\vec{r}) = \frac{\mu_0}{4\pi} \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\dd^3\pvec{r}'
 			\end{equation}
 
 			\noindent
@@ -606,12 +606,12 @@
 			Multipole expansion\index{Multipolentwicklung} (Expansion of the general solution in $\frac{r'}{r}=0$):
 			\begin{equation}
 				\begin{aligned}
-					\vec{A}(\vec{r}) = \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\diff^3\pvec{r}'
+					\vec{A}(\vec{r}) = \int_{\mathcal{V}} \frac{\vec{j}(\pvec{r}')}{\left|\vec{r}-\pvec{r}'\right|} \;\dd^3\pvec{r}'
 					=& \frac{\mu_0}{4\pi} \left(\frac{\vec{m}\times\vec{r}}{r^3} + \mathcal{O}\left(\frac{1}{r^3}\right)\right) \\
-					=& \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\;\diff \pvec{r}' \\
-					&+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\diff \pvec{r}' \\
-					&+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\diff \pvec{r}' \\
-					&+ \mathcal{O}\left(\;\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\diff \pvec{r}'\right) \\
+					=& \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\;\dd \pvec{r}' \\
+					&+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\dd \pvec{r}' \\
+					&+ \frac{\mu_0}{4\pi}\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\dd \pvec{r}' \\
+					&+ \mathcal{O}\left(\;\frac{1}{r}\int\vec{j}(\pvec{r}')\left(\frac{r'}{r}\right)^3 \;\dd \pvec{r}'\right) \\
 				\end{aligned}
 			\end{equation}
 
@@ -619,7 +619,7 @@
 			Magnetic dipole moment\index{Magnetisches Dipolmoment} $\vec{m}$:
 			\begin{equation}
 				\begin{aligned}
-					\vec{m} = \frac{1}{2}\int \pvec{r}'\times\vec{j}(\pvec{r}')\;\diff^3\pvec{r}'
+					\vec{m} = \frac{1}{2}\int \pvec{r}'\times\vec{j}(\pvec{r}')\;\dd^3\pvec{r}'
 				\end{aligned}
 			\end{equation}
 

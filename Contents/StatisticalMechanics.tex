@@ -64,7 +64,7 @@
 			\noindent
 			Von Neumann equation\index{Von Neumann!Gleichung}:
 			\begin{equation}
-				\tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \com{\hat{H}}{\hat{\rho}(t)}
+				\tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \comm{\hat{H}}{\hat{\rho}(t)}
 			\end{equation}
 
 			\noindent
@@ -90,11 +90,11 @@
 					\Gamma(\vec{Z}) = \langle \delta_\Delta (U-H) \rangle
 						&= \begin{cases}
 								\SumInt_n \delta_\Delta(U-E_n) & \text{quantum mechanical} \\
-								\int \diff \Gamma_N \delta_\Delta(U-E_n) & \text{classical}
+								\int \dd \Gamma_N \delta_\Delta(U-E_n) & \text{classical}
 							\end{cases} \\
 					\delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
-					\diff \Gamma_N &= \frac{\diff^{3N}q \diff^{3N}p }{h^{3N} N!} \\
-					\hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\diff\psi
+					\dd \Gamma_N &= \frac{\dd^{3N}q \dd^{3N}p }{h^{3N} N!} \\
+					\hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\dd\psi
 				\end{aligned}
 			\end{equation}
 
@@ -105,7 +105,7 @@
 				Z_N=\langle e^{-\beta H} \rangle
 					= \begin{cases}
 							\SumInt_n e^{-\beta E_n} & \text{quantum mechanical} \\
-							\int \diff \Gamma_N e^{-\beta H} & \text{classical}
+							\int \dd \Gamma_N e^{-\beta H} & \text{classical}
 						\end{cases} \\
 			\end{equation}
 
@@ -144,14 +144,14 @@
 			\noindent
 			In the thermodynamic equilibria, given the side conditions $g_k(p_i) = 0$, the probabilities $p_i$ are distributed such that the entropy is maximal.
 			\begin{equation}
-				0 = \diff \big( S - \sum_k \lambda_k g_k(p_i) \big)
+				0 = \dd \big( S - \sum_k \lambda_k g_k(p_i) \big)
 			\end{equation}
 
 			\noindent
 			This leads to a uniform distribution for the microcanonical ensemble (side condition $\sum_i p_i = 1$):
 			\begin{equation}
 				\begin{aligned}
-					0 &= \diff \big( S - \lambda \sum_i p_i \big) \\
+					0 &= \dd \big( S - \lambda \sum_i p_i \big) \\
 					p_i &= e^{-1-\lambda} = \const \\
 					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ %\frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
 				\end{aligned}
@@ -161,7 +161,7 @@
 			This leads to the Boltzmann distribution\index{Boltzmann!Verteilung} for the canonical ensemble (side condition $\sum_i p_i = 1$; $\sum_i p_i H_i = \overline{H} = U$):
 			\begin{equation}
 				\begin{aligned}
-					0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i \big) \\
+					0 &= \dd \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i \big) \\
 					p_i &= e^{-1-\lambda-\beta H_i} \propto e^{-\beta H_i} \\
 					\hat{\rho} &= \frac{e^{-\beta \hat{H}}}{Z_N} \\
 				\end{aligned}
@@ -171,7 +171,7 @@
 			Grand canonical ensemble (side condition $\sum_i p_i = 1$; $\sum_i p_i H_i = U$; $\sum_i p_i N_i = \overline{N} = N$, For the particle count operator $\hat{N}$ the trace must be calculated in Fock space\index{Fock!Raum}):
 			\begin{equation}
 				\begin{aligned}
-					0 &= \diff \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i - \beta\mu \sum_i p_i N_i \big) \\
+					0 &= \dd \big( S - \lambda \sum_i p_i - \beta \sum_i p_i H_i - \beta\mu \sum_i p_i N_i \big) \\
 					p_i &= e^{-1-\lambda-\beta H_i-\beta\mu N} \propto e^{-\beta H_i - \beta\mu N} \\
 					\hat{\rho} &= \frac{e^{-\beta (\hat{H} - \mu \hat{N})}}{\mathcal{Z}} \\
 				\end{aligned}
@@ -180,7 +180,7 @@
 			\noindent
 			Equivalence of the ensembles (Laplace transformation\index{Laplace!Transformation} between ensembles is equivalent to a Legendre transformation\index{Legendre!Transformation} of the corresponding potentials):
 			\begin{equation}
-				\int \frac{\Gamma(U)}{\Delta} e^{-\beta U} \diff U = Z_N(\beta)
+				\int \frac{\Gamma(U)}{\Delta} e^{-\beta U} \dd U = Z_N(\beta)
 			\end{equation}
 
 
@@ -197,7 +197,7 @@
 			The choice of work parameters (i.e. the access to the system) defines work as usable form of energy, as well as properties like entropy and temperature. The ambiguity of this choice is known as \emph{relative objectivity}.
 			%Definition des unvollständigen Differentials ($\delta$) der \emph{Arbeit} über kontrollierte \emph{Arbeitskoordinaten} $Z_\alpha$ und \emph{Gleichgewichtsgrößen} $g_\alpha$. Die Wahl der Arbeitskoordinaten (d.h. des Zugriffs über das System) legt die Arbeit als nutzbare Energieform fest. Und legt Eigenschaften wie Entropie und Temperatur fest, die nicht-Eindeutigkeit dieser Wahl wird als \emph{relative Objektivität} bezeichnet.
 			\begin{equation}
-				\delta W = \sum_\alpha g_\alpha \diff Z_\alpha
+				\delta W = \sum_\alpha g_\alpha \dd Z_\alpha
 			\end{equation} \vsp
 
 			The state function\index{Zustandsgrößen} $\vec{Z}=\left(U, Z_1,... \right)$ are macroscopically observable, i.e. accessible quantities that uniquely define an equilibrium state. \vsp
@@ -210,7 +210,7 @@
 				\begin{center}
 				\begin{tabular}{ l | l l l l l l }
 					$g_\alpha$ & $-p$ & $\mu$ & $\sigma$ & $E_0$ & $B_0$ & $\Phi$ \\ \hline
-					$\diff Z_\alpha$ & $\diff V$ & $\diff N$ & $\diff A$ & $\diff \mathcal{P}$ & $\diff \mathcal{M}$ & $\diff Q$ \\
+					$\dd Z_\alpha$ & $\dd V$ & $\dd N$ & $\dd A$ & $\dd \mathcal{P}$ & $\dd \mathcal{M}$ & $\dd Q$ \\
 					\end{tabular}
 				\caption{work parameters and corresponding equilibrium parameters. $\sigma$: Surface tension, $A$: Surface, $B_0$: Magnetic field, $\mathcal{M}$: Total magnetization, $\mu$ Chemical Potential, $N$: Particle count...}
 				\label{tab:WorkParametersAndEquilibriumParameters}
@@ -240,9 +240,9 @@
 			\textbf{First Law}: Energy
 				\begin{equation}
 					\label{Eq:FirstLawOfThermodynamics}
-					\diff U = \delta Q + \delta W
+					\dd U = \delta Q + \delta W
 				\end{equation}
-				\indent Innere Energie $\diff U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$. \nl
+				\indent Innere Energie $\dd U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$. \nl
 			\textbf{Second Law}: Entropy
 				\begin{equation}
 					\label{Eq:SecondLawOfThermodynamics}
@@ -263,7 +263,7 @@
 			Gibbs fundamental thermodynamic relation\index{Gibbs!Fundamentalgleichung} (result from first and second laws, Eq.~\ref{Eq:FirstLawOfThermodynamics}, \ref{Eq:SecondLawOfThermodynamics})
 			\begin{equation}
 				\label{Eq:GibbsFundamental}
-				\diff S = \frac{1}{T} \diff U - \frac{1}{T} \sum_{\alpha} g_\alpha \diff Z_\alpha
+				\dd S = \frac{1}{T} \dd U - \frac{1}{T} \sum_{\alpha} g_\alpha \dd Z_\alpha
 			\end{equation}
 
 			\noindent
@@ -277,7 +277,7 @@
 			\noindent
 			Gibbs-Duhem equation\index{Gibbs!-Duhem Beziehung} (Resulting from Eq.~\ref{Eq:GibbsFundamental}, \ref{Eq:EulerHomogenity}):
 			\begin{equation}
-				0 = S \diff T + \sum_\alpha Z_\alpha \diff g_\alpha
+				0 = S \dd T + \sum_\alpha Z_\alpha \dd g_\alpha
 			\end{equation}
 
 			\noindent
@@ -287,11 +287,11 @@
 			\end{equation}
 
 			\noindent
-			$T \diff S$-Equation
+			$T \dd S$-Equation
 			\begin{equation}
 				\begin{aligned}
-					T \diff S &= C_V \diff T + \frac{\alpha T}{\kappa_T} \diff V \\
-					T \diff S &= C_p \diff T - \alpha T V \diff p
+					T \dd S &= C_V \dd T + \frac{\alpha T}{\kappa_T} \dd V \\
+					T \dd S &= C_p \dd T - \alpha T V \dd p
 				\end{aligned}
 			\end{equation}
 
@@ -299,7 +299,7 @@
 			\noindent
 			Thermodynamic definition (additionally $\lim_{T\rightarrow 0} S := 0$, Eq.~\ref{Eq:ThirdLawOfThermodynamics}):
 			\begin{equation}
-				\diff S := \frac{\delta Q_{rev}}{T}
+				\dd S := \frac{\delta Q_{rev}}{T}
 			\end{equation}
 
 			\noindent
@@ -307,18 +307,18 @@
 			\begin{itemize}\itemsep -0pt	% reduce space between items
 				\item $\Delta S = S(t>t_0)-S(t_0) \ge 0$ \hfill{(Entropy increases in isolated systems)}
 				\item $S(\vec{Z}_1 + \vec{Z}_2) \ge S(\vec{Z}_1) + S(\vec{Z}_2)$ \hfill{(Superadditivity)}
-				\item $\partial^2 S \le 0,\;\diff S = 0$ \hfill{(Maximum at equilibrium)}
+				\item $\partial^2 S \le 0,\;\dd S = 0$ \hfill{(Maximum at equilibrium)}
 			\end{itemize}
 
 		\subsubsection{Cyclic Processes}
 			\noindent
 			Idealized processes:
 			\begin{itemize}
-				\item Isothermic: $\diff T = 0$
-				\item Isochoric: $\diff V = 0$
-				\item Isobaric: $\diff p = 0$
+				\item Isothermic: $\dd T = 0$
+				\item Isochoric: $\dd V = 0$
+				\item Isobaric: $\dd p = 0$
 				\item Adiabatic: $\delta Q = 0$
-				\item Isentropic: $\diff S = 0$ (reversible adiabatic process)
+				\item Isentropic: $\dd S = 0$ (reversible adiabatic process)
 			\end{itemize}
 
 			\noindent
@@ -382,12 +382,12 @@
 				\makebox[1\textwidth][c]{
 				\begin{tabular}{ r | l | l | l }
 					Name & Relation & Differential & Maxwell relation\index{Maxwell!Beziehung} \\ \hline \xrowht{26pt}
-					Entropy & $S(U,V)$ & $\diff S = \frac{1}{T} \diff U + \frac{p}{T} \diff V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
-					Internal Energy & $U(S,V)$ & $\diff U = T \diff S - p \diff V$ & $\left( \dpder{T}{V} \right)_S =	- \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
-					Free Energy & $F(V,T) = U - TS$ & $\diff F = -S \diff T - p \diff V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
-					Gibbs energy & $G(T,p) = U - TS + pV$ & $\diff G = -S \diff T - V \diff p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
-					Enthalpy & $H(p,S) = U + pV$ & $\diff H = T \diff S + V \diff p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
-					Grand potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\diff \Omega = -S \diff T - p \diff V -N \diff \mu$ &	\\ \hline
+					Entropy & $S(U,V)$ & $\dd S = \frac{1}{T} \dd U + \frac{p}{T} \dd V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+					Internal Energy & $U(S,V)$ & $\dd U = T \dd S - p \dd V$ & $\left( \dpder{T}{V} \right)_S =	- \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
+					Free Energy & $F(V,T) = U - TS$ & $\dd F = -S \dd T - p \dd V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+					Gibbs energy & $G(T,p) = U - TS + pV$ & $\dd G = -S \dd T - V \dd p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
+					Enthalpy & $H(p,S) = U + pV$ & $\dd H = T \dd S + V \dd p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
+					Grand potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
 					\end{tabular}}
 				\caption{List of common potentials}
 				\label{tab:ThermodynamischePotentiale}
@@ -412,15 +412,15 @@
 			\end{equation}
 
 			\noindent
-			Chemical conversion with arbitrary conversion variable $\diff \lambda_k$:
+			Chemical conversion with arbitrary conversion variable $\dd \lambda_k$:
 			\begin{equation}
-				\diff N_i = \sum_{k=1}^s \nu_i^k \diff \lambda_k
+				\dd N_i = \sum_{k=1}^s \nu_i^k \dd \lambda_k
 			\end{equation}
 
 			\noindent
 			At thermodynamic equilibrium, Gibbs Energy\index{Gibbs!Energie} is minimal:
 			\begin{equation}
-					0 = \diff G = \sum_{i=1}^r \mu_i \diff N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \;\forall k\in\lbrace1,...,s\rbrace
+					0 = \dd G = \sum_{i=1}^r \mu_i \dd N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \;\forall k\in\lbrace1,...,s\rbrace
 			\end{equation}
 
 			\noindent
@@ -465,7 +465,7 @@
 			\end{equation}
 
 			\noindent
-			Heat equation\index{Wärmeleitungsgleichung} (for $\diff u = nc_V \diff T$ (e.g. in solids); diffusion constant $D=\kappa/nc_V$):
+			Heat equation\index{Wärmeleitungsgleichung} (for $\dd u = nc_V \dd T$ (e.g. in solids); diffusion constant $D=\kappa/nc_V$):
 			\begin{equation}
 				\pder{T}{t} = D\Nabla^2 T
 			\end{equation}
@@ -478,14 +478,14 @@
 
 			\noindent
 			\href{https://en.wikipedia.org/wiki/Onsager_reciprocal_relations}{Onsager reciprocal relations}\index{Onsager!Reziprozitätsbeziehung}:
-			\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.} %TODO\vsp
+			\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.}\vsp %TODO\vsp
 
 			\noindent
 			Thermoelectric effects: in systems with charge carriers, the chemical potential should be replaced with the electro-chemical potential $\mu_{EC}$, because a change in particle count will imply a change of charges in the potential, such that (Peltier coefficient\index{Peltier!Koeffizient} $\Pi$, thermomotive force $\epsilon$, electric current $\vec{j} = q\vec{j}^n$ and specific heat conductivity $\sigma$, the last equation follows from the reciprocity condition):
 			%Thermoelektrische Effekte: In Systemen mit Ladungsträgern ist es sinnvoll ein elektrochemisches Potential $\mu_{EC}$ einzuführen, da eine Veränderung der Teilchenzahl auch eine Veränderung der Ladung im Potential impliziert, sodass (mit dem \emph{Peltier-Koeffizienten} $\Pi$, der \emph{Thermokraft} $\epsilon$, dem elektrischen Strom $\vec{j} = q\vec{j}^n$ und der spezifischen Leitfähigkeit $\sigma$, die letzte Gleichung folgt aus der Reziprozitätsbeziehung):
 			\begin{equation}
 				\begin{aligned}
-					\delta W &= \mu \diff N + \Phi \diff Q = (\mu+q\Phi)\diff N = \mu_{EC} \diff N \\
+					\delta W &= \mu \dd N + \Phi \dd Q = (\mu+q\Phi)\dd N = \mu_{EC} \dd N \\
 					\Nabla \mu_{EC} &= -q\vec{\mathcal{E}} \\
 					\vec{j}^q &= - \kappa \Nabla T + \Pi \vec{j} \\
 					\vec{\mathcal{E}} &= \vec{E} - \frac{1}{q} \Nabla \mu = \frac{1}{\sigma} \vec{j} + \epsilon \Nabla T \\
@@ -609,9 +609,9 @@
 			Einstein absorption and emission model\index{Einstein!Koeffizienten}
 			\begin{equation}
 				\begin{aligned}
-					\frac{\diff N_1}{\diff t} &= -B_{12}N_1 \frac{\diff w}{\diff \omega}(\omega_{12}) \\
-					\frac{\diff N_2}{\diff t} &= -B_{21}N_2 \frac{\diff w}{\diff \omega}(\omega_{21}) \\
-					\frac{\diff N_2}{\diff t} &= -A_{21}N_2\\
+					\frac{\dd N_1}{\dd t} &= -B_{12}N_1 \frac{\dd w}{\dd \omega}(\omega_{12}) \\
+					\frac{\dd N_2}{\dd t} &= -B_{21}N_2 \frac{\dd w}{\dd \omega}(\omega_{21}) \\
+					\frac{\dd N_2}{\dd t} &= -A_{21}N_2\\
 				\end{aligned}
 			\end{equation}
 
@@ -625,7 +625,7 @@
 				\item[] $B_{21} = B_{12}$: Einstein's B-coefficient for stimulated emission,
 				\item[] $A_{21}$: Einstein's A-coefficient for spontaneous emission,
 				\item[] $\tau_{R}=A_{21}^{-1}$: radiating life time,
-				\item[] $\frac{\diff w}{\diff \omega}(\omega)$: spectral energy density.
+				\item[] $\frac{\dd w}{\dd \omega}(\omega)$: spectral energy density.
 			\end{itemize}
 
 		\subsubsection{Black Body}

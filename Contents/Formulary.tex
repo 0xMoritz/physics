@@ -151,12 +151,12 @@
 			Derivatives of trigonometric and hyperbolic functions:
 			\begin{equation}
 				\begin{split}
-					\frac{\diff}{\diff x}\arcsin x &= \frac{\pm 1}{\sqrt{1-x^2}} \\
-					\frac{\diff}{\diff x}\arccos x &= \frac{\mp 1}{\sqrt{1-x^2}} \\
-					\frac{\diff}{\diff x}\arctan x &= \frac{1}{x^2+1} \\
-					\frac{\diff}{\diff x}\mathrm{arsinh}\,x &= \frac{1}{\sqrt{1+x^2}} \\
-					\frac{\diff}{\diff x}\mathrm{arcosh}\,x &= \frac{\pm 1}{\sqrt{x^2-1}} \\
-					\frac{\diff}{\diff x}\mathrm{artanh}\,x &= \frac{1}{1-x^2} \\
+					\frac{\dd}{\dd x}\arcsin x &= \frac{\pm 1}{\sqrt{1-x^2}} \\
+					\frac{\dd}{\dd x}\arccos x &= \frac{\mp 1}{\sqrt{1-x^2}} \\
+					\frac{\dd}{\dd x}\arctan x &= \frac{1}{x^2+1} \\
+					\frac{\dd}{\dd x}\mathrm{arsinh}\,x &= \frac{1}{\sqrt{1+x^2}} \\
+					\frac{\dd}{\dd x}\mathrm{arcosh}\,x &= \frac{\pm 1}{\sqrt{x^2-1}} \\
+					\frac{\dd}{\dd x}\mathrm{artanh}\,x &= \frac{1}{1-x^2} \\
 				\end{split}
 			\end{equation}
 
@@ -170,40 +170,40 @@
 			\noindent
 			Leibniz integral rule\index{Leibniz!Regel für Parameterintegrale}:
 			\begin{equation}
-				\tder{}{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\diff x = \int_{\alpha(y)}^{\beta(y)} \pder{f}{y}(x,y)\;\diff x + f(\beta(y),y)\tder{\beta}{y}(y)-f(\alpha(y),y)\tder{\alpha}{y}(y)
+				\tder{}{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\dd x = \int_{\alpha(y)}^{\beta(y)} \pder{f}{y}(x,y)\;\dd x + f(\beta(y),y)\tder{\beta}{y}(y)-f(\alpha(y),y)\tder{\alpha}{y}(y)
 			\end{equation}
 
 			\noindent
 			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \mathbb{C}$):
 			%(für eine geschlossene Kurve $\partial \mathcal{A}$ und eine holomorphe Funktion $f(z)$ auf einem einfach zusammenhängenden Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\int_{\partial \mathcal{A}} f(z)\;\diff z = 0
+				\int_{\partial \mathcal{A}} f(z)\;\dd z = 0
 			\end{equation}
 
 			\noindent
 			Cauchy integral formula\index{Cauchy!Integralformel} (for a positively oriented circular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
 			%(für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\frac{\diff^k f}{\diff z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\diff z
+				\frac{\dd^k f}{\dd z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
 			\end{equation}
 
 			\noindent
 			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorphic,
-			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\diff^{k-1} g}{\diff z^{k-1}}\Big|_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$:
+			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\dd^{k-1} g}{\dd z^{k-1}}\Big|_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$:
 			\begin{equation}
-				\int_\gamma f(z)\,\diff z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
+				\int_\gamma f(z)\,\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
 			\end{equation}
 
 			\noindent
 			Trigonometric integrals:
 			\begin{equation}
 				\begin{split}
-					\int \sin^2 x\;\diff x &= \frac{1}{2}( x-\sin  x\cos  x) \\
-					\int \cos^2 x\;\diff x &= \frac{1}{2}( x+\sin  x\cos  x) \\
-					\int{\sin x\cos x\;\diff x} &= -\frac{1}{2}\cos^2( x) \\
-					\int \sin^3 x\;\diff x &= -\frac{1}{3}\cos{ x}\sin^2{ x}-\frac{2}{3}\cos{ x}
+					\int \sin^2 x\;\dd x &= \frac{1}{2}( x-\sin  x\cos  x) \\
+					\int \cos^2 x\;\dd x &= \frac{1}{2}( x+\sin  x\cos  x) \\
+					\int{\sin x\cos x\;\dd x} &= -\frac{1}{2}\cos^2( x) \\
+					\int \sin^3 x\;\dd x &= -\frac{1}{3}\cos{ x}\sin^2{ x}-\frac{2}{3}\cos{ x}
 					= \frac{1}{12}\cos{3 x}-\frac{3}{4}\cos{ x} \\
-					\int \cos^3 x\;\diff x &= \phantom{-}\frac{1}{3}\sin x \cos^2 x+\frac{2}{3}\sin  x
+					\int \cos^3 x\;\dd x &= \phantom{-}\frac{1}{3}\sin x \cos^2 x+\frac{2}{3}\sin  x
 					= \frac{1}{12}\sin{3 x}+\frac{3}{4}\sin{ x} \\
 				\end{split}
 			\end{equation}
@@ -212,23 +212,23 @@
 			Famous integrals (Gauß integral\index{Gauß!Integral}, $\sinc$-integral\index{Sinus Cardinalis}):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} e^{-x^2}\;\diff x &= \sqrt{\pi} \\
-					\int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\diff x &= \sqrt{\pi\sigma} \;\forall c\in\mathbb{C} \\
-					\int_\mathbb{R} \frac{\sin x}{x}\;\diff x &= \pi \\
+					\int_\mathbb{R} e^{-x^2}\;\dd x &= \sqrt{\pi} \\
+					\int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \;\forall c\in\mathbb{C} \\
+					\int_\mathbb{R} \frac{\sin x}{x}\;\dd x &= \pi \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \rightarrow \mathbb{C}$):
 			\begin{equation}
-				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\diff t
+				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\dd t
 			\end{equation}
 
 		\subsubsection{Distributions}
 			\noindent
 			Dirac distribution / Dirac delta / Dirac function\index{Dirac!Distribution} $\delta(x)$:
 			\begin{equation}
-				\int_\Omega f(x)\delta(x)\;\diff x = f(0)\;\forall\, \Omega\ni 0
+				\int_\Omega f(x)\delta(x)\;\dd x = f(0)\;\forall\, \Omega\ni 0
 			\end{equation}
 
 			\noindent
@@ -246,7 +246,7 @@
 						0 & x<0 \\
 						\end{array}\right. \\
 						\tder{\Theta}{x}(x) =&\; \delta(x) \\
-					\int_{\mathbb{R}} f(x)\Theta(x)\;\diff x =& \int_{0}^{\infty} f(x)\;\diff x
+					\int_{\mathbb{R}} f(x)\Theta(x)\;\dd x =& \int_{0}^{\infty} f(x)\;\dd x
 				\end{aligned}
 			\end{equation}
 
@@ -322,18 +322,18 @@
 			\href{https://en.wikipedia.org/wiki/Abel%27s_theorem}{Abel limit theorem}\index{Abel!Grenzwertsatz}:
 			\begin{equation}
 				\begin{aligned}
-					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty e^{-\eta t} f(t) \,\diff t \\
-					\lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} e^{+\eta t} f(t) \,\diff t \\
+					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty e^{-\eta t} f(t) \,\dd t \\
+					\lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} e^{+\eta t} f(t) \,\dd t \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			\href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula}{Euler-Maclaurin formula}\index{Euler!-McLaurin Formel}:
 			\begin{equation}
-				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\diff x
-				+ \frac{1}{2} \left.\frac{\diff f}{\diff x} \right|_{a}^{b}
-				+ \frac{1}{12}\left.\frac{\diff^2 f}{\diff x^2} \right|_{a}^{b}
-				+ \frac{1}{720} \left.\frac{\diff^3 f}{\diff x^3} \right|_{a}^{b}
+				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\dd x
+				+ \frac{1}{2} \left.\frac{\dd f}{\dd x} \right|_{a}^{b}
+				+ \frac{1}{12}\left.\frac{\dd^2 f}{\dd x^2} \right|_{a}^{b}
+				+ \frac{1}{720} \left.\frac{\dd^3 f}{\dd x^3} \right|_{a}^{b}
 				+ ...
 			\end{equation}
 
@@ -353,7 +353,7 @@
 			\noindent
 			Taylor expansion\index{Taylor!Entwicklung} at $x_0$:
 			\begin{equation}
-				f\left(x\right)=\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\diff^{n}f\left(x_0\right)}{\diff x^{n}}\left(x-x_0\right)^{n}
+				f\left(x\right)=\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\dd^{n}f\left(x_0\right)}{\dd x^{n}}\left(x-x_0\right)^{n}
 			\end{equation}
 
 			\noindent
@@ -370,7 +370,7 @@
 		\noindent
 		Complex inner product\index{Hermite!Skalarprodukt} in $R([0,2\pi],\mathbb{C})$:
 		\begin{equation}
-			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\diff x
+			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\dd x
 		\end{equation}
 
 		\subsubsection{Fourier Analysis\index{Fourier!Analyse}}
@@ -389,7 +389,7 @@
 			\noindent
 			Complex Fourier coefficients:
 			\begin{equation}
-				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-\i kx}\;\diff x
+				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-\i kx}\;\dd x
 			\end{equation}
 
 			\noindent
@@ -411,8 +411,8 @@
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
-					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-\i\vec{k}\cdot\vec{x}}\;\diff\vec{x} \\
-					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{\i\vec{k}\cdot\vec{x}}\;\diff \vec{k} \\
+					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
+					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
 				\end{aligned}
 			\end{equation}
 
@@ -422,9 +422,9 @@
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(k) \\
 					\mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pder{}{x}f(x) \\
-					\int_{\mathbb{R}} f^{*}(x) g(x)\;\diff x &=
-					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\diff k \\
-					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\diff k \\
+					\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x &=
+					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k \\
+					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k \\
 					\label{Eq:FourierIdentities}
 				\end{aligned}
 			\end{equation}
@@ -461,7 +461,7 @@
 			\noindent
 			Coefficients:
 			\begin{equation}
-				a_n = \frac{1}{2 \pi \i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\diff z
+				a_n = \frac{1}{2 \pi \i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\dd z
 			\end{equation}
 
 		\subsubsection{Spherical Harmonics\index{Kugelflächenfunktionen}}
@@ -474,7 +474,7 @@
 			\noindent
 			Coefficients:
 			\begin{equation}
-				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\diff\theta\diff\phi
+				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\dd\theta\dd\phi
 			\end{equation}
 
 	\subsection{Differential Equations}
@@ -497,7 +497,7 @@
 			\end{equation}
 			General solution of the differential equation $\mathrm{D}_{\pvec{r}}\, \phi = f\left(\vec{r}\right)$:
 			\begin{equation}
-				\phi\left(\vec{r}\right) = \int G\left(\vec{r},\pvec{r}'\right)f\left(\pvec{r}'\right)\;\diff^3\pvec{r}'
+				\phi\left(\vec{r}\right) = \int G\left(\vec{r},\pvec{r}'\right)f\left(\pvec{r}'\right)\;\dd^3\pvec{r}'
 			\end{equation}
 
 		\subsubsection{Harmonic Oscillator\index{Harmonischer Oszillator}}
@@ -524,13 +524,13 @@
 			\noindent
 			Differential equation:
 			\begin{equation}
-				B_\nu f = x^2\frac{\diff^2 f}{\diff x^2} + x\tder{f}{x}+\left(x^2-\nu^2\right)f = 0
+				B_\nu f = x^2\frac{\dd^2 f}{\dd x^2} + x\tder{f}{x}+\left(x^2-\nu^2\right)f = 0
 			\end{equation}
 
 			\noindent
 			Bessel function\index{Bessel!Funktion} of the first kind:
 			\begin{equation}
-				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} 	e^{\i(x\sin\varphi-\nu\varphi)}\;\diff\varphi
+				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} 	e^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
 			\end{equation}
 
 		\subsubsection{Poisson Equation\index{Poisson!Gleichung}}
@@ -580,7 +580,7 @@
 					P_0(x) &= 1 \\
 					P_1(x) &= x \\
 					P_2(x) &= \frac{1}{2}\left(3x^2-1\right) \\
-					P_l(x) &= \frac{1}{2^l l!}\frac{\diff^l}{\diff x^l}\left(x^2-1\right)^l \\
+					P_l(x) &= \frac{1}{2^l l!}\frac{\dd^l}{\dd x^l}\left(x^2-1\right)^l \\
 				\end{aligned}
 			\end{equation}
 
@@ -593,7 +593,7 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{-1}^1 P_l(x) P_k(x)\;\diff x = \delta_{lk} \frac{2}{2l+1}
+				\int_{-1}^1 P_l(x) P_k(x)\;\dd x = \delta_{lk} \frac{2}{2l+1}
 			\end{equation}
 
 		\subsubsection{Generalized Legendre Differential Equation}
@@ -608,9 +608,9 @@
 			\begin{equation}
 				\begin{aligned}
 					P_l^m(x) &= \frac{(-1)^m}{2^l l!}\sqrt{1-x^2}^m
-					\frac{\diff^{l+m}}{\diff x^{l+m}}\left(x^2-1\right)^l \\
+					\frac{\dd^{l+m}}{\dd x^{l+m}}\left(x^2-1\right)^l \\
 					&= (-1)^m \frac{(m+l)!}{2^l l! (l-m)!}\frac{1}{\sqrt{1-x^2}^m}
-					\frac{\diff^{l-m}}{\diff x^{l-m}}\left(x^2-1\right)^l \\
+					\frac{\dd^{l-m}}{\dd x^{l-m}}\left(x^2-1\right)^l \\
 				\end{aligned}
 			\end{equation}
 
@@ -633,21 +633,21 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_0^{2\pi}\diff\varphi \int_0^{\pi}\diff\theta \sin\theta\, Y_{lm}(\theta,\varphi) Y^{*}_{l'm'}(\theta,\varphi) = 	\delta_{ll'}\delta_{mm'}
+				\int_0^{2\pi}\dd\varphi \int_0^{\pi}\dd\theta \sin\theta\, Y_{lm}(\theta,\varphi) Y^{*}_{l'm'}(\theta,\varphi) = 	\delta_{ll'}\delta_{mm'}
 			\end{equation}
 
 		\subsubsection{Hermite's Differential Equation}
 			\noindent
 			Differential equation\index{Hermite!Differentialgleichung} ($n\in\mathbb{N}_0$):
 			\begin{equation}
-				\frac{\diff^2}{\diff x^2} H_n(x) -2x\tder{}{x} H_n+2 n H_n(x)=0
+				\frac{\dd^2}{\dd x^2} H_n(x) -2x\tder{}{x} H_n+2 n H_n(x)=0
 			\end{equation}
 
 			\noindent
 			Solutions (Hermite polynomials\index{Hermite!Polynome}):
 			\begin{equation} \label{Eq:HermitePolynomials}
 				\begin{aligned}
-					H_n(x) &= (-1)^n e^{x^2} \frac{\diff^n}{\diff x^n}e^{-x^2} \\
+					H_n(x) &= (-1)^n e^{x^2} \frac{\dd^n}{\dd x^n}e^{-x^2} \\
 					&= e^{x^2/2}\left(x-\tder{}{x}\right)^n e^{-x^2/2} \\
 				\end{aligned}
 			\end{equation}
@@ -655,32 +655,32 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{\mathbb{R}} H_m(x) H_n(x) e^{-x^2}\;\diff x = \sqrt{\pi}\,2^n n!\delta_{nm}
+				\int_{\mathbb{R}} H_m(x) H_n(x) e^{-x^2}\;\dd x = \sqrt{\pi}\,2^n n!\delta_{nm}
 			\end{equation}
 
 		\subsubsection{Laguerre Differential Equation}
 			\noindent
 			Differential Equation\index{Laguerre!Differentialgleichung} ($x>0$, $n\in\mathbb{N}_0$):
 			\begin{equation}
-				x\frac{\diff^2}{\diff x^2}L_n(x) +(1-x)\tder{}{x}L_n(x) + nL_n(x) = 0
+				x\frac{\dd^2}{\dd x^2}L_n(x) +(1-x)\tder{}{x}L_n(x) + nL_n(x) = 0
 			\end{equation}
 
 			\noindent
 			Solutions (Laguerre Polynomials\index{Laguerre!Polynome}):
 			\begin{equation}
-				L_n(x) = \frac{e^x}{n!}\frac{\diff^n}{\diff x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
+				L_n(x) = \frac{e^x}{n!}\frac{\dd^n}{\dd x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
 			\end{equation}
 
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_0^\infty e^{-x} L_n(x) L_m(x)\;\diff x = \delta_{nm}
+				\int_0^\infty e^{-x} L_n(x) L_m(x)\;\dd x = \delta_{nm}
 			\end{equation}
 
 			\noindent
 			Associated Laguerre Polynomials ($k\in\mathbb{N}_0$):
 			\begin{equation}
-				L_n^k(x) = (-1)^k\frac{\diff^k}{\diff x^k} L_{n+k}(x)
+				L_n^k(x) = (-1)^k\frac{\dd^k}{\dd x^k} L_{n+k}(x)
 			\end{equation}
 
 	\subsection{Geometry}
@@ -703,7 +703,7 @@
 			\noindent
 			Differential solid angle in spherical coordinates:
 			\begin{equation}
-				\diff \Omega = \sin\theta\;\diff \theta \,\diff \phi
+				\dd \Omega = \sin\theta\;\dd \theta \,\dd \phi
 			\end{equation}
 
 			\noindent
@@ -731,7 +731,7 @@
 			\noindent
 			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continuously differentiable alternating differential form of order $n-1$):
 			\begin{equation}
-				\int_\mathcal{M} \diff \omega = \int_{\partial\mathcal{M}} \omega
+				\int_\mathcal{M} \dd \omega = \int_{\partial\mathcal{M}} \omega
 			\end{equation}
 
 			\noindent
@@ -908,13 +908,13 @@
 			\noindent
 			Definition of the expectation value:
 			\begin{equation}
-				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\;\diff x
+				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\;\dd x
 			\end{equation}
 
 			\noindent
 			Definition of variance and standard deviation:
 			\begin{equation}
-				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\;\diff x = E\left[X^2\right]-E^2\left[X\right]
+				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\;\dd x = E\left[X^2\right]-E^2\left[X\right]
 			\end{equation}
 
 			\noindent
@@ -975,7 +975,7 @@
 			\noindent
 			The $n$\textsuperscript{th} raw moment is defined as:
 			\begin{equation}
-				E\left[X^n\right] = \left.\frac{\diff^n Z}{\diff \lambda^n}\right|_{\lambda=0}
+				E\left[X^n\right] = \left.\frac{\dd^n Z}{\dd \lambda^n}\right|_{\lambda=0}
 			\end{equation}
 
 			\noindent
@@ -984,7 +984,7 @@
 				\begin{aligned}
 					F(0) &= 0 \\
 					\tder{F}{\lambda}(0) &= E\left[X\right] \\
-					\frac{\diff^2 F}{\diff \lambda^2}(0) &= V\left[X\right] \\
+					\frac{\dd^2 F}{\dd \lambda^2}(0) &= V\left[X\right] \\
 				\end{aligned}
 			\end{equation}
 

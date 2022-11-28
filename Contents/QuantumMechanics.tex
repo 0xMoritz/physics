@@ -42,19 +42,19 @@
 					% \end{equation}
 					\item[iii)] $a$, where $a$ is a non-degenerate and continuous eigenvalue to the eigenstate $\Ket{a}$, is given by
 					\begin{equation}
-						\diff w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \diff a.
+						\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a.
 					\end{equation}
 					% \item[iii)] $a$ zu messen, wenn $a$ ein nicht-entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a}$ ist, durch
 					% \begin{equation}
-					% 	\diff w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \diff a
+					% 	\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a
 					% \end{equation}
 					\item[iv)] $a$, where $a$ is a degenerate and continuous eigenvalue to the eigenstate $\Ket{a, \nu}$, is given by
 					\begin{equation}
-						\diff w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \diff a.
+						\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a.
 					\end{equation}
 					% \item[iv)] $a$ zu messen, wenn $a$ ein entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a, \nu}$ ist, durch
 					% \begin{equation}
-					% 	\diff w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \diff a
+					% 	\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a
 					% \end{equation}
 				\end{itemize}
 				Either summation or integration is performed depending on whether $\nu$ is discrete or continuous.
@@ -114,11 +114,11 @@
 	% 				\end{equation}
 	% 				\item[iii)] $a$ zu messen, wenn $a$ ein nicht-entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a}$ ist, durch
 	% 				\begin{equation}
-	% 					\diff w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \diff a
+	% 					\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a
 	% 				\end{equation}
 	% 				\item[iv)] $a$ zu messen, wenn $a$ ein entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a, \nu}$ ist, durch
 	% 				\begin{equation}
-	% 					\diff w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \diff a
+	% 					\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a
 	% 				\end{equation}
 	% 			\end{itemize}
 	% 			gegeben. Wobei Summiert bzw. integriert wird, je nachdem, ob es sich um ein diskreten oder kontinuierlichen Parameter $\nu$ handelt.
@@ -185,7 +185,7 @@
 		\begin{equation}
 			\begin{aligned}
 				\Delta_{\Ket{\psi}}(\hat{A}) \Delta_{\Ket{\psi}}(\hat{B}) &\ge
-				\frac{1}{2} \left|\Bra{\psi} \com{\hat{A}}{\hat{B}} \Ket{\psi}\right| \\
+				\frac{1}{2} \left|\Bra{\psi} \comm{\hat{A}}{\hat{B}} \Ket{\psi}\right| \\
 				\Delta_{\Ket{\psi}}(\hat{x}) \Delta_{\Ket{\psi}}(\hat{p}) &\ge
 				\frac{\hbar}{2}
 			\end{aligned}
@@ -256,7 +256,7 @@
 		Position operator\index{Ortsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\diff^n\vec{x} &\hspace{20pt}
+				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hspace{20pt}
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hspace{20pt}
 				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
 			\end{aligned}
@@ -266,7 +266,7 @@
 		Momentum operator\index{Impulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\diff^n\vec{p} &\hspace{20pt}
+				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\dd^n\vec{p} &\hspace{20pt}
 				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hspace{20pt}
 				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
@@ -284,10 +284,10 @@
 		%Zeitentwicklungsoperator (Für $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; der zweite Fall folgt aus $\pder{\hat{H}}{t}=0$):
 		\begin{equation}
 			\begin{aligned}
-				\hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\diff t'\right)} \\
+				\hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t'\right)} \\
 				\hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\right)\hat{H} t} \\
-				%&= \SumInt_E \SumInt_{\nu} e^{-\iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\diff E \\
-				%&= \int_\mathbb{R} e^{-\i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\diff p \\
+				%&= \SumInt_E \SumInt_{\nu} e^{-\iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\dd E \\
+				%&= \int_\mathbb{R} e^{-\i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\dd p \\
 			\end{aligned}
 		\end{equation}
 
@@ -392,7 +392,7 @@
 				\tr\Br{\hat{\sigma}_j} &= 0 \\
 				\Br{\hat{\sigma}_1}^2 = \Br{\hat{\sigma}_2}^2 = \Br{\hat{\sigma}_3}^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
 				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\varepsilon_{jkl}\hat{\sigma}_l
-				%\com{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
+				%\comm{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
 				%\hat{\sigma}_\mu \hat{\sigma}_\nu \hat{\sigma}_\lambda = i\varepsilon_{\}\hat{\sigma}_\xi
 			\end{aligned}
 		\end{equation}
@@ -412,7 +412,7 @@
 			\noindent
 			Definition of the commutator:
 			\begin{equation}
-				\com{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}
+				\comm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}
 			\end{equation}
 
 			\noindent
@@ -425,10 +425,10 @@
 			Calculation rules:
 			\begin{equation}
 				\begin{aligned}
-					\com{\hat{A}}{\hat{B}\hat{C}}
-					&= \hat{B}\com{\hat{A}}{\hat{C}} + \com{\hat{A}}{\hat{B}}\hat{C} \\
-					\com{\hat{A}}{f(\hat{B})}
-					&= \com{\hat{A}}{\hat{B}}\tder{f}{\hat{B}}(\hat{B})
+					\comm{\hat{A}}{\hat{B}\hat{C}}
+					&= \hat{B}\comm{\hat{A}}{\hat{C}} + \comm{\hat{A}}{\hat{B}}\hat{C} \\
+					\comm{\hat{A}}{f(\hat{B})}
+					&= \comm{\hat{A}}{\hat{B}}\tder{f}{\hat{B}}(\hat{B})
 				\end{aligned}
 			\end{equation}
 
@@ -479,7 +479,7 @@
 			Condition of invariance \index{Invarianzbedingung} and conserved quantity (Heisenberg picture\index{Heisenberg!Bild}:
 			%und Erhaltunggröße (Heisenberg-Bild):
 			\begin{equation}
-				\hat{H} =\hat{T}^\dagger(\nu)\hat{H} \hat{T}(\nu) \Leftrightarrow \com{\hat{H}}{\hat{G}} = 0
+				\hat{H} =\hat{T}^\dagger(\nu)\hat{H} \hat{T}(\nu) \Leftrightarrow \comm{\hat{H}}{\hat{G}} = 0
 			\end{equation}
 
 	\subsection{Bound States}
@@ -656,7 +656,7 @@
 		\end{equation}
 
 		\noindent
-		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\pvec{q}) = \int_{\mathbb{R}^3} \rho(\pvec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \diff^3 \vec{r} $):
+		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\pvec{q}) = \int_{\mathbb{R}^3} \rho(\pvec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
 		\begin{equation}
 			\tder{\sigma}{\Omega} = \frac{1}{4} \Br{\frac{e}{4\pi\epsilon_0 m v^2}}^2
 			\frac{1}{\sin^4\frac{\theta}{2}} \vbr{F}^2(\pvec{q})
