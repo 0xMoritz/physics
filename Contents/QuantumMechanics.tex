@@ -284,8 +284,8 @@
 		%Zeitentwicklungsoperator (Für $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; der zweite Fall folgt aus $\pder{\hat{H}}{t}=0$):
 		\begin{equation}
 			\begin{aligned}
-				\hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t'\right)} \\
-				\hat{U}(t) &= \exp{\left(-\frac{\i}{\hbar}\right)\hat{H} t} \\
+				\hat{U}(t) &= \exp\Br{-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t'} \\
+				\hat{U}(t) &= \exp\Br{-\frac{\i}{\hbar}\hat{H} t} \\
 				%&= \SumInt_E \SumInt_{\nu} e^{-\iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\dd E \\
 				%&= \int_\mathbb{R} e^{-\i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\dd p \\
 			\end{aligned}
@@ -418,7 +418,7 @@
 			\noindent
 			Definition of the anticommutators:
 			\begin{equation}
-				\anticom{\hat{A}}{\hat{B}} = \hat{A}\hat{B} + \hat{B}\hat{A}
+				\anticomm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} + \hat{B}\hat{A}
 			\end{equation}
 
 			\noindent
@@ -443,7 +443,7 @@
 			\end{equation}
 
 			\noindent
-			Time evolution of observables (Heisenberg equation\index{Heisenberg!Gleichung}:
+			Time evolution of observables (Heisenberg equation\index{Heisenberg!Gleichung}):
 			%Zeitentwicklung von Observablen (Heisenberggleichung):
 			\begin{equation}
 				i\hbar \tder{}{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pder{}{t} \hat{A}\right)_H (t)
@@ -640,13 +640,35 @@
 			\end{equation}
 
 	\subsection{Perturbation theory\index{Störungstheorie}}
-		\noindent
-		Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
-		%für die Übergangsrate $P_{fi}$ von $\Ket{i}$ nach $\Ket{f}$ periodische Störungen der Form $\hat{H}' e^{\pm\i\omega}$ in erster Ordnung:
-		\begin{equation}
-			P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \vBr{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\Br{E_f^0 - E_i^0 \pm \hbar\omega}
-		\end{equation}
+		\subsubsection{Time Independent Perturbation Theory}
+			\noindent
+			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
+			%für die Übergangsrate $P_{fi}$ von $\Ket{i}$ nach $\Ket{f}$ periodische Störungen der Form $\hat{H}' e^{\pm\i\omega}$ in erster Ordnung:
+			\begin{equation}
+				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \vBr{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\Br{E_f^0 - E_i^0 \pm \hbar\omega}
+			\end{equation}
 
+		\subsubsection{Time Dependent Perturbation Theory}
+			Interaction Picture:
+			\begin{equation}
+				\begin{aligned}
+					\hat{H} =& \hat{H}_0 + \hat{H}' \\
+					\Ket{\psi_I(t)} :=& e^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
+					= \hat{U}_0^\dagger \Ket{\psi(t)} \\
+					\Hat{A}_I(t) :=& e^{\i \hat{H}_0 t / \hbar} \hat{A} e^{-\i \hat{H}_0 t / \hbar}
+					= \hat{U}_0^\dagger \hat{A} \hat{U}_0
+				\end{aligned}
+			\end{equation}
+
+			Dyson Equation\index{Dyson!Gleichung}
+			\begin{equation}
+				\begin{aligned}
+					\Ket{\psi_I(t)} &=: \hat{U}(t,t_0) \Ket{\psi_I(t_0)} \\
+					\i \hbar \pder{}{t} \hat{U}(t,t_0) &= \hat{H}_I'(t) \hat{U}(t,t_0) \\
+					\hat{U}(t,t_0) &= \hat{1} - \frac{\i}{\hbar} \int_{t_0}^{t} \hat{H}'_I(t') \hat{U}(t',t_0) \;\dd t' \\
+					&= \hat{T}\rBr{\exp\Br{-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t')}}
+				\end{aligned}
+			\end{equation}
 
 	\subsection{Scattering\index{Streuung}}
 		\noindent

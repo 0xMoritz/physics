@@ -25,6 +25,8 @@
 \usepackage{hyperref}
 \usepackage{xparse}
 \usepackage{physics}
+\usepackage[offset=13pt]{simpler-wick}
+\usepackage{xcolor} % e.g. \mathbin{\color{blue} \frac{1}{2} }
 %\usepackage{tabularx}
 \makeindex[intoc, columns=2, title=German Index]
 
@@ -104,7 +106,7 @@
 	\newcommand{\Nabla}			{ \vec{\nabla} }
 	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} }
 	%\newcommand{\com}[2]		{ \left[#1,#2\right] }% Commutator
-	\newcommand{\anticom}[2]	{ \left[#1,#2\right]_{+} } % Anticommutator
+	\newcommand{\anticomm}[2]	{ \left\lbrace #1,#2 \right\rbrace } % Anticommutator
 	\newcommand{\const}			{ \mathrm{const.} }
 	\newcommand{\customEq}[1]	{ \stackrel{#1}{=} }
 	\newcommand*{\rom}[1]		{ \uppercase\expandafter{\romannumeral #1\relax} }
@@ -126,6 +128,8 @@
 	\newcommand{\sinc}			{ \mathrm{sinc} }
 	\newcommand{\MU}			{ \SI{}{\micro G} }
 	\newcommand{\e}[1]			{ \times 10^{#1} }
+	\newcommand{\NormalOrder}[1]{ \mathrm{N}\rBr{#1} }
+
 	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
 	\begin{center} % Title

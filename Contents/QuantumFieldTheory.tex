@@ -39,7 +39,7 @@
 			\noindent
 			Defining properties:
 			\begin{equation}
-				\anticom{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
+				\anticomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
 			\end{equation}
 
 			\noindent
@@ -125,7 +125,7 @@
 				\begin{aligned}
 					\gamma_5^\dagger &= \gamma_5 \\
 					\gamma_5 \gamma_5 &= 1_4 \\
-					\anticom{\gamma^\mu}{\gamma^5} &= 0 \\
+					\anticomm{\gamma^\mu}{\gamma^5} &= 0 \\
 				\end{aligned}
 			\end{equation}
 
@@ -135,11 +135,75 @@
 				\sigma^{\mu\nu} = \frac{i}{2}\comm{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
 			\end{equation}
 
+	\subsection{Important Operators}
+		Time ordering operator ($+$ for Bosons, $-$ for Fermions)
+		\begin{equation}
+			\hat{T}\rBr{\hat{A}(t)\hat{B}(t')}
+				= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
+				= \begin{cases}
+					\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
+					\pm \hat{B}(t') \hat{A}(t) & t<t'
+				\end{cases}
+		\end{equation}
 
-	\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
+		\noindent
+		Normal order operator
+		\begin{equation}
+			\NormalOrder{\hat{A}\hat{B}}
+		\end{equation}
+
+		\noindent
+		Wick\index{Wick!Kontraktion} contraction definition:
+		\begin{equation}
+			\wick{\c{\hat{A}} \c{\hat{B}}} = \hat{A}\hat{B} - \NormalOrder{\hat{A}\hat{B}}
+		\end{equation}
+		%\wick{\c \hat{A} \c \hat{B}}
+
+		%TODO: Wick Theorem
+
+	\subsection{Pertubation Theory}
+		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
+		\begin{equation}
+			\begin{aligned}
+				\hat{H} :=& \hat{H}_0 + e^{-\varepsilon \vBr{t}} \hat{H}' \\
+				\hat{H}_0 \Ket{\phi_0} =& E_0 + \Ket{\phi_0} \\
+				\text{if}\quad \lim_{\varepsilon\rightarrow 0} \frac{\hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}
+				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
+				\Rightarrow&\quad \hat{H} \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} = E \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \\
+			\end{aligned}
+		\end{equation}
+
+		\subsubsection{Green's Functions}
+			Single particle Green's function / Propagator \index{Green!Funktion} ($x=(t,\vec{x})$; $\Ket{\Psi_0}$ is the Heisenberg ground state)
+			\begin{equation}
+				\begin{aligned}
+					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} \hat{T}\rBr{\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')} \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
+				\end{aligned}
+			\end{equation}
+
+	%\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
 		%TODO
 
 	\subsection{Bosons}
+		\subsubsection{Bosonic Creation an Annihilation Operators}
+		\label{Sec:BosonicCreationAndAnnihilationOperators}
+			Definition
+			\begin{equation}
+				\comm{\hat{b}_k}{\hat{b}_{k'}^\dagger} = \delta_{kk'}
+				\hspace{20pt}
+				\comm{\hat{b}_k}{\hat{b}_{k'}} = \comm{\hat{b}_k^\dagger}{\hat{b}_{k'}^\dagger} = 0
+			\end{equation}
+
+			\noindent
+			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \mathbb{N}_0$ the operators have the following qualities:
+			\begin{equation}
+				\begin{aligned}
+					\hat{b}_k^\dagger \hat{b}_k \Ket{...,n_k,...} &= n_k \Ket{...,n_k,...} \\
+					\hat{b}_k \Ket{...,n_k,...} &= \sqrt{n_k} \Ket{...,n_k-1,...} \\
+					\hat{b}_k^\dagger \Ket{...,n_k,...} &= \sqrt{n_k+1} \Ket{...,n_k+1,...} \\
+				\end{aligned}
+			\end{equation}
+
 		\subsubsection{Free Klein-Gordon Equation\index{Klein!-Gordon Gleichung}}
 			\noindent
 			Klein-Gordon Equation (spin $s=0$)
@@ -154,11 +218,94 @@
 			\end{equation}
 
 	\subsection{Fermions}
+		\subsubsection{Fermionic Creation an Annihilation Operators}
+		\label{Sec:FermionicCreationAndAnnihilationOperators}
+			Definition of fermionic creation an annihilation operators
+			\begin{equation}
+				\anticomm{\hat{a}_k}{\hat{a}_{k'}^\dagger} = \delta_{kk'}
+				\hspace{20pt}
+				%\anticomm{\hat{a}_k}{\hat{a}_{k'}} = \anticomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
+				\Big\lbrace\hat{a}_k,\hat{a}_{k'}\Big\rbrace = \anticomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
+			\end{equation}
+			In particular $\hat{a}_k^\dagger \hat{a}_k^\dagger = 0 = \hat{a}_k \hat{a}_k$, which ensures $n_k\in\cBr{0,1}$, i.e. the Pauli exclusion principle\index{Pauli!Ausschlussprinzip}.
+
+			\noindent
+			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \cBr{0,1}$ the operators have the following qualities (where the phase factor $S = n_1 + n_2 + ... + n_{k-1}$):
+			\begin{equation}
+				\begin{aligned}
+					\hat{a_k}^\dagger \Ket{...,0,...} &= (-1)^S \Ket{...,1,...}
+					&\hspace{20pt}
+					\hat{a_k} \Ket{...,1,...} &= (-1)^S \Ket{...,0,...}
+					\\
+					\hat{a_k}^\dagger \Ket{...,1,...} &= 0
+					&\hspace{20pt}
+					\hat{a_k} \Ket{...,0,...} &= 0
+				\end{aligned}
+			\end{equation}
+			\begin{equation}
+				\hat{a_k}^\dagger \hat{a_k} \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}
+			\end{equation}
+
+			\noindent
+			Slater determinant\index{Slater!Determinante}:
+			\begin{equation}
+				\Ket{\psi(x_1,x_2,...,x_N)} = \frac{1}{\sqrt{N}} \det\left( \begin{matrix}
+					\Ket{\psi}_1(x_1) & \dotsb & \Ket{\psi}_1(x_N) \\
+					\vdots & \ddots & \vdots \\
+					\Ket{\psi}_N(x_1) & \dotsb & \Ket{\psi}_N(x_N) \\
+				\end{matrix} \right)
+			\end{equation}
+
+
+
 		\subsubsection{Free Dirac Equation\index{Dirac!Gleichung}}
 			\noindent
 			Dirac Equation\index{Dirac!Equation} (Spin $s=1/2$):
 			\begin{equation}
 				\Br{ i\slashed{\partial} - m } \psi\Br{x} = 0
+			\end{equation}
+
+	\subsection{Second Quantization}
+		For Creation and Annihilation operators see Sec.~\ref{Sec:BosonicCreationAndAnnihilationOperators} and Sec.~\ref{Sec:FermionicCreationAndAnnihilationOperators}
+
+		\noindent
+		Fock space\index{Fock!Raum} (direct sum of Hilbert spaces\index{Hilbert!Raum} for all possible numbers of particles $N$; $\mathcal{H}^{(0)} = \cBr{\Ket{0}}$ consists only of the vacuum state):
+		\begin{equation}
+			\mathcal{F}
+			= \bigoplus_{N=0}^{\infty} \mathcal{H}^{(N)}
+			= \mathcal{H}^{(0)} \oplus \mathcal{H}^{(1)} \oplus \mathcal{H}^{(2)} \oplus ...
+		\end{equation}
+
+
+		\subsubsection{Field Operators}
+			Definition of the field operators (summing over the complete set of single-particle quantum numbers $k$)
+			\begin{equation}
+				\begin{aligned}
+					\hat{\psi} (x) &= \sum_k \psi_k(x) \hat{c}_k \\
+					\hat{\psi}^\dagger (x) &= \sum_k \psi_k(x) \hat{c}_k^\dagger \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Properties (spin $\alpha$, $\beta$; using commutator for bosons and anticommutator for fermions):
+			\begin{equation}
+				\begin{aligned}
+					\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp &= \delta_{\alpha,\beta} \delta(x-x')
+					&\hspace{20pt}
+					\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta(x')}_\mp
+					&= \comm{\hat{\psi}_\alpha^\dagger(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp
+					&= 0
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			General form of a one-particle operator in second quantization
+			\begin{equation}
+				\begin{aligned}
+					\hat{A} &= \sum_{i=1}^N \hat{J}(x_i) \\
+					\hat{A} &= \sum_{r,s} \Bra{r}\hat{A}\Ket{s} \hat{c}_r^\dagger \hat{c}_s
+					&= \int \hat{\psi}^\dagger(x) \hat{A}(x) \hat{\psi}(x) \; \dd x
+				\end{aligned}
 			\end{equation}
 
 	\subsection{Interaction}
