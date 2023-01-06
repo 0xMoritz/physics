@@ -692,6 +692,16 @@
 				= \frac{\sqrt{\pi}^n}{\Gamma\left(\frac{n}{2}+1\right)}R^n
 			\end{equation}
 
+			\noindent
+			Scew-symmetric matrix of a vector $\vec{v} = (v_1, v_2, v_3)^T$:
+			\begin{equation}
+				\tilde{\vec{v}} = \rBr{\vec{v}\times} =
+				\left( \begin{matrix}
+					\M 0   & -v_z   & \M v_y \\
+					\M v_z & \M 0   & - v_x \\
+					-v_y   & \M v_x & \M 0 \\
+				\end{matrix} \right) \\
+			\end{equation}
 
 		\subsubsection{Solid Angle\index{Raumwinkel}}
 			\noindent
@@ -766,7 +776,7 @@
 			\end{equation}
 
 			\noindent
-			Jacobi matrix\index{Jacobi!Matrix} and Jacobi determinant\index{Jacobi!Determinante}:
+			Jacobian matrix\index{Jacobi!Matrix} and Jacobian determinant\index{Jacobi!Determinante}:
 			\begin{equation}
 				D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
 				= \left(\begin{matrix}
