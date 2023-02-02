@@ -9,7 +9,6 @@
 \usepackage{listings} 		% Für Code-Segmente
 \usepackage{color}
 \usepackage{caption}
-\usepackage{dblfloatfix}	% To enable figures at the bottom of page
 \usepackage{subcaption}
 \usepackage{stackengine}
 \usepackage{braket}
@@ -32,9 +31,20 @@
 \renewcommand{\dateseparator}{--}
 \makeindex[intoc, columns=2, title=German Index]
 
+\usepackage{xspace}
 
 % Custom Section titles prefixes
 \makeatletter
+
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{e.g\onedot} \def\Eg{E.g\onedot}
+\def\ie{i.e\onedot} \def\Ie{I.e\onedot}
+\def\cf{c.f\onedot} \def\Cf{C.f\onedot}
+\def\etc{etc\onedot} \def\vs{vs\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{et al\onedot}
+
 % use \prefix@<level> only if it is defined
 \renewcommand{\@seccntformat}[1]{%
   \ifcsname prefix@#1\endcsname
@@ -56,30 +66,30 @@
 %	 urlcolor=darkblue
 % }
 
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+% \definecolor{gray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-\lstset{frame=tb,
-  language=C,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
+% \lstset{frame=tb,
+%   language=C,
+%   aboveskip=3mm,
+%   belowskip=3mm,
+%   showstringspaces=false,
+%   columns=flexible,
+%   basicstyle={\small\ttfamily},
+%   numbers=none,
+%   numberstyle=\tiny\color{gray},
+%   keywordstyle=\color{blue},
+%   commentstyle=\color{dkgreen},
+%   stringstyle=\color{mauve},
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   tabsize=3
+% }
 
 
 \author{Moritz Geßner}
@@ -101,6 +111,8 @@
 	%\newcommand{\dd}			{\mathrm{d}}
 	\newcommand{\ii}			{\imath}
 	\newcommand{\binomkoeff}[2]	{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
+	\newcommand{\vecc}[2]		{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
+	\newcommand{\veccc}[3]		{\left(\begin{matrix}#1\\#2\\#3\end{matrix}\right)}
 	\newcommand{\pvec}[1]		{\vec{#1}\mkern2mu\vphantom{#1}} % primed Vector
 	\newcommand{\tder}[2] 		{\frac{\dd #1}{\dd #2}}% total derivative
 	\newcommand{\pder}[2]		{\frac{\partial #1}{\partial #2}} % partial derivative
@@ -115,8 +127,8 @@
 	\newcommand{\Br}[1]			{ \left( #1 \right) } % normal brackets
 	\newcommand{\cBr}[1]		{ \left\lbrace #1 \right\rbrace } % curly brackets
 	\newcommand{\cbr}[1]		{ \lbrace #1 \rbrace } % curly brackets
-	\newcommand{\rBr}[1]		{ \left[ #1 \right] } % rectangudlar brackets
-	\newcommand{\rbr}[1]		{ [ #1 ] } % rectangudlar brackets
+	\newcommand{\rBr}[1]		{ \left[ #1 \right] } % rectangular brackets
+	\newcommand{\rbr}[1]		{ [ #1 ] } % rectangular brackets
 	\newcommand{\aBr}[1]		{ \left\langle #1 \right\rangle } % angled brackets
 	\newcommand{\abr}[1]		{ \langle #1 \rangle } % angled brackets
 	\newcommand{\vBr}[1]		{ \left| #1 \right| } % vertical brackets
@@ -131,6 +143,7 @@
 	\newcommand{\MU}			{ \SI{}{\micro G} }
 	\newcommand{\e}[1]			{ \times 10^{#1} }
 	\newcommand{\NormalOrder}[1]{ \mathrm{N}\rBr{#1} }
+	\newcommand{\unit}[1]		{\,\mathrm{#1}}
 
 	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
 
