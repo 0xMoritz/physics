@@ -127,7 +127,7 @@
 			\noindent
 			Chain rule:
 			\begin{equation}
-				\pder{\vec{f}(\vec{g}(\vec{x}))}{x^k} = \sum_j \pder{ \vec{f}(\vec{g}(\vec{x}))}{g^j} \pder{g^j(\vec{x})}{x^k}
+				\pdv{\vec{f}(\vec{g}(\vec{x}))}{x^k} = \sum_j \pdv{ \vec{f}(\vec{g}(\vec{x}))}{g^j} \pdv{g^j(\vec{x})}{x^k}
 			\end{equation}
 
 			\noindent
@@ -140,10 +140,10 @@
 			For connected quantities $x(y,z), y(x,z), z(x,y)$ and an inevitable function $w(y,z)$:
 			\begin{equation}
 				\begin{aligned}
-					\left( \pder{x}{y} \right)_z &= \frac{1}{\left( \pder{y}{x} \right)_z} \\
-					-1 &= \left( \pder{x}{y} \right)_z \left( \pder{z}{x} \right)_y \left( \pder{y}{z} \right)_x \\
-					\left( \pder{x}{w} \right)_z &= \left( \pder{x}{y} \right)_z \left( \pder{y}{w} \right)_z \\
-					\left( \pder{x}{y} \right)_z &= \left( \pder{x}{y} \right)_w + \left( \pder{x}{w} \right)_y \left( \pder{w}{y} \right)_z \\
+					\left( \pdv{x}{y} \right)_z &= \frac{1}{\left( \pdv{y}{x} \right)_z} \\
+					-1 &= \left( \pdv{x}{y} \right)_z \left( \pdv{z}{x} \right)_y \left( \pdv{y}{z} \right)_x \\
+					\left( \pdv{x}{w} \right)_z &= \left( \pdv{x}{y} \right)_z \left( \pdv{y}{w} \right)_z \\
+					\left( \pdv{x}{y} \right)_z &= \left( \pdv{x}{y} \right)_w + \left( \pdv{x}{w} \right)_y \left( \pdv{w}{y} \right)_z \\
 				\end{aligned}
 			\end{equation}
 
@@ -163,33 +163,31 @@
 			\noindent
 			Jacobi's formula\index{Jacobi!Formel}:
 			\begin{equation}
-				\tder{}{t}\mathrm{det} A(t) = \mathrm{tr}\left(A^T \tder{}{t} A\right)
+				\dv{t}\det A(t) = \tr \qty(A^T \dv{t} A)
 			\end{equation}
 
 		\subsubsection{Integration}
 			\noindent
 			Leibniz integral rule\index{Leibniz!Regel für Parameterintegrale}:
 			\begin{equation}
-				\tder{}{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\dd x = \int_{\alpha(y)}^{\beta(y)} \pder{f}{y}(x,y)\;\dd x + f(\beta(y),y)\tder{\beta}{y}(y)-f(\alpha(y),y)\tder{\alpha}{y}(y)
+				\dv{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\dd x = \int_{\alpha(y)}^{\beta(y)} \pdv{f}{y}(x,y)\;\dd x + f(\beta(y),y)\dv{\beta}{y}(y)-f(\alpha(y),y)\dv{\alpha}{y}(y)
 			\end{equation}
 
 			\noindent
 			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \mathbb{C}$):
-			%(für eine geschlossene Kurve $\partial \mathcal{A}$ und eine holomorphe Funktion $f(z)$ auf einem einfach zusammenhängenden Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
 				\int_{\partial \mathcal{A}} f(z)\;\dd z = 0
 			\end{equation}
 
 			\noindent
 			Cauchy integral formula\index{Cauchy!Integralformel} (for a positively oriented circular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
-			%(für eine im positiven Drehsinn orientierte geschlossene Kreis-Kurve $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ und eine holomorphe Funktion $f(z)$ auf einem Gebiet $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\frac{\dd^k f}{\dd z^k}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
+				\dv[k]{f}{z}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
 			\end{equation}
 
 			\noindent
-			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\lbrace a_1, a_2, .., a_n\rbrace \rightarrow \mathbb{C}$ holomorphic,
-			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \frac{1}{(k-1)!}\frac{\dd^{k-1} g}{\dd z^{k-1}}\Big|_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$:
+			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \rightarrow \mathbb{C}$ holomorphic,
+			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
 				\int_\gamma f(z)\,\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
 			\end{equation}
@@ -213,7 +211,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\int_\mathbb{R} e^{-x^2}\;\dd x &= \sqrt{\pi} \\
-					\int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \;\forall c\in\mathbb{C} \\
+					\int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \quad\forall c\in\mathbb{C} \\
 					\int_\mathbb{R} \frac{\sin x}{x}\;\dd x &= \pi \\
 				\end{aligned}
 			\end{equation}
@@ -228,13 +226,13 @@
 			\noindent
 			Dirac distribution / Dirac delta / Dirac function\index{Dirac!Distribution} $\delta(x)$:
 			\begin{equation}
-				\int_\Omega f(x)\delta(x)\;\dd x = f(0)\;\forall\, \Omega\ni 0
+				\int_\Omega f(x)\delta(x)\;\dd x = f(0)\quad\forall\, \Omega\ni 0
 			\end{equation}
 
 			\noindent
 			Dirac distribution of a function $f(x)$ zeros $x_{0,i}$:
 			\begin{equation}
-				\delta(f(x)) = \sum_i \frac{1}{\left|\pder{f}{x}(x_{0,i})\right|}\delta(x-x_{0,i})
+				\delta(f(x)) = \sum_i \frac{1}{\abs{\pdv{f}{x}(x_{0,i})}}\delta(x-x_{0,i})
 			\end{equation}
 
 			\noindent
@@ -245,13 +243,13 @@
 						1 & x\ge 0 \\
 						0 & x<0 \\
 						\end{array}\right. \\
-						\tder{\Theta}{x}(x) =&\; \delta(x) \\
+						\dv{\Theta}{x}(x) =&\; \delta(x) \\
 					\int_{\mathbb{R}} f(x)\Theta(x)\;\dd x =& \int_{0}^{\infty} f(x)\;\dd x
 				\end{aligned}
 			\end{equation}
 
 			\begin{equation}
-				\Nabla^2\frac{1}{\left|\vec{r} - \pvec{r}'\right|} = -4\pi\delta\left(\vec{r} - \pvec{r}'\right)
+				\Nabla^2\frac{1}{\abs{\vec{r} - \pvec{r}'}} = -4\pi\delta\left(\vec{r} - \pvec{r}'\right)
 			\end{equation}
 
 			\noindent
@@ -288,9 +286,7 @@
 			\begin{itemize}
 				\item $C^p(D)$, space of $p$-times continuously differentiable functions
 				\item $L^p(D)$, space of equivalence classes (with respect to lower-dimensional exceptions) of functions which $p$-Norm is Lebesque integrable\index{Lebesque!integrierbar}
-				%Raum der Äquivalenzklassen (bezügl. niederdimensionaler Ausnahmemengen) von Funktionen deren $p$-Norm Lebesque-integrierbar sind
 				\item $S(\mathbb{R})$, space of functions that decrease faster than any polynomial function (Schwartz space\index{Schwartz!Raum})
-				%Raum der Funktionen die schneller fallen als jede Polynomfunktion (Schwartz-Raum)
 			\end{itemize}
 
 		\subsubsection{Sequences\index{Folge} and Series\index{Reihe}}
@@ -301,7 +297,7 @@
 			\end{equation}
 
 			\noindent
-			Geometric series\index{Geometrische Reihe} ($\forall \left|q\right| < 1$):
+			Geometric series\index{Geometrische Reihe} ($\forall \abs{q} < 1$):
 			\begin{equation}
 				\sum_{k=0}^\infty q^k= \frac{1}{1-q}
 			\end{equation}
@@ -331,9 +327,9 @@
 			\href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula}{Euler-Maclaurin formula}\index{Euler!-McLaurin Formel}:
 			\begin{equation}
 				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\dd x
-				+ \frac{1}{2} \left.\frac{\dd f}{\dd x} \right|_{a}^{b}
-				+ \frac{1}{12}\left.\frac{\dd^2 f}{\dd x^2} \right|_{a}^{b}
-				+ \frac{1}{720} \left.\frac{\dd^3 f}{\dd x^3} \right|_{a}^{b}
+				+ \frac{1}{2} \eval{\dv{f}{x} }_{a}^{b}
+				+ \frac{1}{12}\eval{\dv[2]{f}{x} }_{a}^{b}
+				+ \frac{1}{720} \eval{\dv[3]{f}{x} }_{a}^{b}
 				+ ...
 			\end{equation}
 
@@ -347,13 +343,13 @@
 			\noindent
 			Radius of convergence\index{Konvergenzradius}:
 			\begin{equation}
-				r = \frac{1}{\limsup\limits_{n\rightarrow\infty} \sqrt[n]{\left|a_n\right|}} = \lim_{n\rightarrow\infty}\left|\frac{a_n}{a_{n+1}}\right|
+				r = \frac{1}{\limsup\limits_{n\rightarrow\infty} \sqrt[n]{\abs{a_n}}} = \lim_{n\rightarrow\infty}\abs{\frac{a_n}{a_{n+1}}}
 			\end{equation}
 
 			\noindent
 			Taylor expansion\index{Taylor!Entwicklung} at $x_0$:
 			\begin{equation}
-				f\left(x\right)=\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\dd^{n}f\left(x_0\right)}{\dd x^{n}}\left(x-x_0\right)^{n}
+				f\qty(x)=\sum_{n=0}^{\infty}\frac{1}{n!}\dv[n]{f\qty(x_0)}{x}\qty(x-x_0)^{n}
 			\end{equation}
 
 			\noindent
@@ -420,8 +416,8 @@
 			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
 			\begin{equation}
 				\begin{aligned}
-					\mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pder{}{k}\tilde{f}(k) \\
-					\mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pder{}{x}f(x) \\
+					\mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pdv{k}\tilde{f}(k) \\
+					\mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pdv{x}f(x) \\
 					\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x &=
 					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k \\
 					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k \\
@@ -461,7 +457,7 @@
 			\noindent
 			Coefficients:
 			\begin{equation}
-				a_n = \frac{1}{2 \pi \i}\int_{\left| z-z_0 \right| = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\dd z
+				a_n = \frac{1}{2 \pi \i}\int_{\abs{ z-z_0 } = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\dd z
 			\end{equation}
 
 		\subsubsection{Spherical Harmonics\index{Kugelflächenfunktionen}}
@@ -483,8 +479,8 @@
 			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+iv(z)$ with $z=x+iy$, where $x,y,u,v\in\mathbb{R}$)
 			\begin{equation}
 				\begin{aligned}
-					\pder{u}{x} &= \phantom{-}\pder{v}{y} \\
-					\pder{u}{y} &= -\pder{v}{x} \\
+					\pdv{u}{x} &= \phantom{-}\pdv{v}{y} \\
+					\pdv{u}{y} &= -\pdv{v}{x} \\
 				\end{aligned}
 			\end{equation}
 
@@ -493,11 +489,11 @@
 			\noindent
 			Green's Function\index{Green!Funktion} ($\mathrm{D}$ is an arbitrary linear differential operator):
 			\begin{equation}
-				\mathrm{D}_{\pvec{r}}\, G\left(\vec{r},\pvec{r}'\right) = \delta\left(\vec{r} - \pvec{r}'\right)
+				\mathrm{D}_{\pvec{r}}\, G\qty(\vec{r},\pvec{r}') = \delta\qty(\vec{r} - \pvec{r}')
 			\end{equation}
-			General solution of the differential equation $\mathrm{D}_{\pvec{r}}\, \phi = f\left(\vec{r}\right)$:
+			General solution of the differential equation $\mathrm{D}_{\pvec{r}}\, \phi = f\qty(\vec{r})$:
 			\begin{equation}
-				\phi\left(\vec{r}\right) = \int G\left(\vec{r},\pvec{r}'\right)f\left(\pvec{r}'\right)\;\dd^3\pvec{r}'
+				\phi\qty(\vec{r}) = \int G\qty(\vec{r},\pvec{r}')f\qty(\pvec{r}')\;\dd^3\pvec{r}'
 			\end{equation}
 
 		\subsubsection{Harmonic Oscillator\index{Harmonischer Oszillator}}
@@ -524,13 +520,13 @@
 			\noindent
 			Differential equation:
 			\begin{equation}
-				B_\nu f = x^2\frac{\dd^2 f}{\dd x^2} + x\tder{f}{x}+\left(x^2-\nu^2\right)f = 0
+				B_\nu f = x^2\dv[2]{f}{x} + x\dv{f}{x}+\qty(x^2-\nu^2)f = 0
 			\end{equation}
 
 			\noindent
 			Bessel function\index{Bessel!Funktion} of the first kind:
 			\begin{equation}
-				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\left(\frac{x}{2}\right)^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} 	e^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
+				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\qty(\frac{x}{2})^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
 			\end{equation}
 
 		\subsubsection{Poisson Equation\index{Poisson!Gleichung}}
@@ -542,7 +538,6 @@
 
 			\noindent
 			Sufficient conditions for the existence and uniqueness of solutions of the Poisson equation:
-			%Ausreichende Bedingungen für Existenz und Eindeutigkeit von Lösungen der Poisson-Gleichung:
 			\begin{description}
 				\item[Dirichlet boundary conditions\index{Dirichlet!Randbedingungen}]\hfill \\
 					The charge density $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ and the potential $\phi(\vec{r})$ on $\vec{r}\in\partial\mathcal{V}$ are known.
@@ -551,12 +546,6 @@
 				\item[Boundary conditions with conductors of known total charge]\hfill \\
 					The charge density $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ and the total charge $Q_j$ of conductors restricted by $\partial\mathcal{V}$ are known.
 			\end{description}
-				% \item[Dirichlet-Randbedingungen]\hfill \\
-				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und das Potential $\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
-				% \item[Neumann-Randbedingungen]\hfill \\
-				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und der Normalengradient des Potentials $\vec{n}(\vec{r})\cdot\Nabla\phi(\vec{r})$ auf $\vec{r}\in\partial\mathcal{V}$ sind bekannt.
-				% \item[Randbedingungen mit Leitern bekannter Gesamtladungen]\hfill \\
-				% 	Die Ladungsdichte $\rho(\vec{r})$ in $\vec{r}\in\mathcal{V}$ und die Gesamtladungen $Q_j$ von Leitern die durch $\partial\mathcal{V}$ begrenzt werden sind bekannt.
 
 		\subsubsection{Laplace Equation}
 			\noindent
@@ -569,8 +558,8 @@
 			\noindent
 			Legendre differential equation\index{Legendre!Differentialgleichung} ($l>0$):
 			\begin{equation}
-				\pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+l\left(l+1\right)f
-				= \frac{\partial^2 f}{\partial x^2} - \frac{2x}{1-x^2}\pder{f}{x} + \frac{l(l+1)}{1-x^2}f = 0
+				\pdv{x}\left(\left(1-x^2\right)\pdv{f}{x}\right)+l\left(l+1\right)f
+				= \frac{\partial^2 f}{\partial x^2} - \frac{2x}{1-x^2}\pdv{f}{x} + \frac{l(l+1)}{1-x^2}f = 0
 			\end{equation}
 
 			\noindent
@@ -579,8 +568,8 @@
 				\begin{aligned}
 					P_0(x) &= 1 \\
 					P_1(x) &= x \\
-					P_2(x) &= \frac{1}{2}\left(3x^2-1\right) \\
-					P_l(x) &= \frac{1}{2^l l!}\frac{\dd^l}{\dd x^l}\left(x^2-1\right)^l \\
+					P_2(x) &= \frac{1}{2}\qty(3x^2-1) \\
+					P_l(x) &= \frac{1}{2^l l!}\dv[l]{x}\qty(x^2-1)^l \\
 				\end{aligned}
 			\end{equation}
 
@@ -600,7 +589,7 @@
 			\noindent
 			Differential equation ($l\in\mathbb{N}$ and $m\in\mathbb{Z}, -l\le m\le l$)
 			\begin{equation}
-				\pder{}{x}\left(\left(1-x^2\right)\pder{f}{x}\right)+\left(l\left(l+1\right)-\frac{m^2}{1-x^2}\right)f= 0
+				\pdv{x}\qty(\qty(1-x^2)\pdv{f}{x})+\qty(l\qty(l+1)-\frac{m^2}{1-x^2})f= 0
 			\end{equation}
 
 			\noindent
@@ -608,9 +597,9 @@
 			\begin{equation}
 				\begin{aligned}
 					P_l^m(x) &= \frac{(-1)^m}{2^l l!}\sqrt{1-x^2}^m
-					\frac{\dd^{l+m}}{\dd x^{l+m}}\left(x^2-1\right)^l \\
+					\dv[l+m]{x}\qty(x^2-1)^l \\
 					&= (-1)^m \frac{(m+l)!}{2^l l! (l-m)!}\frac{1}{\sqrt{1-x^2}^m}
-					\frac{\dd^{l-m}}{\dd x^{l-m}}\left(x^2-1\right)^l \\
+					\dv[l-m]{x}\qty(x^2-1)^l \\
 				\end{aligned}
 			\end{equation}
 
@@ -619,7 +608,7 @@
 			Differential equation:
 			\begin{equation}
 				-\left(
-				\frac{1}{\sin\theta}\pder{}{\theta}\sin\theta\pder{}{\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}
+				\frac{1}{\sin\theta}\pdv{\theta}\sin\theta\pdv{\theta} + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \phi^2}
 				\right)
 				Y_{lm}(\theta,\phi) = l(l+1)Y_{lm}(\theta,\phi)
 			\end{equation}
@@ -640,15 +629,15 @@
 			\noindent
 			Differential equation\index{Hermite!Differentialgleichung} ($n\in\mathbb{N}_0$):
 			\begin{equation}
-				\frac{\dd^2}{\dd x^2} H_n(x) -2x\tder{}{x} H_n+2 n H_n(x)=0
+				\dv[2]{x} H_n(x) -2x\dv{x} H_n+2 n H_n(x)=0
 			\end{equation}
 
 			\noindent
 			Solutions (Hermite polynomials\index{Hermite!Polynome}):
 			\begin{equation} \label{Eq:HermitePolynomials}
 				\begin{aligned}
-					H_n(x) &= (-1)^n e^{x^2} \frac{\dd^n}{\dd x^n}e^{-x^2} \\
-					&= e^{x^2/2}\left(x-\tder{}{x}\right)^n e^{-x^2/2} \\
+					H_n(x) &= (-1)^n e^{x^2} \dv[n]{x} e^{-x^2} \\
+					&= e^{x^2/2}\qty(x-\dv{x})^n e^{-x^2/2} \\
 				\end{aligned}
 			\end{equation}
 
@@ -662,13 +651,13 @@
 			\noindent
 			Differential Equation\index{Laguerre!Differentialgleichung} ($x>0$, $n\in\mathbb{N}_0$):
 			\begin{equation}
-				x\frac{\dd^2}{\dd x^2}L_n(x) +(1-x)\tder{}{x}L_n(x) + nL_n(x) = 0
+				x\dv[2]{x}L_n(x) +(1-x)\dv{x}L_n(x) + nL_n(x) = 0
 			\end{equation}
 
 			\noindent
 			Solutions (Laguerre Polynomials\index{Laguerre!Polynome}):
 			\begin{equation}
-				L_n(x) = \frac{e^x}{n!}\frac{\dd^n}{\dd x^n}(e^{-x} x^n) = \frac{1}{n!} \left(\tder{}{x}-1\right)^n x^n
+				L_n(x) = \frac{e^x}{n!}\dv[n]{x}(e^{-x} x^n) = \frac{1}{n!} \qty(\dv{x}-1)^n x^n
 			\end{equation}
 
 			\noindent
@@ -680,7 +669,7 @@
 			\noindent
 			Associated Laguerre Polynomials ($k\in\mathbb{N}_0$):
 			\begin{equation}
-				L_n^k(x) = (-1)^k\frac{\dd^k}{\dd x^k} L_{n+k}(x)
+				L_n^k(x) = (-1)^k\dv[k]{x} L_{n+k}(x)
 			\end{equation}
 
 	\subsection{Geometry}
@@ -688,19 +677,19 @@
 			\noindent
 			Volume of a $n$-dimensional Sphere:
 			\begin{equation}
-				\Omega_n = \frac{\sqrt{\pi}^n}{\left(\frac{n}{2}\right)!}R^n
-				= \frac{\sqrt{\pi}^n}{\Gamma\left(\frac{n}{2}+1\right)}R^n
+				\Omega_n = \frac{\sqrt{\pi}^n}{\qty(\frac{n}{2})!}R^n
+				= \frac{\sqrt{\pi}^n}{\Gamma\qty(\frac{n}{2}+1)}R^n
 			\end{equation}
 
 			\noindent
-			Scew-symmetric matrix of a vector $\vec{v} = (v_1, v_2, v_3)^T$:
+			Skew-symmetric matrix of a vector $\vec{v} = (v_1, v_2, v_3)^T$:
 			\begin{equation}
-				\tilde{\vec{v}} = \rBr{\vec{v}\times} =
-				\left( \begin{matrix}
+				\tilde{\vec{v}} = \qty[\vec{v}\times] =
+				\qty( \begin{matrix}
 					\M 0   & -v_z   & \M v_y \\
 					\M v_z & \M 0   & - v_x \\
 					-v_y   & \M v_x & \M 0 \\
-				\end{matrix} \right) \\
+				\end{matrix} ) \\
 			\end{equation}
 
 		\subsubsection{Solid Angle\index{Raumwinkel}}
@@ -783,7 +772,7 @@
 				\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
 				\vdots & \ddots & \vdots \\
 				\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
-				\end{matrix}\right);\;\;J_f(\pvec{x})=\left|\det\left(D\vec{f}(\pvec{x})\right)\right|
+				\end{matrix}\right);\;\;J_f(\pvec{x})=\abs{\det\left(D\vec{f}(\pvec{x})\right)}
 			\end{equation}
 
 			\noindent
@@ -854,7 +843,7 @@
 			Gradient:
 			\begin{equation}
 				\begin{aligned}
-					\Nabla f = \pder{f}{\vec{x}} &= \frac{\partial f}{\partial x}\hat{\mathbf x} + \frac{\partial f}{\partial y}\hat{\mathbf y}+ \frac{\partial f}{\partial z}\hat{\mathbf z} \\
+					\Nabla f = \pdv{f}{\vec{x}} &= \frac{\partial f}{\partial x}\hat{\mathbf x} + \frac{\partial f}{\partial y}\hat{\mathbf y}+ \frac{\partial f}{\partial z}\hat{\mathbf z} \\
 					&= \frac{\partial f}{\partial \rho}\hat{\boldsymbol \rho}+ \frac{1}{\rho}\frac{\partial f}{\partial \varphi}\hat{\boldsymbol \varphi}+ \frac{\partial f}{\partial z}\hat{\mathbf z} \\
 					&= \frac{\partial f}{\partial r}\hat{\mathbf r}+ \frac{1}{r}\frac{\partial f}{\partial \theta}\hat{\boldsymbol \theta}+ \frac{1}{r\sin\theta}\frac{\partial f}{\partial \varphi}\hat{\boldsymbol \varphi} \\
 				\end{aligned}
@@ -985,7 +974,7 @@
 			\noindent
 			The $n$\textsuperscript{th} raw moment is defined as:
 			\begin{equation}
-				E\left[X^n\right] = \left.\frac{\dd^n Z}{\dd \lambda^n}\right|_{\lambda=0}
+				E\left[X^n\right] = \eval{\dv[n]{Z}{\lambda}}_{\lambda=0}
 			\end{equation}
 
 			\noindent
@@ -993,8 +982,8 @@
 			\begin{equation}
 				\begin{aligned}
 					F(0) &= 0 \\
-					\tder{F}{\lambda}(0) &= E\left[X\right] \\
-					\frac{\dd^2 F}{\dd \lambda^2}(0) &= V\left[X\right] \\
+					\dv{F}{\lambda}(0) &= E\qty[X] \\
+					\dv[2]{F}{\lambda}(0) &= V\qty[X] \\
 				\end{aligned}
 			\end{equation}
 
@@ -1003,13 +992,13 @@
 			\noindent
 			Gaußian error propagation\index{Gauß!Fehlerfortpflanzungsgesetz}:
 			\begin{equation}
-				\sigma_y^2 = \sum_{j,k=1}^n \left[\pder{y}{x_j}\pder{y}{x_k}\right]_{\vec{x}=\vec{\mu}} V_{jk}
+				\sigma_y^2 = \sum_{j,k=1}^n \qty[\pdv{y}{x_j}\pdv{y}{x_k}]_{\vec{x}=\vec{\mu}} V_{jk}
 			\end{equation}
 
 			\noindent
-			Gaußian error propagation\index{Gauß!Fehlerfortpflanzungsgesetz} for uncorrelated  $x_i$ (i.e. $V_{jj} = \sigma_{j}^2$ and $V_{jk} = 0 \;\forall j\ne k$):
+			Gaußian error propagation\index{Gauß!Fehlerfortpflanzungsgesetz} for uncorrelated  $x_i$ (i.e. $V_{jj} = \sigma_{j}^2$ and $V_{jk} = 0 \quad\forall j\ne k$):
 			\begin{equation}
-				\sigma_y^2 = \sum_{j=1}^n \left[\pder{y}{x_j}\right]^2_{\vec{x}=\vec{\mu}} \sigma_j^2
+				\sigma_y^2 = \sum_{j=1}^n \qty[\pdv{y}{x_j}]^2_{\vec{x}=\vec{\mu}} \sigma_j^2
 			\end{equation}
 
 
@@ -1056,7 +1045,6 @@
 			\noindent
 			Central limit theorem\index{Zentraler Grenzwertsatz}: \par
 				\emph{The sum of $n$ independent continuous random variables with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n\rightarrow \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
-				% \emph{Die Summe von $n$ unabhängigen kontinuierlichen Zufallsgrößen mit Mittelwert $\mu_j$ und endlichen Varianzen $\sigma_j^2$ konvergiert im Grenzfall $n\rightarrow \infty$ zu einer Gaußverteilung mit $\mu = \sum_j \mu_j$ und $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 
 			\noindent
 			Normal distribution\index{Gauß!Verteilung}:
@@ -1078,28 +1066,102 @@
 			\end{equation}
 
 	\subsection{Group Theory}
-		\subsubsection{General}
-			Definition Group $(G, \cdot)$ (Where $G$ is a group and $\cdot$ is an operation):
+		\subsubsection{Basics}
+			\emph{Group} $(G, \diamond)$ (Where $G$ is a group and $\diamond$ is an operation):
 			\begin{equation}
 				\begin{aligned}
-					\cdot: &G \times G \rightarrow G;\, (p,q) \mapsto p\cdot q \\
-					\text{such that}\; &(p\cdot q)\cdot r = p\cdot (q\cdot r)\;\forall{p,q,r}\subseteq G \\
-					&\exists e: e\cdot p = p\cdot e = p\;\forall p\in G\\
-					&\forall p \in G: \exists p^{-1}: p\cdot p^{-1} = p^{-1}\cdot p=e
+					\diamond: &G \times G \rightarrow G;\, (p,q) \mapsto p\diamond q \\
+					\text{such that}\; &(p\diamond q)\diamond r = p\diamond (q\diamond r)\quad\forall{p,q,r}\subseteq G \\
+					&\exists e: e\diamond p = p\diamond e = p\quad\forall p\in G\\
+					&\forall p \in G: \exists p^{-1}: p\diamond p^{-1} = p^{-1}\diamond p=e
 				\end{aligned}
 			\end{equation}
+			
+			\noindent
+			\emph{Homomorphism} $\phi: G_1 \rightarrow G_2$ (Groups $(G_1,\diamond)$, $(G_2,\diamond)$)
+			\begin{equation}
+				\begin{aligned}
+					\phi(a \diamond b) = \phi(a) \diamond \phi(b) \quad \forall a,b \in G_1
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			\emph{Action} of $G\ni a, b$ on a set $M\ni m$:
+			\begin{equation}
+				\begin{aligned}
+					a\diamond (b\diamond m) &= (a \diamond b) \diamond m \\
+					e \diamond m &= m \\
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			\emph{Orbit} of $m\in M$ under the action of $G$:
+			\begin{equation}
+				G \diamond m = \qty{ a\diamond m \quad \forall a \in G}
+			\end{equation}
 
+			\noindent
+			\emph{Isotropy group} $G_m$ of $m\in M$ with respect to $G$:
+			\begin{equation}
+				G_m = \qty{a\in G: a\diamond m = m} \subseteq{G}
+			\end{equation}			
+			
+			\noindent
+			Number of elements in a group $G$ is denoted by $\# G$.
+			\begin{equation}
+				\# G = \#(G \diamond m) \#G_m \quad \forall m \in M
+			\end{equation}
 
+			\noindent
+			The (left) \emph{coset} $g \diamond H$ of $H \subseteq G$
+			\begin{equation}
+				g \diamond H = \qty{g\diamond h: h\in H} 
+			\end{equation}
+
+			\noindent
+			A \emph{transitive} group is a group with a transitive group action $\diamond$
+			\begin{equation}
+				\forall g \in G, g \ne e: \quad G \diamond g = G
+			\end{equation}
+
+			\noindent
+			\emph{Conjugacy class}, $b$ and $c$ belong to the same conjugacy class if
+			\begin{equation}
+				\exists a \in G: \quad a \diamond b \diamond a^{-1} = c
+			\end{equation}
+
+			\noindent
+			Lemma on isotropy subgroups
+			\begin{equation}
+				G_{a m} = a G_{m} a^{-1}
+			\end{equation}
+			
+			\noindent
+			Euler's\index{Euler} description of a Rotation $R\in SO(3)$ with Euler angles $\phi, \theta, \psi$
+			\begin{equation}
+				\forall R \in SO(3):\quad \exists \phi, \theta, \psi:\quad R = R_\phi^z R_\theta^y R_\psi^x
+			\end{equation}
+			
 			\begin{table}[ht]
 				\begin{center}
-				\begin{tabular}{ l | l | l | l}
-					Symbol & Name & Ex. Set & Ex. Operation \\ \hline
-					$C_n$ & Cyclic group of $n$ elements & $\cBr{[0]_n, [1]_n, ..., [n-1]_n}$ & Equivalence class addition \\
-					$U(n)$ & Unitary group & $\cBr{U: UU^{\dagger}=1}\subseteq \mathbb{C}^{n\times n}$ & Regular matrix multiplication \\
-					$SU(n)$ & Special unitary group & $\cBr{U: \det U = 1}\subseteq U(n)$ & Regular matrix multiplication \\
-					$O(n)$ & & & \\
-					$SO(n)$ & & & \\
+				\begin{tabular}{ l | l | l }
+					Symbol & Name & Example \\ \hline
+					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
+					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
+					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
+					$O(n)$ & Orthogonal group & $\set{O: OO^{T}=O^{T}O=1}\subseteq GL(n, \mathbb{R})$ \\
+					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
+					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
+					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\
 					\end{tabular}
-				\caption{work parameters and corresponding equilibrium parameters. $\sigma$: Surface tension, $A$: Surface, $B_0$: Magnetic field, $\mathcal{M}$: Total magnetization, $\mu$ Chemical Potential, $N$: Particle count...}
+					\caption{List of common groups with symbol, name, example set and corresponding example operation. $\mathbb{K}$ is a field\index{Körper}}
 				\end{center}
 			\end{table} \vsp
+
+
+		% \subsubsection{Selection of Groups Relevant for Physics}
+		% 	Lorentz group $L$ ($\norm{x} = x^\mu x_\mu$, see ):
+		% 	\begin{equation}
+		% 		L = \left( \qty{\Lambda\in GL(4, \mathbb{R}): \norm{\Lambda x}= \norm{x} \quad\forall x \in \mathbb{R}^4}, \text{Matrix multiplication} \right)
+		% 	\end{equation}
+		

@@ -13,8 +13,9 @@
 		\end{equation}
 
 		\noindent
-		Pauli matrices\index{Pauli!Matrizen}:
+		Pauli matrices\index{Pauli!Matrizen} (see Eq.~\ref{Eq:PauliMatrices}):
 		\begin{equation}
+			\label{Eq:PauliMatricesQFT}
 			\begin{aligned}
 				\sigma^0 = \left(\begin{matrix}
 					1 & 0 \\
@@ -35,22 +36,30 @@
 			\end{aligned}
 		\end{equation}
 
+		Properties:
+		\begin{equation}
+			\begin{aligned}
+				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\varepsilon_{\mu\nu\lambda}\sigma_\lambda \\
+				\sigma_\mu \sigma_\nu \sigma_\lambda = \i\varepsilon_{\xi\mu\nu\lambda}\sigma_\xi				
+			\end{aligned}
+		\end{equation}
+
 		\subsubsection{Gamma Matrices}
 			\noindent
 			Defining properties:
 			\begin{equation}
-				\anticomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
+				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
 			\end{equation}
 
 			\noindent
 			Further properties:
 			\begin{equation}
 				\begin{aligned}
-					\Br{\gamma^0}^\dagger &= +\gamma^0 \\
-					\Br{\gamma^j}^\dagger &= -\gamma^j \\
-					\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with mathbb{1}
+					\qty(\gamma^0)^\dagger &= +\gamma^0 \\
+					\qty(\gamma^j)^\dagger &= -\gamma^j \\
+					\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with \mathbb{1}
 					\gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
-					\Br{\gamma^\mu}^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
+					\qty(\gamma^\mu)^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
 				\end{aligned}
 			\end{equation}
 
@@ -125,7 +134,7 @@
 				\begin{aligned}
 					\gamma_5^\dagger &= \gamma_5 \\
 					\gamma_5 \gamma_5 &= 1_4 \\
-					\anticomm{\gamma^\mu}{\gamma^5} &= 0 \\
+					\acomm{\gamma^\mu}{\gamma^5} &= 0 \\
 				\end{aligned}
 			\end{equation}
 
@@ -138,7 +147,7 @@
 	\subsection{Important Operators}
 		Time ordering operator ($+$ for Bosons, $-$ for Fermions)
 		\begin{equation}
-			\hat{T}\rBr{\hat{A}(t)\hat{B}(t')}
+			\hat{T}\qty[\hat{A}(t)\hat{B}(t')]
 				= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
 				= \begin{cases}
 					\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
@@ -165,7 +174,7 @@
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{H} :=& \hat{H}_0 + e^{-\varepsilon \vBr{t}} \hat{H}' \\
+				\hat{H} :=& \hat{H}_0 + e^{-\varepsilon \abs{t}} \hat{H}' \\
 				\hat{H}_0 \Ket{\phi_0} =& E_0 + \Ket{\phi_0} \\
 				\text{if}\quad \lim_{\varepsilon\rightarrow 0} \frac{\hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}
 				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
@@ -177,7 +186,7 @@
 			Single particle Green's function / Propagator \index{Green!Funktion} ($x=(t,\vec{x})$; $\Ket{\Psi_0}$ is the Heisenberg ground state)
 			\begin{equation}
 				\begin{aligned}
-					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} \hat{T}\rBr{\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')} \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
+					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} \hat{T}\qty[\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')] \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
 				\end{aligned}
 			\end{equation}
 
@@ -222,15 +231,15 @@
 		\label{Sec:FermionicCreationAndAnnihilationOperators}
 			Definition of fermionic creation an annihilation operators
 			\begin{equation}
-				\anticomm{\hat{a}_k}{\hat{a}_{k'}^\dagger} = \delta_{kk'}
+				\acomm{\hat{a}_k}{\hat{a}_{k'}^\dagger} = \delta_{kk'}
 				\hspace{20pt}
-				%\anticomm{\hat{a}_k}{\hat{a}_{k'}} = \anticomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
-				\Big\lbrace\hat{a}_k,\hat{a}_{k'}\Big\rbrace = \anticomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
+				%\acomm{\hat{a}_k}{\hat{a}_{k'}} = \acomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
+				\Big\lbrace\hat{a}_k,\hat{a}_{k'}\Big\rbrace = \acomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
 			\end{equation}
-			In particular $\hat{a}_k^\dagger \hat{a}_k^\dagger = 0 = \hat{a}_k \hat{a}_k$, which ensures $n_k\in\cBr{0,1}$, \ie the Pauli exclusion principle\index{Pauli!Ausschlussprinzip}.
+			In particular $\hat{a}_k^\dagger \hat{a}_k^\dagger = 0 = \hat{a}_k \hat{a}_k$, which ensures $n_k\in\qty{0,1}$, \ie the Pauli exclusion principle\index{Pauli!Ausschlussprinzip}.
 
 			\noindent
-			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \cBr{0,1}$ the operators have the following qualities (where the phase factor $S = n_1 + n_2 + ... + n_{k-1}$):
+			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \qty{0,1}$ the operators have the following qualities (where the phase factor $S = n_1 + n_2 + ... + n_{k-1}$):
 			\begin{equation}
 				\begin{aligned}
 					\hat{a_k}^\dagger \Ket{...,0,...} &= (-1)^S \Ket{...,1,...}
@@ -262,14 +271,14 @@
 			\noindent
 			Dirac Equation\index{Dirac!Equation} (Spin $s=1/2$):
 			\begin{equation}
-				\Br{ i\slashed{\partial} - m } \psi\Br{x} = 0
+				\qty( i\slashed{\partial} - m ) \psi\qty(x) = 0
 			\end{equation}
 
 	\subsection{Second Quantization}
 		For Creation and Annihilation operators see Sec.~\ref{Sec:BosonicCreationAndAnnihilationOperators} and Sec.~\ref{Sec:FermionicCreationAndAnnihilationOperators}
 
 		\noindent
-		Fock space\index{Fock!Raum} (direct sum of Hilbert spaces\index{Hilbert!Raum} for all possible numbers of particles $N$; $\mathcal{H}^{(0)} = \cBr{\Ket{0}}$ consists only of the vacuum state):
+		Fock space\index{Fock!Raum} (direct sum of Hilbert spaces\index{Hilbert!Raum} for all possible numbers of particles $N$; $\mathcal{H}^{(0)} = \qty{\Ket{0}}$ consists only of the vacuum state):
 		\begin{equation}
 			\mathcal{F}
 			= \bigoplus_{N=0}^{\infty} \mathcal{H}^{(N)}

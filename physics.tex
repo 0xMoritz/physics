@@ -1,12 +1,12 @@
 \documentclass[11pt,a4paper]{article}
-%\usepackage[ngerman]{babel}	 % deutsche Silbentrennung
-\usepackage[utf8]{inputenc}	 % Unicode support (Umlaute etc.)
+\usepackage[utf8]{inputenc}	 % Unicode support
 \usepackage{a4}
 \usepackage{array}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx}
-\usepackage{listings} 		% Für Code-Segmente
+%\usepackage{listings} 		% For code segments
 \usepackage{color}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -30,14 +30,21 @@
 \usepackage[yyyymmdd]{datetime}
 \renewcommand{\dateseparator}{--}
 \makeindex[intoc, columns=2, title=German Index]
+\usepackage{tcolorbox}
 
 \usepackage{xspace}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section] % reset theorem numbering for each chapter
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
 
 % Custom Section titles prefixes
 \makeatletter
 
 \DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
-\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace} % cspell:disable-line
 \def\eg{e.g\onedot} \def\Eg{E.g\onedot}
 \def\ie{i.e\onedot} \def\Ie{I.e\onedot}
 \def\cf{c.f\onedot} \def\Cf{C.f\onedot}
@@ -46,7 +53,7 @@
 \def\etal{et al\onedot}
 
 % use \prefix@<level> only if it is defined
-\renewcommand{\@seccntformat}[1]{%
+\renewcommand{\@seccntformat}[1]{
   \ifcsname prefix@#1\endcsname
     \csname prefix@#1\endcsname
   \else
@@ -57,45 +64,14 @@
 \newcommand{\prefix@subsubsection}{\thesubsubsection\quad }
 \makeatother
 
-%\definecolor{darkblue}{rgb}{0,0,0.45}
-% \hypersetup{
-%	 colorlinks,
-%	 citecolor=darkblue,
-%	 filecolor=darkblue,
-%	 linkcolor=darkblue,
-%	 urlcolor=darkblue
-% }
-
-% \definecolor{dkgreen}{rgb}{0,0.6,0}
-% \definecolor{gray}{rgb}{0.5,0.5,0.5}
-% \definecolor{mauve}{rgb}{0.58,0,0.82}
-
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-% \lstset{frame=tb,
-%   language=C,
-%   aboveskip=3mm,
-%   belowskip=3mm,
-%   showstringspaces=false,
-%   columns=flexible,
-%   basicstyle={\small\ttfamily},
-%   numbers=none,
-%   numberstyle=\tiny\color{gray},
-%   keywordstyle=\color{blue},
-%   commentstyle=\color{dkgreen},
-%   stringstyle=\color{mauve},
-%   breaklines=true,
-%   breakatwhitespace=true,
-%   tabsize=3
-% }
-
-
 \author{Moritz Geßner}
 
-\DeclareMathOperator*{\SumInt}{%
-\mathchoice%
+\DeclareMathOperator*{\SumInt}{
+\mathchoice
   {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
   {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
   {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
@@ -108,45 +84,47 @@
 	\renewcommand{\i}			{\mathrm{i}} %\imath
 	\renewcommand{\emph}		{\textit} %\imath
 	\newcommand{\xrowht}[2][0]	{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
-	%\newcommand{\dd}			{\mathrm{d}}
 	\newcommand{\ii}			{\imath}
 	\newcommand{\binomkoeff}[2]	{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
 	\newcommand{\vecc}[2]		{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
 	\newcommand{\veccc}[3]		{\left(\begin{matrix}#1\\#2\\#3\end{matrix}\right)}
 	\newcommand{\pvec}[1]		{\vec{#1}\mkern2mu\vphantom{#1}} % primed Vector
-	\newcommand{\tder}[2] 		{\frac{\dd #1}{\dd #2}}% total derivative
-	\newcommand{\pder}[2]		{\frac{\partial #1}{\partial #2}} % partial derivative
 	\newcommand{\dpder}[2]		{\dfrac{\partial #1}{\partial #2}} % default size partial derivative
 	\newcommand{\Nabla}			{ \vec{\nabla} }
-	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} }
-	%\newcommand{\com}[2]		{ \left[#1,#2\right] }% Commutator
-	\newcommand{\anticomm}[2]	{ \left\lbrace #1,#2 \right\rbrace } % Anticommutator
+	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} } % TODO: Use of this is inconsistent
 	\newcommand{\const}			{ \mathrm{const.} }
 	\newcommand{\customEq}[1]	{ \stackrel{#1}{=} }
 	\newcommand*{\rom}[1]		{ \uppercase\expandafter{\romannumeral #1\relax} }
-	\newcommand{\Br}[1]			{ \left( #1 \right) } % normal brackets
-	\newcommand{\cBr}[1]		{ \left\lbrace #1 \right\rbrace } % curly brackets
-	\newcommand{\cbr}[1]		{ \lbrace #1 \rbrace } % curly brackets
-	\newcommand{\rBr}[1]		{ \left[ #1 \right] } % rectangular brackets
-	\newcommand{\rbr}[1]		{ [ #1 ] } % rectangular brackets
-	\newcommand{\aBr}[1]		{ \left\langle #1 \right\rangle } % angled brackets
-	\newcommand{\abr}[1]		{ \langle #1 \rangle } % angled brackets
-	\newcommand{\vBr}[1]		{ \left| #1 \right| } % vertical brackets
-	\newcommand{\vbr}[1]		{ | #1 | } % vertical brackets
-	%\newcommand{\tr}			{ \mathrm{tr} }
 	\newcommand{\vsp}			{ \vspace{10pt} }
 	\newcommand{\nl}			{ \vsp \newline }
-	\newcommand{\rmmu}			{ \SI{}{\micro\nothing} }
 	\newcommand{\exact}			{ \hfill(exact) }
 	\newcommand{\M}				{ \phantom{-} }
 	\newcommand{\sinc}			{ \mathrm{sinc} }
-	\newcommand{\MU}			{ \SI{}{\micro G} }
+	\newcommand{\MU}			{ \SI{}{\micro \nothing} }
 	\newcommand{\e}[1]			{ \times 10^{#1} }
-	\newcommand{\NormalOrder}[1]{ \mathrm{N}\rBr{#1} }
+	\newcommand{\NormalOrder}[1]{ \mathrm{N}\qty[#1] }
 	\newcommand{\unit}[1]		{\,\mathrm{#1}}
 	\newcommand{\mono}[1]		{{\ttfamily #1}}
-
-	% \Br{\frac{x}{2}} \rbr{\frac{x}{2}} \abr{\frac{x}{2}} \vbr{\frac{x}{2}} \cbr{\frac{x}{2}}
+	\newcommand{\definition}[2]{
+		\begin{tcolorbox}[colback=green!60!blue!20!white,left=1mm, coltitle=black, leftrule=0mm, rightrule=0mm, bottomrule=0mm,
+			colframe={green!60!blue!60!white}, sharp corners, title=\textbf{Definition: #1}]
+			#2
+		\end{tcolorbox}
+	}
+	\newcommand{\theorem}[2]{
+		\begin{tcolorbox}[colback=red!90!green!20!white,left=1mm, coltitle=black, leftrule=1mm, rightrule=0mm, bottomrule=0mm, toprule=0mm, colframe={red!90!green!80!white}, sharp corners]
+			\textbf{Theorem 1.1}\quad#1: \vspace{2mm} \\  
+			#2
+		\end{tcolorbox}
+	}
+	\newcommand{\axiom}[2]{
+		\begin{tcolorbox}[colback=blue!70!red!20!white,left=1mm, coltitle=black, leftrule=1mm, rightrule=0mm, bottomrule=0mm, toprule=0mm, colframe={blue!70!red!80!white}, sharp corners]
+			\begin{thm}
+				\; #1 \vspace{2mm} \\  
+				#2
+			\end{thm}
+		\end{tcolorbox}
+	}
 
 	\begin{center} % Title
 		\Large\textbf{Theoretical Physics Formulary} \\

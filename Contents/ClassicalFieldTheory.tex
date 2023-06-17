@@ -12,27 +12,27 @@
 			Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}\index{Lagrange!Gleichung}:
 			\begin{equation}
 				\delta\mathcal{S} = 0
-				\;\Rightarrow\; \partial_\mu \left(\pder{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}\right) - \pder{\mathcal{L}}{A^\nu} = 0 \;\;\forall \nu
+				\;\Rightarrow\; \partial_\mu \qty(\pdv{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}) - \pdv{\mathcal{L}}{A^\nu} = 0 \quad\forall \nu
 			\end{equation}
 
 		\subsubsection{Noether's Theorem\index{Noether!Theorem}}
 			\noindent
-			Continuous transformation:%Kontinuierliche Transformation:
+			Continuous transformation:
 			\begin{equation}
 				\phi(x)\rightarrow\phi'(x) = \phi(x) + \varepsilon \delta \phi(x)
 			\end{equation}
 			
 			\noindent
-			Condition of invariance\index{Invarianzbedingung}:%Invarianzbedingung:
+			Condition of invariance\index{Invarianzbedingung}:
 			\begin{equation}
 				\delta\mathcal{L} = \partial_\mu F^\mu(\phi)
 			\end{equation}
 
 			\noindent
-			Resulting conserved current and conserved charge:%Resultierender erhaltener Strom und Erhaltene Ladung:
+			Resulting conserved current and conserved charge:
 			\begin{equation}
 				\begin{aligned}
-					S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \left( \phi(x), \partial_\nu\phi(x) \right) = \pder{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\
-					\tder{Q}{t} = 0;&\; Q = \int_{\mathbb{R}^3} j^0\;\dd^3\vec{x}
+					S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \qty( \phi(x), \partial_\nu\phi(x) ) = \pdv{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\
+					\dv{Q}{t} = 0;&\; Q = \int_{\mathbb{R}^3} j^0\;\dd^3\vec{x}
 				\end{aligned}
 			\end{equation}

@@ -1,13 +1,12 @@
 % !TEX root = ../physics.tex
 \section{Quantum Mechanics\index{Quantenmechanik}}
 	\subsection{Postulates}
-		\begin{description} % skript Seite 75
+		\begin{description}
 			\item[Postulate 1]\hfill \\
 				Every closed quantum system has an associated Hilbert space\index{Hilbert!Raum} $\mathcal{H}$. The state of the system at a given time $t$ is represented by an normed element $\Ket{\psi(t)} \in \mathcal{H}$, such that $\braket{\psi(t)|\psi(t)} = 1$.
 			\item[Postulate 2]\hfill \\
 				Every measurable physical quantity $\mathcal{A}$ is described by a linear, self-adjoint operator $\hat{A}$ on $\mathcal{H}$.
 				$\hat{A}$ has a complete system of eigenvectors, \ie there exists a partition of unity and a spectral representation\index{Spektraldarstellung} of the operator composed by eigenvectors:
-				%Jede messbare physikalische Größe $\mathcal{A}$ wird durch einen linearen selbstadjungierten Operator $\hat{A}$ auf $\mathcal{H}$ beschrieben. $\hat{A}$ hat ein vollständiges System von Eigenvektoren, d.h. es existiert eine Zerlegung der Eins und eine Spektraldarstellung des Operators aus den Eigenvektoren:
 				\begin{equation}
 					\begin{aligned}
 						\hat{1} &= \SumInt_n \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu} \\
@@ -15,53 +14,31 @@
 					\end{aligned}
 				\end{equation}
 				$\hat{A}$ is called observable.
-				%Man nennt $\hat{A}$ eine Observable.
 			\item[Postulate 3]\hfill \\
 				The possible measurement values of $\mathcal{A}$ are the eigenvalues of $\hat{A}$.
-				%Die möglichen Messwerte von $\mathcal{A}$ sind die Eigenwerte von $\hat{A}$.
 			\item[Postulate 4]\hfill \\
 				When measuring the observable $\hat{A}$ of a system in a state $\Ket{\psi}$, the probability of measuring the eigenvalue
-				%Misst man die Obersvable $\mathcal{A}$ an einem System im Zustand $\Ket{\psi}$ so ist die Wahrscheinlichkeit den Eigenwert
 				\begin{itemize}
 					\item[i)] $a_n$, where $a_n$ is non-degenerate and discrete eigenvalue to the eigenstate $\Ket{a_n}$, is given by
 					\begin{equation}
 						w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2.
 					\end{equation}
-					% \item[i)] $a_n$ zu messen, wenn $a_n$ ein nicht-entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n}$ ist, durch
-					% \begin{equation}
-					% 	w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2
-					% \end{equation}
-					% gegeben.
 					\item[ii)] $a_n$, where $a_n$ is a degenerate and discrete eigenvalue to the eigenstate $\Ket{a_n,\nu}$, is given by
 					\begin{equation}
 						w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2.
 					\end{equation}
-					% \item[ii)] $a_n$ zu messen, wenn $a_n$ ein entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n,\nu}$ ist, durch
-					% \begin{equation}
-					% 	w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2
-					% \end{equation}
 					\item[iii)] $a$, where $a$ is a non-degenerate and continuous eigenvalue to the eigenstate $\Ket{a}$, is given by
 					\begin{equation}
 						\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a.
 					\end{equation}
-					% \item[iii)] $a$ zu messen, wenn $a$ ein nicht-entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a}$ ist, durch
-					% \begin{equation}
-					% 	\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a
-					% \end{equation}
 					\item[iv)] $a$, where $a$ is a degenerate and continuous eigenvalue to the eigenstate $\Ket{a, \nu}$, is given by
 					\begin{equation}
-						\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a.
+						\dd w_a(\Ket{\psi}) = \qty( \SumInt_\nu \abs{\braket{a,\nu |\psi} }^2 ) \dd a.
 					\end{equation}
-					% \item[iv)] $a$ zu messen, wenn $a$ ein entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a, \nu}$ ist, durch
-					% \begin{equation}
-					% 	\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a
-					% \end{equation}
 				\end{itemize}
 				Either summation or integration is performed depending on whether $\nu$ is discrete or continuous.
-				%Wobei Summiert bzw. integriert wird, je nachdem, ob es sich um ein diskreten oder kontinuierlichen Parameter $\nu$ handelt.
 			\item[Postulate 5]\hfill \\
 				If a measurement of an observable $\hat{A}$ yields the eigenvalue $a_n$, then the state of the system after the measurement will be the normed projection on the subspace to $a_n$
-				%Ergibt die Messung einer Observablen $\hat{A}$ den Eigenwert $a_n$, so befindet sich das System nach der Messung in einem Zustand, der durch die normierte Projektion auf den entsprechenden Unterraum zu $a_n$ gegeben ist
 				\begin{equation}
 					\begin{aligned}
 						\Ket{\psi} &\rightarrow \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
@@ -70,86 +47,24 @@
 				\end{equation}
 			\item[Postulate 6]\hfill \\
 				The time evolution of a closed quantum system is governed by the Schrödinger equation\index{Schrödinger!Gleichung}
-				%Die zeitliche Entwicklung eines abgeschlossenen Quantensystems ist durch die Schrödingergleichung
 				\begin{equation}
-					\i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi},
+					\i\hbar\dv{t}\Ket{\psi} = \hat{H}\Ket{\psi},
 				\end{equation}
 				where, the Hamiltonian $\hat{H}$ corresponds to the observable $\mathcal{H}$ associated with the total energy of the system.
-				%gegeben, wobei der Hamiltonoperator $\hat{H}$ die Observable ist, die mit der Gesamtenergie des Systems verknüpft ist.
 			\item[Postulate 7]\hfill \\
 				The Hilbert space of a composed quantum system is given by the tensor product of the sub-systems
-				%Der Hilbertraum des Gesamtsystems ist durch das Tensorprodukt der Hilberträume der Teilsysteme gegeben
 				\begin{equation}
 					\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2.
 				\end{equation}
 			\item[Postulate 8]\hfill \\
 				Micro-objects with identical properties are described by either totally symmetric (bosonic) or by totally antisymmetric (fermionic) states. Fermions\index{Fermionen} have half-integer, bosons\index{Bosonen} have integer spin values.
-				%Mikroobjekte mit identischen Eigenschaften werden entweder durch totalsymmetrische (Bosonen) oder durch totalantisymmetrische (Fermionen) Zustandsvektoren beschrieben. Fermionen haben halbzahligen, Bosonen ganzzahligen Spin.
 	\end{description}
-	% 	\begin{description} % skript Seite 75
-	% 		\item[Postulat 1]\hfill \\
-	% 			Jedem abgeschlossenen Quantensystem ist ein Hilbertraum $\mathcal{H}$ zugeordnet. Der Zustand des Systems zu einer festen Zeit $t$ wird durch ein Element $\Ket{\psi(t)} \in \mathcal{H}$ beschrieben, welches auf Eins normiert ist, d.h. $\braket{\psi(t)|\psi(t)} = 1$.
-	% 		\item[Postulat 2]\hfill \\
-	% 			Jede messbare physikalische Größe $\mathcal{A}$ wird durch einen linearen selbstadjungierten Operator $\hat{A}$ auf $\mathcal{H}$ beschrieben. $\hat{A}$ hat ein vollständiges System von Eigenvektoren, d.h. es existiert eine Zerlegung der Eins und eine Spektraldarstellung des Operators aus den Eigenvektoren:
-	% 			\begin{equation}
-	% 				\begin{aligned}
-	% 					\hat{1} &= \SumInt_n \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu} \\
-	% 					\hat{A} &= \SumInt_n \SumInt_\nu a_n\Ket{a_n,\nu}\Bra{a_n,\nu}. \\
-	% 				\end{aligned}
-	% 			\end{equation}
-	% 			Man nennt $\hat{A}$ eine Observable.
-	% 		\item[Postulat 3]\hfill \\
-	% 			Die möglichen Messwerte von $\mathcal{A}$ sind die Eigenwerte von $\hat{A}$.
-	% 		\item[Postulat 4]\hfill \\
-	% 			Misst man die Obersvable $\mathcal{A}$ an einem System im Zustand $\Ket{\psi}$ so ist die Wahrscheinlichkeit den Eigenwert
-	% 			\begin{itemize}
-	% 				\item[i)] $a_n$ zu messen, wenn $a_n$ ein nicht-entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n}$ ist, durch
-	% 				\begin{equation}
-	% 					w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2
-	% 				\end{equation}
-	% 				gegeben.
-	% 				\item[ii)] $a_n$ zu messen, wenn $a_n$ ein entarteter und diskreter Eigenwert zum Eigenvektor $\Ket{a_n,\nu}$ ist, durch
-	% 				\begin{equation}
-	% 					w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2
-	% 				\end{equation}
-	% 				\item[iii)] $a$ zu messen, wenn $a$ ein nicht-entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a}$ ist, durch
-	% 				\begin{equation}
-	% 					\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a
-	% 				\end{equation}
-	% 				\item[iv)] $a$ zu messen, wenn $a$ ein entarteter und kontinuierlicher Eigenwert zum Eigenvektor $\Ket{a, \nu}$ ist, durch
-	% 				\begin{equation}
-	% 					\dd w_a(\Ket{\psi}) = \left( \SumInt_\nu \left| \braket{a,\nu |\psi} \right|^2 \right) \dd a
-	% 				\end{equation}
-	% 			\end{itemize}
-	% 			gegeben. Wobei Summiert bzw. integriert wird, je nachdem, ob es sich um ein diskreten oder kontinuierlichen Parameter $\nu$ handelt.
-	% 		\item[Postulat 5]\hfill \\
-	% 			Ergibt die Messung einer Observablen $\hat{A}$ den Eigenwert $a_n$, so befindet sich das System nach der Messung in einem Zustand, der durch die normierte Projektion auf den entsprechenden Unterraum zu $a_n$ gegeben ist
-	% 			\begin{equation}
-	% 				\begin{aligned}
-	% 					\Ket{\psi} &\rightarrow \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
-	% 					\hat{P}_n &:= \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu} \\
-	% 				\end{aligned}
-	% 			\end{equation}
-	% 		\item[Postulat 6]\hfill \\
-	% 			Die zeitliche Entwicklung eines abgeschlossenen Quantensystems ist durch die Schrödingergleichung
-	% 			\begin{equation}
-	% 				\i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
-	% 			\end{equation}
-	% 			gegeben, wobei der Hamiltonoperator $\hat{H}$ die Observable ist, die mit der Gesamtenergie des Systems verknüpft ist.
-	% 		\item[Postulat 7]\hfill \\
-	% 			Der Hilbertraum des Gesamtsystems ist durch das Tensorprodukt der Hilberträume der Teilsysteme gegeben
-	% 			\begin{equation}
-	% 				\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2.
-	% 			\end{equation}
-	% 		\item[Postulat 8]\hfill \\
-	% 			Mikroobjekte mit identischen Eigenschaften werden entweder durch totalsymmetrische (Bosonen) oder durch totalantisymmetrische (Fermionen) Zustandsvektoren beschrieben. Fermionen haben halbzahligen, Bosonen ganzzahligen Spin.
-	% 	\end{description}
 
 	\subsection{Basics}
 		\noindent
 		Schrödinger equation\index{Schrödinger!Gleichung}:
 		\begin{equation}
-			\i\hbar\tder{}{t}\Ket{\psi} = \hat{H}\Ket{\psi}
+			\i\hbar\dv{t}\Ket{\psi} = \hat{H}\Ket{\psi}
 		\end{equation}
 
 		\noindent
@@ -175,9 +90,8 @@
 
 		\noindent
 		Classical Schrödinger equation in position space representation:
-		%Klassische Schrödingergleichung in Ortsdarstellung:
 		\begin{equation}
-			\i\hbar\pder{}{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
+			\i\hbar\pdv{t}\psi(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2}\psi(\vec{x}) + V(x)\psi(\vec{x})
 		\end{equation}
 
 		\noindent
@@ -193,13 +107,12 @@
 
 		\noindent
 		Energy time uncertainty ($\Delta t$ is the required measurement time for the reduction of the energy uncertainty to $\Delta E$):
-		%Energie-Zeit Unschärfe ($\Delta t$ entspricht der benötigten Messzeit für die Reduktion der Energieunsicherheit auf $\Delta E$):
 		\begin{equation}
 			\Delta E \Delta t \ge \frac{\hbar}{2}
 		\end{equation}
 
 		\noindent
-		Unitarity:%Unitarität:
+		Unitarity:
 		\begin{equation}
 			\begin{aligned}
 				\Ket{\psi(t)} &= \hat{U}(t) \Ket{\psi(0)} \\
@@ -224,7 +137,7 @@
 		\end{equation}
 
 		\noindent
-		Classical limit:%Klassischer Grenzfall:
+		Classical limit:
 		\begin{equation}
 			\hbar \rightarrow 0
 		\end{equation}
@@ -232,15 +145,14 @@
 		\subsubsection{Continuity Equation}
 			\noindent
 			Probability density (Born rule\index{Born!Wahrscheinlichkeitsinterpretation}) and probability current density:
-			%Wahrscheinlichkeitsdichte und Wahrscheinlichtkeitsstromdichte:
 			\begin{equation}
 				\begin{aligned}
 					\rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
 					j(t,x) :=& \frac{\hbar}{2mi}\left(
-						\psi^*(t,x)\pder{}{x}\psi(t,x) - \psi(t,x)\pder{}{x}\psi^*(t,x)
+						\psi^*(t,x)\pdv{x}\psi(t,x) - \psi(t,x)\pdv{x}\psi^*(t,x)
 					\right) \\
 					=& \frac{\hbar}{m} \mathrm{Im}\left(
-						\psi^*(t,x) \pder{}{x}\psi(t,x)
+						\psi^*(t,x) \pdv{x}\psi(t,x)
 					\right)\\
 				\end{aligned}
 			\end{equation}
@@ -248,7 +160,7 @@
 			\noindent
 			Continuity equation\index{Kontinuitätsgleichung!Quantenmechanik}:
 			\begin{equation}
-				\pder{}{t}\rho(t,x) + \pder{}{x}j(t,x) = 0
+				\pdv{t}\rho(t,x) + \pdv{x}j(t,x) = 0
 			\end{equation}
 
 	\subsection{Operators}
@@ -258,7 +170,7 @@
 			\begin{aligned}
 				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hspace{20pt}
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hspace{20pt}
-				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pder{}{\vec{p}}\tilde{\psi}(\vec{x}) \\
+				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{x}) \\
 			\end{aligned}
 		\end{equation}
 
@@ -268,42 +180,36 @@
 			\begin{aligned}
 				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\dd^n\vec{p} &\hspace{20pt}
 				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hspace{20pt}
-				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pder{}{\vec{x}} \psi(\vec{x}) \\
+				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pdv{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
 		\end{equation}
 
 		\noindent
 		Classical (non-relativistic) Hamiltonian:
-		%Klassischer (nicht relativistischer) Hamiltonoperator:
 		\begin{equation}
 			\hat{H} = \frac{\hat{p}^2}{2m}+\hat{V}(\vec{x}) = -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial \vec{x}^2} + V(\vec{x})
 		\end{equation}
 
 		\noindent
-		Time evolution operator\index{Zeitentwicklungsoperator} (For $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; the second case follows for $\pder{\hat{H}}{t}=0$):
-		%Zeitentwicklungsoperator (Für $\left[\hat{H}(t),\hat{H}(t')\right] = 0\;\forall t,t'$; der zweite Fall folgt aus $\pder{\hat{H}}{t}=0$):
+		Time evolution operator\index{Zeitentwicklungsoperator} (For $\left[\hat{H}(t),\hat{H}(t')\right] = 0\quad\forall t,t'$; the second case follows for $\pdv{\hat{H}}{t}=0$):
 		\begin{equation}
 			\begin{aligned}
-				\hat{U}(t) &= \exp\Br{-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t'} \\
-				\hat{U}(t) &= \exp\Br{-\frac{\i}{\hbar}\hat{H} t} \\
-				%&= \SumInt_E \SumInt_{\nu} e^{-\iEt/\hbar}\Ket{E,\nu}\Bra{E,\nu}\;\dd E \\
-				%&= \int_\mathbb{R} e^{-\i\frac{p^2}{2m}t/\hbar}\Ket{p}\Bra{p}\;\dd p \\
+				\hat{U}(t) &= \exp\qty(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t') \\
+				\hat{U}(t) &= \exp\qty(-\frac{\i}{\hbar}\hat{H} t) \\
 			\end{aligned}
 		\end{equation}
 
 		\noindent
 		Canonical commutator relations\index{Kanonische Kommutatorrelationen}:
-		%Kanonische Kommutator-Relationen
 		\begin{equation}
 			\begin{aligned}
-				\left[ \hat{x}_i, \hat{x}_j \right] &= \left[ \hat{p}_i, \hat{p}_j \right] = 0 \\
-				\left[ \hat{x}_i, \hat{p}_j \right] &= \i\hbar\, \delta_{ij}\hat{1} \\
+				\comm{\hat{x}_i}{\hat{x}_j } &= \comm{\hat{p}_i}{\hat{p}_j} = 0 \\
+				\comm{\hat{x}_i}{\hat{p}_j } &= \i\hbar\, \delta_{ij}\hat{1} \\
 			\end{aligned}
 		\end{equation}
 
 		\noindent
 		Parity operator\index{Paritätsoperator} and properties (Definition, self-adjointness, unitarity, eigenvalue, eigenstate):
-		% und Eigenschaften (Definition, Selbstadjungiertheit, Unitarität, EW, EV):
 		\begin{equation}
 			\begin{aligned}
 				\Bra{\vec{x}} \hat{\Pi} \Ket{\Psi} :=& \Braket{-\vec{x} | \psi} = \psi(-\vec{x}) \\
@@ -325,7 +231,6 @@
 	\subsubsection{Angular Momentum Operators\index{Drehimpulsoperatoren}}
 		\noindent
 		Defining property (Angular momentum commutator relations):
-		%Definierende Eigenschaft (Drehimpuls-Kommutatorrelationen):
 		\begin{equation}
 			\left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \epsilon_{ijk} \hat{j}_k
 		\end{equation}
@@ -334,7 +239,7 @@
 		Orbital angular momentum operator \index{Bahndrehimpulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pder{}{\vec{x}}\right) \\
+				\hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pdv{\vec{x}}\right) \\
 				\left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
 				\left< \hat{L}_z \right> &= m_l \hbar \\
 			\end{aligned}
@@ -342,12 +247,11 @@
 
 		\noindent
 		Relation to the Laplace operator\index{Laplace!Operator}:
-		%Zusammenhang zum Laplace Operator:
 		\begin{equation}
 			\begin{aligned}
 				\hat{\vec{p}}^{\,2} &= -\hbar^2 \Nabla^2 = \hat{\vec{p}}_r^{\,2} + \frac{1}{r^2} \hat{\vec{L}}^2 \\
-				&= -\hbar^2 \rBr{{\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial }{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial }{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}}{\partial \varphi ^{2}}}}\\
-				\hat{\vec{p}}_r &= -\i\hbar\frac{1}{r}\pder{}{r}r \\
+				&= -\hbar^2 \qty[{\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial }{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial }{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}}{\partial \varphi ^{2}}}]\\
+				\hat{\vec{p}}_r &= -\i\hbar\frac{1}{r}\pdv{r}r \\
 			\end{aligned}
 		\end{equation}
 
@@ -384,22 +288,19 @@
 		\end{equation}
 
 		\noindent
-		Properties of the Pauli matrices\index{Pauli!Spinmatrizen}:
-		%Eigenschaften der Pauli-matrizen:
+		Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
 		\begin{equation}
+			\label{Eq:PauliMatrices}
 			\begin{aligned}
-				\det\Br{\hat{\sigma}_j} &= -1 \\
-				\tr\Br{\hat{\sigma}_j} &= 0 \\
-				\Br{\hat{\sigma}_1}^2 = \Br{\hat{\sigma}_2}^2 = \Br{\hat{\sigma}_3}^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
-				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\varepsilon_{jkl}\hat{\sigma}_l
-				%\comm{\hat{\sigma}__\mu,\hat{\sigma}_\nu} &= 2i\varepsilon_{\mu\nu\lambda}\hat{\sigma}_\lambda \\
-				%\hat{\sigma}_\mu \hat{\sigma}_\nu \hat{\sigma}_\lambda = i\varepsilon_{\}\hat{\sigma}_\xi
+				\det\qty(\hat{\sigma}_j) &= -1 \\
+				\tr\qty(\hat{\sigma}_j) &= 0 \\
+				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\varepsilon_{jkl}\hat{\sigma}_l \\
 			\end{aligned}
 		\end{equation}
 
 		\noindent
 		Total angular momentum operator:
-		%Gesamtdrehimpulsoperator
 		\begin{equation}
 			\begin{aligned}
 				\hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
@@ -418,7 +319,7 @@
 			\noindent
 			Definition of the anticommutators:
 			\begin{equation}
-				\anticomm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} + \hat{B}\hat{A}
+				\acomm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} + \hat{B}\hat{A}
 			\end{equation}
 
 			\noindent
@@ -428,7 +329,7 @@
 					\comm{\hat{A}}{\hat{B}\hat{C}}
 					&= \hat{B}\comm{\hat{A}}{\hat{C}} + \comm{\hat{A}}{\hat{B}}\hat{C} \\
 					\comm{\hat{A}}{f(\hat{B})}
-					&= \comm{\hat{A}}{\hat{B}}\tder{f}{\hat{B}}(\hat{B})
+					&= \comm{\hat{A}}{\hat{B}}\dv{f}{\hat{B}}(\hat{B})
 				\end{aligned}
 			\end{equation}
 
@@ -444,17 +345,16 @@
 
 			\noindent
 			Time evolution of observables (Heisenberg equation\index{Heisenberg!Gleichung}):
-			%Zeitentwicklung von Observablen (Heisenberggleichung):
 			\begin{equation}
-				i\hbar \tder{}{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pder{}{t} \hat{A}\right)_H (t)
+				i\hbar \dv{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pdv{t} \hat{A}\right)_H (t)
 			\end{equation}
 
 			\noindent
 			Ehrenfest theorem\index{Ehrenfest!Theorem}:
 			\begin{equation}
 				\begin{aligned}
-					\tder{}{t} \hat{\vec{x}}_H(t) &= \frac{1}{m}\hat{\vec{p}}_H(t) \\
-					\tder{}{t} \hat{\vec{p}}_H(t) &= - \pder{}{\vec{x}} V \left(\hat{\vec{x}}_H(t)\right) \\
+					\dv{t} \hat{\vec{x}}_H(t) &= \frac{1}{m}\hat{\vec{p}}_H(t) \\
+					\dv{t} \hat{\vec{p}}_H(t) &= - \pdv{\vec{x}} V \left(\hat{\vec{x}}_H(t)\right) \\
 				\end{aligned}
 			\end{equation}
 
@@ -462,22 +362,20 @@
 			Ehrenfest equations\index{Ehrenfest!Gleichungen}:
 			\begin{equation}
 				\begin{aligned}
-					\tder{}{t} \langle \hat{\vec{x}} \,\rangle_{\Ket{\psi(t)}} &= \frac{1}{m} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} \\
-					\tder{}{t} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} &= - \left\langle \pder{}{\vec{x}} V(\hat{\vec{x}}) \,\right\rangle_{\Ket{\psi(t)}} \\
+					\dv{t} \langle \hat{\vec{x}} \,\rangle_{\Ket{\psi(t)}} &= \frac{1}{m} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} \\
+					\dv{t} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} &= - \left\langle \pdv{\vec{x}} V(\hat{\vec{x}}) \,\right\rangle_{\Ket{\psi(t)}} \\
 				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Conserved quantities}
 			\noindent
 			Symmetry transformation of a self-adjoint generator $\hat{G}$ ($\hat{T}$ becomes unitary):
-			%Symmetrietransformation mit selbstadjungiertem Generator $\hat{G}$ ($\hat{T}$ ist unitär):
 			\begin{equation}
 				\hat{T}(\nu) = e^{-\i\hat{G}\nu/\hbar}
 			\end{equation}
 
 			\noindent
-			Condition of invariance \index{Invarianzbedingung} and conserved quantity (Heisenberg picture\index{Heisenberg!Bild}:
-			%und Erhaltunggröße (Heisenberg-Bild):
+			Condition of invariance \index{Invarianzbedingung} and conserved quantity (Heisenberg picture\index{Heisenberg!Bild}):
 			\begin{equation}
 				\hat{H} =\hat{T}^\dagger(\nu)\hat{H} \hat{T}(\nu) \Leftrightarrow \comm{\hat{H}}{\hat{G}} = 0
 			\end{equation}
@@ -486,18 +384,16 @@
 		\subsubsection{Basics}
 			\noindent
 			Bound states have negative interaction energy $E<0$ and discrete energy levels. For a time dependent Hamiltonian, the probability density is stationary.
-			%Gebundene Zustände haben negative Wechselwirkungsenergie $E<0$ und diskrete Energieeigenwerte. Bei zeitunabhängigen Hamiltonoperatoren ist die Aufenthaltswahrscheinlichkeit zeitlich konstant
 			 $\left|\psi(x)\right|^2=\const.$
 
 		\subsubsection{Wave Function of an Electron in an Atom}
 			\noindent
 			For the hydrogen atom (Bohr radius\index{Bohr!Radius} $\rho$, normalization constant $a_0$):
-			%Im Wasserstoffatom (Bohr Radius $\rho$, Normierungskonstante $a_0$):
 			\begin{equation}
 				\begin{aligned}
-					\cBr{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\pvec{r})
-					&= \cBr{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pder{}{r}\Br{r^2\pder{}{r}} + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\pvec{r})
-					= E \psi\Br{\pvec{r}}
+					\qty{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\pvec{r})
+					&= \qty{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pdv{r}\qty(r^2\pdv{r}) + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\pvec{r})
+					= E \psi\qty(\pvec{r})
 					\\
 					\Braket{\vec{r}|n,l,m_l,m_s} &= \psi_{n,l,m}\left(r,\theta,\phi\right)\chi(m_s)
 					= R_{n,l}\left(r\right) Y_l^m\left(\theta,\phi\right)\chi(m_s) \\
@@ -519,8 +415,7 @@
 			\end{itemize}
 
 			\noindent
-			Energy states of a single electron in an atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) with atomic number $Z$ (Rydberg energy\index{Rydberg!Energie} $\left.R^*=R_y\right|_{m_e\rightarrow \mu}$ and reduced mass $\mu$ of the atomic system):
-			%Energiezustände eines einzelnen Elektrons im Atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) mit Ordnungszahl $Z$ (Rydbergenergie $\left.R^*=R_y\right|_{m_e\rightarrow \mu}$ mit der reduzierten Masse $\mu$ des Atom-Systems):
+			Energy states of a single electron in an atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) with atomic number $Z$ (Rydberg energy\index{Rydberg!Energie} $\eval{R^*=R_y}_{m_e\rightarrow \mu}$ and reduced mass $\mu$ of the atomic system):
 			\begin{equation}
 				\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = -R^* \frac{\mu}{m_e} Z^2 \frac{1}{n^2} = - \frac{\mu e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
 			\end{equation}
@@ -529,21 +424,17 @@
 			Electron configuration:
 			\begin{itemize}
 				\item Aufbau principle\index{Aufbauprinzip} / Pauli principle\index{Pauli!Prinzip}: The total wave function of a system of electrons is totally antisymmetric with respect to permutation of two electrons.
-				%\item Pauli-Prinzip: Die Gesamtwellenfunktion eines Systems aus mehreren Elektronen ist immer antisymmetrisch	gegen die Vertauschung zweier Elektronen.
 				\item Madelung rule\index{Madelung!Energieschema}: For the ground state, orbitals with the lowest value of $n+l$ are filled first.
-				%Im Grundzustand werden Orbitale mit dem kleinsten Wert für $n+l$ zuerst aufgefüllt.
 				\item Hund's rules\index{Hund!Regel}:
 				\begin{itemize}
 					\item For a given electron configuration, the term with maximum multiplicity has the lowest energy. The multiplicity is equal to $2S+1$, where $S$ is the total spin angular momentum for all electrons. The multiplicity is also equal to the number of unpaired electrons plus one. Therefore, the term with lowest energy is also the term with maximum $S$, and maximum number of unpaired electrons.
 					\item For a given multiplicity, the term with the largest value of the total orbital angular momentum quantum number  $L$, has the lowest energy.
 					\item For a given term, in an atom with outermost subshell half-filled or less, the level with the lowest value of the total angular momentum quantum number  $J$, (for the operator $\vec{J} = \vec{L} + \vec{S}$) lies lowest in energy. If the outermost shell is more than half-filled, the level with the highest value of  $J$, is lowest in energy.
 				\end{itemize}
-				%Im Grundzustand eines Atoms hat der Gesamtspin den größtmöglichen Wert, der mit dem Pauli-Prinzip verträgtlich ist.
 			\end{itemize}
 
 			\noindent
 			Selection rules\index{Auswahlregeln} for the transition of atoms by emission or absorption of a photon:
-			% für Übergänge durch Emission oder Absorption eines Photons:
 			\begin{itemize}
 				\item $\Delta l = \pm 1$
 				\item $\Delta m = 0, \pm 1$
@@ -559,7 +450,6 @@
 		\subsubsection{Quantum Mechanical Harmonic Oscillator}
 			\noindent
 			Hamiltonian and its construction from creation operator $\hat{a}^\dagger$ and annihilation operator $\hat{a}$\index{Leiteroperatoren}:
-			%aus Leiteroperatoren (Aufsteigeoperator $\hat{a}^\dagger$ und Absteigeoperator $\hat{a}$):
 			\begin{equation}
 				\begin{aligned}
 					\hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
@@ -570,7 +460,6 @@
 
 			\noindent
 			Representation of position and momentum operators by the creation and annihilation operators:
-			%Darstellung von Orts- und Impulsoperator aus den Leiteroperatoren:
 			\begin{equation}
 				\begin{aligned}
 					\hat{x} &= \sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^\dagger + \hat{a} \right) \\
@@ -580,7 +469,6 @@
 
 			\noindent
 			Properties of the creation and annihilation operators:
-			%Eigenschaften der Leiteroperatoren:
 			\begin{equation}
 				\begin{aligned}
 					\hat{a}\Ket{n} &= \sqrt{n}\Ket{n-1} \\
@@ -592,7 +480,6 @@
 
 			\noindent
 			Eigenstates and energy eigenvalues (With the substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ and the Hermite polynomials\index{Hermite!Polynome} $H_n(q)$ (Eq.~\ref{Eq:HermitePolynomials})):
-			%Eigenzustände und Energiewerte (Mit der Substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ und den Hermitpolynomen $H_n(q)$ (Gl. \ref{eq:Hermitpolynome})):
 			\begin{equation}
 				\begin{aligned}
 					\Ket{n} &= \frac{1}{\sqrt{n!}}\left(\hat{a}^\dagger\right)^n\Ket{0} \\
@@ -607,7 +494,6 @@
 			Anomalous Zeeman effect: $\vec{s}\ne 0$ \\
 			\noindent
 			Magnetic dipole moment of the electron orbit and spin respectively and energy shift in case of $\vec{j}=\vec{l}$ or $\vec{j}=\vec{s}$ respectively (Sec.~\ref{Sec:ParticleConstants}):
-			%Magnetisches Dipolmoment des Elektronen Orbits bzw. Spins:
 			\begin{equation}
 				\begin{aligned}
 					\vec{\mu}_l &= -\mu_B g_l \vec{l} &\hspace{20pt} V_l &= m_l g_l \mu_B B\\
@@ -616,7 +502,7 @@
 			\end{equation}
 
 			\noindent
-			Interaction Energy (see Eq.~\ref{Eq:MagneticDipoleInteraction}:
+			Interaction Energy (see Eq.~\ref{Eq:MagneticDipoleInteraction}):
 			\begin{equation}
 				\begin{aligned}
 					V_l &= -\vec{\mu} \cdot \vec{B} \\
@@ -627,7 +513,7 @@
 			Landé factor\index{Landé!Faktor} / g-factor (For $g_s\approx 2$ approximation):
 			\begin{equation}
 				\begin{aligned}
-					\vBr{\Br{\vec{\mu}_j}_j} &= \mu_B\frac{3j(j+1)+s(s+1)-l(l+1)}{2\sqrt{j(j+1)}} = \mu_B g_j \frac{\vBr{\vec{j}}}{\hbar}\\
+					\abs{\qty(\vec{\mu}_j)_j} &= \mu_B\frac{3j(j+1)+s(s+1)-l(l+1)}{2\sqrt{j(j+1)}} = \mu_B g_j \frac{\abs{\vec{j}}}{\hbar}\\
 					g_j &= 1+\frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)} \\
 				\end{aligned}
 			\end{equation}
@@ -635,17 +521,16 @@
 			\noindent
 			Paschen-Back effect\index{Paschen!-Back Effekt}: For strong magnetic fields, spin and orbital angular momentum decouple and precess independently around the magnetic field. In this case:
 			\begin{equation}
-				V_{m_s,m_l} = -\Br{\vec{\mu}_s + \vec{\mu}_l}\cdot\vec{B}
-				=\Br{g_s m_s + g_l m_l} \mu_B B
+				V_{m_s,m_l} = -\qty(\vec{\mu}_s + \vec{\mu}_l)\cdot\vec{B}
+				=\qty(g_s m_s + g_l m_l) \mu_B B
 			\end{equation}
 
 	\subsection{Perturbation theory\index{Störungstheorie}}
 		\subsubsection{Time Independent Perturbation Theory}
 			\noindent
 			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
-			%für die Übergangsrate $P_{fi}$ von $\Ket{i}$ nach $\Ket{f}$ periodische Störungen der Form $\hat{H}' e^{\pm\i\omega}$ in erster Ordnung:
 			\begin{equation}
-				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \vBr{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\Br{E_f^0 - E_i^0 \pm \hbar\omega}
+				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \abs{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\qty(E_f^0 - E_i^0 \pm \hbar\omega)
 			\end{equation}
 
 		\subsubsection{Time Dependent Perturbation Theory}
@@ -664,9 +549,9 @@
 			\begin{equation}
 				\begin{aligned}
 					\Ket{\psi_I(t)} &=: \hat{U}(t,t_0) \Ket{\psi_I(t_0)} \\
-					\i \hbar \pder{}{t} \hat{U}(t,t_0) &= \hat{H}_I'(t) \hat{U}(t,t_0) \\
+					\i \hbar \pdv{t} \hat{U}(t,t_0) &= \hat{H}_I'(t) \hat{U}(t,t_0) \\
 					\hat{U}(t,t_0) &= \hat{1} - \frac{\i}{\hbar} \int_{t_0}^{t} \hat{H}'_I(t') \hat{U}(t',t_0) \;\dd t' \\
-					&= \hat{T}\rBr{\exp\Br{-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t')}}
+					&= \hat{T}\qty[\exp\qty(-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t'))]
 				\end{aligned}
 			\end{equation}
 
@@ -680,6 +565,6 @@
 		\noindent
 		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\pvec{q}) = \int_{\mathbb{R}^3} \rho(\pvec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
 		\begin{equation}
-			\tder{\sigma}{\Omega} = \frac{1}{4} \Br{\frac{e}{4\pi\epsilon_0 m v^2}}^2
-			\frac{1}{\sin^4\frac{\theta}{2}} \vbr{F}^2(\pvec{q})
+			\dv{\sigma}{\Omega} = \frac{1}{4} \qty(\frac{e}{4\pi\epsilon_0 m v^2})^2
+			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\pvec{q})
 		\end{equation}

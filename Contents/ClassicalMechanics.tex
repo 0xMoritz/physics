@@ -1,17 +1,17 @@
 % !TEX root = ../physics.tex
 \section{Classical Mechanics\index{Klassische Mechanik}}
 	\subsection{Newton's Laws of Motion\index{Newton!Kraftgesetze}}
-		\textbf{First Axiom / lex prima} \newline%Definition des Inertialsystems / Trägheitsprinzip / Inertialgesetz \newline
-			\indent \textit{Every body continues in its state of rest, or of uniform motion in a straight line, unless it is compelled to change that state by forces impressed upon it.} \nl%\textit{Ein Körper verharrt im Zustand der Ruhe oder der gleichförmig geradlinigen Bewegung, sofern jener nicht durch einwirkende Kräfte zur Änderung seines Zustands gezwungen wird.} \nl
-		\textbf{Second Axiom / lex secunda}%Kinematisches Grundgesetz / Aktionsprinzip / Impulssatz
+		\textbf{First Axiom} \newline
+			\indent \textit{Every body continues in its state of rest, or of uniform motion in a straight line, unless it is compelled to change that state by forces impressed upon it.} \nl
+		\textbf{Second Axiom}
 			\begin{equation}
-				\tder{\vec{p}}{t} = \vec{F}
+				\dv{\vec{p}}{t} = \vec{F}
 			\end{equation}
-			\indent \textit{The change of motion of an object is proportional to the force impressed; and is made in the direction of the straight line in which the force is impressed.}\nl%\textit{Die Änderung der Bewegung ist der Einwirkung der bewegenden Kraft proportional und geschieht nach der Richtung derjenigen geraden Linie, nach welcher jene Kraft wirkt.} \nl
-		\textbf{Third Axiom / lex tertia} \newline %Actio und Reactio / Reaktionsprinzip \newline
-			\indent \textit{To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts.} \nl%\textit{Kräfte treten immer paarweise auf. Übt ein Körper $A$ auf einen anderen Körper $B$ eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper $B$ auf Körper $A$ (reactio).} \nl
-		\textbf{Additional}: Principle of Superposition \newline%Superpositionsprinzip \newline
-			\indent \textit{Forces are additive.}%\textit{Kräfte sind additiv.}
+			\indent \textit{The change of motion of an object is proportional to the force impressed; and is made in the direction of the straight line in which the force is impressed.}\nl
+		\textbf{Third Axiom} \newline 
+			\indent \textit{To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts.} \nl
+		\textbf{Additional}: Principle of Superposition \newline
+			\indent \textit{Forces are additive.}
 			\begin{equation}
 				\vec{F}_{\mathrm{tot}} = \sum_{i=1}^{N} \vec{F}_i
 			\end{equation}
@@ -26,13 +26,13 @@
 		\noindent
 		Derivative of angular momentum\index{Drallsatz} (Torque\index{Drehmoment} $\vec{M}$):
 		\begin{equation}
-			\tder{\vec{L}}{t} = \vec{M}
+			\dv{\vec{L}}{t} = \vec{M}
 		\end{equation}
 
 		\noindent
-		Kepler's second law\index{Flächensatz} (For a particle with a central force\index{Zentralpotential}):%(Für Teilchen im Zentralpotential):
+		Kepler's second law\index{Flächensatz} (For a particle with a central force\index{Zentralpotential}):
 		\begin{equation}
-			\tder{A}{t} = \frac{\vbr{\vec{L}}}{2 m} = \const
+			\dv{A}{t} = \frac{\abs*{\vec{L}}}{2 m} = \const
 		\end{equation}
 
 	\subsection{Rotation}
@@ -44,13 +44,13 @@
 
 		\noindent
 		Parallel Axis Theorem\index{Steiner!Satz} ($\Theta_{ij}$ is the inertia tensor for rotation around the center of mass.
-		For rotation around a point displaced by $\vec{a}$, the inertia tensor transforms to $\Theta'_{ij}$, where $M$ is the total mass.):%($\Theta_{ij}$ ist der Trägheitstensor für eine Drehung mit Drehachse im Schwerpunkt. Verläuft die Drehachse stattdessen durch einen um $\vec{a}$ verschobenen Punkt transformiert sich der Trägheitstensor zu $\Theta'_{ij}$, wobei $M$ die Gesamtmasse ist):
+		For rotation around a point displaced by $\vec{a}$, the inertia tensor transforms to $\Theta'_{ij}$, where $M$ is the total mass.):
 		\begin{equation}
-			\Theta'_{ij} = \Theta_{ij} + M\Br{\vec{a}^2\delta_{ij} - a_i a_j}
+			\Theta'_{ij} = \Theta_{ij} + M\qty(\vec{a}^2\delta_{ij} - a_i a_j)
 		\end{equation}
 
 		\noindent
-		Angular momentum and energy in relation to the inertia tensor:% von Drehimpuls und Energie mit dem	Trägheitstensor:
+		Angular momentum and energy in relation to the inertia tensor:
 		\begin{equation}
 			\begin{aligned}
 				L^i &= \Theta^i_j \omega^j \\
@@ -58,15 +58,15 @@
 			\end{aligned}
 		\end{equation}
 
-	\subsection{Moving Coordinate Systems}%Bewegte Bezugssysteme}
+	\subsection{Moving Coordinate Systems}
 		\noindent
-		Accelerated system $K'$ and inertial system $K$%Beschleunigtes Bezugssystemn $K'$ und Inertialsystem $K$:
+		Accelerated system $K'$ and inertial system $K$
 		\begin{equation}
 			\begin{aligned}
 				\pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hspace{30pt}
-				m\tder{\vec{p}}{t} &= \vec{F} \\
-				\tder{\vec{x}'}{t} &= \tder{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hspace{30pt}
-				m\tder{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
+				m\dv{\vec{p}}{t} &= \vec{F} \\
+				\dv{\vec{x}'}{t} &= \dv{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hspace{30pt}
+				m\dv{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
 			\end{aligned}
 		\end{equation}
 
@@ -74,10 +74,10 @@
 		Fictitious forces\index{Scheinkraft}: displacement force\index{Scheinkraft!Translationskraft} $\vec{F}_T$, centrifugal force\index{Scheinkraft!Zentrifugalkraft} $\vec{F}_Z$, Euler force\index{Scheinkraft!Linearkraft} $\vec{F}_L$, Coriolis force\index{Scheinkraft!Corioliskraft} $\vec{F}_C$
 		\begin{equation}
 			\begin{aligned}
-				\vec{F}_T &= -m\frac{\dd^2 \vec{x}_0}{\dd t^2} &\hspace{30pt}
-				\vec{F}_Z &= -m\vec{\omega}\times\Br{\vec{\omega}\times\pvec{x}'} \\
-				\vec{F}_L &= -m\tder{\vec{\omega}}{t}\times\pvec{x}' &\hspace{30pt}
-				\vec{F}_C &= -2m\vec{\omega}\times\tder{\pvec{x}'}{t} \\
+				\vec{F}_T &= -m\dv[2]{\vec{x}_0}{t} &\hspace{30pt}
+				\vec{F}_Z &= -m\vec{\omega}\times\qty(\vec{\omega}\times\pvec{x}') \\
+				\vec{F}_L &= -m\dv{\vec{\omega}}{t}\times\pvec{x}' &\hspace{30pt}
+				\vec{F}_C &= -2m\vec{\omega}\times\dv{\pvec{x}'}{t} \\
 			\end{aligned}
 		\end{equation}
 
@@ -86,7 +86,7 @@
 		\noindent
 		Newton's law of universal gravitation\index{Newton!Gravitationskraft} (Acting on mass 1):
 		\begin{equation}
-			\vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\left|\vec{r}_1-\vec{r}_2\right|^3}
+			\vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\norm{\vec{r}_1-\vec{r}_2}^3}
 		\end{equation}
 
 		\noindent
@@ -110,7 +110,7 @@
 			\end{equation}
 
 			\noindent
-			Stationary-action principle / Principle of least action \index{Wirkung}:%Hamilton'sches Prinzip / Prinzip der kleinsten (stationären) Wirkung:
+			Stationary-action principle / Principle of least action \index{Wirkung}:
 			\begin{equation}
 				\delta \mathcal{S}=0
 			\end{equation}
@@ -118,7 +118,7 @@
 			\noindent
 			Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}:
 			\begin{equation}
-				 \frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0
+				 \frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0 \quad \forall q_i
 			\end{equation}
 
 			\noindent
@@ -137,9 +137,9 @@
 			Hamilton's equations\index{Hamilton!Bewegungsgleichungen}:
 			\begin{equation}
 				\begin{aligned}
-					\dot{q}_k &= \phantom{-}\pder{\mathcal{H}}{p_k}, &&\hspace{30pt}
-					\dot{p}_k &= -\pder{\mathcal{H}}{q_k}, &&\hspace{30pt}
-					\pder{\mathcal{H}}{t} &= -\pder{\mathcal{L}}{t}
+					\dot{q}_k &= \phantom{-}\pdv{\mathcal{H}}{p_k}, &&\hspace{30pt}
+					\dot{p}_k &= -\pdv{\mathcal{H}}{q_k}, &&\hspace{30pt}
+					\pdv{\mathcal{H}}{t} &= -\pdv{\mathcal{L}}{t}
 				\end{aligned}
 			\end{equation}
 
@@ -147,16 +147,16 @@
 			Poisson-Brackets:
 			\begin{equation}
 				\begin{aligned}
-					\lbrace A, B \rbrace &= \sum_k \left(
-						\pder{A}{q_k}\pder{B}{p_k} - \pder{A}{p_k}\pder{B}{q_k}
+					\qty{A,B} &= \sum_k \left(
+						\pdv{A}{q_k}\pdv{B}{p_k} - \pdv{A}{p_k}\pdv{B}{q_k}
 					\right) \\
-					\tder{A}{t} &= \cBr{A, H} + \pder{A}{t}
+					\dv{A}{t} &= \qty{A, H} + \pdv{A}{t}
 				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Noether's Theorem\index{Noether!Theorem}}
 			\noindent
-			Continuous transformation (infinitesimal $\varepsilon$): %Kontinuierliche Transformation (mit infinitesimalem $\varepsilon$):
+			Continuous transformation (infinitesimal $\varepsilon$): 
 			\begin{equation}
 				\begin{aligned}
 				x_i \rightarrow x_{i}^{\prime} &= x_i+\varepsilon\psi_i\left(x,\dot{x},t\right) \\
@@ -175,7 +175,7 @@
 			\begin{equation}
 				\begin{aligned}
 					S &\sim S' \;\Rightarrow\;
-					\tder{}{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
+					\dv{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
 					Q\left(\vec{x},\dot{\vec{x}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}{\dot{x}}_i}\right)\varphi - f\left(\vec{x},t\right).
 				\end{aligned}
 			\end{equation}
@@ -198,7 +198,7 @@
 			\end{equation}
 
 			\noindent
-			Conserved Laplace-Runge-Lenz vector:%Erhaltener Runge Lenz-Vektor:
+			Conserved Laplace-Runge-Lenz vector:
 			\begin{equation}
 				\vec{A} = \dot{\vec{r}}\times\vec{L} - \frac{\mu \vec{r}}{r}
 			\end{equation}
@@ -209,17 +209,10 @@
 				\rho = \frac{\rho_0}{1+\epsilon \cos\varphi}
 			\end{equation}
 
-			% What's p?
-			% \noindent
-			% Semi-major axis\index{Große Halbachse} $a$:
-			% \begin{equation}
-			% 	a = \frac{p}{1-\epsilon^2}
-			% \end{equation}
-
 			\noindent
 			Vis-Viva\index{Vis-Viva Gleichung} Equation
 			\begin{equation}
-				v^2 = \mu\Br{\frac{2}{r} - \frac{1}{a}}
+				v^2 = \mu\qty(\frac{2}{r} - \frac{1}{a})
 			\end{equation}
 
 			\noindent

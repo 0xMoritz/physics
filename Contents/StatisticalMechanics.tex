@@ -5,7 +5,7 @@
 			\noindent
 			Equipartition theorem\index{Äquipartitionstheorem} $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
 			\begin{equation}
-				\overline{ z_i \pder{H}{z_j}} = k_B T \delta_{ij}
+				\overline{ z_i \pdv{H}{z_j}} = k_B T \delta_{ij}
 			\end{equation}
 
 		\subsubsection{Definition of Entropy}
@@ -42,13 +42,12 @@
 		\subsubsection{Density Matrix\index{Dichtematrix}}
 			\noindent
 			Definition of the density matrix / density operator (Where $p_i$ are classical, i.e. Laplacian probability / Bayesian probability interpretations\index{Bayes!Wahrscheinlichkeitsbegriff}\index{Laplace!Wahrscheinlichkeitsbegriff} for a state $\Ket{\psi_i}$):
-			 %Definition der Dichtematrix / des Dichteoperators (Wobei $p_i$ klassische, d.h. Laplace'sche Wahrscheinlichkeiten für den Zustand $\Ket{\psi_i}$ sind):
 			\begin{equation}
 				\hat{\rho} = \sum_i p_i \Ket{\psi_i}\Bra{\psi_i}
 			\end{equation}
 
 			\noindent
-			Axioms of the density operator:%Axiome der Dichtematrix:
+			Axioms of the density operator:
 			\begin{itemize}\itemsep -0pt	% reduce space between items
 				\item $\hat{\rho} = \hat{\rho}^\dagger$ \hfill{(self-adjoint)}
 				\item $\hat{\rho} \ge 0 $ \hfill{(positive semidefinite)}
@@ -64,20 +63,20 @@
 			\noindent
 			Von Neumann equation\index{Von Neumann!Gleichung}:
 			\begin{equation}
-				\tder{}{t}\hat{\rho}(t) = -\frac{i}{\hbar} \comm{\hat{H}}{\hat{\rho}(t)}
+				\dv{t}\hat{\rho}(t) = -\frac{i}{\hbar} \comm{\hat{H}}{\hat{\rho}(t)}
 			\end{equation}
 
 			\noindent
 			Liouville equation\index{Liouville!Gleichung} (Analogous to the Von Neumann equation for classical systems):
 			\begin{equation}
-				\tder{\rho}{t} = \pder{\rho}{t}+\cBr{\rho,H}
+				\dv{\rho}{t} = \pdv{\rho}{t}+\qty{\rho,H}
 			\end{equation}
 
 		\subsubsection{Microcanonical Ensemble\index{Mikrokanonisches Ensemble}}
 			\noindent
 			Axioms for the microcanonical partition function $\Gamma$:
 			\begin{itemize}\itemsep -0pt	% reduce space between items
-				\item $\pder{}{t}\Gamma(\vec{Z}) = 0$ \hfill{(stationary)}
+				\item $\pdv{t}\Gamma(\vec{Z}) = 0$ \hfill{(stationary)}
 				\item $\Gamma(\vec{Z}_1,\vec{Z}_2) = \Gamma(\vec{Z}_1)\Gamma(\vec{Z}_2) $ \hfill{(multiplicative)}
 				\item $\ln\Gamma(\vec{Z}) \propto N$ \hfill{(extensive)}
 			\end{itemize}
@@ -115,15 +114,10 @@
 				F(T, V, N) = -k_B T \ln{Z_N(T)}
 			\end{equation}
 
-			% Bose Einstein Verteilung (Mittlere Besetzungszahl bei harmonischen Oszillatoren):
-			% \begin{equation}
-			%		 \overline{n}_\nu = \frac{1}{e^{\hbar \omega_\nu / k_B T} - 1}
-			% \end{equation}
-
 			\noindent
 			Internal energy in the canonical ensemble:
 			\begin{equation}
-				U = \overline{H} = \frac{1}{Z_N}\langle He^{-\beta H}\rangle = -\frac{1}{Z_N}\pder{Z_N}{\beta} = -\pder{\ln Z_N}{\beta}
+				U = \overline{H} = \frac{1}{Z_N}\langle He^{-\beta H}\rangle = -\frac{1}{Z_N}\pdv{Z_N}{\beta} = -\pdv{\ln Z_N}{\beta}
 			\end{equation}
 
 		\subsubsection{Grand Canonical Ensemble}
@@ -153,7 +147,7 @@
 				\begin{aligned}
 					0 &= \dd \big( S - \lambda \sum_i p_i \big) \\
 					p_i &= e^{-1-\lambda} = \const \\
-					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ %\frac{\delta_\Delta(U-\hat{H})}{\Gamma} \\
+					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ 
 				\end{aligned}
 			\end{equation}
 
@@ -188,14 +182,11 @@
 		\subsubsection{Definitions}
 			At the \emph{Thermodynamical equilibrium}, macroscopic properties of a system are constant in time.
 			Thermodynamic equilibria are stable owing to the \emph{principle of Le Chatelier}\index{Chatelier!Prinzip} where a counteracting force forms upon fluctuations.\vsp
-			%Im \emph{Thermodynamisches Gleichgewicht} sind makroskopische Eigenschaften eines Systems zeitlich konstant. Thermodynamische Gleichgewichte verdanken ihre Stabilität gemäß dem \emph{Prinzip von le Chatelier} einer rückstellenden Kraft, die sich bei Fluktuationen ausbildet. \vsp
 
 			The \emph{internal energy} $U$ is the energy of a many particle system, which is restricted to a volume $V$ by an external potential. Thus, it has a vanishing total momentum $\vec{P}=0$ and total angular momentum $\vec{L} = 0$, such that all kinetic energy is based on internal properties. \vsp
-			%Die \emph{Innere Energie} $U$ ist die Energie eines Vielteilchesystems, welches durch ein äußeres Potential auf ein Volumen $V$ begrenzt wird und damit einen verschwindenden makroskopischen Gesamtimpuls $\vec{P}=0$ und Gesamtdrehimpuls $\vec{L} = 0$ besitzt, sodass die gesamte kinetische Energie in internen Eigenschaften liegt. \vsp
 
 			Definition of the inexact differential ($\delta$) for \emph{Work} by the controlled work parameters\index{Arbeitskoordinaten} $Z_\alpha$ and equilibrium parameters $g_\alpha$.
 			The choice of work parameters (i.e. the access to the system) defines work as usable form of energy, as well as properties like entropy and temperature. The ambiguity of this choice is known as \emph{relative objectivity}.
-			%Definition des unvollständigen Differentials ($\delta$) der \emph{Arbeit} über kontrollierte \emph{Arbeitskoordinaten} $Z_\alpha$ und \emph{Gleichgewichtsgrößen} $g_\alpha$. Die Wahl der Arbeitskoordinaten (d.h. des Zugriffs über das System) legt die Arbeit als nutzbare Energieform fest. Und legt Eigenschaften wie Entropie und Temperatur fest, die nicht-Eindeutigkeit dieser Wahl wird als \emph{relative Objektivität} bezeichnet.
 			\begin{equation}
 				\delta W = \sum_\alpha g_\alpha \dd Z_\alpha
 			\end{equation} \vsp
@@ -236,27 +227,24 @@
 		\subsubsection{Laws of Thermodynamics}
 			\textbf{Zeroth Law}: Existence and transitivity of equilibrium states\newline
 				\indent \emph{The thermodynamic equilibrium is a equivalence relations between thermodynamic systems (Equilibrium between $A \sim B$ and $B \sim C$ implies $A \sim C$.} \nl
-				%\indent \emph{Das Thermodynamische Gleichgewicht ist eine Äquivalenzrelation unter thermodynamischen Systemen (Gleichgewicht zwischen $A \sim B$ und $A \sim C$ impliziert $ B \sim C$).} \nl
 			\textbf{First Law}: Energy
 				\begin{equation}
 					\label{Eq:FirstLawOfThermodynamics}
 					\dd U = \delta Q + \delta W
 				\end{equation}
-				\indent Innere Energie $\dd U$, zugeführte Wärmemenge $\delta Q$, Arbeit am System $\delta W$. \nl
+				\indent Inner Energy $\dd U$, added heat $\delta Q$, Work applied to the system $\delta W$. \nl
 			\textbf{Second Law}: Entropy
 				\begin{equation}
 					\label{Eq:SecondLawOfThermodynamics}
 					\Delta S	\ge 0
 				\end{equation}
 				\indent Kelvin\index{Kelvin!Wärmesatz}: \emph{It is impossible to generate work in a cycle by solely cooling a heat sink.}\nl
-				%\indent Kelvin: \emph{Es ist unmöglich, durch bloße Abkühlung eines einzelnen Wärmebades zyklisch Arbeit zu erzeugen. }\nl
 			\textbf{Third Law}: Nernst's law of heat\index{Nernst!Wärmesatz}\newline
 				\indent Nernst: \emph{The Entropy of every system converges to a finite value $S_0:=0$ independently of the work parameters $Z_\alpha$ at low temperatures.
 				\begin{equation}
 					S \stackrel{T \rightarrow 0}{\longrightarrow} S_0
 					\label{Eq:ThirdLawOfThermodynamics}
 				\end{equation}}
-				%\indent Nernst: \emph{Für jedes System strebt die Entropie für $T \rightarrow 0$ gegen einen von den Arbeitskoordinaten $Z_\alpha$ unabhängigen endlichen Wert $S_0:=0$.}
 
 		\subsubsection{Fundamental Thermodynamic Relation}
 			\noindent
@@ -270,7 +258,7 @@
 			Euler's homogeneity relation\index{Euler!Homogenitätsrelation} (Resulting from the homogeneity of $S(\vec{Z})$):
 			\begin{equation}
 				\label{Eq:EulerHomogenity}
-				S(\vec{Z}) = U\pder{S}{U} + \sum_\alpha Z_\alpha\pder{S}{Z_\alpha}
+				S(\vec{Z}) = U\pdv{S}{U} + \sum_\alpha Z_\alpha\pdv{S}{Z_\alpha}
 				= \frac{1}{T} \left( U-\sum_\alpha g_\alpha Z_\alpha \right)
 			\end{equation}
 
@@ -283,7 +271,7 @@
 			\noindent
 			Connection between thermodynamic state equation and caloric state equation\index{Thermische Zustandsgleichung}\index{Kalorische Zustandsgleichung}:
 			\begin{equation}
-				\left(\pder{U}{V}\right)_T = T\left(\pder{p}{T}\right)_V - p
+				\left(\pdv{U}{V}\right)_T = T\left(\pdv{p}{T}\right)_V - p
 			\end{equation}
 
 			\noindent
@@ -330,7 +318,6 @@
 			\noindent
 			Carnot Process\index{Carnot!Prozess}:
 			Only possible reversible cyclic process consisting of two adiabatic processes and two isothermic processes between the temperatures $T_1$, $T_2$ with $T_1 < T_2$. Every realizable cyclic process has efficiency that is smaller than the Carnot efficiency\index{Carnot!Wirkungsgrad}:
-			%Einzig möglicher reversibler Kreisprozess, er besteht aus zwei Adiabaten und zwei Isothermen, zwischen den Temperaturen $T_1$, $T_2$ mit $T_1 < T_2$. Jede reale Wärmekraftmaschine hat einen Wirkungsgrad, der kleiner ist als der Carnot Wirkungsgrad:
 			\begin{equation}
 				\eta_C = 1-\frac{T_1}{T_2}
 			\end{equation}
@@ -338,15 +325,14 @@
 		\subsubsection{Response Functions}
 			\noindent
 			Definitions of response functions\index{Antwortgrößen} (Heat capacity / thermal capacity at constant volume $C_V$ and at constant pressure $C_p$, specific heat capacities $c_V$ and $c_p$, expansion coefficient $\alpha$, tension coefficient $\beta$, isothermal compressibility $\kappa_T$, adiabatic compressibility $\kappa_S$):
-			%Definition der Antwortgrößen (Wärmekapazität bei konstantem Volumen $C_V$ und bei konstantem Druck $C_p$, sowie spezifische Wärmekapazitäten $c_V$ und $c_p$, Ausdehnungskoeffizient $\alpha$, Spannungskoeffizient $\beta$, isothermische Kompressibilität $\kappa_T$, adiabatische Kompressibilität $\kappa_S$):
 			\begin{equation}
 				\begin{aligned}
-					N c_V = C_V &= \left( \pder{Q}{T} \right)_V = T \left( \pder{S}{T} \right)_V \\
-					N c_p = C_p &= \left( \pder{Q}{T} \right)_p = T \left( \pder{S}{T} \right)_p \\
-					\alpha &= \frac{1}{V} \left( \pder{V}{T} \right)_p \\
-					\beta &= \frac{1}{p} \left( \pder{p}{T} \right)_V \\
-					\kappa_T &= -\frac{1}{V} \left( \pder{V}{p} \right)_T \\
-					\kappa_S &= -\frac{1}{V} \left( \pder{V}{p} \right)_S \\
+					N c_V = C_V &= \left( \pdv{Q}{T} \right)_V = T \left( \pdv{S}{T} \right)_V \\
+					N c_p = C_p &= \left( \pdv{Q}{T} \right)_p = T \left( \pdv{S}{T} \right)_p \\
+					\alpha &= \frac{1}{V} \left( \pdv{V}{T} \right)_p \\
+					\beta &= \frac{1}{p} \left( \pdv{p}{T} \right)_V \\
+					\kappa_T &= -\frac{1}{V} \left( \pdv{V}{p} \right)_T \\
+					\kappa_S &= -\frac{1}{V} \left( \pdv{V}{p} \right)_S \\
 				\end{aligned}
 			\end{equation}
 
@@ -363,19 +349,19 @@
 			\noindent
 			Joule-Thomson Coefficient\index{Joule!Thomson Koeffizient}:
 			\begin{equation}
-				\mu_{JT} = \left( \pder{T}{p} \right)_H = \frac{V}{C_p}\left(\alpha T - 1\right)
+				\mu_{JT} = \left( \pdv{T}{p} \right)_H = \frac{V}{C_p}\left(\alpha T - 1\right)
 			\end{equation}
 
 			\noindent
-			For magnetic systems, the analogon of compressibility is the magnetic susceptibility\index{Magnetische Suszeptibilität} $chi_{T/S}$:
+			For magnetic systems, the analogue of compressibility is the magnetic susceptibility\index{Magnetische Suszeptibilität} $chi_{T/S}$:
 			\begin{equation}
-				\chi_{S/T} = \left(\pder{\mathcal{M}}{B_0}\right)_{S/T}
+				\chi_{S/T} = \left(\pdv{\mathcal{M}}{B_0}\right)_{S/T}
 			\end{equation}
 
 		\subsubsection{Thermodynamic Potentials}
 			\noindent
 			Guggenheim Quadrat:
-			Unheimlich Viele Forscher Trinken Gerne pils Hinterm Schreibtisch.
+			Unheimlich Viele Forscher Trinken Gerne pils Hinterm Schreibtisch. % cspell:disable-line
 
 			\begin{table}[ht]
 				\begin{center}
@@ -406,7 +392,6 @@
 		\subsubsection{Chemical Equilibria}
 			\noindent
 			$s$ distinct chemical reactions of $r$ different substances with chemical symbols $S_i$, characterized by the stoichiometric coefficients\index{Stöchiometrischer Koeffizient} $\nu_i^k\in\mathbb{Z}$, $\forall k\in\lbrace1,...,s\rbrace$:
-			%$s$ verschiedene chemische Reaktion von $r$ verschiedenen Stoffen mit chemischen Symbolen $S_i$, charaktierisiert durch die stöchiometrischen Koeffizienten $\nu_i^k\in\mathbb{Z}$, $\forall k\in\lbrace1,...,s\rbrace$:
 			\begin{equation}
 				\sum_{i=1}^r \nu_i^k S_i = 0
 			\end{equation}
@@ -420,7 +405,7 @@
 			\noindent
 			At thermodynamic equilibrium, Gibbs Energy\index{Gibbs!Energie} is minimal:
 			\begin{equation}
-					0 = \dd G = \sum_{i=1}^r \mu_i \dd N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \;\forall k\in\lbrace1,...,s\rbrace
+					0 = \dd G = \sum_{i=1}^r \mu_i \dd N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \quad\forall k\in\lbrace1,...,s\rbrace
 			\end{equation}
 
 			\noindent
@@ -433,7 +418,7 @@
 			\noindent
 			Clausius-Clapeyron Relation\index{Clausius!-Clapeyron Beziehung}:
 			\begin{equation}
-				\tder{p}{T} = \frac{\Delta S}{\Delta V} = \frac{S_g - S_{fl}}{V_g - V_{fl}}
+				\dv{p}{T} = \frac{\Delta S}{\Delta V} = \frac{S_g - S_{fl}}{V_g - V_{fl}}
 			\end{equation}
 
 			\noindent
@@ -452,10 +437,8 @@
 			\noindent
 			Assumption: Sufficiently fast processes create local equilibria, such that local equilibrium properties $T(t,\vec{r})$, $p(t,\vec{r})$,... exist. \\
 			Continuity Equation\index{Kontinuitätsgleichung!Thermodynamik} for the energy density $u(t,\vec{r})$ and energy current density $\vec{j}^q$:
-			%Annahme: Hinreichend schnelle Prozesse erzeugen zu jedem Punkt eine \emph{lokales Gleichgewicht}, sodass lokale Gleichgewichtsgrößen $T(t,\vec{r})$, $p(t,\vec{r})$,... existieren. \\
-			%Kontinuitätsgleichung für die Energiedichte $u(t,\vec{r})$ und die Wärmestromdichte $\vec{j}^q$:
 			\begin{equation}
-				\pder{u}{t} + \Nabla\cdot\vec{j}^q = 0
+				\pdv{u}{t} + \Nabla\cdot\vec{j}^q = 0
 			\end{equation}
 
 			\noindent
@@ -467,22 +450,21 @@
 			\noindent
 			Heat equation\index{Wärmeleitungsgleichung} (for $\dd u = nc_V \dd T$ (\eg in solids); diffusion constant $D=\kappa/nc_V$):
 			\begin{equation}
-				\pder{T}{t} = D\Nabla^2 T
+				\pdv{T}{t} = D\Nabla^2 T
 			\end{equation}
 
 			\noindent
 			Heat conduction is irreversible. For the entropy density $s(t,\vec{r})$ and entropy current density $\vec{j}^s (t,\vec{r}) = \vec{j}^q/T$ the following holds (Entropy creation rate $\dot{s}$):
 			\begin{equation}
-				\dot{s} = \pder{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
+				\dot{s} = \pdv{s}{t} + \Nabla\cdot\vec{j}^s = - \frac{\vec{j}^q}{T^2}\cdot\Nabla T \ge 0
 			\end{equation}
 
 			\noindent
 			\href{https://en.wikipedia.org/wiki/Onsager_reciprocal_relations}{Onsager reciprocal relations}\index{Onsager!Reziprozitätsbeziehung}:
-			\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.}\vsp %TODO\vsp
+			\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.}\vsp %TODO % cspell:disable-line
 
 			\noindent
-			Thermoelectric effects: in systems with charge carriers, the chemical potential should be replaced with the electro-chemical potential $\mu_{EC}$, because a change in particle count will imply a change of charges in the potential, such that (Peltier coefficient\index{Peltier!Koeffizient} $\Pi$, thermomotive force $\epsilon$, electric current $\vec{j} = q\vec{j}^n$ and specific heat conductivity $\sigma$, the last equation follows from the reciprocity condition):
-			%Thermoelektrische Effekte: In Systemen mit Ladungsträgern ist es sinnvoll ein elektrochemisches Potential $\mu_{EC}$ einzuführen, da eine Veränderung der Teilchenzahl auch eine Veränderung der Ladung im Potential impliziert, sodass (mit dem \emph{Peltier-Koeffizienten} $\Pi$, der \emph{Thermokraft} $\epsilon$, dem elektrischen Strom $\vec{j} = q\vec{j}^n$ und der spezifischen Leitfähigkeit $\sigma$, die letzte Gleichung folgt aus der Reziprozitätsbeziehung):
+			Thermoelectric effects: in systems with charge carriers, the chemical potential should be replaced with the electro-chemical potential $\mu_{EC}$, because a change in particle count will imply a change of charges in the potential, such that (Peltier coefficient\index{Peltier!Koeffizient} $\Pi$, Seebeck coefficient\index{Seebeck!Koeffizient} $\epsilon$, electric current $\vec{j} = q\vec{j}^n$ and specific heat conductivity $\sigma$, the last equation follows from the reciprocity condition):
 			\begin{equation}
 				\begin{aligned}
 					\delta W &= \mu \dd N + \Phi \dd Q = (\mu+q\Phi)\dd N = \mu_{EC} \dd N \\
@@ -506,7 +488,7 @@
 			\end{equation}
 
 			\noindent
-			Carloric state equation\index{Kalorische Zustandsgleichung!Ideales Gas} $U(T, N, V)$:
+			Caloric state equation\index{Kalorische Zustandsgleichung!Ideales Gas} $U(T, N, V)$:
 			\begin{equation}
 				U = \frac{3}{2} N k_B T
 			\end{equation}
@@ -532,8 +514,8 @@
 			\begin{equation}
 				\mathcal{Z} = \prod_{\alpha}
 					\begin{cases}
-						\left( 1-e^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosonen)} \\
-						\phantom{\big(} 1+e^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermionen)}
+						\left( 1-e^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosons)} \\
+						\phantom{\big(} 1+e^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermions)}
 					\end{cases}
 			\end{equation}
 
@@ -542,8 +524,8 @@
 			\begin{equation}
 				\overline{n_\alpha} =
 					\begin{cases}
-						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosonen)} \\
-						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermionen)}
+						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosons)} \\
+						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermions)}
 					\end{cases} \\
 			\end{equation}
 
@@ -552,8 +534,8 @@
 			\begin{equation}
 				S= -k_B\sum_\alpha
 					\begin{cases}
-						\overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosonen)} \\
-						\overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermionen)}
+						\overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosons)} \\
+						\overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermions)}
 					\end{cases} \\
 			\end{equation}
 
@@ -567,7 +549,7 @@
 			\end{equation}
 
 			\noindent
-			Carloric state equation\index{Kalorische Zustandsgleichung!Quantenmechanisches ideales Gas}:
+			Caloric state equation\index{Kalorische Zustandsgleichung!Quantenmechanisches ideales Gas}:
 			\begin{equation}
 				U=\frac{3}{2}pV
 			\end{equation}
@@ -575,7 +557,7 @@
 			\noindent
 			Thermic state equation\index{Thermische Zustandsgleichung!Quantenmechanisches ideales Gas}:
 			\begin{equation}
-				\frac{pV}{N k_B T} = \frac{\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}{\tder{}{\ln z}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}
+				\frac{pV}{N k_B T} = \frac{\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}{\dv{\ln z}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}
 			\end{equation}
 
 		\subsubsection{Van der Waals Gas}
@@ -645,16 +627,16 @@
 			\end{equation}
 
 			\noindent
-			Planck's law\index{Planck!Strahlungsgesetz} (For the spectral energy density $\pder{u}{\omega}$):
+			Planck's law\index{Planck!Strahlungsgesetz} (For the spectral energy density $\pdv{u}{\omega}$):
 			\begin{equation}
 				\begin{aligned}
-					\pder{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega / k_B T} - 1} \\
-					\pder{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / k_B T} - 1} \\
+					\pdv{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega / k_B T} - 1} \\
+					\pdv{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / k_B T} - 1} \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Stefan-Boltzmann law\index{Stefan!-Boltzmann Gesetz} (Intensity / emission power per surface area $I$, Stefan-Boltzmann Konstante $\sigma$ and emission coefficient $\epsilon$; $\epsilon=1$ in case of a black body):
+			Stefan-Boltzmann law\index{Stefan!-Boltzmann Gesetz} (Intensity / emission power per surface area $I$, Stefan-Boltzmann constant $\sigma$ and emission coefficient $\epsilon$; $\epsilon=1$ in case of a black body):
 			\begin{equation}
 				I = \epsilon\sigma T^4
 			\end{equation}
@@ -681,7 +663,7 @@
 				\begin{aligned}
 					Z(T,B_0) &= 2^N \cosh^N (\beta\mu B_0) \\
 					G(T,B_0) &= -k_B T \ln Z \\
-					\mathcal{M}(T,B_0) &= -\left(\pder{G}{B_0}\right)_T = N\mu \tanh(\mu B_0 /k_B T)
+					\mathcal{M}(T,B_0) &= -\left(\pdv{G}{B_0}\right)_T = N\mu \tanh(\mu B_0 /k_B T)
 				\end{aligned}
 			\end{equation}
 
@@ -700,12 +682,11 @@
 
 			\noindent
 			Mean-field theory\index{Molekularfeldnäherung}: \newline
-			Replacement $s_i s_j \rightarrow s_i m$, where $m = \overline{s}$ is the mean field. Disregarding correlations $\overline{(s_i-m)(s_j-m)}\ll m^2$. \nl
-			%Ersetzung von $s_i s_j \rightarrow s_i m$ wobei $m = \overline{s}$ das Molekularfeld ist. Vernachlässigung von Korrelationen $\overline{(s_i-m)(s_j-m)}\ll m^2$. \nl
+			Replace $s_i s_j \rightarrow s_i m$, where $m = \overline{s}$ is the mean field, while disregarding correlations $\overline{(s_i-m)(s_j-m)}\ll m^2$. \nl
 			Mean field approximation and self consistency equation (in $D$ dimensions, $h:=\mu B_0$):
 			\begin{equation}
 				\begin{aligned}
 					H_{MF} &= -(h + 2 D J m) \sum_i s_i + D N J m^2 \\
-					m &= -\frac{1}{N}\pder{G}{h} = \tanh\left({\beta(h + 2 D J m)}\right)
+					m &= -\frac{1}{N}\pdv{G}{h} = \tanh\left({\beta(h + 2 D J m)}\right)
 				\end{aligned}
 			\end{equation}
