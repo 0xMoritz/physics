@@ -26,8 +26,8 @@
 					1 & 0 \\
 				\end{matrix}\right) &&\hspace{30pt}
 				\sigma^2 = \left(\begin{matrix}
-					0 & -i \\
-						i & 0 \\
+					0 & -\i \\
+						\i & 0 \\
 				\end{matrix}\right) &&\hspace{30pt}
 				\sigma^3 = \left(\begin{matrix}
 					1 & 0 \\
@@ -36,11 +36,12 @@
 			\end{aligned}
 		\end{equation}
 
+		\noindent
 		Properties:
 		\begin{equation}
 			\begin{aligned}
 				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\varepsilon_{\mu\nu\lambda}\sigma_\lambda \\
-				\sigma_\mu \sigma_\nu \sigma_\lambda = \i\varepsilon_{\xi\mu\nu\lambda}\sigma_\xi				
+				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\varepsilon_{\xi\mu\nu\lambda}\sigma_\xi \\
 			\end{aligned}
 		\end{equation}
 
@@ -174,9 +175,9 @@
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{H} :=& \hat{H}_0 + e^{-\varepsilon \abs{t}} \hat{H}' \\
-				\hat{H}_0 \Ket{\phi_0} =& E_0 + \Ket{\phi_0} \\
-				\text{if}\quad \lim_{\varepsilon\rightarrow 0} \frac{\hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}
+				&\hat{H} := \hat{H}_0 + e^{-\varepsilon \abs{t}} \hat{H}' \\
+				&\hat{H}_0 \Ket{\phi_0} = E_0 + \Ket{\phi_0} \\
+				&\text{if}\quad \lim_{\varepsilon\rightarrow 0} \frac{\hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}
 				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
 				\Rightarrow&\quad \hat{H} \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} = E \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \\
 			\end{aligned}

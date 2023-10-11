@@ -81,30 +81,33 @@
 \numberwithin{equation}{section}
 
 \begin{document}
-	\renewcommand{\i}			{\mathrm{i}} %\imath
-	\renewcommand{\emph}		{\textit} %\imath
-	\newcommand{\xrowht}[2][0]	{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
-	\newcommand{\ii}			{\imath}
-	\newcommand{\binomkoeff}[2]	{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
-	\newcommand{\vecc}[2]		{\left(\begin{matrix}#1\\#2\end{matrix}\right)}
-	\newcommand{\veccc}[3]		{\left(\begin{matrix}#1\\#2\\#3\end{matrix}\right)}
-	\newcommand{\pvec}[1]		{\vec{#1}\mkern2mu\vphantom{#1}} % primed Vector
-	\newcommand{\dpder}[2]		{\dfrac{\partial #1}{\partial #2}} % default size partial derivative
+	\renewcommand{\i}			{ \mathrm{i} } %\imath
+	\newcommand{\ii}			{ \imath }
+	\renewcommand{\emph}		{ \textit } %\imath
+	\newcommand{\xrowht}[2][0]	{ \addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}} }
+	\newcommand{\binomkoeff}[2]	{ \left(\begin{matrix}#1\\#2\end{matrix}\right) }
+	\newcommand{\vecc}[2]		{ \left(\begin{matrix}#1\\#2\end{matrix}\right) }
+	\newcommand{\veccc}[3]		{ \left(\begin{matrix}#1\\#2\\#3\end{matrix}\right) }
+	\newcommand{\veccT}[2]		{ \left(\begin{matrix}#1&#2\\\end{matrix}\right) }
+	\newcommand{\vecccT}[3]		{ \left(\begin{matrix}#1&#2&#3\\\end{matrix}\right) }
+	\newcommand{\pvec}[1]		{ \vec{#1}\mkern2mu\vphantom{#1} } % primed Vector (extra space to the right)
+	\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}} % (arrow from left to right)
+	\newcommand{\dpder}[2]		{ \dfrac{\partial #1}{\partial #2} } % default size partial derivative
 	\newcommand{\Nabla}			{ \vec{\nabla} }
 	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} } % TODO: Use of this is inconsistent
 	\newcommand{\const}			{ \mathrm{const.} }
-	\newcommand{\customEq}[1]	{ \stackrel{#1}{=} }
 	\newcommand*{\rom}[1]		{ \uppercase\expandafter{\romannumeral #1\relax} }
 	\newcommand{\vsp}			{ \vspace{10pt} }
 	\newcommand{\nl}			{ \vsp \newline }
 	\newcommand{\exact}			{ \hfill(exact) }
 	\newcommand{\M}				{ \phantom{-} }
 	\newcommand{\sinc}			{ \mathrm{sinc} }
-	\newcommand{\MU}			{ \SI{}{\micro \nothing} }
+	\newcommand{\MU}			{ \SI{}{\micro \nothing} } % upright µ
 	\newcommand{\e}[1]			{ \times 10^{#1} }
 	\newcommand{\NormalOrder}[1]{ \mathrm{N}\qty[#1] }
-	\newcommand{\unit}[1]		{\,\mathrm{#1}}
-	\newcommand{\mono}[1]		{{\ttfamily #1}}
+	\renewcommand{\unit}[1]		{ \,\mathrm{#1} }
+	\newcommand{\mono}[1]		{ {\ttfamily #1} }
+	\renewcommand{\o}			{ \text{\O} }
 	\newcommand{\definition}[2]{
 		\begin{tcolorbox}[colback=green!60!blue!20!white,left=1mm, coltitle=black, leftrule=0mm, rightrule=0mm, bottomrule=0mm,
 			colframe={green!60!blue!60!white}, sharp corners, title=\textbf{Definition: #1}]

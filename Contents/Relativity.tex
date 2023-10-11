@@ -63,11 +63,11 @@
 			Riemann curvature tensor\index{Riemann!Krümmungstensor}:
 			\begin{equation}
 				\begin{aligned}
-					R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu} &= \Gamma^{\lambda}_{\phantom{\lambda}\nu\sigma,\mu}
-					+ \Gamma^{\lambda}_{\phantom{\lambda}\mu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\nu\sigma}
-					-
-					\Gamma^{\lambda}_{\phantom{\lambda}\mu\sigma,\nu}
-					+ \Gamma^{\lambda}_{\phantom{\lambda}\nu\kappa}\Gamma^{\kappa}_{\phantom{\kappa}\mu\sigma} \\
+					R^{\lambda}{}_{\sigma\mu\nu} &=
+					\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma} -
+					\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma} +
+					\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma} -
+					\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma} \\
 					R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\left(
 					g_{\lambda\nu,\sigma,\mu} - g_{\lambda\mu,\sigma,\nu} + g_{\sigma\mu,\lambda,\nu} -	 g_{\sigma\nu,\lambda,\mu}
 					\right)
@@ -75,7 +75,7 @@
 					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda}
 					\right)
 					\\
-					R^{\lambda}_{\phantom{\lambda}\sigma\mu\nu}v^\sigma &= \left(D_\mu D_\nu - D_\nu D_\mu \right) v^\lambda
+					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \left(D_\mu D_\nu - D_\nu D_\mu \right) v^\lambda
 				\end{aligned}
 			\end{equation}
 
@@ -116,19 +116,21 @@
 			\begin{equation}
 				\mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det{g_{\mu\nu}(x)}\right|} R(g_{\mu\nu}(x))\;\dd^4 x
 			\end{equation}
+			
+			Einstein Tensor:
+			\begin{equation}
+				G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu}
+			\end{equation}			
 
 			\noindent
-			Einstein field equations\index{Einstein!Feldgleichungen}:
+			Einstein field equations and equivalent formulations\index{Einstein!Feldgleichungen}:
 			\begin{equation}
-				R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+				\begin{aligned}
+					G_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
+					R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
+					R_{\mu\nu} &= \frac{8\pi G}{c^4} \qty( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} ) \\
+				\end{aligned}
 			\end{equation}
-
-			\noindent
-			Alternative Formulation of the field equations:
-			\begin{equation}
-				R_{\mu\nu} = \frac{8\pi G}{c^4} \left( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} \right)
-			\end{equation}
-
 
 		\subsubsection{Geodesics\index{Geodäten}}
 			\noindent
@@ -196,40 +198,46 @@
 
 		\subsubsection{Lorentz Transformations}
 			\noindent
-			Homogeneous Lorentz transformation\index{Lorentz!Transformation} and back-transformation of tensors (defining property of Lorentz Tensors\index{Lorentz!Tensor}\index{Tensor}):
+			Transformation rules of Lorentz tensors (defining property of Lorentz tensors\index{Lorentz!Tensor}\index{Tensor}):
 			\begin{equation}
 				\begin{aligned}
-					x'^\mu &= \Lambda^{\mu}_{\nu}(\vec{v}) x^\mu \\
-					x'_\mu &= \overline{\Lambda}_\mu^{\nu}(\vec{v}) x_\nu \\
-					\Lambda^{\mu}_{\nu}(\vec{v}) = \Lambda^{\mu}_{\phantom{\mu}\nu}(\vec{v}) &= \Lambda^{\phantom{\nu}\mu}_{\nu}(\vec{v}) = \overline{\Lambda}^{\mu}_{\nu}(-\vec{v})
+					{x'}^\mu &= \Lambda^{\mu}_{\nu}(\vec{v}) x^\nu \\
+					{x'}_\mu &=  x_\nu \overline{\Lambda}_\mu^{\nu}(\vec{v}) \\
+					{T'}_{\mu_1,\mu_2,...}^{\nu_1,\nu_2,...} &=  \Lambda^{\nu_1}_{\beta_1}(\vec{v}) \Lambda^{\nu_2}_{\beta_2}(\vec{v}) ... T_{\alpha_1,\alpha_2,...}^{\beta_1,\beta_2,...} \overline{\Lambda}_{\mu_1}^{\alpha_1}(\vec{v}) \overline{\Lambda}_{\mu_2}^{\alpha_2}(\vec{v}) ... \\
 				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			Properties of the homogeneous Lorentz transformation\index{Lorentz!Transformation}:
+			\begin{equation}
+				\Lambda^{\mu}_{\nu}(\vec{v}) = \Lambda^{\mu}_{\phantom{\mu}\nu}(\vec{v}) = \Lambda^{\phantom{\nu}\mu}_{\nu}(\vec{v}) = \overline{\Lambda}^{\mu}_{\nu}(-\vec{v}) \\
 			\end{equation}
 
 			\noindent
 			General (inhomogeneous) Lorentz transformation\index{Lorentz!Transformation} (Poincaré group\index{Poincaré!Gruppe}$\mathcal{L}$): 
 			\begin{equation}
-				\begin{aligned}
-					x'^\mu &= \Lambda^\mu_{\nu} x^\nu + b^\mu \\
-					\Lambda \in \mathcal{L} &= \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-
-				\end{aligned}
+				x'^\mu = \Lambda^\mu_{\nu} x^\nu + b^\mu \\				
 			\end{equation}
-
+			
 			\noindent
 			Condition for the Lorentz transformation\index{Lorentz!Transformation} following from the constancy of the speed of light \ref{post:c}:
 			\begin{equation}
 				\Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
-				 \;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
+				\;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
 			\end{equation}
-
+			
 			\noindent
-			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation}:
+			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation} $\Lambda$:
 			\begin{itemize}
 				\item Chronus Lorentz Transformation $\mathcal{L}^\uparrow$: $\Lambda^0_0 > 1$
 				\item Antichronus Lorentz Transformation $\mathcal{L}^\downarrow$: $\Lambda^0_0 < 1$
 				\item Proper Lorentz Transformation $\mathcal{L}_+$: $\det\Lambda = 1$
 				\item Improper Lorentz Transformation $\mathcal{L}_-$: $\det\Lambda = -1$
 			\end{itemize}
-
+			\begin{equation}
+				\Lambda \in \mathcal{L} = \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-
+			\end{equation}
+			
 			\noindent
 			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes ($\vec{v}=c\vec{\beta}$):
 			\begin{equation}

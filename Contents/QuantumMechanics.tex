@@ -126,13 +126,13 @@
 			\begin{aligned}
 				\Braket{\vec{x} | \psi} &= \psi(\vec{x}) &\hspace{20pt}
 				\Braket{\vec{x} | \pvec{x}'} &= \delta(\vec{x} - \pvec{x}') \\
-				\Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) &\hspace{20pt}
+				\Braket{\vec{p} | \psi} &= \tilde{\psi}(\pvec{p}) &\hspace{20pt}
 				\Braket{\vec{p} | \pvec{p}'} &= \delta(\vec{p} - \pvec{p}') \\
 			\end{aligned}
 		\end{equation}
 		\begin{equation}
 			\begin{aligned}
-				\Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
+				\Braket{\vec{x} | \pvec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
 			\end{aligned}
 		\end{equation}
 
@@ -170,7 +170,7 @@
 			\begin{aligned}
 				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hspace{20pt}
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hspace{20pt}
-				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{x}) \\
+				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\pvec{p}) \\
 			\end{aligned}
 		\end{equation}
 
@@ -200,7 +200,7 @@
 		\end{equation}
 
 		\noindent
-		Canonical commutator relations\index{Kanonische Kommutatorrelationen}:
+		Canonical commutation relations\index{Kanonische Kommutatorrelationen} (As far as I understand it, depending on the approach, they are either axiomatic or follow from the correspondence principle which then must in turn be axiomatic):
 		\begin{equation}
 			\begin{aligned}
 				\comm{\hat{x}_i}{\hat{x}_j } &= \comm{\hat{p}_i}{\hat{p}_j} = 0 \\
@@ -300,6 +300,27 @@
 		\end{equation}
 
 		\noindent
+		Pauli\index{Pauli} Vector
+		\begin{equation}
+			V
+			= \sum_{i=1}^3 x_i \hat{\sigma}_i = x_1\hat{\sigma}_1 + x_2\hat{\sigma}_2 + x_3\hat{\sigma}_3 
+			= \left( \begin{matrix}
+				x_3 & x_1 - \i x_2 \\
+				x_1 + \i x_2 & - x_3 \\
+			\end{matrix} \right)							
+		\end{equation}
+
+		\noindent
+		Spinor\index{Spinor} representation for $\det V = 0$ (not unique)
+		\begin{equation}
+			\begin{aligned}
+				V &= \vecc{\xi^1}{\xi^2} \veccT{-\xi^2}{\xi^1} \\
+				\xi^1 &= \sqrt{x_1 - \i x_2} \quad \xi^2 = -\i \sqrt{x_1 + \i x_2} \\					
+			\end{aligned}
+		\end{equation}
+
+
+		\noindent
 		Total angular momentum operator:
 		\begin{equation}
 			\begin{aligned}
@@ -346,7 +367,7 @@
 			\noindent
 			Time evolution of observables (Heisenberg equation\index{Heisenberg!Gleichung}):
 			\begin{equation}
-				i\hbar \dv{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + i\hbar \pdv{t} \hat{A}\right)_H (t)
+				\i\hbar \dv{t} \hat{A}_H(t) = \left(\left[\hat{A}, \hat{H}\right] + \i\hbar \pdv{t} \hat{A}\right)_H (t)
 			\end{equation}
 
 			\noindent
@@ -354,7 +375,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\dv{t} \hat{\vec{x}}_H(t) &= \frac{1}{m}\hat{\vec{p}}_H(t) \\
-					\dv{t} \hat{\vec{p}}_H(t) &= - \pdv{\vec{x}} V \left(\hat{\vec{x}}_H(t)\right) \\
+					\dv{t} \hat{\vec{p}}_H(t) &= - \pdv{\hat{\vec{x}}} V \qty(\hat{\vec{x}}_H(t)) \\
 				\end{aligned}
 			\end{equation}
 
@@ -363,7 +384,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\dv{t} \langle \hat{\vec{x}} \,\rangle_{\Ket{\psi(t)}} &= \frac{1}{m} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} \\
-					\dv{t} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} &= - \left\langle \pdv{\vec{x}} V(\hat{\vec{x}}) \,\right\rangle_{\Ket{\psi(t)}} \\
+					\dv{t} \langle \hat{\vec{p}} \,\rangle_{\Ket{\psi(t)}} &= - \left\langle \pdv{\hat{\vec{x}}} V(\hat{\vec{x}}) \,\right\rangle_{\Ket{\psi(t)}} \\
 				\end{aligned}
 			\end{equation}
 
@@ -453,8 +474,8 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
-					\hat{a} :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{i}{\sqrt{2m\hbar\omega}}\hat{p} \\
-					\hat{a}^\dagger :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+					\hat{a} :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+					\hat{a}^\dagger :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
 				\end{aligned}
 			\end{equation}
 
@@ -463,7 +484,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{x} &= \sqrt{\frac{\hbar}{2m\omega}}\left(\hat{a}^\dagger + \hat{a} \right) \\
-					\hat{p} &= i\sqrt{\frac{m\hbar\omega}{2}}\left(\hat{a}^\dagger - \hat{a} \right) \\
+					\hat{p} &= \i\sqrt{\frac{m\hbar\omega}{2}}\left(\hat{a}^\dagger - \hat{a} \right) \\
 				\end{aligned}
 			\end{equation}
 
@@ -559,7 +580,7 @@
 		\noindent
 		Lippmann-Schwinger equation\index{Lippmann!-Schwinger Gleichung}
 		\begin{equation}
-			\Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta\rightarrow 0} G_0(\epsilon_{\vec{p},\mu}\pm i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
+			\Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta\rightarrow 0} G_0(\epsilon_{\vec{p},\mu}\pm \i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
 		\end{equation}
 
 		\noindent

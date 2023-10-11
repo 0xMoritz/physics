@@ -5,7 +5,7 @@
 			\noindent
 			Definition:
 			\begin{equation}
-				e^x=\exp{(x)}=\lim_{n\rightarrow \infty}\left(1+\frac{x}{n}\right)^n
+				e^x=\exp(x)=\lim_{n\rightarrow \infty}\qty(1+\frac{x}{n})^n
 			\end{equation}
 
 		\subsubsection{Trigonometric Functions}
@@ -13,23 +13,22 @@
 			Identities:
 			\begin{equation}
 				\begin{split}
-					e^{\i x}&=\cos x+i\sin x \\
+					e^{\i x}&=\cos x+\i\sin x \\
 					1&=\sin^{2}x+\cos^{2}x \\
 					\cos{x}&=\frac{e^{\i x}+e^{-\i x}}{2} \\
-					\sin{ x}&=\frac{e^{\i x}-e^{-\i x}}{2i} \\
+					\sin{ x}&=\frac{e^{\i x}-e^{-\i x}}{2\i} \\
 				\end{split}
 			\end{equation}
 
 			\noindent
-
 			Addition formulae\index{Additionstheoreme}:
 			\begin{equation}
 				\begin{split}
-					\sin\left( x\pm y\right)&=\sin\left( x\right)\cos\left( y\right)\pm\cos\left( x\right)\sin\left( y\right) \\
-					\cos\left( x\pm y\right)&=\cos\left( x\right)\cos\left( y\right)\mp\sin\left( x\right)\sin\left( y\right) \\
-					2\cos( x)\cos( y)&=\cos( x+ y)+\cos( x- y) \\
-					2\sin( x)\cos( y)&=\sin( x+ y)+\sin( x- y) \\
-					2\sin( x)\sin( y)&=\cos( x- y)-\cos( x+ y) \\
+					\sin\qty( x\pm y)&=\sin\qty(xt)\cos\qty(y)\pm\cos\qty(x) \sin\qty(y) \\
+					\cos\qty( x\pm y)&=\cos\qty(xt)\cos\qty(y)\mp\sin\qty(x) \sin\qty(y) \\
+					2 \cos(x) \cos(y) &= \cos(x + y) + \cos(x - y) \\
+					2 \sin(x) \cos(y) &= \sin(x + y) + \sin(x - y) \\
+					2 \sin(x) \sin(y) &= \cos(x - y) - \cos(x + y) \\
 				\end{split}
 			\end{equation}
 
@@ -80,8 +79,8 @@
 					1&=\cosh^2{x}-\sinh^2{x} \\
 					\cosh{ x}&=\frac{e^{ x}+e^{- x}}{2} \\
 					\sinh{ x}&=\frac{e^{ x}-e^{- x}}{2} \\
-					\sinh( x) &= -i \sin(i x)\\
-					\cosh( x) &= \cos(i x)
+					\sinh( x) &= -\i \sin(\i x)\\
+					\cosh( x) &= \cos(\i x)
 				\end{split}
 			\end{equation}
 
@@ -187,7 +186,7 @@
 
 			\noindent
 			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \rightarrow \mathbb{C}$ holomorphic,
-			with poles $a_1, a_2, .., a_n$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
+			with poles $a_1, a_2, .., a_n$ inside $\gamma$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
 				\int_\gamma f(z)\,\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
 			\end{equation}
@@ -398,8 +397,8 @@
 			Relation between complex and real coefficients:
 			\begin{equation}
 				\begin{array}{clc}
-					c_0 = \dfrac{a_0}{2} & a_k = c_k+c_{-k} & \phantom{_{-}}c_k = \dfrac{1}{2}\left(a_k-ib_k\right) \\ [6pt]
-					& b_k = \dfrac{1}{i}\left(c_{-k}-c_{k}\right) & c_{-k} = \dfrac{1}{2}\left(a_k+ib_k\right) \\
+					c_0 = \dfrac{a_0}{2} & a_k = c_k+c_{-k} & \phantom{_{-}}c_k = \dfrac{1}{2}\left(a_k-\i b_k\right) \\ [6pt]
+					& b_k = \dfrac{1}{\i}\left(c_{-k}-c_{k}\right) & c_{-k} = \dfrac{1}{2}\left(a_k+\i b_k\right) \\
 				\end{array}
 			\end{equation}
 
@@ -416,8 +415,8 @@
 			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
 			\begin{equation}
 				\begin{aligned}
-					\mathcal{F}\left(xf\right)(k) &= \phantom{-}i \pdv{k}\tilde{f}(k) \\
-					\mathcal{F}^{-1}(k\tilde{f})(x) &= -i\pdv{x}f(x) \\
+					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
+					\mathcal{F}^{-1}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
 					\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x &=
 					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k \\
 					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k \\
@@ -476,7 +475,7 @@
 	\subsection{Differential Equations}
 		\subsubsection{General}
 			\noindent
-			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+iv(z)$ with $z=x+iy$, where $x,y,u,v\in\mathbb{R}$)
+			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+\i v(z)$ with $z=x+\i y$, where $x,y,u,v\in\mathbb{R}$)
 			\begin{equation}
 				\begin{aligned}
 					\pdv{u}{x} &= \phantom{-}\pdv{v}{y} \\
@@ -512,7 +511,7 @@
 			\begin{equation}
 				\begin{aligned}
 					m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x &= F_0 e^{-\i\omega t} \\
-					x(t) &= \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-i\gamma\omega_0} e^{-\i\omega t}
+					x(t) &= \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-\i \gamma\omega_0} e^{-\i\omega t}
 				\end{aligned}
 			\end{equation}
 
@@ -725,31 +724,46 @@
 			\end{equation}
 
 
-	\subsection{Vector analysis}
-		\subsubsection{Integration on Manifolds}
-			\noindent
-			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continuously differentiable alternating differential form of order $n-1$):
+	\subsection{Vector Analysis}
+		\subsubsection{Vector Spaces}
+			Relation of types of Vector spaces:
 			\begin{equation}
-				\int_\mathcal{M} \dd \omega = \int_{\partial\mathcal{M}} \omega
+				\underbrace{\text{Hilbert Space}\;\mathcal{H}}_{\exists\; \text{scalar product}} \subset \underbrace{\text{Banach Space}\;\mathcal{B}}_{\exists\; \text{complete norm}} \subset \underbrace{\text{Normed Vector Space}\;V_{\norm{\cdot}}}_{\exists\; \text{norm} \norm{\cdot} } \subset \text{Vector space}
 			\end{equation}
 
 			\noindent
-			Divergence theorem / Gauß theorem\index{Gauß!Integralsatz}:
-			\begin{equation}
-				\oint_{\partial\mathcal{V}}\vec{f}\cdot\vec{n}\,\mathrm{d}A=\int_{\mathcal{V}}\vec{\nabla}\cdot\vec{f}\;\mathrm{d}V
-			\end{equation}
+			Vector space\index{Vektorraum} axioms $V(\mathbb{K})$:
+			\begin{itemize}
+				\item Closure: $\alpha \cdot \vec{v} + \beta \cdot \vec{w} \in V \quad \forall \vec{v}, \vec{w} \in V; \forall \alpha, \beta \in \mathbb{K}$
+				\item $\exists$ ``$+$'': Abelian group for addition
+				\item $\exists$ ``$\cdot$'': associative and distributive scalar multiplication with neutral element
+			\end{itemize}
 
 			\noindent
-			Green's theorem\index{Green!Integralsatz}:
+			Dual space\index{Dualraum} $V^{*}(\mathbb{K})$ for $V(\mathbb{K})$:
 			\begin{equation}
-				\oint_{\partial\mathcal{A}}\vec{f}\cdot\mathrm{d}\vec{s}=\int_{\mathcal{A}}\left(\vec{\nabla}\times\pvec{f}\right)\cdot\vec{n}\;\mathrm{d}A
+				\begin{aligned}
+					&\text{Basis of $V$}: \mathcal{B} = \set{ \vec{e}_1,...,\vec{e}_n } \subset V \\
+					&\text{Basis of $V^{*}$}: \mathcal{B}^{*} = \set{ \cev{e}^1,...,\cev{e}^n } \subset V^{*} \\
+					&\cev{e}^i \vec{e}_i = \vec{e}_i \cev{e}^i = 1 \\
+					&g_{\mu\nu} = g_{\nu\mu} = \vec{e}_\mu\cdot\vec{e}_\nu\\
+					&g^{\mu\nu} = g^{\nu\mu} = \cev{e}^\mu\cdot\cev{e}^\nu \\
+					&g_{\mu\lambda} g^{\lambda\nu} = g^{\nu\lambda}g_{\lambda\mu} = \delta_\mu^\nu \\
+				\end{aligned}
 			\end{equation}
+
+			% \noindent 
+			% $(m,n)$-Tensor $T$: 
+			% \begin{equation}
+			% 	T:
+			% \end{equation}
+			In vector analysis: vector $\rightarrow$ vector field, dual vector $\rightarrow$ differential form.
 
 		\subsubsection{Vector Identities}
 			\noindent
 			Graßmann identity\index{Graßmann!Identität}\index{bac-cab Regel}:
 			\begin{equation}
-				\vec{a}\times\big(\vec{b}\times\vec{c}\big) = \vec{b}\big(\vec{a}\cdot\vec{c}\big) - \vec{c}\big(\vec{a}\cdot\vec{b}\big)
+				\vec{a}\times\big(\vec{b}\times\pvec{c}\big) = \vec{b}\big(\vec{a}\cdot\pvec{c}\big) - \vec{c}\big(\vec{a}\cdot\pvec{b}\big)
 			\end{equation}
 
 			\noindent
@@ -802,6 +816,25 @@
 				\exists U(\vec{r}): \vec{v}(\pvec{r}) = -\Nabla U(\pvec{r})
 				\Leftrightarrow \vec{v}(\pvec{r}) \text{ is conservative }
 				\Leftrightarrow \Nabla\times\vec{v}(\pvec{r}) = 0
+			\end{equation}
+
+		\subsubsection{Integration on Manifolds}
+			\noindent
+			General Stokes theorem\index{Stokes!Satz} ($\mathcal{M}$ orientable $n$-dimensional Manifold, $\omega$ continuously differentiable alternating differential form of order $n-1$):
+			\begin{equation}
+				\int_\mathcal{M} \dd \omega = \int_{\partial\mathcal{M}} \omega
+			\end{equation}
+
+			\noindent
+			Divergence theorem / Gauß theorem\index{Gauß!Integralsatz}:
+			\begin{equation}
+				\oint_{\partial\mathcal{V}}\vec{f}\cdot\vec{n}\,\mathrm{d}A=\int_{\mathcal{V}}\vec{\nabla}\cdot\vec{f}\;\mathrm{d}V
+			\end{equation}
+
+			\noindent
+			Green's theorem\index{Green!Integralsatz}:
+			\begin{equation}
+				\oint_{\partial\mathcal{A}}\vec{f}\cdot\mathrm{d}\vec{s}=\int_{\mathcal{A}}\left(\vec{\nabla}\times\pvec{f}\right)\cdot\vec{n}\;\mathrm{d}A
 			\end{equation}
 
 		\subsubsection{Coordinate Transformations}
