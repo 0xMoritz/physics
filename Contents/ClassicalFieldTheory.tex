@@ -1,38 +1,60 @@
 % !TEX root = ../physics.tex
 \section{Classical field theory\index{Klassische Feldtheorie}}
 	\subsection{Lagrange Formalism}
-		\subsubsection{Basics}
-			\noindent
-			Action\index{Wirkung} and Lagrange density\index{Lagrange!Dichte} $\mathcal{L}$:
+		\subsubsection{Scalar Field Theory}
+			\noindent 
+			Action for a scalar field $\phi(x)$ (\ie $\phi(x)\rightarrow P(\phi(x))=\phi(x)$, where $P\in\mathcal{P}$ is a Poincaré Transform, $\mathcal{L}$ is the Lagrange density):
 			\begin{equation}
-				\mathcal{S} = \int_{\mathbb{R}^4} \mathcal{L}(A^\nu(x),\partial_\mu A^\nu(x)) \;\dd^4 x
+				\mathcal{S}\qty[\phi(x)] = \int_{\mathbb{R}^4} \mathcal{L}(\phi(x),\partial_\mu \phi(x)) \;\dd^4 x				
 			\end{equation}
-
+			
 			\noindent
 			Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}\index{Lagrange!Gleichung}:
 			\begin{equation}
 				\delta\mathcal{S} = 0
-				\;\Rightarrow\; \partial_\mu \qty(\pdv{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}) - \pdv{\mathcal{L}}{A^\nu} = 0 \quad\forall \nu
+				\;\Rightarrow\; \partial_\mu \qty(\pdv{\mathcal{L}}{\left(\partial_\mu \phi\right)}) - \pdv{\mathcal{L}}{\phi} = 0
+			\end{equation}
+			
+			\noindent
+			Classical Klein-Gordon Equation\index{Klein!-Gordon Gleichung} for a free Field $\mathcal{L}(\phi(x)) = \frac{1}{2} \partial_\mu\phi \partial^\mu\phi - \frac{1}{2}m^2\phi^2$:
+			\begin{equation}
+				\delta S = 0 \quad \Rightarrow \quad \qty(\partial_\mu \partial^\mu + m^2)\phi = 0
 			\end{equation}
 
+			% \noindent
+			% Action\index{Wirkung} of a vector? Field Theory:
+			% \begin{equation}
+			% 	\mathcal{S} = \int_{\mathbb{R}^4} \mathcal{L}(A^\nu(x),\partial_\mu A^\nu(x)) \;\dd^4 x
+			% \end{equation}
+
+			% \noindent
+			% Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}\index{Lagrange!Gleichung}:
+			% \begin{equation}
+			% 	\delta\mathcal{S} = 0
+			% 	\;\Rightarrow\; \partial_\mu \qty(\pdv{\mathcal{L}}{\left(\partial_\mu A^\nu\right)}) - \pdv{\mathcal{L}}{A^\nu} = 0 \quad\forall \nu
+			% \end{equation}
 		\subsubsection{Noether's Theorem\index{Noether!Theorem}}
 			\noindent
-			Continuous transformation:
+			Continuous transformation (with a continuous infinitesimal variation $\delta_\varepsilon \phi$, characterized by an infinitesimal variable $\varepsilon$):
 			\begin{equation}
-				\phi(x)\rightarrow\phi'(x) = \phi(x) + \varepsilon \delta \phi(x)
+				\phi(x)\rightarrow\phi'(x) = \phi(x) + \delta_\varepsilon \phi(x)
 			\end{equation}
 			
 			\noindent
 			Condition of invariance\index{Invarianzbedingung}:
 			\begin{equation}
-				\delta\mathcal{L} = \partial_\mu F^\mu(\phi)
+				\delta\mathcal{L} = \partial_\mu F^\mu(\phi) 
+				\quad \Rightarrow \quad \mathcal{S} \sim \mathcal{S}'
 			\end{equation}
 
 			\noindent
-			Resulting conserved current and conserved charge:
+			Resulting conserved current/Noether current\index{Noether!-Strom} $j^{\mu}$ and conserved charge $Q$ (Note: $\Delta \phi = \eval{\pdv{\delta_\varepsilon \phi}{\varepsilon}}_{\varepsilon=0}$):
 			\begin{equation}
 				\begin{aligned}
-					S \sim S' \;\Rightarrow\;\partial_\mu j^\mu = 0;&\; j^\mu \qty( \phi(x), \partial_\nu\phi(x) ) = \pdv{\mathcal{L}}{\left(\partial_\mu \phi\right)}\delta\phi - F^\mu(\phi) \\
-					\dv{Q}{t} = 0;&\; Q = \int_{\mathbb{R}^3} j^0\;\dd^3\vec{x}
+					\mathcal{S} \sim \mathcal{S}' \quad\Rightarrow\quad 
+					\partial_\mu j^\mu &= 0;\quad
+					j^\mu \qty( \phi(x), \partial_\nu\phi(x) ) = \pdv{\mathcal{L}}{\left(\partial_\mu \phi\right)}\Delta\phi - F^\mu(\phi) \\
+					\dv{Q}{t} &= 0; \quad Q = \int_{\mathbb{R}^3} j^0\;\dd^3\vec{x} \\
 				\end{aligned}
 			\end{equation}
+			Note: The conserved current is only defined up to divergence $j^\mu \sim \j^\mu + K^\mu$ for $\partial_\mu K^\mu = 0$.
