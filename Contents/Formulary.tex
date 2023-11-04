@@ -159,6 +159,16 @@
 				\dv{t}\det A(t) = \tr \qty(A^T \dv{t} A)
 			\end{equation}
 
+			\noindent
+			Definition functional differential and properties of the functional derivative (of a functional $\mathcal{F}$):
+			\begin{equation}
+				\begin{aligned}
+					\delta \mathcal{F}\qty[\phi] &= \lim_{\varepsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi + \delta_\varepsilon\phi] - \mathcal{F}\qty[\phi]}{\varepsilon} = \eval{\dv{\mathcal{F}\qty[\phi+\delta_\varepsilon\phi]}{\varepsilon}}_{\varepsilon=0}\\
+					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
+					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta_\varepsilon\phi(y)\;\dd y
+				\end{aligned}
+			\end{equation}
+
 		\subsubsection{Integration}
 			\noindent
 			Leibniz integral rule\index{Leibniz!Regel für Parameterintegrale}:
