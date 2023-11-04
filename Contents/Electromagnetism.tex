@@ -36,8 +36,8 @@
 		\begin{equation}
 			\mathcal{L} = -\frac{1}{4\mu_0}F^{\mu\nu} F_{\mu\nu} - A_\mu J^\mu
 		\end{equation}
+		Note: In Gaussian cgs units, the dimensions of quantities change due to the choice $\mathcal{L} = -\frac{1}{4\pi}F^{\mu\nu} F_{\mu\nu} - \frac{1}{c}A_\mu J^\mu$.
 
-		\noindent
 		General field equations without gauge \index{Entwicklungsgleichung}:
 		\begin{equation}
 			\Box A^\mu-\partial^\mu\left(\partial_\nu A^\nu\right) = \partial_\nu F^{\nu\mu} =  \mu_0 J^\mu
@@ -262,10 +262,22 @@
 			\end{equation}
 
 			\noindent
-			Larmor formula\index{Larmor!Formel} (Emitted energy of a non-relativistic particle, retarded acceleration $a(\tilde{t}$):
+			Relativistic Larmor formulas\index{Larmor!Formel} for the power emitted per solid angle and total emitted power (Emitted energy of a non-relativistic particle measured in the retarded time, retarded acceleration $a(\tilde{t}$):
 			\begin{equation}
-				P(t) = \frac{q^2 \mu_0}{6\pi c}a^2(\tilde{t})
+				\begin{aligned}
+					\pdv{P}{\Omega} &= \frac{q^2 \varepsilon_0}{\qty(1-\hat{e}\cdot\vec{\beta})^5} \left| \hat{e}\times\qty[(\hat{e}-\vec{\beta}) \times \dot{\vec{\beta}}] \right|^2 \\
+					P &= TODO
+				\end{aligned}
 			\end{equation}
+
+			\noindent 
+			Classical limit:
+			\begin{equation}
+				\begin{aligned}
+					P(t) &= \frac{q^2 \mu_0}{6\pi c}a^2(\tilde{t}) \\
+				\end{aligned}
+			\end{equation}
+			
 
 		\subsubsection{Electromagnetic Waves in Matter}
 			\noindent
@@ -412,10 +424,14 @@
 
 		\subsubsection{Liénard-Wiechert Potentials\index{Liénard!-Wiechert Potentiale}}
 			\noindent
-			Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale} (Solutions of the field equations for a moving point charge at $\vec{u}(\tilde{t})$ and velocity $\vec{v}(\tilde{t})$; retarded time $\tilde{t}$):
+			Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale} (Solutions of the field equations for a moving point charge at $\vec{r}_c(\tilde{t})$ and velocity $\vec{v}(\tilde{t})$; retarded time $\tilde{t}$, $\vec{R}= \vec{r}-\vec{r}_c(\tilde{t})$):
+			\begin{equation}
+				A^\mu = \frac{1}{4\pi\varepsilon_0} \frac{q u^\mu}{c R \qty(1 - \vec{\beta}\cdot\vec{R}/R) }
+			\end{equation}
+			Equivalently
 			\begin{equation}
 				\begin{aligned}
-					\phi(t,\vec{r}) & =\frac{q c}{4\pi \epsilon_0}\frac{1}{c \left|\vec{r}-\vec{u}(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{u}(\tilde{t})\right)} \\
+					\phi(t,\vec{r}) & =\frac{q c}{4\pi \epsilon_0}\frac{1}{c \left|\vec{r}-\vec{r}_c(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{r}_c(\tilde{t})\right)} \\
 					\vec{A}(t,\vec{r}) &= \frac{1}{c^2}\vec{v}(\tilde{t})\phi(t,\vec{r}) \\
 				\end{aligned}
 			\end{equation}
