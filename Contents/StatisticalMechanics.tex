@@ -1,11 +1,11 @@
 % !TEX root = ../physics.tex
 \section{Statistical Mechanics}
 	\subsection{General}
-			\noindent
-			Equipartition theorem\index{Äquipartitionstheorem} $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
-			\begin{equation}
-				\overline{ z_i \pdv{H}{z_j}} = k_B T \delta_{ij}
-			\end{equation}
+		\noindent
+		Equipartition theorem\index{Äquipartitionstheorem} $(z_1,...,z_{2f}) = (q_1, p_1, ..., q_f, p_f)$:
+		\begin{equation}
+			\overline{ z_i \pdv{H}{z_j}} = k_B T \delta_{ij}
+		\end{equation}
 
 		\subsubsection{Definition of Entropy}
 			\noindent
@@ -96,8 +96,15 @@
 					\hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\,\dd\psi
 				\end{aligned}
 			\end{equation}
+			
+			\subsubsection{Canonical Ensemble}
+			A canonical ensemble is the statistical ensemble that represents the possible states of a mechanical system in thermal equilibrium with a heat bath at a fixed temperature.
 
-		\subsubsection{Canonical Ensemble}
+			Density matrix in the canonical ensemble:
+			\begin{equation}
+				\hat{\rho} = \frac{1}{Z_N} e^{-\beta \hat{H}} = e^{-\beta (F-\hat{H})}
+			\end{equation}
+
 			\noindent
 			Canonical partition function ($\beta = \frac{1}{k_B T}$):
 			\begin{equation}
@@ -121,7 +128,14 @@
 			\end{equation}
 
 		\subsubsection{Grand Canonical Ensemble}
-			\noindent
+			The grand canonical ensemble is the statistical ensemble that represents the possible states of a mechanical system in thermal and chemical equilibrium with a heat bath and particle reservoir.
+			
+			Density matrix for the grand canonical ensemble
+			\begin{equation}
+				\hat{\rho} = \frac{1}{\mathcal{Z}} e^{-\beta (\hat{H} - \mu \hat{N})}
+				= e^{-\beta (\Omega + \hat{H} - \mu \hat{N})}
+			\end{equation}
+
 			Grand canonical partition function (The trace has to be calculated in Fock space\index{Fock!Raum} for the quantum mechanical case):
 			\begin{equation}
 				\mathcal{Z} = \sum_N z^N Z_N(\beta) = \langle e^{-\beta(H-\mu N)} \rangle
