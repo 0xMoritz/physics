@@ -349,9 +349,34 @@
 				\begin{aligned}
 					\comm{\hat{A}}{\hat{B}\hat{C}}
 					&= \hat{B}\comm{\hat{A}}{\hat{C}} + \comm{\hat{A}}{\hat{B}}\hat{C} \\
-					\comm{\hat{A}}{f(\hat{B})}
-					&= \comm{\hat{A}}{\hat{B}}\dv{f}{\hat{B}}(\hat{B})
+					\acomm{\hat{A}}{\hat{B}\hat{C}}
+					&= \hat{B}\acomm{\hat{A}}{\hat{C}} + \acomm{\hat{A}}{\hat{B}}\hat{C} \\
 				\end{aligned}
+				\hspace{30pt}
+				\begin{aligned}
+					\comm{\hat{A}}{\hat{B}}^\dagger &= -\comm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
+					\acomm{\hat{A}}{\hat{B}}^\dagger &= \acomm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
+				\end{aligned}
+			\end{equation}				
+
+			\noindent
+			Commutators of functions (assuming $\comm{\comm{\hat{A}}{\hat{B}}}{\hat{B}}=0$)
+			\begin{equation}
+				\comm{\hat{A}}{f(\hat{B})}
+				= \comm{\hat{A}}{\hat{B}}\dv{f}{\hat{B}}(\hat{B}) \\
+			\end{equation}
+
+			\noindent
+			Jacobi identity\index{Jacobi!Identität}:
+			\begin{equation}
+				0 = \comm{\hat{A}}{\comm{\hat{B}}{\hat{C}}} + \comm{\hat{B}}{\comm{\hat{C}}{\hat{A}}} + \comm{\hat{C}}{\comm{\hat{A}}{\hat{B}}}
+			\end{equation}
+			
+
+			\noindent
+			Baker-Campbell-Hausdorff\index{Baker!-Campbell-Hausdorff formel} formula (assuming $\comm{\hat{A}}{\comm{\hat{A}}{\hat{B}}} = \comm{\hat{B}}{\comm{\hat{B}}{\hat{A}}} = 0$):
+			\begin{equation}
+				\exp(\hat{A})\exp(\hat{B}) = \exp(\hat{B}) \exp(\hat{A}) \exp(\comm{\hat{A}}{\hat{B}})
 			\end{equation}
 
 		\subsubsection{Operators in the Heisenberg Picture\index{Heisenberg!Bild}}
