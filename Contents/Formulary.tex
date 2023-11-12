@@ -160,12 +160,13 @@
 			\end{equation}
 
 			\noindent
-			Definition functional differential and properties of the functional derivative (of a functional $\mathcal{F}$):
+			Definition and properties functional derivatives ($\mathcal{F}$ is a functional, $\phi(x)$ is a function and $\delta \phi(x)$ is an arbitrary variation of $\phi(x)$. Note that the functional derivative of a functional becomes a function. All important properties are in analogy to regular derivatives.):
 			\begin{equation}
 				\begin{aligned}
-					\delta \mathcal{F}\qty[\phi] &= \lim_{\varepsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi + \delta_\varepsilon\phi] - \mathcal{F}\qty[\phi]}{\varepsilon} = \eval{\dv{\mathcal{F}\qty[\phi+\delta_\varepsilon\phi]}{\varepsilon}}_{\varepsilon=0}\\
+					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\varepsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi(x) + \varepsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\varepsilon} \\
 					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
-					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta_\varepsilon\phi(y)\;\dd y
+					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\;\dd y \\
+					\dv{z} \fdv{\psi(y)} \phi(x) &= \fdv{\psi(y)} \dv{z} \phi(x) \\
 				\end{aligned}
 			\end{equation}
 
