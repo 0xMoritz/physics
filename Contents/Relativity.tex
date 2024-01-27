@@ -20,6 +20,8 @@
 				\label{post:c}\nl
 			\textbf{Third Postulate}: Strong Equivalence Principle\index{Starkes Äquivalenzprinzip} \newline
 				\indent \textit{Spacetime is locally flat, \ie the laws of special relativity hold in local inertial frames of reference.}  \vsp
+			
+			TODO $\partial_\mu g_{\mu\nu} = 0$ locally. 
 
 	\subsubsection{Metric Tensor\index{Metrischer Tensor}}
 		Metric Tensor and Lorentz invariant spacetime interval:
@@ -32,7 +34,10 @@
 			\noindent
 			Partial derivatives:
 			\begin{equation}
-				\pdv{\phi}{x^\mu} = \partial_\mu \phi = \phi_{,\mu}
+				\begin{aligned}
+					\pdv{\phi}{x^\mu} &= \partial_\mu \phi = \phi_{,\mu} \\
+					\partial_\mu &= \qty(\pdv{x^0}, \pdv{x^1}, \pdv{x^2}, \pdv{x^3}) \\					
+				\end{aligned}
 			\end{equation}
 
 			\noindent
@@ -52,12 +57,12 @@
 			\noindent
 			Covariant derivative\index{Kovariante Ableitung}:
 			\begin{equation}
-				D_\lambda T^{\alpha ...}_{\beta...} =
+				\nabla_\lambda T^{\alpha ...}_{\beta...} =
 				T^{\alpha ...}_{\beta...;\lambda} = T^{\alpha...}_{\beta ...,\lambda}
 				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
 				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
 			\end{equation}
-			The second term vanishes in all free falling frames of reference and the covariant derivative becomes a partial derivative,
+			The second term vanishes in all free falling frames of reference and the covariant derivative becomes a partial derivative.
 
 			\noindent
 			Riemann curvature tensor\index{Riemann!Krümmungstensor}:
@@ -75,7 +80,7 @@
 					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda}
 					\right)
 					\\
-					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \left(D_\mu D_\nu - D_\nu D_\mu \right) v^\lambda
+					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \left(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu \right) v^\lambda
 				\end{aligned}
 			\end{equation}
 
@@ -105,7 +110,7 @@
 			\end{equation}
 
 			\noindent
-			Curvature scalar\index{Krümmungsskalar}:
+			Curvature scalar\index{Krümmungsskalar}\index{Ricci!Skalar}:
 			\begin{equation}
 				R = R^\mu_{\phantom{\mu}\mu}
 			\end{equation}
@@ -241,17 +246,20 @@
 			\noindent
 			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes ($\vec{v}=c\vec{\beta}$):
 			\begin{equation}
-				\Lambda(\vec{v}) = \left( \begin{matrix}
-					\gamma & -\gamma\dfrac{\pvec{v}^T}{c} \\[6pt]
+				\begin{aligned}
+					\Lambda^{\mu}_{\nu}(\vec{v}) 
+					=& \left( \begin{matrix}
+						\gamma & -\gamma\dfrac{\vec{v}^T}{c} \\[6pt]
 					-\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
-					\end{matrix} \right)
-					=
+					\end{matrix} \right)^{\mu}_{\nu} \\
+					=&
 					\left(\begin{matrix}
 						\gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
 						-\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
 						-\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
 						-\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
-					\end{matrix}\right)
+					\end{matrix}\right)^{\mu}_{\nu}
+				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Implications of Special Relativity}

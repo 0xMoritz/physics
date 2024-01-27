@@ -63,10 +63,10 @@
 		Accelerated system $K'$ and inertial system $K$
 		\begin{equation}
 			\begin{aligned}
-				\pvec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hspace{30pt}
+				\vec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hsp
 				m\dv{\vec{p}}{t} &= \vec{F} \\
-				\dv{\vec{x}'}{t} &= \dv{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hspace{30pt}
-				m\dv{\pvec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
+				\dv{\vec{x}'}{t} &= \dv{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hsp
+				m\dv{\vec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
 			\end{aligned}
 		\end{equation}
 
@@ -74,10 +74,10 @@
 		Fictitious forces\index{Scheinkraft}: displacement force\index{Scheinkraft!Translationskraft} $\vec{F}_T$, centrifugal force\index{Scheinkraft!Zentrifugalkraft} $\vec{F}_Z$, Euler force\index{Scheinkraft!Linearkraft} $\vec{F}_L$, Coriolis force\index{Scheinkraft!Corioliskraft} $\vec{F}_C$
 		\begin{equation}
 			\begin{aligned}
-				\vec{F}_T &= -m\dv[2]{\vec{x}_0}{t} &\hspace{30pt}
-				\vec{F}_Z &= -m\vec{\omega}\times\qty(\vec{\omega}\times\pvec{x}') \\
-				\vec{F}_L &= -m\dv{\vec{\omega}}{t}\times\pvec{x}' &\hspace{30pt}
-				\vec{F}_C &= -2m\vec{\omega}\times\dv{\pvec{x}'}{t} \\
+				\vec{F}_T &= -m\dv[2]{\vec{x}_0}{t} &\hsp
+				\vec{F}_Z &= -m\vec{\omega}\times\qty(\vec{\omega}\times\vec{x}') \\
+				\vec{F}_L &= -m\dv{\vec{\omega}}{t}\times\vec{x}' &\hsp
+				\vec{F}_C &= -2m\vec{\omega}\times\dv{\vec{x}'}{t} \\
 			\end{aligned}
 		\end{equation}
 
@@ -96,9 +96,9 @@
 		\end{equation}
 
 		\noindent
-		Field equations for the Newtonian Gravitational potential\index{Newton!Gravitationspotential} $\phi$:
+		Poisson Equation for gravity\index{Poisson!Gleichung-Gravitation}/field equations for the Newtonian gravitational potential\index{Newton!Gravitationspotential} $\phi$ :
 		\begin{equation}
-			\Nabla^2\phi=-4\pi G\rho
+			\Nabla^2\phi = 4\pi G\rho
 		\end{equation}
 
 	\subsection{Lagrange-Formalism}
@@ -130,21 +130,21 @@
 			\noindent
 			Hamiltonian\index{Hamilton!Funktion}:
 			\begin{equation}
-				\mathcal{H}(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
+				H(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
 			\end{equation}
 
 			\noindent
 			Hamilton's equations\index{Hamilton!Bewegungsgleichungen}:
 			\begin{equation}
 				\begin{aligned}
-					\dot{q}_k &= \phantom{-}\pdv{\mathcal{H}}{p_k}, &&\hspace{30pt}
-					\dot{p}_k &= -\pdv{\mathcal{H}}{q_k}, &&\hspace{30pt}
-					\pdv{\mathcal{H}}{t} &= -\pdv{\mathcal{L}}{t}
+					\dot{q}_k &= \pdv{H}{p_k}, &&\hsp
+					\dot{p}_k &= -\pdv{H}{q_k}, &&\hsp
+					\pdv{H}{t} &= -\pdv{\mathcal{L}}{t}
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Poisson-brackets:
+			Poisson-brackets (in Quantum Mechanics $\qty{A,B} \rightarrow -\frac{\i}{\hbar}\Avg{\comm{A}{B}}$):
 			\begin{equation}
 				\begin{aligned}
 					\qty{A,B} &= \sum_k \left(
@@ -152,6 +152,24 @@
 					\right) \\
 					\dv{A}{t} &= \qty{A, H} + \pdv{A}{t}
 				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Canonical transformations\index{Kanonische Transformation} (transformations that leave the Hamilton equations invariant):
+			\begin{equation}
+				\begin{aligned}
+					q_i &= q_i(q_i',p_i',t) &\hsp
+					p_i &= p_i(q_i',p_i',t) \\
+					H(q_i,p_i,t) &= H'(q_i',p_i',t) &\hsp
+					\mathcal{L}(q_i,\dot{q}_i,t) &= \mathcal{L}'(q_i',\dot{q}_i',t) \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Liouville's theorem\index{Liouville!Theorem}, \ie the distribution function is constant along any trajectory in phase space. (phase space density $\rho$, for quantum mechanical analogue see Eq.~\ref{eq:VonNeumannEquation}):
+			\begin{equation}
+				\label{eq:LiouvilleTheorem}
+				\dv{t} \rho(t) = \pdv{\rho}{t} + \qty{\rho, H} = 0
 			\end{equation}
 
 		\subsubsection{Noether's Theorem\index{Noether!Theorem}}
@@ -185,8 +203,8 @@
 			Gravitational parameter \index{Gravitationsparameter} $\mu$, eccentricity\index{Exzentrizität} $\epsilon$ and $\rho_0$:
 			\begin{equation}
 				\begin{aligned}
-					\mu &= G m &\hspace{30pt}
-					\epsilon &= \sqrt{1+\frac{2 E \vec{L}^2}{m \mu^2}} &\hspace{30pt}
+					\mu &= G m &\hsp
+					\epsilon &= \sqrt{1+\frac{2 E \vec{L}^2}{m \mu^2}} &\hsp
 					\rho_0 &= \frac{\vec{L}^2}{m\mu} \\
 				\end{aligned}
 			\end{equation}
@@ -194,7 +212,7 @@
 			\noindent
 			Lagrangian (Gravitational parameter\index{Gravitationsparameter} $\mu$, for central body approximation $\mu=GM$, see \ref{Sec:AstronomicalConstants}):
 			\begin{equation}
-				\mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\pvec{r}}^2 + \frac{\mu}{r}
+				\mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\vec{r}}^2 + \frac{\mu}{r}
 			\end{equation}
 
 			\noindent

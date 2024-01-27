@@ -1,54 +1,173 @@
 % !TEX root = ../physics.tex
 \section{Astrophysics\index{Astrophysik}}
-	Differing from the rest of this document, in this section, Gaussian cgs units and the metric signature $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ are used. For Fourier transforms the factors $(2\pi)^{-d}$ are placed in the back-transform.
+	\subsection{Radiation Processes}
+		Differing from the rest of this document, in this section, Gaußian cgs units and the metric signature $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ are used. For Fourier transforms the factors $(2\pi)^{-d}$ are placed in the back-transform.
 
-	Thomson cross section\index{Thomson!Wirkungsquerschnitt} (where $r_e$ is the classical electron radius, $\alpha$ is the polarization angle):
-	\begin{equation}
-		\begin{aligned}
-			\dv{\sigma_T}{\Omega} &= r_e^2 \qty(1-\sin^2 \theta \cos^2 \alpha) \\
-			\left\langle \dv{\sigma_T}{\Omega} \right\rangle_{\alpha} &= \frac{r_e^2}{2} \qty(1+\cos^2 \theta) \\
-			\sigma_T &= \frac{4\pi}{3}r_e^2 \\
-		\end{aligned}
-	\end{equation}
+		Thomson cross section\index{Thomson!Wirkungsquerschnitt} (where $r_e$ is the classical electron radius, $\alpha$ is the polarization angle):
+		\begin{equation}
+			\begin{aligned}
+				\dv{\sigma_T}{\Omega} &= r_e^2 \qty(1-\sin^2 \theta \cos^2 \alpha) \\
+				\left\langle \dv{\sigma_T}{\Omega} \right\rangle_{\alpha} &= \frac{r_e^2}{2} \qty(1+\cos^2 \theta) \\
+				\sigma_T &= \frac{4\pi}{3}r_e^2 \\
+			\end{aligned}
+		\end{equation}
 
-	\noindent
-	Larmor formula\index{Larmor!Formel}:
-	Relativistic Larmor formulas\index{Larmor!Formel} for the power emitted per solid angle and total emitted power (Emitted energy of a non-relativistic particle measured in the retarded time):
-	\begin{equation}
-		\label{eq:LarmorFormula}
-		\begin{aligned}
-			\pdv{P}{\Omega} &= \frac{q^2}{4\pi c\qty(1-\hat{e}\cdot\vec{\beta})^5} \left| \hat{e}\times\qty[(\hat{e}-\vec{\beta}) \times \dot{\vec{\beta}}] \right|^2 \\
-			P &= \frac{2q^2}{3c}\gamma^6\qty[\dot{\pvec{\beta}}^2 - (\vec{\beta}\times\dot{\vec{\beta}})^2] \\
-		\end{aligned}
-	\end{equation}
+		\noindent
+		Larmor formula\index{Larmor!Formel}:
+		Relativistic Larmor formulas\index{Larmor!Formel} for the power emitted per solid angle and total emitted power (Emitted energy of a non-relativistic particle measured in the retarded time):
+		\begin{equation}
+			\label{eq:LarmorFormula}
+			\begin{aligned}
+				\pdv{P}{\Omega} &= \frac{q^2}{4\pi c\qty(1-\hat{e}\cdot\vec{\beta})^5} \left| \hat{e}\times\qty[(\hat{e}-\vec{\beta}) \times \dot{\vec{\beta}}] \right|^2 \\
+				P &= \frac{2q^2}{3c}\gamma^6\qty[\dot{\vec{\beta}}^2 - (\vec{\beta}\times\dot{\vec{\beta}})^2] \\
+			\end{aligned}
+		\end{equation}
 
-	\noindent 
-	Classical limit of the Larmor formula (Eq. \ref{eq:LarmorFormula}):
-	\begin{equation}
-		\begin{aligned}
-			\pdv{P}{\Omega} &= \frac{q^2}{4\pi c}\dot{\pvec{\beta}}_\perp^2 \\
-			P &= \frac{q^2 \mu_0}{6\pi c}\pvec{a}^2\\
-		\end{aligned}
-	\end{equation}
+		\noindent 
+		Classical limit of the Larmor formula (Eq. \ref{eq:LarmorFormula}):
+		\begin{equation}
+			\begin{aligned}
+				\pdv{P}{\Omega} &= \frac{q^2}{4\pi c}\dot{\vec{\beta}}_\perp^2 \\
+				P &= \frac{q^2 \mu_0}{6\pi c}\vec{a}^2\\
+			\end{aligned}
+		\end{equation}
 
-	\noindent
-	Synchrotron Radiation\index{Synchrotron!Strahlung} (where $U_B=\pvec{B}^2/4\pi$ is the energy density of the magnetic field, $J_k$ of the spectrum are the Bessel functions of fractional order and $\omega_L$ denotes the Larmor frequency):
-	\begin{equation}
-		\begin{aligned}
-			P &= c \gamma^2 \sigma_T U_B \\
-			\frac{\dd^2 E}{\dd\Omega\dd\omega} &= \frac{e^2 \omega^2}{3\pi c\omega_L^2} \qty(\frac{1}{\gamma^2} + \theta^2)^2\qty[\frac{\theta^2}{\gamma^{-2}+\theta^2} K_{1/3}^2(\xi) + K_{2/3}^2(\xi)]\\ 
-		\end{aligned}
-	\end{equation}
+		\noindent
+		Synchrotron Radiation\index{Synchrotron!Strahlung} (where $U_B=\vec{B}^2/4\pi$ is the energy density of the magnetic field, $J_k$ of the spectrum are the Bessel functions of fractional order and $\omega_L$ denotes the Larmor frequency):
+		\begin{equation}
+			\begin{aligned}
+				P &= c \gamma^2 \sigma_T U_B \\
+				\frac{\dd^2 E}{\dd\Omega\dd\omega} &= \frac{e^2 \omega^2}{3\pi c\omega_L^2} \qty(\frac{1}{\gamma^2} + \theta^2)^2\qty[\frac{\theta^2}{\gamma^{-2}+\theta^2} K_{1/3}^2(\xi) + K_{2/3}^2(\xi)]\\ 
+			\end{aligned}
+		\end{equation}
 
-	\noindent
-	Bremsstrahlung spectrum\index{Bremsstrahlung} and the high \& low frequency approximations (Radiation produced by electrons with asymptotic velocity $v_\infty$ of density $n_e$ passing being scattered by ions of density $n_i$ and charge $Ze$. $H_{\ii \nu}^{(1)}$ is the Hankel function of the first kind and $\tau=a / v_\infty$ is the time scale):
-	\begin{equation}
-		\begin{aligned}
-			\frac{\dd^3 E}{\dd \omega \dd t \dd V} &= \i \frac{4\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}\qty(\frac{Z e^2 \omega}{m v_\infty^3}) H_{\i \nu}^{(1)}(\i\nu) H_{\i \nu}^{(1)\prime}(\i\nu) \\
-			&= \frac{16\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}
-			\begin{cases}
-				\omega \ll \tau^{-1}: & \ln\qty(\dfrac{2}{\gamma}\dfrac{m v_{\infty}^3}{Z e^2 \omega}) \\
-				\omega \gg \tau^{-1}: & \dfrac{\pi}{\sqrt{3}} \\
-			\end{cases}\\
-		\end{aligned}
-	\end{equation}
+		\noindent
+		Bremsstrahlung spectrum\index{Bremsstrahlung} and the high \& low frequency approximations (Radiation produced by electrons with asymptotic velocity $v_\infty$ of density $n_e$ passing being scattered by ions of density $n_i$ and charge $Ze$. $H_{\ii \nu}^{(1)}$ is the Hankel function of the first kind and $\tau=a / v_\infty$ is the time scale):
+		\begin{equation}
+			\begin{aligned}
+				\frac{\dd^3 E}{\dd \omega \dd t \dd V} &= \i \frac{4\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}\qty(\frac{Z e^2 \omega}{m v_\infty^3}) H_{\i \nu}^{(1)}(\i\nu) H_{\i \nu}^{(1)\prime}(\i\nu) \\
+				&= \frac{16\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}
+				\begin{cases}
+					\omega \ll \tau^{-1}: & \ln\qty(\dfrac{2}{\gamma}\dfrac{m v_{\infty}^3}{Z e^2 \omega}) \\
+					\omega \gg \tau^{-1}: & \dfrac{\pi}{\sqrt{3}} \\
+				\end{cases}\\
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Emissivity for non-relativistic thermal Bremsstrahlung (Where $\bar{g}_{ff}(\omega)$ is the mean Gaunt factor (why can often be approximated by $1$)):
+		\begin{equation}
+			j(\omega) = \frac{16\pi^2}{3\sqrt{3}} \frac{Z^2 e^6 n_i n_e}{m^2 c^3} \bar{g}_{\text{ff}}(\omega) \sqrt{\frac{2m}{\pi k_B T}} \exp\qty(-\frac{\hbar \omega}{k_B T})
+		\end{equation}
+
+	\subsection{Hydrodynamics}
+		\subsubsection{Ideal Hydrodynamics}	
+			Ideal Hydrodynamics: No viscosity, mean free path of particles is infinitely small.
+
+			\noindent
+			phase space distribution $f(t, \vec{x},\vec{p})$ and particle density $n(t,\vec{x})$
+			\begin{equation}
+				\int \dd^3 p\, f\qty(t, \vec{x}, \vec{p}) = n\qty(t,\vec{x})
+			\end{equation}
+
+			\noindent
+			Particle current density $J^\mu$ and Energy momentum tensor $T^{\mu\nu}$:
+			\begin{equation}
+				\begin{aligned}
+					J^{\mu} &= c \int \frac{\dd^3 p}{E}\, f\qty(t, \vec{x}, \vec{p}) p^{\mu} = \frac{n(t, \vec{x})}{c} \mqty(c\\\avg{\dot{\vec{x}}})^\mu 
+					&\hsp
+					\partial_\mu J^{\mu} &= 0 \\
+					T^{\mu\nu} &= c^2 \int \frac{\dd^3 p}{E}\, f\qty(t, \dot{\vec{x}}, \vec{p}) p^{\mu} p^{\nu} =\rho(t, \dot{\vec{x}})\mqty(\avg{\gamma} & \avg{\gamma \dot{\vec{x}}} \\ \avg{\gamma \dot{\vec{x}}} & \avg{\gamma\dot{\vec{x}}\dot{\vec{x}}})^{\mu\nu}
+					&\hsp
+					\partial_\mu T^{\mu\nu} &= 0 \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Equations for ideal non-relativistic Hydrodynamics (Energy density $\varepsilon=\frac{f}{2}N k_B T$, mean velocity $\vec{v}=\avg{\dot{\vec{x}}}$ and pressure $P = \frac{1}{3} T^{i}_i$):
+			\begin{equation}
+				\begin{aligned}
+					0 &= \partial_t \rho + \partial_i \qty(\rho v^i) \\
+					0 &= \partial_t v^i + \qty(v^j \partial_j) v^i + \frac{1}{\rho} \partial^i P \\
+					0 &= \partial_t \varepsilon + \partial_i \qty(\varepsilon v^i) + P \partial_i v^i  \\
+				\end{aligned}
+			\end{equation}
+
+		\subsubsection{Relativistic Hydrodynamics}
+			Relativistic Hydrodynamics without Gravitational field (Energy density $\rho$, pressure $P$, $u^\mu D_\mu =: D_u$):
+			\begin{equation}
+				\begin{aligned}
+					0 &= \nabla_u \qty(\rho c^2) + \qty(\rho c^2 + P) \nabla_\mu u^\mu \\
+					0 &= \qty(\rho c^2 + P) \nabla_u u_\mu + \nabla_\mu P + u_\mu \nabla_u P \\
+				\end{aligned}
+			\end{equation}
+
+	\subsection{Plasma Physics}
+		\subsubsection{Basics}
+			Shielding of a charge pertubation $\rho=q\delta(\vec{x})$ by plasma charges (Yukawa potential\index{Yukawa!Potential}):
+			\begin{equation}
+				\phi(r) = \frac{q}{r} \exp(-\sqrt{Z+1}k_D r)
+			\end{equation}
+
+			\noindent
+			Debye Wave number\index{Debye!Wellenzahl} and Debye length\index{Debye!Länge} (characteristic shielding length; notice the lack of a factor of $2\pi$):
+			\begin{equation}
+				k_D^2 := 4\pi \frac{\bar{n}_e e^2}{k_B T} \hsp 
+				\lambda_D := \frac{1}{k_D} = \sqrt{\frac{k_B T}{4\pi \bar{n}_e e^2}}
+			\end{equation}
+
+			\noindent
+			Plasma frequency $\omega_p$ and plasma reaction time $t_D$ (assuming equipartition $\avg{v_i^2} = k_B T / m_e$; characteristic time scale of particle rearrangement, incident waves with frequencies greater than $\omega_p$ can not be compensated, the plasma becomes transparent; notice the lack of a factor of $2\pi$):
+			\begin{equation}
+				\omega_p = \frac{1}{t_D} = \sqrt{\frac{4\pi\bar{n}_e e^2}{m_e}} \hsp
+				t_D = \frac{\lambda_D}{\sqrt{\avg{v^2}}} = \sqrt{\frac{m_e}{4\pi \bar{n}_e e^2}} 
+			\end{equation}
+
+
+	\subsection{Magnetohydrodynamics}
+		\subsubsection{Basics}
+			Ions and electrons have a relative drift velocity
+			\begin{equation}
+				\vec{v}_{\text{drift}} = \vec{v}_e - \vec{v}_i
+			\end{equation}
+
+			\noindent
+			Magnetic Reynolds Number\index{Magnetic!Reynolds Number} (ratio of advection to diffusion of magnetic fields, $L$ is the characteristic length scale of the system, $v$ is the characteristic velocity and $\sigma$ is the conductivity):
+			\begin{equation}
+				\mathcal{R}_M = \frac{4\pi\sigma v L}{c^2}
+			\end{equation}
+
+		\subsection{Equations of Motion}
+			Induction equation\index{Induktionsgleichung}:
+			\begin{equation}
+				\pdv{\vec{B}}{t} = \frac{c^2}{4\pi\sigma} \Nabla^2 \vec{B} + \Nabla\times\qty(\vec{v}\times\vec{B})
+			\end{equation}
+
+			\noindent
+			Euler's equation\index{Euler!Gleichung} for an ideal fluid:
+			\begin{equation}
+				\rho \dv{\vec{v}}{t} = - \Nabla P + \frac{1}{4\pi}\qty(\Nabla\times\vec{B})\times\vec{B}
+			\end{equation}
+
+
+	\subsection{Stellar Dynamics}
+		\subsubsection{Basics}
+			Relaxation timescale of a collection of stars\index{Relaxation!Zeit} (timescale on which the system's movement is dominated by gravity as opposed to initial velocities, where $N$ is the number of stars, $m$ is the mass of a star):
+			\begin{equation}
+				t_{\text{relax}} = \frac{N}{8\ln N} \frac{R}{v} = \frac{N}{8\ln N} t_{\text{cross}}
+			\end{equation}
+
+
+		\subsubsection{Jeans Theorem}
+			Jeans Equations\index{Jean!Gleichungen} (where $\sigma^2 = \qty(\vec{v}-\avg{\vec{v}})\otimes\qty(\vec{v}-\avg{\vec{v}})$ is the velocity dispersion tensor and $\phi$ is the gravitational potential):
+			\begin{equation}
+				\pdv{n}{t} + \Nabla\cdot\qty(n\vec{v}) = 0 \hsp
+				\pdv{\vec{v}}{t} + \qty(\vec{v}\cdot\Nabla)\vec{v} = -\Nabla\phi -\frac{1}{n}\Nabla\cdot\qty(n\sigma^2) \hsp
+			\end{equation}
+
+			\noindent
+			Radial Jeans Equation\index{Jean!Gleichungen!radial} (where $\beta$ is the anisotropy parameter in $\sigma_\theta^2 = \sigma_\phi^2 = (1-\beta) \sigma_r^2$)
+			\begin{equation}
+				\pdv{r} \qty(n\sigma_r^2) + \frac{2\beta}{r} n\sigma_r^2 = -n\pdv{\phi}{r}
+			\end{equation}
+			

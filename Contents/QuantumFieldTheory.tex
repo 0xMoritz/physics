@@ -1,71 +1,61 @@
 % !TEX root = ../physics.tex
 \section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFt
-	\subsection{Postulates}
-		\subsubsection{Symmetries?}
-			%Locality
-			%CPT
-			%...
-			%TODO
-	\subsection{Definitions}
+%\subsection{Postulates}
+%TODO
+
+
+\subsection{Definitions}
+		Conventions in this section:
+		\begin{itemize}
+			\item $\hbar = c = 1$
+			\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
+		\end{itemize}
+
+		\noindent
 		Feynman slash notation\index{Feynman!Slash Notation}
 		\begin{equation}
 			\slashed{A} := \gamma_\mu A^\mu
 		\end{equation}
 
 		\noindent
-		Pauli matrices\index{Pauli!Matrizen} (see Eq.~\ref{Eq:PauliMatrices}):
+		Momentum state for a scalar field:
 		\begin{equation}
-			\label{Eq:PauliMatricesQFT}
-			\begin{aligned}
-				\sigma^0 = \left(\begin{matrix}
-					1 & 0 \\
-					0 & 1 \\
-				\end{matrix}\right) &&\hspace{30pt}
-				\sigma^1 = \left(\begin{matrix}
-					0 & 1 \\
-					1 & 0 \\
-				\end{matrix}\right) &&\hspace{30pt}
-				\sigma^2 = \left(\begin{matrix}
-					0 & -\i \\
-						\i & 0 \\
-				\end{matrix}\right) &&\hspace{30pt}
-				\sigma^3 = \left(\begin{matrix}
-					1 & 0 \\
-					0 & -1 \\
-				\end{matrix}\right)
-			\end{aligned}
+			\Ket{\vec{p}} = \sqrt{2 \omega_{\vec{p}}} \hat{b}^\dagger(\vec{p}) \Ket{0}
 		\end{equation}
+		Note: the momentum state is defined such that $\Braket{\vec{q}|\vec{p}} = 2\omega_{\vec{p}} (2\pi)^3 \delta(\vec{p}-\vec{q})$ is Lorentz invariant.
 
 		\noindent
-		Properties:
+		Fock space\index{Fock!Raum} (direct sum of Hilbert spaces\index{Hilbert!Raum} for all possible numbers of particles $N$; $\mathcal{H}^{(0)} = \qty{\Ket{0}}$ consists only of the vacuum state, for bosons, the Fock space consists only of symmetrized states ``$+$'', for fermions, the Fock space consists only of antisymmetrized states ``$-$''):
 		\begin{equation}
-			\begin{aligned}
-				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\varepsilon_{\mu\nu\lambda}\sigma_\lambda \\
-				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\varepsilon_{\xi\mu\nu\lambda}\sigma_\xi \\
-			\end{aligned}
+			\mathcal{F_\pm}
+			= \bigoplus_{N=0}^{\infty} \mathcal{H_\pm}^{(N)}
+			= \mathcal{H_\pm}^{(0)} \oplus \mathcal{H_\pm}^{(1)} \oplus \mathcal{H_\pm}^{(2)} \oplus ...
 		\end{equation}
 
 		\subsubsection{Gamma Matrices}
 			\noindent
-			Defining properties:
+			Defining properties (Clifford Algebra\index{Clifford!Algebra}):
 			\begin{equation}
-				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\nu = 2g^{\mu\nu}
+				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2g^{\mu\nu}
 			\end{equation}
 
 			\noindent
 			Further properties:
 			\begin{equation}
-				\begin{aligned}
-					\qty(\gamma^0)^\dagger &= +\gamma^0 \\
-					\qty(\gamma^j)^\dagger &= -\gamma^j \\
-					\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with \mathbb{1}
-					\gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
-					\qty(\gamma^\mu)^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
-				\end{aligned}
+				\qty(\gamma^\mu)^\dagger = \eta^{\mu\mu} \gamma^\mu
+				\hsp \qty(\gamma^\mu)^2 = \eta^{\mu\mu} 1_4
+				\hsp \qty(\gamma^\mu)^\dagger = \gamma^0 \gamma^\mu \gamma^0
+				% \begin{aligned}
+				% 	\qty(\gamma^0)^\dagger &= +\gamma^0 \\
+				% 	\qty(\gamma^j)^\dagger &= -\gamma^j \\
+				% 	\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with \mathbb{1}
+				% 	\gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
+				% 	\qty(\gamma^\mu)^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
+				% \end{aligned}
 			\end{equation}
 
 			\noindent
-			Dirac $\gamma$-matrices\index{Dirac!Gamma Matrizen}:
+			Dirac representation\index{Dirac!Darstellung}:
 			\begin{equation}
 				\begin{aligned}
 					\gamma^0
@@ -79,7 +69,7 @@
 					\M 0 & \M 0 &   -1 & \M 0 \\
 					\M 0 & \M 0 & \M 0 &   -1 \\
 					\end{matrix} \right)
-					&\hspace{20pt}
+					&\hsp
 					\gamma^1
 					= \left( \begin{matrix}
 					\M0 & \sigma^1 \\
@@ -102,7 +92,7 @@
 					\M 0 & \M\i & \M 0 & \M 0 \\
 					-\i & \M 0 & \M 0 & \M 0 \\
 					\end{matrix} \right)
-					&\hspace{20pt}
+					&\hsp
 					\gamma^3
 					= \left( \begin{matrix}
 					\M 0 & \sigma^3 \\
@@ -118,6 +108,20 @@
 			\end{equation}
 
 			\noindent
+			Weyl representation\index{Weyl!Darstellung}:
+			\begin{equation}
+				\gamma^0 = \mqty(
+					0 & 1_2 \\
+					1_2 & 0
+				)
+				\hsp
+				\gamma^i = \mqty(
+					0 & \sigma^i \\
+					-\sigma^i & 0
+				)
+			\end{equation}
+
+			\noindent
 			Transformation ($U$ unitary: $U U^\dagger=1_4$):
 			\begin{equation}
 				\tilde{\gamma} = U \gamma^\mu U^\dagger
@@ -126,13 +130,14 @@
 			\noindent
 			$\gamma^5$-Matrix:
 			\begin{equation}
-				\gamma^5 = \gamma_5 = \gamma_5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\varepsilon_{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+				\gamma^5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
 			\end{equation}
 
 			\noindent
 			Properties of the $\gamma^5$-matrix:
 			\begin{equation}
 				\begin{aligned}
+					\gamma^5 &= \gamma_5 \\
 					\gamma_5^\dagger &= \gamma_5 \\
 					\gamma_5 \gamma_5 &= 1_4 \\
 					\acomm{\gamma^\mu}{\gamma^5} &= 0 \\
@@ -145,33 +150,196 @@
 				\sigma^{\mu\nu} = \frac{i}{2}\comm{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
 			\end{equation}
 
-	\subsection{Important Operators}
-		Time ordering operator ($+$ for Bosons, $-$ for Fermions)
-		\begin{equation}
-			\hat{T}\qty[\hat{A}(t)\hat{B}(t')]
-				= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
-				= \begin{cases}
-					\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
-					\pm \hat{B}(t') \hat{A}(t) & t<t'
-				\end{cases}
-		\end{equation}
+			\noindent
+			Non-Relativistic Limit ($c\rightarrow\infty$):
+			\begin{equation}
+				\phi(x) \rightarrow \phi(x) e^{-\i m c^2 t/\hbar}
+			\end{equation}
 
-		\noindent
-		Normal order operator
-		\begin{equation}
-			\NormalOrder{\hat{A}\hat{B}}
-		\end{equation}
+	\subsection{Gauge and Symmetry}
+		\subsubsection{Symmetry Operations}
+			Relation of generators $\hat{G}$ to transformations $\hat{T}(\omega)$ acting on spacetime and resulting unitary Operators $\hat{U}(\omega)$ acting on states or operators:
+			\begin{equation}
+				\begin{aligned}
+					\psi(\hat{T}(\delta \omega)x) &= \qty(1+ \i \delta\omega \hat{G}) \psi(x)\\
+					\hat{G} &= \i \pdv{\hat{T}}{\omega} \\
+					\hat{U} &= \lim_{N\rightarrow \infty} \qty(1+\i\hat{G}\delta\omega)^N = \exp(\i \hat{G} \cdot \omega) \\
+					\Ket{\psi'} &= \hat{U}(\omega)\Ket{\psi} = \Ket{\hat{T}(\omega)\psi} \\
+					\hat{V}'(x) &= \hat{T}(\omega) \hat{V}(\inv{\hat{T}}(\omega)x) = \hat{U}^\dagger(\omega) \hat{V}(x) \hat{U}(\omega) \\
+				\end{aligned}
+			\end{equation}
+		
+			\noindent
+			Infinitesimal Lorentz Transformation (With parameters $\omega$ and generators $M$):
+			\begin{equation}
+				\begin{aligned}
+					\Lambda^\mu_\nu &= \delta^\mu_\nu - \frac{\i}{2}\omega^\mu_\nu = \delta^\mu_\nu - \frac{\i}{2}\omega_{\alpha\beta}M^{\alpha\beta\mu}{}_\nu \\
+				\end{aligned}
+			\end{equation}
+		
+			\noindent
+			Generators of the Lorentz group (Angular momentum $J^i = \frac{1}{2}\varepsilon^{ijk} M^{jk}$ and Boosts $K^i = M^{0i}$):
+			\begin{equation}
+				\begin{aligned}
+					(M^{\alpha\beta})_{\mu\nu} &= \i\qty(\delta^{\alpha}_{\mu}\delta^{\beta}_{\nu} - \delta^{\beta}_{\mu}\delta^{\alpha}_\nu ) \\
+					%&= \i \qty(x^\mu \partial^\nu - x^\nu \partial^\mu)				
+				\end{aligned}
+			\end{equation}
+		
+			\noindent
+			Lie Algebra of the Lorentz group $SO(1,3)$:
+			\begin{equation}
+				\begin{aligned}
+					\comm{M^{\alpha\beta}}{M^{\gamma\delta}} = \i \left(\eta^{\beta\gamma}M^{\alpha\delta}+\eta^{\alpha\delta}M^{\beta\gamma}-\eta^{\alpha\gamma}M^{\beta\delta}-\eta^{\beta\delta}M^{\alpha\gamma}\right)
+				\end{aligned}
+			\end{equation}
+		
+			\noindent
+			Implications for boosts and rotations:
+			\begin{equation}
+				\begin{aligned}
+					\comm{\hat{K}^i}{\hat{K}^j} &= -\i \levicivita{ijk}\hat{J}^k \\
+					\comm{\hat{J}^i}{\hat{K}^j} &= \i \levicivita{ijk}\hat{K}^k \\
+					\comm{\hat{J}^i}{\hat{J}^j} &= \i \levicivita{ijk}\hat{J}^k \\
+				\end{aligned}				
+			\end{equation}
+		
+			\noindent
+			General Lorentz Transformation (angles $\vec{\theta}$ and rapidities $\vec{\psi}$)
+			\begin{equation}
+				\Lambda(\vec{\theta}, \vec{\psi}) = \exp(-\i(\hat{\vec{J}}\cdot\vec{\theta} - \hat{\vec{K}}\cdot\vec{\psi}))
+			\end{equation}
+		
+		\subsubsection{Gauge Invariance}
+			Gauge theory ($A_\mu$ is the gauge field, $q$ is the coupling strength):
+			\begin{equation}
+				\begin{aligned}
+					\psi(x) &\rightarrow e^{\i\alpha(x)}\psi(x) \\
+					A_\mu(x) &\rightarrow A_\mu(x) - \frac{1}{q}\partial_\mu\alpha(x) \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Wick\index{Wick!Kontraktion} contraction definition:
-		\begin{equation}
-			\wick{\c{\hat{A}} \c{\hat{B}}} = \hat{A}\hat{B} - \NormalOrder{\hat{A}\hat{B}}
-		\end{equation}
-		%\wick{\c \hat{A} \c \hat{B}}
+			\noindent
+			Covariant derivative:
+			\begin{equation}
+				\partial_\mu \rightarrow D_\mu = \qty(\partial_\mu - \i q A_\mu) \\
+			\end{equation}
 
-		%TODO: Wick Theorem
+			\noindent
+			The \emph{gauge principle} states, that the gauge field -- introduced to guarantee local gauge symmetry dictates the form of coupling.
 
+		\subsection{Discrete Symmetry}
+			Charge conjugation $\hat{\mathsf{C}}$ (For any quantum charge operator $\hat{Q}$, i.e. electric charge, lepton/baryon number, hypercharge,\dots; $\bar{p}$ is the antiparticle of $p$):
+			\begin{equation}
+				\begin{aligned}
+					\hat{\mathsf{C}} \Ket{p} &= \Ket{\bar{p}} 
+					\phantom{Q}\hsp \hat{\mathsf{C}} \Ket{\bar{p}} = \Ket{p} \\
+					\hat{\mathsf{C}}^2 &= \hat{1} \\ 
+					\hat{Q} \Ket{p} &= Q \Ket{p} 
+					\hsp \hat{Q} \Ket{\bar{p}} = -Q\Ket{\bar{p}} \\
+					\inv{\hat{\mathsf{C}}} \hat{Q} \hat{\mathsf{C}} &= -\hat{Q} \\
+					\inv{\hat{\mathsf{C}}}\hat{a}_{\vec{p}} \hat{\mathsf{C}} &= \hat{b}_{\vec{p}} 
+					\hsp \inv{\hat{\mathsf{C}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{C}} = \hat{a}^\dagger_{\vec{p}} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Parity inversion $\hat{\mathsf{P}}$
+			\begin{equation}
+				\begin{aligned}
+					\inv{\hat{\mathsf{P}}} \hat{x} \hat{\mathsf{P}} &= - \hat{x}
+					\hsp \inv{\hat{\mathsf{P}}} \hat{p} \hat{\mathsf{P}} = - \hat{p} \\
+					\hat{\mathsf{P}}^2 &= \hat{1} \\ 
+					\inv{\hat{\mathsf{P}}}\hat{a}_{\vec{p}} \hat{\mathsf{P}} &= \hat{b}_{\vec{p}} 
+					\hsp \inv{\hat{\mathsf{P}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{P}} = \hat{a} ^\dagger_{\vec{p}} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Time reversal $\hat{\mathsf{T}}$:
+			\begin{equation}
+				\begin{aligned}
+					\hat{\mathsf{T}} \Ket{\psi(t)} &= \Ket{\psi(-t)} \\
+					\hat{\mathsf{T}}^2 &= - \hat{1} \\ 
+					\inv{\hat{\mathsf{T}}} \i \hat{\mathsf{T}} &= -\i \\
+				\end{aligned}
+			\end{equation}
+
+			CPT-Theorem, valid for $\mathcal{L}$ Lorentz invariant, local, hermitian and normal ordered:
+			\begin{equation}
+				\comm{\hat{\mathsf{C}}\hat{\mathsf{P}}\hat{\mathsf{T}}}{\mathcal{H}} = 0
+			\end{equation}
+
+
+
+	\subsection{Operators}
+		\subsubsection{Operator Ordering}
+			Time ordering symbol (``$+$'' for Bosons, ``$-$'' for Fermions). Linear operator, that orders all time dependent operators from right (earliest) to left (latest):
+			\begin{equation}
+				T\qty[\hat{A}(t)\hat{B}(t')]
+					= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
+					= \begin{cases}
+						\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
+						\pm \hat{B}(t') \hat{A}(t) & t<t'
+					\end{cases}
+			\end{equation}
+
+			\noindent
+			Normal order symbol (Alternative notation: $\NormalOrder{\hat{A},\hat{B}} = \;\normord{\hat{A} \hat{B}}$). Linear operator, that orders all creation operators to the left and all annihilation operators to the right -- considered normal order (``$+$'' for Bosons, ``$-$'' for Fermions):
+			\begin{equation}
+				\begin{aligned}
+					\NormalOrder{\hat{a}(\vec{p})\hat{a}^\dagger(\vec{q})} 
+					&= \pm \NormalOrder{\hat{a}^\dagger(\vec{q})\hat{a}(\vec{p})} = \pm \hat{a}^\dagger(\vec{p}) \hat{a}(\vec{q}) \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Wick\index{Wick!Kontraktion} contraction definition:
+			\begin{equation}
+				\wick{\c{\hat{A}} \c{\hat{B}}} = \hat{A}\hat{B} - \NormalOrder{\hat{A}\hat{B}}
+			\end{equation}
+			%\wick{\c \hat{A} \c \hat{B}}
+
+			\noindent
+			Wick's Theorem\index{Wick!Theorem}:
+			\begin{equation}
+				T\qty[ \phi(x_1)\dotsb\phi(x_n) ] = \NormalOrder{\phi(x_1)\dotsb\phi(x_n) + \sum(\text{all contractions})}
+			\end{equation}
+			
+		\subsubsection{Multiparticle Operators}
+			Many Body generalization of a single particle Operator $\hat{A}$:
+			\begin{equation}
+				\hat{A}' = \sum_{\alpha,\beta} \mel{\alpha}{\hat{A}}{\beta} \hat{a}_\alpha^\dagger \hat{a}_\beta
+			\end{equation}
+
+		\subsubsection{Noether's Theorem}
+			\noindent
+			Conserved operator by Noether's Theorem (Where $D$ is the symmetry operation and $\hat{Q}$ is the conserved operator, \ie eigenvalues are conserved charges)\index{Noether!Theorem}
+			\begin{equation}
+				\comm{\hat{Q}}{\hat{\phi}} = -\i D\hat{\phi}
+			\end{equation}
+			
 	\subsection{Pertubation Theory}
+		Time evolution operator ($t > t_0$):
+		\begin{equation}
+			U(t,t_0) = T \qty[ \exp(-\i \int_{t_0}^t \dd t' \hat{H}_{\mathrm{int}}(t')) ]
+		\end{equation}
+
+		\noindent
+		Propagator for a $n$-point correlation function (Where $\Ket{\Omega}$ is the vacuum state of the full theory\index{Vakuumzustand}, $\Ket{0}$ is the vacuum state of the free theory, $\hat{\phi}_H$ is the field operator in the Heisenberg picture and $\hat{\phi}_I$ is the field operator in the interaction picture):
+		\begin{equation}
+			\Bra{\Omega} T \hat{\phi}_H(x_1) \dotsb \hat{\phi}_H(x_n) \Ket{\Omega}
+			= \frac{ \mel**{0}{T \hat{\phi}_I(x_1) \dotsb \hat{\phi}_I(x_n) \exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
+			{\mel**{0}{\exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
+		\end{equation}
+
+		\noindent
+		$S$-Matrix\index{S-Matrix} (Where $\hat{U}$ is the time evolution operator, and $\hat{T}$ is the scattering term):
+		\begin{equation}			
+			\hat{S} = \lim_{\substack{t\rightarrow\infty\\t_0\rightarrow-\infty}} \hat{U}(t,t_0) = \hat{1} + \i \hat{T}
+		\end{equation}
+
+		\noindent
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
 			\begin{aligned}
@@ -184,23 +352,24 @@
 		\end{equation}
 
 		\subsubsection{Green's Functions}
-			Single particle Green's function / Propagator \index{Green!Funktion} ($x=(t,\vec{x})$; $\Ket{\Psi_0}$ is the Heisenberg ground state)
+			Single particle's full Green's function / Propagator \index{Green!Funktion} ($x=(t,\vec{x})$; $\Ket{\Psi_0}$ is the Heisenberg ground state)
 			\begin{equation}
 				\begin{aligned}
-					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} \hat{T}\qty[\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')] \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
+					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} T\qty[\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')] \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
 				\end{aligned}
 			\end{equation}
+
 
 	%\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
 		%TODO
 
 	\subsection{Bosons}
-		\subsubsection{Bosonic Creation an Annihilation Operators}
+		\subsubsection{Bosonic Ladder Operators}
 		\label{Sec:BosonicCreationAndAnnihilationOperators}
 			Definition
 			\begin{equation}
 				\comm{\hat{b}_k}{\hat{b}_{k'}^\dagger} = \delta_{kk'}
-				\hspace{20pt}
+				\hsp
 				\comm{\hat{b}_k}{\hat{b}_{k'}} = \comm{\hat{b}_k^\dagger}{\hat{b}_{k'}^\dagger} = 0
 			\end{equation}
 
@@ -208,9 +377,34 @@
 			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \mathbb{N}_0$ the operators have the following qualities:
 			\begin{equation}
 				\begin{aligned}
-					\hat{b}_k^\dagger \hat{b}_k \Ket{...,n_k,...} &= n_k \Ket{...,n_k,...} \\
 					\hat{b}_k \Ket{...,n_k,...} &= \sqrt{n_k} \Ket{...,n_k-1,...} \\
 					\hat{b}_k^\dagger \Ket{...,n_k,...} &= \sqrt{n_k+1} \Ket{...,n_k+1,...} \\
+				\end{aligned}
+			\end{equation}
+			\begin{equation}
+				\hat{b}_k^\dagger \hat{b}_k \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}
+			\end{equation}
+
+			\noindent
+			Scalar bosonic field and conjugate momentum operators in terms of creation and annihilation operators (with the on-shell frequency $\omega_{\vec{p}} = p^0 = \sqrt{\vec{p}^2 + m^2}$):
+			\begin{equation}
+				 \begin{aligned}
+					\hat{\phi}(x) &= \int \frac{\dd^3 p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) e^{-i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) e^{i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
+					\hat{\pi}(x) &= -\i \int \frac{\dd^3 p}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) e^{-i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) e^{i p_\mu x^\mu} ) \\
+				 \end{aligned}
+			\end{equation}
+			
+			\noindent
+			Creation and Annihilation operators\index{Zerstörungsoperator}\index{Erzeugungsoperator} and their commutation relations for scalar bosonic fields:
+			\begin{equation}
+				\begin{aligned}
+					\hat{b}(\vec{p}) &= \sqrt{\frac{\omega_{\vec{p}}}{2}} \hat{\tilde{\phi}}(\vec{p}) + \i \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \hat{\tilde{\pi}}(\vec{p}) \\
+					\hat{b}^\dagger(\vec{p}) &= \sqrt{\frac{\omega_{\vec{p}}}{2}} \hat{\tilde{\phi}}(-\vec{p}) - \i \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \hat{\tilde{\pi}}(-\vec{p}) 
+				\end{aligned}				
+				\hsp
+				\begin{aligned}
+					\comm{\hat{b}(\vec{p})}{\hat{b}^\dagger(\vec{q})} &= (2\pi)^3 \delta^{(3)}(\vec{p}-\vec{q}) \\
+					\Big[ \hat{b}(\vec{p}) , \hat{b}(\vec{q}) \Big] &= \comm{\hat{b}^\dagger(\vec{p})}{\hat{b}^\dagger(\vec{q})} = 0 \\
 				\end{aligned}
 			\end{equation}
 
@@ -227,13 +421,38 @@
 				{\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
 			\end{equation}
 
+			\noindent
+			Free Feynman Propagator\index{Feynman!Propagator} for a scalar field (\ie Green's function of the Klein-Gordon equation):
+			\begin{equation}
+				\begin{aligned}
+					D_F (x-y) 
+					&= \Bra{0} T \hat{\phi}(x)\hat{\phi}(y) \Ket{0} \\
+					&= \comm{\hat{\phi}_{-}(x)}{\hat{\phi}_{+}(y)} \Theta(x^0-y^0) + \comm{\hat{\phi}_{-}(y)}{\hat{\phi}_{+}(x)} \Theta(y^0-x^0) \\
+					&= \lim_{\epsilon \searrow 0} \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i}{p^\mu p_\mu - m^2 + \i \epsilon} e^{-\i p_\mu (x-y)^\mu} \\
+					&= \wick{\c{\hat{\phi}}(x) \c{\hat{\phi}}(y)} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			$n$-point correlation function for a scalar field:
+			\begin{equation}
+				G^{(n)}(x_1, ..., x_n) = \Bra{\Omega} T \hat{\phi}(x_1) \dotsb \hat{\phi}(x_n) \Ket{\Omega}
+			\end{equation}
+
+			% Feynman Rules:
+			% \feynmandiagram [horizontal=a to b] {
+			% 	i1 -- [fermion] a -- [fermion] i2,
+			% 	a -- [photon] b,
+			% 	f1 -- [fermion] b -- [fermion] f2,
+			% };
+
 	\subsection{Fermions}
 		\subsubsection{Fermionic Creation an Annihilation Operators}
 		\label{Sec:FermionicCreationAndAnnihilationOperators}
 			Definition of fermionic creation an annihilation operators
 			\begin{equation}
 				\acomm{\hat{a}_k}{\hat{a}_{k'}^\dagger} = \delta_{kk'}
-				\hspace{20pt}
+				\hsp
 				%\acomm{\hat{a}_k}{\hat{a}_{k'}} = \acomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
 				\Big\lbrace\hat{a}_k,\hat{a}_{k'}\Big\rbrace = \acomm{\hat{a}_k^\dagger}{\hat{a}_{k'}^\dagger} = 0
 			\end{equation}
@@ -244,16 +463,16 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{a_k}^\dagger \Ket{...,0,...} &= (-1)^S \Ket{...,1,...}
-					&\hspace{20pt}
+					&\hsp
 					\hat{a_k} \Ket{...,1,...} &= (-1)^S \Ket{...,0,...}
 					\\
 					\hat{a_k}^\dagger \Ket{...,1,...} &= 0
-					&\hspace{20pt}
+					&\hsp
 					\hat{a_k} \Ket{...,0,...} &= 0
 				\end{aligned}
 			\end{equation}
 			\begin{equation}
-				\hat{a_k}^\dagger \hat{a_k} \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}
+				\hat{a_k}^\dagger \hat{a_k} \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}				
 			\end{equation}
 
 			\noindent
@@ -275,50 +494,43 @@
 				\qty( i\slashed{\partial} - m ) \psi\qty(x) = 0
 			\end{equation}
 
-	\subsection{Second Quantization}
-		For Creation and Annihilation operators see Sec.~\ref{Sec:BosonicCreationAndAnnihilationOperators} and Sec.~\ref{Sec:FermionicCreationAndAnnihilationOperators}
-
-		\noindent
-		Fock space\index{Fock!Raum} (direct sum of Hilbert spaces\index{Hilbert!Raum} for all possible numbers of particles $N$; $\mathcal{H}^{(0)} = \qty{\Ket{0}}$ consists only of the vacuum state):
-		\begin{equation}
-			\mathcal{F}
-			= \bigoplus_{N=0}^{\infty} \mathcal{H}^{(N)}
-			= \mathcal{H}^{(0)} \oplus \mathcal{H}^{(1)} \oplus \mathcal{H}^{(2)} \oplus ...
-		\end{equation}
 
 
-		\subsubsection{Field Operators}
-			Definition of the field operators (summing over the complete set of single-particle quantum numbers $k$)
-			\begin{equation}
-				\begin{aligned}
-					\hat{\psi} (x) &= \sum_k \psi_k(x) \hat{c}_k \\
-					\hat{\psi}^\dagger (x) &= \sum_k \psi_k(x) \hat{c}_k^\dagger \\
-				\end{aligned}
-			\end{equation}
+	% \subsection{Second Quantization}
+		% \subsubsection{Field Operators}
+		% 	Deprecated
+		% 	Definition of the field operators (summing over the complete set of single-particle quantum numbers $k$)
+		% 	\begin{equation}
+		% 		\begin{aligned}
+		% 			\hat{\psi} (x) &= \sum_k \psi_k(x) \hat{c}_k \\
+		% 			\hat{\psi}^\dagger (x) &= \sum_k \psi_k(x) \hat{c}_k^\dagger \\
+		% 		\end{aligned}
+		% 	\end{equation}
 
-			\noindent
-			Properties (spin $\alpha$, $\beta$; using commutator for bosons and anticommutator for fermions):
-			\begin{equation}
-				\begin{aligned}
-					\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp &= \delta_{\alpha,\beta} \delta(x-x')
-					&\hspace{20pt}
-					\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta(x')}_\mp
-					&= \comm{\hat{\psi}_\alpha^\dagger(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp
-					&= 0
-				\end{aligned}
-			\end{equation}
+		% 	\noindent
+		% 	Properties (spin $\alpha$, $\beta$; using commutator for bosons and anticommutator for fermions):
+		% 	\begin{equation}
+		% 		\begin{aligned}
+		% 			\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp &= \delta_{\alpha,\beta} \delta(x-x')
+		% 			&\hsp
+		% 			\comm{\hat{\psi}_\alpha(x)}{\hat{\psi}_\beta(x')}_\mp
+		% 			&= \comm{\hat{\psi}_\alpha^\dagger(x)}{\hat{\psi}_\beta^\dagger(x')}_\mp
+		% 			&= 0
+		% 		\end{aligned}
+		% 	\end{equation}
 
-			\noindent
-			General form of a one-particle operator in second quantization
-			\begin{equation}
-				\begin{aligned}
-					\hat{A} &= \sum_{i=1}^N \hat{J}(x_i) \\
-					\hat{A} &= \sum_{r,s} \Bra{r}\hat{A}\Ket{s} \hat{c}_r^\dagger \hat{c}_s
-					&= \int \hat{\psi}^\dagger(x) \hat{A}(x) \hat{\psi}(x) \; \dd x
-				\end{aligned}
-			\end{equation}
+		% 	\noindent
+		% 	General form of a one-particle operator in second quantization
+		% 	\begin{equation}
+		% 		\begin{aligned}
+		% 			\hat{A} &= \sum_{i=1}^N \hat{J}(x_i) \\
+		% 			\hat{A} &= \sum_{r,s} \Bra{r}\hat{A}\Ket{s} \hat{c}_r^\dagger \hat{c}_s
+		% 			&= \int \hat{\psi}^\dagger(x) \hat{A}(x) \hat{\psi}(x) \; \dd x
+		% 		\end{aligned}
+		% 	\end{equation}
 
-	\subsection{Interaction}
+
+	\subsection{Scattering}
 		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
 			\noindent
 			Lorentz scalars\index{Lorentz!Skalare} in scattering processes if the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
@@ -333,3 +545,5 @@
 			\begin{equation}
 				s+t+u = \sum_i m_i^2
 			\end{equation}
+
+		

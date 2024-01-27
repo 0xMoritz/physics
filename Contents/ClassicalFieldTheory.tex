@@ -5,7 +5,7 @@
 			\noindent 
 			Action for a scalar field $\phi(x)$ (\ie $\phi(x)\rightarrow P(\phi(x))=\phi(x)$, where $P\in\mathcal{P}$ is a Poincaré Transform, $\mathcal{L}$ is the Lagrange density):
 			\begin{equation}
-				\mathcal{S}\qty[\phi(x)] = \int_{\mathbb{R}^4} \mathcal{L}(\phi(x),\partial_\mu \phi(x)) \;\dd^4 x				
+				\mathcal{S}\qty[\phi(x)] = \int_{\mathbb{R}} L \;\dd t = \int_{\mathbb{R}^4} \mathcal{L}(\phi(x),\partial_\mu \phi(x)) \;\dd^4 x				
 			\end{equation}
 			
 			\noindent
@@ -18,7 +18,15 @@
 			\noindent
 			Classical Klein-Gordon Equation\index{Klein!-Gordon Gleichung} for a free Field $\mathcal{L}(\phi(x)) = \frac{1}{2} \partial_\mu\phi \partial^\mu\phi - \frac{1}{2}m^2\phi^2$:
 			\begin{equation}
-				\delta S = 0 \quad \Rightarrow \quad \qty(\partial_\mu \partial^\mu + m^2)\phi = 0
+				\delta \mathcal{S} = 0 \quad \Rightarrow \quad \qty(\partial_\mu \partial^\mu + m^2)\phi = 0
+			\end{equation}
+
+
+		\subsubsection{Hamilton Formalism}
+			\noindent
+			Transformation to Hamilton function $H$ and Hamiltonian density $\mathcal{H}$:
+			\begin{equation}
+				H = \int_{\mathbb{R}} \mathcal{H}(\phi(x),\pi(x)) \;\dd^3 x = \int_{\mathbb{R}^3} \qty[\pi(x)\dot{\phi}(x) - \mathcal{L}] \;\dd x^3
 			\end{equation}
 
 			% \noindent
@@ -48,7 +56,7 @@
 			\end{equation}
 
 			\noindent
-			Resulting conserved current/Noether current\index{Noether!-Strom} $j^{\mu}$ and conserved charge $Q$ (Note: $\Delta \phi = \eval{\pdv{\delta_\varepsilon \phi}{\varepsilon}}_{\varepsilon=0}$):
+			Resulting conserved current/Noether current\index{Noether!-Strom} $j^{\mu}$ and conserved charge $Q$ (Where $\Delta \phi = \eval{\pdv{\delta_\varepsilon \phi}{\varepsilon}}_{\varepsilon=0}$ is the generator of that transformation):
 			\begin{equation}
 				\begin{aligned}
 					\mathcal{S} \sim \mathcal{S}' \quad\Rightarrow\quad 
@@ -57,4 +65,4 @@
 					\dv{Q}{t} &= 0; \quad Q = \int_{\mathbb{R}^3} j^0\;\dd^3\vec{x} \\
 				\end{aligned}
 			\end{equation}
-			Note: The conserved current is only defined up to divergence $j^\mu \sim \j^\mu + K^\mu$ for $\partial_\mu K^\mu = 0$.
+			Note: The conserved current is only defined up to divergence $j^\mu \sim j^\mu + K^\mu$ for $\partial_\mu K^\mu = 0$.

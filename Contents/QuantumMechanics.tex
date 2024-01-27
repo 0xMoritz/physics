@@ -62,12 +62,6 @@
 
 	\subsection{Basics}
 		\noindent
-		Schrödinger equation\index{Schrödinger!Gleichung}:
-		\begin{equation}
-			\i\hbar\dv{t}\Ket{\psi} = \hat{H}\Ket{\psi}
-		\end{equation}
-
-		\noindent
 		De Broglie wavelength\index{De Broglie!Wellenlänge}:
 		\begin{equation}
 			\begin{aligned}
@@ -124,15 +118,15 @@
 		Position space and momentum space representations\index{Ortsdarstellung}\index{Impulsdarstellung}:
 		\begin{equation}
 			\begin{aligned}
-				\Braket{\vec{x} | \psi} &= \psi(\vec{x}) &\hspace{20pt}
-				\Braket{\vec{x} | \pvec{x}'} &= \delta(\vec{x} - \pvec{x}') \\
-				\Braket{\vec{p} | \psi} &= \tilde{\psi}(\pvec{p}) &\hspace{20pt}
-				\Braket{\vec{p} | \pvec{p}'} &= \delta(\vec{p} - \pvec{p}') \\
+				\Braket{\vec{x} | \psi} &= \psi(\vec{x}) &\hsp
+				\Braket{\vec{x} | \vec{x}'} &= \delta(\vec{x} - \vec{x}') \\
+				\Braket{\vec{p} | \psi} &= \tilde{\psi}(\vec{p}) &\hsp
+				\Braket{\vec{p} | \vec{p}'} &= \delta(\vec{p} - \vec{p}') \\
 			\end{aligned}
 		\end{equation}
 		\begin{equation}
 			\begin{aligned}
-				\Braket{\vec{x} | \pvec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
+				\Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
 			\end{aligned}
 		\end{equation}
 
@@ -168,9 +162,9 @@
 		Position operator\index{Ortsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hspace{20pt}
-				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hspace{20pt}
-				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\pvec{p}) \\
+				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hsp
+				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hsp
+				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{p}) \\
 			\end{aligned}
 		\end{equation}
 
@@ -178,8 +172,8 @@
 		Momentum operator\index{Impulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\dd^n\vec{p} &\hspace{20pt}
-				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hspace{20pt}
+				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\dd^n\vec{p} &\hsp
+				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hsp
 				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pdv{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
 		\end{equation}
@@ -191,12 +185,17 @@
 		\end{equation}
 
 		\noindent
-		Time evolution operator\index{Zeitentwicklungsoperator} (For $\left[\hat{H}(t),\hat{H}(t')\right] = 0\quad\forall t,t'$; the second case follows for $\pdv{\hat{H}}{t}=0$):
+		Definition of the time evolution operator\index{Zeitentwicklungsoperator}:
 		\begin{equation}
-			\begin{aligned}
-				\hat{U}(t) &= \exp\qty(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t') \\
-				\hat{U}(t) &= \exp\qty(-\frac{\i}{\hbar}\hat{H} t) \\
-			\end{aligned}
+			\Ket{\psi(t)} =: \hat{U}(t)\Ket{\psi(0)}
+		\end{equation}
+		Time evolution operator for $\left[\hat{H}(t),\hat{H}(t')\right] = 0\quad\forall t,t'$:
+		\begin{equation}
+			\hat{U}(t) = \exp\qty(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t')
+		\end{equation}
+		Further simplification if $\pdv{\hat{H}}{t}=0$:
+		\begin{equation}
+			\hat{U}(t) = \exp\qty(-\frac{\i}{\hbar}\hat{H} t)
 		\end{equation}
 
 		\noindent
@@ -232,7 +231,7 @@
 		\noindent
 		Defining property (Angular momentum commutator relations):
 		\begin{equation}
-			\left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \epsilon_{ijk} \hat{j}_k
+			\left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \levicivita{ijk} \hat{j}_k
 		\end{equation}
 
 		\noindent
@@ -259,7 +258,7 @@
 		Spin operator \index{Spinoperator} (For a magnetic field $\vec{B}\parallel\vec{e}_z$):
 		\begin{equation}
 			\begin{aligned}
-				\left<\hat{\pvec{S}}^2\right> &= s(s+1)\hbar^2 \\
+				\left<\hat{\vec{S}}^2\right> &= s(s+1)\hbar^2 \\
 				\left<\hat{S}_z\right> &= m_s \hbar \\
 			\end{aligned}
 		\end{equation}
@@ -288,14 +287,41 @@
 		\end{equation}
 
 		\noindent
+		Matrix representation of the Pauli matrices\index{Pauli!Matrizen}:
+		\begin{equation}
+			\label{Eq:PauliMatricesQFT}
+			\begin{aligned}
+				\sigma^0 \doteq \left(\begin{matrix}
+					1 & 0 \\
+					0 & 1 \\
+				\end{matrix}\right) &&\hsp
+				\sigma^1 \doteq \left(\begin{matrix}
+					0 & 1 \\
+					1 & 0 \\
+				\end{matrix}\right) &&\hsp
+				\sigma^2 \doteq \left(\begin{matrix}
+					0 & -\i \\
+						\i & 0 \\
+				\end{matrix}\right) &&\hsp
+				\sigma^3 \doteq \left(\begin{matrix}
+					1 & 0 \\
+					0 & -1 \\
+				\end{matrix}\right)
+			\end{aligned}
+		\end{equation}
+
+		\noindent
 		Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
 		\begin{equation}
 			\label{Eq:PauliMatrices}
 			\begin{aligned}
+				\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
 				\det\qty(\hat{\sigma}_j) &= -1 \\
 				\tr\qty(\hat{\sigma}_j) &= 0 \\
 				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
-				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\varepsilon_{jkl}\hat{\sigma}_l \\
+				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita{jkl}\hat{\sigma}_l \\
+				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita{\mu\nu\lambda}\sigma_\lambda \\
+				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita{\xi\mu\nu\lambda}\sigma_\xi \\
 			\end{aligned}
 		\end{equation}
 
@@ -304,7 +330,7 @@
 		\begin{equation}
 			V
 			= \sum_{i=1}^3 x_i \hat{\sigma}_i = x_1\hat{\sigma}_1 + x_2\hat{\sigma}_2 + x_3\hat{\sigma}_3 
-			= \left( \begin{matrix}
+			\doteq \left( \begin{matrix}
 				x_3 & x_1 - \i x_2 \\
 				x_1 + \i x_2 & - x_3 \\
 			\end{matrix} \right)							
@@ -325,7 +351,7 @@
 		\begin{equation}
 			\begin{aligned}
 				\hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
-				\left< \hat{\pvec{J}}^2 \right> &= j(j+1)\hbar^2 \\
+				\left< \hat{\vec{J}}^2 \right> &= j(j+1)\hbar^2 \\
 				\left< \hat{J}_z \right> &= m_j\hbar \\
 			\end{aligned}
 		\end{equation}
@@ -352,7 +378,7 @@
 					\acomm{\hat{A}}{\hat{B}\hat{C}}
 					&= \hat{B}\acomm{\hat{A}}{\hat{C}} + \acomm{\hat{A}}{\hat{B}}\hat{C} \\
 				\end{aligned}
-				\hspace{30pt}
+				\hsp
 				\begin{aligned}
 					\comm{\hat{A}}{\hat{B}}^\dagger &= -\comm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
 					\acomm{\hat{A}}{\hat{B}}^\dagger &= \acomm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
@@ -437,9 +463,9 @@
 			For the hydrogen atom (Bohr radius\index{Bohr!Radius} $\rho$, normalization constant $a_0$):
 			\begin{equation}
 				\begin{aligned}
-					\qty{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\pvec{r})
-					&= \qty{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pdv{r}\qty(r^2\pdv{r}) + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\pvec{r})
-					= E \psi\qty(\pvec{r})
+					\qty{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\vec{r})
+					&= \qty{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pdv{r}\qty(r^2\pdv{r}) + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\vec{r})
+					= E \psi\qty(\vec{r})
 					\\
 					\Braket{\vec{r}|n,l,m_l,m_s} &= \psi_{n,l,m}\left(r,\theta,\phi\right)\chi(m_s)
 					= R_{n,l}\left(r\right) Y_l^m\left(\theta,\phi\right)\chi(m_s) \\
@@ -498,7 +524,7 @@
 			Hamiltonian and its construction from creation operator $\hat{a}^\dagger$ and annihilation operator $\hat{a}$\index{Leiteroperatoren}:
 			\begin{equation}
 				\begin{aligned}
-					\hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
+					\hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega\qty(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
 					\hat{a} :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
 					\hat{a}^\dagger :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
 				\end{aligned}
@@ -542,8 +568,8 @@
 			Magnetic dipole moment of the electron orbit and spin respectively and energy shift in case of $\vec{j}=\vec{l}$ or $\vec{j}=\vec{s}$ respectively (Sec.~\ref{Sec:ParticleConstants}):
 			\begin{equation}
 				\begin{aligned}
-					\vec{\mu}_l &= -\mu_B g_l \vec{l} &\hspace{20pt} V_l &= m_l g_l \mu_B B\\
-					\vec{\mu}_s &= -\mu_B g_s \vec{s} &\hspace{20pt} V_s &= m_s g_s \mu_B B\\
+					\vec{\mu}_l &= -\mu_B g_l \vec{l} &\hsp V_l &= m_l g_l \mu_B B\\
+					\vec{\mu}_s &= -\mu_B g_s \vec{s} &\hsp V_s &= m_s g_s \mu_B B\\
 				\end{aligned}
 			\end{equation}
 
@@ -572,7 +598,7 @@
 			\end{equation}
 
 	\subsection{Perturbation Theory\index{Störungstheorie}}
-		\subsubsection{Time Independent Perturbation Theory}
+		\subsubsection{Periodic Pertubations}
 			\noindent
 			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
 			\begin{equation}
@@ -583,14 +609,15 @@
 			Interaction Picture:
 			\begin{equation}
 				\begin{aligned}
-					\hat{H} =& \hat{H}_0 + \hat{H}' \\
-					\Ket{\psi_I(t)} :=& e^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
+					\hat{H} =&\, \hat{H}_0 + \hat{H}' \\
+					\Ket{\psi_I(t)} :=&\, e^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
 					= \hat{U}_0^\dagger \Ket{\psi(t)} \\
-					\Hat{A}_I(t) :=& e^{\i \hat{H}_0 t / \hbar} \hat{A} e^{-\i \hat{H}_0 t / \hbar}
+					\Hat{A}_I(t) :=&\, e^{\i \hat{H}_0 t / \hbar} \hat{A} e^{-\i \hat{H}_0 t / \hbar}
 					= \hat{U}_0^\dagger \hat{A} \hat{U}_0
 				\end{aligned}
 			\end{equation}
 
+			\noindent
 			Dyson Equation\index{Dyson!Gleichung}
 			\begin{equation}
 				\begin{aligned}
@@ -609,8 +636,8 @@
 		\end{equation}
 
 		\noindent
-		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\pvec{q}) = \int_{\mathbb{R}^3} \rho(\pvec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
+		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
 		\begin{equation}
 			\dv{\sigma}{\Omega} = \frac{1}{4} \qty(\frac{e}{4\pi\epsilon_0 m v^2})^2
-			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\pvec{q})
+			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\vec{q})
 		\end{equation}
