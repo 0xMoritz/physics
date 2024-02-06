@@ -2,19 +2,24 @@
 \section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFt
 %\subsection{Postulates}
 %TODO
+Conventions in this section:
+\begin{itemize}
+	\item $\hbar = c = 1$
+	\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
+\end{itemize}
 
 
-\subsection{Definitions}
-		Conventions in this section:
-		\begin{itemize}
-			\item $\hbar = c = 1$
-			\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
-		\end{itemize}
-
+\subsection{Basics}
 		\noindent
-		Feynman slash notation\index{Feynman!Slash Notation}
+		Feynman slash notation\index{Feynman!Slash Notation} (Note that $\slashed{\partial}^2 = \partial^2$)
 		\begin{equation}
 			\slashed{A} := \gamma_\mu A^\mu
+		\end{equation}
+
+		\noindent
+		Inner product of 4-vectors:
+		\begin{equation}
+			q \cdot p = q^\mu p_\mu
 		\end{equation}
 
 		\noindent
@@ -32,9 +37,25 @@
 			= \mathcal{H_\pm}^{(0)} \oplus \mathcal{H_\pm}^{(1)} \oplus \mathcal{H_\pm}^{(2)} \oplus ...
 		\end{equation}
 
+		\subsubsection{Scattering}
+			\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
+				\noindent
+				Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+				\begin{itemize}\itemsep -0pt	% reduce space between items
+					\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
+					\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
+					\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
+				\end{itemize}
+	
+				\noindent
+				Connection:
+				\begin{equation}
+					s+t+u = \sum_i m_i^2
+				\end{equation}
+
 		\subsubsection{Gamma Matrices}
 			\noindent
-			Defining properties (Clifford Algebra\index{Clifford!Algebra}):
+			Clifford Algebra\index{Clifford!Algebra} (defining properties of the gamma matrices):
 			\begin{equation}
 				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2g^{\mu\nu}
 			\end{equation}
@@ -108,8 +129,13 @@
 			\end{equation}
 
 			\noindent
-			Weyl representation\index{Weyl!Darstellung}:
+			Weyl representation/Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
 			\begin{equation}
+				\gamma^\mu = \mqty(
+					0 & \sigma^\mu \\
+					\bar{\sigma}^\mu & 0
+				)
+				\hsp
 				\gamma^0 = \mqty(
 					0 & 1_2 \\
 					1_2 & 0
@@ -130,8 +156,9 @@
 			\noindent
 			$\gamma^5$-Matrix:
 			\begin{equation}
-				\gamma^5 = i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+				\gamma^5 = \i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
 			\end{equation}
+			Eigenstates to $\gamma^5$ with an eigenvalue $\pm 1$ are called chiral states.
 
 			\noindent
 			Properties of the $\gamma^5$-matrix:
@@ -145,9 +172,22 @@
 			\end{equation}
 
 			\noindent
+			Left- and right-handed projection operators:
+			\begin{equation}
+				\hat{P}_{\mathrm{L}}=\frac{1-\gamma^{5}}{2} \hsp
+				\hat{P}_{\mathrm{R}}=\frac{1+\gamma^{5}}{2}
+			\end{equation}
+
+			\noindent
+			Helicity operator (\ie right-handed particles have positive helicity and left-handed particles have negative helicity, while right-handed antiparticles have negative helicity and left-handed antiparticles have positive helicity):
+			\begin{equation}
+				\hat{h} = \frac{\vec{\sigma}\cdot\hat{\vec{p}}}{\abs{\vec{p}}}
+			\end{equation}
+
+			\noindent
 			$\sigma^{\mu\nu}$ matrices:
 			\begin{equation}
-				\sigma^{\mu\nu} = \frac{i}{2}\comm{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
+				\sigma^{\mu\nu} = \frac{\i}{2}\comm{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
 			\end{equation}
 
 			\noindent
@@ -207,6 +247,7 @@
 			\noindent
 			General Lorentz Transformation (angles $\vec{\theta}$ and rapidities $\vec{\psi}$)
 			\begin{equation}
+				\label{Eq:GeneralLorentzTransformation}
 				\Lambda(\vec{\theta}, \vec{\psi}) = \exp(-\i(\hat{\vec{J}}\cdot\vec{\theta} - \hat{\vec{K}}\cdot\vec{\psi}))
 			\end{equation}
 		
@@ -214,7 +255,7 @@
 			Gauge theory ($A_\mu$ is the gauge field, $q$ is the coupling strength):
 			\begin{equation}
 				\begin{aligned}
-					\psi(x) &\rightarrow e^{\i\alpha(x)}\psi(x) \\
+					\psi(x) &\rightarrow e^{\i q \alpha(x)}\psi(x) \\
 					A_\mu(x) &\rightarrow A_\mu(x) - \frac{1}{q}\partial_\mu\alpha(x) \\
 				\end{aligned}
 			\end{equation}
@@ -226,9 +267,15 @@
 			\end{equation}
 
 			\noindent
-			The \emph{gauge principle} states, that the gauge field -- introduced to guarantee local gauge symmetry dictates the form of coupling.
+			The \emph{gauge principle} states, that the gauge field -- introduced to guarantee local gauge symmetry -- dictates the form of coupling.
 
-		\subsection{Discrete Symmetry}
+			\noindent
+			Application in Electromagnetism (Note that $F_{\mu\nu}$ is invariant under gauge transformation):
+			\begin{equation}
+				F_{\mu\nu} =  \frac{\i}{q} \comm{D_\mu}{D_\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+			\end{equation}
+
+		\subsubsection{Discrete Symmetry}
 			Charge conjugation $\hat{\mathsf{C}}$ (For any quantum charge operator $\hat{Q}$, i.e. electric charge, lepton/baryon number, hypercharge,\dots; $\bar{p}$ is the antiparticle of $p$):
 			\begin{equation}
 				\begin{aligned}
@@ -301,7 +348,7 @@
 			%\wick{\c \hat{A} \c \hat{B}}
 
 			\noindent
-			Wick's Theorem\index{Wick!Theorem}:
+			Wick's Theorem\index{Wick!Theorem} (where all contractions means all possible simple, double and higher order contractions -- until all operators are contracted):
 			\begin{equation}
 				T\qty[ \phi(x_1)\dotsb\phi(x_n) ] = \NormalOrder{\phi(x_1)\dotsb\phi(x_n) + \sum(\text{all contractions})}
 			\end{equation}
@@ -320,7 +367,7 @@
 			\end{equation}
 			
 	\subsection{Pertubation Theory}
-		Time evolution operator ($t > t_0$):
+		Dyson equation/Dyson expansion\index{Dyson!Gleichung} ($t > t_0$):
 		\begin{equation}
 			U(t,t_0) = T \qty[ \exp(-\i \int_{t_0}^t \dd t' \hat{H}_{\mathrm{int}}(t')) ]
 		\end{equation}
@@ -330,13 +377,16 @@
 		\begin{equation}
 			\Bra{\Omega} T \hat{\phi}_H(x_1) \dotsb \hat{\phi}_H(x_n) \Ket{\Omega}
 			= \frac{ \mel**{0}{T \hat{\phi}_I(x_1) \dotsb \hat{\phi}_I(x_n) \exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
-			{\mel**{0}{\exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
+			{\mel**{0}{T\exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
 		\end{equation}
 
 		\noindent
-		$S$-Matrix\index{S-Matrix} (Where $\hat{U}$ is the time evolution operator, and $\hat{T}$ is the scattering term):
-		\begin{equation}			
-			\hat{S} = \lim_{\substack{t\rightarrow\infty\\t_0\rightarrow-\infty}} \hat{U}(t,t_0) = \hat{1} + \i \hat{T}
+		$S$-Matrix\index{S-Matrix} (Where $\hat{U}$ is the time evolution operator, and $\hat{T}$ is the scattering term/Transition matrix and $\mathcal{M}$ is the invariant amplitude):
+		\begin{equation}
+			\begin{aligned}
+				\hat{S} &= \lim_{\substack{t\rightarrow\infty\\t_0\rightarrow-\infty}} \hat{U}(t,t_0) = \hat{1} + \i \hat{T} \\
+				\mel**{p_{1}p_{2}}{\i \hat{T}}{k_{1}k_{2}} &= \qty(2\pi)^4\delta(p_1 + p_2 - k_1 - k_2) \i \mathcal{M} \\
+			\end{aligned}
 		\end{equation}
 
 		\noindent
@@ -439,13 +489,26 @@
 				G^{(n)}(x_1, ..., x_n) = \Bra{\Omega} T \hat{\phi}(x_1) \dotsb \hat{\phi}(x_n) \Ket{\Omega}
 			\end{equation}
 
-			% Feynman Rules:
-			% \feynmandiagram [horizontal=a to b] {
-			% 	i1 -- [fermion] a -- [fermion] i2,
-			% 	a -- [photon] b,
-			% 	f1 -- [fermion] b -- [fermion] f2,
-			% };
-
+			% \noindent
+			% Feynman Rules for scalar field theory: \\
+			% \begin{center}
+			% 	\begin{tikzpicture}				
+			% 		\begin{feynman}
+			% 			\vertex(a);
+			% 			\vertex[above left=of a](b){$f^+$};
+			% 			\vertex[below left=of a](c){$f^-$};
+			% 			\vertex[right=of a](d);
+			% 			\vertex[above right=of d](e){$f^+$};
+			% 			\vertex[below right=of d](f){$f^-$};
+			% 			\diagram{
+			% 				(b)--[fermion] (a) -- [fermion](c);
+			% 				(a) --[boson, edge label=$\gamma$, momentum'=$k$] (d);
+			% 				(e)--[fermion] (d) -- [fermion](f);
+			% 				};
+			% 		\end{feynman}
+			% 	\end{tikzpicture}
+			% \end{center}
+					
 	\subsection{Fermions}
 		\subsubsection{Fermionic Creation an Annihilation Operators}
 		\label{Sec:FermionicCreationAndAnnihilationOperators}
@@ -485,16 +548,179 @@
 				\end{matrix} \right)
 			\end{equation}
 
+		\subsubsection{Weyl Spinors\index{Weyl!Spinor}}
+			\noindent
+			Lorentz Transformation (using \ref{Eq:GeneralLorentzTransformation} with the generators $\hat{\vec{J}} = \vec{\sigma}/2$ and $\hat{\vec{K}} = \pm \i\vec{\sigma}/2$):
+			\begin{equation}
+				\Lambda 
+				= \mqty(\Lambda_L & 0 \\ 0 & \Lambda_R)
+				= \mqty(
+					\exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} - \vec{\psi})) & 0 \\
+					0 & \exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} + \vec{\psi})) 					
+						)
+					\end{equation}
+			\begin{equation}
+				\Lambda_L^\dagger = \Lambda_R^{-1} \hsp \Lambda_R^\dagger = \Lambda_L^{-1}
+			\end{equation}
 
-
-		\subsubsection{Free Dirac Equation\index{Dirac!Gleichung}}
+			\noindent
+			Pauli 4-Vector\index{Pauli!4-Vektor}
+			\begin{equation}
+				\begin{aligned}
+					\tilde{x} &= \sigma_\mu x^\mu \doteq \mqty(
+						x^0 - x^3 & x^1 + \i x^2 \\
+						x^1 - \i x^2 & x^0 + x^3 \\
+						) \hsp \\
+					x^\mu x_\mu &= \det{\tilde{x}} = x^2 \\
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			Weyl Spinor\index{Weyl!Spinor} transformation rules
+			\begin{equation}
+				\psi_L' = \Lambda_{L} \psi_L \Lambda_{L}^\dagger \hsp
+				\psi_R' = \Lambda_{R} \psi_R \Lambda_{R}^\dagger 
+			\end{equation}
+			
+			\noindent
+			Weyl Equations\index{Weyl!Gleichungen}:
+			\begin{equation}
+				\begin{aligned}
+					\i \bar{\sigma}^\mu \partial_\mu \psi_L &= 0 \\
+					\i \sigma^\mu \partial_\mu \psi_R &= 0 \\
+				\end{aligned}
+			\end{equation}
+			
+		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
+			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor}:
+			\begin{equation}
+				\psi = \psi_D = \mqty(\psi_L \\ \psi_R)
+			\end{equation}
+			
 			\noindent
 			Dirac Equation\index{Dirac!Equation} (Spin $s=1/2$):
 			\begin{equation}
-				\qty( i\slashed{\partial} - m ) \psi\qty(x) = 0
+				\qty(\i\slashed{\partial} - m ) \psi\qty(x) = 0
+			\end{equation}
+			using $\slashed{\hat{p}} = \gamma^\mu(\i\partial_\mu)$
+			\begin{equation}
+				\qty(\slashed{\hat{p}} - m) \psi\qty(x) = 0
+			\end{equation}
+			note, that the Dirac Equation implies the Klein-Gordon Equation\index{Klein!-Gordon Gleichung}.
+
+			\noindent
+			Solutions to the Dirac equation\index{Dirac!Gleichung}:
+			\begin{equation}
+				\begin{aligned}
+					\text{particles} & \hsp
+					\psi(x) = u(p) e^{-\i p \cdot x} = \mqty(
+						u_L(p) \\
+						u_R(p)
+						) e^{-\i p \cdot x} \\
+					\text{antiparticles} & \hsp
+					\bar{\psi}(x) = v(p) e^{\i p \cdot x} = \mqty(
+						v_L(p) \\
+						v_R(p)
+						) e^{\i p \cdot x}
+				\end{aligned}
+			\end{equation}
+			with
+			\begin{equation}
+				u^s(p) = \mqty(
+					\sqrt{p\cdot\sigma}\,\xi^s \\
+					\sqrt{p\cdot\bar{\sigma}}\,\xi^s
+					)
+				\hsp v^s(p) = \mqty(
+					\M\sqrt{p\cdot\sigma}\,\chi^s \\
+					-\sqrt{p\cdot\bar{\sigma}}\,\chi^s
+				)
+			\end{equation}
+			for particles spin up would mean $\xi=\xi^1=\mqty(1\\0)$ and spin down would mean $\xi=\xi^2=\mqty(0\\1)$.
+			for antiparticles spin up would mean $\eta=\eta^1=\mqty(0\\1)$? and spin down would mean $\eta=\eta^2=\mqty(1\\0)$?.
+
+			\noindent
+			Adjoint spinor $\bar{u}$ of a spinor $u$:
+			\begin{equation}
+				\bar{u} := u^{\dagger} \gamma^0
 			\end{equation}
 
+			\noindent
+			Spinor orthogonality
+			\begin{equation}
+				\begin{aligned}
+					\bar{u}^s(p) u^r(p) &= \M 2m\xi^{s\dagger}\xi^r = \M 2m\delta^{sr} \\
+					\bar{v}^s(p) v^r(p) &= - 2m\eta^{s\dagger}\eta^r = - 2m\delta^{sr} \\
+					\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			Full particle $\psi^{-}(x)$ and antiparticle $\psi^{+}(x)$ solutions (with amplitudes $a_{s,\vec{p}}$ and $b_{s,\vec{p}}$)
+			\begin{equation}
+				\begin{aligned}
+					\psi^{-}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}a_{s, \vec{p}}u^{s}(p)e^{-\i p\cdot x} \\
+					\psi^{+}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}{b_{s, \vec{p}}^{*}}v^{s}(p)e^{\i p\cdot x}
+				\end{aligned}
+			\end{equation}
 
+			\noindent
+			Pauli Equation\index{Pauli!Gleichung} (non relativistic limit of the Dirac equation):
+			\begin{equation}
+				\hat{H}\psi = \frac{(\vec{\sigma}\cdot\hat{\vec{p}})^2}{2m} \psi
+			\end{equation}
+	
+			\noindent
+			Dirac Spinor\index{Dirac!Spinor} transformation rules (Generator $\hat{S}^{\mu\nu} = \frac{\i}{4}[\gamma^\mu,\gamma^\nu]$):
+			\begin{equation}
+				\begin{aligned}
+					\Lambda_{1/2} &= \exp(\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_L & 0 \\ 0 & \Lambda_R) \\
+					\gamma^0 \Lambda_{1/2}^\dagger \gamma^0	&= \Lambda_{1/2}^{-1} \\
+					\psi' &= \Lambda_{1/2} \psi 
+					\hsp \bar{\psi}' = \bar{\psi} \Lambda_{1/2}^{-1} 
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Lagrangian for a Dirac-Field:
+			\begin{equation}
+				\mathcal{L} = \bar{\psi} \qty(\i \slashed{\partial} - m) \psi
+			\end{equation}
+			corresponding Noether current operator:
+			\begin{equation}
+				\hat{J}^\mu = \hat{\bar{\psi}} \gamma^\mu \hat{\psi}
+			\end{equation}
+
+			\noindent
+			Free Feynman Propagator\index{Feynman!Propagator} for a spinor field:
+			\begin{equation}
+				\begin{aligned}
+					D_F(x-y) &= \mel**{0}{T\hat{\psi}(x)\hat{\bar\psi}(y)}{0} \\
+					&= \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i(\slashed{p}+m)}{p^2-m^2+\i\epsilon} e^{-\i p\cdot(x-y)} \\
+					&= \wick{\c{\hat{\psi}}(x) \c{\hat{\bar{\psi}}}(y)} = - \wick{\c{\hat{\bar{\psi}}}(y) \c{\hat\psi}(x)}
+				\end{aligned}
+			\end{equation}
+			
+	\subsection{Renormalization}
+		TODO
+
+	\subsection{Quantum Electrodynamics}
+		Lagrangian of Quantum Electrodynamics\index{Quanten Elektrodynamik} ($U(1)$ gauge)
+		\begin{equation}
+			\mathcal{L}_\mathrm{QED} = -F^{\mu\nu}F_{\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi		
+		\end{equation}
+
+		\noindent
+		Feynman Rules for Quantum Electrodynamics ($\xi$ is the gauge fixing parameter):
+		\begin{itemize}\itemsep -0pt
+			\item Photon propagator: $D_F^{\mu\nu}(x-y) = -\frac{\i}{k^2+\i\epsilon} \qty(\eta_{\mu\nu}-(1-\xi)\frac{k_\mu k_\nu}{k^2+\i\epsilon} )$
+			\item Charged particle propagator $\psi \in \qty{e^\pm, \mu^\pm ,\tau^\pm, u,d,s,c,t,b}$: $D_F(x-y) = \i\qty(\frac{\slashed{p}+m_\psi}{p^2-m_\psi^2+\i\epsilon})$
+			\item Vertex factor: $-e\gamma^\mu$
+			\item Incoming photon: $\epsilon_\mu(k)$, outgoing photon: $\epsilon^{*}_\mu(k)$
+			\item Incoming lepton: $u(p)$, outgoing lepton: $\bar{u}(p)$, incoming anti-lepton: $\bar{v}(p)$, outgoing anti-lepton: $v(p)$
+			\item For each loop integrate over loop momentum $\int \frac{\dd^4 q}{(2\pi)^4}$, include a minus for fermion loops
+			\item Ensure overall momentum conservation $(2\pi)^4 \delta(\sum_i p_i)$
+		\end{itemize}
+		
 
 	% \subsection{Second Quantization}
 		% \subsubsection{Field Operators}
@@ -530,20 +756,52 @@
 		% 	\end{equation}
 
 
-	\subsection{Scattering}
-		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
-			\noindent
-			Lorentz scalars\index{Lorentz!Skalare} in scattering processes if the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
-			\begin{itemize}\itemsep -0pt	% reduce space between items
-				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
-				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
-				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
-			\end{itemize}
+	\subsection{Yukawa Theory\index{Yukawa!Theorie}}
+		Lagrangian density:
+		\begin{equation}
+			\mathcal{L}=\partial^{\mu}\psi^{\dagger}\partial_{\mu}\psi-m^{2}\psi^{\dagger}\psi+\frac{1}{2}(\partial_{\mu}\phi)^{2}-\frac{1}{2}\mu^{2}\phi^{2}-g\psi^{\dagger}\psi\phi
+		\end{equation}
 
-			\noindent
-			Connection:
-			\begin{equation}
-				s+t+u = \sum_i m_i^2
-			\end{equation}
+		\noindent
+		Free field representations:
+		\begin{equation}
+			\begin{aligned}
+				\hat{\psi}(x) &= \int\frac{\dd^{3}p}{\left(2\pi\right)^{\frac{3}{2}}}\frac{1}{(2E_{p})^{\frac{1}{2}}}\left(\hat{a}_{p}\mathrm{e}^{-\mathrm{i}p\cdot x}+\hat{b}_{p}^{\dagger}\mathrm{e}^{\mathrm{i}p\cdot x}\right), \\
+				\hat{\psi}^{\dagger}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{(2E_{p})^{\frac{1}{2}}}\left(\hat{a}_{p}^{\dagger}\mathrm{e}^{\mathrm{i}p\cdot x}+\hat{b}_{p}\mathrm{e}^{-\mathrm{i}p\cdot x}\right) \\
+				\hat{\phi}(x) &=\int\frac{\dd^{3}q}{\left(2\pi\right)^{\frac{3}{2}}}\frac{1}{\left(2\varepsilon_{q}\right)^{\frac{1}{2}}}\left(\hat{c}_{q}\mathrm{e}^{-\mathrm{i}q\cdot x}+\hat{c}_{q}^{\dagger}\mathrm{e}^{\mathrm{i}q\cdot x}\right) \\
+			\end{aligned}
+		\end{equation}
 
+		\noindent
+		Feynman rules in momentum space:
+		\begin{itemize}\itemsep -0pt
+			\item Each vertex contributes a factor $-ig$
+			\item For each internal phion line carrying momentum $q$ include a propagator $\frac{\i}{q^2 -\mu^2+\i\epsilon}$
+			\item For each internal psion line carrying momentum $q$ include a
+			propagator $\frac{\i}{q^2 -m^2+\i\epsilon}$
+			\item Integrate over all undetermined momenta
+			\item All symmetry factors are 1
+			\item Incoming and outgoing lines contribute a factor 1
+			\item Include an overall energy-momentum conserving delta function
+			for each diagram
+		\end{itemize}
 		
+		% \noindent
+		% Feynman Rules for scalar field theory: \\
+		% \begin{center}
+		% 	\begin{tikzpicture}				
+		% 		\begin{feynman}
+		% 			\vertex(a);
+		% 			\vertex[above left=of a](b){$f^+$};
+		% 			\vertex[below left=of a](c){$f^-$};
+		% 			\vertex[right=of a](d);
+		% 			\vertex[above right=of d](e){$f^+$};
+		% 			\vertex[below right=of d](f){$f^-$};
+		% 			\diagram{
+		% 				(b)--[fermion] (a) -- [fermion](c);
+		% 				(a) --[boson, edge label=$\gamma$, momentum'=$k$] (d);
+		% 				(e)--[fermion] (d) -- [fermion](f);
+		% 				};
+		% 		\end{feynman}
+		% 	\end{tikzpicture}
+		% \end{center}
