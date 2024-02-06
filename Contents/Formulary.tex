@@ -400,7 +400,7 @@
 			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\dd x
 		\end{equation}
 
-		\subsubsection{Fourier Analysis\index{Fourier!Analyse}}
+		\subsubsection{Discrete Fourier Analysis\index{Fourier!Analyse}}
 			\noindent
 			Complex trigonometric basis functions:
 			\begin{equation}
@@ -435,6 +435,13 @@
 			\end{equation}
 
 			\noindent
+			Parseval's theorem\index{Parseval!Theorem}: (For two functions $f(x)$ and $g(x)$ with Fourier coefficients $c_k$ and $d_k$)
+			\begin{equation}
+				\sum_{n=-\infty}^{\infty} c_n d_n^* = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)g^*(x)\;\dd x
+			\end{equation}
+
+		\subsection{Continuous Fourier Analysis\index{Fourier!Analyse}}
+			\noindent
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
@@ -449,11 +456,16 @@
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
 					\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
-					\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x &=
-					\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k \\
-					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k \\
+					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k
 					\label{Eq:FourierIdentities}
 				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			Plancherel's theorem\index{Plancherel!Theorem}:
+			\begin{equation}
+				\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x =
+				\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k
 			\end{equation}
 
 			\noindent
@@ -660,7 +672,7 @@
 			\noindent
 			Differential equation\index{Hermite!Differentialgleichung} ($n\in\mathbb{N}_0$):
 			\begin{equation}
-				\dv[2]{x} H_n(x) -2x\dv{x} H_n+2 n H_n(x)=0
+				\dv[2]{x} H_n(x) -2x\dv{x} H_n(x) +2 n H_n(x)=0
 			\end{equation}
 
 			\noindent

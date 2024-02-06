@@ -73,7 +73,7 @@
 		\noindent
 		Compton wavelength\index{Compton!Wellenlänge}:
 		\begin{equation}
-			\lambda = \frac{h}{mc}
+			\lambda_\mathrm{C} = \frac{h}{mc}
 		\end{equation}
 
 		\noindent
@@ -326,10 +326,10 @@
 		\end{equation}
 
 		\noindent
-		Pauli\index{Pauli} Vector
+		Pauli Vector\index{Pauli!Vektor}
 		\begin{equation}
 			V
-			= \sum_{i=1}^3 x_i \hat{\sigma}_i = x_1\hat{\sigma}_1 + x_2\hat{\sigma}_2 + x_3\hat{\sigma}_3 
+			= \sum_{i=1}^3 x_i \hat{\sigma}_i
 			\doteq \left( \begin{matrix}
 				x_3 & x_1 - \i x_2 \\
 				x_1 + \i x_2 & - x_3 \\
@@ -600,7 +600,7 @@
 	\subsection{Perturbation Theory\index{Störungstheorie}}
 		\subsubsection{Periodic Pertubations}
 			\noindent
-			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' e^{\pm\i\omega}$):
+			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' = e^{\pm\i\omega}$):
 			\begin{equation}
 				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \abs{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\qty(E_f^0 - E_i^0 \pm \hbar\omega)
 			\end{equation}
@@ -618,13 +618,13 @@
 			\end{equation}
 
 			\noindent
-			Dyson Equation\index{Dyson!Gleichung}
+			Dyson Equation\index{Dyson!Gleichung} (The time evolution operator $\hat{U} = \hat{U}_I$ is actually in the interaction picture):
 			\begin{equation}
 				\begin{aligned}
 					\Ket{\psi_I(t)} &=: \hat{U}(t,t_0) \Ket{\psi_I(t_0)} \\
 					\i \hbar \pdv{t} \hat{U}(t,t_0) &= \hat{H}_I'(t) \hat{U}(t,t_0) \\
 					\hat{U}(t,t_0) &= \hat{1} - \frac{\i}{\hbar} \int_{t_0}^{t} \hat{H}'_I(t') \hat{U}(t',t_0) \;\dd t' \\
-					&= \hat{T}\qty[\exp\qty(-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t'))]
+					&= T \qty[\exp\qty(-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t'))]
 				\end{aligned}
 			\end{equation}
 
