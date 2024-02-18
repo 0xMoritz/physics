@@ -85,41 +85,45 @@
 \let\oldvec\vec
 
 \begin{document}
-	\renewcommand{\i}			{ \mathrm{i} } %\imath
-	\newcommand{\ii}			{ \imath }
-	\renewcommand{\emph}		{ \textit } %\imath
-	\newcommand{\xrowht}[2][0]	{ \addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}} }
-	\newcommand{\binomkoeff}[2]	{ \left(\begin{matrix}#1\\#2\end{matrix}\right) }
-	\newcommand{\vecc}[2]		{ \left(\begin{matrix}#1\\#2\end{matrix}\right) }
-	\newcommand{\veccc}[3]		{ \left(\begin{matrix}#1\\#2\\#3\end{matrix}\right) }
-	\newcommand{\veccT}[2]		{ \left(\begin{matrix}#1&#2\\\end{matrix}\right) }
-	\newcommand{\vecccT}[3]		{ \left(\begin{matrix}#1&#2&#3\\\end{matrix}\right) }
-	\renewcommand{\vec}[1]		{ \oldvec{#1}\mkern2mu\vphantom{#1} } % (extra space to the right)
-	\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}} % (arrow from left to right)
-	\newcommand{\dpder}[2]		{ \dfrac{\partial #1}{\partial #2} } % default size partial derivative
-	\newcommand{\Nabla}			{ \vec{\nabla} }
-	\newcommand{\unitvec}[1]	{ \vec{e}_{#1} } % TODO: Use of this is inconsistent
-	\newcommand{\const}			{ \mathrm{const.} }
-	\newcommand*{\rom}[1]		{ \uppercase\expandafter{\romannumeral #1\relax} }
-	\newcommand{\vsp}			{ \vspace{10pt} }
-	\newcommand{\hsp}			{ \hspace{30pt} }
-	\newcommand{\nl}			{ \vsp \newline }
-	\newcommand{\exact}			{ \hfill(exact) }
-	\newcommand{\M}				{ \phantom{-} }
-	\newcommand{\sinc}			{ \mathrm{sinc} }
-	\newcommand{\perm}			{ \mathrm{perm} }
-	\newcommand{\sgn}			{ \mathrm{sgn} }
-	\newcommand{\inv}[1]		{ {#1}^\mathrm{inv} }
-	\newcommand{\levicivita}[1] { \varepsilon_{#1} }
-	\newcommand{\MU}			{ \SI{}{\micro \nothing} } % upright µ
-	\newcommand{\e}[1]			{ \times 10^{#1} }
-	\newcommand{\NormalOrder}[1]{ \mathrm{N}\qty[#1] }
-	\newcommand{\normord}[1]	{ :\mathrel{#1}: }
-	\renewcommand{\unit}[1]		{ \,\mathrm{#1} }
-	\newcommand{\mono}[1]		{ {\ttfamily #1} }
-	\newcommand{\Avg}[1]		{ \left\langle #1 \right\rangle }
-	\newcommand{\avg}[1]		{ \langle #1 \rangle }
-	\renewcommand{\o}			{ \text{\O} }
+	\renewcommand{\i}			{\mathrm{i}} %\imath
+	\newcommand{\ii}			{\imath}
+	\newcommand{\ex}			{\mathrm{e}}
+	\newcommand{\kB}			{k_{\text{B}}}
+	\renewcommand{\emph}		{\textit} %\imath
+	\newcommand{\xrowht}[2][0]	{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
+	\newcommand{\binomkoeff}[2]	{\mqty(#1\\#2)}
+	\newcommand{\vecc}[2]		{\mqty(#1\\#2)}
+	\newcommand{\veccc}[3]		{\mqty(#1\\#2\\#3)}
+	\newcommand{\veccT}[2]		{\mqty(#1&#2\\)}
+	\newcommand{\vecccT}[3]		{\mqty(#1&#2&#3\\)}
+	\renewcommand{\vec}[1]		{\oldvec{#1}\mkern2mu\vphantom{#1}} % (extra space to the right)
+	\newcommand{\cev}[1]		{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}} % (arrow from left to right)
+	\newcommand{\dpder}[2]		{\dfrac{\partial #1}{\partial #2}} % default size partial derivative
+	\newcommand{\Nabla}			{\vec{\nabla}}
+	\newcommand{\unitvec}[1]	{\vec{e}_{#1}} % TODO: Use of this is inconsistent
+	\newcommand{\const}			{\mathrm{const.}}
+	\newcommand*{\rom}[1]		{\uppercase\expandafter{\romannumeral #1\relax}}
+	\newcommand{\vsp}			{\vspace{10pt}}
+	\newcommand{\hsp}			{\hspace{30pt}}
+	\newcommand{\nl}			{\vsp \newline}
+	\newcommand{\exact}			{\hfill(exact)}
+	\newcommand{\M}				{\phantom{-}}
+	\newcommand{\sinc}			{\mathrm{sinc}}
+	\newcommand{\perm}			{\mathrm{perm}}
+	\newcommand{\sgn}			{\mathrm{sgn}}
+	\newcommand{\inv}[1]		{{#1}^\mathrm{inv} }
+	\newcommand{\levicivita}[1] {\varepsilon_{#1}}
+	\newcommand{\MU}			{\SI{}{\micro \nothing}} % upright µ
+	\newcommand{\e}[1]			{\times 10^{#1}}
+	\newcommand{\TimeOrder}[1]	{\mathrm{T}\qty[#1]}
+	\newcommand{\NormalOrder}[1]{\mathrm{N}\qty[#1]}
+	\newcommand{\normord}[1]	{:\mathrel{#1}:}
+	\renewcommand{\unit}[1]		{\,\mathrm{#1}}
+	\newcommand{\mono}[1]		{{\ttfamily #1}}
+	\newcommand{\Avg}[1]		{\left\langle #1 \right\rangle}
+	\newcommand{\avg}[1]		{\langle #1 \rangle}
+	\renewcommand{\o}			{\text{\O}}
+	\renewcommand{\arraystretch}{1.4}
 	\newcommand{\definition}[2]{
 		\begin{tcolorbox}[colback=green!60!blue!20!white,left=1mm, coltitle=black, leftrule=0mm, rightrule=0mm, bottomrule=0mm,
 			colframe={green!60!blue!60!white}, sharp corners, title=\textbf{Definition: #1}]

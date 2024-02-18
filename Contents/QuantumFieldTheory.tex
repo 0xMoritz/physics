@@ -61,11 +61,12 @@ Conventions in this section:
 			\end{equation}
 
 			\noindent
-			Further properties:
+			Identities:
 			\begin{equation}
 				\qty(\gamma^\mu)^\dagger = \eta^{\mu\mu} \gamma^\mu
 				\hsp \qty(\gamma^\mu)^2 = \eta^{\mu\mu} 1_4
 				\hsp \qty(\gamma^\mu)^\dagger = \gamma^0 \gamma^\mu \gamma^0
+				\hsp \gamma_\mu \gamma^\mu = 4 \,1_4
 				% \begin{aligned}
 				% 	\qty(\gamma^0)^\dagger &= +\gamma^0 \\
 				% 	\qty(\gamma^j)^\dagger &= -\gamma^j \\
@@ -193,7 +194,7 @@ Conventions in this section:
 			\noindent
 			Non-Relativistic Limit ($c\rightarrow\infty$):
 			\begin{equation}
-				\phi(x) \rightarrow \phi(x) e^{-\i m c^2 t/\hbar}
+				\phi(x) \rightarrow \phi(x) \ex^{-\i m c^2 t/\hbar}
 			\end{equation}
 
 	\subsection{Gauge and Symmetry}
@@ -255,7 +256,7 @@ Conventions in this section:
 			Gauge theory ($A_\mu$ is the gauge field, $q$ is the coupling strength):
 			\begin{equation}
 				\begin{aligned}
-					\psi(x) &\rightarrow e^{\i q \alpha(x)}\psi(x) \\
+					\psi(x) &\rightarrow \ex^{\i q \alpha(x)}\psi(x) \\
 					A_\mu(x) &\rightarrow A_\mu(x) - \frac{1}{q}\partial_\mu\alpha(x) \\
 				\end{aligned}
 			\end{equation}
@@ -312,6 +313,7 @@ Conventions in this section:
 				\end{aligned}
 			\end{equation}
 
+			\noindent
 			CPT-Theorem, valid for $\mathcal{L}$ Lorentz invariant, local, hermitian and normal ordered:
 			\begin{equation}
 				\comm{\hat{\mathsf{C}}\hat{\mathsf{P}}\hat{\mathsf{T}}}{\mathcal{H}} = 0
@@ -323,7 +325,7 @@ Conventions in this section:
 		\subsubsection{Operator Ordering}
 			Time ordering symbol (``$+$'' for Bosons, ``$-$'' for Fermions). Linear operator, that orders all time dependent operators from right (earliest) to left (latest):
 			\begin{equation}
-				T\qty[\hat{A}(t)\hat{B}(t')]
+				\TimeOrder{\hat{A}(t)\hat{B}(t')}
 					= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
 					= \begin{cases}
 						\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
@@ -345,12 +347,11 @@ Conventions in this section:
 			\begin{equation}
 				\wick{\c{\hat{A}} \c{\hat{B}}} = \hat{A}\hat{B} - \NormalOrder{\hat{A}\hat{B}}
 			\end{equation}
-			%\wick{\c \hat{A} \c \hat{B}}
 
 			\noindent
-			Wick's Theorem\index{Wick!Theorem} (where all contractions means all possible simple, double and higher order contractions -- until all operators are contracted):
+			Wick's Theorem\index{Wick!Theorem} (where all contractions means all possible simple, double and higher order contractions, until all operators are contracted):
 			\begin{equation}
-				T\qty[ \phi(x_1)\dotsb\phi(x_n) ] = \NormalOrder{\phi(x_1)\dotsb\phi(x_n) + \sum(\text{all contractions})}
+				\TimeOrder{\phi(x_1)\dotsb\phi(x_n)} = \NormalOrder{\phi(x_1)\dotsb\phi(x_n) + \sum(\text{all contractions})}
 			\end{equation}
 			
 		\subsubsection{Multiparticle Operators}
@@ -393,9 +394,9 @@ Conventions in this section:
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
 			\begin{aligned}
-				&\hat{H} := \hat{H}_0 + e^{-\varepsilon \abs{t}} \hat{H}' \\
+				&\hat{H} := \hat{H}_0 + \ex^{-\epsilon \abs{t}} \hat{H}' \\
 				&\hat{H}_0 \Ket{\phi_0} = E_0 + \Ket{\phi_0} \\
-				&\text{if}\quad \lim_{\varepsilon\rightarrow 0} \frac{\hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\varepsilon(0,-\infty)\Ket{\phi_0}}
+				&\text{if}\quad \lim_{\epsilon\rightarrow 0} \frac{\hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}
 				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
 				\Rightarrow&\quad \hat{H} \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} = E \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \\
 			\end{aligned}
@@ -439,8 +440,8 @@ Conventions in this section:
 			Scalar bosonic field and conjugate momentum operators in terms of creation and annihilation operators (with the on-shell frequency $\omega_{\vec{p}} = p^0 = \sqrt{\vec{p}^2 + m^2}$):
 			\begin{equation}
 				 \begin{aligned}
-					\hat{\phi}(x) &= \int \frac{\dd^3 p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) e^{-i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) e^{i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
-					\hat{\pi}(x) &= -\i \int \frac{\dd^3 p}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) e^{-i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) e^{i p_\mu x^\mu} ) \\
+					\hat{\phi}(x) &= \int \frac{\dd^3 p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
+					\hat{\pi}(x) &= -\i \int \frac{\dd^3 p}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) \\
 				 \end{aligned}
 			\end{equation}
 			
@@ -468,7 +469,7 @@ Conventions in this section:
 			\noindent
 			Solution (plane waves):
 			\begin{equation}
-				{\phi}^{ ( \pm ) }_{\vec{p}} (x) = e^{\mp p_\mu x^\mu}
+				{\phi}^{ ( \pm ) }_{\vec{p}} (x) = \ex^{\mp \i p_\mu x^\mu}
 			\end{equation}
 
 			\noindent
@@ -478,7 +479,7 @@ Conventions in this section:
 					D_F (x-y) 
 					&= \Bra{0} T \hat{\phi}(x)\hat{\phi}(y) \Ket{0} \\
 					&= \comm{\hat{\phi}_{-}(x)}{\hat{\phi}_{+}(y)} \Theta(x^0-y^0) + \comm{\hat{\phi}_{-}(y)}{\hat{\phi}_{+}(x)} \Theta(y^0-x^0) \\
-					&= \lim_{\epsilon \searrow 0} \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i}{p^\mu p_\mu - m^2 + \i \epsilon} e^{-\i p_\mu (x-y)^\mu} \\
+					&= \lim_{\epsilon \searrow 0} \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i}{p^\mu p_\mu - m^2 + \i \epsilon} \ex^{-\i p_\mu (x-y)^\mu} \\
 					&= \wick{\c{\hat{\phi}}(x) \c{\hat{\phi}}(y)} \\
 				\end{aligned}
 			\end{equation}
@@ -553,14 +554,14 @@ Conventions in this section:
 			Lorentz Transformation (using \ref{Eq:GeneralLorentzTransformation} with the generators $\hat{\vec{J}} = \vec{\sigma}/2$ and $\hat{\vec{K}} = \pm \i\vec{\sigma}/2$):
 			\begin{equation}
 				\Lambda 
-				= \mqty(\Lambda_L & 0 \\ 0 & \Lambda_R)
+				= \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R})
 				= \mqty(
 					\exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} - \vec{\psi})) & 0 \\
 					0 & \exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} + \vec{\psi})) 					
 						)
 					\end{equation}
 			\begin{equation}
-				\Lambda_L^\dagger = \Lambda_R^{-1} \hsp \Lambda_R^\dagger = \Lambda_L^{-1}
+				\Lambda_\text{L}^\dagger = \Lambda_\text{R}^{-1} \hsp \Lambda_\text{R}^\dagger = \Lambda_\text{L}^{-1}
 			\end{equation}
 
 			\noindent
@@ -571,30 +572,30 @@ Conventions in this section:
 						x^0 - x^3 & x^1 + \i x^2 \\
 						x^1 - \i x^2 & x^0 + x^3 \\
 						) \hsp \\
-					x^\mu x_\mu &= \det{\tilde{x}} = x^2 \\
+					x^\mu x_\mu &= \det(\tilde{x}) = x^2 \\
 				\end{aligned}
 			\end{equation}
 			
 			\noindent
 			Weyl Spinor\index{Weyl!Spinor} transformation rules
 			\begin{equation}
-				\psi_L' = \Lambda_{L} \psi_L \Lambda_{L}^\dagger \hsp
-				\psi_R' = \Lambda_{R} \psi_R \Lambda_{R}^\dagger 
+				\psi_\text{L}' = \Lambda_\text{L} \psi_\text{L} \Lambda_\text{L}^\dagger \hsp
+				\psi_\text{R}' = \Lambda_\text{R} \psi_\text{R} \Lambda_\text{R}^\dagger 
 			\end{equation}
 			
 			\noindent
 			Weyl Equations\index{Weyl!Gleichungen}:
 			\begin{equation}
 				\begin{aligned}
-					\i \bar{\sigma}^\mu \partial_\mu \psi_L &= 0 \\
-					\i \sigma^\mu \partial_\mu \psi_R &= 0 \\
+					\i \bar{\sigma}^\mu \partial_\mu \psi_\text{L} &= 0 \\
+					\i \sigma^\mu \partial_\mu \psi_\text{R} &= 0 \\
 				\end{aligned}
 			\end{equation}
 			
 		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
 			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor}:
 			\begin{equation}
-				\psi = \psi_D = \mqty(\psi_L \\ \psi_R)
+				\psi = \psi_\text{D} = \mqty(\psi_\text{L} \\ \psi_\text{R})
 			\end{equation}
 			
 			\noindent
@@ -613,15 +614,15 @@ Conventions in this section:
 			\begin{equation}
 				\begin{aligned}
 					\text{particles} & \hsp
-					\psi(x) = u(p) e^{-\i p \cdot x} = \mqty(
-						u_L(p) \\
-						u_R(p)
-						) e^{-\i p \cdot x} \\
+					\psi(x) = u(p) \ex^{-\i p \cdot x} = \mqty(
+						u_\text{L}(p) \\
+						u_\text{R}(p)
+						) \ex^{-\i p \cdot x} \\
 					\text{antiparticles} & \hsp
-					\bar{\psi}(x) = v(p) e^{\i p \cdot x} = \mqty(
-						v_L(p) \\
-						v_R(p)
-						) e^{\i p \cdot x}
+					\bar{\psi}(x) = v(p) \ex^{\i p \cdot x} = \mqty(
+						v_\text{L}(p) \\
+						v_\text{R}(p)
+						) \ex^{\i p \cdot x}
 				\end{aligned}
 			\end{equation}
 			with
@@ -635,8 +636,12 @@ Conventions in this section:
 					-\sqrt{p\cdot\bar{\sigma}}\,\chi^s
 				)
 			\end{equation}
-			for particles spin up would mean $\xi=\xi^1=\mqty(1\\0)$ and spin down would mean $\xi=\xi^2=\mqty(0\\1)$.
-			for antiparticles spin up would mean $\eta=\eta^1=\mqty(0\\1)$? and spin down would mean $\eta=\eta^2=\mqty(1\\0)$?.
+			\begin{itemize}
+				\item particle with spin up: $\xi=\xi^1=\mqty(1\\0)$
+				\item particle with spin down: $\xi=\xi^2=\mqty(0\\1)$
+				\item antiparticle with spin up: $\chi=\chi^1=\mqty(0\\1)$
+				\item antiparticle with spin down: $\chi=\chi^2=\mqty(1\\0)$
+			\end{itemize}
 
 			\noindent
 			Adjoint spinor $\bar{u}$ of a spinor $u$:
@@ -658,22 +663,22 @@ Conventions in this section:
 			Full particle $\psi^{-}(x)$ and antiparticle $\psi^{+}(x)$ solutions (with amplitudes $a_{s,\vec{p}}$ and $b_{s,\vec{p}}$)
 			\begin{equation}
 				\begin{aligned}
-					\psi^{-}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}a_{s, \vec{p}}u^{s}(p)e^{-\i p\cdot x} \\
-					\psi^{+}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}{b_{s, \vec{p}}^{*}}v^{s}(p)e^{\i p\cdot x}
+					\psi^{-}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}a_{s, \vec{p}}u^{s}(p)\ex^{-\i p\cdot x} \\
+					\psi^{+}(x) &= \int\frac{\dd^{3}p}{(2\pi)^{\frac{3}{2}}}\frac{1}{\sqrt{2E_{\vec{p}}}}\sum_{s=1}^{2}{b_{s, \vec{p}}^{*}}v^{s}(p)\ex^{\i p\cdot x}
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Pauli Equation\index{Pauli!Gleichung} (non relativistic limit of the Dirac equation):
 			\begin{equation}
-				\hat{H}\psi = \frac{(\vec{\sigma}\cdot\hat{\vec{p}})^2}{2m} \psi
+				\hat{H}\psi = \frac{\qty(\vec{\sigma}\cdot\hat{\vec{p}})^2}{2m} \psi
 			\end{equation}
 	
 			\noindent
 			Dirac Spinor\index{Dirac!Spinor} transformation rules (Generator $\hat{S}^{\mu\nu} = \frac{\i}{4}[\gamma^\mu,\gamma^\nu]$):
 			\begin{equation}
 				\begin{aligned}
-					\Lambda_{1/2} &= \exp(\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_L & 0 \\ 0 & \Lambda_R) \\
+					\Lambda_{1/2} &= \exp(\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R}) \\
 					\gamma^0 \Lambda_{1/2}^\dagger \gamma^0	&= \Lambda_{1/2}^{-1} \\
 					\psi' &= \Lambda_{1/2} \psi 
 					\hsp \bar{\psi}' = \bar{\psi} \Lambda_{1/2}^{-1} 
@@ -694,8 +699,8 @@ Conventions in this section:
 			Free Feynman Propagator\index{Feynman!Propagator} for a spinor field:
 			\begin{equation}
 				\begin{aligned}
-					D_F(x-y) &= \mel**{0}{T\hat{\psi}(x)\hat{\bar\psi}(y)}{0} \\
-					&= \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i(\slashed{p}+m)}{p^2-m^2+\i\epsilon} e^{-\i p\cdot(x-y)} \\
+					D_\text{F}(x-y) &= \mel**{0}{T\hat{\psi}(x)\hat{\bar\psi}(y)}{0} \\
+					&= \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i(\slashed{p}+m)}{p^2-m^2+\i\epsilon} \ex^{-\i p\cdot(x-y)} \\
 					&= \wick{\c{\hat{\psi}}(x) \c{\hat{\bar{\psi}}}(y)} = - \wick{\c{\hat{\bar{\psi}}}(y) \c{\hat\psi}(x)}
 				\end{aligned}
 			\end{equation}
@@ -712,8 +717,8 @@ Conventions in this section:
 		\noindent
 		Feynman Rules for Quantum Electrodynamics ($\xi$ is the gauge fixing parameter):
 		\begin{itemize}\itemsep -0pt
-			\item Photon propagator: $D_F^{\mu\nu}(x-y) = -\frac{\i}{k^2+\i\epsilon} \qty(\eta_{\mu\nu}-(1-\xi)\frac{k_\mu k_\nu}{k^2+\i\epsilon} )$
-			\item Charged particle propagator $\psi \in \qty{e^\pm, \mu^\pm ,\tau^\pm, u,d,s,c,t,b}$: $D_F(x-y) = \i\qty(\frac{\slashed{p}+m_\psi}{p^2-m_\psi^2+\i\epsilon})$
+			\item Photon propagator: $D_\text{F}^{\mu\nu}(x-y) = -\frac{\i}{k^2+\i\epsilon} \qty(\eta_{\mu\nu}-(1-\xi)\frac{k_\mu k_\nu}{k^2+\i\epsilon} )$
+			\item Charged particle propagator $\psi \in \qty{e^\pm, \mu^\pm ,\tau^\pm, u,d,s,c,t,b}$: $D_\text{F}(x-y) = \i\qty(\frac{\slashed{p}+m_\psi}{p^2-m_\psi^2+\i\epsilon})$
 			\item Vertex factor: $-e\gamma^\mu$
 			\item Incoming photon: $\epsilon_\mu(k)$, outgoing photon: $\epsilon^{*}_\mu(k)$
 			\item Incoming lepton: $u(p)$, outgoing lepton: $\bar{u}(p)$, incoming anti-lepton: $\bar{v}(p)$, outgoing anti-lepton: $v(p)$

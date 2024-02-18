@@ -5,7 +5,7 @@
 			\noindent
 			Definition:
 			\begin{equation}
-				e^x=\exp(x)=\lim_{n\rightarrow \infty}\qty(1+\frac{x}{n})^n
+				\ex^x=\exp(x)=\lim_{n\rightarrow \infty}\qty(1+\frac{x}{n})^n
 			\end{equation}
 
 		\subsubsection{Trigonometric Functions}
@@ -13,10 +13,10 @@
 			Identities:
 			\begin{equation}
 				\begin{split}
-					e^{\i x}&=\cos x+\i\sin x \\
+					\ex^{\i x}&=\cos x+\i\sin x \\
 					1&=\sin^{2}x+\cos^{2}x \\
-					\cos{x}&=\frac{e^{\i x}+e^{-\i x}}{2} \\
-					\sin{ x}&=\frac{e^{\i x}-e^{-\i x}}{2\i} \\
+					\cos{x}&=\frac{\ex^{\i x}+\ex^{-\i x}}{2} \\
+					\sin{ x}&=\frac{\ex^{\i x}-\ex^{-\i x}}{2\i} \\
 				\end{split}
 			\end{equation}
 
@@ -75,10 +75,10 @@
 			Identities
 			\begin{equation}
 				\begin{split}
-					e^{ x}&=\cosh x+\sinh x \\
+					\ex^{ x}&=\cosh x+\sinh x \\
 					1&=\cosh^2{x}-\sinh^2{x} \\
-					\cosh{ x}&=\frac{e^{ x}+e^{- x}}{2} \\
-					\sinh{ x}&=\frac{e^{ x}-e^{- x}}{2} \\
+					\cosh{ x}&=\frac{\ex^{ x}+\ex^{- x}}{2} \\
+					\sinh{ x}&=\frac{\ex^{ x}-\ex^{- x}}{2} \\
 					\sinh( x) &= -\i \sin(\i x)\\
 					\cosh( x) &= \cos(\i x)
 				\end{split}
@@ -163,7 +163,7 @@
 			Definition and properties functional derivatives ($\mathcal{F}$ is a functional, $\phi(x)$ is a function and $\delta \phi(x)$ is an arbitrary variation of $\phi(x)$. Note that the functional derivative of a functional becomes a function. All important properties are in analogy to regular derivatives.):
 			\begin{equation}
 				\begin{aligned}
-					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\varepsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi(x) + \varepsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\varepsilon} \\
+					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\epsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi(x) + \epsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\epsilon} \\
 					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
 					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\;\dd y \\
 					\dv{z} \fdv{\psi(y)} \phi(x) &= \fdv{\psi(y)} \dv{z} \phi(x) \\
@@ -184,9 +184,9 @@
 			\end{equation}
 
 			\noindent
-			Cauchy integral formula\index{Cauchy!Integralformel} (for a positively oriented circular loop $\gamma(t)=z_0+re^{\it};\;t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
+			Cauchy integral formula\index{Cauchy!Integralformel} (for $z_0$ inside a positively oriented circular loop $\gamma(t)=z_0+r\ex^{\i t}$ with $t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\dv[k]{f}{z}(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
+				\dv[k]{f}{z} \qty(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
 			\end{equation}
 
 			\noindent
@@ -197,7 +197,7 @@
 			\end{equation}
 
 			\noindent
-			Trigonometric integrals:
+			Trigonometric integrals: 
 			\begin{equation}
 				\begin{split}
 					\int \sin^2 x\;\dd x &= \frac{1}{2}( x-\sin  x\cos  x) \\
@@ -206,11 +206,11 @@
 					\int \sin^3 x\;\dd x 
 					&= -\frac{1}{3}\cos{ x}\sin^2{ x}-\frac{2}{3}\cos{ x}
 					= \frac{1}{12}\cos{3 x}-\frac{3}{4}\cos{ x} 
-					= \frac{\cos ^3(y)}{3}-\cos (y)\\
+					= \frac{\cos ^3 x}{3}-\cos x\\
 					\int \cos^3 x\;\dd x 
 					&= \phantom{-}\frac{1}{3}\sin x \cos^2 x+\frac{2}{3}\sin  x
 					= \frac{1}{12}\sin{3 x}+\frac{3}{4}\sin{ x} 
-					= \sin y-\frac{\sin ^3y}{3} \\
+					= \sin x-\frac{\sin^3x}{3} \\
 				\end{split}
 			\end{equation}
 
@@ -218,8 +218,8 @@
 			Famous integrals (Gaußian integral\index{Gauß!Integral}, $\sinc$-integral\index{Sinus Cardinalis}):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} e^{-x^2}\;\dd x &= \sqrt{\pi} \\
-					\int_\mathbb{R} e^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \quad\forall c\in\mathbb{C} \\
+					\int_\mathbb{R} \ex^{-x^2}\;\dd x &= \sqrt{\pi} \\
+					\int_\mathbb{R} \ex^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \quad\forall c\in\mathbb{C} \\
 					\int_\mathbb{R} \frac{\sin x}{x}\;\dd x &= \pi \\
 				\end{aligned}
 			\end{equation}
@@ -231,7 +231,7 @@
 			\end{equation}
 
 			\noindent
-			Feynman Trick\index{Feynman!Trick}:
+			Feynman trick\index{Feynman!Trick}:
 			\begin{equation}
 				\frac{1}{AB} = \int_0^1 \dd\alpha \frac{1}{\qty(\alpha A + (1-\alpha)B)^2}
 			\end{equation}
@@ -275,7 +275,7 @@
 			\noindent
 			Definition:
 			\begin{equation}
-				\Gamma(z)=\int_0^{\infty}e^{-t}t^{z-1}\,dt
+				\Gamma(z)=\int_0^{\infty}\ex^{-t}t^{z-1}\,dt
 			\end{equation}
 
 			\noindent
@@ -337,8 +337,8 @@
 			Abel limit theorem\index{Abel!Grenzwertsatz}:
 			\begin{equation}
 				\begin{aligned}
-					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty e^{-\eta t} f(t) \,\dd t \\
-					\lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} e^{+\eta t} f(t) \,\dd t \\
+					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty \ex^{-\eta t} f(t) \,\dd t \\
+					\lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} \ex^{+\eta t} f(t) \,\dd t \\
 				\end{aligned}
 			\end{equation}
 
@@ -375,7 +375,7 @@
 			Polynomial sequence of important functions:
 			\begin{equation}
 				\begin{aligned}
-					e^x &= \sum_{k=0}^{\infty}{\frac{x^k}{k!}} \\
+					\ex^x &= \sum_{k=0}^{\infty}{\frac{x^k}{k!}} \\
 					\sin(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k+1}}{(2k+1)!} \\
 					\cos(x) &= \sum_{k=0}^\infty (-1)^k \frac{x^{2k}}{(2k)!} \\
 				\end{aligned}
@@ -389,7 +389,7 @@
 						\sum_{n=1}^{\infty} \frac{1}{n^s} \quad &\forall \Re(s) > 1\\
 						\text{analytically continued} \quad &\forall \Re(s) \le 1\\
 					\end{cases} \\
-					&= \frac{1}{\Gamma(s)}\int_{0}^{\infty} \frac{u^{s-1}}{e^u-1} \;\dd u \\				
+					&= \frac{1}{\Gamma(s)}\int_{0}^{\infty} \frac{u^{s-1}}{\ex^u-1} \;\dd u \\				
 				\end{aligned}
 			\end{equation}
 
@@ -404,19 +404,19 @@
 			\noindent
 			Complex trigonometric basis functions:
 			\begin{equation}
-				\hat{e}_k(x):=e^{\i kx}
+				\hat{e}_k(x):=\ex^{\i kx}
 			\end{equation}
 
 			\noindent
 			Discrete complex Fourier transformation\index{Fourier!Transformation}:
 			\begin{equation}
-				(Tf)(x)=\sum_{k\in\mathbb{Z}}c_k e^{\i kx}
+				(Tf)(x)=\sum_{k\in\mathbb{Z}}c_k \ex^{\i kx}
 			\end{equation}
 
 			\noindent
 			Complex Fourier coefficients:
 			\begin{equation}
-				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)e^{-\i kx}\;\dd x
+				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)\ex^{-\i kx}\;\dd x
 			\end{equation}
 
 			\noindent
@@ -445,8 +445,8 @@
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
-					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, e^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
-					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,e^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
+					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
+					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
 				\end{aligned}
 			\end{equation}
 
@@ -456,7 +456,7 @@
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
 					\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
-					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}e^{\i kx}\;\dd k
+					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\;\dd k
 					\label{Eq:FourierIdentities}
 				\end{aligned}
 			\end{equation}
@@ -545,7 +545,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\ddot{x}+\omega_0^2 x &= 0 \\
-					x(t) &= x_0 e^{\pm \i\omega_0 t}
+					x(t) &= x_0 \ex^{\pm \i\omega_0 t}
 				\end{aligned}
 			\end{equation}
 
@@ -554,8 +554,8 @@
 			Differential equation and solution:
 			\begin{equation}
 				\begin{aligned}
-					m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x &= F_0 e^{-\i\omega t} \\
-					x(t) &= \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-\i \gamma\omega_0} e^{-\i\omega t}
+					m\ddot{x}+m\gamma\dot{x}+m\omega_0^2 x &= F_0 \ex^{-\i\omega t} \\
+					x(t) &= \frac{F_0}{m} \frac{1}{\left(\omega_0^2-\omega^2\right)-\i \gamma\omega_0} \ex^{-\i\omega t}
 				\end{aligned}
 			\end{equation}
 
@@ -569,7 +569,7 @@
 			\noindent
 			Bessel function\index{Bessel!Funktion} of the first kind:
 			\begin{equation}
-				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\qty(\frac{x}{2})^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
+				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\qty(\frac{x}{2})^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} \ex^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
 			\end{equation}
 
 		\subsubsection{Poisson Equation\index{Poisson!Gleichung}}
@@ -659,7 +659,7 @@
 			\noindent
 			Solutions (Spherical Harmonics):
 			\begin{equation} \label{Eq:SphericalHarmonics}
-				Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} e^{\i m\varphi} P_l^m(\cos\theta)
+				Y_{lm}(\theta,\varphi) = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} \ex^{\i m\varphi} P_l^m(\cos\theta)
 			\end{equation}
 
 			\noindent
@@ -679,15 +679,15 @@
 			Solutions (Hermite polynomials\index{Hermite!Polynome}):
 			\begin{equation} \label{Eq:HermitePolynomials}
 				\begin{aligned}
-					H_n(x) &= (-1)^n e^{x^2} \dv[n]{x} e^{-x^2} \\
-					&= e^{x^2/2}\qty(x-\dv{x})^n e^{-x^2/2} \\
+					H_n(x) &= (-1)^n \ex^{x^2} \dv[n]{x} \ex^{-x^2} \\
+					&= \ex^{x^2/2}\qty(x-\dv{x})^n \ex^{-x^2/2} \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{\mathbb{R}} H_m(x) H_n(x) e^{-x^2}\;\dd x = \sqrt{\pi}\,2^n n!\delta_{nm}
+				\int_{\mathbb{R}} H_m(x) H_n(x) \ex^{-x^2}\;\dd x = \sqrt{\pi}\,2^n n!\delta_{nm}
 			\end{equation}
 
 		\subsubsection{Laguerre's Differential Equation}
@@ -700,13 +700,13 @@
 			\noindent
 			Solutions (Laguerre Polynomials\index{Laguerre!Polynome}):
 			\begin{equation}
-				L_n(x) = \frac{e^x}{n!}\dv[n]{x}(e^{-x} x^n) = \frac{1}{n!} \qty(\dv{x}-1)^n x^n
+				L_n(x) = \frac{\ex^x}{n!}\dv[n]{x}(\ex^{-x} x^n) = \frac{1}{n!} \qty(\dv{x}-1)^n x^n
 			\end{equation}
 
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_0^\infty e^{-x} L_n(x) L_m(x)\;\dd x = \delta_{nm}
+				\int_0^\infty \ex^{-x} L_n(x) L_m(x)\;\dd x = \delta_{nm}
 			\end{equation}
 
 			\noindent
@@ -863,11 +863,11 @@
 			Jacobian matrix\index{Jacobi!Matrix} and Jacobian determinant\index{Jacobi!Determinante}:
 			\begin{equation}
 				D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
-				= \left(\begin{matrix}
+				= \mqty(
 				\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
 				\vdots & \ddots & \vdots \\
 				\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
-				\end{matrix}\right);\;\;J_f(\vec{x})=\abs{\det\left(D\vec{f}(\vec{x})\right)}
+				);\;\;J_f(\vec{x})=\abs{\det\left(D\vec{f}(\vec{x})\right)}
 			\end{equation}
 
 			\noindent
@@ -917,9 +917,6 @@
 			\begin{equation}
 				\oint_{\partial\mathcal{A}}\vec{f}\cdot\mathrm{d}\vec{s}=\int_{\mathcal{A}}\left(\vec{\nabla}\times\vec{f}\right)\cdot\vec{n}\;\mathrm{d}A
 			\end{equation}
-
-		\subsubsection{Lie Algebra\index{Lie!Algebra}}
-			TODO
 
 		\subsubsection{Coordinate Transformations}
 			\noindent
@@ -1147,7 +1144,7 @@
 			Poisson distribution\index{Poisson!Verteilung}:
 			\begin{equation}
 				\begin{aligned}
-					\rho(k) &= \frac{\nu^k}{k!} e^{-\nu} \\
+					\rho(k) &= \frac{\nu^k}{k!} \ex^{-\nu} \\
 					\mu &= \sigma^2 = \nu
 				\end{aligned}
 			\end{equation}
@@ -1166,7 +1163,7 @@
 			\noindent
 			Normal distribution\index{Gauß!Verteilung}:
 			\begin{equation}
-				\rho(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+				\rho(x)=\frac{1}{\sigma\sqrt{2\pi}}\ex^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 			\end{equation}
 
 			\noindent

@@ -34,20 +34,20 @@
 		\noindent
 		Thermal de Broglie wavelength\index{De Broglie!Thermische Wellenlänge}:
 		\begin{equation}
-			\lambda_T = \frac{h}{\sqrt{2\pi m k_B T}}
+			\lambda_T = \frac{h}{\sqrt{2\pi m \kB T}}
 		\end{equation} \vsp
 
 		\noindent
 		Fugacity\index{Fugazität}
 		\begin{equation}
-			z = e^{\beta\mu}
+			z = \ex^{\beta\mu}
 		\end{equation} \vsp
 
 	\subsection{Entropy}
 		\noindent
 		Thermodynamic definition (additionally $\lim_{T\rightarrow 0} S := 0$, Eq.~\ref{Eq:ThirdLawOfThermodynamics}):
 		\begin{equation}
-			\dd S := \frac{\delta Q_{rev}}{T}
+			\dd S := \frac{\delta Q_\text{rev.}}{T}
 		\end{equation}
 
 		\noindent
@@ -72,14 +72,14 @@
 			\noindent
 			Cyclic process\index{Kreisprozess}\index{Wärmekraftmaschine} (Equation for reversible, inequation for irreversible processes):
 			\begin{equation}
-				\oint \frac{\delta Q_{rev}}{T} \le 0
+				\oint \frac{\delta Q_\text{rev.}}{T} \le 0
 			\end{equation}
 
 			\noindent
 			Carnot Process\index{Carnot!Prozess}:
 			Only possible reversible cyclic process consisting of two adiabatic processes and two isothermic processes between the temperatures $T_1$, $T_2$ with $T_1 < T_2$. Every realizable cyclic process has efficiency that is smaller than the Carnot efficiency\index{Carnot!Wirkungsgrad}:
 			\begin{equation}
-				\eta_C = 1-\frac{T_1}{T_2}
+				\eta_\text{C} = 1-\frac{T_1}{T_2}
 			\end{equation}
 
 	\subsection{Theory}
@@ -160,7 +160,7 @@
 					Enthalpy & $H(p,S) = U + pV$ & $\dd H = T \dd S + V \dd p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
 					Grand potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
 					\end{tabular}}
-				\caption{List of common potentials}
+				\caption{List of commonly used potentials}
 				\label{tab:ThermodynamischePotentiale}
 				\end{center}
 			\end{table}
@@ -233,7 +233,7 @@
 			\noindent
 			Law of mass action\index{Massenwirkungsgesetz} (With particle concentration $c_i = N_i/N$ mass action constant $K$):
 			\begin{equation}
-				\prod_{i=1}^r	c_i^{\nu_i} = \exp\left( -\frac{1}{k_B T}\sum_{i=1}^r \nu_i\mu_i^0(T,p) \right) =: K(T,p)
+				\prod_{i=1}^r	c_i^{\nu_i} = \exp\left( -\frac{1}{\kB T}\sum_{i=1}^r \nu_i\mu_i^0(T,p) \right) =: K(T,p)
 			\end{equation}
 
 		\subsubsection{Phase Transitions}
@@ -283,7 +283,9 @@
 
 		\noindent
 		\href{https://en.wikipedia.org/wiki/Onsager_reciprocal_relations}{Onsager reciprocal relations}\index{Onsager!Reziprozitätsbeziehung}:
-		\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.}\vsp %TODO % cspell:disable-line
+		\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.} % cspell:disable-line
+		
+		\hfill ---\,Fabian Hassler\vsp 
 
 		\noindent
 		Thermoelectric effects: in systems with charge carriers, the chemical potential should be replaced with the electro-chemical potential $\mu_{EC}$, because a change in particle count will imply a change of charges in the potential, such that (Peltier coefficient\index{Peltier!Koeffizient} $\Pi$, Seebeck coefficient\index{Seebeck!Koeffizient} $\epsilon$, electric current $\vec{j} = q\vec{j}^n$ and specific heat conductivity $\sigma$, the last equation follows from the reciprocity condition):
@@ -305,23 +307,23 @@
 			\noindent
 			Ideal Gas Law\index{Thermische Zustandsgleichung!Ideales Gas} $p(T, N, V)$:
 			\begin{equation}
-				pV = N k_B T
+				pV = N \kB T
 			\end{equation}
 
 			\noindent
 			Caloric state equation\index{Kalorische Zustandsgleichung!Ideales Gas} $U(T, N, V)$:
 			\begin{equation}
-				U = \frac{3}{2} N k_B T
+				U = \frac{3}{2} N \kB T
 			\end{equation}
 
 			\noindent
 			Entropy:
 			\begin{equation}
-				S(T,p) = N k_B \ln{\left[ \frac{V}{N}\left( \frac{4\pi m	U}{3 h^2 N} \right)^{\frac{3}{2}} \right]} + \frac{5}{2} N k_B
+				S(T,p) = N \kB \ln{\left[ \frac{V}{N}\left( \frac{4\pi m	U}{3 h^2 N} \right)^{\frac{3}{2}} \right]} + \frac{5}{2} N \kB
 			\end{equation}
 
 			\noindent
-			Adiabatic equation (holds for constant heat capacities with adiabatic coefficient $\gamma = \frac{c_p}{c_V} = \frac{c_V + k_B}{c_V}$)
+			Adiabatic equation (holds for constant heat capacities with adiabatic coefficient $\gamma = \frac{c_p}{c_V} = \frac{c_V + \kB}{c_V}$)
 			\begin{equation}
 				p V^\gamma = \const
 			\end{equation}
@@ -335,8 +337,8 @@
 			\begin{equation}
 				\mathcal{Z} = \prod_{\alpha}
 					\begin{cases}
-						\left( 1-e^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosons)} \\
-						\phantom{\big(} 1+e^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermions)}
+						\left( 1-\ex^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosons)} \\
+						\phantom{\big(} 1+\ex^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermions)}
 					\end{cases}
 			\end{equation}
 
@@ -345,15 +347,15 @@
 			\begin{equation}
 				\overline{n_\alpha} =
 					\begin{cases}
-						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosons)} \\
-						\dfrac{1}{e^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermions)}
+						\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosons)} \\
+						\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermions)}
 					\end{cases} \\
 			\end{equation}
 
 			\noindent
 			Entropy:
 			\begin{equation}
-				S= -k_B\sum_\alpha
+				S= -\kB\sum_\alpha
 					\begin{cases}
 						\overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosons)} \\
 						\overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermions)}
@@ -378,14 +380,14 @@
 			\noindent
 			Thermic state equation\index{Thermische Zustandsgleichung!Quantenmechanisches ideales Gas}:
 			\begin{equation}
-				\frac{pV}{N k_B T} = \frac{\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}{\dv{\ln z}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}
+				\frac{pV}{N \kB T} = \frac{\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}{\dv{\ln z}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}}
 			\end{equation}
 
 		\subsubsection{Van der Waals Gas}
 			\noindent
 			Van der Waals Equation\index{Zustandsgleichung!Van der Waals Gas}\index{Van der Waals Gas} (Covolume $b \ge 0$, cohesion pressure parameter $a \ge 0$, specific volume $v=V/N$):
 			\begin{equation}
-				\left( p+\frac{a}{v^2} \right) \left( v-b \right) = k_B T
+				\left( p+\frac{a}{v^2} \right) \left( v-b \right) = \kB T
 			\end{equation}
 
 		\subsubsection{Phonon Gas}
@@ -400,9 +402,9 @@
 			The Hamilton function is separable, such that $3N$ eigenmodes are described by harmonic oscillator potentials with $\omega_\nu$. For the ensemble, mean occupation number $\overline{n}_\nu$ (Bose-Einstein statistic) and internal Energy $U$, it follows:
 			\begin{equation}
 				\begin{aligned}
-					Z_\nu &= \sum_{n_\nu=0}^\infty e^{-\beta E_{n_\nu}} \\
-					Z &= \prod_\nu Z_\nu = \frac{1}{2\sinh{\left( \frac{\hbar\omega_\nu}{2 k_B T} \right)}} \\
-					\overline{n}_\nu &= \frac{1}{e^{\hbar\omega_\nu/k_B T} - 1} \\
+					Z_\nu &= \sum_{n_\nu=0}^\infty \ex^{-\beta E_{n_\nu}} \\
+					Z &= \prod_\nu Z_\nu = \frac{1}{2\sinh{\left( \frac{\hbar\omega_\nu}{2 \kB T} \right)}} \\
+					\overline{n}_\nu &= \frac{1}{\ex^{\hbar\omega_\nu/\kB T} - 1} \\
 					U &= \sum_\nu \hbar\omega_\nu \left(\overline{n}_\nu + \frac{1}{2}\right)
 				\end{aligned}
 			\end{equation}
@@ -412,8 +414,8 @@
 			Einstein absorption and emission model\index{Einstein!Koeffizienten}
 			\begin{equation}
 				\begin{aligned}
-					\frac{\dd N_1}{\dd t} &= -B_{12}N_1 \frac{\dd w}{\dd \omega}(\omega_{12}) \\
-					\frac{\dd N_2}{\dd t} &= -B_{21}N_2 \frac{\dd w}{\dd \omega}(\omega_{21}) \\
+					\frac{\dd N_1}{\dd t} &= -B_{12}N_1 \frac{\dd u}{\dd \omega}(\omega_{12}) \\
+					\frac{\dd N_2}{\dd t} &= -B_{21}N_2 \frac{\dd u}{\dd \omega}(\omega_{21}) \\
 					\frac{\dd N_2}{\dd t} &= -A_{21}N_2\\
 				\end{aligned}
 			\end{equation}
@@ -428,7 +430,7 @@
 				\item[] $B_{21} = B_{12}$: Einstein's B-coefficient for stimulated emission,
 				\item[] $A_{21}$: Einstein's A-coefficient for spontaneous emission,
 				\item[] $\tau_{R}=A_{21}^{-1}$: radiating life time,
-				\item[] $\frac{\dd w}{\dd \omega}(\omega)$: spectral energy density.
+				\item[] $\frac{\dd u}{\dd \omega}(\omega)$: spectral energy density.
 			\end{itemize}
 
 		\subsubsection{Black Body}
@@ -451,8 +453,8 @@
 			Planck's law\index{Planck!Strahlungsgesetz} (For the spectral energy density $\pdv{u}{\omega}$):
 			\begin{equation}
 				\begin{aligned}
-					\pdv{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\hbar \omega / k_B T} - 1} \\
-					\pdv{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / k_B T} - 1} \\
+					\pdv{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{\ex^{\hbar \omega / \kB T} - 1} \\
+					\pdv{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{\ex^{h \nu / \kB T} - 1} \\
 				\end{aligned}
 			\end{equation}
 
@@ -463,11 +465,11 @@
 			\end{equation}
 
 			\noindent
-			Wien's displacement law\index{Wien!Verschiebungsgesetz} (For the wavelength or frequency of the $\lambda_{\max}$ emission maximum; $x_\lambda$ solves $(x_\lambda-5)e^{x_\lambda}+5=0$, $x_f$ solves $(3-x_f)e^{x_f}+3=0$):
+			Wien's displacement law\index{Wien!Verschiebungsgesetz} (For the wavelength or frequency of the $\lambda_{\max}$ emission maximum; $x_\lambda$ solves $(x_\lambda-5)\ex^{x_\lambda}+5=0$, $x_f$ solves $(3-x_f)\ex^{x_f}+3=0$):
 			\begin{equation}
 				\begin{aligned}
-					\lambda_{\max} k_B T &= \frac{h c}{x_\lambda} = \const \\
-					h f_{\max} &= k_B T x_f = \const \\
+					\lambda_{\max} \kB T &= \frac{h c}{x_\lambda} = \const \\
+					h f_{\max} &= \kB T x_f = \const \\
 				\end{aligned}
 			\end{equation}
 
@@ -483,13 +485,13 @@
 			\begin{equation}
 				\begin{aligned}
 					Z(T,B_0) &= 2^N \cosh^N (\beta\mu B_0) \\
-					G(T,B_0) &= -k_B T \ln Z \\
-					\mathcal{M}(T,B_0) &= -\left(\pdv{G}{B_0}\right)_T = N\mu \tanh(\mu B_0 /k_B T)
+					G(T,B_0) &= -\kB T \ln Z \\
+					\mathcal{M}(T,B_0) &= -\left(\pdv{G}{B_0}\right)_T = N\mu \tanh(\mu B_0 /\kB T)
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Curie law\index{Curie!Gesetz} ($k_B T \gg \mu B_0$):
+			Curie law\index{Curie!Gesetz} ($\kB T \gg \mu B_0$):
 			\begin{equation}
 				\mathcal{M} \propto \frac{1}{T}
 			\end{equation}
@@ -507,7 +509,7 @@
 			Mean field approximation and self consistency equation (in $D$ dimensions, $h:=\mu B_0$):
 			\begin{equation}
 				\begin{aligned}
-					H_{MF} &= -(h + 2 D J m) \sum_i s_i + D N J m^2 \\
+					H_\text{MF} &= -(h + 2 D J m) \sum_i s_i + D N J m^2 \\
 					m &= -\frac{1}{N}\pdv{G}{h} = \tanh\left({\beta(h + 2 D J m)}\right)
 				\end{aligned}
 			\end{equation}

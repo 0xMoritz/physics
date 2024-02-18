@@ -3,17 +3,17 @@
 	\subsection{Newton's Laws of Motion\index{Newton!Kraftgesetze}}
 		\textbf{First Axiom} \newline
 			\indent \textit{Every body continues in its state of rest, or of uniform motion in a straight line, unless it is compelled to change that state by forces impressed upon it.} \nl
-		\textbf{Second Axiom}
+		\textbf{Second Axiom} \newline
+			\indent \textit{The change of motion of an object is proportional to the force impressed and is made in the direction of the straight line in which the force is impressed.}
 			\begin{equation}
 				\dv{\vec{p}}{t} = \vec{F}
-			\end{equation}
-			\indent \textit{The change of motion of an object is proportional to the force impressed; and is made in the direction of the straight line in which the force is impressed.}\nl
+			\end{equation}\nl
 		\textbf{Third Axiom} \newline 
-			\indent \textit{To every action there is always opposed an equal reaction; or, the mutual actions of two bodies upon each other are always equal, and directed to contrary parts.} \nl
+			\indent \textit{To every action there is always opposed an equal reaction.} \nl
 		\textbf{Additional}: Principle of Superposition \newline
 			\indent \textit{Forces are additive.}
 			\begin{equation}
-				\vec{F}_{\mathrm{tot}} = \sum_{i=1}^{N} \vec{F}_i
+				\vec{F}_{\text{tot.}} = \sum_{i=1}^{N} \vec{F}_i
 			\end{equation}
 
 	\subsection{Basics}
@@ -28,9 +28,9 @@
 		\end{equation}
 
 		\noindent
-		Derivative of angular momentum\index{Drallsatz} (Torque\index{Drehmoment} $\vec{M}$):
+		Derivative of angular momentum\index{Drallsatz} (Torque\index{Drehmoment} $\vec{\tau}$):
 		\begin{equation}
-			\dv{\vec{L}}{t} = \vec{M}
+			\dv{\vec{L}}{t} = \vec{\tau}
 		\end{equation}
 
 		\noindent
@@ -58,7 +58,7 @@
 		\begin{equation}
 			\begin{aligned}
 				L^i &= \Theta^i_j \omega^j \\
-				T_{\mathrm{rot}} &= \frac{1}{2}\vec{\omega}^T \Theta \vec{\omega}
+				T_{\text{rot.}} &= \frac{1}{2}\vec{\omega}^T \Theta \vec{\omega}
 			\end{aligned}
 		\end{equation}
 
@@ -70,27 +70,27 @@
 				\vec{x}'(t) &= \vec{x}(t)-\vec{x}_0(t) &\hsp
 				m\dv{\vec{p}}{t} &= \vec{F} \\
 				\dv{\vec{x}'}{t} &= \dv{\vec{x}}{t}-\vec{\omega}\times\vec{x} &\hsp
-				m\dv{\vec{p}'}{t} &= \vec{F} + \vec{F}_T + \vec{F}_Z + \vec{F}_L + \vec{F}_C \\
+				m\dv{\vec{p}'}{t} &= \vec{F} + \vec{F}_\text{T} + \vec{F}_\text{Z} + \vec{F}_\text{L} + \vec{F}_\text{C} \\
 			\end{aligned}
 		\end{equation}
 
 		\noindent
-		Fictitious forces\index{Scheinkraft}: displacement force\index{Scheinkraft!Translationskraft} $\vec{F}_T$, centrifugal force\index{Scheinkraft!Zentrifugalkraft} $\vec{F}_Z$, Euler force\index{Scheinkraft!Linearkraft} $\vec{F}_L$, Coriolis force\index{Scheinkraft!Corioliskraft} $\vec{F}_C$
+		Fictitious forces\index{Scheinkraft}: displacement force\index{Scheinkraft!Translationskraft} $\vec{F}_\text{T}$, centrifugal force\index{Scheinkraft!Zentrifugalkraft} $\vec{F}_\text{Z}$, Euler force\index{Scheinkraft!Linearkraft} $\vec{F}_\text{L}$, Coriolis force\index{Scheinkraft!Corioliskraft} $\vec{F}_\text{C}$
 		\begin{equation}
 			\begin{aligned}
-				\vec{F}_T &= -m\dv[2]{\vec{x}_0}{t} &\hsp
-				\vec{F}_Z &= -m\vec{\omega}\times\qty(\vec{\omega}\times\vec{x}') \\
-				\vec{F}_L &= -m\dv{\vec{\omega}}{t}\times\vec{x}' &\hsp
-				\vec{F}_C &= -2m\vec{\omega}\times\dv{\vec{x}'}{t} \\
+				\vec{F}_\text{T} &= -m\dv[2]{\vec{x}_0}{t} &\hsp
+				\vec{F}_\text{Z} &= -m\vec{\omega}\times\qty(\vec{\omega}\times\vec{x}') \\
+				\vec{F}_\text{L} &= -m\dv{\vec{\omega}}{t}\times\vec{x}' &\hsp
+				\vec{F}_\text{C} &= -2m\vec{\omega}\times\dv{\vec{x}'}{t} \\
 			\end{aligned}
 		\end{equation}
 
 
-	\subsection{Gravitation}
+	\subsection{Newtonian Gravitation}
 		\noindent
 		Newton's law of universal gravitation\index{Newton!Gravitationskraft} (Acting on mass 1):
 		\begin{equation}
-			\vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\norm{\vec{r}_1-\vec{r}_2}^3}
+			\vec{F}_1 = - G m_1 m_2 \frac{\vec{r}_1-\vec{r}_2}{\abs{\vec{r}_1-\vec{r}_2}^3}
 		\end{equation}
 
 		\noindent
@@ -238,7 +238,7 @@
 			\end{equation}
 
 			\noindent
-			Rocket Equation\index{Raketengleichung} (final mass $m_f$, initial mass $m_i$, exhaust speed $u$, specific Impulse $I_{sp}$, standard earth acceleration $g_0$):
+			Rocket Equation\index{Raketengleichung} (final mass $m_\text{f}$, initial mass $m_\text{i}$, exhaust speed $u$, specific Impulse $I_{\text{sp.}}$, standard earth acceleration $g_0$):
 			\begin{equation}
-				\frac{m_f}{m_i} = e^{-\frac{\Delta v}{u}} = e^{-\frac{\Delta v}{g_0 I_{sp}}}
+				\frac{m_\text{f}}{m_\text{i}} = \exp(-\frac{\Delta v}{u}) = \exp(-\frac{\Delta v}{g_0 I_{\text{sp.}}})
 			\end{equation}

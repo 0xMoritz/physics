@@ -4,15 +4,7 @@
 		\noindent
 		Action of a free particle in an electromagnetic field:
 		\begin{equation}
-			\mathcal{S}=-\int_{a}^{b}\left(mc\sqrt{g_{\mu\nu}\frac{\dd x^\mu}{\dd \tau}\frac{\dd x^\nu}{\dd \tau}}
-	+ q\frac{\dd x^\mu}{\dd \tau}A_\mu(x)\right)\;\dd\tau
-		\end{equation}
-
-		\noindent
-		Lagrangian with parametrization $\tau$ (e.g. proper time):
-		\begin{equation}
-			\mathcal{L} (\tau,x,u) =-\left(mc\sqrt{g_{\mu\nu}\frac{\dd x^\mu}{\dd \tau}\frac{\dd x^\nu}{\dd \tau}}
-			+ q\frac{\dd x^\mu}{\dd \tau}A_\mu(x)\right)
+			\mathcal{S}= -\int_{a}^{b}\left(m u_\mu u^\mu + q A_\nu u^\nu\right)\;\dd\tau
 		\end{equation}
 
 		\noindent
@@ -22,7 +14,7 @@
 		\end{equation}
 
 		\noindent
-		Lorentz force\index{Lorentz!Kraft} (relativistic Minkowski force\index{Minkowski!Kraft} and Newtonian force):
+		Lorentz force\index{Lorentz!Kraft} (relativistic Minkowski force\index{Minkowski!Kraft} and Newtonian force in the classical limit):
 		\begin{equation}
 			\begin{aligned}
 				\frac{\dd P^\mu}{\dd \tau} &= q F^{\mu\nu}\frac{\dd x_\nu}{\dd \tau} \\
@@ -49,7 +41,7 @@
 		\begin{array}{rl}
 			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
 			&\hsp \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
-			\vec{\nabla}\times\vec{B} - \mu_0 \epsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
+			\vec{\nabla}\times\vec{B} - \mu_0 \varepsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
 			&\hsp \vec{\nabla}\cdot\vec{B} = 0 \\
 		\end{array}
 		\end{equation}
@@ -58,9 +50,9 @@
 		Maxwell's equations\index{Maxwell!Gleichungen} in matter:
 		\begin{equation}
 		\begin{array}{rl}
-			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_f}
-			&\hsp \vec{\nabla}\cdot\vec{D} = \rho_f\\ \xrowht{40pt}
-			\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_f
+			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_\text{f}}
+			&\hsp \vec{\nabla}\cdot\vec{D} = \rho_\text{f}\\ \xrowht{40pt}
+			\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_\text{f}
 			&\hsp \vec{\nabla}\cdot\vec{B} = 0 \\
 		\end{array}
 		\end{equation}
@@ -80,8 +72,8 @@
 		\begin{equation}
 		\begin{array}{rl}
 			U(\partial \mathcal{A}) + \cfrac{\dd\Phi}{\dd t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
-			&\hsp \Psi(\partial\mathcal{V}) = Q_f(\mathcal{V}) \\ \xrowht{40pt}
-			V(\partial \mathcal{A}) - \cfrac{\dd \Psi}{\dd t}(\mathcal{A}) = I_f(\mathcal{A})
+			&\hsp \Psi(\partial\mathcal{V}) = Q_\text{f}(\mathcal{V}) \\ \xrowht{40pt}
+			V(\partial \mathcal{A}) - \cfrac{\dd \Psi}{\dd t}(\mathcal{A}) = I_\text{f}(\mathcal{A})
 			&\hsp \Phi(\partial\mathcal{V}) = 0 \\
 		\end{array}
 		\end{equation}
@@ -100,8 +92,8 @@
 			Boundary conditions in matter:
 		\begin{equation}
 		\begin{array}{cc}
-			D_\perp^2 - D_\perp^1 = \sigma_f
-			&\hsp \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_f\times\Vec{n}^2
+			D_\perp^2 - D_\perp^1 = \sigma_\text{f}
+			&\hsp \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_\text{f}\times\Vec{n}^2
 		\end{array}
 		\end{equation}
 
@@ -131,7 +123,7 @@
 			\noindent
 			Energy density:
 			\begin{equation}
-				u_{EM}=\frac{1}{2}\epsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
+				u_{\text{EM}}=\frac{1}{2}\varepsilon_0 \vec{E}^2+\frac{1}{2\mu_0}\vec{B}^2
 			\end{equation}
 
 			\noindent
@@ -144,27 +136,27 @@
 			Poynting theorem\index{Poynting!Theorem} / Energy continuity:
 			\begin{equation}
 				-\Nabla\cdot\vec{S}
-				= \pdv{u_{\mathrm{mech}}}{t} + \pdv{u_{EM}}{t}
+				= \pdv{u_{\mathrm{mech}}}{t} + \pdv{u_{\text{EM}}}{t}
 				= \vec{j}\cdot\vec{E} + \frac{1}{2}\pdv{t}\qty(\varepsilon_0\vec{E}^2 + \frac{1}{\mu_0}\vec{B}^2)
 			\end{equation}
 
 			\noindent
 			Momentum density:
 			\begin{equation}
-				\vec{\pi} = \dv{\vec{p}_{EM}}{V} = \frac{1}{c^2}\vec{S}
+				\vec{\pi} = \dv{\vec{p}_{\text{EM}}}{V} = \frac{1}{c^2}\vec{S}
 			\end{equation}
 
 			\noindent
 			Conservation of Momentum (Maxwell stress tensor\index{Maxwell!Spannungstensor} $T$):
 			\begin{equation}
-				\pdv{\vec{p}_{EM}}{t} - \Nabla\cdot T + \rho \vec{E} + \vec{J}\times\vec{B} = 0
+				\pdv{\vec{p}_{\text{EM}}}{t} - \Nabla\cdot T + \rho \vec{E} + \vec{J}\times\vec{B} = 0
 			\end{equation}
 
 			\noindent
 			Conservation of energy and momentum (Force $F$, power $P$, Poynting vector $S_i$, stress tensor $T_{ij}$, momentum density $\pi_i$):
 			\begin{equation}
 				\begin{aligned}
-					\pdv{u_{EM}}{t} &= \dv{P}{V} - \pdv{S_j}{x_j} \\
+					\pdv{u_{\text{EM}}}{t} &= \dv{P}{V} - \pdv{S_j}{x_j} \\
 					\pdv{\pi_i}{t} &=	\dv{F_i}{V} - \pdv{T_{ij}}{x_j}
 				\end{aligned}
 			\end{equation}
@@ -175,7 +167,7 @@
 			\begin{equation}
 				T^{\mu\nu} = \frac{1}{\mu_0}\left(g^{\mu\alpha} F_{\alpha\beta} F^{\beta\nu} +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} \right)
 				= \left( \begin{matrix}
-					u_{EM} & S_1/c & S_2/c & S_3/c \\
+					u_{\text{EM}} & S_1/c & S_2/c & S_3/c \\
 					S_1/c & -T_{11} & -T_{12} & -T_{13} \\
 					S_2/c	& -T_{21} & -T_{22} & -T_{23} \\
 					S_3/c & -T_{31} & -T_{32} & -T_{33}
@@ -213,7 +205,7 @@
 			\noindent
 			General vector wave (e.g. $\vec{\psi}=\vec{E}$ or $ \vec{\psi}=\vec{B}$):
 			\begin{equation}
-				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) e^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \dd^3\vec{k}
+				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) \ex^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \dd^3\vec{k}
 			\end{equation}
 
 			\noindent
@@ -223,23 +215,23 @@
 			\end{equation}
 
 			\noindent
-			Dispersion relation\index{Dispersionsrelation}
+			Dispersion relation\index{Dispersionsrelation} (reduces to $v=c$ in vacuum)
 			\begin{equation}
-				v = \dv{\omega}{k} \stackrel{\text{vacuum}}{=} c
+				v = \dv{\omega}{k}
 			\end{equation}
 
 			\noindent
 			Energy flux density of an electromagnetic wave:
 			\begin{equation}
-				\vec{S} = u_{EM}c\hat{\vec{k}}
+				\vec{S} = u_{\text{EM}}c\hat{\vec{k}}
 			\end{equation}
 
 			\noindent
 			Energy density and intensity of a linearly polarized wave:
 			\begin{equation}
 				\begin{aligned}
-					u_{EM} &= \frac{1}{2}\epsilon_0\vec{E}^2 &\hsp
-					I &= \langle|\vec{S}|\rangle = \frac{1}{2}c\epsilon_0\vec{E}^2
+					u_{\text{EM}} &= \frac{1}{2}\varepsilon_0\vec{E}^2 &\hsp
+					I &= \langle|\vec{S}|\rangle = \frac{1}{2}c\varepsilon_0\vec{E}^2
 				\end{aligned}
 			\end{equation}
 
@@ -247,13 +239,13 @@
 			Energy density and intensity of a circularly polarized wave:
 			\begin{equation}
 				\begin{aligned}
-					u_{EM} &= \epsilon_0\vec{E}^2 &\hsp
-					I &= \langle|\vec{S}|\rangle = c\epsilon_0\vec{E}^2
+					u_{\text{EM}} &= \varepsilon_0\vec{E}^2 &\hsp
+					I &= \langle|\vec{S}|\rangle = c\varepsilon_0\vec{E}^2
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Emitted wave of an oscillating dipole\index{Dipol!Strahlung} $\vec{p} = \vec{p}_0 e^{-\i\omega t}$ (Retarded time $\tilde{t} = t-\frac{\left|\vec{r}-\vec{r}'\right|}{c}$):
+			Emitted wave of an oscillating dipole\index{Dipol!Strahlung} $\vec{p} = \vec{p}_0 \ex^{-\i\omega t}$ (Retarded time $\tilde{t} = t-\frac{\left|\vec{r}-\vec{r}'\right|}{c}$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{E}(t,\vec{r}) &= -\frac{\mu_0}{4\pi r c}	\left(\vec{n}\times\ddot{\vec{p}}(\tilde{t})\right) \times \vec{n} \\
@@ -266,7 +258,6 @@
 			\begin{equation}
 				\begin{aligned}
 					\pdv{P}{\Omega} &= \frac{q^2 \varepsilon_0}{\qty(1-\hat{e}\cdot\vec{\beta})^5} \left| \hat{e}\times\qty[(\hat{e}-\vec{\beta}) \times \dot{\vec{\beta}}] \right|^2 \\
-					P &= TODO
 				\end{aligned}
 			\end{equation}
 
@@ -281,9 +272,9 @@
 
 		\subsubsection{Electromagnetic Waves in Matter}
 			\noindent
-			Definition index of refraction\index{Brechungsindex} (phase velocity $v_{PH}$):
+			Definition index of refraction\index{Brechungsindex} (phase velocity $v_\text{ph.}$):
 			\begin{equation}
-				n(k) := \frac{c}{v_{PH}(k)} = \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
+				n(k) := \frac{c}{v_\text{ph.}(k)} = \sqrt{\frac{\varepsilon\mu}{\varepsilon_0\mu_0}}
 			\end{equation}
 
 			\noindent
@@ -325,7 +316,7 @@
 		\noindent
 		Speed of light\index{Lichtgeschwindigkeit}:
 		\begin{equation}
-			c=\frac{1}{\sqrt{\epsilon_0 \mu_0}}
+			c=\frac{1}{\sqrt{\varepsilon_0 \mu_0}}
 		\end{equation}
 
 		\noindent
@@ -337,13 +328,16 @@
 		\noindent
 		Four-current\index{Viererstromdichte}:
 		\begin{equation}
-			J^\mu = \binomkoeff{c\rho}{\vec{j}} = \binomkoeff{c\dv{q}{V}}{\vec{v}\dv{q}{V}}
+			J^\mu 
+			= \mqty(c\rho\\\vec{j})^\mu
+			= \mqty(c\dv{q}{V}\\\vec{v}\dv{q}{V})^\mu
 		\end{equation}
 
 		\noindent
 		Four-potential\index{Viererpotential}:
 		\begin{equation}
-			A^\mu = \binomkoeff{\phi/c}{\vec{A}}
+			A^\mu 
+			= \mqty(\phi/c\\\vec{A})^\mu
 		\end{equation}
 
 		\noindent
@@ -355,11 +349,11 @@
 				E_x/c & 0 & -B_z & B_y \\
 				E_y/c	& B_z & 0 & -B_x \\
 				E_z/c & -B_y & B_x & 0
-			\end{matrix} \right)
+			\end{matrix} \right)^{\mu\nu}
 		\end{equation}
 
 		\noindent
-		Hodge dual\index{Faraday!Dualer Feldstärkentensor}:
+		Hodge dual of the Faraday Tensor\index{Faraday!Dualer Feldstärkentensor}:
 		\begin{equation}
 			\tilde{F}^{\mu\nu} = \frac{1}{2}\varepsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}
 		\end{equation}
@@ -394,7 +388,7 @@
 			Maxwell equations using Lorenz gauge \index{Maxwell!Gleichungen}:
 			\begin{equation}
 				\Box A^\mu = \mu_0 J^\mu \;\Leftrightarrow\;
-				\Box \phi = \dfrac{\rho}{\epsilon_0} \;\wedge\;
+				\Box \phi = \dfrac{\rho}{\varepsilon_0} \;\wedge\;
 				\Box \vec{A} = \mu_0 \vec{j}
 			\end{equation}
 
@@ -413,25 +407,25 @@
 			\begin{equation}
 				\begin{aligned}
 					\phi\left(t,\vec{r}\right)
-					= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
-					&=	\frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\,\dd^3 \vec{r}'\dd t' \\
+					= \frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
+					&=	\frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\,\dd^3 \vec{r}'\dd t' \\
 					\vec{A}\left(t,\vec{r}\right)
-					= \phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\,\dd^3 \vec{r}'
-					&=	\phantom{\epsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\;\dd^3 \vec{r}'\dd t' \\
+					= \phantom{\varepsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\,\dd^3 \vec{r}'
+					&=	\phantom{\varepsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\;\dd^3 \vec{r}'\dd t' \\
 					\tilde{t}&=t-\frac{\left|\vec{r}-\vec{r}'\right|}{c}
 				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Liénard-Wiechert Potentials\index{Liénard!-Wiechert Potentiale}}
 			\noindent
-			Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale} (Solutions of the field equations for a moving point charge at $\vec{r}_c(\tilde{t})$ and velocity $\vec{v}(\tilde{t})$; retarded time $\tilde{t}$, $\vec{R}= \vec{r}-\vec{r}_c(\tilde{t})$):
+			Liénard-Wiechert potentials\index{Liénard!-Wiechert Potentiale} (Solutions of the field equations for a moving point charge at $\vec{r}_\text{c}(\tilde{t})$ and velocity $\vec{v}(\tilde{t})$; retarded time $\tilde{t}$, $\vec{R}= \vec{r}-\vec{r}_\text{c}(\tilde{t})$):
 			\begin{equation}
 				A^\mu = \frac{1}{4\pi\varepsilon_0} \frac{q u^\mu}{c R \qty(1 - \vec{\beta}\cdot\vec{R}/R) }
 			\end{equation}
 			Equivalently
 			\begin{equation}
 				\begin{aligned}
-					\phi(t,\vec{r}) & =\frac{q c}{4\pi \epsilon_0}\frac{1}{c \left|\vec{r}-\vec{r}_c(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{r}_c(\tilde{t})\right)} \\
+					\phi(t,\vec{r}) & =\frac{q c}{4\pi \varepsilon_0}\frac{1}{c \left|\vec{r}-\vec{r}_\text{c}(\tilde{t})\right|-\vec{v}(\tilde{t})\cdot\left(\vec{r}-\vec{r}_\text{c}(\tilde{t})\right)} \\
 					\vec{A}(t,\vec{r}) &= \frac{1}{c^2}\vec{v}(\tilde{t})\phi(t,\vec{r}) \\
 				\end{aligned}
 			\end{equation}
@@ -447,7 +441,7 @@
 			\noindent
 			Poisson equation\index{Poisson!Gleichung} of electrostatics:
 			\begin{equation}
-				\Nabla^2\phi = -\frac{\rho}{\epsilon_0}
+				\Nabla^2\phi = -\frac{\rho}{\varepsilon_0}
 				\label{Eq:Poisson}
 			\end{equation}
 
@@ -455,7 +449,7 @@
 			Electrical potential for static systems (Resulting from the retarded potentials Sec.~\ref{Sec:RetardedPotentials}):
 			\begin{equation}
 				\phi\left(t,\vec{r}\right)
-				= \frac{1}{4\pi\epsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
+				= \frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
 			\end{equation}
 
 		\subsubsection{Solving the Poisson Equation\index{Poisson!Gleichung}}
@@ -472,14 +466,14 @@
 
 		\subsubsection{Multipole Expansion\index{Multipolentwicklung}}
 			\noindent
-			Multipole expansion\index{Multipolentwicklung} in cartesian coordinates (expansion of the general solution in $\frac{r'}{r}=0$):
+			Multipole expansion\index{Multipolentwicklung} in cartesian coordinates (expansion of the general solution in $r'/r \rightarrow 0$):
 			\begin{equation}
 				\begin{aligned}
-					\phi(\vec{r}) = \frac{1}{4\pi\epsilon_0}\int\frac{\rho(\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd \vec{r}'
-					=& \frac{1}{4\pi\epsilon_0}\left(\frac{Q}{r} + \frac{\vec{r}\cdot\vec{p}}{r^3} + \frac{1}{2}\frac{r_i r_j Q_{ij}}{r^5} + \mathcal{O} \left(\frac{1}{r^4}\right)\right) \\
-					=& \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\vec{r}')\;\dd \vec{r}' \\
-					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\vec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\dd \vec{r}' \\
-					&+ \frac{1}{4\pi\epsilon_0}\frac{1}{r}\int\rho(\vec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\dd \vec{r}' \\
+					\phi(\vec{r}) = \frac{1}{4\pi\varepsilon_0}\int\frac{\rho(\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd \vec{r}'
+					=& \frac{1}{4\pi\varepsilon_0}\left(\frac{Q}{r} + \frac{\vec{r}\cdot\vec{p}}{r^3} + \frac{1}{2}\frac{r_i r_j Q_{ij}}{r^5} + \mathcal{O} \left(\frac{1}{r^4}\right)\right) \\
+					=& \frac{1}{4\pi\varepsilon_0}\frac{1}{r}\int\rho(\vec{r}')\;\dd \vec{r}' \\
+					&+ \frac{1}{4\pi\varepsilon_0}\frac{1}{r}\int\rho(\vec{r}')\left(\frac{r'}{r}\right)\cos\theta\;\dd \vec{r}' \\
+					&+ \frac{1}{4\pi\varepsilon_0}\frac{1}{r}\int\rho(\vec{r}')\left(\frac{r'}{r}\right)^2\frac{3\cos^2\theta-1}{2}\;\dd \vec{r}' \\
 					&+ \mathcal{O}\left(\;\;\frac{1}{r}\int\rho(\vec{r}')\left(\frac{r'}{r}\right)^3 \;\dd \vec{r}'\right) \\
 				\end{aligned}
 			\end{equation}
@@ -503,7 +497,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\phi(r,\theta,\varphi) &= \sum_{l=0}^{\infty}\sum_{m=-l}^{l} \frac{b_{lm}}{r^{l+1}}Y_{lm}(\theta,\varphi) \\
-					b_{lm} &= \frac{1}{(2l+1)\epsilon_0}\int\rho(\vec{r}')r'^lY^{*}_{lm}(\theta',\varphi')\;\dd^3\vec{r}'
+					b_{lm} &= \frac{1}{(2l+1)\varepsilon_0}\int\rho(\vec{r}')r'^lY^{*}_{lm}(\theta',\varphi')\;\dd^3\vec{r}'
 				\end{aligned}
 			\end{equation}
 
@@ -514,12 +508,12 @@
 			\end{equation}
 
 			\noindent
-			Force, torque (with respect to the center of mass) and potential energy of an electric dipole:
+			Force $\vec{F}$, torque $\vec{\tau}$ (with respect to the center of mass) and potential energy $\mathcal{E}_\text{pot.}$ of an electric dipole\index{Elektrisches Dipolmoment}:
 			\begin{equation}
 				\begin{aligned}
 					\vec{F} &= \Nabla\left(\vec{p}\cdot\vec{E}\right) \\
-					\vec{D}(\vec{r}_m) &= \vec{p}\times\vec{E} \\
-					\mathcal{E}_{pot} &= -\vec{p}\cdot\vec{E} \\
+					\vec{\tau}(\vec{r}_m) &= \vec{p}\times\vec{E} \\
+					\mathcal{E}_\text{pot.} &= -\vec{p}\cdot\vec{E} \\
 				\end{aligned}
 			\end{equation}
 
@@ -550,9 +544,9 @@
 			\end{equation}
 
 			\noindent
-			Capacity\index{Kapazität} between two plates with surface area $A$, distance $d$ and dielectric\index{Dielektrikum} with permittivity \index{Permittivität} $\epsilon$:
+			Capacity\index{Kapazität} between two plates with surface area $A$, distance $d$ and dielectric\index{Dielektrikum} with permittivity \index{Permittivität} $\varepsilon$:
 			\begin{equation}
-				C=\epsilon \frac{A}{d}
+				C=\varepsilon \frac{A}{d}
 			\end{equation}
 
 			\noindent
@@ -575,12 +569,12 @@
 			\end{equation}
 
 			\noindent
-			Polarization density in homogeneous, isotropic, linear dielectrics (Electric susceptibility\index{Elektrische Suszeptibilität} $\chi_e$):
+			Polarization density in homogeneous, isotropic, linear dielectrics (Electric susceptibility\index{Elektrische Suszeptibilität} $\chi_\text{e}$):
 			\begin{equation}
 				\begin{aligned}
-					\vec{P} &= \epsilon_0 \chi_e \vec{E} \\
-					\epsilon &= \epsilon_0 \epsilon_r = \epsilon_0(1+\chi_e) \\
-					\vec{D} &= \epsilon \vec{E} \\
+					\vec{P} &= \varepsilon_0 \chi_\text{e} \vec{E} \\
+					\varepsilon &= \varepsilon_0 \varepsilon = \varepsilon_0(1+\chi_\text{e}) \\
+					\vec{D} &= \varepsilon \vec{E} \\
 				\end{aligned}
 			\end{equation}
 
@@ -606,17 +600,17 @@
 			\end{equation}
 
 			\noindent
-			Charged particles in a homogeneous magnetic field move on circles with Gyroradius/Larmor radius\index{Larmor!Radius} $r_L$ and gyration frequency\index{Zyklotronfrequenz} $\omega$:
+			Charged particles in a homogeneous magnetic field move on circles with Gyroradius/Larmor radius\index{Larmor!Radius} $r_\text{L}$ and gyration frequency\index{Zyklotronfrequenz} $\omega$:
 			\begin{equation}
 				\begin{aligned}
-					r_L = \frac{p}{qB} &&\hsp % horizontal space
+					r_\text{L} = \frac{p}{qB} &&\hsp
 					\omega = \frac{|q| B}{m}
 				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Multipole Expansion}
 			\noindent
-			Multipole expansion\index{Multipolentwicklung} (Expansion of the general solution in $\frac{r'}{r}=0$):
+			Multipole expansion\index{Multipolentwicklung} (Expansion of the general solution in $r'/r \rightarrow 0$):
 			\begin{equation}
 				\begin{aligned}
 					\vec{A}(\vec{r}) = \int_{\mathcal{V}} \frac{\vec{j}(\vec{r}')}{\left|\vec{r}-\vec{r}'\right|} \;\dd^3\vec{r}'
@@ -642,13 +636,14 @@
 				\vec{m} = IA\vec{n}
 			\end{equation}
 
+
 			\noindent
-			Force, torque (with respect to the center of mass) and potential energy of a magnetic dipole\index{Magnetisches Dipolmoment}:
+			Force $\vec{F}$, torque $\vec{\tau}$ (with respect to the center of mass) and potential energy $\mathcal{E}_\text{pot.}$ of an magnetic dipole\index{Magnetisches Dipolmoment}:
 			\begin{equation}
 				\begin{aligned}
 					\vec{F} &= \Nabla\left(\vec{m}\cdot\vec{B}\right) \\
-					\vec{D}(\vec{r}_m) &= \vec{m}\times\vec{B} \\
-					\mathcal{E}_{pot} &= -\vec{m}\cdot\vec{B} \\
+					\vec{\tau}(\vec{r}_m) &= \vec{m}\times\vec{B} \\
+					\mathcal{E}_\text{pot.} &= -\vec{m}\cdot\vec{B} \\
 				\end{aligned}
 				\label{Eq:MagneticDipoleInteraction}
 			\end{equation}
@@ -658,18 +653,17 @@
 			Bound current density and bound surface current density:
 			\begin{equation}
 				\begin{aligned}
-					\vec{j}_m(\vec{r}) &= \Nabla\times\vec{M}(\vec{r}) \\
-					\vec{K}_m(\vec{r}) &= \vec{M}(\vec{r})\times \vec{n}(\vec{r}) \\
+					\vec{j}_M(\vec{r}) &= \Nabla\times\vec{M}(\vec{r}) \\
+					\vec{K}_M(\vec{r}) &= \vec{M}(\vec{r})\times \vec{n}(\vec{r}) \\
 				\end{aligned}
 			\end{equation}
 
-		\subsubsection{Linear Systems}
 			\noindent
-			Magnetization density $M$ in linear, homogeneous, isotropic, magnetic materials (Magnetic susceptibility\index{Magnetische Suszeptibilität} $\chi_m$, permeability $\mu$):
+			Magnetization density $M$ in linear, homogeneous, isotropic, magnetic materials (Magnetic susceptibility\index{Magnetische Suszeptibilität} $\chi_\text{m}$, permeability $\mu$):
 			\begin{equation}
 				\begin{aligned}
-					\vec{M} &= \chi_m\vec{H} \\
-					\mu &= \mu_0 \mu_r = \mu_0(1+\chi_m) \\
+					\vec{M} &= \chi_\text{m}\vec{H} \\
+					\mu &= \mu_0 \mu = \mu_0(1+\chi_\text{m}) \\
 					\vec{B} &= \mu \vec{H} \\
 				\end{aligned}
 			\end{equation}

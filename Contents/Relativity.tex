@@ -20,8 +20,6 @@
 				\label{post:c}\nl
 			\textbf{Third Postulate}: Strong Equivalence Principle\index{Starkes Äquivalenzprinzip} \newline
 				\indent \textit{Spacetime is locally flat, \ie the laws of special relativity hold in local inertial frames of reference.}  \vsp
-			
-			TODO $\partial_\mu g_{\mu\nu} = 0$ locally. 
 
 	\subsubsection{Metric Tensor\index{Metrischer Tensor}}
 		Metric Tensor and Lorentz invariant spacetime interval:
@@ -46,7 +44,7 @@
 				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}
 				=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
 			\end{equation}
-			The Christoffel symbols are symmetric in the lower indices $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. They are zero in all free falling local frames of reference.
+			The Christoffel symbols are symmetric in the lower indices $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In local frames of reference $\partial^\mu g_{\mu\nu} = 0$ and the Christoffel symbols vanish.
 
 			\noindent
 			Proper time\index{Eigenzeit}:
@@ -119,9 +117,10 @@
 			\noindent
 			Einstein-Hilbert Action\index{Einstein!-Hilbert Wirkung}:
 			\begin{equation}
-				\mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det{g_{\mu\nu}(x)}\right|} R(g_{\mu\nu}(x))\;\dd^4 x
+				\mathcal{S} = \frac{c^4}{16\pi G} \int \sqrt{\left|\det(g_{\mu\nu}(x))\right|} R(g_{\mu\nu}(x))\;\dd^4 x
 			\end{equation}
 			
+			\noindent
 			Einstein Tensor:
 			\begin{equation}
 				G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu}
@@ -154,7 +153,7 @@
 
 	\subsection{Special Relativity\index{Spezielle Relativitätstheorie}}
 		\noindent
-		Special Relativity\index{Spezielle Relativitätstheorie} is a limiting case of General Relativity for flat spacetime, it can be realized by $G \rightarrow 0$. In Special Relativity the Metric\index{Metrischer Tensor}is constant.
+		Special Relativity\index{Spezielle Relativitätstheorie} is a limiting case of General Relativity for flat spacetime, it can be realized by $G \rightarrow 0$. In Special Relativity the Metric\index{Metrischer Tensor} is constant.
 
 		\noindent
 		Minkowski-Metric\index{Minkowski!Metrik} (Sign is dependent on convention):
@@ -188,18 +187,21 @@
 			\end{equation}
 
 			\noindent
+			Four-velocity\index{Vierergeschwindigkeit}:
+			\begin{equation}
+				u^\mu = \gamma \mqty(c \\ \vec{v})^\mu
+			\end{equation}
+
+			\noindent
 			Four-momentum\index{Viererimpuls}:
 			\begin{equation}
 				P^\mu =
-				\left(\begin{matrix}
+				\mqty(
 					E \\ \vec{p}
-				\end{matrix}\right)
-				= \left(\begin{matrix}
+				)^\mu
+				= \mqty(
 					m\gamma c \\ m\gamma\vec{v}
-				\end{matrix}\right)
-				= \left(\begin{matrix}
-					\frac{mc}{\sqrt{1-\beta^2}} \\ \frac{m\vec{v}}{\sqrt{1-\beta^2}}
-				\end{matrix}\right)
+				)^\mu
 				= m u^\mu
 			\end{equation}
 
@@ -234,19 +236,16 @@
 			\end{equation}
 			
 			\noindent
-			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation} $\Lambda$:
+			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation} $\Lambda \in \mathcal{L} = \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-$:
 			\begin{itemize}
 				\item Chronus Lorentz Transformation $\mathcal{L}^\uparrow$: $\Lambda^0_0 > 1$
 				\item Antichronus Lorentz Transformation $\mathcal{L}^\downarrow$: $\Lambda^0_0 < 1$
 				\item Proper Lorentz Transformation $\mathcal{L}_+$: $\det\Lambda = 1$
 				\item Improper Lorentz Transformation $\mathcal{L}_-$: $\det\Lambda = -1$
 			\end{itemize}
-			\begin{equation}
-				\Lambda \in \mathcal{L} = \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-
-			\end{equation}
 			
 			\noindent
-			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes ($\vec{v}=c\vec{\beta}$):
+			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes:
 			\begin{equation}
 				\begin{aligned}
 					\Lambda^{\mu}_{\nu}(\vec{v}) 
@@ -255,12 +254,12 @@
 					-\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
 					\end{matrix} \right)^{\mu}_{\nu} \\
 					=&
-					\left(\begin{matrix}
+					\mqty(
 						\gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
 						-\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
 						-\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
 						-\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
-					\end{matrix}\right)^{\mu}_{\nu}
+					)^{\mu}_{\nu}
 				\end{aligned}
 			\end{equation}
 
@@ -281,9 +280,9 @@
 			Addition of velocities\index{Geschwindigkeitsaddition} (Rapidity\index{Rapidität} $\psi = \mathrm{artanh}\left(\frac{v}{c}\right)$):
 			\begin{equation}
 				\begin{aligned}
-					\psi_{tot} &= \psi_1+\psi_2 \\
-					\vec{v}_{tot} &= \frac{\vec{v}_1+\vec{v}_{2\parallel}+\vec{v}_{2\perp}\sqrt{1-\dfrac{\vec{v}_1^2}{c^2}}}{1+\dfrac{\vec{v}_1\cdot\vec{v}_2}{c^2}} \\
-					\vec{v}_1\parallel\vec{v}_2 \;\Rightarrow\; v_{tot} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
+					\psi_{\text{tot.}} &= \psi_1+\psi_2 \\
+					\vec{v}_{\text{tot.}} &= \frac{\vec{v}_1+\vec{v}_{2\parallel}+\vec{v}_{2\perp}\sqrt{1-\dfrac{\vec{v}_1^2}{c^2}}}{1+\dfrac{\vec{v}_1\cdot\vec{v}_2}{c^2}} \\
+					\vec{v}_1\parallel\vec{v}_2 \;\Rightarrow\; v_{\text{tot.}} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
 				\end{aligned}
 			\end{equation}
 

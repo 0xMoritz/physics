@@ -93,7 +93,7 @@
 		\begin{equation}
 			\begin{aligned}
 				\Delta_{\Ket{\psi}}(\hat{A}) \Delta_{\Ket{\psi}}(\hat{B}) &\ge
-				\frac{1}{2} \left|\Bra{\psi} \comm{\hat{A}}{\hat{B}} \Ket{\psi}\right| \\
+				\frac{1}{2} \abs{\mel**{\psi}{\comm{\hat{A}}{\hat{B}}}{\psi}} \\
 				\Delta_{\Ket{\psi}}(\hat{x}) \Delta_{\Ket{\psi}}(\hat{p}) &\ge
 				\frac{\hbar}{2}
 			\end{aligned}
@@ -126,7 +126,7 @@
 		\end{equation}
 		\begin{equation}
 			\begin{aligned}
-				\Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} e^{\i \vec{p}\cdot\vec{x} / \hbar} \\
+				\Braket{\vec{x} | \vec{p}} &= \left( \frac{1}{\sqrt{2\pi\hbar}} \right)^\mathrm{dim} \ex^{\i \vec{p}\cdot\vec{x} / \hbar} \\
 			\end{aligned}
 		\end{equation}
 
@@ -223,7 +223,7 @@
 		Displacement operator\index{Translationsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = e^{-\i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
+				\hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = \ex^{-\i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
 			\end{aligned}
 		\end{equation}
 
@@ -269,8 +269,8 @@
 			\begin{aligned}
 				\hat{\vec{\sigma}} \cdot \vec{n} &\doteq
 				\left( \begin{matrix}
-					\cos\theta & e^{-\i\phi}\sin\theta \\
-					e^{\i\phi}\sin\theta & -\cos\theta \\
+					\cos\theta & \ex^{-\i\phi}\sin\theta \\
+					\ex^{\i\phi}\sin\theta & -\cos\theta \\
 				\end{matrix} \right) \\
 				\exp\left( \i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + \i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
 			\end{aligned}
@@ -280,9 +280,9 @@
 		Pauli spin matrices\index{Pauli!Spinmatrizen} (spin operator $\hat{\vec{s}} = \frac{\hbar}{2} \hat{\vec{\sigma}}$):
 		\begin{equation}
 			\begin{aligned}
-				\hat{\sigma}_1 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+				\hat{\sigma}_1 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
 				\hat{\sigma}_2 &= -\i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
-				\hat{\sigma}_3 &= \phantom{-i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
+				\hat{\sigma}_3 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
 			\end{aligned}
 		\end{equation}
 
@@ -291,22 +291,22 @@
 		\begin{equation}
 			\label{Eq:PauliMatricesQFT}
 			\begin{aligned}
-				\sigma^0 \doteq \left(\begin{matrix}
+				\sigma^0 \doteq \mqty(
 					1 & 0 \\
 					0 & 1 \\
-				\end{matrix}\right) &&\hsp
-				\sigma^1 \doteq \left(\begin{matrix}
+				) &&\hsp
+				\sigma^1 \doteq \mqty(
 					0 & 1 \\
 					1 & 0 \\
-				\end{matrix}\right) &&\hsp
-				\sigma^2 \doteq \left(\begin{matrix}
+				) &&\hsp
+				\sigma^2 \doteq \mqty(
 					0 & -\i \\
 						\i & 0 \\
-				\end{matrix}\right) &&\hsp
-				\sigma^3 \doteq \left(\begin{matrix}
+				) &&\hsp
+				\sigma^3 \doteq \mqty(
 					1 & 0 \\
 					0 & -1 \\
-				\end{matrix}\right)
+				)
 			\end{aligned}
 		\end{equation}
 
@@ -443,7 +443,7 @@
 			\noindent
 			Symmetry transformation of a self-adjoint generator $\hat{G}$ ($\hat{T}$ becomes unitary):
 			\begin{equation}
-				\hat{T}(\nu) = e^{-\i\hat{G}\nu/\hbar}
+				\hat{T}(\nu) = \ex^{-\i\hat{G}\nu/\hbar}
 			\end{equation}
 
 			\noindent
@@ -464,7 +464,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\qty{-\frac{\hbar^2 \Nabla^2}{2 m_e} + V(r)}\psi(\vec{r})
-					&= \qty{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pdv{r}\qty(r^2\pdv{r}) + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\vec{r})
+					&= \qty{-\frac{\hbar^2}{2 m_e}\frac{1}{r^2}\pdv{r}\qty(r^2\pdv{r}) + \frac{1}{2 m_e r^2} \hat{L}^2 - \frac{\ex^2}{4\pi\varepsilon_0}\frac{1}{r}}\psi(\vec{r})
 					= E \psi\qty(\vec{r})
 					\\
 					\Braket{\vec{r}|n,l,m_l,m_s} &= \psi_{n,l,m}\left(r,\theta,\phi\right)\chi(m_s)
@@ -555,7 +555,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\Ket{n} &= \frac{1}{\sqrt{n!}}\left(\hat{a}^\dagger\right)^n\Ket{0} \\
-					\Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} e^{-\frac{q^2}{2}} H_n(q) \\
+					\Braket{x|n} &= \sqrt[4]{\frac{m\omega}{2\hbar}} \frac{1}{\sqrt{n! 2^n}} \ex^{-\frac{q^2}{2}} H_n(q) \\
 				\end{aligned}
 			\end{equation}
 
@@ -568,8 +568,8 @@
 			Magnetic dipole moment of the electron orbit and spin respectively and energy shift in case of $\vec{j}=\vec{l}$ or $\vec{j}=\vec{s}$ respectively (Sec.~\ref{Sec:ParticleConstants}):
 			\begin{equation}
 				\begin{aligned}
-					\vec{\mu}_l &= -\mu_B g_l \vec{l} &\hsp V_l &= m_l g_l \mu_B B\\
-					\vec{\mu}_s &= -\mu_B g_s \vec{s} &\hsp V_s &= m_s g_s \mu_B B\\
+					\vec{\mu}_l &= -\mu_\text{B} g_l \vec{l} &\hsp V_l &= m_l g_l \mu_\text{B} B\\
+					\vec{\mu}_s &= -\mu_\text{B} g_s \vec{s} &\hsp V_s &= m_s g_s \mu_\text{B} B\\
 				\end{aligned}
 			\end{equation}
 
@@ -585,7 +585,7 @@
 			Landé factor\index{Landé!Faktor} / g-factor (For $g_s\approx 2$ approximation):
 			\begin{equation}
 				\begin{aligned}
-					\abs{\qty(\vec{\mu}_j)_j} &= \mu_B\frac{3j(j+1)+s(s+1)-l(l+1)}{2\sqrt{j(j+1)}} = \mu_B g_j \frac{\abs{\vec{j}}}{\hbar}\\
+					\abs{\qty(\vec{\mu}_j)_j} &= \mu_\text{B}\frac{3j(j+1)+s(s+1)-l(l+1)}{2\sqrt{j(j+1)}} = \mu_\text{B} g_j \frac{\abs{\vec{j}}}{\hbar}\\
 					g_j &= 1+\frac{j(j+1) + s(s+1) - l(l+1)}{2j(j+1)} \\
 				\end{aligned}
 			\end{equation}
@@ -594,13 +594,13 @@
 			Paschen-Back effect\index{Paschen!-Back Effekt}: For strong magnetic fields, spin and orbital angular momentum decouple and precess independently around the magnetic field. In this case:
 			\begin{equation}
 				V_{m_s,m_l} = -\qty(\vec{\mu}_s + \vec{\mu}_l)\cdot\vec{B}
-				=\qty(g_s m_s + g_l m_l) \mu_B B
+				=\qty(g_s m_s + g_l m_l) \mu_\text{B} B
 			\end{equation}
 
 	\subsection{Perturbation Theory\index{Störungstheorie}}
 		\subsubsection{Periodic Pertubations}
 			\noindent
-			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' = e^{\pm\i\omega}$):
+			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' = \ex^{\pm\i\omega}$):
 			\begin{equation}
 				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \abs{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\qty(E_f^0 - E_i^0 \pm \hbar\omega)
 			\end{equation}
@@ -610,9 +610,9 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{H} =&\, \hat{H}_0 + \hat{H}' \\
-					\Ket{\psi_I(t)} :=&\, e^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
+					\Ket{\psi_I(t)} :=&\, \ex^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
 					= \hat{U}_0^\dagger \Ket{\psi(t)} \\
-					\Hat{A}_I(t) :=&\, e^{\i \hat{H}_0 t / \hbar} \hat{A} e^{-\i \hat{H}_0 t / \hbar}
+					\Hat{A}_I(t) :=&\, \ex^{\i \hat{H}_0 t / \hbar} \hat{A} \ex^{-\i \hat{H}_0 t / \hbar}
 					= \hat{U}_0^\dagger \hat{A} \hat{U}_0
 				\end{aligned}
 			\end{equation}
@@ -636,7 +636,7 @@
 		\end{equation}
 
 		\noindent
-		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) e^{-i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
+		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) \ex^{-\i \vec{q}\cdot\vec{r}/\hbar}\, \dd^3 \vec{r} $):
 		\begin{equation}
 			\dv{\sigma}{\Omega} = \frac{1}{4} \qty(\frac{e}{4\pi\epsilon_0 m v^2})^2
 			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\vec{q})

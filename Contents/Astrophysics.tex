@@ -36,19 +36,19 @@
 			Thomson cross section\index{Thomson!Wirkungsquerschnitt} (where $r_e$ is the classical electron radius, $\alpha$ is the polarization angle):
 			\begin{equation}
 				\begin{aligned}
-					\dv{\sigma_T}{\Omega} &= r_e^2 \qty(1-\sin^2 \theta \cos^2 \alpha) \\
-					\Avg{\dv{\sigma_T}{\Omega}}_{\alpha} &= \frac{r_e^2}{2} \qty(1+\cos^2 \theta) \\
-					\sigma_T &= \frac{4\pi}{3}r_e^2 \\
+					\dv{\sigma_\text{T}}{\Omega} &= r_e^2 \qty(1-\sin^2 \theta \cos^2 \alpha) \\
+					\Avg{\dv{\sigma_\text{T}}{\Omega}}_{\alpha} &= \frac{r_e^2}{2} \qty(1+\cos^2 \theta) \\
+					\sigma_\text{T} &= \frac{4\pi}{3}r_e^2 \\
 				\end{aligned}
 			\end{equation}
 
 		\subsubsection{Synchrotron Radiation}
 			\noindent
-			Synchrotron Radiation\index{Synchrotron!Strahlung} (where $U_B=\vec{B}^2/4\pi$ is the energy density of the magnetic field, $K_k$ of the spectrum are the Bessel functions of fractional order and $\omega_L$ denotes the Larmor frequency):
+			Synchrotron Radiation\index{Synchrotron!Strahlung} (where $u_B=\vec{B}^2/4\pi$ is the energy density of the magnetic field, $K_k$ of the spectrum are the Bessel functions of fractional order and $\omega_\text{L}$ denotes the Larmor frequency):
 			\begin{equation}
 				\begin{aligned}
-					P &= c \gamma^2 \sigma_T U_B \\
-					\frac{\dd^2 E}{\dd\Omega\dd\omega} &= \frac{e^2 \omega^2}{3\pi c\omega_L^2} \qty(\frac{1}{\gamma^2} + \theta^2)^2\qty[\frac{\theta^2}{\gamma^{-2}+\theta^2} K_{1/3}^2(\xi) + K_{2/3}^2(\xi)]\\ 
+					P &= c \gamma^2 \sigma_\text{T} u_B \\
+					\frac{\dd^2 E}{\dd\Omega\dd\omega} &= \frac{e^2 \omega^2}{3\pi c\omega_\text{L}^2} \qty(\frac{1}{\gamma^2} + \theta^2)^2\qty[\frac{\theta^2}{\gamma^{-2}+\theta^2} K_{1/3}^2(\xi) + K_{2/3}^2(\xi)]\\ 
 				\end{aligned}
 			\end{equation}
 
@@ -69,22 +69,22 @@
 			\noindent
 			Emissivity for non-relativistic thermal Bremsstrahlung (Where $\bar{g}_{ff}(\omega)$ is the mean Gaunt factor (why can often be approximated by $1$)):
 			\begin{equation}
-				j(\omega) = \frac{16\pi^2}{3\sqrt{3}} \frac{Z^2 e^6 n_i n_e}{m^2 c^3} \bar{g}_{\text{ff}}(\omega) \sqrt{\frac{2m}{\pi k_B T}} \exp\qty(-\frac{\hbar \omega}{k_B T})
+				j(\omega) = \frac{16\pi^2}{3\sqrt{3}} \frac{Z^2 e^6 n_i n_e}{m^2 c^3} \bar{g}_{\text{ff}}(\omega) \sqrt{\frac{2m}{\pi \kB T}} \exp\qty(-\frac{\hbar \omega}{\kB T})
 			\end{equation}
 
 		\subsubsection{Radiation Dampening}
-			Radiation dampening (As a linear theory, electromagnetism cannot account for the loss of energy in a spiraling electron. This is a non-linear effect that can be corrected for by an additional force term $\vec{F}_\mathrm{rad}$ in the equations of motion):
+			Radiation dampening (As a linear theory, electromagnetism cannot account for the loss of energy in a spiraling electron. This is a non-linear effect that can be corrected for by an additional force term $\vec{F}_\text{rad}$ in the equations of motion):
 			\begin{equation}
-				\vec{F}_\mathrm{rad} = \frac{2}{3} \frac{e^2}{c^2} \ddot{\vec{\beta}}^2
+				\vec{F}_\text{rad} = \frac{2}{3} \frac{e^2}{c^2} \ddot{\vec{\beta}}^2
 			\end{equation}
 
-			Power transfer between electron and EM-field (Assuming an energy density $u_\mathrm{EM}$):
+			Power transfer between electron and EM-field (Assuming an energy density $u_\text{EM}$):
 			\begin{equation}
-				P = \frac{4}{3} \beta^2 \gamma^2 c u_\mathrm{EM} \sigma_T
+				P = \frac{4}{3} \beta^2 \gamma^2 c u_\text{EM} \sigma_\text{T}
 			\end{equation}
 			characteristic path length $\lambda$ and time scale $\tau$ for such an electron:
 			\begin{equation}
-				\lambda = c\tau = \frac{3 m c^2}{4 u_\mathrm{EM} \sigma_T}
+				\lambda = c\tau = \frac{3 m c^2}{4 u_\text{EM} \sigma_\text{T}}
 			\end{equation}
 
 
@@ -113,7 +113,7 @@
 			\end{equation}
 
 			\noindent
-			Equations for ideal non-relativistic Hydrodynamics (Energy density $\varepsilon=\frac{f}{2}N k_B T$, mean velocity $\vec{v}=\avg{\dot{\vec{x}}}$ and pressure $P = \frac{1}{3} T^{i}_i$):
+			Equations for ideal non-relativistic Hydrodynamics (Energy density $\varepsilon=\frac{f}{2} n \kB T$, mean velocity $\vec{v}=\avg{\dot{\vec{x}}}$ and pressure $P = \frac{1}{3} T^{i}_i$):
 			\begin{equation}
 				\begin{aligned}
 					0 &= \partial_t \rho + \partial_i \qty(\rho v^i) \\
@@ -135,21 +135,21 @@
 		\subsubsection{Basics}
 			Shielding of a charge pertubation $\rho=q\delta(\vec{x})$ by plasma charges (Yukawa potential\index{Yukawa!Potential}):
 			\begin{equation}
-				\phi(r) = \frac{q}{r} \exp(-\sqrt{Z+1}k_D r)
+				\phi(r) = \frac{q}{r} \exp(-\sqrt{Z+1}k_\text{D} r)
 			\end{equation}
 
 			\noindent
 			Debye Wave number\index{Debye!Wellenzahl} and Debye length\index{Debye!Länge} (characteristic shielding length; notice the lack of a factor of $2\pi$):
 			\begin{equation}
-				k_D^2 := 4\pi \frac{\bar{n}_e e^2}{k_B T} \hsp 
-				\lambda_D := \frac{1}{k_D} = \sqrt{\frac{k_B T}{4\pi \bar{n}_e e^2}}
+				k_\text{D}^2 := 4\pi \frac{\bar{n}_e e^2}{\kB T} \hsp 
+				\lambda_\text{D} := \frac{1}{k_\text{D}} = \sqrt{\frac{\kB T}{4\pi \bar{n}_e e^2}}
 			\end{equation}
 
 			\noindent
-			Plasma frequency $\omega_p$ and plasma reaction time $t_D$ (assuming equipartition $\avg{v_i^2} = k_B T / m_e$; characteristic time scale of particle rearrangement, incident waves with frequencies greater than $\omega_p$ can not be compensated, the plasma becomes transparent; notice the lack of a factor of $2\pi$):
+			Plasma frequency $\omega_\text{p}$ and plasma reaction time $t_\text{D}$ (assuming equipartition $\avg{v_i^2} = \kB T / m_e$; characteristic time scale of particle rearrangement, incident waves with frequencies greater than $\omega_\text{p}$ can not be compensated, the plasma becomes transparent; notice the lack of a factor of $2\pi$):
 			\begin{equation}
-				\omega_p = \frac{1}{t_D} = \sqrt{\frac{4\pi\bar{n}_e e^2}{m_e}} \hsp
-				t_D = \frac{\lambda_D}{\sqrt{\avg{v^2}}} = \sqrt{\frac{m_e}{4\pi \bar{n}_e e^2}} 
+				\omega_\text{p} = \frac{1}{t_\text{D}} = \sqrt{\frac{4\pi\bar{n}_e e^2}{m_e}} \hsp
+				t_\text{D} = \frac{\lambda_\text{D}}{\sqrt{\avg{v^2}}} = \sqrt{\frac{m_e}{4\pi \bar{n}_e e^2}} 
 			\end{equation}
 
 
@@ -163,7 +163,7 @@
 			\noindent
 			Magnetic Reynolds Number\index{Magnetic!Reynolds Number} (ratio of advection to diffusion of magnetic fields, $L$ is the characteristic length scale of the system, $v$ is the characteristic velocity and $\sigma$ is the conductivity):
 			\begin{equation}
-				\mathcal{R}_M = \frac{4\pi\sigma v L}{c^2}
+				\mathcal{R}_\text{M} = \frac{4\pi\sigma v L}{c^2}
 			\end{equation}
 
 		\subsection{Equations of Motion}
@@ -183,7 +183,7 @@
 		\subsubsection{Basics}
 			Relaxation timescale of a collection of stars\index{Relaxation!Zeit} (timescale on which the system's movement is dominated by gravity as opposed to initial velocities, where $N$ is the number of stars, $m$ is the mass of a star):
 			\begin{equation}
-				t_{\text{relax}} = \frac{N}{8\ln N} \frac{R}{v} = \frac{N}{8\ln N} t_{\text{cross}}
+				t_{\text{relax.}} = \frac{N}{8\ln N} \frac{R}{v} = \frac{N}{8\ln N} t_{\text{cross.}}
 			\end{equation}
 
 
