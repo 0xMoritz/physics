@@ -205,7 +205,7 @@
 			\noindent
 			General vector wave (e.g. $\vec{\psi}=\vec{E}$ or $ \vec{\psi}=\vec{B}$):
 			\begin{equation}
-				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) \ex^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\; \dd^3\vec{k}
+				\vec{\psi}(t,\vec{r}) = \int_{\mathbb{R}^3} \tilde{\vec{\psi}} (\vec{k}) \ex^{\i\left(\vec{k}\cdot\vec{r} - \omega(\vec{k})t \right)}\;\dd^3\vec{k}
 			\end{equation}
 
 			\noindent
@@ -408,9 +408,9 @@
 				\begin{aligned}
 					\phi\left(t,\vec{r}\right)
 					= \frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^3} \frac{\rho(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
-					&=	\frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\,\dd^3 \vec{r}'\dd t' \\
+					&=	\frac{1}{4\pi\varepsilon_0} \int_{\mathbb{R}^4} \frac{\rho(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\;\dd^3 \vec{r}'\dd t' \\
 					\vec{A}\left(t,\vec{r}\right)
-					= \phantom{\varepsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\,\dd^3 \vec{r}'
+					= \phantom{\varepsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^3} \frac{\vec{j}(\tilde{t},\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\;\dd^3 \vec{r}'
 					&=	\phantom{\varepsilon_0} \frac{\mu_0}{4\pi} \int_{\mathbb{R}^4} \frac{\vec{j}(t',\vec{r}')}{\left|\vec{r}-\vec{r}'\right|}\delta\left( c(t-t')-\left|\vec{r}-\vec{r}'\right|\right)\;\dd^3 \vec{r}'\dd t' \\
 					\tilde{t}&=t-\frac{\left|\vec{r}-\vec{r}'\right|}{c}
 				\end{aligned}

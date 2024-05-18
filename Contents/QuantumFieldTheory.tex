@@ -377,8 +377,8 @@ Conventions in this section:
 		Propagator for a $n$-point correlation function (Where $\Ket{\Omega}$ is the vacuum state of the full theory\index{Vakuumzustand}, $\Ket{0}$ is the vacuum state of the free theory, $\hat{\phi}_H$ is the field operator in the Heisenberg picture and $\hat{\phi}_I$ is the field operator in the interaction picture):
 		\begin{equation}
 			\Bra{\Omega} T \hat{\phi}_H(x_1) \dotsb \hat{\phi}_H(x_n) \Ket{\Omega}
-			= \frac{ \mel**{0}{T \hat{\phi}_I(x_1) \dotsb \hat{\phi}_I(x_n) \exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
-			{\mel**{0}{T\exp{-\i \displaystyle\int \dd t H_{\mathrm{int}}(t)}}{0}}
+			= \frac{ \mel**{0}{T \hat{\phi}_I(x_1) \dotsb \hat{\phi}_I(x_n) \exp{-\i \displaystyle\int \dd t \, H_{\mathrm{int}}(t)}}{0}}
+			{\mel**{0}{T\exp{-\i \displaystyle\int \dd t \, H_{\mathrm{int}}(t)}}{0}}
 		\end{equation}
 
 		\noindent
@@ -522,7 +522,7 @@ Conventions in this section:
 			\noindent
 			Klein-Gordon Equation (spin $s=0$)
 			\begin{equation}
-				\left(\partial^\mu\partial_\mu+m^2\right) \phi(x) = 0
+				\left(\partial^\mu\partial_\mu+\qty(\frac{mc}{\hbar})^2\right) \phi(x) = 0
 			\end{equation}
 
 			\noindent
@@ -666,7 +666,13 @@ Conventions in this section:
 			\begin{equation}
 				\qty(\slashed{\hat{p}} - m) \psi\qty(x) = 0
 			\end{equation}
-			note, that the Dirac Equation implies the Klein-Gordon Equation\index{Klein!-Gordon Gleichung}.
+			note, that the Dirac Equation implies the Klein-Gordon Equation\index{Klein!-Gordon Gleichung}.\\	
+
+			\noindent
+			Adjoint Dirac Equation:
+			\begin{equation}
+				-\i \partial_\mu \bar{\psi}(x)\gamma^\mu-\bar\psi{x}m = 0
+			\end{equation}
 
 			\noindent
 			Solutions to the Dirac equation\index{Dirac!Gleichung}:
@@ -703,9 +709,9 @@ Conventions in this section:
 			\end{itemize}
 
 			\noindent
-			Adjoint spinor $\bar{u}$ of a spinor $u$:
+			Adjoint spinor $\bar{\psi}$ of a spinor $\psi$:
 			\begin{equation}
-				\bar{u} := u^{\dagger} \gamma^0
+				\bar{\psi} := \psi^{\dagger} \gamma^0
 			\end{equation}
 
 			\noindent
@@ -762,7 +768,8 @@ Conventions in this section:
 			\begin{equation}
 				\mathcal{L} = \bar{\psi} \qty(\i \slashed{\partial} - m) \psi
 			\end{equation}
-			corresponding Noether current operator:
+			
+			Noether current operator / probability current operator:
 			\begin{equation}
 				\hat{J}^\mu = \hat{\bar{\psi}} \gamma^\mu \hat{\psi}
 			\end{equation}
@@ -848,3 +855,6 @@ Conventions in this section:
 		% 		\end{feynman}
 		% 	\end{tikzpicture}
 		% \end{center}
+
+	\subsection{Neutrino Physics}
+		
