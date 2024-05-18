@@ -95,23 +95,50 @@
 		\end{tabular}
 		\end{center}
 
-		\href{https://en.wikipedia.org/wiki/Sievert}{Sievert\index{Sievert!Einheit} $\mathrm{Sv}$} \href{https://en.wikipedia.org/wiki/Equivalent_dose}{(Equivalent dose $H_T$)}:
-		\begin{equation}
-			\frac{H_T}{\mathrm{Sv}} = \frac{1}{\mathrm{J}}\sum_R W_R D_{T,R}			
-		\end{equation}
-		where $D_{T,R}$ is the absorbed energy dose and $W_R$ is the weighting factor:
-		\begin{equation}
-			\begin{aligned}
-				W_R =
-				\begin{cases}
-					\gamma,\beta,\mu: & 1 \\
-					p, \pi^\pm: & 2 \\
-					\alpha, \prescript{A}{Z}{\mathbf{X}}\quad\forall Z>1: & 20 \\
-					n: &\begin{cases}
-						E<1\unit{MeV}: & \qty(2.5+18.2 \,\ex^{\ln^2(E)/6}) \\
-						1\unit{MeV} <E<50\unit{MeV}: & \qty(5.0+17.0 \,\ex^{\ln^2(2E)/6}) \\
-						50\unit{MeV}<E: & \qty(2.5+3.25 \,\ex^{\ln^2(0.04E)/6}) \\
-					\end{cases}
-				\end{cases}\\
-			\end{aligned}
-		\end{equation}
+		\subsubsection{Logarithmic Units}
+			\noindent
+			Bel\index{Bel} and Decibel\index{Dezibel} ($L_P$ is the power ratio and $P_0$ is the reference power):
+			\begin{equation}
+				L_P = \log_{10}\qty(\frac{P}{P_0})\unit{B} 
+				=10\log_{10}\qty(\frac{P}{P_0})\unit{dB}
+			\end{equation}
+
+			\noindent
+			Apparent Magnitude ($I_0$ is the reference intensity, originally Vega):
+			\begin{equation}
+				m = -2.5 \log_{10} \qty( \frac{I}{I_0} )
+			\end{equation}
+			
+			\noindent
+			Absolute Magnitude (Apparent magnitude at a distance of $10\unit{pc}$):
+			\begin{equation}
+				M = m - 5 \log_{10} \qty( \frac{I(10\unit{pc})}{I_0} )
+			\end{equation}
+			
+			\noindent
+			Distance modulus:
+			\begin{equation}
+				m - M = 5 \log_{10} \qty( \frac{d}{10\unit{pc}} )
+			\end{equation}
+
+		\subsubsection{Other Units}
+			\href{https://en.wikipedia.org/wiki/Sievert}{Sievert\index{Sievert!Einheit} $\mathrm{Sv}$} \href{https://en.wikipedia.org/wiki/Equivalent_dose}{(Equivalent dose $H_T$)}:
+			\begin{equation}
+				\frac{H_T}{\mathrm{Sv}} = \frac{1}{\mathrm{J}}\sum_R W_R D_{T,R}			
+			\end{equation}
+			where $D_{T,R}$ is the absorbed energy dose and $W_R$ is the weighting factor:
+			\begin{equation}
+				\begin{aligned}
+					W_R =
+					\begin{cases}
+						\gamma,\beta,\mu: & 1 \\
+						p, \pi^\pm: & 2 \\
+						\alpha, \prescript{A}{Z}{\mathbf{X}}\quad\forall Z>1: & 20 \\
+						n: &\begin{cases}
+							E<1\unit{MeV}: & \qty(2.5+18.2 \,\ex^{\ln^2(E)/6}) \\
+							1\unit{MeV} <E<50\unit{MeV}: & \qty(5.0+17.0 \,\ex^{\ln^2(2E)/6}) \\
+							50\unit{MeV}<E: & \qty(2.5+3.25 \,\ex^{\ln^2(0.04E)/6}) \\
+						\end{cases}
+					\end{cases}\\
+				\end{aligned}
+			\end{equation}
