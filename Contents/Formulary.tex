@@ -193,7 +193,13 @@
 			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \rightarrow \mathbb{C}$ holomorphic,
 			with poles $a_1, a_2, .., a_n$ inside $\gamma$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
-				\int_\gamma f(z)\,\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
+				\int_\gamma f(z)\;\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
+			\end{equation}
+
+			\noindent
+			Cauchy Principal Value\index{Cauchy!Hauptwert} (for a function $f(x)$ with a simple pole at $x=a$):
+			\begin{equation}
+				\mathcal{P}\int_{-\infty}^{\infty} f(x)\;\dd x = \lim_{\epsilon\rightarrow 0} \qty(\int_{-\infty}^{a-\epsilon} f(x)\;\dd x + \int_{a+\epsilon}^{\infty} f(x)\;\dd x)
 			\end{equation}
 
 			\noindent
@@ -221,6 +227,20 @@
 					\int_\mathbb{R} \ex^{-x^2}\;\dd x &= \sqrt{\pi} \\
 					\int_\mathbb{R} \ex^{-\frac{x^2}{\sigma}+c}\;\dd x &= \sqrt{\pi\sigma} \quad\forall c\in\mathbb{C} \\
 					\int_\mathbb{R} \frac{\sin x}{x}\;\dd x &= \pi \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Variations of the Gaußian integral\index{Gauß!Integral} (with $A$ symmetric, and $A^{-1}$ being the Greens function of $A$ in the functional case):
+			\begin{equation}
+				\begin{aligned}
+					\int_\mathbb{R} \ex^{-\frac{a x^2}{2}+ b x}\;\dd x &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x}}\;\dd^n x  
+					&= \sqrt{\frac{(2\pi)^n}{\det A}}\\
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x} + \vec{b}^T \vec{x}}\;\dd^n x  
+					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^T A^{-1} \vec{b}}\\
+					\int \mathcal{D}\qty[f]\, \ex^{-\frac{1}{2} \int \dd x \dd y \, f(x) A(x, y) f(y) + \int \dd x\,b(x)f(x)}
+					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) A^{-1}(x,y) b(y)}
 				\end{aligned}
 			\end{equation}
 
