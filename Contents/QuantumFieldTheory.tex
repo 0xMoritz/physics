@@ -411,8 +411,67 @@ Conventions in this section:
 			\end{equation}
 
 
-	%\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
-		%TODO
+	\subsection{Feynman Path Integral\index{Feynman!Pfadintegral}}
+		Path Integral in phase space form(between initial state $q_i$ and final state $q_f$):
+		\begin{equation}
+			\mel**{q_f}{U(t_f, t_i)}{q_i} = \int_{q_i}^{q_f} \mathcal{D}q \mathcal{D}p \, \exp(\i \int_{t_i}^{t_f} \dd t \, \qty[ \dot{q}(t)p(t) - H\qty(p(t),q(t))])
+		\end{equation}
+		
+		\noindent
+		Path Integral for separable Hamiltonian (\ie $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{q})$)
+		\begin{equation}
+			\mel**{q_f}{U(t_f, t_i)}{q_i} = \frac{1}{N} \int \mathcal{D}q \, \ex^{\i S[q]}
+		\end{equation}
+		
+		\noindent
+		Path Integral measure:
+		\begin{equation}
+			\mathcal{D}q = \eval{\prod_{j=0}^{n-1} \dd q(t_j)}_{\substack{q(t_0)=q_i\\q(t_n)=q_f}}
+			\hsp
+			\mathcal{D}p = \prod_{j=0}^{n-1} \dd p(t_j)
+		\end{equation}
+		
+		\noindent
+		$n$-point correlation function:
+		\begin{equation}
+			\mel**{\Omega}{T\hat{q}(t_1)\dotsb\hat{q}(t_n)}{\Omega} = \frac{\int\mathcal{D}q\,q(t_1)\dotsb q(t_n)\ex^{\i S \qty[q]}}{\int\mathcal{D}q\,\ex^{\i S\qty[q]}}
+		\end{equation}
+
+		\subsubsection{Generating Functionals}
+			Generating Functional
+			\begin{equation}
+				Z[J] = \frac{1}{N} \int \mathcal{D}\phi\, \exp(\i\qty(S[\phi] + \int \dd^d x \, J(x) \phi(x)))
+			\end{equation}
+			
+			\noindent
+			Correlation Functions:
+			\begin{equation}
+				\mel**{\Omega}{T \hat{\phi}(x_1) \dotsb \hat{\phi}(x_n)}{\Omega} = \eval{(-\i)^{n} \frac{\delta^n Z[J]}{\delta J(x_1) \dotsb \delta J(x_n)}}_{J=0}
+			\end{equation}
+
+			\noindent
+			Free Generating Functional:
+			\begin{equation}
+				Z_0\qty[J] = \exp(-\frac{1}{2}\int\dd^d x \dd^d x\, J(x) G(x,y)J(y))
+			\end{equation}
+
+			\noindent
+			Schwinger\index{Schwinger!Funktional} functional:
+			\begin{equation}
+				W\qty[J] = \ln Z\qty[J]
+			\end{equation}
+
+			\noindent
+			Effective Action\index{Effektive!Wirkung} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Schwinger Functional\index{Schwinger!Funktional}):
+			\begin{equation}
+				\Gamma(\phi) = \sup_{J} \qty( \int \dd^d x \, J(x) \phi(x) - W[J])
+			\end{equation}
+			Properties:
+			\begin{equation}
+				J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
+				\hsp \phi(x) = \fdv{W\qty[J]}{J(x)}
+			\end{equation}
+
 
 	\subsection{Bosons}
 		\subsubsection{Bosonic Ladder Operators}
@@ -657,6 +716,19 @@ Conventions in this section:
 					\bar{v}^s(p) v^r(p) &= - 2m\eta^{s\dagger}\eta^r = - 2m\delta^{sr} \\
 					\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0
 				\end{aligned}
+			\end{equation}
+			\begin{equation}
+				\begin{aligned}
+					\sum_s u^s(p) \bar{u}^s(p) &= \slashed{p} + m \\
+					\sum_s v^s(p) \bar{v}^s(p) &= \slashed{p} - m
+				\end{aligned}
+			\end{equation}
+
+			Closure relation of polarization vectors:
+			\begin{equation}
+				\varepsilon^{\lambda}{}_{\mu}(k)\varepsilon^{\lambda^{\prime}{}^{\mu}\ast}(k)=\eta^{\lambda\lambda^{\prime}},
+				\hsp
+				\varepsilon^{\lambda}{}_{\mu}(k)\varepsilon_{\lambda\nu}{}^{\ast}(k)=\eta_{\mu\nu}
 			\end{equation}
 			
 			\noindent
