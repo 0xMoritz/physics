@@ -15,7 +15,6 @@
 \usepackage{placeins}
 \usepackage{mathtools}
 \usepackage{svg}
-\usepackage{siunitx}	% SI units \SI{1+-2}{\micro e V}
 \usepackage{slashed}	% Feynman slash notation \slashed{}
 \usepackage{ulem} 		% strike through text horizontally with \sout{}
 \usepackage[margin=2cm,footskip=1cm]{geometry}
@@ -33,7 +32,6 @@
 \renewcommand{\dateseparator}{--}
 \makeindex[intoc, columns=2, title=German Index]
 \usepackage{tcolorbox}
-
 \usepackage{xspace}
 
 \theoremstyle{plain}
@@ -113,12 +111,12 @@
 	\newcommand{\sgn}			{\mathrm{sgn}}
 	\newcommand{\inv}[1]		{{#1}^\mathrm{inv} }
 	\newcommand{\levicivita}[1] {\varepsilon_{#1}}
-	\newcommand{\MU}			{\SI{}{\micro \nothing}} % upright µ
+	\newcommand{\micro}			{\text{µ}}
 	\newcommand{\e}[1]			{\times 10^{#1}}
 	\newcommand{\TimeOrder}[1]	{\mathrm{T}\qty[#1]}
 	\newcommand{\NormalOrder}[1]{\mathrm{N}\qty[#1]}
 	\newcommand{\normord}[1]	{:\mathrel{#1}:}
-	\renewcommand{\unit}[1]		{\,\mathrm{#1}}
+	\newcommand{\unit}[1]		{\,\mathrm{#1}}
 	\newcommand{\mono}[1]		{{\ttfamily #1}}
 	\newcommand{\Avg}[1]		{\left\langle #1 \right\rangle}
 	\newcommand{\avg}[1]		{\langle #1 \rangle}
