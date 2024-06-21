@@ -535,6 +535,105 @@
 				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\dd\theta\dd\phi
 			\end{equation}
 
+	\subsection{Algebra}			
+		\subsection{Group Theory}
+			\emph{Group} $(G, \diamond)$ (Where $G$ is a group and $\diamond$ is an operation):
+			\begin{equation}
+				\begin{aligned}
+					\diamond: &G \times G \rightarrow G;\, (p,q) \mapsto p\diamond q \\
+					\text{such that}\; &(p\diamond q)\diamond r = p\diamond (q\diamond r)\quad\forall{p,q,r}\subseteq G \\
+					&\exists e: e\diamond p = p\diamond e = p\quad\forall p\in G\\
+					&\forall p \in G: \exists \inv{p}: p\diamond \inv{p}= \inv{p}\diamond p=e
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			\emph{Homomorphism} $\phi: G_1 \rightarrow G_2$ (Groups $(G_1,\diamond)$, $(G_2,\diamond)$)
+			\begin{equation}
+				\begin{aligned}
+					\phi(a \diamond b) = \phi(a) \diamond \phi(b) \quad \forall a,b \in G_1
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			\emph{Action} of $G\ni a, b$ on a set $M\ni m$:
+			\begin{equation}
+				\begin{aligned}
+					a\diamond (b\diamond m) &= (a \diamond b) \diamond m \\
+					e \diamond m &= m \\
+				\end{aligned}
+			\end{equation}
+			
+			\noindent
+			\emph{Orbit} of $m\in M$ under the action of $G$:
+			\begin{equation}
+				G \diamond m = \qty{ a\diamond m \quad \forall a \in G}
+			\end{equation}
+
+			\noindent
+			\emph{Isotropy group} $G_m$ of $m\in M$ with respect to $G$:
+			\begin{equation}
+				G_m = \qty{a\in G: a\diamond m = m} \subseteq{G}
+			\end{equation}			
+			
+			\noindent
+			Number of elements in a group $G$ is denoted by $\# G$.
+			\begin{equation}
+				\# G = \#(G \diamond m) \#G_m \quad \forall m \in M
+			\end{equation}
+
+			\noindent
+			The (left) \emph{coset} $g \diamond H$ of $H \subseteq G$
+			\begin{equation}
+				g \diamond H = \qty{g\diamond h: h\in H} 
+			\end{equation}
+
+			\noindent
+			A \emph{transitive} group is a group with a transitive group action $\diamond$
+			\begin{equation}
+				\forall g \in G, g \ne e: \quad G \diamond g = G
+			\end{equation}
+
+			\noindent
+			\emph{Conjugacy class}, $b$ and $c$ belong to the same conjugacy class if
+			\begin{equation}
+				\exists a \in G: \quad a \diamond b \diamond \inv{a} = c
+			\end{equation}
+
+			\noindent
+			Lemma on isotropy subgroups
+			\begin{equation}
+				G_{a m} = a G_{m} \inv{a}
+			\end{equation}
+			
+			\noindent
+			Euler's\index{Euler} description of a Rotation $R\in SO(3)$ with Euler angles $\phi, \theta, \psi$
+			\begin{equation}
+				\forall R \in SO(3):\quad \exists \phi, \theta, \psi:\quad R = R_\phi^z R_\theta^y R_\psi^x
+			\end{equation}
+			
+			\begin{table}[ht]
+				\begin{center}
+				\begin{tabular}{ l | l | l }
+					Symbol & Name & Example \\ \hline
+					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
+					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
+					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
+					$O(n)$ & Orthogonal group & $\set{O: OO^{T}=O^{T}O=1}\subseteq GL(n, \mathbb{R})$ \\
+					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
+					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
+					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\
+					\end{tabular}
+					\caption{List of common groups with symbol, name, example set and corresponding example operation. $\mathbb{K}$ is a field\index{Körper}}
+				\end{center}
+			\end{table} \vsp
+
+
+			% \subsubsection{Selection of Groups Relevant for Physics}
+			% 	Lorentz group $L$ ($\norm{x} = x^\mu x_\mu$, see ):
+			% 	\begin{equation}
+			% 		L = \left( \qty{\Lambda\in GL(4, \mathbb{R}): \norm{\Lambda x}= \norm{x} \quad\forall x \in \mathbb{R}^4}, \text{Matrix multiplication} \right)
+			% 	\end{equation}
 	\subsection{Differential Equations}
 		\subsubsection{General}
 			\noindent
@@ -1198,105 +1297,6 @@
 				\end{aligned}
 			\end{equation}
 
-	\subsection{Group Theory}
-		\subsubsection{Basics}
-			\emph{Group} $(G, \diamond)$ (Where $G$ is a group and $\diamond$ is an operation):
-			\begin{equation}
-				\begin{aligned}
-					\diamond: &G \times G \rightarrow G;\, (p,q) \mapsto p\diamond q \\
-					\text{such that}\; &(p\diamond q)\diamond r = p\diamond (q\diamond r)\quad\forall{p,q,r}\subseteq G \\
-					&\exists e: e\diamond p = p\diamond e = p\quad\forall p\in G\\
-					&\forall p \in G: \exists \inv{p}: p\diamond \inv{p}= \inv{p}\diamond p=e
-				\end{aligned}
-			\end{equation}
-			
-			\noindent
-			\emph{Homomorphism} $\phi: G_1 \rightarrow G_2$ (Groups $(G_1,\diamond)$, $(G_2,\diamond)$)
-			\begin{equation}
-				\begin{aligned}
-					\phi(a \diamond b) = \phi(a) \diamond \phi(b) \quad \forall a,b \in G_1
-				\end{aligned}
-			\end{equation}
-			
-			\noindent
-			\emph{Action} of $G\ni a, b$ on a set $M\ni m$:
-			\begin{equation}
-				\begin{aligned}
-					a\diamond (b\diamond m) &= (a \diamond b) \diamond m \\
-					e \diamond m &= m \\
-				\end{aligned}
-			\end{equation}
-			
-			\noindent
-			\emph{Orbit} of $m\in M$ under the action of $G$:
-			\begin{equation}
-				G \diamond m = \qty{ a\diamond m \quad \forall a \in G}
-			\end{equation}
-
-			\noindent
-			\emph{Isotropy group} $G_m$ of $m\in M$ with respect to $G$:
-			\begin{equation}
-				G_m = \qty{a\in G: a\diamond m = m} \subseteq{G}
-			\end{equation}			
-			
-			\noindent
-			Number of elements in a group $G$ is denoted by $\# G$.
-			\begin{equation}
-				\# G = \#(G \diamond m) \#G_m \quad \forall m \in M
-			\end{equation}
-
-			\noindent
-			The (left) \emph{coset} $g \diamond H$ of $H \subseteq G$
-			\begin{equation}
-				g \diamond H = \qty{g\diamond h: h\in H} 
-			\end{equation}
-
-			\noindent
-			A \emph{transitive} group is a group with a transitive group action $\diamond$
-			\begin{equation}
-				\forall g \in G, g \ne e: \quad G \diamond g = G
-			\end{equation}
-
-			\noindent
-			\emph{Conjugacy class}, $b$ and $c$ belong to the same conjugacy class if
-			\begin{equation}
-				\exists a \in G: \quad a \diamond b \diamond \inv{a} = c
-			\end{equation}
-
-			\noindent
-			Lemma on isotropy subgroups
-			\begin{equation}
-				G_{a m} = a G_{m} \inv{a}
-			\end{equation}
-			
-			\noindent
-			Euler's\index{Euler} description of a Rotation $R\in SO(3)$ with Euler angles $\phi, \theta, \psi$
-			\begin{equation}
-				\forall R \in SO(3):\quad \exists \phi, \theta, \psi:\quad R = R_\phi^z R_\theta^y R_\psi^x
-			\end{equation}
-			
-			\begin{table}[ht]
-				\begin{center}
-				\begin{tabular}{ l | l | l }
-					Symbol & Name & Example \\ \hline
-					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
-					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
-					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
-					$O(n)$ & Orthogonal group & $\set{O: OO^{T}=O^{T}O=1}\subseteq GL(n, \mathbb{R})$ \\
-					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
-					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
-					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\
-					\end{tabular}
-					\caption{List of common groups with symbol, name, example set and corresponding example operation. $\mathbb{K}$ is a field\index{Körper}}
-				\end{center}
-			\end{table} \vsp
-
-
-		% \subsubsection{Selection of Groups Relevant for Physics}
-		% 	Lorentz group $L$ ($\norm{x} = x^\mu x_\mu$, see ):
-		% 	\begin{equation}
-		% 		L = \left( \qty{\Lambda\in GL(4, \mathbb{R}): \norm{\Lambda x}= \norm{x} \quad\forall x \in \mathbb{R}^4}, \text{Matrix multiplication} \right)
-		% 	\end{equation}
 		
 
 	\subsection{Chaos Theory}
