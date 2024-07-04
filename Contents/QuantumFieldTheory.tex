@@ -1,7 +1,6 @@
 % !TEX root = ../physics.tex
-\section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFt
-%\subsection{Postulates}
-%TODO
+\section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFT
+
 Conventions in this section:
 \begin{itemize}
 	\item $\hbar = c = 1$
@@ -806,6 +805,75 @@ Conventions in this section:
 			\item Ensure overall momentum conservation $(2\pi)^4 \delta(\sum_i p_i)$
 		\end{itemize}
 
+	\subsection{Yang-Mills Theory\index{Yang!-Mills Theorie}}
+		Lagrangian of Yang-Mills Theory\index{Yang!-Mills Theorie} ($SU(N)$ gauge)
+		\begin{equation}
+			\mathcal{L}_\text{YM} = -\frac{1}{4} F^a_{\mu\nu} F^{a\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
+		\end{equation}
+
+		\noindent
+		Gauge Fixing and ghosts:
+		\begin{equation}
+			\mathcal{L}_\text{GF} = -\frac{1}{2\xi} \qty(\partial_\mu A^\mu)^2 - \bar{c}^a \partial_\mu D^\mu_{ab} c^b
+		\end{equation}
+
+		\noindent
+		Lie Algebra\index{Lie!Algebra} of $SU(N)$ (with $T^a$ the generators of the Lie algebra):
+		\begin{equation}
+			\comm{T^a}{T^b} = \i f^{abc} T^c
+		\end{equation}
+
+		\noindent
+		Field strength tensor\index{Feldstärketensor} for Yang-Mills Theory (with $f^{abc}$ the structure constants of the Lie algebra, which are totally antisymmetric for normalized $T^a$ such that $\tr(T^a T^b) = \frac{1}{2} \delta^{ab}$):
+		\begin{equation}
+			\begin{aligned}
+				F^a_{\mu\nu} &= \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^c_\nu \\
+				\comm{D_\mu}{D_\nu} &= -\i g F_{\mu\nu}^a T^a				
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Covariant derivative\index{Kovariante Ableitung} for Yang-Mills Theory:
+		\begin{equation}
+			D_\mu = \partial_\mu - \i g A_\mu
+		\end{equation}
+
+		\noindent
+		Gauge Transformation:
+		\begin{equation}
+			\begin{aligned}
+				\psi(x) &\rightarrow \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
+				A_\mu(x) &\rightarrow A'_\mu(x) = A_\mu(x) - \frac{1}{g} \partial_\mu \alpha(x) \\
+				F_{\mu\nu}(x) &\rightarrow F'_{\mu\nu}(x) = F_{\mu\nu}(x) 
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Feynman Rules for Yang-Mills Theory:
+		\begin{itemize}\itemsep -0pt
+			\item Gluon propagator: $D_\text{F}^{ab,\mu\nu}(x-y) = -\frac{\i \delta^{ab}}{k^2+\i\epsilon} \qty(\eta^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2+\i\epsilon} )$
+			\item Quark propagator: $D_\text{F}(x-y) = \i\qty(\frac{\slashed{p}+m_q}{p^2-m_q^2+\i\epsilon})$
+			\item Ghost propagator: $C^{ab}(p) = \frac{\i\delta^{ab}}{p^2+\i\epsilon}$
+			\item 3 gluon vertex factor: $\Gamma^{abc}_{\mu\nu\rho}(p,q,k) = -gf^{abc} \qty[(p-q)_\rho \eta_{\mu\nu} + (q-k)_\mu \eta_{\nu\rho} + (k-p)_\nu \eta_{\mu\rho}]$
+			\item 4 gluon vertex factor: $\Gamma^{abcd}_{\mu\nu\rho\sigma} = -\i g^2 f^{abe}f^{cde}(\eta_{\mu\rho}\eta_{\nu\sigma} - \eta_{\mu\sigma}\eta_{\nu\rho}) - \i g^2 f^{ace}f^{bde} (\eta_{\mu\nu}\eta_{\rho\sigma} - \eta_{\mu\sigma}\eta_{\nu\rho}) - \i g^2 f^{ade} f^{bce} (\eta_{\mu\nu}\eta_{\rho\sigma} - \eta_{\mu\rho}\eta_{\nu\sigma})$
+			\item Ghost-ghost gluon vertex: $\Gamma^{abc}_\mu(p) = gf^{abc} p_\mu$
+			\item Incoming gluon: $\epsilon^a_\mu(k)$, outgoing gluon: $\epsilon^{*a}_\mu(k)$
+			\item Incoming quark: $u(p)$, outgoing quark: $\bar{u}(p)$, incoming anti-quark: $\bar{v}(p)$, outgoing anti-quark: $v(p)$
+			\item For each loop integrate over loop momentum $\int \frac{\dd^4 q}{(2\pi)^4}$, include a minus for fermion loops
+			\item Ensure overall momentum conservation $(2\pi)^4 \delta(\sum_i p_i)$
+		\end{itemize}
+		
+		TODO check this section derived by copilot
+	
+	\subsection{Quantum Chromodynamics} 
+		Lagrangian:
+		\begin{equation}
+			\mathcal{L}_\text{QCD} = -\frac{1}{4} G^a_{\mu\nu} G^{a\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
+		\end{equation}
+		
+
+
+	\subsection{Higgs Mechanism} TODO
 
 	\subsection{Yukawa Theory\index{Yukawa!Theorie}}
 		Lagrangian density:
