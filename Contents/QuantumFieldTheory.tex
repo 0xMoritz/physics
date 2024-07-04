@@ -63,17 +63,38 @@ Conventions in this section:
 			\noindent
 			Identities:
 			\begin{equation}
-				\qty(\gamma^\mu)^\dagger = \eta^{\mu\mu} \gamma^\mu
-				\hsp \qty(\gamma^\mu)^2 = \eta^{\mu\mu} 1_4
-				\hsp \qty(\gamma^\mu)^\dagger = \gamma^0 \gamma^\mu \gamma^0
+				\qty(\gamma^\mu)^\dagger = \eta^{\mu\mu} \gamma^\mu = \gamma^0 \gamma^\mu \gamma^0
+				\hsp \gamma^\mu \gamma^\mu = \eta^{\mu\mu} 1_4
 				\hsp \gamma_\mu \gamma^\mu = 4 \,1_4
-				% \begin{aligned}
-				% 	\qty(\gamma^0)^\dagger &= +\gamma^0 \\
-				% 	\qty(\gamma^j)^\dagger &= -\gamma^j \\
-				% 	\gamma^0 \gamma^0 &= 1_4 \\ % TODO: replace hat with \mathbb{1}
-				% 	\gamma^i \gamma^j &= - \delta^{ij} 1_4 \\
-				% 	\qty(\gamma^\mu)^\dagger &= \gamma^0 \gamma^\mu \gamma^0 \\
-				% \end{aligned}
+			\end{equation}
+
+			\noindent
+			Trace Identities:
+			\begin{equation}
+				\begin{aligned}
+					\tr(\gamma^\mu \gamma^\nu) &= 4 g^{\mu\nu} \\
+					\tr(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma) &= 4 \qty(g^{\mu\nu}g^{\rho\sigma} + g^{\mu\sigma}g^{\nu\rho} - g^{\mu\rho}g^{\nu\sigma}) \\
+					\gamma_\mu \slashed{a} \gamma^\mu &= -2 \slashed{a} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Weyl representation/Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
+			\begin{equation}
+				\gamma^\mu = \mqty(
+					0 & \sigma^\mu \\
+					\bar{\sigma}^\mu & 0
+				)
+				\hsp
+				\gamma^0 = \mqty(
+					0 & 1_2 \\
+					1_2 & 0
+				)
+				\hsp
+				\gamma^i = \mqty(
+					0 & \sigma^i \\
+					-\sigma^i & 0
+				)
 			\end{equation}
 
 			\noindent
@@ -130,25 +151,6 @@ Conventions in this section:
 			\end{equation}
 
 			\noindent
-			Weyl representation/Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
-			\begin{equation}
-				\gamma^\mu = \mqty(
-					0 & \sigma^\mu \\
-					\bar{\sigma}^\mu & 0
-				)
-				\hsp
-				\gamma^0 = \mqty(
-					0 & 1_2 \\
-					1_2 & 0
-				)
-				\hsp
-				\gamma^i = \mqty(
-					0 & \sigma^i \\
-					-\sigma^i & 0
-				)
-			\end{equation}
-
-			\noindent
 			Transformation ($U$ unitary: $U U^\dagger=1_4$):
 			\begin{equation}
 				\tilde{\gamma} = U \gamma^\mu U^\dagger
@@ -157,7 +159,7 @@ Conventions in this section:
 			\noindent
 			$\gamma^5$-Matrix:
 			\begin{equation}
-				\gamma^5 = \i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+				\gamma^5 := \i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
 			\end{equation}
 			Eigenstates to $\gamma^5$ with an eigenvalue $\pm 1$ are called chiral states.
 
