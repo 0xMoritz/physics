@@ -12,3 +12,4 @@
 *.ilg
 *.ind
 *.bak
+*.synctex(busy)
