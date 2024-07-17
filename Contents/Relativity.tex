@@ -38,7 +38,7 @@
 	\begin{equation}
 		\dd s^2 = c^2 \dd \tau^2 = \dd x^\mu \dd x_\mu = g_{\mu\nu} \dd x^\mu \dd x^\nu
 	\end{equation}
-		Signature used in this section: $(-1,+1,+1,+1)$.
+		Signature used in this subsection: $(-1,+1,+1,+1)$.
 	
 	\subsection{General Relativity\index{Allgemeine Relativitätstheorie}}
 		\subsubsection{Definitions}
@@ -55,14 +55,14 @@
 			Christoffel symbols\index{Christoffel!Symbole} (local inertial frame with coordinates $\xi^\alpha$):
 			\begin{equation}
 				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}
-				=\frac{1}{2}g^{\kappa\lambda}\left(\frac{\partial g_{\nu\lambda}}{\partial x^\mu}+\frac{\partial g_{\mu\lambda}}{\partial x^\nu}-\frac{\partial g_{\nu\mu}}{\partial x^\lambda}\right)
+				=\frac{1}{2}g^{\kappa\lambda}\qty(\partial_\mu g_{\nu\lambda} + \partial_\nu g_{\mu\lambda} - \partial_\lambda g_{\nu\mu})
 			\end{equation}
 			The Christoffel symbols are symmetric in the lower indices $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In local frames of reference $\partial^\mu g_{\mu\nu} = 0$ and the Christoffel symbols vanish.
 
 			\noindent
 			Proper time\index{Eigenzeit}:
 			\begin{equation}
-				\Delta\tau := \frac{1}{c}\int_A^B\sqrt{g_{\mu\nu}\dd x^\mu \dd x^\nu}
+				\Delta\tau := \frac{1}{c}\int_A^B\sqrt{-g_{\mu\nu}\dd x^\mu \dd x^\nu}
 			\end{equation}
 
 			\noindent
@@ -73,12 +73,7 @@
 				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
 				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
 			\end{equation}
-			The second term vanishes in all free falling frames of reference and the covariant derivative becomes a partial derivative.
-
-			Metric compatibility:
-			\begin{equation}
-				g_{\mu\nu;\lambda} = 0
-			\end{equation}
+			The term additional to the partial derivative vanish in locally free falling frames of reference.
 
 			\noindent
 			Riemann curvature tensor\index{Riemann!Krümmungstensor}:
@@ -89,14 +84,12 @@
 					\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma} +
 					\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma} -
 					\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma} \\
-					R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\left(
-					g_{\lambda\nu,\sigma,\mu} - g_{\lambda\mu,\sigma,\nu} + g_{\sigma\mu,\lambda,\nu} -	 g_{\sigma\nu,\lambda,\mu}
-					\right)
-					+ g_{\alpha\beta} \left(
-					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda}
-					\right)
+					R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\qty(
+					\partial_\sigma \partial_\mu g_{\lambda\nu} - \partial_\sigma \partial_\nu g_{\lambda\mu} + \partial_\lambda \partial_\nu g_{\sigma\mu} - \partial_\lambda \partial_\mu g_{\sigma\nu})
+					+ g_{\alpha\beta} \qty(
+					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda})
 					\\
-					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \left(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu \right) v^\lambda
+					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \qty(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu) v^\lambda = \nabla_{\left[\mu\right.}\nabla_{\left.\nu\right]} v^\lambda
 				\end{aligned}
 			\end{equation}
 
@@ -114,8 +107,8 @@
 			Bianchi Identities\index{Bianchi!Identitäten}:
 			\begin{equation}
 				\begin{aligned}
-					R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} &= 0 \\
-					R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta;\gamma} + R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma;\alpha} + R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha;\beta} &= 0 \\
+					0 &= R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} \\
+					0 &= \nabla_\gamma R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta} + \nabla_\alpha R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma} + \nabla_\beta R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha} \\
 				\end{aligned}
 			\end{equation}
 
@@ -160,6 +153,94 @@
 				T_{\mu\nu} = -\frac{1}{\sqrt{-g}} \fdv{S_M}{g^{\mu\nu}}
 			\end{equation}
 
+
+		\subsubsection{Tetrads\index{Vielbein}}
+			Tetrad field $e_a^\mu(x)$ and inverse tetrad field $e_\mu^a(x)$ (Tensor field for transforming into a local Minkowskian frame of reference, denoted with latin indices):
+			\begin{equation}
+				\begin{aligned}					
+					g_{\mu\nu} e_a^\mu e_b^\nu &= \eta_{ab} 
+					\hsp g_{\mu\nu} = e^a_\mu e^b_\nu \eta_{ab} \\
+					\partial_a &= e_a^\mu \partial_\mu 
+					\hsp \dd{x}^a = e^a_\mu \dd{x}^\mu \\
+					\partial_\mu &= e_\mu^a \partial_a
+					\hsp \dd{x}^\mu = e^\mu_a \dd{x}^a
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Covariant derivative in terms of the tetrad field:
+			\begin{equation}
+				\nabla_\mu X^a_b = \partial_\mu X^a_b + \omega_\mu{}^a{}_c X^c_b - \omega_\mu{}^c{}_b X^a_c,
+			\end{equation}
+			where $\omega_\mu{}^a{}_b$ is the spin connection\index{Spin-Verbindung} (its relation to the Christoffel symbols is equivalent to $\nabla_\mu e^a_\nu = 0$):
+			\begin{equation}
+				\omega_\mu{}^a{}_b = e^a_\nu e^\sigma_b \Gamma^\nu_{\mu\sigma} - e^\rho_b \partial_\mu e^a_\rho
+			\end{equation}
+
+
+		\subsubsection{Tensors}
+			Torsion Tensor\index{Torsionstensor}:
+			\begin{equation}
+				T_{\mu\nu}{}^\lambda = \Gamma_{\mu\nu}^\lambda - \Gamma_{\nu\mu}^\lambda
+			\end{equation}
+
+			\noindent
+			Maurer-Cartan structure Equations\index{Maurer-Cartan!Strukturgleichungen} (For the torsion tensor $T$ and the curvature tensor $R$):
+			\begin{equation}
+				\begin{aligned}
+					T^a &= \dd e^a + \omega^a{}_b \wedge e^b \\
+					R^a_b &= \dd \omega^a{}_b + \omega^a_{}c \wedge \omega^c{}_b
+				\end{aligned}
+			\end{equation}
+
+		\subsubsection{Gauge Freedom}
+			General gauge freedom (choice of coordinates):
+			\begin{equation}
+				x^\mu \rightarrow x^\mu + \xi^\mu	
+			\end{equation}
+
+			\noindent
+			Harmonic gauge\index{Harmonische Eichung} / De Donder gauge\index{De Donder Eichung} (all formulations are equivalent):
+			\begin{equation}
+				\nabla_\mu \nabla^\mu x^\nu = 0 
+				\hsp g^{\mu\nu} \Gamma^\rho_{\mu\nu} = 0
+				\hsp \partial_\nu \qty(g^{\mu\nu}\sqrt{-g}) = 0
+			\end{equation}
+
+		\subsubsection{Geodesics\index{Geodäten}}
+			\noindent
+			Action of a free particle:
+			\begin{equation}
+				\mathcal{S} 
+				= -\int_A^B m u^\mu u_\mu \;\dd \tau
+				= -\int_A^B mc^2\;\dd \tau 
+				= -\int_A^B mc\sqrt{-g_{\mu\nu} \dv{x^\mu}{\lambda} \dv{x^\nu}{\lambda}} \;\dd \lambda
+			\end{equation}
+
+			\noindent
+			Equations of motion for a free particle (time-like geodesic\index{Zeitartige Geodäte}):
+			\begin{equation}
+				\frac{\mathrm{d}^2 x^\kappa}{\mathrm{d}\tau^2}=-\Gamma_{\mu\nu}^{\kappa}\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau}\frac{\mathrm{d}x^\nu}{\mathrm{d}\tau}
+			\end{equation}
+
+			\noindent
+			Killing's Equation\index{Killing!Gleichung}:
+			\begin{equation}
+				\begin{aligned}
+					\nabla_{\left(\mu\right.} V_{\left.\nu\right)} &= 0 \\
+					\Rightarrow u^\nu \nabla_\nu (V_\mu u^\mu) &= 0					
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Geodesic deviation equation (deviation vector $S^\mu = \dv{x^\mu}{s}$, tangent vector $T^\mu = \dv{x^\mu}{t}$):
+			\begin{equation}
+				\frac{\mathrm{D}^2}{\dd \tau^2} S^\mu 
+				= T^\alpha \nabla_\alpha T^\beta \nabla_\beta S^\mu
+				= R^\mu{}_{\nu\rho\sigma} T^\nu T^\rho S^\sigma 
+			\end{equation}
+
+
 		\subsubsection{Solutions}
 			Weak energy condition (equivalent to $T_{00} \ge 0$ for a locally inertial frame):
 			\begin{equation}
@@ -172,36 +253,40 @@
 				T_{\mu\nu} = (\rho + p)u_\mu u_\nu + p g_{\mu\nu}
 			\end{equation}
 
-		\subsubsection{Gauge Symmetry}
-			Gauge freedom:
-			\begin{equation}
-				g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + \nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu
-			\end{equation}
-
-			Harmonic gauge\index{Harmonische Eichung} / De Donder gauge\index{De Donder Eichung}:
-			\begin{equation}
-				\nabla_\mu \nabla^\mu x^\nu = 0
-			\end{equation}
-
-		\subsubsection{Geodesics\index{Geodäten}}
-			\noindent
-			Action of a free particle:
-			\begin{equation}
-				\mathcal{S} = -\int_A^B mc^2\;\dd \tau 
-				= -\int_A^B mc\sqrt{g_{\mu\nu} \dv{x^\mu}{\tau} \dv{x^\nu}{\tau}} \;\dd \tau  
-				= -\int_A^B m u^\mu u_\mu \;\dd \tau
-			\end{equation}
-
-			\noindent
-			Equations of motion for a free particle (time-like geodesic\index{Zeitartige Geodäte}):
-			\begin{equation}
-				\frac{\mathrm{d}^2 x^\kappa}{\mathrm{d}\tau^2}=-\Gamma_{\mu\nu}^{\kappa}\frac{\mathrm{d}x^\mu}{\mathrm{d}\tau}\frac{\mathrm{d}x^\nu}{\mathrm{d}\tau}
-			\end{equation}
-
 		\subsubsection{Black Holes}
-			Schwarzschild Metric\index{Schwarzschild!Metrik}:
+			Schwarzschild Metric\index{Schwarzschild!Metrik} ($\dd \Omega^2 = \dd \theta^2 + \sin^2(\theta) \dd \phi^2$):
 			\begin{equation}
-				TODO
+				\dd s^2 = - \qty(1-\frac{2 G M}{r}) \dd t^2 + \qty(1 - \frac{2 G M}{r})^{-1} \dd r^2 + r^2 \dd \Omega^2
+			\end{equation}
+			in Eddington-Finkelstein coordinates\index{Edington-Finkelstein!Koordinaten}:
+			\begin{equation}
+				\begin{aligned}
+					\xi &= t + r + 2 G M \ln(\frac{r}{2 G M} - 1) \\
+					\dd s^2 &= -\qty(1-\frac{2 G M}{r}) \dd \xi^2 + (\dd \xi \dd r + \dd r \dd \xi) + r^2\dd \Omega^2
+				\end{aligned}
+			\end{equation}
+			in Kruskal coordinates\index{Kruskal!Koordinaten}:
+			\begin{equation}
+				\begin{aligned}
+					v &= \sqrt{\frac{r}{2 G M} - 1} \exp(\frac{r}{4 G M}) \cosh(\frac{t}{4 G M}) \\
+					u &= \sqrt{\frac{r}{2 G M} - 1} \exp(\frac{r}{4 G M}) \sinh(\frac{t}{4 G M}) \\
+					\dd s^2 &= -\frac{32 G^3 M^3}{r} \exp(-\frac{r}{2 G M}) (-\dd v^2 + \dd u^2) + r^2 \dd \Omega^2
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Kerr Metric\index{Kerr!Metrik} (in Boyer-Lindquist coordinates\index{Boyer-Lindquist!Koordinaten}, where $\Delta:=r^2 - 2Mr + a^2$ and $\rho^2:=r^2+a^2\cos^2\theta$):
+			\begin{equation}
+				\begin{align}
+					\dd s^2 =& - \frac{\Delta - a^2 \sin^2\theta}{\rho^2} \dd t^2 - 2a\frac{2Mr\sin^2\theta}{\rho^2}\dd t \dd \varphi \\
+					&+ \frac{(r^2+a^2)^2 - a^2\Delta \sin^2\theta}{\rho^2}\sin^2\theta\dd\varphi^2 + \frac{\rho^2}{\Delta}\dd r^2 + \rho^2\dd\theta^2
+				\end{align}
+			\end{equation}
+
+			\noindent
+			Reissner-Nordström metric\index{Reissner-Nordström!Metrik}:
+			\begin{equation}
+				TODO				
 			\end{equation}
 
 			\noindent
@@ -216,7 +301,103 @@
 				T = \frac{\hbar c^3}{8\pi \kB G M} = TODO
 			\end{equation}
 		
-		\subsubsection{Gravitational Waves}
+		\subsubsection{Weak Field Limit}
+			Weak field limit:
+			\begin{equation}
+				g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu} \hsp \abs{h_{\mu\nu}} \ll 1 \quad \forall \mu,\nu
+			\end{equation}
+			direct consequences:
+			\begin{equation}
+				\begin{aligned}
+					g^{\mu\nu} &= \eta^{\mu\nu} - h^{\mu\nu} \\
+					h_{\mu'\nu'} &= \Lambda_{\mu'}^{\phantom{\mu'}\mu} \Lambda_{\nu'}^{\phantom{\nu'}\nu} h_{\mu\nu} \\
+					R_{\mu\nu} &= \frac{1}{2}\qty(\partial_\rho \partial_\mu h_{\nu}^{\rho} + \partial_\rho \partial_\nu h_{\mu}^{\rho} - \partial_\mu \partial_\nu h - \partial^2 h_{\mu\nu}) \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Residual gauge freedom:
+			\begin{equation}
+				h_{\mu\nu} \rightarrow h_{\mu\nu} + \partial_\mu \xi_\nu + \partial_\nu \xi_\mu
+			\end{equation}
+
+			\noindent
+			???Gauge freedom:
+			\begin{equation}
+				g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + \nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu
+			\end{equation}
+
+			\noindent
+			Harmonic gauge in the weak field limit:
+			\begin{equation}
+				\partial_\mu h^\mu{}_\lambda - \frac{1}{2}\partial_\lambda h = 0
+			\end{equation}
+
+			\noindent
+			Trace-reversed metric pertubation:
+			\begin{equation}
+				\begin{aligned}
+					\bar{h}_{\mu\nu} :=&\, h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} h \\
+					\partial^2 \bar{h}_{\mu\nu} =&\, -16\pi G T_{\mu\nu}					
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Connection to the Newtonian Potential\index{Newtonisches Potential}:
+			\begin{equation}
+				h_{00} = -2\phi = \frac{2GM}{r}
+			\end{equation}
+
+			\noindent
+			Weak field approximation for the metric of a star/planet:
+			\begin{equation}
+				\dd{s}^2 = -(1+2\phi)\dd{t}^2 + (1-2\phi)\dd{\vec{x}}^2
+			\end{equation}
+
+		\subsubsection{Gravitational Radiation}
+			Solutions to the vacuum field equations in the weak field limit (EOM: $\partial^2 \bar{h}_{\mu\nu} = 0$):
+			\begin{equation}
+				\bar{h}_{\mu\nu} = C_{\mu\nu} \exp(i k_\lambda x^\lambda) \hsp k_\lambda k^\lambda = 0
+			\end{equation}
+
+			\noindent
+			In transverse traceless gauge/radiation gauge/TT gauge (subgauge of the harmonic gauge):
+			\begin{equation}
+				\begin{aligned}
+					k^\lambda C_{\lambda\mu} &= 0
+					\hsp C^\mu_\mu = 0
+					\hsp C_{0\mu} = 0
+					\hsp \bar{h}_{\mu\nu}^{TT} = {h}_{\mu\nu}^{TT}
+					\hsp R_{\mu 0 0 \nu} = \frac{1}{2} \partial_0 \partial_0 h_{\mu\nu} \\
+				\end{aligned}
+			\end{equation}
+			polarizations (all other components vanish):
+			\begin{equation}				
+				C_{11} = -C_{22} =: C_+ 
+				\hsp C_{12} = C_{21} =: C_\times
+			\end{equation}
+			circular polarizations:
+			\begin{equation}
+				C_R = \frac{1}{\sqrt{2}} (C_+ + \i C_\times)
+				\hsp C_L = \frac{1}{\sqrt{2}} (C_+ - \i C_\times)
+			\end{equation}
+
+			\noindent
+			Quadrupole expansion of the gravitational wave (Assuming the movement of the source is negligible with regard to the distance $\delta R \ll R=\abs{\vec{x}}$ and that other components of the energy momentum tensor are unimportant. $q_{ij}$ is the quadrupole, $T^{00}$ is the energy density):
+			\begin{equation}
+				\begin{aligned}
+					\tilde{\bar{h}}_{ij}(\omega,\vec{x}) &= -\frac{2G\omega^2}{3}\frac{\ex^{\i\omega R}}{R} \tilde{q}_{ij}(\omega) \\
+					q_{ij}(t) &= 3\int \dd^3 y\, y^i y^j T^{00}(t,\vec{y}) \\
+					\tilde{\bar{h}}^{0\nu} &= \frac{\i}{\omega}\partial_i \tilde{\bar{h}}^{i\nu}
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Energy radiated by a quadrupole source (where $Q$ is the reduced quadrupole moment $Q_{ij} = q_{ij} - \frac{1}{3}\delta_{ij}\delta^{kl}q_{kl}$):
+			\begin{equation}
+				P = \frac{G}{45} \eval{\dv[3]{\tilde{Q}_{ij}}{t}\dv[3]{\tilde{Q}^{ij}}{t}}_{t_r}
+			\end{equation}
+
 
 	\subsection{Special Relativity\index{Spezielle Relativitätstheorie}}
 		\noindent
@@ -233,6 +414,7 @@
 				0		& 0		& 0		& \mp1 \\
 			\end{matrix} \right)
 		\end{equation}
+		Signature used in this subsection: $(+1,-1,-1,-1)$.
 
 		\noindent
 		Classical Limit\index{Klassischer Grenzfall}:
