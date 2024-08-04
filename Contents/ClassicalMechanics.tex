@@ -28,15 +28,12 @@
 		\end{equation}
 
 		\noindent
-		Derivative of angular momentum\index{Drallsatz} (Torque\index{Drehmoment} $\vec{\tau}$):
+		Lyapunov exponent\index{Ljapunov!Exponent} $\lambda$ (for a dynamical system $\vec{Z}(t)$ with two trajectories initially separated by $\delta\vec{Z}(0)$ in phase space, Lyapunov time\index{Ljapunov!Zeit} $\tau=\frac{1}{\lambda}$):
 		\begin{equation}
-			\dv{\vec{L}}{t} = \vec{\tau}
-		\end{equation}
-
-		\noindent
-		Kepler's second law\index{Flächensatz} (For a particle with a central force\index{Zentralpotential}):
-		\begin{equation}
-			\dv{A}{t} = \frac{\abs*{\vec{L}}}{2 m} = \const
+			\begin{aligned}
+				\norm{\delta\vec{Z}(t)} &\sim \ex^{\lambda t} \norm{\delta\vec{Z}(0)}\\
+				\lambda &= \lim_{t\rightarrow\infty} \lim_{\norm{\delta\vec{Z}(0)}\rightarrow 0} \frac{1}{t} \ln\qty(\frac{\norm{\delta \vec{Z}(t)}}{\norm{\delta\vec{Z}(0)}}) \\
+			\end{aligned}
 		\end{equation}
 
 	\subsection{Rotation}
@@ -105,146 +102,153 @@
 			\Nabla^2\phi = 4\pi G\rho
 		\end{equation}
 
+
+	\subsection{Kepler Problem\index{Kepler!Problem}}
+		\noindent
+		Lagrangian (Gravitational parameter\index{Gravitationsparameter} $\mu$, for central body approximation $\mu=GM$, see \ref{Sec:AstronomicalConstants}):
+		\begin{equation}
+			\mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\vec{r}}^2 + \frac{\mu}{r}
+		\end{equation}
+
+		\noindent
+		Kepler's second law\index{Flächensatz} (For a particle with a central force\index{Zentralpotential}):
+		\begin{equation}
+			\dv{A}{t} = \frac{\abs*{\vec{L}}}{2 m} = \const
+		\end{equation}
+
+		\noindent
+		Gravitational parameter \index{Gravitationsparameter} $\mu$, eccentricity\index{Exzentrizität} $\epsilon$ and $\rho_0$:
+		\begin{equation}
+			\begin{aligned}
+				\mu &= G m &\hsp
+				\epsilon &= \sqrt{1+\frac{2 E \vec{L}^2}{m \mu^2}} &\hsp
+				\rho_0 &= \frac{\vec{L}^2}{m\mu} \\
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Conserved Laplace-Runge-Lenz vector:
+		\begin{equation}
+			\vec{A} = \dot{\vec{r}}\times\vec{L} - \frac{\mu \vec{r}}{r}
+		\end{equation}
+
+		\noindent
+		Orbit parametrization (Cylindrical coordinates $\rho, \varphi$):
+		\begin{equation}
+			\rho = \frac{\rho_0}{1+\epsilon \cos\varphi}
+		\end{equation}
+
+		\noindent
+		Vis-Viva\index{Vis-Viva Gleichung} Equation
+		\begin{equation}
+			v^2 = \mu\qty(\frac{2}{r} - \frac{1}{a})
+		\end{equation}
+
+		\noindent
+		Rocket Equation\index{Raketengleichung} (final mass $m_\text{f}$, initial mass $m_\text{i}$, effective exhaust speed $u$, specific Impulse $I_{\text{sp.}}$, standard earth acceleration $g_0$):
+		\begin{equation}
+			\frac{m_\text{f}}{m_\text{i}} = \exp(-\frac{\Delta v}{u}) = \exp(-\frac{\Delta v}{g_0 I_{\text{sp.}}})
+		\end{equation}
+
+		\noindent
+		Kepler's third law\index{Kepler!Drittes Gesetz}:
+		\begin{equation}
+			\frac{T^2}{a^3} = \frac{4\pi^2}{G(M+m)}
+		\end{equation}
+
 	\subsection{Lagrange-Formalism}
-		\subsubsection{Basics}
-			\noindent
-			Action\index{Wirkung}:
-			\begin{equation}
-				\mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\;\mathrm{d} t
-			\end{equation}
+		\noindent
+		Action\index{Wirkung}:
+		\begin{equation}
+			\mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\;\mathrm{d} t
+		\end{equation}
 
-			\noindent
-			Stationary-action principle / Principle of least action \index{Wirkung}:
-			\begin{equation}
-				\delta \mathcal{S}=0
-			\end{equation}
+		\noindent
+		Stationary-action principle / Principle of least action \index{Wirkung}:
+		\begin{equation}
+			\delta \mathcal{S}=0
+		\end{equation}
 
-			\noindent
-			Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}:
-			\begin{equation}
-				 \frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0 \quad \forall q_i
-			\end{equation}
+		\noindent
+		Euler-Lagrange equation\index{Euler!-Lagrange Gleichung}:
+		\begin{equation}
+				\frac{d}{dt} \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial \dot{q_{i}}} - \frac{\partial \mathcal{L}(q_{i},\dot{q_{i}},t)}{\partial q_{i}} = 0 \quad \forall q_i
+		\end{equation}
 
-			\noindent
-			Canonical momentum / conjugated momentum \index{Kanonisch-konjugierte Impulse}:
-			\begin{equation}
-				p_i=\frac{\partial \mathcal{L}}{\partial\dot{q_i}}
-			\end{equation}
+		\noindent
+		Canonical momentum / conjugated momentum \index{Kanonisch-konjugierte Impulse}:
+		\begin{equation}
+			p_i=\frac{\partial \mathcal{L}}{\partial\dot{q_i}}
+		\end{equation}
 
-			\noindent
-			Hamiltonian\index{Hamilton!Funktion} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Lagrangian):
-			\begin{equation}
-				H(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
-			\end{equation}
+	\subsection{Hamiltonian Formalism}
+		\noindent
+		Hamiltonian\index{Hamilton!Funktion} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Lagrangian):
+		\begin{equation}
+			H(q_i,p_i,t)=\sum_{j=1}^{f}p_j\dot{q_j}(p) - \mathcal{L}(q_i, \dot{q_i}(p),t)
+		\end{equation}
 
-			\noindent
-			Hamilton's equations\index{Hamilton!Bewegungsgleichungen}:
-			\begin{equation}
-				\begin{aligned}
-					\dot{q}_k &= \pdv{H}{p_k}, &&\hsp
-					\dot{p}_k &= -\pdv{H}{q_k}, &&\hsp
-					\pdv{H}{t} &= -\pdv{\mathcal{L}}{t}
-				\end{aligned}
-			\end{equation}
+		\noindent
+		Hamilton's equations\index{Hamilton!Bewegungsgleichungen}:
+		\begin{equation}
+			\begin{aligned}
+				\dot{q}_k &= \pdv{H}{p_k}, &&\hsp
+				\dot{p}_k &= -\pdv{H}{q_k}, &&\hsp
+				\pdv{H}{t} &= -\pdv{\mathcal{L}}{t}
+			\end{aligned}
+		\end{equation}
 
-			\noindent
-			Poisson-brackets (in Quantum Mechanics $\qty{A,B} \rightarrow -\frac{\i}{\hbar}\Avg{\comm{A}{B}}$):
-			\begin{equation}
-				\begin{aligned}
-					\qty{A,B} &= \sum_k \left(
-						\pdv{A}{q_k}\pdv{B}{p_k} - \pdv{A}{p_k}\pdv{B}{q_k}
-					\right) \\
-					\dv{A}{t} &= \qty{A, H} + \pdv{A}{t}
-				\end{aligned}
-			\end{equation}
+		\noindent
+		Poisson-brackets (in Quantum Mechanics $\qty{A,B} \rightarrow -\frac{\i}{\hbar}\Avg{\comm{A}{B}}$):
+		\begin{equation}
+			\begin{aligned}
+				\qty{A,B} &= \sum_k \left(
+					\pdv{A}{q_k}\pdv{B}{p_k} - \pdv{A}{p_k}\pdv{B}{q_k}
+				\right) \\
+				\dv{A}{t} &= \qty{A, H} + \pdv{A}{t}
+			\end{aligned}
+		\end{equation}
 
-			\noindent
-			Canonical transformations\index{Kanonische Transformation} (transformations that leave the Hamilton equations invariant):
-			\begin{equation}
-				\begin{aligned}
-					q_i &= q_i(q_i',p_i',t) &\hsp
-					p_i &= p_i(q_i',p_i',t) \\
-					H(q_i,p_i,t) &= H'(q_i',p_i',t) &\hsp
-					\mathcal{L}(q_i,\dot{q}_i,t) &= \mathcal{L}'(q_i',\dot{q}_i',t) \\
-				\end{aligned}
-			\end{equation}
+		\noindent
+		Canonical transformations\index{Kanonische Transformation} (transformations that leave the Hamilton equations invariant):
+		\begin{equation}
+			\begin{aligned}
+				q_i &= q_i(q_i',p_i',t) &\hsp
+				p_i &= p_i(q_i',p_i',t) \\
+				H(q_i,p_i,t) &= H'(q_i',p_i',t) &\hsp
+				\mathcal{L}(q_i,\dot{q}_i,t) &= \mathcal{L}'(q_i',\dot{q}_i',t) \\
+			\end{aligned}
+		\end{equation}
 
-			\noindent
-			Liouville's theorem\index{Liouville!Theorem}, \ie the distribution function is constant along any trajectory in phase space. (phase space density $\rho$, for quantum mechanical analogue see Eq.~\ref{eq:VonNeumannEquation}):
-			\begin{equation}
-				\label{eq:LiouvilleTheorem}
-				\dv{t} \rho(t) = \pdv{\rho}{t} + \qty{\rho, H} = 0
-			\end{equation}
+		\noindent
+		Liouville's theorem\index{Liouville!Theorem}, \ie the distribution function is constant along any trajectory in phase space. (phase space density $\rho$, for quantum mechanical analogue see Eq.~\ref{eq:VonNeumannEquation}):
+		\begin{equation}
+			\label{eq:LiouvilleTheorem}
+			\dv{t} \rho(t) = \pdv{\rho}{t} + \qty{\rho, H} = 0
+		\end{equation}
 
-		\subsubsection{Noether's Theorem\index{Noether!Theorem}}
-			\noindent
-			Continuous transformation (infinitesimal $\varepsilon$): 
-			\begin{equation}
-				\begin{aligned}
-				x_i \rightarrow x_{i}^{\prime} &= x_i+\varepsilon\psi_i\left(x,\dot{x},t\right) \\
-					t\rightarrow t^{\prime}\, &= t+\varepsilon\varphi\left(x,\dot{x},t\right) \\
-				\end{aligned}
-			\end{equation}
+	\subsection{Noether's Theorem\index{Noether!Theorem}}
+		\noindent
+		Continuous transformation (infinitesimal $\varepsilon$): 
+		\begin{equation}
+			\begin{aligned}
+				q_i \rightarrow q_{i}^{\prime} &= q_i+\varepsilon\psi_i\left(q,\dot{q},t\right) \\
+				t\rightarrow t^{\prime}\, &= t+\varepsilon\varphi\left(q,\dot{q},t\right) \\
+			\end{aligned}
+		\end{equation}
 
-			\noindent
-			Condition of invariance\index{Invarianzbedingung}:
-			\begin{equation}
-				\frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{x}}^{\,\prime},\frac{d {\vec{x}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{x}, t)}{dt}
-			\end{equation}
+		\noindent
+		Condition of invariance\index{Invarianzbedingung}:
+		\begin{equation}
+			\frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{q}}^{\,\prime},\frac{d {\vec{q}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{q}, t)}{dt} \quad \Rightarrow \quad S \sim S'
+		\end{equation}
 
-			\noindent
-			Resulting conserved quantity\index{Erhaltungsgröße}:
-			\begin{equation}
-				\begin{aligned}
-					S &\sim S' \;\Rightarrow\;
-					\dv{t} Q\left(\vec{x},\dot{\vec{x}},t\right) = 0 \\
-					Q\left(\vec{x},\dot{\vec{x}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{x}}_i}{\dot{x}}_i}\right)\varphi - f\left(\vec{x},t\right).
-				\end{aligned}
-			\end{equation}
-
-		\subsubsection{Kepler Problem\index{Kepler!Problem}}
-			\noindent
-			Gravitational parameter \index{Gravitationsparameter} $\mu$, eccentricity\index{Exzentrizität} $\epsilon$ and $\rho_0$:
-			\begin{equation}
-				\begin{aligned}
-					\mu &= G m &\hsp
-					\epsilon &= \sqrt{1+\frac{2 E \vec{L}^2}{m \mu^2}} &\hsp
-					\rho_0 &= \frac{\vec{L}^2}{m\mu} \\
-				\end{aligned}
-			\end{equation}
-
-			\noindent
-			Lagrangian (Gravitational parameter\index{Gravitationsparameter} $\mu$, for central body approximation $\mu=GM$, see \ref{Sec:AstronomicalConstants}):
-			\begin{equation}
-				\mathcal{L}(\vec{r},\dot{\vec{r}}) = \frac{m}{2} \dot{\vec{r}}^2 + \frac{\mu}{r}
-			\end{equation}
-
-			\noindent
-			Conserved Laplace-Runge-Lenz vector:
-			\begin{equation}
-				\vec{A} = \dot{\vec{r}}\times\vec{L} - \frac{\mu \vec{r}}{r}
-			\end{equation}
-
-			\noindent
-			Orbit parametrization (Cylindrical coordinates $\rho, \varphi$):
-			\begin{equation}
-				\rho = \frac{\rho_0}{1+\epsilon \cos\varphi}
-			\end{equation}
-
-			\noindent
-			Vis-Viva\index{Vis-Viva Gleichung} Equation
-			\begin{equation}
-				v^2 = \mu\qty(\frac{2}{r} - \frac{1}{a})
-			\end{equation}
-
-			\noindent
-			Rocket Equation\index{Raketengleichung} (final mass $m_\text{f}$, initial mass $m_\text{i}$, effective exhaust speed $u$, specific Impulse $I_{\text{sp.}}$, standard earth acceleration $g_0$):
-			\begin{equation}
-				\frac{m_\text{f}}{m_\text{i}} = \exp(-\frac{\Delta v}{u}) = \exp(-\frac{\Delta v}{g_0 I_{\text{sp.}}})
-			\end{equation}
-
-			\noindent
-			Kepler's third law\index{Kepler!Drittes Gesetz}:
-			\begin{equation}
-				\frac{T^2}{a^3} = \frac{4\pi^2}{G(M+m)}
-			\end{equation}
+		\noindent
+		Resulting conserved quantity\index{Erhaltungsgröße}:
+		\begin{equation}
+			\begin{aligned}
+				S &\sim S' \quad \Rightarrow \quad
+				\dv{t} Q\left(\vec{q},\dot{\vec{q}},t\right) = 0 \\
+				Q\left(\vec{q},\dot{\vec{q}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{q}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{q}}_i}{\dot{q}}_i}\right)\varphi - f\left(\vec{q},t\right).
+			\end{aligned}
+		\end{equation}

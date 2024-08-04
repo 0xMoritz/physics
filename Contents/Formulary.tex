@@ -317,6 +317,12 @@
 				n! = \Gamma(n+1) \approx \sqrt{2\pi n} \left( \frac{n}{e} \right)^{n}
 			\end{equation}
 
+			\noindent
+			Laurent series expansion of the Gamma function (where $\gamma_E=0.57721\dots$ is the Euler-Mascheroni constant\index{Euler!-Mascheroni Konstante}):
+			\begin{equation}
+				\Gamma(z) = \frac{1}{z} - \gamma_E + \frac{1}{2}\qty(\gamma_E^2 + \frac{\pi^2}{6}) +\mathcal{O}(z^2)
+			\end{equation}
+
 
 		\subsubsection{Function space\index{Funktionenraum}}
 			\noindent
@@ -634,6 +640,25 @@
 			% 	\begin{equation}
 			% 		L = \left( \qty{\Lambda\in GL(4, \mathbb{R}): \norm{\Lambda x}= \norm{x} \quad\forall x \in \mathbb{R}^4}, \text{Matrix multiplication} \right)
 			% 	\end{equation}
+
+
+		\subsubsection{Graßmann Algebra\index{Graßmann!Algebra}}
+			\noindent
+			Graßmann Algebra / Graßmann Numbers\index{Graßmann!Zahlen} $\set{\theta_i}$:
+			\begin{equation}
+				\theta_i \theta_j = - \theta_j \theta_i \quad \forall i,j
+			\end{equation}
+
+			\noindent
+			Integration and Differentiation:
+			\begin{equation}
+				\begin{aligned}
+					\int 1\,\dd\theta &= 0 \\
+					\int \theta\,\dd\theta &= 1 \\
+					\int f(\theta_1,\dots,\theta_n)\,\dd\theta_i &= \dv{\theta_i}f(\theta_1,\dots,\theta_n)
+				\end{aligned}
+			\end{equation}
+			
 	\subsection{Differential Equations}
 		\subsubsection{General}
 			\noindent
@@ -926,6 +951,18 @@
 			% 	T:
 			% \end{equation}
 			In vector analysis: vector $\rightarrow$ vector field, dual vector $\rightarrow$ differential form.
+
+		\subsubsection{Differential Forms}
+			TODO:
+			Exterior Product / Wedge Product
+
+			Hodge Dual
+
+			Exact Form
+
+			total differential
+
+
 
 		\subsubsection{Determinants}
 			Definition Determinant\index{Determinante} ($S_n$ is the set of all permutations of $n$ indices, the signum $\sgn(\sigma)$ is $+1$ for even and $-1$ for odd permutations):
@@ -1294,17 +1331,5 @@
 					\end{array}\right. \\
 					\mu =& \frac{1}{2}(\alpha+\beta) \\
 					\sigma^2 =& \frac{1}{12}(\beta-\alpha)^2 \\
-				\end{aligned}
-			\end{equation}
-
-		
-
-	\subsection{Chaos Theory}
-		\subsubsection{Basics}
-			Lyapunov exponent\index{Ljapunov!Exponent} $\lambda$ (for a dynamical system $\vec{Z}(t)$ with two trajectories initially separated by $\delta\vec{Z}(0)$ in phase space, Lyapunov time\index{Ljapunov!Zeit} $\tau=\frac{1}{\lambda}$):
-			\begin{equation}
-				\begin{aligned}
-					\norm{\delta\vec{Z}(t)} &\sim \ex^{\lambda t} \norm{\delta\vec{Z}(0)}\\
-					\lambda &= \lim_{t\rightarrow\infty} \lim_{\norm{\delta\vec{Z}(0)}\rightarrow 0} \frac{1}{t} \ln\qty(\frac{\norm{\delta \vec{Z}(t)}}{\norm{\delta\vec{Z}(0)}}) \\
 				\end{aligned}
 			\end{equation}
