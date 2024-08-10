@@ -1015,17 +1015,6 @@
 			\end{equation}
 
 			\noindent
-			Jacobian matrix\index{Jacobi!Matrix} and Jacobian determinant\index{Jacobi!Determinante}:
-			\begin{equation}
-				D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
-				= \mqty(
-				\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
-				\vdots & \ddots & \vdots \\
-				\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
-				);\;\;J_f(\vec{x})=\abs{\det\left(D\vec{f}(\vec{x})\right)}
-			\end{equation}
-
-			\noindent
 			Identities in connection with the gradient, divergence and rotation of vector fields:
 			\begin{equation}
 				\begin{aligned}
@@ -1074,6 +1063,17 @@
 			\end{equation}
 
 		\subsubsection{Coordinate Transformations}
+			\noindent
+			Jacobian matrix\index{Jacobi!Matrix} and Jacobian determinant\index{Jacobi!Determinante}:
+			\begin{equation}
+				D\left(\vec{f}\,\right) = \left(\frac{\partial f_j}{\partial x_k}\right)_{jk}
+				= \mqty(
+				\frac{\partial f_1}{\partial x_1} & \dotsb & \frac{\partial f_1}{\partial x_n} \\
+				\vdots & \ddots & \vdots \\
+				\frac{\partial f_m}{\partial x_1} & \dotsb & \frac{\partial f_m}{\partial x_n} \\
+				);\;\;J_f(\vec{x})=\abs{\det\left(D\vec{f}(\vec{x})\right)}
+			\end{equation}
+
 			\noindent
 			Transformation between cartesian, cylindrical and spherical coordinates:
 			\begin{center}
