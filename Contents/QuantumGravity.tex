@@ -1,0 +1,89 @@
+% !TEX root = ../physics.tex
+\section{Quantum Gravity}
+	\subsection{Functional Renormalization}
+		Effective Action\index{Effektive!Wirkung} ($\phi(x) = \Avg{\varphi(x)}_J = \fdv{W\qty[J]}{J(x)}$, where $W[J]$ is the Schwinger Functional\index{Schwinger!Functional}):
+		\begin{equation}
+			\Gamma(\phi) = \sup_{J} \qty( \int \dd^d x \, J(x) \phi(x) - W[J])
+		\end{equation}
+		From now on, the supremum of the current $J$ is assumed implicitly.
+
+		\noindent
+		Quantum equations of motion:
+		\begin{equation}
+			J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
+		\end{equation}
+
+		\noindent
+		Propagator:
+		\begin{equation}
+			\frac{\delta^2 W[J]}{\delta J(x) \delta J(y)} = G(x,y) = \frac{1}{\frac{\delta^2\Gamma[\phi]}{\delta \phi(x) \delta \phi(y)}}
+		\end{equation}
+
+		\noindent
+		Expansion of the $n$-point correlation function:
+		\begin{equation}
+			\Avg{\varphi(x_1) \hdots\varphi(x_n)}_J = \prod_{i=1}^{n} \qty(\int \dd^d x'_i \;G(x_i,x'_i) \fdv{\phi(x'_i)} + \phi(x_i))
+		\end{equation}
+
+		\noindent
+		Functional Dyson-Schwinger Equation\index{Dyson-Schwinger-Gleichung!funktional}:
+		\begin{equation}
+			\fdv{\Gamma[\phi]}{\phi(x)} = \fdv{S}{\varphi(x)}\qty[\varphi = \phi + \int \dd^d y\; G(x,y) \fdv{}{\phi(y)}]
+		\end{equation}
+
+		\noindent
+		General Dyson-Schwinger Equation:
+		\begin{equation}
+			\Avg{\Psi[\varphi]} \fdv{\Gamma[\phi]}{\phi(x)} = \Avg{\Psi[\varphi] \fdv{S[\varphi]}{\varphi(x)}} - \Avg{\fdv{\Psi[\varphi]}{\varphi(x)}}
+		\end{equation}
+
+	\subsection{Flow Equations}
+		Infrared regularized generating functional with a hard infrared cutoff scale $k$:
+		\begin{equation}
+			Z_k[J] = \int \mathcal{D}\varphi_{p^2 \ge k^2} \exp(-S[\varphi] - \int \dd^d x \, J(x) \varphi(x))
+			\hsp \mathcal{D}\varphi_{p^2 \ge k^2} = \prod_{p^2 \ge k^2} \frac{\dd \varphi_p}{(2\pi)^d}
+		\end{equation}
+
+		\noindent
+		Soft cutoff integration measure
+		\begin{equation}
+			\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D} \exp(-\Delta S_k[\varphi])
+			\hsp \Delta S_k[\varphi] := \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(p)R_k(p^2) \varphi(-p)
+		\end{equation}
+		with a Regulator function\index{Regulator Funktion} $R_k(p^2)$ that satisfies
+		\begin{itemize}\itemsep -0pt
+			\item $\displaystyle\lim_{p^2 \rightarrow 0} R_k(p^2) > 0$ \hfill{(Suppression of IR modes)}
+			\item $\displaystyle\lim_{k \rightarrow \infty} R_k(p^2) = 0$ \hfill{(Physical limit)}
+			\item $\displaystyle\lim_{k \rightarrow \Lambda \rightarrow \infty} R_k(p^2) = \infty$ \hfill{(UV limit)}
+		\end{itemize}
+		hence, the generating functional with a soft cutoff is
+		\begin{equation}
+			Z_k[J] := \ex^{-\Delta S_k [\fdv{J}]}Z[J]
+		\end{equation}
+
+		\noindent
+		Renormalization group / RG time:
+		\begin{equation}
+			t = \ln \frac{k}{\Lambda}
+			\hsp \dot{f} = \partial_t f = k \partial_k f
+		\end{equation}
+
+		\noindent
+		Flow equation for the Schwinger Functional:
+		\begin{equation}
+			\partial_t W_k[J] = -\frac{1}{2}\int \frac{\dd^d p}{(2\pi)^d} \, \qty[W^{(2)}_k[J]+(W_k^{(1)}[J])^2](p,-p) \partial_t R_k(p^2)
+		\end{equation}
+
+		\noindent
+		Flowing / Scale dependent effective action and modified quantum equations of motion ($\phi(x)= \fdv{W_k[J]}{J(x)}$):
+		\begin{equation}
+			\Gamma_k[\phi] = \sup_J \qty{\int \dd^d x\, J(x) \phi(x) - W_k[J] - \Delta S_k[\phi]}
+			\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J(x)
+		\end{equation}
+
+		\noindent
+		Wetterich Equation\index{Wetterich-Gleichung} / flow equation for the effective action:
+		\begin{equation}
+			\partial_t \Gamma_k[\phi] = \frac{1}{2} \tr G_k \partial_t R_k
+			=\frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\phi] + R_k}(p,-p) \partial_t R_k(p^2)
+		\end{equation}
