@@ -392,11 +392,30 @@ Conventions in this section:
 		\end{equation}
 
 		\noindent
-		Cross section\index{Wirkungsquerschnitt} of a collider experiment with beams $A$ and $B$ (for n particles in the product state):
+		Cross section\index{Wirkungsquerschnitt} of a collider experiment with beams $A$ and $B$ and $n$ particles in the product state, where $\dd \Pi_\mathrm{LIPS}$ is the Lorentz invariant phase space element:
 		\begin{equation}
-			\dd \sigma = \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0}) \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 y\abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B)
+			\begin{aligned}
+				\dd \sigma 
+				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}} \dd \Pi_\mathrm{LIPS} \\
+				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
+			\end{aligned}
 		\end{equation} 
 
+		\noindent
+		One-particle decay rate of a particle $A$:
+		\begin{equation}
+			\dd \Gamma = \frac{\abs{\mathcal{M}(p_A\rightarrow\set{p_f})}^2}{2 p_A^0} \dd \Pi_\mathrm{LIPS}
+		\end{equation}
+
+		\noindent
+		Lehmann-Symanzik-Zimmermann reduction formula (LSZ reduction formula):
+		\begin{equation}
+			\begin{aligned}
+				\Braket{p_k \hdots p_n|S|p_1 \hdots p_{k-1}} = &\prod_{i=1}^{k-1} \qty[\i \int \dd^4 x_i \, \ex^{-\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \prod_{i=k}^{n} \qty[\i \int \dd^4 x_i \, \ex^{+\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \\
+				&\times\Braket{\Omega|T \phi(x_1) \hdots \phi(x_n)|\Omega}
+			\end{aligned}
+		\end{equation}
+			
 		\noindent
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
@@ -447,13 +466,13 @@ Conventions in this section:
 		\subsubsection{Generating Functionals}
 			Generating Functional / partition function:
 			\begin{equation}
-				Z[J] = \frac{1}{N} \int \mathcal{D}\phi\, \exp(\i\qty(S[\phi] + \int \dd^d x \, J(x) \phi(x)))
+				Z[J] = \frac{1}{N} \int \mathcal{D}\varphi\, \exp(\i\qty(S[\varphi] + \int \dd^d x \, J(x) \varphi(x)))
 			\end{equation}
 			
 			\noindent
 			Correlation Functions:
 			\begin{equation}
-				\mel**{\Omega}{T \hat{\phi}(x_1) \dotsb \hat{\phi}(x_n)}{\Omega} = \eval{(-\i)^{n} \frac{\delta^n Z[J]}{\delta J(x_1) \dotsb \delta J(x_n)}}_{J=0}
+				\mel**{\Omega}{T \hat{\varphi}(x_1) \dotsb \hat{\varphi}(x_n)}{\Omega} = \eval{(-\i)^{n} \frac{\delta^n Z[J]}{\delta J(x_1) \dotsb \delta J(x_n)}}_{J=0}
 			\end{equation}
 
 			\noindent
@@ -469,14 +488,14 @@ Conventions in this section:
 			\end{equation}
 
 			\noindent
-			Effective Action\index{Effektive!Wirkung} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Schwinger Functional\index{Schwinger!Funktional}; generates 1 particle irreducible (1PI) correlation functions):
+			Effective Action\index{Effektive!Wirkung} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Schwinger Functional\index{Schwinger!Funktional}; generates 1 particle irreducible (1PI) correlation functions; $\phi(x) = \Avg{\varphi(x)}_J = \fdv{W\qty[J]}{J(x)}$):
 			\begin{equation}
 				\Gamma(\phi) = \sup_{J} \qty( \int \dd^d x \, J(x) \phi(x) - W[J])
 			\end{equation}
-			Properties:
+			
+			Quantum equations of motion:
 			\begin{equation}
 				J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
-				\hsp \phi(x) = \fdv{W\qty[J]}{J(x)}
 			\end{equation}
 
 
