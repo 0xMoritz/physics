@@ -397,6 +397,12 @@
 			\end{equation}
 
 			\noindent
+			Multivariate Taylor Expansion ($\alpha = (\alpha_1,\dots,\alpha_n)$ is a multi-index with $\abs{\alpha} = \alpha_1 + \cdots + \alpha_n$, $\alpha!=\alpha_1! \cdots \alpha_n!$ and $\vec{x}^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\in\mathbb{R}$):
+			\begin{equation}
+				f(\vec{x}) = \sum_{\abs{\alpha}\le k} \frac{1}{\alpha!} \frac{\partial^{\abs{\alpha}} f(\vec{x}_0)}{\partial x_1^{\alpha_1} \cdots \partial x_n^{\alpha_n}} \qty(\vec{x}-\vec{x}_0)^\alpha + \sum_{\abs{\alpha}=k} h_\alpha(\vec{x})\qty(\vec{x}-\vec{x}_0)^\alpha \quad \text{where} \quad \forall \alpha:\; \lim_{\vec{x}\rightarrow\vec{x}_0} h_\alpha(\vec{x}) = 0 \quad
+			\end{equation}
+
+			\noindent
 			Polynomial sequence of important functions:
 			\begin{equation}
 				\begin{aligned}
