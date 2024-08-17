@@ -168,9 +168,9 @@
 					Entropy & $S(U,V)$ & $\dd S = \frac{1}{T} \dd U + \frac{p}{T} \dd V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
 					Internal Energy & $U(S,V)$ & $\dd U = T \dd S - p \dd V$ & $\left( \dpder{T}{V} \right)_S =	- \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
 					Free Energy & $F(V,T) = U - TS$ & $\dd F = -S \dd T - p \dd V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
-					Gibbs energy & $G(T,p) = U - TS + pV$ & $\dd G = -S \dd T - V \dd p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
+					Gibbs Energy & $G(T,p) = U - TS + pV$ & $\dd G = -S \dd T - V \dd p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
 					Enthalpy & $H(p,S) = U + pV$ & $\dd H = T \dd S + V \dd p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
-					Grand potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
+					Grand Potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
 					\end{tabular}}
 				\caption{List of commonly used potentials}
 				\label{tab:ThermodynamischePotentiale}
@@ -265,6 +265,40 @@
 			\href{https://en.wikipedia.org/wiki/Phase_rule}{Gibbs phase law}\index{Gibbs!Phasenregel} (for the degrees of freedom $f$ at $r$ components distributed in $\nu$ phases):
 			\begin{equation}
 				f = 2 + r - \nu
+			\end{equation}
+
+			\noindent
+			Critical exponents ($d$ is the dimensionality of the system, $C$ is the heat capacity, $\Psi$ is the order parameter \eg magnetization, $J$ is the source field \eg magnetic field, $\chi$ is the susceptibility, $\avg{\psi(0)\psi(r)}$ is the correlation function, $\xi$ is the correlation length and $\tau = \frac{T-T_c}{T_c}$ the reduced temperature):
+			\begin{equation}
+				\begin{aligned}
+					&C \propto \tau^{-\alpha}
+					\hsp \Psi \propto (-\tau)^{-\beta}
+					\hsp \chi \propto \tau^{-\gamma} \\
+					&J \propto \tau^{-\delta} 
+					\hsp \avg{\psi(0)\psi(r)} \propto r^{d+2-\eta}
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Scaling relations and hyperscaling relations (valid if correlation function and Gibbs energy are homogenous functions):
+			\begin{equation}
+				\begin{aligned}
+					&2 - \alpha = 2\beta + \gamma
+					\hsp 2 - \alpha = \beta(\delta + 1) \\
+					&2 - \alpha = d\nu
+					\hsp \gamma = (2 - \eta)\nu \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Redundancy (only two \dof for the critical exponents, note that $d$ must be smaller than the certain upper limit, dependent on the universality class):
+			\begin{equation}
+				\begin{aligned}
+					&\alpha = 2 - d\nu
+					\hsp \beta = \frac{\nu}{2} (d-2+\eta) \\
+					& \gamma = \nu(2-\eta) 
+					\hsp \delta = \frac{d+2-\eta}{d-2+\eta}
+				\end{aligned}
 			\end{equation}
 
 	\subsection{Non-Equilibrium}
