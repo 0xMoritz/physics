@@ -69,21 +69,57 @@
 		\end{equation}
 
 		\noindent
-		Flow equation for the Schwinger Functional:
+		Flow equation for the Schwinger Functional\index{Schwinger!Funktional}:
 		\begin{equation}
 			\partial_t W_k[J] = -\frac{1}{2}\int \frac{\dd^d p}{(2\pi)^d} \, \qty[W^{(2)}_k[J]+(W_k^{(1)}[J])^2](p,-p) \partial_t R_k(p^2)
 		\end{equation}
 
 		\noindent
-		Flowing / Scale dependent effective action and modified quantum equations of motion ($\phi(x)= \fdv{W_k[J]}{J(x)}$):
+		Flowing / Scale dependent effective action / Effective average action and modified quantum equations of motion / effective field equations ($\phi(x)= \fdv{W_k[J]}{J(x)}$):
 		\begin{equation}
 			\Gamma_k[\phi] = \sup_J \qty{\int \dd^d x\, J(x) \phi(x) - W_k[J] - \Delta S_k[\phi]}
 			\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J(x)
 		\end{equation}
 
 		\noindent
-		Wetterich Equation\index{Wetterich-Gleichung} / flow equation for the effective action:
+		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation:
 		\begin{equation}
 			\partial_t \Gamma_k[\phi] = \frac{1}{2} \tr G_k \partial_t R_k
 			=\frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\phi] + R_k}(p,-p) \partial_t R_k(p^2)
 		\end{equation}
+
+	\subsection{Asymptotic Safety}
+		Beta functions:
+		\begin{equation}
+			\beta_g = \dot{g} = k \partial_k g
+		\end{equation}
+
+		\noindent
+		Stability Matrix:
+		\begin{equation}
+			\mathcal{M}_{ij} = \eval{\pdv{\beta_{g_i}}{g_j}}_{\vec{g} = \vec{g_*}}
+		\end{equation}
+		Critical Exponent (corresponding eigenvectors of the stability matrix $V_I$)
+		\begin{equation}
+			\theta_I = - \mathrm{eig}(\mathcal{M}_{ij})
+		\end{equation}
+		Fixed point expansion of the beta functions:
+		\begin{equation}
+			\beta_{g_i} = \sum_{j} \mathcal{M}_{ij} \qty(g_j - g_{j*}) + \mathcal{O}\qty(g_j - g_{j*})^2
+		\end{equation}
+		Solution (where $c_i$ are integration constants):
+		\begin{equation}
+			g_i(k) = g_{i*} + \sum_I c_I V_I \qty(\frac{k}{k_0})^{-\theta_I}
+		\end{equation}
+		\begin{itemize}
+			\item $\theta_I > 0$: relevant direction $V_I$, contributing a free parameter $c_I$
+			\item $\theta_I < 0$: irrelevant direction $V_I$, no free parameter $c_I$ insignificant
+			\item $\theta_I = 0$: marginal?, idk\dots
+		\end{itemize}
+
+	\subsection{Application to Quantum Gravity}
+		Effective Action (Using a background metric $g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu}$):
+		\begin{equation}
+			\exp(-\Gamma_k[g_{\mu\nu}]) = \int \mathcal{D}h_{\mu\nu} \, \exp(-S[h_{\mu\nu}] - \int h_{\mu\nu} R_k(-\bar{D})^{\mu\nu\rho\sigma}h_{\rho\sigma})
+		\end{equation}
+
