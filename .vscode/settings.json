@@ -100,5 +100,11 @@
         "Yukawa",
         "Zeeman",
         "Zeemann"
+    ],
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-l=%DIR%/localIndentSettings"
     ]
 }
