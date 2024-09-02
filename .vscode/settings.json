@@ -7,6 +7,7 @@
         "antisymmetrized",
         "Aufbau",
         "Becchi",
+        "Bekenstein",
         "Bianchi",
         "Biot",
         "bosonic",
@@ -48,6 +49,7 @@
         "Isothermic",
         "Kruskal",
         "Laguerre",
+        "Landauer",
         "Landé",
         "Larmor",
         "Lebesque",
@@ -87,6 +89,7 @@
         "subgauge",
         "subshell",
         "supremum",
+        "Symanzik",
         "Tangens",
         "timelike",
         "Tyutin",
@@ -99,7 +102,8 @@
         "Wiechert",
         "Yukawa",
         "Zeeman",
-        "Zeemann"
+        "Zeemann",
+        "Zimmermann"
     ],
     "latex-workshop.latexindent.args": [
         "-c",
