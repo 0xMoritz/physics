@@ -82,17 +82,17 @@
 			\begin{equation}
 				\begin{aligned}
 					\Gamma(\vec{Z}) = \langle \delta_\Delta (U-H) \rangle
-						&= \begin{cases}
-								\SumInt_n \delta_\Delta(U-E_n) & \text{quantum mechanical} \\
-								\int \dd \Gamma_N \, \delta_\Delta(U-E_n) & \text{classical}
-							\end{cases} \\
+					&= \begin{cases}
+						\SumInt_n \delta_\Delta(U-E_n) & \text{quantum mechanical} \\
+						\int \dd \Gamma_N \, \delta_\Delta(U-E_n) & \text{classical}
+					\end{cases} \\
 					\delta_\Delta(x) &= \Theta(x) - \Theta(x-\Delta)\\
 					\dd \Gamma_N &= \frac{\dd^{3N}q \dd^{3N}p }{h^{3N} N!} \\
 					\hat{\rho} &= \frac{1}{\Gamma} \SumInt \Ket{\psi}\Bra{\psi}\;\dd\psi
 				\end{aligned}
 			\end{equation}
-			
-			\subsubsection{Canonical Ensemble}
+
+		\subsubsection{Canonical Ensemble}
 			A canonical ensemble is the statistical ensemble that represents the possible states of a mechanical system in thermal equilibrium with a heat bath at a fixed temperature.
 
 			Density matrix in the canonical ensemble:
@@ -104,10 +104,10 @@
 			Canonical partition function ($\beta = \frac{1}{\kB T}$):
 			\begin{equation}
 				Z_N=\langle \ex^{-\beta H} \rangle
-					= \begin{cases}
-							\SumInt_n \ex^{-\beta E_n} & \text{quantum mechanical} \\
-							\int \dd \Gamma_N \, \ex^{-\beta H} & \text{classical}
-						\end{cases} \\
+				= \begin{cases}
+					\SumInt_n \ex^{-\beta E_n} & \text{quantum mechanical} \\
+					\int \dd \Gamma_N \, \ex^{-\beta H} & \text{classical}
+				\end{cases} \\
 			\end{equation}
 
 			\noindent
@@ -124,7 +124,7 @@
 
 		\subsubsection{Grand Canonical Ensemble}
 			The grand canonical ensemble is the statistical ensemble that represents the possible states of a mechanical system in thermal and chemical equilibrium with a heat bath and particle reservoir.
-			
+
 			Density matrix for the grand canonical ensemble
 			\begin{equation}
 				\hat{\rho} = \frac{1}{\mathcal{Z}} \ex^{-\beta (\hat{H} - \mu \hat{N})}
@@ -156,7 +156,7 @@
 				\begin{aligned}
 					0 &= \dd \big( S - \lambda \sum_i p_i \big) \\
 					p_i &= \ex^{-1-\lambda} = \const \\
-					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\ 
+					\hat{\rho} &= \frac{\hat{1}}{\Gamma} \\
 				\end{aligned}
 			\end{equation}
 

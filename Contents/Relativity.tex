@@ -10,16 +10,16 @@
 
 			\noindent
 			Inertial frame of reference\index{Inertialsystem} \\
-				\indent \textit{Frame of reference in which spacetime is homogeneous and isotropic.}
+			\indent \textit{Frame of reference in which spacetime is homogeneous and isotropic.}
 
 		\subsubsection{Einstein Postulates}
 			\textbf{First Postulate}: Principle of Relativity\index{Relativitätsprinzip} \newline
-				\indent \textit{The laws of nature are form invariant in all inertial frames of reference.}  \nl
+			\indent \textit{The laws of nature are form invariant in all inertial frames of reference.}  \nl
 			\textbf{Second Postulate}: Constancy of the Speed of Light\index{Konstanz der Lichtgeschwindigkeit} \newline
-				\indent \textit{The maximum propagation speed of information is identical in all frames of reference.\index{Lichtgeschwindigkeit}}
-				\label{post:c}\nl
+			\indent \textit{The maximum propagation speed of information is identical in all frames of reference.\index{Lichtgeschwindigkeit}}
+			\label{post:c}\nl
 			\textbf{Third Postulate}: Strong Equivalence Principle\index{Starkes Äquivalenzprinzip} \newline
-				\indent \textit{Spacetime is locally flat, \ie the laws of special relativity hold in local inertial frames of reference. It is therefore always possible to construct a coordinate system with a locally Minkowskian metric for one point.}  \vsp
+			\indent \textit{Spacetime is locally flat, \ie the laws of special relativity hold in local inertial frames of reference. It is therefore always possible to construct a coordinate system with a locally Minkowskian metric for one point.}  \vsp
 
 			\noindent
 			Metric compatibility:
@@ -33,13 +33,13 @@
 				\Gamma^{\lambda}_{\qty[\mu\nu]} = 0
 			\end{equation}
 
-	\subsubsection{Metric Tensor\index{Metrischer Tensor}}
-	Metric Tensor and Lorentz invariant spacetime interval:
-	\begin{equation}
-		\dd s^2 = c^2 \dd \tau^2 = \dd x^\mu \dd x_\mu = g_{\mu\nu} \dd x^\mu \dd x^\nu
-	\end{equation}
-		Signature used in this subsection: $(-1,+1,+1,+1)$.
-	
+		\subsubsection{Metric Tensor\index{Metrischer Tensor}}
+			Metric Tensor and Lorentz invariant spacetime interval:
+			\begin{equation}
+				\dd s^2 = c^2 \dd \tau^2 = \dd x^\mu \dd x_\mu = g_{\mu\nu} \dd x^\mu \dd x^\nu
+			\end{equation}
+			Signature used in this subsection: $(-1,+1,+1,+1)$.
+
 	\subsection{General Relativity\index{Allgemeine Relativitätstheorie}}
 		\subsubsection{Definitions}
 			\noindent
@@ -47,7 +47,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\pdv{\phi}{x^\mu} &= \partial_\mu \phi = \phi_{,\mu} \\
-					\partial_\mu &= \qty(\pdv{x^0}, \pdv{x^1}, \pdv{x^2}, \pdv{x^3}) \\					
+					\partial_\mu &= \qty(\pdv{x^0}, \pdv{x^1}, \pdv{x^2}, \pdv{x^3}) \\
 				\end{aligned}
 			\end{equation}
 
@@ -133,12 +133,12 @@
 			\begin{equation}
 				\mathcal{S}_H = \frac{c^4}{16\pi G} \int\dd^4 x\; \sqrt{-g} R(g_{\mu\nu}(x))
 			\end{equation}
-			
+
 			\noindent
 			Einstein Tensor:
 			\begin{equation}
 				G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu}
-			\end{equation}			
+			\end{equation}
 
 			\noindent
 			Einstein field equations and equivalent formulations\index{Einstein!Feldgleichungen}:
@@ -160,10 +160,10 @@
 		\subsubsection{Tetrads\index{Vielbein}}
 			Tetrad field $e_a^\mu(x)$ and inverse tetrad field $e_\mu^a(x)$ (Tensor field for transforming into a local Minkowskian frame of reference, denoted with latin indices):
 			\begin{equation}
-				\begin{aligned}					
-					g_{\mu\nu} e_a^\mu e_b^\nu &= \eta_{ab} 
+				\begin{aligned}
+					g_{\mu\nu} e_a^\mu e_b^\nu &= \eta_{ab}
 					\hsp g_{\mu\nu} = e^a_\mu e^b_\nu \eta_{ab} \\
-					\partial_a &= e_a^\mu \partial_\mu 
+					\partial_a &= e_a^\mu \partial_\mu
 					\hsp \dd{x}^a = e^a_\mu \dd{x}^\mu \\
 					\partial_\mu &= e_\mu^a \partial_a
 					\hsp \dd{x}^\mu = e^\mu_a \dd{x}^a
@@ -199,13 +199,13 @@
 		\subsubsection{Gauge Freedom}
 			General gauge freedom (choice of coordinates):
 			\begin{equation}
-				x^\mu \rightarrow x^\mu + \xi^\mu	
+				x^\mu \rightarrow x^\mu + \xi^\mu
 			\end{equation}
 
 			\noindent
 			Harmonic gauge\index{Harmonische Eichung} / De Donder gauge\index{De Donder Eichung} (all formulations are equivalent):
 			\begin{equation}
-				\nabla_\mu \nabla^\mu x^\nu = 0 
+				\nabla_\mu \nabla^\mu x^\nu = 0
 				\hsp g^{\mu\nu} \Gamma^\rho_{\mu\nu} = 0
 				\hsp \partial_\nu \qty(g^{\mu\nu}\sqrt{-g}) = 0
 			\end{equation}
@@ -214,9 +214,9 @@
 			\noindent
 			Action of a free particle:
 			\begin{equation}
-				\mathcal{S} 
+				\mathcal{S}
 				= -\int_A^B m u^\mu u_\mu \;\dd \tau
-				= -\int_A^B mc^2\;\dd \tau 
+				= -\int_A^B mc^2\;\dd \tau
 				= -\int_A^B mc\sqrt{-g_{\mu\nu} \dv{x^\mu}{\lambda} \dv{x^\nu}{\lambda}} \;\dd \lambda
 			\end{equation}
 
@@ -231,16 +231,16 @@
 			\begin{equation}
 				\begin{aligned}
 					\nabla_{\left(\mu\right.} V_{\left.\nu\right)} &= 0 \\
-					\Rightarrow u^\nu \nabla_\nu (V_\mu u^\mu) &= 0					
+					\Rightarrow u^\nu \nabla_\nu (V_\mu u^\mu) &= 0
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Geodesic deviation equation (deviation vector $S^\mu = \dv{x^\mu}{s}$, tangent vector $T^\mu = \dv{x^\mu}{t}$):
 			\begin{equation}
-				\frac{\mathrm{D}^2}{\dd \tau^2} S^\mu 
+				\frac{\mathrm{D}^2}{\dd \tau^2} S^\mu
 				= T^\alpha \nabla_\alpha T^\beta \nabla_\beta S^\mu
-				= R^\mu{}_{\nu\rho\sigma} T^\nu T^\rho S^\sigma 
+				= R^\mu{}_{\nu\rho\sigma} T^\nu T^\rho S^\sigma
 			\end{equation}
 
 
@@ -289,7 +289,7 @@
 			\noindent
 			Reissner-Nordström metric\index{Reissner-Nordström!Metrik}:
 			\begin{equation}
-				TODO				
+				TODO
 			\end{equation}
 
 			\noindent
@@ -303,7 +303,7 @@
 			\begin{equation}
 				T = \frac{\hbar c^3}{8\pi \kB G M} = TODO
 			\end{equation}
-		
+
 		\subsubsection{Weak Field Limit}
 			Weak field limit:
 			\begin{equation}
@@ -341,7 +341,7 @@
 			\begin{equation}
 				\begin{aligned}
 					\bar{h}_{\mu\nu} :=&\, h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} h \\
-					\partial^2 \bar{h}_{\mu\nu} =&\, -16\pi G T_{\mu\nu}					
+					\partial^2 \bar{h}_{\mu\nu} =&\, -16\pi G T_{\mu\nu}
 				\end{aligned}
 			\end{equation}
 
@@ -375,8 +375,8 @@
 				\end{aligned}
 			\end{equation}
 			polarizations (all other components vanish):
-			\begin{equation}				
-				C_{11} = -C_{22} =: C_+ 
+			\begin{equation}
+				C_{11} = -C_{22} =: C_+
 				\hsp C_{12} = C_{21} =: C_\times
 			\end{equation}
 			circular polarizations:
@@ -411,11 +411,11 @@
 		\begin{equation}
 			g_{\mu\nu} = \eta_{\mu\nu}
 			= \left( \begin{matrix}
-				\pm1 & 0		& 0		& 0		\\
-				0		& \mp1 & 0		& 0		\\
-				0		& 0		& \mp1 & 0		\\
-				0		& 0		& 0		& \mp1 \\
-			\end{matrix} \right)
+					\pm1 & 0    & 0    & 0    \\
+					0    & \mp1 & 0    & 0    \\
+					0    & 0    & \mp1 & 0    \\
+					0    & 0    & 0    & \mp1 \\
+				\end{matrix} \right)
 		\end{equation}
 		Signature used in this subsection: $(+1,-1,-1,-1)$.
 
@@ -449,10 +449,10 @@
 			\begin{equation}
 				P^\mu =
 				\mqty(
-					E \\ \vec{p}
+				E \\ \vec{p}
 				)^\mu
 				= \mqty(
-					m\gamma c \\ m\gamma\vec{v}
+				m\gamma c \\ m\gamma\vec{v}
 				)^\mu
 				= m u^\mu
 			\end{equation}
@@ -467,7 +467,7 @@
 					{T'}_{\mu_1,\mu_2,...}^{\nu_1,\nu_2,...} &=  \Lambda^{\nu_1}_{\beta_1}(\vec{v}) \Lambda^{\nu_2}_{\beta_2}(\vec{v}) ... T_{\alpha_1,\alpha_2,...}^{\beta_1,\beta_2,...} \overline{\Lambda}_{\mu_1}^{\alpha_1}(\vec{v}) \overline{\Lambda}_{\mu_2}^{\alpha_2}(\vec{v}) ... \\
 				\end{aligned}
 			\end{equation}
-			
+
 			\noindent
 			Properties of the homogeneous Lorentz transformation\index{Lorentz!Transformation}:
 			\begin{equation}
@@ -475,18 +475,18 @@
 			\end{equation}
 
 			\noindent
-			Poincaré transformation\index{Poincaré!Transformation} $(\Lambda, b) \in\mathcal{P} \supseteq \mathcal{L}$ (The Poincaré group\index{Poincaré!Gruppe} is the general inhomogeneous Lorentz transformation, where the Lorentz group\index{Lorentz!Gruppe} $\mathcal{L}$ is the homogeneous special case): 
+			Poincaré transformation\index{Poincaré!Transformation} $(\Lambda, b) \in\mathcal{P} \supseteq \mathcal{L}$ (The Poincaré group\index{Poincaré!Gruppe} is the general inhomogeneous Lorentz transformation, where the Lorentz group\index{Lorentz!Gruppe} $\mathcal{L}$ is the homogeneous special case):
 			\begin{equation}
-				x'^\mu = \Lambda^\mu_{\nu} x^\nu + b^\mu \\				
+				x'^\mu = \Lambda^\mu_{\nu} x^\nu + b^\mu \\
 			\end{equation}
-			
+
 			\noindent
 			Condition for the Lorentz transformation\index{Lorentz!Transformation} following from the constancy of the speed of light \ref{post:c}:
 			\begin{equation}
 				\Lambda^{\alpha}_{\mu} \eta_{\alpha\beta} \Lambda^{\beta}_{\nu} = \eta_{\mu\nu}
 				\;\Leftrightarrow\; \Lambda^T \eta \Lambda = \eta
 			\end{equation}
-			
+
 			\noindent
 			Classification of the homogeneous Lorentz transformations\index{Lorentz!Transformation} $\Lambda \in \mathcal{L} = \mathcal{L}^\uparrow_+ \cup \mathcal{L}^\uparrow_- \cup \mathcal{L}^\downarrow_+ \cup \mathcal{L}^\downarrow_-$:
 			\begin{itemize}
@@ -495,22 +495,22 @@
 				\item Proper Lorentz Transformation $\mathcal{L}_+$: $\det\Lambda = 1$
 				\item Improper Lorentz Transformation $\mathcal{L}_-$: $\det\Lambda = -1$
 			\end{itemize}
-			
+
 			\noindent
 			Lorentz Boost\index{Lorentz!Boost} ($\Lambda\in\mathcal{L}^\uparrow_+$) between two Inertial frames of reference with parallel coordinate axes:
 			\begin{equation}
 				\begin{aligned}
-					\Lambda^{\mu}_{\nu}(\vec{v}) 
+					\Lambda^{\mu}_{\nu}(\vec{v})
 					=& \left( \begin{matrix}
-						\gamma & -\gamma\dfrac{\vec{v}^T}{c} \\[6pt]
-					-\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
+						\gamma                    & -\gamma\dfrac{\vec{v}^T}{c}                \\[6pt]
+						-\gamma\dfrac{\vec{v}}{c} & \delta_{ij}+\dfrac{v_i v_j(\gamma-1)}{v^2}
 					\end{matrix} \right)^{\mu}_{\nu} \\
 					=&
 					\mqty(
-						\gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
-						-\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
-						-\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
-						-\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
+					\gamma & -\gamma \beta_1 & -\gamma \beta_2 & -\gamma \beta_3 \\
+					-\gamma \beta_1 & 1+(\gamma -1){\dfrac {\beta_1^{2}}{\beta^{2}}} & (\gamma -1){\dfrac {\beta_1 \beta_2}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_1\beta_3}{\beta^{2}}} \\
+					-\gamma \beta_2 & (\gamma -1){\dfrac {\beta_2\beta_1}{\beta^{2}}} & 1+(\gamma -1){\dfrac {\beta_2^{2}}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_2 \beta_3}{\beta^{2}}} \\
+					-\gamma \beta_3 &(\gamma -1){\dfrac {\beta_3\beta_1}{\beta^{2}}}&(\gamma -1){\dfrac {\beta_3\beta_2}{\beta^{2}}}&1+(\gamma -1){\dfrac {\beta_3^{2}}{\beta^{2}}}
 					)^{\mu}_{\nu}
 				\end{aligned}
 			\end{equation}

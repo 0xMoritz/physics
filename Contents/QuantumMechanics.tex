@@ -20,21 +20,21 @@
 				When measuring the observable $\hat{A}$ of a system in a state $\Ket{\psi}$, the probability of measuring the eigenvalue
 				\begin{itemize}
 					\item[i)] $a_n$, where $a_n$ is non-degenerate and discrete eigenvalue to the eigenstate $\Ket{a_n}$, is given by
-					\begin{equation}
-						w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2.
-					\end{equation}
+						\begin{equation}
+							w_{a_n}(\Ket{\psi}) = \left| \braket{a_n|\psi} \right|^2.
+						\end{equation}
 					\item[ii)] $a_n$, where $a_n$ is a degenerate and discrete eigenvalue to the eigenstate $\Ket{a_n,\nu}$, is given by
-					\begin{equation}
-						w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2.
-					\end{equation}
+						\begin{equation}
+							w_{a_n}(\Ket{\psi}) = \SumInt_\nu \left|\braket{a_n ,\nu|\psi}\right|^2.
+						\end{equation}
 					\item[iii)] $a$, where $a$ is a non-degenerate and continuous eigenvalue to the eigenstate $\Ket{a}$, is given by
-					\begin{equation}
-						\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a.
-					\end{equation}
+						\begin{equation}
+							\dd w_a(\Ket{\psi}) = \left| \braket{a|\psi} \right|^2 \dd a.
+						\end{equation}
 					\item[iv)] $a$, where $a$ is a degenerate and continuous eigenvalue to the eigenstate $\Ket{a, \nu}$, is given by
-					\begin{equation}
-						\dd w_a(\Ket{\psi}) = \qty( \SumInt_\nu \abs{\braket{a,\nu |\psi} }^2 ) \dd a.
-					\end{equation}
+						\begin{equation}
+							\dd w_a(\Ket{\psi}) = \qty( \SumInt_\nu \abs{\braket{a,\nu |\psi} }^2 ) \dd a.
+						\end{equation}
 				\end{itemize}
 				Either summation or integration is performed depending on whether $\nu$ is discrete or continuous.
 			\item[Postulate 5]\hfill \\
@@ -58,7 +58,7 @@
 				\end{equation}
 			\item[Postulate 8]\hfill \\
 				Micro-objects with identical properties are described by either totally symmetric (bosonic) or by totally antisymmetric (fermionic) states. Fermions\index{Fermionen} have half-integer, bosons\index{Bosonen} have integer spin values.
-	\end{description}
+		\end{description}
 
 	\subsection{Basics}
 		\noindent
@@ -143,10 +143,10 @@
 				\begin{aligned}
 					\rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
 					j(t,x) :=& \frac{\hbar}{2mi}\left(
-						\psi^*(t,x)\pdv{x}\psi(t,x) - \psi(t,x)\pdv{x}\psi^*(t,x)
+					\psi^*(t,x)\pdv{x}\psi(t,x) - \psi(t,x)\pdv{x}\psi^*(t,x)
 					\right) \\
 					=& \frac{\hbar}{m} \mathrm{Im}\left(
-						\psi^*(t,x) \pdv{x}\psi(t,x)
+					\psi^*(t,x) \pdv{x}\psi(t,x)
 					\right)\\
 				\end{aligned}
 			\end{equation}
@@ -227,134 +227,134 @@
 			\end{aligned}
 		\end{equation}
 
-	\subsubsection{Angular Momentum Operators\index{Drehimpulsoperatoren}}
-		\noindent
-		Defining property (Angular momentum commutator relations):
-		\begin{equation}
-			\left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \levicivita{ijk} \hat{j}_k
-		\end{equation}
+		\subsubsection{Angular Momentum Operators\index{Drehimpulsoperatoren}}
+			\noindent
+			Defining property (Angular momentum commutator relations):
+			\begin{equation}
+				\left[ \hat{j}_i, \hat{j}_j \right] = \i\hbar\, \levicivita{ijk} \hat{j}_k
+			\end{equation}
 
-		\noindent
-		Orbital angular momentum operator \index{Bahndrehimpulsoperator}:
-		\begin{equation}
-			\begin{aligned}
-				\hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pdv{\vec{x}}\right) \\
-				\left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
-				\left< \hat{L}_z \right> &= m_l \hbar \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Orbital angular momentum operator \index{Bahndrehimpulsoperator}:
+			\begin{equation}
+				\begin{aligned}
+					\hat{\vec{L}} &= \hat{\vec{x}}\times \hat{\vec{p}} = \vec{x}\times\left(-\i\hbar\pdv{\vec{x}}\right) \\
+					\left< \hat{\vec{L}}^2 \right> &= l(l+1)\hbar^2 \\
+					\left< \hat{L}_z \right> &= m_l \hbar \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Relation to the Laplace operator\index{Laplace!Operator}:
-		\begin{equation}
-			\begin{aligned}
-				\hat{\vec{p}}^{\,2} &= -\hbar^2 \Nabla^2 = \hat{\vec{p}}_r^{\,2} + \frac{1}{r^2} \hat{\vec{L}}^2 \\
-				&= -\hbar^2 \qty[{\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial }{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial }{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}}{\partial \varphi ^{2}}}]\\
-				\hat{\vec{p}}_r &= -\i\hbar\frac{1}{r}\pdv{r}r \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Relation to the Laplace operator\index{Laplace!Operator}:
+			\begin{equation}
+				\begin{aligned}
+					\hat{\vec{p}}^{\,2} &= -\hbar^2 \Nabla^2 = \hat{\vec{p}}_r^{\,2} + \frac{1}{r^2} \hat{\vec{L}}^2 \\
+					&= -\hbar^2 \qty[{\displaystyle \frac{1}{r^{2}} \frac{\partial }{\partial r}\!\left(r^{2}\frac{\partial }{\partial r}\right)\!+\!\frac{1}{r^{2}\!\sin \theta } \frac{\partial }{\partial \theta }\!\left(\sin \theta \frac{\partial }{\partial \theta }\right)\!+\!\frac{1}{r^{2}\!\sin ^{2}\theta }\frac{\partial ^{2}}{\partial \varphi ^{2}}}]\\
+					\hat{\vec{p}}_r &= -\i\hbar\frac{1}{r}\pdv{r}r \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Spin operator \index{Spinoperator} (For a magnetic field $\vec{B}\parallel\vec{e}_z$):
-		\begin{equation}
-			\begin{aligned}
-				\left<\hat{\vec{S}}^2\right> &= s(s+1)\hbar^2 \\
-				\left<\hat{S}_z\right> &= m_s \hbar \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Spin operator \index{Spinoperator} (For a magnetic field $\vec{B}\parallel\vec{e}_z$):
+			\begin{equation}
+				\begin{aligned}
+					\left<\hat{\vec{S}}^2\right> &= s(s+1)\hbar^2 \\
+					\left<\hat{S}_z\right> &= m_s \hbar \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Spin representation in $\vec{e}_3$-basis: $\mathcal{B} = \{ \Ket{\vec{e}_3,+}, \Ket{\vec{e}_3,-} \}$:
-		\begin{equation}
-			\begin{aligned}
-				\hat{\vec{\sigma}} \cdot \vec{n} &\doteq
-				\left( \begin{matrix}
-					\cos\theta & \ex^{-\i\phi}\sin\theta \\
-					\ex^{\i\phi}\sin\theta & -\cos\theta \\
-				\end{matrix} \right) \\
-				\exp\left( \i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + \i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Spin representation in $\vec{e}_3$-basis: $\mathcal{B} = \{ \Ket{\vec{e}_3,+}, \Ket{\vec{e}_3,-} \}$:
+			\begin{equation}
+				\begin{aligned}
+					\hat{\vec{\sigma}} \cdot \vec{n} &\doteq
+					\left( \begin{matrix}
+							\cos\theta             & \ex^{-\i\phi}\sin\theta \\
+							\ex^{\i\phi}\sin\theta & -\cos\theta             \\
+						\end{matrix} \right) \\
+					\exp\left( \i\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \right) &= \cos\alpha \;\hat{1} + \i\sin\alpha \; \hat{\vec{\sigma}} \cdot \vec{n} \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Pauli spin matrices\index{Pauli!Spinmatrizen} (spin operator $\hat{\vec{s}} = \frac{\hbar}{2} \hat{\vec{\sigma}}$):
-		\begin{equation}
-			\begin{aligned}
-				\hat{\sigma}_1 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
-				\hat{\sigma}_2 &= -\i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
-				\hat{\sigma}_3 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Pauli spin matrices\index{Pauli!Spinmatrizen} (spin operator $\hat{\vec{s}} = \frac{\hbar}{2} \hat{\vec{\sigma}}$):
+			\begin{equation}
+				\begin{aligned}
+					\hat{\sigma}_1 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+					\hat{\sigma}_2 &= -\i\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,-} + \i\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,+} \\
+					\hat{\sigma}_3 &= \phantom{-\i}\Ket{\vec{e}_3,+} \Bra{\vec{e}_3,+} - \phantom{\i}\Ket{\vec{e}_3,-} \Bra{\vec{e}_3,-} \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Matrix representation of the Pauli matrices\index{Pauli!Matrizen}:
-		\begin{equation}
-			\label{Eq:PauliMatricesQFT}
-			\begin{aligned}
-				\sigma^0 \doteq \mqty(
+			\noindent
+			Matrix representation of the Pauli matrices\index{Pauli!Matrizen}:
+			\begin{equation}
+				\label{Eq:PauliMatricesQFT}
+				\begin{aligned}
+					\sigma^0 \doteq \mqty(
 					1 & 0 \\
 					0 & 1 \\
-				) &&\hsp
-				\sigma^1 \doteq \mqty(
+					) &&\hsp
+					\sigma^1 \doteq \mqty(
 					0 & 1 \\
 					1 & 0 \\
-				) &&\hsp
-				\sigma^2 \doteq \mqty(
+					) &&\hsp
+					\sigma^2 \doteq \mqty(
 					0 & -\i \\
-						\i & 0 \\
-				) &&\hsp
-				\sigma^3 \doteq \mqty(
+					\i & 0 \\
+					) &&\hsp
+					\sigma^3 \doteq \mqty(
 					1 & 0 \\
 					0 & -1 \\
-				)
-			\end{aligned}
-		\end{equation}
+					)
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
-		\begin{equation}
-			\label{Eq:PauliMatrices}
-			\begin{aligned}
-				\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
-				\det\qty(\hat{\sigma}_j) &= -1 \\
-				\tr\qty(\hat{\sigma}_j) &= 0 \\
-				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
-				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita{jkl}\hat{\sigma}_l \\
-				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita{\mu\nu\lambda}\sigma_\lambda \\
-				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita{\xi\mu\nu\lambda}\sigma_\xi \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
+			\begin{equation}
+				\label{Eq:PauliMatrices}
+				\begin{aligned}
+					\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
+					\det\qty(\hat{\sigma}_j) &= -1 \\
+					\tr\qty(\hat{\sigma}_j) &= 0 \\
+					\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+					\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita{jkl}\hat{\sigma}_l \\
+					\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita{\mu\nu\lambda}\sigma_\lambda \\
+					\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita{\xi\mu\nu\lambda}\sigma_\xi \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Pauli Vector\index{Pauli!Vektor}
-		\begin{equation}
-			V
-			= \sum_{i=1}^3 x_i \hat{\sigma}_i
-			\doteq \left( \begin{matrix}
-				x_3 & x_1 - \i x_2 \\
-				x_1 + \i x_2 & - x_3 \\
-			\end{matrix} \right)							
-		\end{equation}
+			\noindent
+			Pauli Vector\index{Pauli!Vektor}
+			\begin{equation}
+				V
+				= \sum_{i=1}^3 x_i \hat{\sigma}_i
+				\doteq \left( \begin{matrix}
+						x_3          & x_1 - \i x_2 \\
+						x_1 + \i x_2 & - x_3        \\
+					\end{matrix} \right)
+			\end{equation}
 
-		\noindent
-		Spinor\index{Spinor} representation for $\det V = 0$ (not unique)
-		\begin{equation}
-			\begin{aligned}
-				V &= \vecc{\xi^1}{\xi^2} \veccT{-\xi^2}{\xi^1} \\
-				\xi^1 &= \sqrt{x_1 - \i x_2} \quad \xi^2 = -\i \sqrt{x_1 + \i x_2} \\					
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Spinor\index{Spinor} representation for $\det V = 0$ (not unique)
+			\begin{equation}
+				\begin{aligned}
+					V &= \vecc{\xi^1}{\xi^2} \veccT{-\xi^2}{\xi^1} \\
+					\xi^1 &= \sqrt{x_1 - \i x_2} \quad \xi^2 = -\i \sqrt{x_1 + \i x_2} \\
+				\end{aligned}
+			\end{equation}
 
 
-		\noindent
-		Total angular momentum operator:
-		\begin{equation}
-			\begin{aligned}
-				\hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
-				\left< \hat{\vec{J}}^2 \right> &= j(j+1)\hbar^2 \\
-				\left< \hat{J}_z \right> &= m_j\hbar \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Total angular momentum operator:
+			\begin{equation}
+				\begin{aligned}
+					\hat{\vec{J}} &= \hat{\vec{L}} + \hat{\vec{S}} \\
+					\left< \hat{\vec{J}}^2 \right> &= j(j+1)\hbar^2 \\
+					\left< \hat{J}_z \right> &= m_j\hbar \\
+				\end{aligned}
+			\end{equation}
 
 		\subsubsection{Commutator}
 			\noindent
@@ -383,7 +383,7 @@
 					\comm{\hat{A}}{\hat{B}}^\dagger &= -\comm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
 					\acomm{\hat{A}}{\hat{B}}^\dagger &= \acomm{\hat{A}^\dagger}{\hat{B}^\dagger} \\
 				\end{aligned}
-			\end{equation}				
+			\end{equation}
 
 			\noindent
 			Commutators of functions (assuming $\comm{\comm{\hat{A}}{\hat{B}}}{\hat{B}}=0$)
@@ -397,7 +397,7 @@
 			\begin{equation}
 				0 = \comm{\hat{A}}{\comm{\hat{B}}{\hat{C}}} + \comm{\hat{B}}{\comm{\hat{C}}{\hat{A}}} + \comm{\hat{C}}{\comm{\hat{A}}{\hat{B}}}
 			\end{equation}
-			
+
 
 			\noindent
 			Baker-Campbell-Hausdorff\index{Baker!-Campbell-Hausdorff formel} formula (assuming $\comm{\hat{A}}{\comm{\hat{A}}{\hat{B}}} = \comm{\hat{B}}{\comm{\hat{B}}{\hat{A}}} = 0$):
@@ -456,7 +456,7 @@
 		\subsubsection{Basics}
 			\noindent
 			Bound states have negative interaction energy $E<0$ and discrete energy levels. For a time dependent Hamiltonian, the probability density is stationary.
-			 $\left|\psi(x)\right|^2=\const.$
+			$\left|\psi(x)\right|^2=\const.$
 
 		\subsubsection{Wave Function of an Electron in an Atom}
 			\noindent
@@ -498,11 +498,11 @@
 				\item Aufbau principle\index{Aufbauprinzip} / Pauli principle\index{Pauli!Prinzip}: The total wave function of a system of electrons is totally antisymmetric with respect to permutation of two electrons.
 				\item Madelung rule\index{Madelung!Energieschema}: For the ground state, orbitals with the lowest value of $n+l$ are filled first.
 				\item Hund's rules\index{Hund!Regel}:
-				\begin{itemize}
-					\item For a given electron configuration, the term with maximum multiplicity has the lowest energy. The multiplicity is equal to $2S+1$, where $S$ is the total spin angular momentum for all electrons. The multiplicity is also equal to the number of unpaired electrons plus one. Therefore, the term with lowest energy is also the term with maximum $S$, and maximum number of unpaired electrons.
-					\item For a given multiplicity, the term with the largest value of the total orbital angular momentum quantum number  $L$, has the lowest energy.
-					\item For a given term, in an atom with outermost subshell half-filled or less, the level with the lowest value of the total angular momentum quantum number  $J$, (for the operator $\vec{J} = \vec{L} + \vec{S}$) lies lowest in energy. If the outermost shell is more than half-filled, the level with the highest value of  $J$, is lowest in energy.
-				\end{itemize}
+					\begin{itemize}
+						\item For a given electron configuration, the term with maximum multiplicity has the lowest energy. The multiplicity is equal to $2S+1$, where $S$ is the total spin angular momentum for all electrons. The multiplicity is also equal to the number of unpaired electrons plus one. Therefore, the term with lowest energy is also the term with maximum $S$, and maximum number of unpaired electrons.
+						\item For a given multiplicity, the term with the largest value of the total orbital angular momentum quantum number  $L$, has the lowest energy.
+						\item For a given term, in an atom with outermost subshell half-filled or less, the level with the lowest value of the total angular momentum quantum number  $J$, (for the operator $\vec{J} = \vec{L} + \vec{S}$) lies lowest in energy. If the outermost shell is more than half-filled, the level with the highest value of  $J$, is lowest in energy.
+					\end{itemize}
 			\end{itemize}
 
 			\noindent

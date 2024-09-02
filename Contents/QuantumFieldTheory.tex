@@ -1,14 +1,14 @@
 % !TEX root = ../physics.tex
 \section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFT
 
-Conventions in this section:
-\begin{itemize}
-	\item $\hbar = c = 1$
-	\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
-\end{itemize}
+	Conventions in this section:
+	\begin{itemize}
+		\item $\hbar = c = 1$
+		\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
+	\end{itemize}
 
 
-\subsection{Basics}
+	\subsection{Basics}
 		\noindent
 		Feynman slash notation\index{Feynman!Slash Notation} (Note that $\slashed{\partial}^2 = \partial^2$)
 		\begin{equation}
@@ -37,20 +37,20 @@ Conventions in this section:
 		\end{equation}
 
 		\subsubsection{Scattering}
-			\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
-				\noindent
-				Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
-				\begin{itemize}\itemsep -0pt	% reduce space between items
-					\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
-					\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
-					\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
-				\end{itemize}
-	
-				\noindent
-				Connection:
-				\begin{equation}
-					s+t+u = \sum_i m_i^2
-				\end{equation}
+		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
+			\noindent
+			Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+			\begin{itemize}\itemsep -0pt	% reduce space between items
+				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
+				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
+				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
+			\end{itemize}
+
+			\noindent
+			Connection:
+			\begin{equation}
+				s+t+u = \sum_i m_i^2
+			\end{equation}
 
 		\subsubsection{Gamma Matrices}
 			\noindent
@@ -81,18 +81,18 @@ Conventions in this section:
 			Weyl representation/Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
 			\begin{equation}
 				\gamma^\mu = \mqty(
-					0 & \sigma^\mu \\
-					\bar{\sigma}^\mu & 0
+				0 & \sigma^\mu \\
+				\bar{\sigma}^\mu & 0
 				)
 				\hsp
 				\gamma^0 = \mqty(
-					0 & 1_2 \\
-					1_2 & 0
+				0 & 1_2 \\
+				1_2 & 0
 				)
 				\hsp
 				\gamma^i = \mqty(
-					0 & \sigma^i \\
-					-\sigma^i & 0
+				0 & \sigma^i \\
+				-\sigma^i & 0
 				)
 			\end{equation}
 
@@ -102,50 +102,50 @@ Conventions in this section:
 				\begin{aligned}
 					\gamma^0
 					= \left( \begin{matrix}
-					\sigma^0 & \M0 \\
-					0 &  -\sigma^0
-					\end{matrix} \right)
+							\sigma^0 & \M0       \\
+							0        & -\sigma^0
+						\end{matrix} \right)
 					= \left( \begin{matrix}
-					\M 1 & \M 0 & \M 0 & \M 0 \\
-					\M 0 & \M 1 & \M 0 & \M 0 \\
-					\M 0 & \M 0 &   -1 & \M 0 \\
-					\M 0 & \M 0 & \M 0 &   -1 \\
-					\end{matrix} \right)
+							\M 1 & \M 0 & \M 0 & \M 0 \\
+							\M 0 & \M 1 & \M 0 & \M 0 \\
+							\M 0 & \M 0 & -1   & \M 0 \\
+							\M 0 & \M 0 & \M 0 & -1   \\
+						\end{matrix} \right)
 					&\hsp
 					\gamma^1
 					= \left( \begin{matrix}
-					\M0 & \sigma^1 \\
-					-\sigma^1 &  0
-					\end{matrix} \right)
+							\M0       & \sigma^1 \\
+							-\sigma^1 & 0
+						\end{matrix} \right)
 					= \left( \begin{matrix}
-					\M 0 & \M 0 & \M 0 & \M 1 \\
-					\M 0 & \M 0 & \M 1 & \M 0 \\
-					\M 0 &   -1 & \M 0 & \M 0 \\
-					-1 & \M 0 & \M 0 & \M 0 \\
-					\end{matrix} \right) \\[8pt]
+							\M 0 & \M 0 & \M 0 & \M 1 \\
+							\M 0 & \M 0 & \M 1 & \M 0 \\
+							\M 0 & -1   & \M 0 & \M 0 \\
+							-1   & \M 0 & \M 0 & \M 0 \\
+						\end{matrix} \right) \\[8pt]
 					\gamma^2
 					= \left( \begin{matrix}
-					\M0 & \sigma^2 \\
-					-\sigma^2 &  0
-					\end{matrix} \right)
+							\M0       & \sigma^2 \\
+							-\sigma^2 & 0
+						\end{matrix} \right)
 					= \left( \begin{matrix}
-					\M 0 & \M 0 & \M 0 &  -\i \\
-					\M 0 & \M 0 & \M\i & \M 0 \\
-					\M 0 & \M\i & \M 0 & \M 0 \\
-					-\i & \M 0 & \M 0 & \M 0 \\
-					\end{matrix} \right)
+							\M 0 & \M 0 & \M 0 & -\i  \\
+							\M 0 & \M 0 & \M\i & \M 0 \\
+							\M 0 & \M\i & \M 0 & \M 0 \\
+							-\i  & \M 0 & \M 0 & \M 0 \\
+						\end{matrix} \right)
 					&\hsp
 					\gamma^3
 					= \left( \begin{matrix}
-					\M 0 & \sigma^3 \\
-					-\sigma^3 &  0
-					\end{matrix} \right)
+							\M 0      & \sigma^3 \\
+							-\sigma^3 & 0
+						\end{matrix} \right)
 					= \left( \begin{matrix}
-					\M 0 & \M 0 & \M 1 & \M 0 \\
-					\M 0 & \M 0 & \M 0 &   -1 \\
-					-1 & \M 0 & \M 0 & \M 0 \\
-					\M 0 & \M 1 & \M 0 & \M 0 \\
-					\end{matrix} \right) \\
+							\M 0 & \M 0 & \M 1 & \M 0 \\
+							\M 0 & \M 0 & \M 0 & -1   \\
+							-1   & \M 0 & \M 0 & \M 0 \\
+							\M 0 & \M 1 & \M 0 & \M 0 \\
+						\end{matrix} \right) \\
 				\end{aligned}
 			\end{equation}
 
@@ -216,7 +216,7 @@ Conventions in this section:
 					\hat{V}'(x) &= \hat{T}(\omega) \hat{V}(\inv{\hat{T}}(\omega)x) = \hat{U}^\dagger(\omega) \hat{V}(x) \hat{U}(\omega) \\
 				\end{aligned}
 			\end{equation}
-		
+
 			\noindent
 			Infinitesimal Lorentz Transformation (With parameters $\omega$ and generators $M$):
 			\begin{equation}
@@ -224,7 +224,7 @@ Conventions in this section:
 					\Lambda^\mu_\nu &= \delta^\mu_\nu - \frac{\i}{2}\omega^\mu_\nu = \delta^\mu_\nu - \frac{\i}{2}\omega_{\alpha\beta}M^{\alpha\beta\mu}{}_\nu \\
 				\end{aligned}
 			\end{equation}
-		
+
 			\noindent
 			Generators of the Lorentz group (Angular momentum $J^i = \frac{1}{2}\varepsilon^{ijk} M^{jk}$ and Boosts $K^i = M^{0i}$):
 			\begin{equation}
@@ -233,7 +233,7 @@ Conventions in this section:
 					%&= \i \qty(x^\mu \partial^\nu - x^\nu \partial^\mu)				
 				\end{aligned}
 			\end{equation}
-		
+
 			\noindent
 			Lie Algebra of the Lorentz group $SO(1,3)$:
 			\begin{equation}
@@ -241,7 +241,7 @@ Conventions in this section:
 					\comm{M^{\alpha\beta}}{M^{\gamma\delta}} = \i \left(\eta^{\beta\gamma}M^{\alpha\delta}+\eta^{\alpha\delta}M^{\beta\gamma}-\eta^{\alpha\gamma}M^{\beta\delta}-\eta^{\beta\delta}M^{\alpha\gamma}\right)
 				\end{aligned}
 			\end{equation}
-		
+
 			\noindent
 			Implications for boosts and rotations:
 			\begin{equation}
@@ -249,16 +249,16 @@ Conventions in this section:
 					\comm{\hat{K}^i}{\hat{K}^j} &= -\i \levicivita{ijk}\hat{J}^k \\
 					\comm{\hat{J}^i}{\hat{K}^j} &= \i \levicivita{ijk}\hat{K}^k \\
 					\comm{\hat{J}^i}{\hat{J}^j} &= \i \levicivita{ijk}\hat{J}^k \\
-				\end{aligned}				
+				\end{aligned}
 			\end{equation}
-		
+
 			\noindent
 			General Lorentz Transformation (angles $\vec{\theta}$ and rapidities $\vec{\psi}$)
 			\begin{equation}
 				\label{Eq:GeneralLorentzTransformation}
 				\Lambda(\vec{\theta}, \vec{\psi}) = \exp(-\i(\hat{\vec{J}}\cdot\vec{\theta} - \hat{\vec{K}}\cdot\vec{\psi}))
 			\end{equation}
-		
+
 		\subsubsection{Gauge Invariance}
 			Gauge theory ($A_\mu$ is the gauge field, $q$ is the coupling strength):
 			\begin{equation}
@@ -287,13 +287,13 @@ Conventions in this section:
 			Charge conjugation $\hat{\mathsf{C}}$ (For any quantum charge operator $\hat{Q}$, i.e. electric charge, lepton/baryon number, hypercharge,\dots; $\bar{p}$ is the antiparticle of $p$):
 			\begin{equation}
 				\begin{aligned}
-					\hat{\mathsf{C}} \Ket{p} &= \Ket{\bar{p}} 
+					\hat{\mathsf{C}} \Ket{p} &= \Ket{\bar{p}}
 					\phantom{Q}\hsp \hat{\mathsf{C}} \Ket{\bar{p}} = \Ket{p} \\
-					\hat{\mathsf{C}}^2 &= \hat{1} \\ 
-					\hat{Q} \Ket{p} &= Q \Ket{p} 
+					\hat{\mathsf{C}}^2 &= \hat{1} \\
+					\hat{Q} \Ket{p} &= Q \Ket{p}
 					\hsp \hat{Q} \Ket{\bar{p}} = -Q\Ket{\bar{p}} \\
 					\inv{\hat{\mathsf{C}}} \hat{Q} \hat{\mathsf{C}} &= -\hat{Q} \\
-					\inv{\hat{\mathsf{C}}}\hat{a}_{\vec{p}} \hat{\mathsf{C}} &= \hat{b}_{\vec{p}} 
+					\inv{\hat{\mathsf{C}}}\hat{a}_{\vec{p}} \hat{\mathsf{C}} &= \hat{b}_{\vec{p}}
 					\hsp \inv{\hat{\mathsf{C}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{C}} = \hat{a}^\dagger_{\vec{p}} \\
 				\end{aligned}
 			\end{equation}
@@ -304,8 +304,8 @@ Conventions in this section:
 				\begin{aligned}
 					\inv{\hat{\mathsf{P}}} \hat{x} \hat{\mathsf{P}} &= - \hat{x}
 					\hsp \inv{\hat{\mathsf{P}}} \hat{p} \hat{\mathsf{P}} = - \hat{p} \\
-					\hat{\mathsf{P}}^2 &= \hat{1} \\ 
-					\inv{\hat{\mathsf{P}}}\hat{a}_{\vec{p}} \hat{\mathsf{P}} &= \hat{b}_{\vec{p}} 
+					\hat{\mathsf{P}}^2 &= \hat{1} \\
+					\inv{\hat{\mathsf{P}}}\hat{a}_{\vec{p}} \hat{\mathsf{P}} &= \hat{b}_{\vec{p}}
 					\hsp \inv{\hat{\mathsf{P}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{P}} = \hat{a} ^\dagger_{\vec{p}} \\
 				\end{aligned}
 			\end{equation}
@@ -315,7 +315,7 @@ Conventions in this section:
 			\begin{equation}
 				\begin{aligned}
 					\hat{\mathsf{T}} \Ket{\psi(t)} &= \Ket{\psi(-t)} \\
-					\hat{\mathsf{T}}^2 &= - \hat{1} \\ 
+					\hat{\mathsf{T}}^2 &= - \hat{1} \\
 					\inv{\hat{\mathsf{T}}} \i \hat{\mathsf{T}} &= -\i \\
 				\end{aligned}
 			\end{equation}
@@ -333,18 +333,18 @@ Conventions in this section:
 			Time ordering symbol (``$+$'' for Bosons, ``$-$'' for Fermions). Linear operator, that orders all time dependent operators from right (earliest) to left (latest):
 			\begin{equation}
 				\TimeOrder{\hat{A}(t)\hat{B}(t')}
-					= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
-					= \begin{cases}
-						\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
-						\pm \hat{B}(t') \hat{A}(t) & t<t'
-					\end{cases}
+				= \hat{A}(t) \hat{B}(t') \Theta(t-t') \pm \hat{B}(t') \hat{A}(t) \Theta(t'-t)
+				= \begin{cases}
+					\phantom{\pm} \hat{A}(t) \hat{B}(t') & t>t' \\
+					\pm \hat{B}(t') \hat{A}(t) & t<t'
+				\end{cases}
 			\end{equation}
 
 			\noindent
 			Normal order symbol (Alternative notation: $\NormalOrder{\hat{A},\hat{B}} = \;\normord{\hat{A} \hat{B}}$). Linear operator, that orders all creation operators to the left and all annihilation operators to the right -- considered normal order (``$+$'' for Bosons, ``$-$'' for Fermions):
 			\begin{equation}
 				\begin{aligned}
-					\NormalOrder{\hat{a}(\vec{p})\hat{a}^\dagger(\vec{q})} 
+					\NormalOrder{\hat{a}(\vec{p})\hat{a}^\dagger(\vec{q})}
 					&= \pm \NormalOrder{\hat{a}^\dagger(\vec{q})\hat{a}(\vec{p})} = \pm \hat{a}^\dagger(\vec{p}) \hat{a}(\vec{q}) \\
 				\end{aligned}
 			\end{equation}
@@ -360,7 +360,7 @@ Conventions in this section:
 			\begin{equation}
 				\TimeOrder{\phi(x_1)\dotsb\phi(x_n)} = \NormalOrder{\phi(x_1)\dotsb\phi(x_n) + \sum(\text{all contractions})}
 			\end{equation}
-			
+
 		\subsubsection{Multiparticle Operators}
 			Many Body generalization of a single particle Operator $\hat{A}$:
 			\begin{equation}
@@ -373,7 +373,7 @@ Conventions in this section:
 			\begin{equation}
 				\comm{\hat{Q}}{\hat{\phi}} = -\i D\hat{\phi}
 			\end{equation}
-			
+
 	\subsection{Pertubation Theory}
 		Dyson equation/Dyson expansion\index{Dyson!Gleichung} ($t > t_0$):
 		\begin{equation}
@@ -401,11 +401,11 @@ Conventions in this section:
 		Cross section\index{Wirkungsquerschnitt} of a collider experiment with beams $A$ and $B$ and $n$ particles in the product state, where $\dd \Pi_\mathrm{LIPS}$ is the Lorentz invariant phase space element:
 		\begin{equation}
 			\begin{aligned}
-				\dd \sigma 
+				\dd \sigma
 				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}} \dd \Pi_\mathrm{LIPS} \\
 				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
 			\end{aligned}
-		\end{equation} 
+		\end{equation}
 
 		\noindent
 		One-particle decay rate of a particle $A$:
@@ -421,7 +421,7 @@ Conventions in this section:
 				&\times\Braket{\Omega|T \phi(x_1) \hdots \phi(x_n)|\Omega}
 			\end{aligned}
 		\end{equation}
-			
+
 		\noindent
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
@@ -438,7 +438,7 @@ Conventions in this section:
 			Single particle's full Green's function / Propagator \index{Green!Funktion} ($x=(t,\vec{x})$; $\Ket{\Psi_0}$ is the Heisenberg ground state)
 			\begin{equation}
 				\begin{aligned}
-					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} T\qty[\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')] \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\					
+					\i G_{\alpha\beta}(x, x') &= \frac{\Bra{\Psi_0} T\qty[\hat{\Psi}_{H\alpha}(x)\hat{\Psi}^\dagger_{H\beta}(x')] \Ket{\Psi_0}}{\Braket{\Psi_0|\Psi_0}} \\
 				\end{aligned}
 			\end{equation}
 
@@ -448,13 +448,13 @@ Conventions in this section:
 		\begin{equation}
 			\mel**{q_f}{U(t_f, t_i)}{q_i} = \int_{q_i}^{q_f} \mathcal{D}q \mathcal{D}p \, \exp(\i \int_{t_i}^{t_f} \dd t \, \qty[ \dot{q}(t)p(t) - H\qty(p(t),q(t))])
 		\end{equation}
-		
+
 		\noindent
 		Path Integral for separable Hamiltonian (\ie $\hat{H} = \frac{\hat{p}^2}{2m} + V(\hat{q})$)
 		\begin{equation}
 			\mel**{q_f}{U(t_f, t_i)}{q_i} = \frac{1}{N} \int \mathcal{D}q \, \ex^{\i S[q]}
 		\end{equation}
-		
+
 		\noindent
 		Path Integral measure:
 		\begin{equation}
@@ -462,7 +462,7 @@ Conventions in this section:
 			\hsp
 			\mathcal{D}p = \prod_{j=0}^{n-1} \dd p(t_j)
 		\end{equation}
-		
+
 		\noindent
 		$n$-point correlation function:
 		\begin{equation}
@@ -474,7 +474,7 @@ Conventions in this section:
 			\begin{equation}
 				Z[J] = \frac{1}{N} \int \mathcal{D}\varphi\, \exp(\i\qty(S[\varphi] + \int \dd^d x \, J(x) \varphi(x)))
 			\end{equation}
-			
+
 			\noindent
 			Correlation Functions:
 			\begin{equation}
@@ -498,7 +498,7 @@ Conventions in this section:
 			\begin{equation}
 				\Gamma(\phi) = \sup_{J} \qty( \int \dd^d x \, J(x) \phi(x) - W[J])
 			\end{equation}
-			
+
 			Quantum equations of motion:
 			\begin{equation}
 				J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
@@ -507,7 +507,7 @@ Conventions in this section:
 
 	\subsection{Bosons}
 		\subsubsection{Bosonic Ladder Operators}
-		\label{Sec:BosonicCreationAndAnnihilationOperators}
+			\label{Sec:BosonicCreationAndAnnihilationOperators}
 			Definition
 			\begin{equation}
 				\comm{\hat{b}_k}{\hat{b}_{k'}^\dagger} = \delta_{kk'}
@@ -530,19 +530,19 @@ Conventions in this section:
 			\noindent
 			Scalar bosonic field and conjugate momentum operators in terms of creation and annihilation operators (with the on-shell frequency $\omega_{\vec{p}} = p^0 = \sqrt{\vec{p}^2 + m^2}$):
 			\begin{equation}
-				 \begin{aligned}
+				\begin{aligned}
 					\hat{\phi}(x) &= \int \frac{\dd^3 p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
 					\hat{\pi}(x) &= -\i \int \frac{\dd^3 p}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) \\
-				 \end{aligned}
+				\end{aligned}
 			\end{equation}
-			
+
 			\noindent
 			Creation and Annihilation operators\index{Zerstörungsoperator}\index{Erzeugungsoperator} and their commutation relations for scalar bosonic fields:
 			\begin{equation}
 				\begin{aligned}
 					\hat{b}(\vec{p}) &= \sqrt{\frac{\omega_{\vec{p}}}{2}} \hat{\tilde{\phi}}(\vec{p}) + \i \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \hat{\tilde{\pi}}(\vec{p}) \\
-					\hat{b}^\dagger(\vec{p}) &= \sqrt{\frac{\omega_{\vec{p}}}{2}} \hat{\tilde{\phi}}(-\vec{p}) - \i \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \hat{\tilde{\pi}}(-\vec{p}) 
-				\end{aligned}				
+					\hat{b}^\dagger(\vec{p}) &= \sqrt{\frac{\omega_{\vec{p}}}{2}} \hat{\tilde{\phi}}(-\vec{p}) - \i \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \hat{\tilde{\pi}}(-\vec{p})
+				\end{aligned}
 				\hsp
 				\begin{aligned}
 					\comm{\hat{b}(\vec{p})}{\hat{b}^\dagger(\vec{q})} &= (2\pi)^3 \delta^{(3)}(\vec{p}-\vec{q}) \\
@@ -567,7 +567,7 @@ Conventions in this section:
 			Free Feynman Propagator\index{Feynman!Propagator} for a scalar field (\ie Green's function of the Klein-Gordon equation):
 			\begin{equation}
 				\begin{aligned}
-					D_F (x-y) 
+					D_F (x-y)
 					&= \Bra{0} T \hat{\phi}(x)\hat{\phi}(y) \Ket{0} \\
 					&= \comm{\hat{\phi}_{-}(x)}{\hat{\phi}_{+}(y)} \Theta(x^0-y^0) + \comm{\hat{\phi}_{-}(y)}{\hat{\phi}_{+}(x)} \Theta(y^0-x^0) \\
 					&= \lim_{\epsilon \searrow 0} \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i}{p^\mu p_\mu - m^2 + \i \epsilon} \ex^{-\i p_\mu (x-y)^\mu} \\
@@ -600,10 +600,10 @@ Conventions in this section:
 			% 		\end{feynman}
 			% 	\end{tikzpicture}
 			% \end{center}
-					
+
 	\subsection{Fermions}
 		\subsubsection{Fermionic Creation an Annihilation Operators}
-		\label{Sec:FermionicCreationAndAnnihilationOperators}
+			\label{Sec:FermionicCreationAndAnnihilationOperators}
 			Definition of fermionic creation an annihilation operators
 			\begin{equation}
 				\acomm{\hat{a}_k}{\hat{a}_{k'}^\dagger} = \delta_{kk'}
@@ -627,30 +627,30 @@ Conventions in this section:
 				\end{aligned}
 			\end{equation}
 			\begin{equation}
-				\hat{a_k}^\dagger \hat{a_k} \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}				
+				\hat{a_k}^\dagger \hat{a_k} \Ket{...,n_k,...} = n_k \Ket{...,n_k,...}
 			\end{equation}
 
 			\noindent
 			Slater determinant\index{Slater!Determinante}:
 			\begin{equation}
 				\Ket{\psi(x_1,x_2,...,x_N)} = \frac{1}{\sqrt{N!}} \det\left( \begin{matrix}
-					\Ket{\psi}_1(x_1) & \dotsb & \Ket{\psi}_1(x_N) \\
-					\vdots & \ddots & \vdots \\
-					\Ket{\psi}_N(x_1) & \dotsb & \Ket{\psi}_N(x_N) \\
-				\end{matrix} \right)
+						\Ket{\psi}_1(x_1) & \dotsb & \Ket{\psi}_1(x_N) \\
+						\vdots            & \ddots & \vdots            \\
+						\Ket{\psi}_N(x_1) & \dotsb & \Ket{\psi}_N(x_N) \\
+					\end{matrix} \right)
 			\end{equation}
 
 		\subsubsection{Weyl Spinors\index{Weyl!Spinor}}
 			\noindent
 			Lorentz Transformation (using \ref{Eq:GeneralLorentzTransformation} with the generators $\hat{\vec{J}} = \vec{\sigma}/2$ and $\hat{\vec{K}} = \pm \i\vec{\sigma}/2$):
 			\begin{equation}
-				\Lambda 
+				\Lambda
 				= \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R})
 				= \mqty(
-					\exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} - \vec{\psi})) & 0 \\
-					0 & \exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} + \vec{\psi})) 					
-						)
-					\end{equation}
+				\exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} - \vec{\psi})) & 0 \\
+				0 & \exp(\frac{\vec{\sigma}}{2}\cdot(-\i\vec{\theta} + \vec{\psi}))
+				)
+			\end{equation}
 			\begin{equation}
 				\Lambda_\text{L}^\dagger = \Lambda_\text{R}^{-1} \hsp \Lambda_\text{R}^\dagger = \Lambda_\text{L}^{-1}
 			\end{equation}
@@ -660,20 +660,20 @@ Conventions in this section:
 			\begin{equation}
 				\begin{aligned}
 					\tilde{x} &= \sigma_\mu x^\mu \doteq \mqty(
-						x^0 - x^3 & x^1 + \i x^2 \\
-						x^1 - \i x^2 & x^0 + x^3 \\
-						) \hsp \\
+					x^0 - x^3 & x^1 + \i x^2 \\
+					x^1 - \i x^2 & x^0 + x^3 \\
+					) \hsp \\
 					x^\mu x_\mu &= \det(\tilde{x}) = x^2 \\
 				\end{aligned}
 			\end{equation}
-			
+
 			\noindent
 			Weyl Spinor\index{Weyl!Spinor} transformation rules
 			\begin{equation}
 				\psi_\text{L}' = \Lambda_\text{L} \psi_\text{L} \Lambda_\text{L}^\dagger \hsp
-				\psi_\text{R}' = \Lambda_\text{R} \psi_\text{R} \Lambda_\text{R}^\dagger 
+				\psi_\text{R}' = \Lambda_\text{R} \psi_\text{R} \Lambda_\text{R}^\dagger
 			\end{equation}
-			
+
 			\noindent
 			Weyl Equations\index{Weyl!Gleichungen}:
 			\begin{equation}
@@ -682,13 +682,13 @@ Conventions in this section:
 					\i \sigma^\mu \partial_\mu \psi_\text{R} &= 0 \\
 				\end{aligned}
 			\end{equation}
-			
+
 		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
 			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor}:
 			\begin{equation}
 				\psi = \psi_\text{D} = \mqty(\psi_\text{L} \\ \psi_\text{R})
 			\end{equation}
-			
+
 			\noindent
 			Dirac Equation\index{Dirac!Equation} (Spin $s=1/2$ particles. The Dirac Equation implies the Klein-Gordon Equation\index{Klein!-Gordon Gleichung}):
 			\begin{equation}
@@ -711,25 +711,25 @@ Conventions in this section:
 				\begin{aligned}
 					\text{particles} & \hsp
 					\psi(x) = u(p) \ex^{-\i p \cdot x} = \mqty(
-						u_\text{L}(p) \\
-						u_\text{R}(p)
-						) \ex^{-\i p \cdot x} \\
+					u_\text{L}(p) \\
+					u_\text{R}(p)
+					) \ex^{-\i p \cdot x} \\
 					\text{antiparticles} & \hsp
 					\bar{\psi}(x) = v(p) \ex^{\i p \cdot x} = \mqty(
-						v_\text{L}(p) \\
-						v_\text{R}(p)
-						) \ex^{\i p \cdot x}
+					v_\text{L}(p) \\
+					v_\text{R}(p)
+					) \ex^{\i p \cdot x}
 				\end{aligned}
 			\end{equation}
 			with
 			\begin{equation}
 				u^s(p) = \mqty(
-					\sqrt{p\cdot\sigma}\,\xi^s \\
-					\sqrt{p\cdot\bar{\sigma}}\,\xi^s
-					)
+				\sqrt{p\cdot\sigma}\,\xi^s \\
+				\sqrt{p\cdot\bar{\sigma}}\,\xi^s
+				)
 				\hsp v^s(p) = \mqty(
-					\M\sqrt{p\cdot\sigma}\,\chi^s \\
-					-\sqrt{p\cdot\bar{\sigma}}\,\chi^s
+				\M\sqrt{p\cdot\sigma}\,\chi^s \\
+				-\sqrt{p\cdot\bar{\sigma}}\,\chi^s
 				)
 			\end{equation}
 			\begin{itemize}
@@ -771,7 +771,7 @@ Conventions in this section:
 				\hsp
 				\varepsilon^{\lambda}{}_{\mu}(k)\varepsilon_{\lambda\nu}{}^{\ast}(k)=\eta_{\mu\nu}
 			\end{equation}
-			
+
 			\noindent
 			Full particle $\psi^{-}(x)$ and antiparticle $\psi^{+}(x)$ solutions (with amplitudes $a_{s,\vec{p}}$ and $b_{s,\vec{p}}$)
 			\begin{equation}
@@ -786,15 +786,15 @@ Conventions in this section:
 			\begin{equation}
 				\hat{H}\psi = \frac{\qty(\vec{\sigma}\cdot\hat{\vec{p}})^2}{2m} \psi
 			\end{equation}
-	
+
 			\noindent
 			Dirac Spinor\index{Dirac!Spinor} transformation rules (Generator $\hat{S}^{\mu\nu} = \frac{\i}{4}[\gamma^\mu,\gamma^\nu]$):
 			\begin{equation}
 				\begin{aligned}
 					\Lambda_{1/2} &= \exp(\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R}) \\
 					\gamma^0 \Lambda_{1/2}^\dagger \gamma^0	&= \Lambda_{1/2}^{-1} \\
-					\psi' &= \Lambda_{1/2} \psi 
-					\hsp \bar{\psi}' = \bar{\psi} \Lambda_{1/2}^{-1} 
+					\psi' &= \Lambda_{1/2} \psi
+					\hsp \bar{\psi}' = \bar{\psi} \Lambda_{1/2}^{-1}
 				\end{aligned}
 			\end{equation}
 
@@ -803,7 +803,7 @@ Conventions in this section:
 			\begin{equation}
 				\mathcal{L} = \bar{\psi} \qty(\i \slashed{\partial} - m) \psi
 			\end{equation}
-			
+
 			\noindent
 			Noether current operator / probability current operator:
 			\begin{equation}
@@ -819,14 +819,14 @@ Conventions in this section:
 					&= \wick{\c{\hat{\psi}}(x) \c{\hat{\bar{\psi}}}(y)} = - \wick{\c{\hat{\bar{\psi}}}(y) \c{\hat\psi}(x)}
 				\end{aligned}
 			\end{equation}
-			
+
 	\subsection{Renormalization}
 		TODO
 
 	\subsection{Quantum Electrodynamics}
 		Lagrangian of Quantum Electrodynamics\index{Quanten Elektrodynamik} ($U(1)$ gauge)
 		\begin{equation}
-			\mathcal{L}_\mathrm{QED} = -F^{\mu\nu}F_{\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi		
+			\mathcal{L}_\mathrm{QED} = -F^{\mu\nu}F_{\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
 		\end{equation}
 
 		\noindent
@@ -870,7 +870,7 @@ Conventions in this section:
 		\begin{equation}
 			\begin{aligned}
 				F^a_{\mu\nu} &= \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^c_\nu \\
-				\comm{D_\mu}{D_\nu} &= -\i g F_{\mu\nu}^a T^a				
+				\comm{D_\mu}{D_\nu} &= -\i g F_{\mu\nu}^a T^a
 			\end{aligned}
 		\end{equation}
 
@@ -896,7 +896,7 @@ Conventions in this section:
 			\begin{aligned}
 				\psi(x) &\rightarrow \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
 				A_\mu(x) &\rightarrow A'_\mu(x) = A_\mu(x) - \frac{1}{g} \partial_\mu \alpha(x) \\
-				F_{\mu\nu}(x) &\rightarrow F'_{\mu\nu}(x) = F_{\mu\nu}(x) 
+				F_{\mu\nu}(x) &\rightarrow F'_{\mu\nu}(x) = F_{\mu\nu}(x)
 			\end{aligned}
 		\end{equation}
 
@@ -914,7 +914,7 @@ Conventions in this section:
 			\item For each loop integrate over loop momentum $\int \frac{\dd^4 q}{(2\pi)^4}$, include a minus for fermion loops
 			\item Ensure overall momentum conservation $(2\pi)^4 \delta(\sum_i p_i)$
 		\end{itemize}
-		
+
 		\subsubsection{BRST Invariance}
 			BRST Transformation (Becchi, Rouet, Stora and Tyutin)\index{BRST Transformation}:
 			\begin{equation}
@@ -924,7 +924,7 @@ Conventions in this section:
 					\bar{c}^a &\rightarrow \bar{c}^a - \frac{1}{g} \theta \frac{1}{\xi} \partial^\mu A^a_\mu \\
 				\end{aligned}
 			\end{equation}
-	
+
 	\subsection{Electroweak Theory\index{EW Theory}}
 		$SU(2)_L \times U(1)_Y$ gauge theory.
 
@@ -956,7 +956,7 @@ Conventions in this section:
 		\begin{equation}
 			D^\mu = \partial^\mu - \i \frac{1}{2} g' B^\mu Y - \i \frac{1}{2} g \vec{W}^\mu \cdot \vec{T}
 		\end{equation}
-		
+
 		\noindent
 		Relation of coupling constants:
 		\begin{equation}
@@ -968,7 +968,7 @@ Conventions in this section:
 		\begin{equation}
 			m_Z = \frac{m_W}{\cos(\theta_W)}
 		\end{equation}
-		
+
 		\noindent
 		Boson mixing due to spontaneous symmetry breaking:
 		\begin{equation}
@@ -980,12 +980,12 @@ Conventions in this section:
 		\end{equation}
 
 
-	\subsection{Quantum Chromodynamics\index{QCD}} 
+	\subsection{Quantum Chromodynamics\index{QCD}}
 		Lagrangian:
 		\begin{equation}
 			\mathcal{L}_\text{QCD} = -\frac{1}{4} G^a_{\mu\nu} G^{a\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
 		\end{equation}
-		
+
 
 
 	\subsection{Higgs Mechanism} TODO
@@ -1012,14 +1012,14 @@ Conventions in this section:
 			\item Each vertex contributes a factor $-ig$
 			\item For each internal phion line carrying momentum $q$ include a propagator $\frac{\i}{q^2 -\mu^2+\i\epsilon}$
 			\item For each internal psion line carrying momentum $q$ include a
-			propagator $\frac{\i}{q^2 -m^2+\i\epsilon}$
+				propagator $\frac{\i}{q^2 -m^2+\i\epsilon}$
 			\item Integrate over all undetermined momenta
 			\item All symmetry factors are 1
 			\item Incoming and outgoing lines contribute a factor 1
 			\item Include an overall energy-momentum conserving delta function
-			for each diagram
+				for each diagram
 		\end{itemize}
-		
+
 		% \noindent
 		% Feynman Rules for scalar field theory: \\
 		% \begin{center}

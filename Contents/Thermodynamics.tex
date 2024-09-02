@@ -20,17 +20,17 @@
 
 		\begin{table}[ht]
 			\begin{center}
-			\begin{tabular}{ l | l l l l l l }
-				$g_\alpha$ & $-p$ & $\mu$ & $\sigma$ & $E_0$ & $B_0$ & $\Phi$ \\ \hline
-				$\dd Z_\alpha$ & $\dd V$ & $\dd N$ & $\dd A$ & $\dd \mathcal{P}$ & $\dd \mathcal{M}$ & $\dd Q$ \\
+				\begin{tabular}{ l | l l l l l l }
+					$g_\alpha$ & $-p$ & $\mu$ & $\sigma$ & $E_0$ & $B_0$ & $\Phi$ \\ \hline
+					$\dd Z_\alpha$ & $\dd V$ & $\dd N$ & $\dd A$ & $\dd \mathcal{P}$ & $\dd \mathcal{M}$ & $\dd Q$ \\
 				\end{tabular}
-			\caption{work parameters and corresponding equilibrium parameters. $\sigma$: Surface tension, $A$: Surface, $B_0$: Magnetic field, $\mathcal{M}$: Total magnetization, $\mu$ Chemical Potential, $N$: Particle count...}
-			\label{tab:WorkParametersAndEquilibriumParameters}
+				\caption{work parameters and corresponding equilibrium parameters. $\sigma$: Surface tension, $A$: Surface, $B_0$: Magnetic field, $\mathcal{M}$: Total magnetization, $\mu$ Chemical Potential, $N$: Particle count...}
+				\label{tab:WorkParametersAndEquilibriumParameters}
 			\end{center}
 		\end{table} \vsp
 
 		\emph{Thermodynamical limit}: \newline Deterministic behavior for $U,V,N\rightarrow\infty$ while $U/N,V/N=\const$. \vsp
-		
+
 		\noindent
 		Thermal de Broglie wavelength\index{De Broglie!Thermische Wellenlänge}:
 		\begin{equation}
@@ -84,7 +84,7 @@
 
 		\subsubsection{Information Theory}
 			Landauer principle\index{Landauer!Prinzip}
-			
+
 			\indent \emph{The deletion of one bit of information requires the dissipation of $\Delta W = \kB T \ln 2$ of energy.}\nl
 			\noindent
 			Bekenstein bound\index{Bekenstein!Grenze} \\
@@ -97,21 +97,21 @@
 	\subsection{Theory}
 		\subsubsection{Laws of Thermodynamics}
 			\textbf{Zeroth Law}: Existence and transitivity of equilibrium states\newline
-				\indent \emph{The thermodynamic equilibrium is a equivalence relations between thermodynamic systems (Equilibrium between $A \sim B$ and $B \sim C$ implies $A \sim C$.)} \nl
+			\indent \emph{The thermodynamic equilibrium is a equivalence relations between thermodynamic systems (Equilibrium between $A \sim B$ and $B \sim C$ implies $A \sim C$.)} \nl
 			\textbf{First Law}: Energy
-				\begin{equation}
-					\label{Eq:FirstLawOfThermodynamics}
-					\dd U = \delta Q + \delta W
-				\end{equation}
-				\indent Inner Energy $\dd U$, added heat $\delta Q$, Work applied to the system $\delta W$. \nl
+			\begin{equation}
+				\label{Eq:FirstLawOfThermodynamics}
+				\dd U = \delta Q + \delta W
+			\end{equation}
+			\indent Inner Energy $\dd U$, added heat $\delta Q$, Work applied to the system $\delta W$. \nl
 			\textbf{Second Law}: Entropy
-				\begin{equation}
-					\label{Eq:SecondLawOfThermodynamics}
-					\Delta S	\ge 0
-				\end{equation}
-				\indent Kelvin\index{Kelvin!Wärmesatz}: \emph{It is impossible to generate work in a cycle by solely cooling a heat sink.}\nl
+			\begin{equation}
+				\label{Eq:SecondLawOfThermodynamics}
+				\Delta S	\ge 0
+			\end{equation}
+			\indent Kelvin\index{Kelvin!Wärmesatz}: \emph{It is impossible to generate work in a cycle by solely cooling a heat sink.}\nl
 			\textbf{Third Law}: Nernst's law of heat\index{Nernst!Wärmesatz}\newline
-				\indent Nernst: \emph{The Entropy of every system converges to a finite value $S_0:=0$ independently of the work parameters $Z_\alpha$ at low temperatures.
+			\indent Nernst: \emph{The Entropy of every system converges to a finite value $S_0:=0$ independently of the work parameters $Z_\alpha$ at low temperatures.
 				\begin{equation}
 					S \stackrel{T \rightarrow 0}{\longrightarrow} S_0
 					\label{Eq:ThirdLawOfThermodynamics}
@@ -162,18 +162,18 @@
 
 			\begin{table}[ht]
 				\begin{center}
-				\makebox[1\textwidth][c]{
-				\begin{tabular}{ r | l | l | l }
-					Name & Relation & Differential & Maxwell relation\index{Maxwell!Beziehung} \\ \hline \xrowht{26pt}
-					Entropy & $S(U,V)$ & $\dd S = \frac{1}{T} \dd U + \frac{p}{T} \dd V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
-					Internal Energy & $U(S,V)$ & $\dd U = T \dd S - p \dd V$ & $\left( \dpder{T}{V} \right)_S =	- \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
-					Free Energy & $F(V,T) = U - TS$ & $\dd F = -S \dd T - p \dd V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
-					Gibbs Energy & $G(T,p) = U - TS + pV$ & $\dd G = -S \dd T - V \dd p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
-					Enthalpy & $H(p,S) = U + pV$ & $\dd H = T \dd S + V \dd p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
-					Grand Potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
-					\end{tabular}}
-				\caption{List of commonly used potentials}
-				\label{tab:ThermodynamischePotentiale}
+					\makebox[1\textwidth][c]{
+						\begin{tabular}{ r | l | l | l }
+							Name & Relation & Differential & Maxwell relation\index{Maxwell!Beziehung} \\ \hline \xrowht{26pt}
+							Entropy & $S(U,V)$ & $\dd S = \frac{1}{T} \dd U + \frac{p}{T} \dd V$ & $\left(\dpder{}{V} \dfrac{1}{T}\right)_U = \left(\dpder{}{U}\dfrac{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+							Internal Energy & $U(S,V)$ & $\dd U = T \dd S - p \dd V$ & $\left( \dpder{T}{V} \right)_S =	- \left( \dpder{p}{S} \right)_V$ \\ \hline \xrowht{26pt}
+							Free Energy & $F(V,T) = U - TS$ & $\dd F = -S \dd T - p \dd V$ & \phantom{-} $\left(\dpder{S}{V}\right)_T = \left(\dpder{p}{T}\right)_V$ \\ \hline \xrowht{26pt}
+							Gibbs Energy & $G(T,p) = U - TS + pV$ & $\dd G = -S \dd T - V \dd p$ & $-\left(\dpder{S}{p}\right)_T = \left(\dpder{V}{T}\right)_p$ \\ \hline \xrowht{26pt}
+							Enthalpy & $H(p,S) = U + pV$ & $\dd H = T \dd S + V \dd p$ & \phantom{-} $\left(\dpder{V}{S}\right)_p = \left(\dpder{T}{p}\right)_S$ \\ \hline \xrowht{26pt}
+							Grand Potential & $\Omega(T,V,\mu) = U - T S - \mu N$ & $\dd \Omega = -S \dd T - p \dd V -N \dd \mu$ &	\\ \hline
+						\end{tabular}}
+					\caption{List of commonly used potentials}
+					\label{tab:ThermodynamischePotentiale}
 				\end{center}
 			\end{table}
 
@@ -239,7 +239,7 @@
 			\noindent
 			At thermodynamic equilibrium, Gibbs Energy\index{Gibbs!Energie} is minimal:
 			\begin{equation}
-					0 = \dd G = \sum_{i=1}^r \mu_i \dd N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \quad\forall k\in\lbrace1,...,s\rbrace
+				0 = \dd G = \sum_{i=1}^r \mu_i \dd N_i \;\Rightarrow\; \sum_{i=1}^r \nu_i^k \mu_i = 0 \quad\forall k\in\lbrace1,...,s\rbrace
 			\end{equation}
 
 			\noindent
@@ -274,7 +274,7 @@
 					&C \propto \tau^{-\alpha}
 					\hsp \Psi \propto (-\tau)^{-\beta}
 					\hsp \chi \propto \tau^{-\gamma} \\
-					&J \propto \tau^{-\delta} 
+					&J \propto \tau^{-\delta}
 					\hsp \avg{\psi(0)\psi(r)} \propto r^{d+2-\eta}
 				\end{aligned}
 			\end{equation}
@@ -296,7 +296,7 @@
 				\begin{aligned}
 					&\alpha = 2 - d\nu
 					\hsp \beta = \frac{\nu}{2} (d-2+\eta) \\
-					& \gamma = \nu(2-\eta) 
+					& \gamma = \nu(2-\eta)
 					\hsp \delta = \frac{d+2-\eta}{d-2+\eta}
 				\end{aligned}
 			\end{equation}
@@ -330,8 +330,8 @@
 		\noindent
 		\href{https://en.wikipedia.org/wiki/Onsager_reciprocal_relations}{Onsager reciprocal relations}\index{Onsager!Reziprozitätsbeziehung}:
 		\newline\indent\emph{Aus der mikroskopischen Reversibilität folgen Dinge für die Entropieerzeugungsrate.} % cspell:disable-line
-		
-		\hfill ---\,Fabian Hassler\vsp 
+
+		\hfill ---\,Fabian Hassler\vsp
 
 		\noindent
 		Thermoelectric effects: in systems with charge carriers, the chemical potential should be replaced with the electro-chemical potential $\mu_{EC}$, because a change in particle count will imply a change of charges in the potential, such that (Peltier coefficient\index{Peltier!Koeffizient} $\Pi$, Seebeck coefficient\index{Seebeck!Koeffizient} $\epsilon$, electric current $\vec{j} = q\vec{j}^n$ and specific heat conductivity $\sigma$, the last equation follows from the reciprocity condition):
@@ -382,30 +382,30 @@
 			Grand canonical partition function (With $\varepsilon_\alpha = \frac{\hbar^2 \vec{k}^2}{2m}$ being the entropy for the state $\alpha=(\vec{k},\sigma)$):
 			\begin{equation}
 				\mathcal{Z} = \prod_{\alpha}
-					\begin{cases}
-						\left( 1-\ex^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosons)} \\
-						\phantom{\big(} 1+\ex^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermions)}
-					\end{cases}
+				\begin{cases}
+					\left( 1-\ex^{\beta(\mu-\varepsilon_\alpha)}\right)^{-1} & \text{(Bosons)} \\
+					\phantom{\big(} 1+\ex^{\beta(\mu-\varepsilon_\alpha)} & \text{(Fermions)}
+				\end{cases}
 			\end{equation}
 
 			\noindent
 			Mean occupation number\index{Besetzungszahl} (Bose-Einstein statistics\index{Bose!-Einstein Statistik}, Fermi-Dirac statistics\index{Fermi!-Dirac Statistik}):
 			\begin{equation}
 				\overline{n_\alpha} =
-					\begin{cases}
-						\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosons)} \\
-						\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermions)}
-					\end{cases} \\
+				\begin{cases}
+					\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} - 1} & \text{(Bosons)} \\
+					\dfrac{1}{\ex^{\beta(\varepsilon_\alpha-\mu)} + 1} & \text{(Fermions)}
+				\end{cases} \\
 			\end{equation}
 
 			\noindent
 			Entropy:
 			\begin{equation}
 				S= -\kB\sum_\alpha
-					\begin{cases}
-						\overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosons)} \\
-						\overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermions)}
-					\end{cases} \\
+				\begin{cases}
+					\overline{n_\alpha} \ln \overline{n_\alpha} - (1+\overline{n_\alpha}) \ln (1+\overline{n_\alpha}) & \text{(Bosons)} \\
+					\overline{n_\alpha} \ln \overline{n_\alpha} + (1-\overline{n_\alpha}) \ln (1-\overline{n_\alpha}) & \text{(Fermions)}
+				\end{cases} \\
 			\end{equation}
 
 			\noindent

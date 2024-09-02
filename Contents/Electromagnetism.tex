@@ -38,64 +38,64 @@
 		\noindent
 		Maxwell's equations\index{Maxwell!Gleichungen} in a vacuum:
 		\begin{equation}
-		\begin{array}{rl}
-			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
-			&\hsp \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
-			\vec{\nabla}\times\vec{B} - \mu_0 \varepsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
-			&\hsp \vec{\nabla}\cdot\vec{B} = 0 \\
-		\end{array}
+			\begin{array}{rl}
+				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{\mu_0}
+				& \hsp \vec{\nabla}\cdot\vec{E} = \cfrac{\rho}{\varepsilon_0} \\ \xrowht{40pt}
+				\vec{\nabla}\times\vec{B} - \mu_0 \varepsilon_0 \cfrac{\partial \vec{E}}{\partial t} = \mu_o\vec{j}
+				& \hsp \vec{\nabla}\cdot\vec{B} = 0
+			\end{array}
 		\end{equation}
 
 		\noindent
 		Maxwell's equations\index{Maxwell!Gleichungen} in matter:
 		\begin{equation}
-		\begin{array}{rl}
-			\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_\text{f}}
-			&\hsp \vec{\nabla}\cdot\vec{D} = \rho_\text{f}\\ \xrowht{40pt}
-			\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_\text{f}
-			&\hsp \vec{\nabla}\cdot\vec{B} = 0 \\
-		\end{array}
+			\begin{array}{rl}
+				\vec{\nabla}\times \vec{E} + \cfrac{\partial\vec{B}}{\partial t} = 0 \phantom{_\text{f}}
+				& \hsp \vec{\nabla}\cdot\vec{D} = \rho_\text{f} \\ \xrowht{40pt}
+				\vec{\nabla}\times\vec{H} - \cfrac{\partial \vec{D}}{\partial t} = \vec{j}_\text{f}
+				& \hsp \vec{\nabla}\cdot\vec{B} = 0
+			\end{array}
 		\end{equation}
 
 		\noindent
 		Electric flux density and magnetic field strength dependence on magnetization and polarization:
 		\begin{equation} \label{Eq:FluxDensityFieldStrength}
-		\begin{array}{cc}
-			\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
-			&\hsp \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
-		\end{array}
+			\begin{array}{cc}
+				\vec{H} := \cfrac{1}{\mu_0}\Vec{B} - \vec{M}\left(\vec{B}\right)
+				& \hsp \vec{D} := \varepsilon_0\vec{E} + \vec{P}\left(\vec{E}\right)
+			\end{array}
 		\end{equation}
 
 
 		\noindent
 		Maxwell's equations\index{Maxwell!Gleichungen} in their integrated form (Electric voltage $U(\Gamma)=\int_\Gamma \vec{E}\cdot\dd\vec{l}$, electric flux $\Psi(\mathcal{A})=\int_\mathcal{A}\vec{D}\cdot\vec{n}\;\dd A$, magnetic voltage $V(\Gamma)=\int_\Gamma \vec{H}\cdot\dd\vec{l}$ and magnetic flux $\Phi(\mathcal{A})=\int_\mathcal{A}\vec{B}\cdot\vec{n}\;\dd A$):
 		\begin{equation}
-		\begin{array}{rl}
-			U(\partial \mathcal{A}) + \cfrac{\dd\Phi}{\dd t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
-			&\hsp \Psi(\partial\mathcal{V}) = Q_\text{f}(\mathcal{V}) \\ \xrowht{40pt}
-			V(\partial \mathcal{A}) - \cfrac{\dd \Psi}{\dd t}(\mathcal{A}) = I_\text{f}(\mathcal{A})
-			&\hsp \Phi(\partial\mathcal{V}) = 0 \\
-		\end{array}
+			\begin{array}{rl}
+				U(\partial \mathcal{A}) + \cfrac{\dd\Phi}{\dd t}(\mathcal{A}) = 0\phantom{(\mathcal{A})}
+				& \hsp \Psi(\partial\mathcal{V}) = Q_\text{f}(\mathcal{V}) \\ \xrowht{40pt}
+				V(\partial \mathcal{A}) - \cfrac{\dd \Psi}{\dd t}(\mathcal{A}) = I_\text{f}(\mathcal{A})
+				& \hsp \Phi(\partial\mathcal{V}) = 0
+			\end{array}
 		\end{equation}
 
 		\subsubsection{Discontinuity Equations\index{Diskontinuitätsgleichungen}}
 			\noindent
 			Boundary conditions in a vacuum (Surface charge density $\sigma$, surface charge current density $\vec{K}$):
-		\begin{equation}
-		\begin{array}{cc}
-			\vec{E}^2 - \vec{E}^1 = \cfrac{\sigma}{\varepsilon_0}\Vec{n}^2
-			&\hsp \vec{B}^2 - \vec{B}^1 = \mu_0\vec{K}\times\Vec{n}^2
-		\end{array}
-		\end{equation}
+			\begin{equation}
+				\begin{array}{cc}
+					\vec{E}^2 - \vec{E}^1 = \cfrac{\sigma}{\varepsilon_0}\Vec{n}^2
+					& \hsp \vec{B}^2 - \vec{B}^1 = \mu_0\vec{K}\times\Vec{n}^2
+				\end{array}
+			\end{equation}
 
 			\noindent
 			Boundary conditions in matter:
-		\begin{equation}
-		\begin{array}{cc}
-			D_\perp^2 - D_\perp^1 = \sigma_\text{f}
-			&\hsp \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_\text{f}\times\Vec{n}^2
-		\end{array}
-		\end{equation}
+			\begin{equation}
+				\begin{array}{cc}
+					D_\perp^2 - D_\perp^1 = \sigma_\text{f}
+					& \hsp \vec{H}_\parallel^2 - \vec{H}_\parallel^1 = \vec{K}_\text{f}\times\Vec{n}^2
+				\end{array}
+			\end{equation}
 
 	\subsection{Electrodynamics\index{Elektrodynamik}}
 		\noindent
@@ -167,11 +167,11 @@
 			\begin{equation}
 				T^{\mu\nu} = \frac{1}{\mu_0}\left(g^{\mu\alpha} F_{\alpha\beta} F^{\beta\nu} +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} \right)
 				= \left( \begin{matrix}
-					u_{\text{EM}} & S_1/c & S_2/c & S_3/c \\
-					S_1/c & -T_{11} & -T_{12} & -T_{13} \\
-					S_2/c	& -T_{21} & -T_{22} & -T_{23} \\
-					S_3/c & -T_{31} & -T_{32} & -T_{33}
-				\end{matrix} \right)
+						u_{\text{EM}} & S_1/c   & S_2/c   & S_3/c   \\
+						S_1/c         & -T_{11} & -T_{12} & -T_{13} \\
+						S_2/c         & -T_{21} & -T_{22} & -T_{23} \\
+						S_3/c         & -T_{31} & -T_{32} & -T_{33}
+					\end{matrix} \right)
 			\end{equation}
 
 			\noindent
@@ -261,14 +261,14 @@
 				\end{aligned}
 			\end{equation}
 
-			\noindent 
+			\noindent
 			Classical limit:
 			\begin{equation}
 				\begin{aligned}
 					P(t) &= \frac{q^2 \mu_0}{6\pi c}a^2(\tilde{t}) \\
 				\end{aligned}
 			\end{equation}
-			
+
 
 		\subsubsection{Electromagnetic Waves in Matter}
 			\noindent
@@ -328,7 +328,7 @@
 		\noindent
 		Four-current\index{Viererstromdichte}:
 		\begin{equation}
-			J^\mu 
+			J^\mu
 			= \mqty(c\rho\\\vec{j})^\mu
 			= \mqty(c\dv{q}{V}\\\vec{v}\dv{q}{V})^\mu
 		\end{equation}
@@ -336,7 +336,7 @@
 		\noindent
 		Four-potential\index{Viererpotential}:
 		\begin{equation}
-			A^\mu 
+			A^\mu
 			= \mqty(\phi/c\\\vec{A})^\mu
 		\end{equation}
 
@@ -345,10 +345,10 @@
 		\begin{equation}
 			F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
 			= \left( \begin{matrix}
-				0 & -E_x/c & -E_y/c & -E_z/c \\
-				E_x/c & 0 & -B_z & B_y \\
-				E_y/c	& B_z & 0 & -B_x \\
-				E_z/c & -B_y & B_x & 0
+				0     & -E_x/c & -E_y/c & -E_z/c \\
+				E_x/c & 0      & -B_z   & B_y    \\
+				E_y/c & B_z    & 0      & -B_x   \\
+				E_z/c & -B_y   & B_x    & 0
 			\end{matrix} \right)^{\mu\nu}
 		\end{equation}
 
@@ -457,11 +457,11 @@
 			Dirichlet-Green function\index{Dirichlet!-Green Function} $G_D$:
 			\begin{equation}
 				\forall\vec{r}\in\mathcal{V}': \left\{\begin{array}{ll}
-						\forall\vec{r}\in\mathcal{V}\phantom\partial:
-						\Nabla^2 G_D(\vec{r},\vec{r}') = \delta(\vec{r}-\vec{r}') \\
-						\forall\vec{r}\in\partial\mathcal{V}:
-						\phantom{\Nabla^2}G_D(\vec{r},\vec{r}') = 0
-					\end{array}\right.
+					\forall\vec{r}\in\mathcal{V}\phantom\partial:
+					\Nabla^2 G_D(\vec{r},\vec{r}') = \delta(\vec{r}-\vec{r}') \\
+					\forall\vec{r}\in\partial\mathcal{V}:
+					\phantom{\Nabla^2}G_D(\vec{r},\vec{r}') = 0
+				\end{array}\right.
 			\end{equation}
 
 		\subsubsection{Multipole Expansion\index{Multipolentwicklung}}
