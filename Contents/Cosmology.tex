@@ -10,18 +10,23 @@
 		\noindent
 		\emph{Cosmological time} is the proper time measured by an observer at rest with respect to the local matter distribution.
 
-		\subsubsection{FLRW Metric}
+		\subsubsection{FLRW Universe}
 			Friedmann-Lemaitre-Robertson-Walker metric:
 			\begin{equation}
 				\dd s^2 = -\dd t^2 + a^2(t) \qty[\frac{\dd r^2}{1-kr^2} + r^2 \dd \Omega^2]
-			\end{equation}
-			using $(t, r, \theta, \phi)$ as coordinates and $k$ as the curvature of the universe (where $k=0$ for a flat universe, $k=1$ for a closed universe and $k=-1$ for an open universe). The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$.
-			\begin{equation}
+				\hsp
 				g_{\mu\nu} = \mathrm{diag}\qty(-1,\, \frac{a^2(t)}{1-kr^2},\, a^2(t) r^2,\, a^2(t) r^2 \sin^2 \theta)
 			\end{equation}
+			using $(t, r, \theta, \phi)$ as coordinates and $k = a^2 H^2 ( \Omega + \Omega_\Lambda - 1)$ as the curvature of the universe where
+			\begin{itemize}
+				\item $k=0$ for a flat universe, \ie $\Omega + \Omega_\Lambda = 1$
+				\item $k=1$ for a closed universe, \ie $0 < \Omega + \Omega_\Lambda < 1$
+				\item $k=-1$ for an open universe, \ie $\Omega + \Omega_\Lambda > 1$
+			\end{itemize}
+			The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$.
 
 			\noindent
-			Friedmann equations:
+			Friedmann equations (Applying the FLRW metric to the Einstein equations, using an ideal, motionless fluid $T^\mu_\nu = \text{diag}(-\rho, p, p, p)$):
 			\begin{equation}
 				\begin{aligned}
 					\qty(\frac{\dot{a}}{a})^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} + \frac{\Lambda}{3} \\
@@ -36,13 +41,15 @@
 			\end{equation}
 
 			\noindent
-			Conformal time:
+			Comoving coordinates $\vec{x}$, in relation to real coordinates $\vec{r}$:
 			\begin{equation}
-				\dd \tau := \frac{\dd t}{a(t)}
+				\vec{r} = a(t) \vec{x}
+				\hsp
+				\dot{\vec{r}} = H \vec{r}
 			\end{equation}
 
 			\noindent
-			Critical Density:
+			Critical Density (\ie density leading to $k=0$):
 			\begin{equation}
 				\rho_\text{cr.} (a) = \frac{3 H^2}{8 \pi G}
 			\end{equation}
@@ -63,8 +70,6 @@
 				H^2 = H_0^2 \qty(\Omega_{\text{m},0} a^{-3} + \Omega_{\text{r},0} a^{-4} + \Omega_{\Lambda,0} + \Omega_{k,0} a^{-2})
 			\end{equation}
 
-
-		\subsubsection{Expanding Universe}
 			Cosmological redshift (where $\lambda_0$ is the emitted wavelength and $\lambda$ is the observed wavelength):
 			\begin{equation}
 				z = \frac{\lambda - \lambda_0}{\lambda_0}
@@ -75,3 +80,67 @@
 			\begin{equation}
 				a(z) = \frac{1}{1+z}
 			\end{equation}
+
+			\noindent
+			Change of wavelength due to redshift (emission of light with $\lambda_e$ at $t_e$, received with $\lambda_r$ at $t_r$) and in particular for observation today ($t_r=t_0$ \ie $a(t_r)=1$):
+			\begin{equation}
+				\frac{\lambda_r}{\lambda_e} = \frac{a(t_r)}{a(t_e)}
+				\hsp
+				\frac{\lambda_0}{\lambda_e} = 1+z
+			\end{equation}
+
+			\noindent
+			History of the universe:
+			\begin{table}[ht]
+				\begin{center}
+					\begin{tabular}{ l | l | l | l }
+						Event & Time & Redshift & Temperature \\ \hline
+						Initial singularity & $t=0$ & $\infty$ & $\infty$ \\
+						Electroweak symmetry breaking & $\sim 10^{-12}\unit{s}$ & & \\
+						Quark Hadron phase transition & $\sim 10^{-5}\unit{s}$ & & $\sim 10^{10}\unit{K}$ \\
+						Neutrino decoupling & $\sim 1\unit{s}$ & $\sim 10^{10}$ & $\sim 10^{10}\unit{K}$ \\
+						Big Bang Nucleosynthesis & $\sim 10 \unit{s}..10^3\unit{s}$ & & $\sim 10^9\unit{K}..10^7\unit{K}$ \\
+						Recombination/Photon decoupling & $\approx 379\,000$ years & $\sim 1089$ & $\approx 3000\unit{K}$ \\
+						Matter starts to dominate & $\approx 47\unit{kyr}$ & $\approx 3600$ & $\sim 10^4\unit{K}$ \\
+						Dark energy starts to dominate & $\approx 9.8\unit{Gyr}$ & $\approx 0.4$ & $\sim 4\unit{K}$ \\
+						Today & $\approx 13.8\unit{Gyr}$ & $0$ & $\approx 2.7\unit{K}$ \\
+					\end{tabular}
+					\caption{\href{https://en.wikipedia.org/wiki/Chronology_of_the_universe}{History of the universe.}}
+				\end{center}
+			\end{table}
+
+			\noindent
+			Saha Equation\index{Saha Equation} (Equilibrium between ionized and neutral atoms, $n_i$ is the density of atoms in the $i$-th state of ionization, $n_e$ is the electron density, $g_i$ is the degeneracy of the $i$-th state of, $\lambda_\text{th}$ is the thermal de Broglie wavelength\index{De Broglie!Thermische Wellenlänge} Eq.~\ref{Eq:ThermalDeBroglieWavelength}, $\epsilon_i$ is the energy of the $i$-th state of, $T$ is the temperature):
+			\begin{equation}
+				\frac{n_{i+1} n_e}{n_i} = \frac{2}{\lambda_\text{th}^3} \frac{g_{i+1}}{g_i} \exp(- \frac{\epsilon_{i+1}-\epsilon_{i}}{\kB T})
+			\end{equation}
+
+
+			\noindent
+			Important concepts:
+			\begin{itemize}
+				\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
+				\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
+				\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
+			\end{itemize}
+
+			\noindent
+			Distance measurements:
+			\begin{itemize}
+				\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time)
+					\begin{equation}
+						x = \int_{t_e}^{t_r} c\frac{\dd t}{a(t)}
+					\end{equation}
+				\item Proper distance (physical distance between two objects at a given time)
+					\begin{equation}
+						r(t) = a(t) x
+					\end{equation}
+				\item Luminosity distance\index{Leuchtkraftentfernung} $d_L$ (apparent distance given a measured flux $F$ and presuming a luminosity $L$ and assuming inverse-square law):
+					\begin{equation}
+						d_L = \sqrt{\frac{L}{4 \pi F}} = r (1+z)
+					\end{equation}
+				\item Angular diameter distance\index{Winkeldurchmesserentfernung} $d_A$ (apparent distance of an object given angular size $\theta$ in comparison with known physical size $l$):
+					\begin{equation}
+						d_A = \frac{l}{\sin \theta} = \frac{r}{1+z}
+					\end{equation}
+			\end{itemize}
