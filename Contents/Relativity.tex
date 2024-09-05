@@ -227,6 +227,12 @@
 			\end{equation}
 
 			\noindent
+			Four-velocity\index{Vierergeschwindigkeit}:
+			\begin{equation}
+				u^\mu = \dv{x^\mu}{\tau} = \gamma \mqty(c \\ \vec{v})^\mu
+			\end{equation}
+
+			\noindent
 			Killing's Equation\index{Killing!Gleichung}:
 			\begin{equation}
 				\begin{aligned}
@@ -247,6 +253,7 @@
 		\subsubsection{Solutions}
 			Weak energy condition (equivalent to $T_{00} \ge 0$ for a locally inertial frame):
 			\begin{equation}
+				\label{Eq:WeakEnergyCondition}
 				T_{\mu\nu} V^\mu V^\nu \ge 0 \quad \forall V^\mu\;\text{timelike}
 			\end{equation}
 
@@ -257,9 +264,9 @@
 			\end{equation}
 
 		\subsubsection{Black Holes}
-			Schwarzschild Metric\index{Schwarzschild!Metrik} ($\dd \Omega^2 = \dd \theta^2 + \sin^2(\theta) \dd \phi^2$):
+			Schwarzschild Metric\index{Schwarzschild!Metrik} ($\dd \Omega^2 = \dd \theta^2 + \sin^2(\theta) \dd \phi^2$, the Schwarzschild radius\index{Schwarzschild!Radius} is $r_s = 2 G M/c^2$):
 			\begin{equation}
-				\dd s^2 = - \qty(1-\frac{2 G M}{r}) \dd t^2 + \qty(1 - \frac{2 G M}{r})^{-1} \dd r^2 + r^2 \dd \Omega^2
+				\dd s^2 = - \qty(1-\frac{r_s}{r}) \dd t^2 + \qty(1 - \frac{r_s}{r})^{-1} \dd r^2 + r^2 \dd \Omega^2
 			\end{equation}
 			in Eddington-Finkelstein coordinates\index{Edington-Finkelstein!Koordinaten}:
 			\begin{equation}
@@ -287,22 +294,36 @@
 			\end{equation}
 
 			\noindent
-			Reissner-Nordström metric\index{Reissner-Nordström!Metrik}:
+			Reissner-Nordström metric\index{Reissner-Nordström!Metrik} (where $r_Q = \frac{Q^2 G}{4\pi \varepsilon_0 c^4}$ is the charge radius):
 			\begin{equation}
-				TODO
+				\dd s^{2}=c^{2}\dd\tau ^{2}=\left(1-{\frac {r_s}{r}}+{\frac {r_Q^{2}}{r^{2}}}\right)c^{2}\dd t^{2}-\left(1-{\frac {r_s}{r}}+{\frac {r_Q^{2}}{r^{2}}}\right)^{-1}\dd r^{2}-r^{2}\dd\theta ^{2}-r^{2}\sin ^{2}\theta \dd\varphi ^{2}
 			\end{equation}
 
 			\noindent
-			Black Hole Entropy\index{Schwarzes Loch!Entropie}:
+			Black Hole Entropy\index{Schwarzes Loch!Entropie} / Bekenstein Hawking formula\index{Bekenstein!-Hawking Formel} (where $A$ is the event horizon area, \eg a Schwarzschild black hole has $A=4\pi r_s^2$):
 			\begin{equation}
-				S = \frac{4\pi \kB G M^2}{\hbar c^3}  =TODO
+				S_\mathrm{BH} = \frac{\kB A}{4 l_P^2}
+				= \frac{\kB c^3 A}{4 G \hbar}
 			\end{equation}
 
 			\noindent
-			Hawking Temperature\index{Hawking!Temperatur}:
+			Hawking radiation temperature\index{Hawking!Temperatur}:
 			\begin{equation}
-				T = \frac{\hbar c^3}{8\pi \kB G M} = TODO
+				T = \frac{\hbar c^3}{8\pi \kB G M}
 			\end{equation}
+
+			\noindent
+			Laws of Black Hole Mechanics\index{Schwarzes Loch!Mechanik}:
+			\begin{itemize}
+				\item \emph{Zeroth Law}: The surface gravity $g$ is constant over the event horizon.
+				\item \emph{First Law}: For perturbations of stationary black holes, the change of energy $E$ is related to change of area $A$, angular momentum $J$, and electric charge $Q$ by
+					\begin{equation}
+						\dd E = \frac{g}{8\pi} \dd A + \Omega \dd J + \Phi \dd Q,
+					\end{equation}
+					where $\Phi$ is the electrostatic potential and $\Omega$ is the angular velocity.
+				\item \emph{Second Law}: Assuming the Weak energy condition (Eq.~\ref{Eq:WeakEnergyCondition}), the area of the event horizon never decreases $\dd A \ge 0$.
+				\item \emph{Third Law}: It is impossible to reach a state of zero surface gravity $g=0$. 
+			\end{itemize}
 
 		\subsubsection{Weak Field Limit}
 			Weak field limit:
@@ -322,12 +343,6 @@
 			Residual gauge freedom:
 			\begin{equation}
 				h_{\mu\nu} \rightarrow h_{\mu\nu} + \partial_\mu \xi_\nu + \partial_\nu \xi_\mu
-			\end{equation}
-
-			\noindent
-			???Gauge freedom:
-			\begin{equation}
-				g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + \nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu
 			\end{equation}
 
 			\noindent
@@ -352,7 +367,7 @@
 			\end{equation}
 
 			\noindent
-			Weak field approximation for the metric of a star/planet:
+			Weak field approximation for the metric of a star / planet:
 			\begin{equation}
 				\dd{s}^2 = -(1+2\phi)\dd{t}^2 + (1-2\phi)\dd{\vec{x}}^2
 			\end{equation}
@@ -364,7 +379,7 @@
 			\end{equation}
 
 			\noindent
-			In transverse traceless gauge/radiation gauge/TT gauge (subgauge of the harmonic gauge):
+			In transverse traceless gauge / radiation gauge / TT gauge (subgauge of the harmonic gauge):
 			\begin{equation}
 				\begin{aligned}
 					k^\lambda C_{\lambda\mu} &= 0
@@ -396,7 +411,7 @@
 			\end{equation}
 
 			\noindent
-			Energy radiated by a quadrupole source (where $Q$ is the reduced quadrupole moment $Q_{ij} = q_{ij} - \frac{1}{3}\delta_{ij}\delta^{kl}q_{kl}$):
+			Energy of a gravitational wave radiated by a quadrupole source (where $Q$ is the reduced quadrupole moment $Q_{ij} = q_{ij} - \frac{1}{3}\delta_{ij}\delta^{kl}q_{kl}$):
 			\begin{equation}
 				P = \frac{G}{45} \eval{\dv[3]{\tilde{Q}_{ij}}{t}\dv[3]{\tilde{Q}^{ij}}{t}}_{t_r}
 			\end{equation}
@@ -436,12 +451,6 @@
 			Lorentz-factor\index{Lorentz!Faktor} ($\beta = \frac{v}{c}$):
 			\begin{equation}
 				\gamma = \frac{1}{\sqrt{1-\beta^2}}
-			\end{equation}
-
-			\noindent
-			Four-velocity\index{Vierergeschwindigkeit}:
-			\begin{equation}
-				u^\mu = \gamma \mqty(c \\ \vec{v})^\mu
 			\end{equation}
 
 			\noindent
