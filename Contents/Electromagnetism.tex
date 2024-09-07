@@ -1,35 +1,78 @@
 % !TEX root = ../physics.tex
 \section{Electromagnetism\index{Elektromagnetismus}}
-	\subsection{Equations of Motion}
+	Conventions used in this section:
+	\begin{itemize}
+		\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+,-,-,-)_{\mu\nu}$
+	\end{itemize}
+
+
+	\subsection{Definitions}
 		\noindent
-		Action of a free particle in an electromagnetic field:
+		Speed of light\index{Lichtgeschwindigkeit}:
 		\begin{equation}
-			\mathcal{S}= -\int_{a}^{b}\left(m u_\mu u^\mu + q A_\nu u^\nu\right)\;\dd\tau
+			c=\frac{1}{\sqrt{\varepsilon_0 \mu_0}}
 		\end{equation}
 
 		\noindent
-		Non-relativistic Lagrangian:
+		D'Alembert operator\index{D'Alembert!Operator}:
 		\begin{equation}
-			\mathcal{L}(t,\vec{x},\dot{\vec{x}}) = \frac{1}{2}m\dot{\vec{x}}^2 - q\phi(t,\vec{x}) - \dot{\vec{x}}\cdot\vec{A}(t,\vec{x})
+			\Box = \partial^\mu \partial_\mu = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \vec{\nabla}^2
 		\end{equation}
 
 		\noindent
-		Lorentz force\index{Lorentz!Kraft} (relativistic Minkowski force\index{Minkowski!Kraft} and Newtonian force in the classical limit):
+		Four-current\index{Viererstromdichte}:
 		\begin{equation}
-			\begin{aligned}
-				\frac{\dd P^\mu}{\dd \tau} &= q F^{\mu\nu}\frac{\dd x_\nu}{\dd \tau} \\
-				\vec{F} &= q\left(\vec{E}+\vec{v}\times\vec{B}\right) \\
-			\end{aligned}
+			J^\mu
+			= \mqty(c\rho\\\vec{j})^\mu
+			= \mqty(c\dv{q}{V}\\\vec{v}\dv{q}{V})^\mu
 		\end{equation}
+
+		\noindent
+		Four-potential\index{Viererpotential}:
+		\begin{equation}
+			A^\mu
+			= \mqty(\phi/c\\\vec{A})^\mu
+		\end{equation}
+
+		\noindent
+		Faraday tensor\index{Faraday!tensor} / electromagnetic tensor / field strength tensor\index{Faraday!Feldstärkentensor}:
+		\begin{equation}
+			F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
+			= \left( \begin{matrix}
+				0     & -E_x/c & -E_y/c & -E_z/c \\
+				E_x/c & 0      & -B_z   & B_y    \\
+				E_y/c & B_z    & 0      & -B_x   \\
+				E_z/c & -B_y   & B_x    & 0
+			\end{matrix} \right)^{\mu\nu}
+		\end{equation}
+
+		\noindent
+		Hodge dual of the Faraday Tensor\index{Faraday!Dualer Feldstärkentensor}:
+		\begin{equation}
+			\tilde{F}^{\mu\nu} = \frac{1}{2}\varepsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}
+		\end{equation}
+
+		\noindent
+		Electric field strength:
+		\begin{equation}
+			\vec{E} = -\Nabla\phi-\pdv{\vec{A}}{t}
+		\end{equation}
+
+		\noindent
+		Magnetic flux density:
+		\begin{equation}
+			\vec{B} = \Nabla\times\vec{A}
+		\end{equation}
+
 
 	\subsection{Field Equations}
 		\noindent
-		Lagrange density:
+		Lagrange density (Note that in Gaußian cgs units, the dimensions of quantities change due to the choice $\mathcal{L} = -\frac{1}{16\pi}F^{\mu\nu} F_{\mu\nu} - \frac{1}{c} A_\mu J^\mu$.):
 		\begin{equation}
 			\mathcal{L} = -\frac{1}{4\mu_0}F^{\mu\nu} F_{\mu\nu} - A_\mu J^\mu
 		\end{equation}
-		Note: In Gaußian cgs units, the dimensions of quantities change due to the choice $\mathcal{L} = -\frac{1}{4\pi}F^{\mu\nu} F_{\mu\nu} - \frac{1}{c}A_\mu J^\mu$.
 
+		\noindent
 		General field equations without gauge \index{Entwicklungsgleichung}:
 		\begin{equation}
 			\Box A^\mu-\partial^\mu\left(\partial_\nu A^\nu\right) = \partial_\nu F^{\nu\mu} =  \mu_0 J^\mu
@@ -285,6 +328,28 @@
 
 
 
+		\subsubsection{Charged Particles}
+			\noindent
+			Action of a free particle in an electromagnetic field:
+			\begin{equation}
+				\mathcal{S}= -\int_{a}^{b}\left(m u_\mu u^\mu + q A_\nu u^\nu\right)\;\dd\tau
+			\end{equation}
+
+			\noindent
+			Non-relativistic Lagrangian:
+			\begin{equation}
+				\mathcal{L}(t,\vec{x},\dot{\vec{x}}) = \frac{1}{2}m\dot{\vec{x}}^2 - q\phi(t,\vec{x}) - \dot{\vec{x}}\cdot\vec{A}(t,\vec{x})
+			\end{equation}
+
+			\noindent
+			Lorentz force\index{Lorentz!Kraft} (relativistic Minkowski force\index{Minkowski!Kraft} and Newtonian force in the classical limit):
+			\begin{equation}
+				\begin{aligned}
+					\frac{\dd P^\mu}{\dd \tau} &= q F^{\mu\nu}\frac{\dd x_\nu}{\dd \tau} \\
+					\vec{F} &= q\left(\vec{E}+\vec{v}\times\vec{B}\right) \\
+				\end{aligned}
+			\end{equation}
+
 		\subsubsection{Electrical Engineering}
 			\noindent
 			Ohm's law\index{Ohm!Gesetz} (Specific conductivity $\sigma$, resistance $R$, both assumed linear):
@@ -309,66 +374,6 @@
 			\begin{equation}
 				P = UI = RI^2 = \frac{U^2}{R}
 			\end{equation}
-
-
-
-	\subsection{Definitions}
-		\noindent
-		Speed of light\index{Lichtgeschwindigkeit}:
-		\begin{equation}
-			c=\frac{1}{\sqrt{\varepsilon_0 \mu_0}}
-		\end{equation}
-
-		\noindent
-		D'Alembert operator\index{D'Alembert!Operator}:
-		\begin{equation}
-			\Box = \partial^\mu \partial_\mu = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \vec{\nabla}^2
-		\end{equation}
-
-		\noindent
-		Four-current\index{Viererstromdichte}:
-		\begin{equation}
-			J^\mu
-			= \mqty(c\rho\\\vec{j})^\mu
-			= \mqty(c\dv{q}{V}\\\vec{v}\dv{q}{V})^\mu
-		\end{equation}
-
-		\noindent
-		Four-potential\index{Viererpotential}:
-		\begin{equation}
-			A^\mu
-			= \mqty(\phi/c\\\vec{A})^\mu
-		\end{equation}
-
-		\noindent
-		Faraday tensor\index{Faraday!tensor} / electromagnetic tensor / field strength tensor\index{Faraday!Feldstärkentensor}:
-		\begin{equation}
-			F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
-			= \left( \begin{matrix}
-				0     & -E_x/c & -E_y/c & -E_z/c \\
-				E_x/c & 0      & -B_z   & B_y    \\
-				E_y/c & B_z    & 0      & -B_x   \\
-				E_z/c & -B_y   & B_x    & 0
-			\end{matrix} \right)^{\mu\nu}
-		\end{equation}
-
-		\noindent
-		Hodge dual of the Faraday Tensor\index{Faraday!Dualer Feldstärkentensor}:
-		\begin{equation}
-			\tilde{F}^{\mu\nu} = \frac{1}{2}\varepsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}
-		\end{equation}
-
-		\noindent
-		Electric field strength:
-		\begin{equation}
-			\vec{E} = -\Nabla\phi-\pdv{\vec{A}}{t}
-		\end{equation}
-
-		\noindent
-		Magnetic flux density:
-		\begin{equation}
-			\vec{B} = \Nabla\times\vec{A}
-		\end{equation}
 
 	\subsection{Gauge Transformation\index{Eichtransformation}}
 		\noindent
@@ -600,7 +605,7 @@
 			\end{equation}
 
 			\noindent
-			Charged particles in a homogeneous magnetic field move on circles with Gyroradius/Larmor radius\index{Larmor!Radius} $r_\text{L}$ and gyration frequency\index{Zyklotronfrequenz} $\omega$:
+			Charged particles in a homogeneous magnetic field move on circles with Gyroradius / Larmor radius\index{Larmor!Radius} $r_\text{L}$ and gyration frequency\index{Zyklotronfrequenz} $\omega$:
 			\begin{equation}
 				\begin{aligned}
 					r_\text{L} = \frac{p}{qB} &&\hsp
