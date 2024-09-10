@@ -1,11 +1,16 @@
 % !TEX root = ../physics.tex
 \section{Astrophysics\index{Astrophysik}}
+	Conventions used in this section:
+	\begin{itemize}
+		\item Gaußian cgs units ($4\pi\epsilon_0 = 1$, $\mu_0 = 4 \pi / c$)
+		\item Metric signature $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)_{\mu\nu}$
+		\item Fourier transforms: the factors $(2\pi)^{-d}$ are placed in the back-transform.
+	\end{itemize}
 	\subsection{Radiation Processes}
-		Differing from the rest of this document, in this section, Gaußian cgs units and the metric signature $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ are used. For Fourier transforms the factors $(2\pi)^{-d}$ are placed in the back-transform.
 
 		\noindent
-		Larmor formula\index{Larmor!Formel}:
-		Relativistic Larmor formulas\index{Larmor!Formel} for the power emitted per solid angle and total emitted power (Emitted energy of a non-relativistic particle measured in the retarded time):
+		Relativistic Larmor formula\index{Larmor!Formel}:
+		Power emitted per solid angle and total emitted power of an accelerated charge (Emitted energy of a non-relativistic particle measured in the retarded time):
 		\begin{equation}
 			\label{eq:LarmorFormula}
 			\begin{aligned}
@@ -23,8 +28,20 @@
 			\end{aligned}
 		\end{equation}
 
+		\noindent
+		Radiation spectrum of a charge with path $\vec{r}(t)$, seen from the direction $\hat{e}$:
+		\begin{equation}
+			\frac{\dd^2 E}{\dd \Omega \dd \omega} = \frac{e^2 \omega^2}{8 \pi^2 c} \abs{\int_{\mathbb{R}}\dd t'\, \qty[\hat{e}\times \qty(\hat{e}\times \dot{\vec{x}}(t'))] \ex^{-\i \omega (t'-\hat{e}\cdot \vec{x}(t')/c)}}
+		\end{equation}
+
+		\noindent
+		Specific Intensity (where $n_{\vec{p},\alpha}$ is the density of photons with momentum $\vec{p}$ and polarization $\alpha$; Note that $I_\omega / \omega^3$ is Lorentz invariant):
+		\begin{equation}
+			I_\omega = \frac{\hbar \omega^3}{(2 \pi)^3 c^2} \sum_{\alpha=1}^{2} n_{\vec{p},\alpha} = \frac{1}{\cos \theta} \frac{\dd^4 E}{\dd t \dd\omega \dd \Omega \dd A}
+		\end{equation}
+
 		\subsubsection{Compton Scattering}
-			Compton scattering for a frame with the electron at rest initially (where $\theta$ is the scattering angle, $\cos\theta = \hat{e}\cdot\hat{e}'$ between incident photon $\hat{e}$ scattered photon $\hat{e}'$)
+			Compton scattering\index{Compton!Streuung} for a frame with the electron at rest initially (where $\theta$ is the scattering angle, $\cos\theta = \hat{e}\cdot\hat{e}'$ between incident photon $\hat{e}$ scattered photon $\hat{e}'$ and $\lambda_{\mathrm{C}}$ is the Compton wavelength\index{Compton!Wellenlänge}):
 			\begin{equation}
 				\begin{aligned}
 					\frac{\omega'}{\omega} &= \frac{1}{1+\frac{\hbar\omega}{mc^2}\qty(1-\cos\theta)} \\
@@ -33,6 +50,7 @@
 			\end{equation}
 
 		\subsubsection{Thomson Scattering}
+			Thomson scattering\index{Thomson!Streuung} is the elastic limit of Compton scattering\index{Compton!Streuung}, \ie $\hbar\omega \ll mc^2$.
 			Thomson cross section\index{Thomson!Wirkungsquerschnitt} (where $r_e$ is the classical electron radius, $\alpha$ is the polarization angle):
 			\begin{equation}
 				\begin{aligned}
@@ -44,7 +62,7 @@
 
 		\subsubsection{Synchrotron Radiation}
 			\noindent
-			Synchrotron Radiation\index{Synchrotron!Strahlung} (where $u_B=\vec{B}^2/4\pi$ is the energy density of the magnetic field, $K_k$ of the spectrum are the Bessel functions of fractional order and $\omega_\text{L}$ denotes the Larmor frequency):
+			Synchrotron Radiation\index{Synchrotron!Strahlung}, ultra relativistic limit of a charge gyrating in a magnetic field (where $u_B=\vec{B}^2/4\pi$ is the energy density of the magnetic field, $K_k$ of the spectrum are the Bessel functions of fractional order, $\xi=\frac{\omega}{3\omega_L}\qty(\frac{1}{\gamma^2}+\theta^2)^{3/2}$ is the dimensionless frequency and $\omega_\text{L}$ denotes the Larmor frequency):
 			\begin{equation}
 				\begin{aligned}
 					P &= c \gamma^2 \sigma_\text{T} u_B \\
@@ -54,7 +72,7 @@
 
 		\subsubsection{Bremsstrahlung}
 			\noindent
-			Bremsstrahlung spectrum\index{Bremsstrahlung} and the high \& low frequency approximations (Radiation produced by electrons with asymptotic velocity $v_\infty$ of density $n_e$ passing being scattered by ions of density $n_i$ and charge $Ze$. $H_{\i \nu}^{(1)}$ is the Hankel function of the first kind and $\tau=a / v_\infty$ is the time scale):
+			Bremsstrahlung spectrum\index{Bremsstrahlung} and the high \& low frequency approximations (Radiation produced by electrons with asymptotic velocity $v_\infty$ of density $n_e$ passing ions of density $n_i$ and charge $Ze$. $H_{\i \nu}^{(1)}$ is the Hankel function of the first kind and $\tau=a / v_\infty$ is the time scale):
 			\begin{equation}
 				\begin{aligned}
 					\frac{\dd^3 E}{\dd \omega \dd t \dd V} &= \i \frac{4\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}\qty(\frac{Z e^2 \omega}{m v_\infty^3}) H_{\i \nu}^{(1)}(\i\nu) H_{\i \nu}^{(1)\prime}(\i\nu) \\
@@ -67,17 +85,18 @@
 			\end{equation}
 
 			\noindent
-			Emissivity for non-relativistic thermal Bremsstrahlung (Where $\bar{g}_{ff}(\omega)$ is the mean Gaunt factor (why can often be approximated by $1$)):
+			Emissivity for non-relativistic thermal Bremsstrahlung (Where $\bar{g}_{ff}(\omega)$ is the mean Gaunt factor (which can often be approximated by $1$)):
 			\begin{equation}
 				j(\omega) = \frac{16\pi^2}{3\sqrt{3}} \frac{Z^2 e^6 n_i n_e}{m^2 c^3} \bar{g}_{\text{ff}}(\omega) \sqrt{\frac{2m}{\pi \kB T}} \exp\qty(-\frac{\hbar \omega}{\kB T})
 			\end{equation}
 
 		\subsubsection{Radiation Dampening}
-			Radiation dampening (As a linear theory, electromagnetism cannot account for the loss of energy in a spiraling electron. This is a non-linear effect that can be corrected for by an additional force term $\vec{F}_\text{rad}$ in the equations of motion):
+			Radiation dampening (As a linear theory, electromagnetism cannot account for the loss of energy in a spiraling electron. This is a non-linear effect from QFT that can be corrected for by an additional force term $\vec{F}_\text{rad}$ in the classical equations of motion):
 			\begin{equation}
 				\vec{F}_\text{rad} = \frac{2}{3} \frac{e^2}{c^2} \ddot{\vec{\beta}}^2
 			\end{equation}
 
+			\noindent
 			Power transfer between electron and EM-field (Assuming an energy density $u_\text{EM}$):
 			\begin{equation}
 				P = \frac{4}{3} \beta^2 \gamma^2 c u_\text{EM} \sigma_\text{T}
