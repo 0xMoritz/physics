@@ -206,7 +206,7 @@
 
 		\subsubsection{Electromagnetic Energy-Momentum Tensor\index{Energie-Impuls-Tensor}}
 			\noindent
-			Energy-momentum tensor (Maxwell stress tensor $T_{ij}$):
+			Energy-momentum tensor (Where $\vec{S}$ is the Poynting vector\index{Poynting!Vektor} and $T_{ij}$ the Maxwell stress tensor):
 			\begin{equation}
 				T^{\mu\nu} = \frac{1}{\mu_0}\left(g^{\mu\alpha} F_{\alpha\beta} F^{\beta\nu} +\frac{1}{4}g^{\mu\nu} F_{\alpha\beta} F^{\alpha\beta} \right)
 				= \left( \begin{matrix}
@@ -214,19 +214,23 @@
 						S_1/c         & -T_{11} & -T_{12} & -T_{13} \\
 						S_2/c         & -T_{21} & -T_{22} & -T_{23} \\
 						S_3/c         & -T_{31} & -T_{32} & -T_{33}
-					\end{matrix} \right)
+					\end{matrix} \right) \\
 			\end{equation}
-
+			
 			\noindent
-			Maxwell stress tensor\index{Maxwell!Spannungstensor} and properties
+			Maxwell stress tensor\index{Maxwell!Spannungstensor}:
 			\begin{equation}
 				T_{ij} = \varepsilon_0 \qty( E_i E_j + c^2 B_i B_j - \frac{\delta_{ij}}{2}\qty(\vec{E}^2 + c^2 \vec{B}^2 ) )
 			\end{equation}
+			
+			\noindent
+			Properties of the electromagnetic energy-momentum tensor:
 			\begin{equation}
-				\begin{aligned}
-					T^{\mu\nu} &= T^{\nu\mu} &\hsp
-					T^\mu_{\phantom{\mu}\mu} &= 0 \\
-				\end{aligned}
+				T^{\mu\nu} = T^{\nu\mu}
+				\hsp
+				T^\mu_{\phantom{\mu}\mu} = 0
+				\hsp
+				T^{00} \ge 0
 			\end{equation}
 
 			\noindent
