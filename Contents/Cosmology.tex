@@ -1,188 +1,187 @@
 % !TEX root = ../physics.tex
 \section{Cosmology\index{Kosmologie}}
-	\subsection{Big Bang Theory}
-		\emph{Cosmological Principle}
+	\emph{Cosmological Principle}
+	\begin{itemize}
+		\item On large enough scales, the universe is homogeneous
+		\item On large enough scales, the universe is isotropic (for every observer).
+	\end{itemize}
+
+	\noindent
+	\emph{Cosmological time} is the proper time measured by an observer at rest with respect to the local matter distribution.
+
+	\subsection{FLRW Universe}
+		Friedmann-Lemaitre-Robertson-Walker metric:
+		\begin{equation}
+			\dd s^2 = -\dd t^2 + a^2(t) \qty[\frac{\dd r^2}{1-kr^2} + r^2 \dd \Omega^2]
+			\hsp
+			g_{\mu\nu} = \mathrm{diag}\qty(-1,\, \frac{a^2(t)}{1-kr^2},\, a^2(t) r^2,\, a^2(t) r^2 \sin^2 \theta)
+		\end{equation}
+		using $(t, r, \theta, \phi)$ as coordinates and $k = a^2 H^2 ( \Omega + \Omega_\Lambda - 1)$ as the curvature of the universe where
 		\begin{itemize}
-			\item On large enough scales, the universe is homogeneous
-			\item On large enough scales, the universe is isotropic (for every observer).
+			\item $k=0$ for a flat universe, \ie $\Omega + \Omega_\Lambda = 1$
+			\item $k=1$ for a closed universe, \ie $0 < \Omega + \Omega_\Lambda < 1$
+			\item $k=-1$ for an open universe, \ie $\Omega + \Omega_\Lambda > 1$
+		\end{itemize}
+		The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$.
+
+		\noindent
+		Friedmann equations (Applying the FLRW metric to the Einstein equations, using an ideal, motionless fluid $T^\mu_\nu = \text{diag}(-\rho, p, p, p)$):
+		\begin{equation}
+			\begin{aligned}
+				\qty(\frac{\dot{a}}{a})^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} + \frac{\Lambda}{3} \\
+				\frac{\ddot{a}}{a} &= -\frac{4 \pi G}{3} \qty(\rho + \frac{3p}{c^2}) + \frac{\Lambda}{3} \\
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Definition Hubble Function / Hubble Parameter{\index{Hubble!Funktion}} (Hubble function today is $H_0$, also called Hubble ``constant''\index{Hubble!Konstante}):
+		\begin{equation}
+			H(t) := \frac{\dot{a}}{a}
+		\end{equation}
+
+		\noindent
+		Comoving coordinates $\vec{x}$, in relation to real coordinates $\vec{r}$:
+		\begin{equation}
+			\vec{r} = a(t) \vec{x}
+			\hsp
+			\dot{\vec{r}} = H \vec{r}
+		\end{equation}
+
+		\noindent
+		Critical Density (\ie density leading to $k=0$):
+		\begin{equation}
+			\rho_\text{cr.} (a) = \frac{3 H^2}{8 \pi G}
+		\end{equation}
+
+		\noindent
+		Adiabatic Equation (Combination of first law of thermodynamics and Friedmann equation):
+		\begin{equation}
+			\label{Eq:CosmologyAdiabaticEquation}
+			\dd \qty(\rho a^3 c^2) + p \dd (a^3) = 0
+		\end{equation}
+
+		\noindent
+		Fluid Equation (following form the Adiabatic Equation \ref{Eq:CosmologyAdiabaticEquation}):
+		\begin{equation}
+			\dot{\rho} + 3 H \qty(\rho + \frac{p}{c^2}) = 0
+		\end{equation}
+
+		\noindent
+		General Friedmann Equation (Where $i$ indexes different energy density contributions with equation of state $p_i = w_i \rho_i c^2$ and $\Omega_i = \frac{\rho_i}{\rho_\text{cr.}}$):
+		\begin{equation}
+			H^2 = H_0^2\sum_i \Omega_i a^{-3(1+w)}
+		\end{equation}
+		most prominent components are matter ($w=0$), radiation ($w=\frac{1}{3}$), dark energy / cosmological constant ($w=-1$, with $\rho_\Lambda = \frac{\Lambda}{8\pi G}$) and the curvature term ($\Omega_{k,0}=-\frac{k c^2}{a^2 H^2}$).
+		\begin{equation}
+			H^2 = H_0^2 \qty(\Omega_{\text{m},0} a^{-3} + \Omega_{\text{r},0} a^{-4} + \Omega_{\Lambda,0} + \Omega_{k,0} a^{-2})
+		\end{equation}
+
+		\noindent
+		Cosmological redshift (where $\lambda_0$ is the emitted wavelength and $\lambda$ is the observed wavelength):
+		\begin{equation}
+			z = \frac{\lambda - \lambda_0}{\lambda_0}
+		\end{equation}
+
+		\noindent
+		Connection between scale factor and redshift:
+		\begin{equation}
+			a(z) = \frac{1}{1+z}
+		\end{equation}
+
+		\noindent
+		Change of wavelength due to redshift (emission of light with $\lambda_e$ at $t_e$, received with $\lambda_r$ at $t_r$) and in particular for observation today ($t_r=t_0$ \ie $a(t_r)=1$):
+		\begin{equation}
+			\frac{\lambda_r}{\lambda_e} = \frac{a(t_r)}{a(t_e)}
+			\hsp
+			\frac{\lambda_0}{\lambda_e} = 1+z
+		\end{equation}
+
+	\subsection{Big Bang Theory}
+		\noindent
+		\href{https://en.wikipedia.org/wiki/Chronology_of_the_universe#Tabular_summary}{History of the universe}:
+		\begin{table}[ht]
+			\begin{center}
+				\begin{tabular}{ l | l | l | l }
+					Event & Time & Redshift & Temperature \\ \hline
+					Planck epoch & $t < 10^{-32}\unit{s}$ & & $T>10^{32}\unit{K}$ \\
+					Inflation & $< 10^{-32}\unit{s}$ & & $>10^{22}\unit{K}$ \\
+					Electroweak symmetry breaking & $\sim 10^{-12}\unit{s}$ & & $\sim10^{15}\unit{K}$ \\
+					Baryogenesis & $\sim 10^{-11}\unit{s}$? & & \\
+					Quark Hadron phase transition & $\sim 10^{-5}\unit{s}$ & & $\sim 10^{10}\unit{K}$ \\
+					Neutrino decoupling & $\sim 1\unit{s}$ & $\sim 10^{10}$ & $\sim 10^{10}\unit{K}$ \\
+					Big Bang Nucleosynthesis & $\sim 10 \unit{s}..10^3\unit{s}$ & & $\sim 10^9\unit{K}..10^7\unit{K}$ \\
+					Recombination / Photon decoupling & $\approx 379\,000$ years & $\sim 1089$ & $\approx 3000\unit{K}$ \\
+					Matter starts to dominate & $\approx 47\unit{kyr}$ & $\approx 3600$ & $\sim 10^4\unit{K}$ \\
+					Reionization & $\approx 150\unit{Myr}..1\unit{Gyr}$ & $\approx 20..6$ &  \\
+					Dark energy starts to dominate & $\approx 9.8\unit{Gyr}$ & $\approx 0.4$ & $\sim 4\unit{K}$ \\
+					Today & $\approx 13.8\unit{Gyr}$ & $0$ & $\approx 2.7\unit{K}$ \\
+				\end{tabular}
+				\caption{History of the universe.}
+			\end{center}
+		\end{table}
+
+		\noindent
+		Saha Equation\index{Saha Equation} (Equilibrium between ionized and neutral atoms, $n_i$ is the density of atoms in the $i$-th state of ionization, $n_e$ is the electron density, $g_i$ is the degeneracy of the $i$-th state of, $\lambda_\text{th}$ is the thermal de Broglie wavelength\index{De Broglie!Thermische Wellenlänge} Eq.~\ref{Eq:ThermalDeBroglieWavelength}, $\epsilon_i$ is the energy of the $i$-th state of, $T$ is the temperature):
+		\begin{equation}
+			\frac{n_{i+1} n_e}{n_i} = \frac{2}{\lambda_\text{th}^3} \frac{g_{i+1}}{g_i} \exp(- \frac{\epsilon_{i+1}-\epsilon_{i}}{\kB T})
+		\end{equation}
+
+
+		\noindent
+		Important concepts:
+		\begin{itemize}
+			\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
+			\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
+			\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
 		\end{itemize}
 
 		\noindent
-		\emph{Cosmological time} is the proper time measured by an observer at rest with respect to the local matter distribution.
-
-		\subsubsection{FLRW Universe}
-			Friedmann-Lemaitre-Robertson-Walker metric:
-			\begin{equation}
-				\dd s^2 = -\dd t^2 + a^2(t) \qty[\frac{\dd r^2}{1-kr^2} + r^2 \dd \Omega^2]
-				\hsp
-				g_{\mu\nu} = \mathrm{diag}\qty(-1,\, \frac{a^2(t)}{1-kr^2},\, a^2(t) r^2,\, a^2(t) r^2 \sin^2 \theta)
-			\end{equation}
-			using $(t, r, \theta, \phi)$ as coordinates and $k = a^2 H^2 ( \Omega + \Omega_\Lambda - 1)$ as the curvature of the universe where
-			\begin{itemize}
-				\item $k=0$ for a flat universe, \ie $\Omega + \Omega_\Lambda = 1$
-				\item $k=1$ for a closed universe, \ie $0 < \Omega + \Omega_\Lambda < 1$
-				\item $k=-1$ for an open universe, \ie $\Omega + \Omega_\Lambda > 1$
-			\end{itemize}
-			The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$.
-
-			\noindent
-			Friedmann equations (Applying the FLRW metric to the Einstein equations, using an ideal, motionless fluid $T^\mu_\nu = \text{diag}(-\rho, p, p, p)$):
-			\begin{equation}
-				\begin{aligned}
-					\qty(\frac{\dot{a}}{a})^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} + \frac{\Lambda}{3} \\
-					\frac{\ddot{a}}{a} &= -\frac{4 \pi G}{3} \qty(\rho + \frac{3p}{c^2}) + \frac{\Lambda}{3} \\
-				\end{aligned}
-			\end{equation}
-
-			\noindent
-			Definition Hubble Function / Hubble Parameter{\index{Hubble!Funktion}} (Hubble function today is $H_0$, also called Hubble ``constant''\index{Hubble!Konstante}):
-			\begin{equation}
-				H(t) := \frac{\dot{a}}{a}
-			\end{equation}
-
-			\noindent
-			Comoving coordinates $\vec{x}$, in relation to real coordinates $\vec{r}$:
-			\begin{equation}
-				\vec{r} = a(t) \vec{x}
-				\hsp
-				\dot{\vec{r}} = H \vec{r}
-			\end{equation}
-
-			\noindent
-			Critical Density (\ie density leading to $k=0$):
-			\begin{equation}
-				\rho_\text{cr.} (a) = \frac{3 H^2}{8 \pi G}
-			\end{equation}
-
-			\noindent
-			Adiabatic Equation (Combination of first law of thermodynamics and Friedmann equation):
-			\begin{equation}
-				\label{Eq:CosmologyAdiabaticEquation}
-				\dd \qty(\rho a^3 c^2) + p \dd (a^3) = 0
-			\end{equation}
-
-			\noindent
-			Fluid Equation (following form the Adiabatic Equation \ref{Eq:CosmologyAdiabaticEquation}):
-			\begin{equation}
-				\dot{\rho} + 3 H \qty(\rho + \frac{p}{c^2}) = 0
-			\end{equation}
-
-			\noindent
-			General Friedmann Equation (Where $i$ indexes different energy density contributions with equation of state $p_i = w_i \rho_i c^2$ and $\Omega_i = \frac{\rho_i}{\rho_\text{cr.}}$):
-			\begin{equation}
-				H^2 = H_0^2\sum_i \Omega_i a^{-3(1+w)}
-			\end{equation}
-			most prominent components are matter ($w=0$), radiation ($w=\frac{1}{3}$), dark energy / cosmological constant ($w=-1$, with $\rho_\Lambda = \frac{\Lambda}{8\pi G}$) and the curvature term ($\Omega_{k,0}=-\frac{k c^2}{a^2 H^2}$).
-			\begin{equation}
-				H^2 = H_0^2 \qty(\Omega_{\text{m},0} a^{-3} + \Omega_{\text{r},0} a^{-4} + \Omega_{\Lambda,0} + \Omega_{k,0} a^{-2})
-			\end{equation}
-
-			\noindent
-			Cosmological redshift (where $\lambda_0$ is the emitted wavelength and $\lambda$ is the observed wavelength):
-			\begin{equation}
-				z = \frac{\lambda - \lambda_0}{\lambda_0}
-			\end{equation}
-
-			\noindent
-			Connection between scale factor and redshift:
-			\begin{equation}
-				a(z) = \frac{1}{1+z}
-			\end{equation}
-
-			\noindent
-			Change of wavelength due to redshift (emission of light with $\lambda_e$ at $t_e$, received with $\lambda_r$ at $t_r$) and in particular for observation today ($t_r=t_0$ \ie $a(t_r)=1$):
-			\begin{equation}
-				\frac{\lambda_r}{\lambda_e} = \frac{a(t_r)}{a(t_e)}
-				\hsp
-				\frac{\lambda_0}{\lambda_e} = 1+z
-			\end{equation}
-
-		\subsubsection{Concepts and Models}
-			\noindent
-			\href{https://en.wikipedia.org/wiki/Chronology_of_the_universe#Tabular_summary}{History of the universe}:
-			\begin{table}[ht]
-				\begin{center}
-					\begin{tabular}{ l | l | l | l }
-						Event & Time & Redshift & Temperature \\ \hline
-						Planck epoch & $t < 10^{-32}\unit{s}$ & & $T>10^{32}\unit{K}$ \\
-						Inflation & $< 10^{-32}\unit{s}$ & & $>10^{22}\unit{K}$ \\
-						Electroweak symmetry breaking & $\sim 10^{-12}\unit{s}$ & & $\sim10^{15}\unit{K}$ \\
-						Baryogenesis & $\sim 10^{-11}\unit{s}$? & & \\
-						Quark Hadron phase transition & $\sim 10^{-5}\unit{s}$ & & $\sim 10^{10}\unit{K}$ \\
-						Neutrino decoupling & $\sim 1\unit{s}$ & $\sim 10^{10}$ & $\sim 10^{10}\unit{K}$ \\
-						Big Bang Nucleosynthesis & $\sim 10 \unit{s}..10^3\unit{s}$ & & $\sim 10^9\unit{K}..10^7\unit{K}$ \\
-						Recombination / Photon decoupling & $\approx 379\,000$ years & $\sim 1089$ & $\approx 3000\unit{K}$ \\
-						Matter starts to dominate & $\approx 47\unit{kyr}$ & $\approx 3600$ & $\sim 10^4\unit{K}$ \\
-						Reionization & $\approx 150\unit{Myr}..1\unit{Gyr}$ & $\approx 20..6$ &  \\
-						Dark energy starts to dominate & $\approx 9.8\unit{Gyr}$ & $\approx 0.4$ & $\sim 4\unit{K}$ \\
-						Today & $\approx 13.8\unit{Gyr}$ & $0$ & $\approx 2.7\unit{K}$ \\
-					\end{tabular}
-					\caption{History of the universe.}
-				\end{center}
-			\end{table}
-
-			\noindent
-			Saha Equation\index{Saha Equation} (Equilibrium between ionized and neutral atoms, $n_i$ is the density of atoms in the $i$-th state of ionization, $n_e$ is the electron density, $g_i$ is the degeneracy of the $i$-th state of, $\lambda_\text{th}$ is the thermal de Broglie wavelength\index{De Broglie!Thermische Wellenlänge} Eq.~\ref{Eq:ThermalDeBroglieWavelength}, $\epsilon_i$ is the energy of the $i$-th state of, $T$ is the temperature):
-			\begin{equation}
-				\frac{n_{i+1} n_e}{n_i} = \frac{2}{\lambda_\text{th}^3} \frac{g_{i+1}}{g_i} \exp(- \frac{\epsilon_{i+1}-\epsilon_{i}}{\kB T})
-			\end{equation}
+		Distance measurements:
+		\begin{itemize}
+			\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time)
+				\begin{equation}
+					x = \int_{t_e}^{t_r} c\frac{\dd t}{a(t)}
+					= \int_{a_e}^{a_r} \frac{c \dd a}{a^2 H(a)}
+				\end{equation}
+			\item Proper distance (physical distance traveled by a photon between two objects)
+				\begin{equation}
+					r = a x
+					\hsp
+					r_e - r_r = \int_{t_e}^{t_r} c \,\dd t
+					= \int_{a_e}^{a_r} \frac{c\, \dd a}{a H(a)}
+				\end{equation}
+			\item Luminosity distance\index{Leuchtkraftentfernung} $d_L$ (apparent distance given a measured flux $F$ and presuming a luminosity $L$ and assuming inverse-square law):
+				\begin{equation}
+					d_L = \sqrt{\frac{L}{4 \pi F}} = r (1+z)
+				\end{equation}
+			\item Angular diameter distance\index{Winkeldurchmesserentfernung} $d_A$ (apparent distance of an object given angular size $\theta$ in comparison with known physical size $l$):
+				\begin{equation}
+					d_A = \frac{l}{\sin \theta} = \frac{r}{1+z}
+				\end{equation}
+		\end{itemize}
 
 
-			\noindent
-			Important concepts:
-			\begin{itemize}
-				\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
-				\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
-				\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
-			\end{itemize}
+		\noindent
+		Cosmological horizons:
+		\begin{itemize}
+			\item \emph{Particle Horizon}\index{Beobachtungshorizont}, maximum distance from which light could have traveled to the observer in the age of the universe. It is the maximum distance from which one could possibly retrieve information and hence determines the size of the observable units.
+			\item \emph{Event Horizon}\index{Ereignishorizont}, boundary beyond which events cannot affect an observer.
+			\item \emph{Cosmic Event Horizon}\index{Kosmischer Ereignishorizont}, boundary beyond which light emitted now can never affect an observer due to the expansion of the universe.
+				\begin{equation}
+					d_e(t) = a(t) \int^{\infty}_{t} \frac{c \,\dd t'}{a(t')}.
+				\end{equation}
+			\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble velocity reaches $c$,
+				\begin{equation}
+					c = x H
+				\end{equation}
+				Note that information can still reach an observer because the Hubble sphere is expanding.
+		\end{itemize}
 
-			\noindent
-			Distance measurements:
-			\begin{itemize}
-				\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time)
-					\begin{equation}
-						x = \int_{t_e}^{t_r} c\frac{\dd t}{a(t)}
-						= \int_{a_e}^{a_r} \frac{c \dd a}{a^2 H(a)}
-					\end{equation}
-				\item Proper distance (physical distance traveled by a photon between two objects)
-					\begin{equation}
-						r = a x
-						\hsp
-						r_e - r_r = \int_{t_e}^{t_r} c \,\dd t
-						= \int_{a_e}^{a_r} \frac{c\, \dd a}{a H(a)}
-					\end{equation}
-				\item Luminosity distance\index{Leuchtkraftentfernung} $d_L$ (apparent distance given a measured flux $F$ and presuming a luminosity $L$ and assuming inverse-square law):
-					\begin{equation}
-						d_L = \sqrt{\frac{L}{4 \pi F}} = r (1+z)
-					\end{equation}
-				\item Angular diameter distance\index{Winkeldurchmesserentfernung} $d_A$ (apparent distance of an object given angular size $\theta$ in comparison with known physical size $l$):
-					\begin{equation}
-						d_A = \frac{l}{\sin \theta} = \frac{r}{1+z}
-					\end{equation}
-			\end{itemize}
-
-
-			\noindent
-			Cosmological horizons:
-			\begin{itemize}
-				\item \emph{Particle Horizon}\index{Beobachtungshorizont}, maximum distance from which light could have traveled to the observer in the age of the universe. It is the maximum distance from which one could possibly retrieve information and hence determines the size of the observable units.
-				\item \emph{Event Horizon}\index{Ereignishorizont}, boundary beyond which events cannot affect an observer.
-				\item \emph{Cosmic Event Horizon}\index{Kosmischer Ereignishorizont}, boundary beyond which light emitted now can never affect an observer due to the expansion of the universe.
-					\begin{equation}
-						d_e(t) = a(t) \int^{\infty}_{t} \frac{c \,\dd t'}{a(t')}.
-					\end{equation}
-				\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble velocity reaches $c$,
-					\begin{equation}
-						c = x H
-					\end{equation}
-					Note that information can still reach an observer because the Hubble sphere is expanding.
-			\end{itemize}
-
-			% \noindent  TODO
-			% Conformal time (Radius of the particle horizon divided by $c$):
-			% \begin{equation}
-			% 	\dd \tau := \frac{\dd t}{a(t)}
-			% \end{equation}
+		% \noindent  TODO
+		% Conformal time (Radius of the particle horizon divided by $c$):
+		% \begin{equation}
+		% 	\dd \tau := \frac{\dd t}{a(t)}
+		% \end{equation}
 
 		\subsubsection{Dynamical Dark Energy}
 			TODO
@@ -208,9 +207,9 @@
 			\end{equation}
 			Slow roll approximation:
 			\begin{equation}
-				\dot{\phi} \ll V(\phi) 
+				\dot{\phi} \ll V(\phi)
 				\hsp
-				\ddot{\phi} \ll \dv{V}{\phi} =: V'(\phi)			
+				\ddot{\phi} \ll \dv{V}{\phi} =: V'(\phi)
 			\end{equation}
 			Slow roll condition and parameters:
 			\begin{equation}
