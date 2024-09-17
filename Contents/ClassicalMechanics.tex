@@ -32,7 +32,7 @@
 		\begin{equation}
 			\begin{aligned}
 				\norm{\delta\vec{Z}(t)} &\sim \ex^{\lambda t} \norm{\delta\vec{Z}(0)}\\
-				\lambda &= \lim_{t\rightarrow\infty} \lim_{\norm{\delta\vec{Z}(0)}\rightarrow 0} \frac{1}{t} \ln\qty(\frac{\norm{\delta \vec{Z}(t)}}{\norm{\delta\vec{Z}(0)}}) \\
+				\lambda &= \lim_{t\to\infty} \lim_{\norm{\delta\vec{Z}(0)}\to 0} \frac{1}{t} \ln\qty(\frac{\norm{\delta \vec{Z}(t)}}{\norm{\delta\vec{Z}(0)}}) \\
 			\end{aligned}
 		\end{equation}
 
@@ -199,7 +199,7 @@
 		\end{equation}
 
 		\noindent
-		Poisson-brackets (in Quantum Mechanics $\qty{A,B} \rightarrow -\frac{\i}{\hbar}\Avg{\comm{A}{B}}$):
+		Poisson-brackets (in Quantum Mechanics $\qty{A,B} \to -\frac{\i}{\hbar}\Avg{\comm{A}{B}}$):
 		\begin{equation}
 			\begin{aligned}
 				\qty{A,B} &= \sum_k \left(
@@ -240,14 +240,14 @@
 		\noindent
 		Condition of invariance\index{Invarianzbedingung}:
 		\begin{equation}
-			\frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{q}}^{\,\prime},\frac{d {\vec{q}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{q}, t)}{dt} \quad \Rightarrow \quad S \sim S'
+			\frac{d}{d\varepsilon}\left[\mathcal{L}\left( {\vec{q}}^{\,\prime},\frac{d {\vec{q}}^{\,\prime}}{dt'},t'\right) \frac{dt'}{dt}\,\right]_{\varepsilon=0}=\frac{df(\vec{q}, t)}{dt} \implies S \sim S'
 		\end{equation}
 
 		\noindent
 		Resulting conserved quantity\index{Erhaltungsgröße}:
 		\begin{equation}
 			\begin{aligned}
-				S &\sim S' \quad \Rightarrow \quad
+				S &\sim S' \implies
 				\dv{t} Q\left(\vec{q},\dot{\vec{q}},t\right) = 0 \\
 				Q\left(\vec{q},\dot{\vec{q}},t\right) &= \sum_{i=1}^{n}\left(\frac{\partial\mathcal{L}}{\partial{\dot{q}}_i}\psi_i\right)+\left(\mathcal{L}-\sum_{i=1}^{n}{\frac{\partial\mathcal{L}}{\partial{\dot{q}}_i}{\dot{q}}_i}\right)\varphi - f\left(\vec{q},t\right).
 			\end{aligned}

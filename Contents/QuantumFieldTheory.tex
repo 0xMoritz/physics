@@ -39,7 +39,7 @@
 		\subsubsection{Scattering}
 		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
 			\noindent
-			Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \rightarrow P_3 + P_4$:
+			Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \to P_3 + P_4$:
 			\begin{itemize}\itemsep -0pt	% reduce space between items
 				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
 				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
@@ -199,9 +199,9 @@
 			\end{equation}
 
 			\noindent
-			Non-Relativistic Limit ($c\rightarrow\infty$):
+			Non-Relativistic Limit ($c \to\infty$):
 			\begin{equation}
-				\phi(x) \rightarrow \phi(x) \ex^{-\i m c^2 t/\hbar}
+				\phi(x) \to \phi(x) \ex^{-\i m c^2 t/\hbar}
 			\end{equation}
 
 	\subsection{Gauge and Symmetry}
@@ -211,7 +211,7 @@
 				\begin{aligned}
 					\psi(\hat{T}(\delta \omega)x) &= \qty(1+ \i \delta\omega \hat{G}) \psi(x)\\
 					\hat{G} &= \i \pdv{\hat{T}}{\omega} \\
-					\hat{U} &= \lim_{N\rightarrow \infty} \qty(1+\i\hat{G}\delta\omega)^N = \exp(\i \hat{G} \cdot \omega) \\
+					\hat{U} &= \lim_{N \to \infty} \qty(1+\i\hat{G}\delta\omega)^N = \exp(\i \hat{G} \cdot \omega) \\
 					\Ket{\psi'} &= \hat{U}(\omega)\Ket{\psi} = \Ket{\hat{T}(\omega)\psi} \\
 					\hat{V}'(x) &= \hat{T}(\omega) \hat{V}(\inv{\hat{T}}(\omega)x) = \hat{U}^\dagger(\omega) \hat{V}(x) \hat{U}(\omega) \\
 				\end{aligned}
@@ -263,15 +263,15 @@
 			Gauge theory ($A_\mu$ is the gauge field, $q$ is the coupling strength):
 			\begin{equation}
 				\begin{aligned}
-					\psi(x) &\rightarrow \ex^{\i q \alpha(x)}\psi(x) \\
-					A_\mu(x) &\rightarrow A_\mu(x) - \frac{1}{q}\partial_\mu\alpha(x) \\
+					\psi(x) &\to \ex^{\i q \alpha(x)}\psi(x) \\
+					A_\mu(x) &\to A_\mu(x) - \frac{1}{q}\partial_\mu\alpha(x) \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Covariant derivative:
 			\begin{equation}
-				\partial_\mu \rightarrow D_\mu = \qty(\partial_\mu - \i q A_\mu) \\
+				\partial_\mu \to D_\mu = \qty(\partial_\mu - \i q A_\mu) \\
 			\end{equation}
 
 			\noindent
@@ -392,7 +392,7 @@
 		$S$-Matrix\index{S-Matrix} (Where $\hat{U}$ is the time evolution operator, and $\hat{T}$ is the scattering term / Transition matrix and $\mathcal{M}$ is the invariant amplitude):
 		\begin{equation}
 			\begin{aligned}
-				\hat{S} &= \lim_{\substack{t\rightarrow\infty\\t_0\rightarrow-\infty}} \hat{U}(t,t_0) = \hat{1} + \i \hat{T} \\
+				\hat{S} &= \lim_{\substack{t \to\infty\\t_0 \to-\infty}} \hat{U}(t,t_0) = \hat{1} + \i \hat{T} \\
 				\mel**{p_{1}p_{2}}{\i \hat{T}}{k_{1}k_{2}} &= \qty(2\pi)^4\delta(p_1 + p_2 - k_1 - k_2) \i \mathcal{M} \\
 			\end{aligned}
 		\end{equation}
@@ -402,15 +402,15 @@
 		\begin{equation}
 			\begin{aligned}
 				\dd \sigma
-				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}} \dd \Pi_\mathrm{LIPS} \\
-				&= \frac{\abs{\mathcal{M}(p_A,p_B\rightarrow\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
+				&= \frac{\abs{\mathcal{M}(p_A,p_B \to\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}} \dd \Pi_\mathrm{LIPS} \\
+				&= \frac{\abs{\mathcal{M}(p_A,p_B \to\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
 			\end{aligned}
 		\end{equation}
 
 		\noindent
 		One-particle decay rate of a particle $A$:
 		\begin{equation}
-			\dd \Gamma = \frac{\abs{\mathcal{M}(p_A\rightarrow\set{p_f})}^2}{2 p_A^0} \dd \Pi_\mathrm{LIPS}
+			\dd \Gamma = \frac{\abs{\mathcal{M}(p_A \to\set{p_f})}^2}{2 p_A^0} \dd \Pi_\mathrm{LIPS}
 		\end{equation}
 
 		\noindent
@@ -428,9 +428,9 @@
 			\begin{aligned}
 				&\hat{H} := \hat{H}_0 + \ex^{-\epsilon \abs{t}} \hat{H}' \\
 				&\hat{H}_0 \Ket{\phi_0} = E_0 + \Ket{\phi_0} \\
-				&\text{if}\quad \lim_{\epsilon\rightarrow 0} \frac{\hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}
+				&\text{if}\quad \lim_{\epsilon\to 0} \frac{\hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}
 				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
-				\Rightarrow&\quad \hat{H} \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} = E \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \\
+				\to&\quad \hat{H} \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} = E \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \\
 			\end{aligned}
 		\end{equation}
 
@@ -874,9 +874,9 @@
 		Gauge Transformation:
 		\begin{equation}
 			\begin{aligned}
-				\psi(x) &\rightarrow \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
-				A_\mu(x) &\rightarrow A'_\mu(x) = A_\mu(x) - \frac{1}{g} \partial_\mu \alpha(x) \\
-				F_{\mu\nu}(x) &\rightarrow F'_{\mu\nu}(x) = F_{\mu\nu}(x)
+				\psi(x) & \to \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
+				A_\mu(x) & \to A'_\mu(x) = A_\mu(x) - \frac{1}{g} \partial_\mu \alpha(x) \\
+				F_{\mu\nu}(x) & \to F'_{\mu\nu}(x) = F_{\mu\nu}(x)
 			\end{aligned}
 		\end{equation}
 
@@ -899,9 +899,9 @@
 			BRST Transformation (Becchi, Rouet, Stora and Tyutin)\index{BRST Transformation}:
 			\begin{equation}
 				\begin{aligned}
-					\phi_i &\rightarrow \phi_i + i\theta c^a T^a_{ij} \phi_j \\
-					A^a_\mu &\rightarrow A^a_\mu + \frac{1}{g}\theta D_\mu c^a \\
-					\bar{c}^a &\rightarrow \bar{c}^a - \frac{1}{g} \theta \frac{1}{\xi} \partial^\mu A^a_\mu \\
+					\phi_i & \to \phi_i + i\theta c^a T^a_{ij} \phi_j \\
+					A^a_\mu & \to A^a_\mu + \frac{1}{g}\theta D_\mu c^a \\
+					\bar{c}^a & \to \bar{c}^a - \frac{1}{g} \theta \frac{1}{\xi} \partial^\mu A^a_\mu \\
 				\end{aligned}
 			\end{equation}
 
@@ -922,7 +922,7 @@
 		\noindent
 		Gauge transformation ($\vec{I}=\frac{1}{2}\sigma$ for doublets and $0$ for singlets):
 		\begin{equation}
-			\Psi \rightarrow \Psi' = \exp(\i g \vec{\omega}(x)\cdot\vec{I}	+ \i g' \omega_0(x) Y) \Psi
+			\Psi \to \Psi' = \exp(\i g \vec{\omega}(x)\cdot\vec{I}	+ \i g' \omega_0(x) Y) \Psi
 		\end{equation}
 
 		\noindent
@@ -999,3 +999,25 @@
 			\item Include an overall energy-momentum conserving delta function
 				for each diagram
 		\end{itemize}
+
+
+
+		% \noindent
+		% Feynman Rules for scalar field theory: \\
+		% \begin{center}
+		% 	\begin{tikzpicture}				
+		% 		\begin{feynman}
+		% 			\vertex(a);
+		% 			\vertex[above left=of a](b){$f^+$};
+		% 			\vertex[below left=of a](c){$f^-$};
+		% 			\vertex[right=of a](d);
+		% 			\vertex[above right=of d](e){$f^+$};
+		% 			\vertex[below right=of d](f){$f^-$};
+		% 			\diagram{
+		% 				(b)--[fermion] (a) -- [fermion](c);
+		% 				(a) --[boson, edge label=$\gamma$, momentum'=$k$] (d);
+		% 				(e)--[fermion] (d) -- [fermion](f);
+		% 				};
+		% 		\end{feynman}
+		% 	\end{tikzpicture}
+		% \end{center}

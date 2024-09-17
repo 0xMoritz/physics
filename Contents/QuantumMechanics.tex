@@ -41,7 +41,7 @@
 				If a measurement of an observable $\hat{A}$ yields the eigenvalue $a_n$, then the state of the system after the measurement will be the normed projection on the subspace to $a_n$
 				\begin{equation}
 					\begin{aligned}
-						\Ket{\psi} &\rightarrow \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
+						\Ket{\psi} & \to \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
 						\hat{P}_n &:= \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu}. \\
 					\end{aligned}
 				\end{equation}
@@ -133,7 +133,7 @@
 		\noindent
 		Classical limit:
 		\begin{equation}
-			\hbar \rightarrow 0
+			\hbar \to 0
 		\end{equation}
 
 		\subsubsection{Continuity Equation}
@@ -214,8 +214,8 @@
 				\Bra{\vec{x}} \hat{\Pi} \Ket{\Psi} :=& \Braket{-\vec{x} | \psi} = \psi(-\vec{x}) \\
 				\hat{\Pi} =& \hat{\Pi}^\dagger\\
 				1 =& \hat{\Pi} \,\hat{\Pi}^\dagger = \hat{\Pi}^\dagger \hat{\Pi} \\
-				\psi(\vec{x}) = \psi(-\vec{x}) \Rightarrow&\; \hat{\Pi}\Ket{\psi} = \Ket{\psi} \\
-				\psi(\vec{x}) = -\psi(-\vec{x}) \Rightarrow&\; \hat{\Pi}\Ket{\psi} = -\Ket{\psi} \\
+				\psi(\vec{x}) = \psi(-\vec{x}) \implies&\; \hat{\Pi}\Ket{\psi} = \Ket{\psi} \\
+				\psi(\vec{x}) = -\psi(-\vec{x}) \implies&\; \hat{\Pi}\Ket{\psi} = -\Ket{\psi} \\
 			\end{aligned}
 		\end{equation}
 
@@ -487,7 +487,7 @@
 			\end{itemize}
 
 			\noindent
-			Energy states of a single electron in an atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) with atomic number $Z$ (Rydberg energy\index{Rydberg!Energie} $\eval{R^*=R_y}_{m_e\rightarrow \mu}$ and reduced mass $\mu$ of the atomic system):
+			Energy states of a single electron in an atom ($\mathrm{H}$, $\mathrm{He^{+}}$, $\mathrm{Li^{2+}}$,...) with atomic number $Z$ (Rydberg energy\index{Rydberg!Energie} $\eval{R^*=R_y}_{m_e \to \mu}$ and reduced mass $\mu$ of the atomic system):
 			\begin{equation}
 				\mathcal{E}_n = -R^* Z^2 \frac{1}{n^2} = -R^* \frac{\mu}{m_e} Z^2 \frac{1}{n^2} = - \frac{\mu e^4}{8 h^2 \varepsilon_0^2} Z^2 \frac{1}{n^2}
 			\end{equation}
@@ -602,7 +602,7 @@
 			\noindent
 			Fermi's golden rule\index{Fermi!Goldene Regel} (First order approximation for the transition rate $P_{fi}$ from the initial state $\Ket{i}$ to the final state $\Ket{f}$ with a periodic perturbation of the form $\hat{H}' = \ex^{\pm\i\omega}$):
 			\begin{equation}
-				P_{fi} = \lim_{t\rightarrow\infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \abs{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\qty(E_f^0 - E_i^0 \pm \hbar\omega)
+				P_{fi} = \lim_{t \to \infty} \frac{W_{fi}(t)}{t} = \frac{2\pi}{\hbar} \abs{\Bra{f^0}\hat{H}'\Ket{i^0}}^2 \delta\qty(E_f^0 - E_i^0 \pm \hbar\omega)
 			\end{equation}
 
 		\subsubsection{Time Dependent Perturbation Theory}
@@ -632,7 +632,7 @@
 		\noindent
 		Lippmann-Schwinger equation\index{Lippmann!-Schwinger Gleichung}
 		\begin{equation}
-			\Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta\rightarrow 0} G_0(\epsilon_{\vec{p},\mu}\pm \i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
+			\Ket{\vec{p},\sigma,\mu,\pm} = \Ket{\vec{p}, \sigma, \mu} + \lim_{\eta \to 0} G_0(\epsilon_{\vec{p},\mu}\pm \i\eta) V \Ket{\vec{p},\sigma,\mu,\pm}
 		\end{equation}
 
 		\noindent

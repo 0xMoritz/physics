@@ -5,7 +5,7 @@
 			\noindent
 			Definition:
 			\begin{equation}
-				\ex^x=\exp(x)=\lim_{n\rightarrow \infty}\qty(1+\frac{x}{n})^n
+				\ex^x=\exp(x)=\lim_{n \to \infty}\qty(1+\frac{x}{n})^n
 			\end{equation}
 
 		\subsubsection{Trigonometric Functions}
@@ -163,7 +163,7 @@
 			Definition and properties functional derivatives ($\mathcal{F}$ is a functional, $\phi(x)$ is a function and $\delta \phi(x)$ is an arbitrary variation of $\phi(x)$. Note that the functional derivative of a functional becomes a function. All important properties are in analogy to regular derivatives.):
 			\begin{equation}
 				\begin{aligned}
-					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\epsilon\rightarrow 0} \frac{	\mathcal{F}\qty[\phi(x) + \epsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\epsilon} \\
+					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\epsilon \to 0} \frac{	\mathcal{F}\qty[\phi(x) + \epsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\epsilon} \\
 					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
 					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\;\dd y \\
 					\dv{z} \fdv{\psi(y)} \phi(x) &= \fdv{\psi(y)} \dv{z} \phi(x) \\
@@ -190,7 +190,7 @@
 			\end{equation}
 
 			\noindent
-			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right]\rightarrow G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \rightarrow \mathbb{C}$ holomorphic,
+			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right] \to G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \to \mathbb{C}$ holomorphic,
 			with poles $a_1, a_2, .., a_n$ inside $\gamma$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
 				\int_\gamma f(z)\;\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
@@ -199,7 +199,7 @@
 			\noindent
 			Cauchy Principal Value\index{Cauchy!Hauptwert} (for a function $f(x)$ with a simple pole at $x=a$):
 			\begin{equation}
-				\mathcal{P}\int_{-\infty}^{\infty} f(x)\;\dd x = \lim_{\epsilon\rightarrow 0} \qty(\int_{-\infty}^{a-\epsilon} f(x)\;\dd x + \int_{a+\epsilon}^{\infty} f(x)\;\dd x)
+				\mathcal{P}\int_{-\infty}^{\infty} f(x)\;\dd x = \lim_{\epsilon \to 0} \qty(\int_{-\infty}^{a-\epsilon} f(x)\;\dd x + \int_{a+\epsilon}^{\infty} f(x)\;\dd x)
 			\end{equation}
 
 			\noindent
@@ -244,7 +244,7 @@
 			\end{equation}
 
 			\noindent
-			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \rightarrow \mathbb{C}$):
+			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \to \mathbb{C}$):
 			\begin{equation}
 				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\dd t
 			\end{equation}
@@ -312,7 +312,7 @@
 			\end{equation}
 
 			\noindent
-			Stirling Formula\index{Stirling!Formula} (Approximation for $n\rightarrow\infty$):
+			Stirling Formula\index{Stirling!Formula} (Approximation for $n \to\infty$):
 			\begin{equation}
 				n! = \Gamma(n+1) \approx \sqrt{2\pi n} \left( \frac{n}{e} \right)^{n}
 			\end{equation}
@@ -355,15 +355,15 @@
 			\noindent
 			Identities:
 			\begin{equation}
-				\lim_{n\rightarrow\infty} \sqrt[n]{n} = 1
+				\lim_{n \to\infty} \sqrt[n]{n} = 1
 			\end{equation}
 
 			\noindent
 			Abel limit theorem\index{Abel!Grenzwertsatz}:
 			\begin{equation}
 				\begin{aligned}
-					\lim_{t\rightarrow+\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_0^\infty \ex^{-\eta t} f(t) \;\dd t \\
-					\lim_{t\rightarrow-\infty} f(t) &= \lim_{\eta\rightarrow 0} \eta \int_{-\infty}^{0} \ex^{+\eta t} f(t) \;\dd t \\
+					\lim_{t \to+\infty} f(t) &= \lim_{\eta \to 0} \eta \int_0^\infty \ex^{-\eta t} f(t) \;\dd t \\
+					\lim_{t \to-\infty} f(t) &= \lim_{\eta \to 0} \eta \int_{-\infty}^{0} \ex^{+\eta t} f(t) \;\dd t \\
 				\end{aligned}
 			\end{equation}
 
@@ -387,7 +387,7 @@
 			\noindent
 			Radius of convergence\index{Konvergenzradius}:
 			\begin{equation}
-				r = \frac{1}{\limsup\limits_{n\rightarrow\infty} \sqrt[n]{\abs{a_n}}} = \lim_{n\rightarrow\infty}\abs{\frac{a_n}{a_{n+1}}}
+				r = \frac{1}{\limsup\limits_{n \to\infty} \sqrt[n]{\abs{a_n}}} = \lim_{n \to\infty}\abs{\frac{a_n}{a_{n+1}}}
 			\end{equation}
 
 			\noindent
@@ -399,7 +399,7 @@
 			\noindent
 			Multivariate Taylor Expansion ($\alpha = (\alpha_1,\dots,\alpha_n)$ is a multi-index with $\abs{\alpha} = \alpha_1 + \cdots + \alpha_n$, $\alpha!=\alpha_1! \cdots \alpha_n!$ and $\vec{x}^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\in\mathbb{R}$):
 			\begin{equation}
-				f(\vec{x}) = \sum_{\abs{\alpha}\le k} \frac{1}{\alpha!} \frac{\partial^{\abs{\alpha}} f(\vec{x}_0)}{\partial x_1^{\alpha_1} \cdots \partial x_n^{\alpha_n}} \qty(\vec{x}-\vec{x}_0)^\alpha + \sum_{\abs{\alpha}=k} h_\alpha(\vec{x})\qty(\vec{x}-\vec{x}_0)^\alpha \quad \text{where} \quad \forall \alpha:\; \lim_{\vec{x}\rightarrow\vec{x}_0} h_\alpha(\vec{x}) = 0 \quad
+				f(\vec{x}) = \sum_{\abs{\alpha}\le k} \frac{1}{\alpha!} \frac{\partial^{\abs{\alpha}} f(\vec{x}_0)}{\partial x_1^{\alpha_1} \cdots \partial x_n^{\alpha_n}} \qty(\vec{x}-\vec{x}_0)^\alpha + \sum_{\abs{\alpha}=k} h_\alpha(\vec{x})\qty(\vec{x}-\vec{x}_0)^\alpha \quad \text{where} \quad \forall \alpha:\; \lim_{\vec{x} \to\vec{x}_0} h_\alpha(\vec{x}) = 0 \quad
 			\end{equation}
 
 			\noindent
@@ -552,7 +552,7 @@
 		\emph{Group} $(G, \diamond)$ (Where $G$ is a group and $\diamond$ is an operation):
 		\begin{equation}
 			\begin{aligned}
-				\diamond: &G \times G \rightarrow G;\, (p,q) \mapsto p\diamond q \\
+				\diamond: &G \times G \to G;\, (p,q) \mapsto p\diamond q \\
 				\text{such that}\; &(p\diamond q)\diamond r = p\diamond (q\diamond r)\quad\forall{p,q,r}\subseteq G \\
 				&\exists e: e\diamond p = p\diamond e = p\quad\forall p\in G\\
 				&\forall p \in G: \exists \inv{p}: p\diamond \inv{p}= \inv{p}\diamond p=e
@@ -560,7 +560,7 @@
 		\end{equation}
 
 		\noindent
-		\emph{Homomorphism} $\phi: G_1 \rightarrow G_2$ (Groups $(G_1,\diamond)$, $(G_2,\diamond)$)
+		\emph{Homomorphism} $\phi: G_1 \to G_2$ (Groups $(G_1,\diamond)$, $(G_2,\diamond)$)
 		\begin{equation}
 			\begin{aligned}
 				\phi(a \diamond b) = \phi(a) \diamond \phi(b) \quad \forall a,b \in G_1
@@ -964,7 +964,7 @@
 			% \begin{equation}
 			% 	T:
 			% \end{equation}
-			In vector analysis: vector $\rightarrow$ vector field, dual vector $\rightarrow$ differential form.
+			In vector analysis: vector $\to$ vector field, dual vector $\to$ differential form.
 
 		\subsubsection{Differential Forms}
 			TODO:
@@ -1327,7 +1327,7 @@
 		\subsubsection{Continuous Distributions}
 			\noindent
 			Central limit theorem\index{Zentraler Grenzwertsatz}: \par
-			\emph{The sum of $n$ independent continuous random variables with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n\rightarrow \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
+			\emph{The sum of $n$ independent continuous random variables with expectation value $\mu_j$ and finite variances $\sigma_j^2$ converge in the limit $n \to \infty$ to a normal distribution with $\mu = \sum_j \mu_j$ and $\sigma^2 = \sum_j \sigma_j^2$.} \vsp
 
 			\noindent
 			Normal distribution\index{Gauß!Verteilung}:

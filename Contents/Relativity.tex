@@ -84,40 +84,34 @@
 
 			\noindent
 			Riemann curvature tensor\index{Riemann!Krümmungstensor}:
-			\begin{equation}
-				\begin{aligned}
-					R^{\lambda}{}_{\sigma\mu\nu} &=
-					\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma} -
-					\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma} +
-					\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma} -
-					\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma} \\
-					R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\qty(
-					\partial_\sigma \partial_\mu g_{\lambda\nu} - \partial_\sigma \partial_\nu g_{\lambda\mu} + \partial_\lambda \partial_\nu g_{\sigma\mu} - \partial_\lambda \partial_\mu g_{\sigma\nu})
-					+ g_{\alpha\beta} \qty(
-					\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda})
-					\\
-					R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \qty(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu) v^\lambda = \nabla_{\left[\mu\right.}\nabla_{\left.\nu\right]} v^\lambda
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				R^{\lambda}{}_{\sigma\mu\nu} &=
+				\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma} -
+				\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma} +
+				\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma} -
+				\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma} \\
+				R_{\lambda\sigma\mu\nu} &= \frac{1}{2}\qty(
+				\partial_\sigma \partial_\mu g_{\lambda\nu} - \partial_\sigma \partial_\nu g_{\lambda\mu} + \partial_\lambda \partial_\nu g_{\sigma\mu} - \partial_\lambda \partial_\mu g_{\sigma\nu})
+				+ g_{\alpha\beta} \qty(
+				\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda})
+				\\
+				R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \qty(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu) v^\lambda = \nabla_{\left[\mu\right.}\nabla_{\left.\nu\right]} v^\lambda
+			\end{align}
 
 			\noindent
 			Symmetries of the curvature tensor:
-			\begin{equation}
-				\begin{aligned}
-					R_{\lambda\sigma\mu\nu} &= - R_{\lambda\sigma\nu\mu} \\
-					R_{\lambda\sigma\mu\nu} &= \phantom{-} R_{\mu\nu\lambda\sigma} \\
-					R_{\lambda\sigma\mu\nu} &= - R_{\sigma\lambda\mu\nu} \\
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				R_{\lambda\sigma\mu\nu} &= - R_{\lambda\sigma\nu\mu} \\
+				R_{\lambda\sigma\mu\nu} &= \phantom{-} R_{\mu\nu\lambda\sigma} \\
+				R_{\lambda\sigma\mu\nu} &= - R_{\sigma\lambda\mu\nu}
+			\end{align}
 
 			\noindent
 			Bianchi Identities\index{Bianchi!Identitäten}:
-			\begin{equation}
-				\begin{aligned}
-					0 &= R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} \\
-					0 &= \nabla_\gamma R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta} + \nabla_\alpha R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma} + \nabla_\beta R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha} \\
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				0 &= R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} \\
+				0 &= \nabla_\gamma R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta} + \nabla_\alpha R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma} + \nabla_\beta R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha}
+			\end{align}
 
 			\noindent
 			Ricci-Tensor\index{Ricci!Tensor}:
@@ -146,16 +140,14 @@
 
 			\noindent
 			Einstein field equations and equivalent formulations\index{Einstein!Feldgleichungen}:
-			\begin{equation}
-				\begin{aligned}
-					G_{\mu\nu} + \Lambda g_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
-					R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
-					R_{\mu\nu} - \Lambda g_{\mu\nu}&= \frac{8\pi G}{c^4} \qty( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} ) \\
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				G_{\mu\nu} + \Lambda g_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
+				R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} &= \frac{8\pi G}{c^4} T_{\mu\nu} \\
+				R_{\mu\nu} - \Lambda g_{\mu\nu}&= \frac{8\pi G}{c^4} \qty( T_{\mu\nu} - \frac{1}{2} T g_{\mu\nu} )
+			\end{align}
 
 			\noindent
-			Energy momentum tensor (Where $S_M$ is the matter action):
+			Energy-momentum tensor (Where $S_M$ is the matter action):
 			\begin{equation}
 				T_{\mu\nu} = -\frac{1}{\sqrt{-g}} \fdv{S_M}{g^{\mu\nu}}
 			\end{equation}
@@ -203,7 +195,7 @@
 		\subsubsection{Gauge Freedom}
 			General gauge freedom (choice of coordinates):
 			\begin{equation}
-				x^\mu \rightarrow x^\mu + \xi^\mu
+				x^\mu \to x^\mu + \xi^\mu
 			\end{equation}
 
 			\noindent
@@ -240,8 +232,8 @@
 			Killing's Equation\index{Killing!Gleichung}:
 			\begin{equation}
 				\begin{aligned}
-					\nabla_{\left(\mu\right.} V_{\left.\nu\right)} &= 0 \\
-					\Rightarrow u^\nu \nabla_\nu (V_\mu u^\mu) &= 0
+					\nabla_{\left(\mu\right.} V_{\left.\nu\right)} &= 0
+					\implies u^\nu \nabla_\nu (V_\mu u^\mu) &= 0
 				\end{aligned}
 			\end{equation}
 
@@ -262,7 +254,7 @@
 			\end{equation}
 
 			\noindent
-			Energy momentum tensor for an ideal fluid:
+			Energy-momentum tensor for an ideal fluid:
 			\begin{equation}
 				T_{\mu\nu} = (\rho + p)u_\mu u_\nu + p g_{\mu\nu}
 			\end{equation}
@@ -346,7 +338,7 @@
 			\noindent
 			Residual gauge freedom:
 			\begin{equation}
-				h_{\mu\nu} \rightarrow h_{\mu\nu} + \partial_\mu \xi_\nu + \partial_\nu \xi_\mu
+				h_{\mu\nu} \implies h_{\mu\nu} + \partial_\mu \xi_\nu + \partial_\nu \xi_\mu
 			\end{equation}
 
 			\noindent
@@ -405,7 +397,7 @@
 			\end{equation}
 
 			\noindent
-			Quadrupole expansion of the gravitational wave (Assuming the movement of the source is negligible with regard to the distance $\delta R \ll R=\abs{\vec{x}}$ and that other components of the energy momentum tensor are unimportant. $q_{ij}$ is the quadrupole, $T^{00}$ is the energy density):
+			Quadrupole expansion of the gravitational wave (Assuming the movement of the source is negligible with regard to the distance $\delta R \ll R=\abs{\vec{x}}$ and that other components of the energy-momentum tensor are unimportant. $q_{ij}$ is the quadrupole, $T^{00}$ is the energy density):
 			\begin{equation}
 				\begin{aligned}
 					\tilde{\bar{h}}_{ij}(\omega,\vec{x}) &= -\frac{2G\omega^2}{3}\frac{\ex^{\i\omega R}}{R} \tilde{q}_{ij}(\omega) \\
@@ -423,7 +415,7 @@
 
 	\subsection{Special Relativity\index{Spezielle Relativitätstheorie}}
 		\noindent
-		Special Relativity\index{Spezielle Relativitätstheorie} is a limiting case of General Relativity for flat spacetime, it can be realized by $G \rightarrow 0$. In Special Relativity the Metric\index{Metrischer Tensor} is constant.
+		Special Relativity\index{Spezielle Relativitätstheorie} is a limiting case of General Relativity for flat spacetime, it can be realized by $G \to 0$. In Special Relativity the Metric\index{Metrischer Tensor} is constant.
 
 		\noindent
 		Minkowski-Metric\index{Minkowski!Metrik}:
@@ -441,13 +433,13 @@
 		\noindent
 		Classical Limit\index{Klassischer Grenzfall}:
 		\begin{equation}
-			c \rightarrow \infty
+			c \to \infty
 		\end{equation}
 
 		\noindent
 		Ultrarelativistic limit\index{Ultrarelativistischer Grenzfall}:
 		\begin{equation}
-			v\rightarrow c
+			v \to c
 		\end{equation}
 
 		\subsubsection{Definitions}
@@ -547,7 +539,7 @@
 				\begin{aligned}
 					\psi_{\text{tot.}} &= \psi_1+\psi_2 \\
 					\vec{v}_{\text{tot.}} &= \frac{\vec{v}_1+\vec{v}_{2\parallel}+\vec{v}_{2\perp}\sqrt{1-\dfrac{\vec{v}_1^2}{c^2}}}{1+\dfrac{\vec{v}_1\cdot\vec{v}_2}{c^2}} \\
-					\vec{v}_1\parallel\vec{v}_2 \;\Rightarrow\; v_{\text{tot.}} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
+					\vec{v}_1\parallel\vec{v}_2 \implies v_{\text{tot.}} &= \frac{v_1+v_2}{1+\dfrac{v_1 v_2}{c^2}}
 				\end{aligned}
 			\end{equation}
 
@@ -561,7 +553,7 @@
 			\end{equation}
 
 			\noindent
-			Energy momentum relation\index{Energie-Impuls-Relation}:
+			Energymomentum relation\index{Energie-Impuls-Relation}:
 			\begin{equation}
 				\begin{aligned}
 					P^\mu P_\mu &= m^2 c^2\\
