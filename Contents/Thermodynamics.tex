@@ -485,6 +485,36 @@
 			Similar to the phonon gas of Sec.~\ref{Sec:PhononGas}, Planck found a description of a photonic gas for a black body\index{Planck!Strahler}. \vsp
 
 			\noindent
+			Planck's law\index{Planck!Strahlungsgesetz} (For the spectral energy density $\pdv{u}{\omega}$):
+			\begin{equation}
+				\begin{aligned}
+					\pdv{u}{\omega}(\omega,T) &= \frac{\hbar}{\pi^2 c^3} \frac{\omega^3}{\ex^{\hbar \omega / \kB T} - 1} \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Planck's law\index{Planck!Strahlungsgesetz} for the specific intensity / spectral radiance (Energy per time per area per solid angle):
+			\begin{equation}
+				B_\omega = \frac{c}{4\pi} \pdv{u}{\omega}
+				= \frac{\hbar}{4 \pi^3 c^2} \frac{\omega^3}{\ex^{\hbar \omega / \kB T} - 1}
+			\end{equation}
+
+			\noindent
+			Wien's displacement law\index{Wien!Verschiebungsgesetz} (For the wavelength or frequency of the $\lambda_{\max}$ emission maximum; $x_\lambda=4.965\,511\dots$ solves $(x_\lambda-5)\ex^{x_\lambda}+5=0$, and $x_f\approx2.821\,439\dots$ solves $(3-x_f)\ex^{x_f}+3=0$):
+			\begin{equation}
+				\begin{aligned}
+					\lambda_{\max} \kB T &= \frac{h c}{x_\lambda} = \const \\
+					h f_{\max} &= \kB T x_f = \const \\
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Stefan-Boltzmann law\index{Stefan!-Boltzmann Gesetz} (Intensity / emission power per surface area $I$, Stefan-Boltzmann constant $\sigma$ and emission coefficient $\epsilon$; $\epsilon=1$ in case of a black body):
+			\begin{equation}
+				I = \epsilon\sigma T^4
+			\end{equation}
+
+			\noindent
 			Internal energy (Stefan-Boltzmann constant\index{Stefan!-Boltzmann Konstante} $\sigma$):
 			\begin{equation}
 				U = \frac{4\sigma}{c} V T^4
@@ -497,27 +527,9 @@
 			\end{equation}
 
 			\noindent
-			Planck's law\index{Planck!Strahlungsgesetz} (For the spectral energy density $\pdv{u}{\omega}$):
+			Photon density (where $\zeta$ is the Riemann zeta function\index{Riemann!Zeta Funktion}):
 			\begin{equation}
-				\begin{aligned}
-					\pdv{u}{\omega}(\omega,T) &= \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{\ex^{\hbar \omega / \kB T} - 1} \\
-					\pdv{u}{\nu} (\nu, T) &= \frac{8 \pi h \nu^3}{c^3} \frac{1}{\ex^{h \nu / \kB T} - 1} \\
-				\end{aligned}
-			\end{equation}
-
-			\noindent
-			Stefan-Boltzmann law\index{Stefan!-Boltzmann Gesetz} (Intensity / emission power per surface area $I$, Stefan-Boltzmann constant $\sigma$ and emission coefficient $\epsilon$; $\epsilon=1$ in case of a black body):
-			\begin{equation}
-				I = \epsilon\sigma T^4
-			\end{equation}
-
-			\noindent
-			Wien's displacement law\index{Wien!Verschiebungsgesetz} (For the wavelength or frequency of the $\lambda_{\max}$ emission maximum; $x_\lambda$ solves $(x_\lambda-5)\ex^{x_\lambda}+5=0$, $x_f$ solves $(3-x_f)\ex^{x_f}+3=0$):
-			\begin{equation}
-				\begin{aligned}
-					\lambda_{\max} \kB T &= \frac{h c}{x_\lambda} = \const \\
-					h f_{\max} &= \kB T x_f = \const \\
-				\end{aligned}
+				n_\gamma(T) = \frac{2\zeta(3)}{\pi^2} \qty(\frac{\kB T}{\hbar c})^3
 			\end{equation}
 
 		\subsubsection{Ideal Paramagnetism}
