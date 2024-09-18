@@ -23,6 +23,7 @@
         "Covolume",
         "Debye",
         "dielectricities",
+        "Dielectricity",
         "Donder",
         "Duhem",
         "Ehrenfest",
@@ -39,6 +40,7 @@
         "Gaußian",
         "Gell",
         "Graßmann",
+        "grav",
         "Gyroradius",
         "Hankel",
         "Hassler",
@@ -99,6 +101,7 @@
         "Stora",
         "subgauge",
         "subshell",
+        "Sunyaev",
         "supremum",
         "Symanzik",
         "Tangens",
@@ -114,6 +117,7 @@
         "Yukawa",
         "Zeeman",
         "Zeemann",
+        "Zeldovich",
         "Zimmermann"
     ],
     "latex-workshop.latexindent.args": [

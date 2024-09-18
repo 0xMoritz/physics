@@ -276,7 +276,7 @@
 			\end{equation}
 
 			\noindent
-			Magnetic part of the energy-momentum tensor:
+			Magnetic part of the stress-energy tensor:
 			\begin{equation}
 				\bar{T}_m = -\frac{1}{4\pi} \qty(\vec{B} \otimes \vec{B} - \frac{1}{2}\vec{B}^2 1_3)
 			\end{equation}
@@ -291,6 +291,19 @@
 			Euler's equation\index{Euler!Gleichung} for an ideal fluid:
 			\begin{equation}
 				\rho \dv{\vec{v}}{t} = - \Nabla P + \frac{1}{4\pi}\qty(\Nabla\times\vec{B})\times\vec{B}
+				= - \Nabla P + \frac{1}{4\pi} \qty(\vec{B} \cdot \Nabla) \vec{B} - \frac{1}{8\pi} \Nabla \vec{B}^2
+			\end{equation}
+
+		\subsubsection{Waves in Cold Magnetized Plasma}
+			Dielectricity tensor (where $w_P = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = 1_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
+			\begin{equation}
+				\varepsilon = \qty(1 - w_p^2) \pi_\parallel + \qty(1-\frac{w_p^2}{1-w_L^2})\pi_\perp + \i \frac{w_p^2 w_L}{1-w_L^2} \hat{\mathcal{B}}
+			\end{equation}
+
+			\noindent
+			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd z\, n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
+			\begin{equation}
+				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd z\, n_e B_\parallel
 			\end{equation}
 
 
