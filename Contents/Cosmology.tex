@@ -28,8 +28,8 @@
 		Friedmann equations (Applying the FLRW metric to the Einstein equations, using an ideal, motionless fluid $T^\mu_\nu = \text{diag}(-\rho, p, p, p)$):
 		\begin{equation}
 			\begin{aligned}
-				\qty(\frac{\dot{a}}{a})^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} + \frac{\Lambda}{3} \\
-				\frac{\ddot{a}}{a} &= -\frac{4 \pi G}{3} \qty(\rho + \frac{3p}{c^2}) + \frac{\Lambda}{3} \\
+				\qty(\frac{\dot{a}}{a})^2 &= \frac{8 \pi G}{3} \rho - \frac{K c^2}{a^2} + \frac{\Lambda c^2}{3} \\
+				\frac{\ddot{a}}{a} &= -\frac{4 \pi G}{3} \qty(\rho + \frac{3p}{c^2}) + \frac{\Lambda c^2}{3} \\
 			\end{aligned}
 		\end{equation}
 
@@ -40,7 +40,7 @@
 		\end{equation}
 
 		\noindent
-		Comoving coordinates $\vec{x}$, in relation to real coordinates $\vec{r}$:
+		Comoving coordinates $\vec{x}$, in relation to real coordinates $\vec{r}$ and Hubble's law\index{Hubble!Gesetz}:
 		\begin{equation}
 			\vec{r} = a(t) \vec{x}
 			\hsp
@@ -67,9 +67,9 @@
 		\end{equation}
 
 		\noindent
-		General Friedmann Equation (Where $i$ indexes different energy density contributions with equation of state $p_i = w_i \rho_i c^2$ and $\Omega_i = \frac{\rho_i}{\rho_\text{cr.}}$):
+		General Friedmann Equation (Where $i$ indexes different energy density contributions with equation of state $p_i = w_i \rho_i c^2$ and $\Omega_i = \frac{\rho_i}{\rho_\text{cr.}}$ are the density parameters):
 		\begin{equation}
-			H^2 = H_0^2\sum_i \Omega_i a^{-3(1+w)}
+			H^2 = H_0^2\sum_i \Omega_i a^{-3(1+w)} = H_0^2 E^2(a)
 		\end{equation}
 		most prominent components are matter ($w=0$), radiation ($w=\frac{1}{3}$), dark energy / cosmological constant ($w=-1$, with $\rho_\Lambda = \frac{\Lambda}{8\pi G}$) and the curvature term ($\Omega_{k,0}=-\frac{k c^2}{a^2 H^2}$).
 		\begin{equation}
@@ -133,6 +133,13 @@
 			\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
 			\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
 			\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
+			\item \emph{Sachs-Wolfe effect\index{Sachs-Wolfe Effekt}}: CMB photons lose energy when climbing out of a potential well created by dark matter aggregates, leading to a redshift.
+			\item \emph{Sunyaev-Zeldovich effect\index{Sunyaev-Zel'Dovich Effekt}}: CMB photons gain energy by inverse Compton scattering\index{Compton!Streuung} when passing through hot plasma, leading to a blue shift.
+			\item \emph{Recombination}: Electrons and protons combine to form neutral hydrogen, leading to the decoupling of photons from matter.
+			\item \emph{Reionization}: Ionizing radiation from the first stars and galaxies ionize hydrogen and helium.
+			\item \emph{Reheating}: Shortly after inflation, the temperature returns to the pre-inflationary temperature, thereby creating standard model particles in the decay of the large potential energy of the inflaton field.
+			\item \emph{Baryon Acoustic Oscillations}: Imprint of oscillations in the baryon-photon fluid (contracting due to gravity and expanding due to radiation pressure) left on the CMB and cosmic structures.
+			\item \emph{Silk damping}: Baryon structures which are to small are damped by photon diffusion.
 		\end{itemize}
 
 		\noindent
@@ -172,16 +179,16 @@
 				\end{equation}
 			\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble velocity reaches $c$,
 				\begin{equation}
-					c = x H
+					c = r H
 				\end{equation}
 				Note that information can still reach an observer because the Hubble sphere is expanding.
 		\end{itemize}
 
-		% \noindent  TODO
-		% Conformal time (Radius of the particle horizon divided by $c$):
-		% \begin{equation}
-		% 	\dd \tau := \frac{\dd t}{a(t)}
-		% \end{equation}
+		\noindent
+		Conformal time (makes the metric look nicer):
+		\begin{equation}
+			\dd \tau := \frac{\dd t}{a(t)}
+		\end{equation}
 
 		\subsubsection{Dynamical Dark Energy}
 			TODO
@@ -217,3 +224,27 @@
 				\hsp
 				\eta := \frac{c^2}{8\pi G} \frac{V''}{V} \ll 1
 			\end{equation}
+
+	\subsection{Structure Formation}
+		density contrast:
+		\begin{equation}
+			\delta  = \frac{\delta \rho}{\bar{\rho}} = \frac{ \rho - \bar{\rho}}{\bar{\rho}}
+		\end{equation}
+
+		\noindent
+		Jeans length / Jeans instability\index{Jeans!Kriterium} (mean molecular mass $\mu$):
+		\begin{equation}
+			\lambda_J = \sqrt{\frac{18 \kB T}{4\pi G \mu \rho}}
+		\end{equation}
+
+		\noindent
+		Press-Schechter mass function\index{Press-Schechter Massenfunktion} 
+		\begin{equation}
+			TOD
+		\end{equation}
+
+		\noindent
+		Navaro Frank white profile
+		\begin{equation}
+			TODO
+		\end{equation}
