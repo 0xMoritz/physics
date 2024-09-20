@@ -226,25 +226,63 @@
 			\end{equation}
 
 	\subsection{Structure Formation}
-		density contrast:
+		Density contrast:
 		\begin{equation}
-			\delta  = \frac{\delta \rho}{\bar{\rho}} = \frac{ \rho - \bar{\rho}}{\bar{\rho}}
+			\delta  = \frac{\delta \rho}{\rho_0} = \frac{ \rho - \bar{\rho}}{\rho_0}
 		\end{equation}
 
 		\noindent
-		Jeans length / Jeans instability\index{Jeans!Kriterium} (mean molecular mass $\mu$):
+		Linearized equations of motion for the density contrast (linearized and Newtonian approximations applied and put into comoving coordinates $\vec{x}$; $\vec{u} = \delta\vec{v}/a$):
 		\begin{equation}
-			\lambda_J = \sqrt{\frac{18 \kB T}{4\pi G \mu \rho}}
+			\begin{aligned}
+				\dot{\delta} + \partial_{\vec{x}} \cdot \vec{u} &= 0 
+				&
+				\dot{\vec{u}} + 2 H \vec{u} &= \frac{\partial_{\vec{x}} \delta p}{a^2 \rho_0} - \frac{\partial_{\vec{x}} \delta \phi}{a^2} \\
+				{\partial_{\vec{x}}}^2 \delta \phi &= 4 \pi G \rho_0 a^2 \delta
+				&
+				\delta p &= c_s^2 \rho_0 \delta 
+			\end{aligned}
 		\end{equation}
 
 		\noindent
-		Press-Schechter mass function\index{Press-Schechter Massenfunktion} 
+		Time evolution of the density contrast:
 		\begin{equation}
-			TOD
+			\ddot{\delta} + 2 H \dot{\delta} = 4 \pi G \rho_0 \delta + \frac{c_s^2 \partial_{\vec{x}}^2 \delta}{a^2}
 		\end{equation}
 
 		\noindent
-		Navaro Frank white profile
+		Jeans length / Jeans instability\index{Jeans!Kriterium} (Critical extend, above which a cloud of gas will gravitationally collapse; assumes $H=0$; mean molecular mass $\mu$):
+		\begin{equation}
+			\lambda_J = \frac{c_s}{a} \sqrt{\frac{\pi}{G \rho_0}}
+		\end{equation}
+
+		\noindent
+		Power spectrum $P$, correlation function $\xi$ and variance $\sigma^2$ of the density perturbations $P(k)$:
+		\begin{align}
+			\avg{\hat{\delta}(\vec{k}) \hat{\delta}^{*}(\vec{k}')} &=: (2\pi)^3 P(k) \delta (\vec{k}-\vec{k}') \\
+			\avg{\delta(\vec{x} + \vec{y}) \delta(\vec{x})} &=: \xi(y) = \int \frac{\dd^3 k}{(2\pi)^3} P(k) \ex^{\i \vec{k} \cdot \vec{y}}\\
+			\sigma^2 &:= 4\pi\int \frac{k^2 \dd k}{(2 \pi)^3} P(k)
+		\end{align}
+
+		\noindent
+		Harrison-Zeldovich-Peebles spectrum\index{Harrison-Zeldovich-Peebles Spektrum} (scale-invariant CMB spectrum; $a_{\text{eq}}$ denotes equality of radiation and matter density):
+		\begin{equation}
+			P(k) \sim 
+			\begin{cases}
+				k & k < k_0\\k^{-3} & k > k_0
+			\end{cases}
+			\hsp
+			k_0 = 2\pi{\frac{H_{0}}{c}}\,{\sqrt{\frac{2\Omega_{\mathrm{m0}}}{a_{\mathrm{eq}}}}}=2\pi{\frac{H_{0}}{c}}\Omega_{\mathrm{m0}}\,{\sqrt{\frac{2}{\Omega_{\mathrm{r0}}}}}
+		\end{equation}
+
+		\noindent
+		Press-Schechter mass function\index{Press-Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2 = 4\pi\int\frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}_R^2(k)$ with some window function $\hat{W}(k)$, $D_+(a) = \delta/\delta_0$ is the growth factor of the linear density contrast):
+		\begin{equation}
+			N(M,a) \,\dd M = \sqrt{\frac{2}{\pi}} \frac{\rho_0 \delta_c}{\sigma_R D_{+}(a)} \dv{\ln\sigma_R}{M} \exp(-\frac{\delta_c^2}{2 \sigma_R^2 D_{+}^2(a)}) \frac{\dd M}{M}
+		\end{equation}
+
+		\noindent
+		Navarro-Frenk-White profile\index{Navarro!-Frenk-White Profil}
 		\begin{equation}
 			TODO
 		\end{equation}
