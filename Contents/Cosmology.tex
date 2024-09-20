@@ -10,7 +10,7 @@
 	\emph{Cosmological time} is the proper time measured by an observer at rest \wrt the local matter distribution.
 
 	\subsection{FLRW Universe}
-		Friedmann-Lemaitre-Robertson-Walker metric:
+	Friedmann--Lemaitre--Robertson--Walker metric\index{Friedmann Alexander!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Lemaitre, Georges!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Robertson, Howard Percy!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Walker, Arthur Geoffrey!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{FLRW Metrik}:
 		\begin{equation}
 			\dd s^2 = -\dd t^2 + a^2(t) \qty[\frac{\dd r^2}{1-kr^2} + r^2 \dd \Omega^2]
 			\hsp
@@ -133,8 +133,9 @@
 			\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
 			\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
 			\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
-			\item \emph{Sachs-Wolfe effect\index{Sachs-Wolfe Effekt}}: CMB photons lose energy when climbing out of a potential well created by dark matter aggregates, leading to a redshift.
-			\item \emph{Sunyaev-Zeldovich effect\index{Sunyaev-Zel'Dovich Effekt}}: CMB photons gain energy by inverse Compton scattering\index{Compton!Streuung} when passing through hot plasma, leading to a blue shift.
+			\item \emph{Sachs--Wolfe effect\index{Sachs!--Wolfe Effekt}\index{Wolfe!Sachs--Wolfe Effekt}}: CMB photons at the surface of last scattering lose energy when climbing out of a potential well created by dark matter aggregates $\delta \hat{T} / \hat{T} = -\delta \hat{\phi} / 3c$, leading to a redshift.
+			\item \emph{Non-integrated Sachs--Wolfe effect}
+			\item \emph{Sunyaev--Zeldovich effect\index{Sunyaev, Rashid!Sunyaev--Zeldovich Effekt}\index{Zeldovich, Yakov!Sunyaev--Zeldovich Effekt}\index{SZ Effekt}}: CMB photons gain energy by inverse Compton scattering\index{Compton!Streuung} when passing through hot plasma, leading to a blue shift.
 			\item \emph{Recombination}: Electrons and protons combine to form neutral hydrogen, leading to the decoupling of photons from matter.
 			\item \emph{Reionization}: Ionizing radiation from the first stars and galaxies ionize hydrogen and helium.
 			\item \emph{Reheating}: Shortly after inflation, the temperature returns to the pre-inflationary temperature, thereby creating standard model particles in the decay of the large potential energy of the inflaton field.
@@ -265,7 +266,7 @@
 		\end{align}
 
 		\noindent
-		Harrison-Zeldovich-Peebles spectrum\index{Harrison-Zeldovich-Peebles Spektrum} (scale-invariant CMB spectrum; $a_{\text{eq}}$ denotes equality of radiation and matter density):
+		Harrison--Zeldovich--Peebles spectrum\index{Harrison!--Zeldovich--Peebles Spektrum}\index{Zeldovich!Harrison--Zeldovich--Peebles Spektrum}\index{Peebles!Harrison--Zeldovich--Peebles Spektrum} (scale-invariant CDM fluctuation spectrum; $a_{\text{eq}}$ denotes equality of radiation and matter density):
 		\begin{equation}
 			P(k) \sim 
 			\begin{cases}
@@ -276,13 +277,14 @@
 		\end{equation}
 
 		\noindent
-		Press-Schechter mass function\index{Press-Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2 = 4\pi\int\frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}_R^2(k)$ with some window function $\hat{W}(k)$, $D_+(a) = \delta/\delta_0$ is the growth factor of the linear density contrast):
+		Press--Schechter mass function\index{Press!--Schechter Massenfunktion}\index{Schechter!Press--Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2 = 4\pi\int\frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}_R^2(k)$ with some window function $\hat{W}(k)$, $D_+(a) = \delta/\delta_0$ is the growth factor of the linear density contrast):
 		\begin{equation}
 			N(M,a) \,\dd M = \sqrt{\frac{2}{\pi}} \frac{\rho_0 \delta_c}{\sigma_R D_{+}(a)} \dv{\ln\sigma_R}{M} \exp(-\frac{\delta_c^2}{2 \sigma_R^2 D_{+}^2(a)}) \frac{\dd M}{M}
 		\end{equation}
 
 		\noindent
-		Navarro-Frenk-White profile\index{Navarro!-Frenk-White Profil}
-		\begin{equation}
-			TODO
-		\end{equation}
+		Navarro--Frenk--White profile\index{Navarro!--Frenk--White Profil}\index{Frenk!Navarro--Frenk--White Profil}\index{White!Navarro--Frenk--White Profil}\index{NFW-Profil} (typical density profile of dark matter halos; $x=r/r_s$ where $r_s$ is the characteristic scale radius):
+		\begin{align}
+			\rho(r) &= \frac{\rho_s}{x(1+x)^2} \\
+			M(r) &= 4\pi \rho_s r_s^3 \qty[\ln(1+x) - \frac{x}{1+x}]
+		\end{align}
