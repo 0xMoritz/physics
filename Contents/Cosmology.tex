@@ -288,3 +288,80 @@
 			\rho(r) &= \frac{\rho_s}{x(1+x)^2} \\
 			M(r) &= 4\pi \rho_s r_s^3 \qty[\ln(1+x) - \frac{x}{1+x}]
 		\end{align}
+
+		\noindent
+		Variance of the power spectrum (where the window function $\hat{W}_R$ is usually a top-hat function of radius $R$, \eg $R=8h^{-1}\unit{Mpc}$ for $\sigma_8$):
+		\begin{equation}
+			\sigma_R^2 = \int_{0}^{\infty} \frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}^2_R(k) 
+		\end{equation}
+
+		\noindent
+		Filtered density contrast:
+		\begin{equation}
+			\bar{\delta} := \int \dd^3 y \, \delta(\vec{x}) W_R(\abs{\vec{x}-\vec{y}})
+		\end{equation}
+
+	\subsection{Observations}
+		\subsubsection{Gravitational Lensing}
+			Refractive index (Using the weak field approximation Eq.~\ref{eq:WeakFieldMetric})
+			\begin{equation}
+				n = \frac{c}{v} = 1 + \frac{2 \phi}{c^2} + \mathcal{O}\qty(\frac{\phi^2}{c^4})
+			\end{equation}
+
+			\noindent
+			Lensing potential
+			\begin{equation}
+				\psi (\vec{\theta})  = \frac{2}{c^2} \frac{d_{ds}}{d_d d_s} \int \phi(\vec{\theta}, z) \, \dd z
+			\end{equation}
+
+			\noindent
+			Reduced deflection angle
+			\begin{equation}
+				\hat{\vec{\alpha}}
+				= \Nabla_{\vec{\theta}} \psi(\vec{\theta})
+				= \int \Nabla_\perp n \, \dd z
+				= \frac{2}{c^2} \int \Nabla_\perp \phi \, \dd z
+			\end{equation}
+
+			\noindent
+			Convergence $\kappa$ (quantifies the )
+			\begin{equation}
+				\kappa = \frac{1}{2} \Nabla_{\vec{\theta}}^2 \psi(\vec{\theta})
+			\end{equation}
+
+			\noindent
+			Jacobian matrix of the linearized lens equation (decomposed in magnification $(1-\kappa) 1_{2}$ and shear $\gamma =\gamma_1 + \i \gamma_2$ ):
+			\begin{equation}
+				A := \dv{\vec{\beta}}{\vec{\theta}} = \mqty(
+				1 - \kappa - \gamma_1 & -\gamma_2 \\
+				-\gamma_2 & 1 - \kappa + \gamma_1)
+			\end{equation}
+
+			\noindent
+			Magnification:
+			\begin{equation}
+				\mu  =\frac{1}{\det^2 A} = \frac{1}{(1-\kappa)^2 - \gamma^2} = \frac{\Omega}{\Omega_0}
+			\end{equation}
+
+			\noindent
+			Change of solid angle (Spherical structure will become an ellipse with semi-axes $a$ and $b$):
+			\begin{equation}
+				\begin{aligned}
+					\Omega_0 &= \pi r^2 \to \Omega = \pi a b = \mu \pi r^2 \\
+					a &= \frac{r}{1-\kappa-\gamma} \hsp b = \frac{r}{1-\kappa+\gamma}
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Lens equation (where $\vec{\theta}$ is the observed angle, $\vec{\beta}$ is the true angle, $\vec{\alpha}$ is the deflection angle, $\hat{\vec{\alpha}}$ is the reduced deflection angle, $d_{ds}$ is the distance between the deflector or lens and the source, $d_{os}$ is the distance between the observer and the source):
+			\begin{equation}
+				\vec{\beta}(\vec{\theta})
+				= \vec{\theta} - \frac{d_{ds}}{d_{os}} \vec{\alpha}(\vec{\theta})
+				= \vec{\theta} - \hat{\vec{\alpha}}(\vec{\theta})
+			\end{equation}
+
+			\noindent
+			Time delay / Shapiro delay\index{Shapiro!Verzögerung}(integrated along the path from source to observer):
+			\begin{equation}
+				\Delta t = \int_{s}^{0} \frac{2}{c^3} \abs{\phi} \, \dd z
+			\end{equation}
