@@ -471,47 +471,47 @@
 				\sum_{n=-\infty}^{\infty} c_n d_n^* = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)g^*(x)\;\dd x
 			\end{equation}
 
-	\subsection{Continuous Fourier Analysis\index{Fourier!Analyse}}
-		\noindent
-		Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
-		\begin{equation}
-			\begin{aligned}
-				(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
-				\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
-			\end{aligned}
-		\end{equation}
+		\subsubsection{Continuous Fourier Analysis\index{Fourier!Analyse}}
+			\noindent
+			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
+			\begin{equation}
+				\begin{aligned}
+					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
+					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
-		\begin{equation}
-			\begin{aligned}
-				\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
-				\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
-				\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\;\dd k
-				\label{Eq:FourierIdentities}
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
+					\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
+					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\;\dd k
+					\label{Eq:FourierIdentities}
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		Plancherel's theorem\index{Plancherel!Theorem}:
-		\begin{equation}
-			\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x =
-			\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k
-		\end{equation}
+			\noindent
+			Plancherel's theorem\index{Plancherel!Theorem}:
+			\begin{equation}
+				\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x =
+				\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k
+			\end{equation}
 
-		\noindent
-		Further properties:
-		\begin{equation}
-			\begin{aligned}
-				f(x)\text{ is purely real} &\iff \tilde{f}(-k) = \phantom{-}\tilde{f}^*(k) \\
-				f(x)\text{ is purely imaginary} &\iff \tilde{f}(-k) = -\tilde{f}^*(k) \\
-				f(x)\text{ is purely real and even} &\iff \tilde{f}(k)\text{ is purely real and even} \\
-				f(x)\text{ is purely real and odd} &\iff \tilde{f}(k)\text{ is purely imaginary and odd} \\
-			\end{aligned}
-		\end{equation}
+			\noindent
+			Further properties:
+			\begin{equation}
+				\begin{aligned}
+					f(x)\text{ is purely real} &\iff \tilde{f}(-k) = \phantom{-}\tilde{f}^*(k) \\
+					f(x)\text{ is purely imaginary} &\iff \tilde{f}(-k) = -\tilde{f}^*(k) \\
+					f(x)\text{ is purely real and even} &\iff \tilde{f}(k)\text{ is purely real and even} \\
+					f(x)\text{ is purely real and odd} &\iff \tilde{f}(k)\text{ is purely imaginary and odd} \\
+				\end{aligned}
+			\end{equation}
 
-		\noindent
-		\href{https://en.wikipedia.org/wiki/Fourier_transform#Functional_relationships,_one-dimensional}{Properties listed by wikipedia.org}
+			\noindent
+			\href{https://en.wikipedia.org/wiki/Fourier_transform#Functional_relationships,_one-dimensional}{Properties listed by wikipedia.org}
 
 		\subsubsection{Legendre Transformation\index{Legendre!Transformation}}
 			\noindent
