@@ -10,7 +10,7 @@
 	\emph{Cosmological time} is the proper time measured by an observer at rest \wrt the local matter distribution.
 
 	\subsection{FLRW Universe}
-	Friedmann--Lemaitre--Robertson--Walker metric\index{Friedmann Alexander!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Lemaitre, Georges!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Robertson, Howard Percy!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Walker, Arthur Geoffrey!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{FLRW Metrik}:
+		Friedmann--Lemaitre--Robertson--Walker metric\index{Friedmann Alexander!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Lemaitre, Georges!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Robertson, Howard Percy!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{Walker, Arthur Geoffrey!Friedmann--Lemaitre--Robertson--Walker Metrik}\index{FLRW Metrik}:
 		\begin{equation}
 			\dd s^2 = -\dd t^2 + a^2(t) \qty[\frac{\dd r^2}{1-kr^2} + r^2 \dd \Omega^2]
 			\hsp
@@ -71,10 +71,16 @@
 		\begin{equation}
 			H^2 = H_0^2\sum_i \Omega_i a^{-3(1+w)} = H_0^2 E^2(a)
 		\end{equation}
-		most prominent components are matter ($w=0$), radiation ($w=\frac{1}{3}$), dark energy / cosmological constant ($w=-1$, with $\rho_\Lambda = \frac{\Lambda}{8\pi G}$) and the curvature term ($\Omega_{k,0}=-\frac{k c^2}{a^2 H^2}$).
+		the components are matter ($w=0$), radiation ($w=\frac{1}{3}$), dark energy / cosmological constant ($w=-1$, with $\rho_\Lambda = \frac{\Lambda}{8\pi G}$) and the curvature term ($\Omega_{k}=-\frac{k c^2}{a^2 H^2}$).
 		\begin{equation}
-			H^2 = H_0^2 \qty(\Omega_{\text{m},0} a^{-3} + \Omega_{\text{r},0} a^{-4} + \Omega_{\Lambda,0} + \Omega_{k,0} a^{-2})
+			H^2 = H_0^2 \qty(\Omega_{\text{m},0} a^{-3} + \Omega_{\text{r},0} a^{-4} + \Omega_{\Lambda} + \Omega_{k,0} a^{-2})
 		\end{equation}
+		Under simplifying assumptions:
+		\begin{itemize}
+			\item Radiation dominated universe $a = \qty(2\sqrt{\Omega_{\text{r},0}} \, H_0 t)^{1/2}$
+			\item Matter dominated universe $a = \qty(\frac{3}{2}\sqrt{\Omega_{\text{m},0}} \, H_0 t)^{2/3}$
+			\item Dark energy dominated universe $a \propto \exp(\sqrt{\Omega_{\Lambda,0}} \, H_0 t)$
+		\end{itemize}
 
 		\noindent
 		Cosmological redshift (where $\lambda_0$ is the emitted wavelength and $\lambda$ is the observed wavelength):
@@ -110,8 +116,8 @@
 					Quark Hadron phase transition & $\sim 10^{-5}\unit{s}$ & & $\sim 10^{10}\unit{K}$ \\
 					Neutrino decoupling & $\sim 1\unit{s}$ & $\sim 10^{10}$ & $\sim 10^{10}\unit{K}$ \\
 					Big Bang Nucleosynthesis & $\sim 10 \unit{s}..10^3\unit{s}$ & & $\sim 10^9\unit{K}..10^7\unit{K}$ \\
-					Recombination / Photon decoupling & $\approx 379\,000$ years & $\sim 1089$ & $\approx 3000\unit{K}$ \\
-					Matter starts to dominate & $\approx 47\unit{kyr}$ & $\approx 3600$ & $\sim 10^4\unit{K}$ \\
+					Matter radiation equivalence & $\approx 47\unit{kyr}$ & $\approx 3600$ & $\sim 10^4\unit{K}$ \\
+					Recombination / Photon decoupling & $\approx 379\unit{kyr}$ & $\sim 1089$ & $\approx 3000\unit{K}$ \\
 					Reionization & $\approx 150\unit{Myr}..1\unit{Gyr}$ & $\approx 20..6$ &  \\
 					Dark energy starts to dominate & $\approx 9.8\unit{Gyr}$ & $\approx 0.4$ & $\sim 4\unit{K}$ \\
 					Today & $\approx 13.8\unit{Gyr}$ & $0$ & $\approx 2.7\unit{K}$ \\
@@ -133,38 +139,38 @@
 			\item \emph{Comoving frame of reference}: Frame of reference in which the CMB is isotropic, apparent movement only due to Hubble expansion.
 			\item \emph{Peculiar velocity}: Velocity relative to the comoving frame of reference.
 			\item \emph{Cosmic time}: time measured by a clock with zero peculiar velocity, in the absence of matter anisotropies.
-			\item \emph{Sachs--Wolfe effect\index{Sachs!--Wolfe Effekt}\index{Wolfe!Sachs--Wolfe Effekt}}: CMB photons at the surface of last scattering lose energy when climbing out of a potential well created by dark matter aggregates $\delta \hat{T} / \hat{T} = -\delta \hat{\phi} / 3c$, leading to a redshift.
-			\item \emph{Non-integrated Sachs--Wolfe effect}
+			\item \emph{Non-integrated Sachs--Wolfe effect\index{Sachs!--Wolfe Effekt}\index{Wolfe!Sachs--Wolfe Effekt}}: CMB photons at the surface of last scattering lose energy when climbing out of a potential well created by dark matter aggregates $\delta \hat{T} / \hat{T} = -\delta \hat{\phi} / 3c$, leading to a redshift.
+			\item \emph{Integrated Sachs--Wolfe effect}: CMB photons gain or lose energy when passing through time-dependent gravitational potentials, leading to a redshift or blue shift.
 			\item \emph{Sunyaev--Zeldovich effect\index{Sunyaev, Rashid!Sunyaev--Zeldovich Effekt}\index{Zeldovich, Yakov!Sunyaev--Zeldovich Effekt}\index{SZ Effekt}}: CMB photons gain energy by inverse Compton scattering\index{Compton!Streuung} when passing through hot plasma, leading to a blue shift.
 			\item \emph{Recombination}: Electrons and protons combine to form neutral hydrogen, leading to the decoupling of photons from matter.
 			\item \emph{Reionization}: Ionizing radiation from the first stars and galaxies ionize hydrogen and helium.
 			\item \emph{Reheating}: Shortly after inflation, the temperature returns to the pre-inflationary temperature, thereby creating standard model particles in the decay of the large potential energy of the inflaton field.
-			\item \emph{Baryon Acoustic Oscillations}: Imprint of oscillations in the baryon-photon fluid (contracting due to gravity and expanding due to radiation pressure) left on the CMB and cosmic structures.
+			\item \emph{Baryon Acoustic Oscillations\index{BAO}}: Imprint of oscillations in the baryon-photon fluid (contracting due to gravity and expanding due to radiation pressure) left on the CMB and cosmic structures.
 			\item \emph{Silk damping}: Baryon structures which are to small are damped by photon diffusion.
 		\end{itemize}
 
 		\noindent
 		Distance measurements:
 		\begin{itemize}
-			\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time)
+			\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time; Note that for $z>0$: $d_L > x = d_c > r = d_p > d_A$ )
 				\begin{equation}
 					x = \int_{t_e}^{t_r} c\frac{\dd t}{a(t)}
-					= \int_{a_e}^{a_r} \frac{c \dd a}{a^2 H(a)}
+					= \int_{a_e}^{a_r} \frac{c \, \dd a}{a^2 H(a)}
 				\end{equation}
 			\item Proper distance (physical distance traveled by a photon between two objects)
 				\begin{equation}
-					r = a x
+					\dd r = a \,\dd x = c \, \dd t
 					\hsp
 					r_e - r_r = \int_{t_e}^{t_r} c \,\dd t
 					= \int_{a_e}^{a_r} \frac{c\, \dd a}{a H(a)}
 				\end{equation}
 			\item Luminosity distance\index{Leuchtkraftentfernung} $d_L$ (apparent distance given a measured flux $F$ and presuming a luminosity $L$ and assuming inverse-square law):
 				\begin{equation}
-					d_L = \sqrt{\frac{L}{4 \pi F}} = r (1+z)
+					d_L = \sqrt{\frac{L}{4 \pi F}} = x (1+z) = \frac{x}{a} = (1+z)^2 d_A
 				\end{equation}
 			\item Angular diameter distance\index{Winkeldurchmesserentfernung} $d_A$ (apparent distance of an object given angular size $\theta$ in comparison with known physical size $l$):
 				\begin{equation}
-					d_A = \frac{l}{\sin \theta} = \frac{r}{1+z}
+					d_A = \frac{l}{\sin \theta} = \frac{x}{1+z} = x a
 				\end{equation}
 		\end{itemize}
 
@@ -172,15 +178,18 @@
 		\noindent
 		Cosmological horizons:
 		\begin{itemize}
-			\item \emph{Particle Horizon}\index{Beobachtungshorizont}, maximum distance from which light could have traveled to the observer in the age of the universe. It is the maximum distance from which one could possibly retrieve information and hence determines the size of the observable units.
+			\item \emph{Particle Horizon}\index{Beobachtungshorizont}, maximum distance from which light could have traveled to the observer in the age of the universe. It is the maximum distance from which one could possibly retrieve information at a given time and hence determines the size of the observable universe.
+				\begin{equation}
+					r_p(t) = \int_{0}^{t} \frac{c \,\dd t'}{a(t')} = c \eta
+				\end{equation}
 			\item \emph{Event Horizon}\index{Ereignishorizont}, boundary beyond which events cannot affect an observer.
 			\item \emph{Cosmic Event Horizon}\index{Kosmischer Ereignishorizont}, boundary beyond which light emitted now can never affect an observer due to the expansion of the universe.
 				\begin{equation}
-					d_e(t) = a(t) \int^{\infty}_{t} \frac{c \,\dd t'}{a(t')}.
+					r_e(t) = a(t) \int^{\infty}_{t} \frac{c \,\dd t'}{a(t')}.
 				\end{equation}
-			\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble velocity reaches $c$,
+			\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble flow velocity reaches $c$,
 				\begin{equation}
-					c = r H
+					c = r_H H
 				\end{equation}
 				Note that information can still reach an observer because the Hubble sphere is expanding.
 		\end{itemize}
@@ -188,18 +197,15 @@
 		\noindent
 		Conformal time (makes the metric look nicer):
 		\begin{equation}
-			\dd \tau := \frac{\dd t}{a(t)}
+			\dd \eta := \frac{\dd t}{a(t)}
 		\end{equation}
-
-		\subsubsection{Dynamical Dark Energy}
-			TODO
 
 		\subsubsection{Inflation}
 			Scalar Inflaton\index{Inflaton} field:
 			\begin{equation}
 				\lagrangian = -\frac{1}{2}c^2 \partial_\mu \phi \partial^\mu \phi - V(\phi)
 				\hsp
-				T_{\mu\nu} = \frac{1}{2} c^2 \partial_\mu \phi \partial_\nu \phi - g_{\mu\nu} V(\phi)
+				T_{\mu\nu} = \frac{1}{2} c^2 \partial_\mu \phi \partial_\nu \phi + g_{\mu\nu} \lagrangian(\phi)
 			\end{equation}
 			using isotropy
 			\begin{equation}
@@ -236,12 +242,12 @@
 		Linearized equations of motion for the density contrast (linearized and Newtonian approximations applied and put into comoving coordinates $\vec{x}$; $\vec{u} = \delta\vec{v}/a$):
 		\begin{equation}
 			\begin{aligned}
-				\dot{\delta} + \partial_{\vec{x}} \cdot \vec{u} &= 0 
+				\dot{\delta} + \partial_{\vec{x}} \cdot \vec{u} &= 0
 				&
 				\dot{\vec{u}} + 2 H \vec{u} &= \frac{\partial_{\vec{x}} \delta p}{a^2 \rho_0} - \frac{\partial_{\vec{x}} \delta \phi}{a^2} \\
 				{\partial_{\vec{x}}}^2 \delta \phi &= 4 \pi G \rho_0 a^2 \delta
 				&
-				\delta p &= c_s^2 \rho_0 \delta 
+				\delta p &= c_s^2 \rho_0 \delta
 			\end{aligned}
 		\end{equation}
 
@@ -268,16 +274,17 @@
 		\noindent
 		Harrison--Zeldovich--Peebles spectrum\index{Harrison!--Zeldovich--Peebles Spektrum}\index{Zeldovich!Harrison--Zeldovich--Peebles Spektrum}\index{Peebles!Harrison--Zeldovich--Peebles Spektrum} (scale-invariant CDM fluctuation spectrum; $a_{\text{eq}}$ denotes equality of radiation and matter density):
 		\begin{equation}
-			P(k) \sim 
+			P(k) \sim
 			\begin{cases}
-				k & k < k_0\\k^{-3} & k > k_0
+				k & k < k_0\\
+				k^{-3} & k > k_0
 			\end{cases}
 			\hsp
 			k_0 = 2\pi{\frac{H_{0}}{c}}\,{\sqrt{\frac{2\Omega_{\mathrm{m0}}}{a_{\mathrm{eq}}}}}=2\pi{\frac{H_{0}}{c}}\Omega_{\mathrm{m0}}\,{\sqrt{\frac{2}{\Omega_{\mathrm{r0}}}}}
 		\end{equation}
 
 		\noindent
-		Press--Schechter mass function\index{Press!--Schechter Massenfunktion}\index{Schechter!Press--Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2 = 4\pi\int\frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}_R^2(k)$ with some window function $\hat{W}(k)$, $D_+(a) = \delta/\delta_0$ is the growth factor of the linear density contrast):
+		Press--Schechter mass function\index{Press!--Schechter Massenfunktion}\index{Schechter!Press--Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2$ with some window function $\hat{W}(k)$, $D_+(a) = \delta(r,a)/\delta_0(r)$ is the growth factor of the linear density contrast, during matter domination $D_+(a) \propto a$):
 		\begin{equation}
 			N(M,a) \,\dd M = \sqrt{\frac{2}{\pi}} \frac{\rho_0 \delta_c}{\sigma_R D_{+}(a)} \dv{\ln\sigma_R}{M} \exp(-\frac{\delta_c^2}{2 \sigma_R^2 D_{+}^2(a)}) \frac{\dd M}{M}
 		\end{equation}
@@ -292,7 +299,7 @@
 		\noindent
 		Variance of the power spectrum (where the window function $\hat{W}_R$ is usually a top-hat function of radius $R$, \eg $R=8h^{-1}\unit{Mpc}$ for $\sigma_8$):
 		\begin{equation}
-			\sigma_R^2 = \int_{0}^{\infty} \frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}^2_R(k) 
+			\sigma_R^2 = \int_{0}^{\infty} \frac{k^2 \dd k}{(2\pi)^3} P(k) \hat{W}^2_R(k)
 		\end{equation}
 
 		\noindent
