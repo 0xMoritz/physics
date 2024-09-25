@@ -220,6 +220,7 @@
 			\end{aligned}
 		\end{equation}
 
+		\noindent
 		Probability density function / phase space distribution function:
 		\begin{equation}
 			f(t,\vec{x},\vec{p}) = \frac{\dd N}{\dd^3 x \dd^3 p}
@@ -228,18 +229,18 @@
 			\hsp
 			N(t) = \int \dd^3 x \dd^3 p\, f(t,\vec{x},\vec{p})
 		\end{equation}
-
-		\noindent
-		Boltzmann Equation\index{Boltzmann!Gleichung} (where $f(\vec{q},\vec{p},t)$ is the phase space distribution function, $\mathcal{C}[f]$ is the collision term):
-		\begin{equation}
-			\pdv{f}{t} + \pdv{H}{\vec{p}}\cdot\pdv{f}{\vec{q}} - \pdv{H}{\vec{q}}\cdot\pdv{f}{\vec{p}} = \mathcal{C}[f]
-		\end{equation}
-
+		
 		\noindent
 		Liouville's theorem\index{Liouville!Theorem}, \ie the distribution function is constant along any trajectory in phase space. (phase space distribution function $f$, for quantum mechanical analogue see Eq.~\ref{eq:VonNeumannEquation}):
 		\begin{equation}
 			\label{eq:LiouvilleTheorem}
 			\dv{f}{t} = \pdv{f}{t} + \qty{f, H} = 0
+		\end{equation}
+
+		\noindent
+		Boltzmann Equation\index{Boltzmann!Gleichung} (Special case of Liouville's theorem\index{Liouville!Theorem} (Eq.~\ref{eq:LiouvilleTheorem}), describing the distribution function for statistically uncorrelated particles; $f(\vec{q},\vec{p},t)$ is the phase space distribution function normalized to $f(\vec{q},\vec{p},t)\,\dd^3 p \,\dd^3 q = \dd N$ and $\mathcal{C}[f]$ is the collision term):
+		\begin{equation}
+			\pdv{f}{t} + \pdv{H}{\vec{p}}\cdot\pdv{f}{\vec{q}} - \pdv{H}{\vec{q}}\cdot\pdv{f}{\vec{p}} = \mathcal{C}[f]
 		\end{equation}
 
 	\subsection{Noether's Theorem\index{Noether!Theorem}}
