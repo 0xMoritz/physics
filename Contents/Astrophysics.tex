@@ -10,7 +10,7 @@
 	\subsection{Radiation Processes}
 		Radiation spectrum of a charge with path $\vec{x}(t)$, seen from the direction $\hat{e}$:
 		\begin{equation}
-			\frac{\dd^2 E}{\dd \Omega \dd \omega} = \frac{e^2 \omega^2}{8 \pi^2 c} \abs{\int_{\mathbb{R}}\dd t'\, \qty[\hat{e}\times \qty(\hat{e}\times \dot{\vec{x}}(t'))] \ex^{-\i \omega (t'-\hat{e}\cdot \vec{x}(t')/c)}}
+			\frac{\dd^2 E}{\dd \Omega \dd \omega} = \frac{e^2 \omega^2}{8 \pi^2 c} \abs{\int_{\mathbb{R}}\dd{t'} \qty[\hat{e}\times \qty(\hat{e}\times \dot{\vec{x}}(t'))] \ex^{-\i \omega (t'-\hat{e}\cdot \vec{x}(t')/c)}}
 		\end{equation}
 
 		\noindent
@@ -73,7 +73,7 @@
 			Bremsstrahlung spectrum\index{Bremsstrahlung} and the high \& low frequency approximations (Radiation produced by electrons with asymptotic velocity $v_\infty$ of density $n_e$ passing ions of density $n_i$ and charge $Ze$. $H_{\i \nu}^{(1)}$ is the Hankel function of the first kind and $\tau=a / v_\infty$ is the time scale, where $a$ is the semi-major axis; Describes a continuous spectrum with a thermal, exponential high frequency cutoff)
 			\begin{equation}
 				\begin{aligned}
-					j(\omega) = \frac{\dd^3 E}{\dd \omega \dd t \dd V} &= \i \frac{4\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}\qty(\frac{Z e^2 \omega}{m v_\infty^3}) H_{\i \nu}^{(1)}(\i\nu) H_{\i \nu}^{(1)\prime}(\i\nu) \\
+					j(\omega) = \frac{\dd[3] E}{\dd \omega \dd t \dd V} &= \i \frac{4\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}\qty(\frac{Z e^2 \omega}{m v_\infty^3}) H_{\i \nu}^{(1)}(\i\nu) H_{\i \nu}^{(1)\prime}(\i\nu) \\
 					&= \frac{16\pi^3 Z^2 e^6 n_i n_e}{3m^2 c^3 v_\infty}
 					\begin{cases}
 						\ln\qty(\dfrac{2}{\gamma}\dfrac{m v_{\infty}^3}{Z e^2 \omega}) & \omega \ll \tau^{-1}  \\
@@ -124,10 +124,10 @@
 			\noindent
 			Particle current density $J^\mu$ and energy-momentum tensor $T^{\mu\nu}$:
 			\begin{align}
-				J^{\mu} &= c \int \frac{\dd^3 p}{E}\, f\qty(t, \vec{x}, \vec{p}) p^{\mu} = \frac{n(t, \vec{x})}{c} \mqty(c\\\avg{\dot{\vec{x}}})^\mu
+				J^{\mu} &= c \int \frac{\dd[3] p}{E}\, f\qty(t, \vec{x}, \vec{p}) p^{\mu} = \frac{n(t, \vec{x})}{c} \mqty(c\\\avg{\dot{\vec{x}}})^\mu
 				&
 				\partial_\mu J^{\mu} &= 0 \\
-				T^{\mu\nu} &= c^2 \int \frac{\dd^3 p}{E}\, f\qty(t, \dot{\vec{x}}, \vec{p}) p^{\mu} p^{\nu} =\rho(t, \dot{\vec{x}})\mqty(\avg{\gamma} & \avg{\gamma \dot{\vec{x}}} \\ \avg{\gamma \dot{\vec{x}}} & \avg{\gamma\dot{\vec{x}}\dot{\vec{x}}})^{\mu\nu}
+				T^{\mu\nu} &= c^2 \int \frac{\dd[3] p}{E}\, f\qty(t, \dot{\vec{x}}, \vec{p}) p^{\mu} p^{\nu} =\rho(t, \dot{\vec{x}})\mqty(\avg{\gamma} & \avg{\gamma \dot{\vec{x}}} \\ \avg{\gamma \dot{\vec{x}}} & \avg{\gamma\dot{\vec{x}}\dot{\vec{x}}})^{\mu\nu}
 				&
 				\partial_\mu T^{\mu\nu} &= 0
 			\end{align}
@@ -164,11 +164,11 @@
 			\end{equation}
 
 			\noindent
-			Tensor Virial Theorem\index{Virialsatz!tensorieller} ($I = 	\int \dd^3 x \, \rho \vec{x} \otimes \vec{x}$ is the inertial tensor and $\bar{T}$ is the stress energy tensor)
+			Tensor Virial Theorem\index{Virialsatz!tensorieller} ($I = 	\int \dd[3]{x} \rho \vec{x} \otimes \vec{x}$ is the inertial tensor and $\bar{T}$ is the stress energy tensor)
 			\begin{equation}
 				\frac{1}{2}\dv[2]{I}{t}
-				= \int \dd^3 x \, \bar{T}
-				= \int \dd^3 x \, \qty(\rho \vec{v}\otimes\vec{v} + 1_3 P + \bar{T}_{\text{grav.}})
+				= \int \dd[3]{x} \bar{T}
+				= \int \dd[3]{x} \qty(\rho \vec{v}\otimes\vec{v} + 1_3 P + \bar{T}_{\text{grav.}})
 			\end{equation}
 
 		\subsubsection{Relativistic Hydrodynamics}
@@ -326,9 +326,9 @@
 			\end{equation}
 
 			\noindent
-			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd z\, n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
+			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd{z} n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
 			\begin{equation}
-				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd z\, n_e B_\parallel
+				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd{z} n_e B_\parallel
 			\end{equation}
 
 	\subsection{Stellar Dynamics}

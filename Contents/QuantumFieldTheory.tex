@@ -403,7 +403,7 @@
 			\begin{aligned}
 				\dd \sigma
 				&= \frac{\abs{\mathcal{M}(p_A,p_B \to\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}} \dd \Pi_\mathrm{LIPS} \\
-				&= \frac{\abs{\mathcal{M}(p_A,p_B \to\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd^3 \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
+				&= \frac{\abs{\mathcal{M}(p_A,p_B \to\set{p_f})}^2}{4p_A^0 p_B^0 \abs{\vec{v}_A - \vec{v}_B}}  \qty(2\pi)^4 \delta^4 \qty(\sum p_{f} - p_A - p_B) \qty(\prod_{i=1}^{n} \frac{\dd[3] \vec{p}_i}{2 \pi^3} \frac{1}{2 p_i^0})
 			\end{aligned}
 		\end{equation}
 
@@ -417,7 +417,7 @@
 		Lehmann--Symanzik--Zimmermann reduction formula\index{Lehmann!LSZ reduction formula}\index{Symanzik!LSZ reduction formula}\index{Zimmermann!LSZ reduction formula}\index{LSZ Reduktionsformel} (LSZ reduction formula):
 		\begin{equation}
 			\begin{aligned}
-				\Braket{p_k \hdots p_n|S|p_1 \hdots p_{k-1}} = &\prod_{i=1}^{k-1} \qty[\i \int \dd^4 x_i \, \ex^{-\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \prod_{i=k}^{n} \qty[\i \int \dd^4 x_i \, \ex^{+\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \\
+				\Braket{p_k \hdots p_n|S|p_1 \hdots p_{k-1}} = &\prod_{i=1}^{k-1} \qty[\i \int \dd[4]{x_i} \ex^{-\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \prod_{i=k}^{n} \qty[\i \int \dd[4]{x_i} \ex^{+\i p_i\cdot x_i} \qty(\partial^2_i+m^2)] \\
 				&\times\Braket{\Omega|T \phi(x_1) \hdots \phi(x_n)|\Omega}
 			\end{aligned}
 		\end{equation}
@@ -531,8 +531,8 @@
 			Scalar bosonic field and conjugate momentum operators in terms of creation and annihilation operators (with the on-shell frequency $\omega_{\vec{p}} = p^0 = \sqrt{\vec{p}^2 + m^2}$):
 			\begin{equation}
 				\begin{aligned}
-					\hat{\phi}(x) &= \int \frac{\dd^3 p}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
-					\hat{\pi}(x) &= -\i \int \frac{\dd^3 p}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) \\
+					\hat{\phi}(x) &= \int \frac{\dd[3]{p}}{(2\pi)^3} \frac{1}{\sqrt{2 \omega_{\vec{p}}}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} + \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) = \hat{\phi}_{-}(\hat{b}(\vec{p}),x) + \hat{\phi}_{+}(\hat{b}^\dagger(\vec{p}),x) \\
+					\hat{\pi}(x) &= -\i \int \frac{\dd[3]{p}}{(2\pi)^3} \sqrt{\frac{\omega_{\vec{p}}}{2}} \qty( \hat{b}(\vec{p}) \ex^{-\i p_\mu x^\mu} - \hat{b}^\dagger(\vec{p}) \ex^{\i p_\mu x^\mu} ) \\
 				\end{aligned}
 			\end{equation}
 

@@ -165,7 +165,7 @@
 				\begin{aligned}
 					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\epsilon \to 0} \frac{	\mathcal{F}\qty[\phi(x) + \epsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\epsilon} \\
 					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
-					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\;\dd y \\
+					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\dd y \\
 					\dv{z} \fdv{\psi(y)} \phi(x) &= \fdv{\psi(y)} \dv{z} \phi(x) \\
 				\end{aligned}
 			\end{equation}
@@ -174,46 +174,46 @@
 			\noindent
 			Leibniz integral rule\index{Leibniz!Regel für Parameterintegrale}:
 			\begin{equation}
-				\dv{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\;\dd x = \int_{\alpha(y)}^{\beta(y)} \pdv{f}{y}(x,y)\;\dd x + f(\beta(y),y)\dv{\beta}{y}(y)-f(\alpha(y),y)\dv{\alpha}{y}(y)
+				\dv{y} \int_{\alpha(y)}^{\beta(y)}f(x,y)\dd{x} = \int_{\alpha(y)}^{\beta(y)} \pdv{f}{y}(x,y)\dd{x} + f(\beta(y),y)\dv{\beta}{y}(y)-f(\alpha(y),y)\dv{\alpha}{y}(y)
 			\end{equation}
 
 			\noindent
 			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\int_{\partial \mathcal{A}} f(z)\;\dd z = 0
+				\int_{\partial \mathcal{A}} f(z)\dd z = 0
 			\end{equation}
 
 			\noindent
 			Cauchy integral formula\index{Cauchy!Integralformel} (for $z_0$ inside a positively oriented circular loop $\gamma(t)=z_0+r\ex^{\i t}$ with $t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
 			\begin{equation}
-				\dv[k]{f}{z} \qty(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\;\dd z
+				\dv[k]{f}{z} \qty(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\dd z
 			\end{equation}
 
 			\noindent
 			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right] \to G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \to \mathbb{C}$ holomorphic,
 			with poles $a_1, a_2, .., a_n$ inside $\gamma$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
-				\int_\gamma f(z)\;\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
+				\int_\gamma f(z)\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
 			\end{equation}
 
 			\noindent
 			Cauchy Principal Value\index{Cauchy!Hauptwert} (for a function $f(x)$ with a simple pole at $x=a$):
 			\begin{equation}
-				\mathcal{P}\int_{-\infty}^{\infty} f(x)\;\dd x = \lim_{\epsilon \to 0} \qty(\int_{-\infty}^{a-\epsilon} f(x)\;\dd x + \int_{a+\epsilon}^{\infty} f(x)\;\dd x)
+				\mathcal{P}\int_{-\infty}^{\infty} f(x)\dd{x} = \lim_{\epsilon \to 0} \qty(\int_{-\infty}^{a-\epsilon} f(x)\dd{x} + \int_{a+\epsilon}^{\infty} f(x)\dd{x})
 			\end{equation}
 
 			\noindent
 			Trigonometric integrals:
 			\begin{equation}
 				\begin{split}
-					\int \sin^2 x\;\dd x &= \frac{1}{2}( x-\sin  x\cos  x) \\
-					\int \cos^2 x\;\dd x &= \frac{1}{2}( x+\sin  x\cos  x) \\
-					\int{\sin x\cos x\;\dd x} &= -\frac{1}{2}\cos^2( x) \\
-					\int \sin^3 x\;\dd x
+					\int \sin^2 x\dd{x} &= \frac{1}{2}( x-\sin  x\cos  x) \\
+					\int \cos^2 x\dd{x} &= \frac{1}{2}( x+\sin  x\cos  x) \\
+					\int{\sin x\cos x\dd{x}} &= -\frac{1}{2}\cos^2( x) \\
+					\int \sin^3 x\dd{x}
 					&= -\frac{1}{3}\cos{ x}\sin^2{ x}-\frac{2}{3}\cos{ x}
 					= \frac{1}{12}\cos{3 x}-\frac{3}{4}\cos{ x}
 					= \frac{\cos ^3 x}{3}-\cos x\\
-					\int \cos^3 x\;\dd x
+					\int \cos^3 x\dd{x}
 					&= \phantom{-}\frac{1}{3}\sin x \cos^2 x+\frac{2}{3}\sin  x
 					= \frac{1}{12}\sin{3 x}+\frac{3}{4}\sin{ x}
 					= \sin x-\frac{\sin^3x}{3} \\
@@ -224,8 +224,8 @@
 			Famous integrals (Gaußian integral\index{Gauß!Integral}, $\sinc$-integral\index{Sinus Cardinalis}):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} \ex^{-x^2}\;\dd x &= \sqrt{\pi} \\
-					\int_\mathbb{R} \frac{\sin x}{x}\;\dd x &= \pi \\
+					\int_\mathbb{R} \ex^{-x^2}\dd{x} &= \sqrt{\pi} \\
+					\int_\mathbb{R} \frac{\sin x}{x}\dd{x} &= \pi \\
 				\end{aligned}
 			\end{equation}
 
@@ -233,10 +233,10 @@
 			Variations of the Gaußian integral\index{Gauß!Integral} (with $A$ symmetric, and $A^{-1}$ being the Greens function of $A$ in the functional case):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} \ex^{-\frac{a x^2}{2}+ b x}\;\dd x &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x}}\;\dd^n x
+					\int_\mathbb{R} \ex^{-\frac{a x^2}{2}+ b x}\dd{x} &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x} + \vec{b}^T \vec{x}}\;\dd^n x
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x} + \vec{b}^T \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^T A^{-1} \vec{b}}\\
 					\int \mathcal{D}\qty[f]\, \ex^{-\frac{1}{2} \int \dd x \dd y \, f(x) A(x, y) f(y) + \int \dd x\,b(x)f(x)}
 					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) A^{-1}(x,y) b(y)}
@@ -246,7 +246,7 @@
 			\noindent
 			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \to \mathbb{C}$):
 			\begin{equation}
-				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\;\dd t
+				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\dd{t}
 			\end{equation}
 
 			\noindent
@@ -261,7 +261,7 @@
 			\noindent
 			Dirac distribution / Dirac delta / Dirac function\index{Dirac!Distribution} $\delta(x)$:
 			\begin{equation}
-				\int_\Omega f(x)\delta(x)\;\dd x = f(0)\quad\forall\, \Omega\ni 0
+				\int_\Omega f(x)\delta(x)\dd{x} = f(0)\quad\forall\, \Omega\ni 0
 			\end{equation}
 
 			\noindent
@@ -279,7 +279,7 @@
 						0 & x<0    \\
 					\end{array}\right. \\
 					\dv{\Theta}{x}(x) =&\; \delta(x) \\
-					\int_{\mathbb{R}} f(x)\Theta(x)\;\dd x =& \int_{0}^{\infty} f(x)\;\dd x
+					\int_{\mathbb{R}} f(x)\Theta(x)\dd{x} =& \int_{0}^{\infty} f(x)\dd{x}
 				\end{aligned}
 			\end{equation}
 
@@ -362,15 +362,15 @@
 			Abel limit theorem\index{Abel!Grenzwertsatz}:
 			\begin{equation}
 				\begin{aligned}
-					\lim_{t \to+\infty} f(t) &= \lim_{\eta \to 0} \eta \int_0^\infty \ex^{-\eta t} f(t) \;\dd t \\
-					\lim_{t \to-\infty} f(t) &= \lim_{\eta \to 0} \eta \int_{-\infty}^{0} \ex^{+\eta t} f(t) \;\dd t \\
+					\lim_{t \to+\infty} f(t) &= \lim_{\eta \to 0} \eta \int_0^\infty \ex^{-\eta t} f(t) \dd{t} \\
+					\lim_{t \to-\infty} f(t) &= \lim_{\eta \to 0} \eta \int_{-\infty}^{0} \ex^{+\eta t} f(t) \dd{t} \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
 			\href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula}{Euler--Maclaurin formula}\index{Euler!--Maclaurin Formel}\index{Maclaurin!Euler--Maclaurin Formel}:
 			\begin{equation}
-				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \;\dd x
+				\sum_{k=a+1}^{b} f(k) = \int_{a}^{b}f(x) \dd{x}
 				+ \frac{1}{2} \eval{\dv{f}{x} }_{a}^{b}
 				+ \frac{1}{12}\eval{\dv[2]{f}{x} }_{a}^{b}
 				+ \frac{1}{720} \eval{\dv[3]{f}{x} }_{a}^{b}
@@ -420,7 +420,7 @@
 						\sum_{n=1}^{\infty} \frac{1}{n^s} \quad &\forall \Re(s) > 1\\
 						\text{analytically continued} \quad &\forall \Re(s) \le 1\\
 					\end{cases} \\
-					&= \frac{1}{\Gamma(s)}\int_{0}^{\infty} \frac{u^{s-1}}{\ex^u-1} \;\dd u \\
+					&= \frac{1}{\Gamma(s)}\int_{0}^{\infty} \frac{u^{s-1}}{\ex^u-1} \dd{u} \\
 				\end{aligned}
 			\end{equation}
 
@@ -428,7 +428,7 @@
 		\noindent
 		Complex inner product\index{Hermite!Skalarprodukt} in $R([0,2\pi],\mathbb{C})$:
 		\begin{equation}
-			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\;\dd x
+			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\dd{x}
 		\end{equation}
 
 		\subsubsection{Discrete Fourier Analysis\index{Fourier!Analyse}}
@@ -447,7 +447,7 @@
 			\noindent
 			Complex Fourier coefficients:
 			\begin{equation}
-				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)\ex^{-\i kx}\;\dd x
+				c_k = \left<f,\hat{e}_k\right>=\frac{1}{2\pi}\int_0^{2\pi}f(x)\ex^{-\i kx}\dd{x}
 			\end{equation}
 
 			\noindent
@@ -468,7 +468,7 @@
 			\noindent
 			Parseval's theorem\index{Parseval!Theorem}: (For two functions $f(x)$ and $g(x)$ with Fourier coefficients $c_k$ and $d_k$)
 			\begin{equation}
-				\sum_{n=-\infty}^{\infty} c_n d_n^* = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)g^*(x)\;\dd x
+				\sum_{n=-\infty}^{\infty} c_n d_n^* = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)g^*(x)\dd{x}
 			\end{equation}
 
 		\subsubsection{Continuous Fourier Analysis\index{Fourier!Analyse}}
@@ -476,8 +476,8 @@
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
-					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\;\dd\vec{x} \\
-					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\;\dd \vec{k} \\
+					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\dd{\vec{x}} \\
+					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\dd[3]{\vec{k}} \\
 				\end{aligned}
 			\end{equation}
 
@@ -487,7 +487,7 @@
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
 					\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
-					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\;\dd k
+					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\dd{k}
 					\label{Eq:FourierIdentities}
 				\end{aligned}
 			\end{equation}
@@ -495,8 +495,8 @@
 			\noindent
 			Plancherel's theorem\index{Plancherel!Theorem}:
 			\begin{equation}
-				\int_{\mathbb{R}} f^{*}(x) g(x)\;\dd x =
-				\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\;\dd k
+				\int_{\mathbb{R}} f^{*}(x) g(x)\dd{x} =
+				\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\dd{k}
 			\end{equation}
 
 			\noindent
@@ -531,7 +531,7 @@
 			\noindent
 			Coefficients:
 			\begin{equation}
-				a_n = \frac{1}{2 \pi \i}\int_{\abs{ z-z_0 } = r} \frac{f(z)}{(z-z_0)^{n+1}}\;\dd z
+				a_n = \frac{1}{2 \pi \i}\int_{\abs{ z-z_0 } = r} \frac{f(z)}{(z-z_0)^{n+1}}\dd z
 			\end{equation}
 
 		\subsubsection{Spherical Harmonics\index{Kugelflächenfunktionen}}
@@ -544,7 +544,7 @@
 			\noindent
 			Coefficients:
 			\begin{equation}
-				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\;\dd\theta\dd\phi
+				f_{lm} = \int_0^{2\pi} \int_0^\pi Y_{lm}^{*}(\theta,\phi) f(\theta,\phi) \sin\theta\dd{\theta}\dd{\phi}
 			\end{equation}
 
 	\subsection{Algebra}
@@ -659,9 +659,9 @@
 			Integration and Differentiation:
 			\begin{equation}
 				\begin{aligned}
-					\int 1\,\dd\theta &= 0 \\
-					\int \theta\,\dd\theta &= 1 \\
-					\int f(\theta_1,\dots,\theta_n)\,\dd\theta_i &= \dv{\theta_i}f(\theta_1,\dots,\theta_n)
+					\int 1\dd{\theta} &= 0 \\
+					\int \theta\dd{{\theta}} &= 1 \\
+					\int f(\theta_1,\dots,\theta_n)\dd{\theta_i} &= \dv{\theta_i}f(\theta_1,\dots,\theta_n)
 				\end{aligned}
 			\end{equation}
 
@@ -685,7 +685,7 @@
 			\end{equation}
 			General solution of the differential equation $\mathrm{D}_{\vec{r}}\, \phi = f\qty(\vec{r})$:
 			\begin{equation}
-				\phi\qty(\vec{r}) = \int G\qty(\vec{r},\vec{r}')f\qty(\vec{r}')\;\dd^3\vec{r}'
+				\phi\qty(\vec{r}) = \int G\qty(\vec{r},\vec{r}')f\qty(\vec{r}') \dd[3]{\vec{r}'}
 			\end{equation}
 
 		\subsubsection{Harmonic Oscillator\index{Harmonischer Oszillator}}
@@ -718,7 +718,7 @@
 			\noindent
 			Bessel function\index{Bessel!Funktion} of the first kind:
 			\begin{equation}
-				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\qty(\frac{x}{2})^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} \ex^{\i(x\sin\varphi-\nu\varphi)}\;\dd\varphi
+				J_\nu(x) = \sum_{r=0}^\infty \frac{(-1)^r\qty(\frac{x}{2})^{2r+\nu}}{\Gamma(\nu+r+1)\,r!} = \frac{1}{2\pi}\int_{-\pi}^{\pi} \ex^{\i(x\sin\varphi-\nu\varphi)}\dd{\varphi}
 			\end{equation}
 
 		\subsubsection{Poisson Equation\index{Poisson!Gleichung}}
@@ -774,7 +774,7 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{-1}^1 P_l(x) P_k(x)\;\dd x = \delta_{lk} \frac{2}{2l+1}
+				\int_{-1}^1 P_l(x) P_k(x)\dd{x} = \delta_{lk} \frac{2}{2l+1}
 			\end{equation}
 
 		\subsubsection{Generalized Legendre Differential Equation}
@@ -836,7 +836,7 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{\mathbb{R}} H_m(x) H_n(x) \ex^{-x^2}\;\dd x = \sqrt{\pi}\,2^n n!\delta_{nm}
+				\int_{\mathbb{R}} H_m(x) H_n(x) \ex^{-x^2}\dd{x} = \sqrt{\pi}\,2^n n!\delta_{nm}
 			\end{equation}
 
 		\subsubsection{Laguerre's Differential Equation}
@@ -855,7 +855,7 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_0^\infty \ex^{-x} L_n(x) L_m(x)\;\dd x = \delta_{nm}
+				\int_0^\infty \ex^{-x} L_n(x) L_m(x)\dd{x} = \delta_{nm}
 			\end{equation}
 
 			\noindent
@@ -908,7 +908,7 @@
 			\noindent
 			Differential solid angle in spherical coordinates:
 			\begin{equation}
-				\dd \Omega = \sin\theta\;\dd \theta \;\dd \phi
+				\dd \Omega = \sin\theta\dd{\theta} \dd{\phi}
 			\end{equation}
 
 			\noindent
@@ -1190,13 +1190,13 @@
 			\noindent
 			Definition of the expectation value:
 			\begin{equation}
-				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\;\dd x
+				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\dd{x}
 			\end{equation}
 
 			\noindent
 			Definition of variance and standard deviation:
 			\begin{equation}
-				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\;\dd x = E\left[X^2\right]-E^2\left[X\right]
+				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\dd{x} = E\left[X^2\right]-E^2\left[X\right]
 			\end{equation}
 
 			\noindent

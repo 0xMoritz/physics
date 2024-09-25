@@ -40,7 +40,7 @@
 		\noindent
 		Definition of the Inertia Tensor\index{Trägheitstensor}:
 		\begin{equation}
-			\Theta_{ij}=\int_{\mathcal{V}} \rho \left[r^2\delta_{ij}-r_i r_j\right] \;\dd^3\vec{r}
+			\Theta_{ij}=\int_{\mathcal{V}} \rho \left[r^2\delta_{ij}-r_i r_j\right] \dd[3]{\vec{r}}
 		\end{equation}
 
 		\noindent
@@ -160,7 +160,7 @@
 		\noindent
 		Action\index{Wirkung}:
 		\begin{equation}
-			\mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\;\mathrm{d} t
+			\mathcal{S}=\int_{t_0}^{t_1}\mathcal{L}(q_i, \dot{q_i},t)\dd{t}
 		\end{equation}
 
 		\noindent
@@ -223,11 +223,11 @@
 		\noindent
 		Probability density function / phase space distribution function:
 		\begin{equation}
-			f(t,\vec{x},\vec{p}) = \frac{\dd N}{\dd^3 x \dd^3 p}
+			f(t,\vec{x},\vec{p}) = \frac{\dd N}{\dd[3]{x}\dd[3]{p}}
 			\hsp
-			n(t,\vec{x}) = \int \dd^3 p\, f(t,\vec{x},\vec{p})
+			n(t,\vec{x}) = \int \dd[3]{p} f(t,\vec{x},\vec{p})
 			\hsp
-			N(t) = \int \dd^3 x \dd^3 p\, f(t,\vec{x},\vec{p})
+			N(t) = \int \dd[3]{x}\dd[3]{p} f(t,\vec{x},\vec{p})
 		\end{equation}
 		
 		\noindent
@@ -238,7 +238,7 @@
 		\end{equation}
 
 		\noindent
-		Boltzmann Equation\index{Boltzmann!Gleichung} (Special case of Liouville's theorem\index{Liouville!Theorem} (Eq.~\ref{eq:LiouvilleTheorem}), describing the distribution function for statistically uncorrelated particles; $f(\vec{q},\vec{p},t)$ is the phase space distribution function normalized to $f(\vec{q},\vec{p},t)\,\dd^3 p \,\dd^3 q = \dd N$ and $\mathcal{C}[f]$ is the collision term):
+		Boltzmann Equation\index{Boltzmann!Gleichung} (Special case of Liouville's theorem\index{Liouville!Theorem} (Eq.~\ref{eq:LiouvilleTheorem}), describing the distribution function for statistically uncorrelated particles; $f(\vec{q},\vec{p},t)$ is the phase space distribution function normalized to $f(\vec{q},\vec{p},t)\dd[3]{x}\dd[3]{q} = \dd N$ and $\mathcal{C}[f]$ is the collision term):
 		\begin{equation}
 			\pdv{f}{t} + \pdv{H}{\vec{p}}\cdot\pdv{f}{\vec{q}} - \pdv{H}{\vec{q}}\cdot\pdv{f}{\vec{p}} = \mathcal{C}[f]
 		\end{equation}

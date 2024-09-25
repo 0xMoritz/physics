@@ -155,14 +155,14 @@
 			\item \href{https://en.wikipedia.org/wiki/Comoving_and_proper_distances}{Comoving distance} (constant for objects which are motionless in their local comoving frame; coincides with proper distance at current cosmic time; Note that for $z>0$: $d_L > x = d_c > r = d_p > d_A$ )
 				\begin{equation}
 					x = \int_{t_e}^{t_r} c\frac{\dd t}{a(t)}
-					= \int_{a_e}^{a_r} \frac{c \, \dd a}{a^2 H(a)}
+					= \int_{a_e}^{a_r} \frac{c \dd{a}}{a^2 H(a)}
 				\end{equation}
 			\item Proper distance (physical distance traveled by a photon between two objects)
 				\begin{equation}
-					\dd r = a \,\dd x = c \, \dd t
+					\dd r = a \dd{x} = c \dd{t}
 					\hsp
-					r_e - r_r = \int_{t_e}^{t_r} c \,\dd t
-					= \int_{a_e}^{a_r} \frac{c\, \dd a}{a H(a)}
+					r_e - r_r = \int_{t_e}^{t_r} c \dd{t}
+					= \int_{a_e}^{a_r} \frac{c\dd{a}}{a H(a)}
 				\end{equation}
 			\item Luminosity distance\index{Leuchtkraftentfernung} $d_L$ (apparent distance given a measured flux $F$ and presuming a luminosity $L$ and assuming inverse-square law):
 				\begin{equation}
@@ -180,12 +180,12 @@
 		\begin{itemize}
 			\item \emph{Particle Horizon}\index{Beobachtungshorizont}, maximum distance from which light could have traveled to the observer in the age of the universe. It is the maximum distance from which one could possibly retrieve information at a given time and hence determines the size of the observable universe.
 				\begin{equation}
-					r_p(t) = \int_{0}^{t} \frac{c \,\dd t'}{a(t')} = c \eta
+					r_p(t) = \int_{0}^{t} \frac{c \dd{t'}}{a(t')} = c \eta
 				\end{equation}
 			\item \emph{Event Horizon}\index{Ereignishorizont}, boundary beyond which events cannot affect an observer.
 			\item \emph{Cosmic Event Horizon}\index{Kosmischer Ereignishorizont}, boundary beyond which light emitted now can never affect an observer due to the expansion of the universe.
 				\begin{equation}
-					r_e(t) = a(t) \int^{\infty}_{t} \frac{c \,\dd t'}{a(t')}.
+					r_e(t) = a(t) \int^{\infty}_{t} \frac{c \dd{t'}}{a(t')}.
 				\end{equation}
 			\item \emph{Hubble Horizon / Hubble sphere}\index{Hubble!Horizont}, boundary at which the Hubble flow velocity reaches $c$,
 				\begin{equation}
@@ -267,7 +267,7 @@
 		Power spectrum $P$, correlation function $\xi$ and variance $\sigma^2$ of the density perturbations $P(k)$:
 		\begin{align}
 			\avg{\hat{\delta}(\vec{k}) \hat{\delta}^{*}(\vec{k}')} &=: (2\pi)^3 P(k) \delta (\vec{k}-\vec{k}') \\
-			\avg{\delta(\vec{x} + \vec{y}) \delta(\vec{x})} &=: \xi(y) = \int \frac{\dd^3 k}{(2\pi)^3} P(k) \ex^{\i \vec{k} \cdot \vec{y}}\\
+			\avg{\delta(\vec{x} + \vec{y}) \delta(\vec{x})} &=: \xi(y) = \int \frac{\dd[3]k}{(2\pi)^3} P(k) \ex^{\i \vec{k} \cdot \vec{y}}\\
 			\sigma^2 &:= 4\pi\int \frac{k^2 \dd k}{(2 \pi)^3} P(k)
 		\end{align}
 
@@ -286,7 +286,7 @@
 		\noindent
 		Press--Schechter mass function\index{Press!--Schechter Massenfunktion}\index{Schechter!Press--Schechter Massenfunktion} (where $\delta_c \approx 1.69$ is the linear density contrast where the non-linear halo collapses, $\sigma_R$ is the variance of the filtered density contrast field $\sigma_R^2$ with some window function $\hat{W}(k)$, $D_+(a) = \delta(r,a)/\delta_0(r)$ is the growth factor of the linear density contrast, during matter domination $D_+(a) \propto a$):
 		\begin{equation}
-			N(M,a) \,\dd M = \sqrt{\frac{2}{\pi}} \frac{\rho_0 \delta_c}{\sigma_R D_{+}(a)} \dv{\ln\sigma_R}{M} \exp(-\frac{\delta_c^2}{2 \sigma_R^2 D_{+}^2(a)}) \frac{\dd M}{M}
+			N(M,a) \dd{M} = \sqrt{\frac{2}{\pi}} \frac{\rho_0 \delta_c}{\sigma_R D_{+}(a)} \dv{\ln\sigma_R}{M} \exp(-\frac{\delta_c^2}{2 \sigma_R^2 D_{+}^2(a)}) \frac{\dd M}{M}
 		\end{equation}
 
 		\noindent
@@ -305,7 +305,7 @@
 		\noindent
 		Filtered density contrast:
 		\begin{equation}
-			\bar{\delta} := \int \dd^3 y \, \delta(\vec{x}) W_R(\abs{\vec{x}-\vec{y}})
+			\bar{\delta} := \int \dd[3]{y} \delta(\vec{x}) W_R(\abs{\vec{x}-\vec{y}})
 		\end{equation}
 
 	\subsection{Observations}
@@ -318,7 +318,7 @@
 			\noindent
 			Lensing potential
 			\begin{equation}
-				\psi (\vec{\theta})  = \frac{2}{c^2} \frac{d_{ds}}{d_d d_s} \int \phi(\vec{\theta}, z) \, \dd z
+				\psi (\vec{\theta})  = \frac{2}{c^2} \frac{d_{ds}}{d_d d_s} \int \phi(\vec{\theta}, z) \dd{z}
 			\end{equation}
 
 			\noindent
@@ -326,8 +326,8 @@
 			\begin{equation}
 				\hat{\vec{\alpha}}
 				= \Nabla_{\vec{\theta}} \psi(\vec{\theta})
-				= \int \Nabla_\perp n \, \dd z
-				= \frac{2}{c^2} \int \Nabla_\perp \phi \, \dd z
+				= \int \Nabla_\perp n \dd{z}
+				= \frac{2}{c^2} \int \Nabla_\perp \phi \dd{z}
 			\end{equation}
 
 			\noindent
@@ -370,5 +370,5 @@
 			\noindent
 			Time delay / Shapiro delay\index{Shapiro!Verzögerung}(integrated along the path from source to observer):
 			\begin{equation}
-				\Delta t = \int_{s}^{0} \frac{2}{c^3} \abs{\phi} \, \dd z
+				\Delta t = \int_{s}^{0} \frac{2}{c^3} \abs{\phi} \dd{z}
 			\end{equation}

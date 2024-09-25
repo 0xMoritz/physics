@@ -161,7 +161,7 @@
 		Position operator\index{Ortsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\;\dd^n\vec{x} &\hsp
+				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\dd[n]{\vec{x}} &\hsp
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{p}) \\
 			\end{aligned}
@@ -171,7 +171,7 @@
 		Momentum operator\index{Impulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\;\dd^n\vec{p} &\hsp
+				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\dd^n\vec{p} &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hsp
 				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pdv{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
@@ -190,7 +190,7 @@
 		\end{equation}
 		Time evolution operator for $\left[\hat{H}(t),\hat{H}(t')\right] = 0\quad\forall t,t'$:
 		\begin{equation}
-			\hat{U}(t) = \exp\qty(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\;\dd t')
+			\hat{U}(t) = \exp\qty(-\frac{\i}{\hbar}\int_0^t \hat{H}(t')\dd{t'})
 		\end{equation}
 		Further simplification if $\pdv{\hat{H}}{t}=0$:
 		\begin{equation}
@@ -622,7 +622,7 @@
 				\begin{aligned}
 					\Ket{\psi_I(t)} &=: \hat{U}(t,t_0) \Ket{\psi_I(t_0)} \\
 					\i \hbar \pdv{t} \hat{U}(t,t_0) &= \hat{H}_I'(t) \hat{U}(t,t_0) \\
-					\hat{U}(t,t_0) &= \hat{1} - \frac{\i}{\hbar} \int_{t_0}^{t} \hat{H}'_I(t') \hat{U}(t',t_0) \;\dd t' \\
+					\hat{U}(t,t_0) &= \hat{1} - \frac{\i}{\hbar} \int_{t_0}^{t} \hat{H}'_I(t') \hat{U}(t',t_0) \dd{t'} \\
 					&= T \qty[\exp\qty(-\frac{\i}{\hbar}\int_{t_0}^{t}\dd t'\,\hat{H}'_I(t'))]
 				\end{aligned}
 			\end{equation}
@@ -635,7 +635,7 @@
 		\end{equation}
 
 		\noindent
-		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) \ex^{-\i \vec{q}\cdot\vec{r}/\hbar}\;\dd^3 \vec{r} $):
+		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) \ex^{-\i \vec{q}\cdot\vec{r}/\hbar}\dd[3]{\vec{r}}$):
 		\begin{equation}
 			\dv{\sigma}{\Omega} = \frac{1}{4} \qty(\frac{e}{4\pi\epsilon_0 m v^2})^2
 			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\vec{q})
