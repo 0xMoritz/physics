@@ -301,6 +301,22 @@
 			\end{equation}
 
 			\noindent
+			Alfvén velocity\index{Alfvén!Geschwindigkeit} (characteristic velocity of MHD waves):
+			\begin{equation}
+				c_A^2 = \frac{B_0^2}{4\pi \rho_0}
+			\end{equation}
+
+			\noindent
+			Dispersion relation (phase velocity $c_k = \omega/k$, $\psi$ is the angle between $\vec{k}$ and $\vec{B}$)
+			\begin{equation}
+				\mqty(
+					c_k^2 - c_s^2 - c_A^2 \sin^2 \psi & c_A^2 \sin\psi \cos\psi & 0 \\
+					c_A^2 \sin\psi \cos\psi & c_k^2 - c_A^2 \cos^2 \psi & 0 \\
+					0 & 0 & c_k^2 - c_A^2 \cos^2 \psi
+				) \delta \vec{v} = 0
+			\end{equation}
+
+			\noindent
 			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd z\, n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
 			\begin{equation}
 				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd z\, n_e B_\parallel
