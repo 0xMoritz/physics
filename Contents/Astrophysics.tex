@@ -107,7 +107,7 @@
 		\subsubsection{Radiative Quantum Transitions}
 			Transition rate between two states $\Ket{m}$ and $\Ket{n}$ ($I_\omega = \frac{c}{8 \pi^2 T} \abs*{\hat{\vec{E}}}^2$)
 			\begin{equation}
-				\Gamma = \frac{8\pi^{2}e^{2}}{m^{2}c}\frac{I_{\omega}T}{\omega^{2}}\abs{\mel**{m}{\mathrm{e}^{\mathrm{i}\vec{k}\cdot\vec{x}}\hat{e}\cdot\vec{\nabla}}{n}}^{2}\;\delta\left(\omega_{m n}-\omega\right)		
+				\Gamma = \frac{8\pi^{2}e^{2}}{m^{2}c}\frac{I_{\omega}T}{\omega^{2}}\abs{\mel**{m}{\mathrm{e}^{\mathrm{i}\vec{k}\cdot\vec{x}}\hat{e}\cdot\vec{\nabla}}{n}}^{2}\;\delta\left(\omega_{m n}-\omega\right)
 			\end{equation}
 
 			\noindent
@@ -116,6 +116,38 @@
 				\Gamma = \frac{8\pi^{2}I_\omega T}{3 c \hbar^2}\abs{\vec{d}_{mn}}^{2}\;\delta\left(\omega_{m n}-\omega\right)
 			\end{equation}
 
+			\noindent
+			Oscillator strength
+			\begin{equation}
+				f_{mn} = \frac{2 m \omega_{mn}}{3 e^2 \hbar} \omega_{mn} \abs{\vec{d}_{mn}}^2
+			\end{equation}
+
+			\noindent
+			Cross section ($f_{mn}$ is the oscillator strength, $\phi$ is the line profile function):
+			\begin{equation}
+				\sigma_{mn} = 4 \pi^2 r_e c f_{mn} \phi(\omega_{mn} - \omega)
+			\end{equation}
+
+		\subsubsection{Spectral Lines}
+			Natural Line-width (Heisenberg uncertainty principle, $\tau$ is the lifetime of the excited state):
+			\begin{equation}
+				\phi_\Gamma(\omega-\omega_{mn}) = \frac{1}{\pi} \frac{\Gamma / 2}{(\omega-\omega_{mn})^2 + \Gamma^2}
+			\end{equation}
+
+			\noindent
+			Doppler broadening (Assuming thermal motion of the emitting particles, $\sigma = \sqrt{\kB T / m}$ is the standard deviation of the velocity distribution, $\bar{\omega} = \omega_0(1+v/c)$ is the centre frequency):
+			\begin{equation}
+				\phi(\omega-\omega_{mn}) = \frac{c}{\omega_0 \sqrt{ 2\pi} \sigma} \exp(-\frac{c^2}{2\sigma^2}\qty(\frac{\omega-\bar{\omega}}{\omega_0^2})^2)
+			\end{equation}
+
+			\noindent
+			For the Voigt profile\index{Voigt!Profil}, $\phi$ will be described by a convolution of the natural line-width (Lorentzian) broadened by collisions (Lorentzian, $\Gamma \to \Gamma + \Gamma_c$) and Doppler broadening (Gaussian)
+
+			Equivalent width ($I_0$ is the continuum intensity, $I(\omega)$ is the line intensity, $W$ quantifies the strength of the line):
+			\begin{equation}
+				W := \int\dd{\omega} \frac{I_0 - I(\omega)}{I_0}
+			\end{equation}
+			the curve of growth $W(N)$ is the equivalent width as a function of the column density $N$ of a medium.
 
 	\subsection{Hydrodynamics}
 		\subsubsection{Ideal Hydrodynamics}
@@ -146,19 +178,14 @@
 			\end{equation}
 
 			\noindent
-			Lane--Emden Equation\index{Lane!--Emden Gleichung}\index{Emden!Lane--Emden Gleichung} (viscous fluid with polytropic index $n$ in hydrostatic equilibrium and spherical symmetry, \ie $\Nabla P = - \rho \Nabla \phi$, where $\theta^n = \rho/\rho_0$ and $\xi = r/r_0$ with $r_0 = \sqrt{n c_{s,0}^2 / 4\pi G \rho_0}$):
+			Kelvin's Circulation Theorem\index{Kelvin!Theorem} (valid for non-viscid fluids with polytropic equation of state; $\vec{\Omega} = \Nabla \times \vec{v}$ is the vorticity and $\Gamma = \int_{\partial \mathcal{A}} \vec{v} \cdot \dd \vec{l}$ is the circulation):
 			\begin{equation}
-				\frac{1}{\xi^2} \partial_\xi \qty(\xi^2 \partial_\xi \theta) = - \theta^n
+				\partial_t \vec{\Omega} = \Nabla \times \qty(\vec{v} \times \vec{\Omega}) + \frac{1}{\rho^2} \Nabla \rho \times \Nabla P
+				\iff \dv{t}\Gamma(\partial \mathcal{A}) = 0
 			\end{equation}
 
 			\noindent
-			Kelvin's Circulation Theorem\index{Kelvin!Theorem} (valid for fluids with polytropic equation of state; $\vec{\Omega} = \Nabla \times \vec{v}$ is the vorticity):
-			\begin{equation}
-				\partial_t \vec{\Omega} = \Nabla \times \qty(\vec{v} \times \vec{\Omega})
-			\end{equation}
-
-			\noindent
-			Bernoulli's constant (Valid for ideal fluids in stationary flow; $\phi$ is the gravitational potential, $\dd \tilde{h} = \dd P / \rho$ is the specific enthalpy under adiabatic conditions):
+			Bernoulli's constant (Valid for ideal fluids in stationary, adiabatic flow; $\phi$ is the gravitational potential, $\dd \tilde{h} = \dd P / \rho$ is the specific enthalpy):
 			\begin{equation}
 				\vec{v}\cdot \Nabla \qty(\frac{1}{2}\vec{v}^2 + \tilde{h} + \phi) = 0
 			\end{equation}
@@ -171,8 +198,16 @@
 				= \int \dd[3]{x} \qty(\rho \vec{v}\otimes\vec{v} + 1_3 P + \bar{T}_{\text{grav.}})
 			\end{equation}
 
+			\noindent
+			Polytropic equation (polytropic index $\gamma$):
+			\begin{equation}
+				\label{eq:PolytropicEquation}
+				P V^\gamma = \const
+			\end{equation}
+
+
 		\subsubsection{Relativistic Hydrodynamics}
-			Relativistic Hydrodynamics without Gravitational field (Energy density $\rho$, pressure $P$, $u^\mu D_\mu =: D_u$):
+			Relativistic Hydrodynamics without Gravitational field (Energy density $\rho$, pressure $P$, $u^\mu \nabla_\mu =: \nabla_u$):
 			\begin{equation}
 				\begin{aligned}
 					0 &= \nabla_u \qty(\rho c^2) + \qty(\rho c^2 + P) \nabla_\mu u^\mu \\
@@ -191,7 +226,7 @@
 			\noindent
 			Diffusive part of the stress-energy tensor (where $\eta$ is the dynamic viscosity, $\zeta$ is the bulk viscosity):
 			\begin{equation}
-				\bar{T}_{\mathrm{d}}=-\eta\left[\left(\vec{\nabla}\otimes\vec{v}\right)+\left(\vec{\nabla}\otimes\vec{v}\right)^{\intercal}-\frac{2}{3}\vec{\nabla}\cdot\vec{v}\,1_{3}\right]-\zeta\vec{\nabla}\cdot\vec{v}\,1_{3}
+				\bar{T}_{\mathrm{d}}=-\eta\left[\left(\vec{\nabla}\otimes\vec{v}\right)+\left(\vec{\nabla}\otimes\vec{v}\right)^{T}-\frac{2}{3}\vec{\nabla}\cdot\vec{v}\,1_{3}\right]-\zeta\vec{\nabla}\cdot\vec{v}\,1_{3}
 			\end{equation}
 
 			\noindent
@@ -212,6 +247,46 @@
 				\mathcal{R} = \frac{v L}{\nu}
 			\end{equation}
 
+			\noindent
+			Lane--Emden Equation\index{Lane!--Emden Gleichung}\index{Emden!Lane--Emden Gleichung} (viscous fluid with polytropic index $n$ in hydrostatic equilibrium and spherical symmetry, \ie $\Nabla P = - \rho \Nabla \phi$, where $\theta^n = \rho/\rho_0$ and $\xi = r/r_0$ with $r_0 = \sqrt{n c_{s,0}^2 / 4\pi G \rho_0}$):
+			\begin{equation}
+				\frac{1}{\xi^2} \partial_\xi \qty(\xi^2 \partial_\xi \theta) = - \theta^n
+			\end{equation}
+
+		\subsubsection{Shocks}
+			Discontinuity in matter, momentum and energy conservation ($\tilde{h}$ is the specific enthalpy):
+			\begin{align}
+				\rho_1 \vec{v_1} &= \rho_2 \vec{v_2} \\
+				\qty(\frac{1}{2}\vec{v}_1^2 + \tilde{h}_1) \rho_1 \vec{v_1} &= \qty(\frac{1}{2}\vec{v}_2^2 + \tilde{h}_2) \rho_2 \vec{v_2} \\
+				\rho_1 \vec{v}_1^2 + P_1^2 &= \rho_2 \vec{v}_2^2 + P_2^2
+			\end{align}
+
+			\noindent
+			Mach number\index{Mach!Zahl}:
+			\begin{equation}
+				\mathcal{M}_i = \frac{v_i}{c_{s,i}}
+			\end{equation}
+
+			\noindent
+			Rankine--Hugoniot shock jump conditions\index{Rankine!--Hugoniot Bedingungen} ($r := \rho_2/\rho_1$ and $q := P_2/P_1$, assuming a polytropic fluid Eq.~\ref{eq:PolytropicEquation}):
+			\begin{equation}
+				r = \frac{M_1^2(\gamma+1)}{M_1^2(\gamma-1)+2}
+				\hsp
+				q = \frac{2\gamma M_1^2 - \gamma + 1}{\gamma + 1}
+			\end{equation}
+
+			\noindent
+			Shock velocity
+			\begin{equation}
+				v_{\text{shock}} = c_{s,1} \sqrt{\frac{2 r}{(\gamma+1) - (\gamma-1)r}} = c_{s,1}\sqrt{\frac{(\gamma+1)q + (\gamma-1)}{2\gamma}}
+			\end{equation}
+
+			\noindent
+			Sedov Solution\index{Sedov!Lösung} (for a point explosion releasing an energy $E$ in a homogeneous medium of $\rho_0$ density)
+			\begin{equation}
+				R(t) = \qty(\frac{3 E}{4\pi\rho_0}t^2)^{1/5}
+			\end{equation}
+
 	\subsection{Plasma Physics}
 		\subsubsection{Basics}
 			Shielding of a charge pertubation $\rho=q\delta(\vec{x})$ by plasma charges (Yukawa potential\index{Yukawa!Potential}):
@@ -220,7 +295,7 @@
 			\end{equation}
 
 			\noindent
-			Debye Wave number\index{Debye!Wellenzahl} and Debye length\index{Debye!Länge} (characteristic shielding length; notice the lack of a factor of $2\pi$):
+			Debye Wave number\index{Debye!Wellenzahl} and Debye length\index{Debye!Länge} (characteristic shielding length; note the lack of a factor of $2\pi$):
 			\begin{equation}
 				k_\text{D}^2 := 4\pi \frac{\bar{n}_e e^2}{\kB T} \hsp
 				\lambda_\text{D} := \frac{1}{k_\text{D}} = \sqrt{\frac{\kB T}{4\pi \bar{n}_e e^2}}
@@ -303,13 +378,19 @@
 				= - \Nabla P + \frac{1}{4\pi} \qty(\vec{B} \cdot \Nabla) \vec{B} - \frac{1}{8\pi} \Nabla \vec{B}^2
 			\end{equation}
 
-		\subsubsection{Hydromagnetic waves}
-			Dielectricity tensor (where $w_P = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = 1_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
+		\subsubsection{Electromagnetic Waves in Cold Magnetized Plasma}
+			Dielectricity tensor (where $w_p = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = 1_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
 			\begin{equation}
 				\varepsilon = \qty(1 - w_p^2) \pi_\parallel + \qty(1-\frac{w_p^2}{1-w_L^2})\pi_\perp + \i \frac{w_p^2 w_L}{1-w_L^2} \hat{\mathcal{B}}
 			\end{equation}
 
 			\noindent
+			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd{z} n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
+			\begin{equation}
+				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd{z} n_e B_\parallel
+			\end{equation}
+
+		\subsubsection{Hydromagnetic Waves}
 			Alfvén velocity\index{Alfvén!Geschwindigkeit} (characteristic velocity of MHD waves):
 			\begin{equation}
 				c_A^2 = \frac{B_0^2}{4\pi \rho_0}
@@ -319,16 +400,18 @@
 			Dispersion relation (phase velocity $c_k = \omega/k$, $\psi$ is the angle between $\vec{k}$ and $\vec{B}$)
 			\begin{equation}
 				\mqty(
-					c_k^2 - c_s^2 - c_A^2 \sin^2 \psi & c_A^2 \sin\psi \cos\psi & 0 \\
-					c_A^2 \sin\psi \cos\psi & c_k^2 - c_A^2 \cos^2 \psi & 0 \\
-					0 & 0 & c_k^2 - c_A^2 \cos^2 \psi
+				c_k^2 - c_s^2 - c_A^2 \sin^2 \psi & c_A^2 \sin\psi \cos\psi & 0 \\
+				c_A^2 \sin\psi \cos\psi & c_k^2 - c_A^2 \cos^2 \psi & 0 \\
+				0 & 0 & c_k^2 - c_A^2 \cos^2 \psi
 				) \delta \vec{v} = 0
 			\end{equation}
 
 			\noindent
-			Faraday rotation\index{Faraday!Rotation} (Rotation of the polarization vector of light introduced by a slight difference in phase velocity for light of different helicity; $\psi$ is the rotation angle, and $\int \dd{z} n_e B_\parallel$ is called the rotation measure, where $B_\parallel$ is the magnetic field component parallel to the line of sight):
+			Alfvén waves\index{Alfvén!Welle} dispersion relation and group velocity (where $\vec{B} = B \hat{b}$):
 			\begin{equation}
-				\psi = \frac{2\pi e^3}{m^2 c^2 \omega^2} \int \dd{z} n_e B_\parallel
+				\omega = c_A k \cos \psi
+				\hsp
+				\pdv{\omega}\vec{k} = c_A \hat{b}
 			\end{equation}
 
 	\subsection{Stellar Dynamics}
