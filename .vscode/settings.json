@@ -133,5 +133,6 @@
         "%DIR%/",
         "%TMPFILE%",
         "-l=%DIR%/localIndentSettings"
-    ]
+    ],
+    "workbench.colorTheme": "Solarized Dark"
 }
