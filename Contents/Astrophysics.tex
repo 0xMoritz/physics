@@ -91,7 +91,7 @@
 		\subsubsection{Radiation Damping}
 			Radiation damping (As a linear theory, electromagnetism cannot account for the loss of energy in a spiraling electron. This is a non-linear effect from QFT that can be corrected for by an additional force term $\vec{F}_\text{rad}$ in the classical equations of motion):
 			\begin{equation}
-				\vec{F}_\text{rad} = \frac{2}{3} \frac{e^2}{c^2} \ddot{\vec{\beta}}^2
+				\vec{F}_\text{rad} = \frac{2}{3} \frac{e^2}{c^2} \ddot{\vec{\beta}}
 			\end{equation}
 
 			\noindent
@@ -131,13 +131,13 @@
 		\subsubsection{Spectral Lines}
 			Natural Line-width (Heisenberg uncertainty principle, $\tau$ is the lifetime of the excited state):
 			\begin{equation}
-				\phi_\Gamma(\omega-\omega_{mn}) = \frac{1}{\pi} \frac{\Gamma / 2}{(\omega-\omega_{mn})^2 + \Gamma^2}
+				\phi_\Gamma(\omega-\omega_{mn}) = \frac{1}{\pi} \frac{\Gamma / 2}{(\omega-\omega_{mn})^2 + \Gamma^2 / 4}
 			\end{equation}
 
 			\noindent
-			Doppler broadening (Assuming thermal motion of the emitting particles, $\sigma = \sqrt{\kB T / m}$ is the standard deviation of the velocity distribution, $\bar{\omega} = \omega_0(1+v/c)$ is the centre frequency):
+			Doppler broadening (Assuming thermal motion of the emitting particles, $\sigma = \sqrt{\kB T / m}$ is the standard deviation of the velocity distribution):
 			\begin{equation}
-				\phi(\omega-\omega_{mn}) = \frac{c}{\omega_0 \sqrt{ 2\pi} \sigma} \exp(-\frac{c^2}{2\sigma^2}\qty(\frac{\omega-\bar{\omega}}{\omega_0^2})^2)
+				\phi(\omega-\omega_{mn}) = \frac{c}{\omega_{mn} \sqrt{ 2\pi} \sigma} \exp(-\frac{c^2}{2\sigma^2}\qty(\frac{\omega-\omega_{mn}}{\omega_{mn}})^2)
 			\end{equation}
 
 			\noindent
@@ -188,6 +188,12 @@
 			Bernoulli's constant (Valid for ideal fluids in stationary, adiabatic flow; $\phi$ is the gravitational potential, $\dd \tilde{h} = \dd P / \rho$ is the specific enthalpy):
 			\begin{equation}
 				\vec{v}\cdot \Nabla \qty(\frac{1}{2}\vec{v}^2 + \tilde{h} + \phi) = 0
+			\end{equation}
+
+			\noindent
+			Bondi accretion\index{Bondi!Akretion} (point particle of mass $M$ in a gas cloud of density $\rho_0$ in stationary flow; $R_B = 2 G M/c_s^2$ is the Bondi radius)
+			\begin{equation}
+				\dot{M} = 4 \pi R_B^2 \rho v
 			\end{equation}
 
 			\noindent
