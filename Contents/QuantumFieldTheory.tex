@@ -40,7 +40,7 @@
 		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
 			\noindent
 			Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \to P_3 + P_4$:
-			\begin{itemize}\itemsep -0pt	% reduce space between items
+			\begin{itemize}\itemsep -0pt
 				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
 				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
 				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
@@ -221,7 +221,7 @@
 			Infinitesimal Lorentz Transformation (With parameters $\omega$ and generators $M$):
 			\begin{equation}
 				\begin{aligned}
-					\Lambda^\mu_\nu &= \delta^\mu_\nu - \frac{\i}{2}\omega^\mu_\nu = \delta^\mu_\nu - \frac{\i}{2}\omega_{\alpha\beta}M^{\alpha\beta\mu}{}_\nu \\
+					\Lambda^\mu_\nu &= \delta^\mu_\nu - \frac{\i}{2}\omega^\mu_\nu = \delta^\mu_\nu - \frac{\i}{2}\delta\omega_{\alpha\beta}M^{\alpha\beta\mu}{}_\nu \\
 				\end{aligned}
 			\end{equation}
 
@@ -655,7 +655,7 @@
 			\end{equation}
 
 			\noindent
-			Weyl Equations\index{Weyl!Gleichungen}:
+			Weyl Equations\index{Weyl!Gleichungen} (Consequence of the massless Dirac Equation, see Eq.~\ref{Eq:DiracInTermsOfWeylSpinors}):
 			\begin{equation}
 				\begin{aligned}
 					\i \bar{\sigma}^\mu \partial_\mu \psi_\text{L} &= 0 \\
@@ -682,7 +682,14 @@
 			\noindent
 			Adjoint Dirac Equation:
 			\begin{equation}
-				-\i \partial_\mu \bar{\psi}(x)\gamma^\mu-\bar\psi{x}m = 0
+				-\i \partial_\mu \bar{\psi}(x)\gamma^\mu-\bar\psi(x)m = 0
+			\end{equation}
+
+			\noindent
+			Dirac Equation in Terms of Weyl Spinors:
+			\begin{equation}
+				\label{Eq:DiracInTermsOfWeylSpinors}
+				\mqty( -m & \i (\partial_0 + \vec{\sigma}\cdot\partial_{\vec{x}}) \\ \i (\partial_0 - \vec{\sigma}\cdot\partial_{\vec{x}}) & -m ) \mqty( \psi_\text{L} \\ \psi_\text{R} ) = 0
 			\end{equation}
 
 			\noindent
@@ -703,20 +710,20 @@
 			\end{equation}
 			with
 			\begin{equation}
-				u^s(p) = \mqty(
-				\sqrt{p\cdot\sigma}\,\xi^s \\
-				\sqrt{p\cdot\bar{\sigma}}\,\xi^s
+				u(p) = \mqty(
+				\sqrt{p\cdot\sigma}\,\xi \\
+				\sqrt{p\cdot\bar{\sigma}}\,\xi
 				)
-				\hsp v^s(p) = \mqty(
-				\M\sqrt{p\cdot\sigma}\,\chi^s \\
-				-\sqrt{p\cdot\bar{\sigma}}\,\chi^s
+				\hsp v(p) = \mqty(
+				\M\sqrt{p\cdot\sigma}\,\chi \\
+				-\sqrt{p\cdot\bar{\sigma}}\,\chi
 				)
 			\end{equation}
-			\begin{itemize}
-				\item particle with spin up: $\xi=\xi^1=\mqty(1\\0)$
-				\item particle with spin down: $\xi=\xi^2=\mqty(0\\1)$
-				\item antiparticle with spin up: $\chi=\chi^1=\mqty(0\\1)$
-				\item antiparticle with spin down: $\chi=\chi^2=\mqty(1\\0)$
+			\begin{itemize} \itemsep -0pt
+				\item particle with spin up: $\xi=\xi^1 = (1, 0)^T$
+				\item particle with spin down: $\xi=\xi^2 = (0, 1)^T$
+				\item antiparticle with spin up: $\chi=\chi^1 = (0, 1)^T$
+				\item antiparticle with spin down: $\chi=\chi^2 = (1, 0)^T$
 			\end{itemize}
 
 			\noindent
@@ -727,13 +734,15 @@
 
 			\noindent
 			Spinor orthogonality
-			\begin{equation}
-				\begin{aligned}
-					\bar{u}^s(p) u^r(p) &= \M 2m\xi^{s\dagger}\xi^r = \M 2m\delta^{sr} \\
-					\bar{v}^s(p) v^r(p) &= - 2m\eta^{s\dagger}\eta^r = - 2m\delta^{sr} \\
-					\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				\bar{u}^r(p) u^s(p) &= 2m \xi^{s\dagger} \xi^s = 2m \delta^{rs} 
+				&
+				\bar{v}^r(p) v^s(p) &= - 2m\chi^{s\dagger}\chi^s = - 2m\delta^{rs} \\
+				u^{r\dagger}(p) u^s(p) &= 2E(\vec{p}) \delta^{rs} 
+				&
+				v^{r\dagger}(p) v^s(p) &= 2E(\vec{p}) \delta^{rs} \\
+				\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0
+			\end{align}
 
 			\noindent
 			Completeness relations:
@@ -768,15 +777,19 @@
 			\end{equation}
 
 			\noindent
-			Dirac Spinor\index{Dirac!Spinor} transformation rules (Generator $\hat{S}^{\mu\nu} = \frac{\i}{4}[\gamma^\mu,\gamma^\nu]$):
-			\begin{equation}
-				\begin{aligned}
-					\Lambda_{1/2} &= \exp(\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R}) \\
-					\gamma^0 \Lambda_{1/2}^\dagger \gamma^0	&= \Lambda_{1/2}^{-1} \\
-					\psi' &= \Lambda_{1/2} \psi
-					\hsp \bar{\psi}' = \bar{\psi} \Lambda_{1/2}^{-1}
-				\end{aligned}
-			\end{equation}
+			Spinor representation of the Lorentz group (Generator $\hat{S}^{\mu\nu} = \frac{\i}{4}[\gamma^\mu,\gamma^\nu]$):
+			\begin{align}
+				\Lambda_{1/2} &= \exp(-\frac{\i}{2}\omega_{\mu\nu}S^{\mu\nu}) = \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R})
+			\end{align}
+			Dirac Spinor\index{Dirac!Spinor} transformation rules:
+			\begin{align}
+				\gamma^0 \Lambda_{1/2}^\dagger \gamma^0	&= \Lambda_{1/2}^{-1}
+				&
+				\Lambda_{1/2}^{-1} \gamma^\mu \Lambda_{1/2} &= \Lambda^\mu{}_\nu \gamma^\nu \\
+				\psi' &= \Lambda_{1/2} \psi
+				&
+				\bar{\psi}' &= \bar{\psi} \Lambda_{1/2}^{-1}
+			\end{align}
 
 			\noindent
 			Lagrangian for a Dirac-Field:
@@ -799,9 +812,6 @@
 					&= \wick{\c{\hat{\psi}}(x) \c{\hat{\bar{\psi}}}(y)} = - \wick{\c{\hat{\bar{\psi}}}(y) \c{\hat\psi}(x)}
 				\end{aligned}
 			\end{equation}
-
-	\subsection{Renormalization}
-		TODO
 
 	\subsection{Quantum Electrodynamics}
 		Lagrangian of Quantum Electrodynamics\index{Quanten Elektrodynamik} ($U(1)$ gauge)
