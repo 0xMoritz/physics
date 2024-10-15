@@ -156,7 +156,7 @@
 			\noindent
 			Jacobi's formula\index{Jacobi!Formel}:
 			\begin{equation}
-				\dv{t}\det A(t) = \tr \qty(A^T \dv{t} A)
+				\dv{t}\det A(t) = \tr \qty(A^\trp \dv{t} A)
 			\end{equation}
 
 			\noindent
@@ -234,10 +234,10 @@
 			\begin{equation}
 				\begin{aligned}
 					\int_\mathbb{R} \ex^{-\frac{a x^2}{2}+ b x}\dd{x} &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x}}\dd[n]{x}
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^T A \vec{x} + \vec{b}^T \vec{x}}\dd[n]{x}
-					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^T A^{-1} \vec{b}}\\
+					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x} + \vec{b}^\trp \vec{x}}\dd[n]{x}
+					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^\trp A^{-1} \vec{b}}\\
 					\int \mathcal{D}\qty[f]\, \ex^{-\frac{1}{2} \int \dd x \dd y \, f(x) A(x, y) f(y) + \int \dd x\,b(x)f(x)}
 					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) A^{-1}(x,y) b(y)}
 				\end{aligned}
@@ -631,7 +631,7 @@
 					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
 					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
 					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
-					$O(n)$ & Orthogonal group & $\set{O: OO^{T}=O^{T}O=1}\subseteq GL(n, \mathbb{R})$ \\
+					$O(n)$ & Orthogonal group & $\set{O: OO^\trp=O^\trpO=1}\subseteq GL(n, \mathbb{R})$ \\
 					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
 					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
 					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\
@@ -880,7 +880,7 @@
 			\end{equation}
 
 			\noindent
-			Skew-symmetric\index{Schiefsymmetrische Matrix} matrix of a vector $\vec{v} = (v_1, v_2, v_3)^T$:
+			Skew-symmetric\index{Schiefsymmetrische Matrix} matrix of a vector $\vec{v} = (v_1, v_2, v_3)^\trp$:
 			\begin{equation}
 				\tilde{v} = \qty[\vec{v}\times] =
 				\qty( \begin{matrix}
@@ -990,7 +990,7 @@
 				\begin{aligned}
 					\det(AB) &= \det(A)\det(B) \\
 					\det(\inv{A}) &= \frac{1}{\det(A)} \\
-					\det(A^T) &= \det(A) \\
+					\det(A^\trp) &= \det(A) \\
 				\end{aligned}
 			\end{equation}
 
