@@ -271,21 +271,22 @@
 			\end{equation}
 
 			\noindent
-			Heaviside function\index{Heaviside!Funktion} $\Theta(x)$ and its properties:
-			\begin{equation}
-				\begin{aligned}
-					\Theta(x) :=& \left\{\begin{array}{ll}
-						1 & x\ge 0 \\
-						0 & x<0    \\
-					\end{array}\right. \\
-					\dv{\Theta}{x}(x) =&\; \delta(x) \\
-					\int_{\mathbb{R}} f(x)\Theta(x)\dd{x} =& \int_{0}^{\infty} f(x)\dd{x}
-				\end{aligned}
-			\end{equation}
+			Heaviside function\index{Heaviside!Funktion} $\Theta(x)$:
+			\begin{align}
+				\Theta(x) :=& \left\{\begin{array}{ll}
+					1 & x\ge 0 \\
+					0 & x<0    \\
+				\end{array}\right. \\
+				\int_{\mathbb{R}} f(x)\Theta(x)\dd{x} =& \int_{0}^{\infty} f(x)\dd{x}
+			\end{align}
 
-			\begin{equation}
-				\Nabla^2\frac{1}{\abs{\vec{r} - \vec{r}'}} = -4\pi\delta\left(\vec{r} - \vec{r}'\right)
-			\end{equation}
+			\noindent
+			Further properties:
+			\begin{align}
+				x \delta(x) &= 0\\
+				\dv{\Theta}{x}(x) &= \delta(x) \\
+				\Nabla^2\frac{1}{\abs{\vec{r} - \vec{r}'}} &= -4\pi\delta\left(\vec{r} - \vec{r}'\right)
+			\end{align}
 
 			\noindent
 			See Eq.~\ref{Eq:FourierIdentities}
@@ -631,7 +632,7 @@
 					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
 					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
 					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
-					$O(n)$ & Orthogonal group & $\set{O: OO^\trp=O^\trpO=1}\subseteq GL(n, \mathbb{R})$ \\
+					$O(n)$ & Orthogonal group & $\set{O: O O^\trp = O^\trp O = 1}\subseteq GL(n, \mathbb{R})$ \\
 					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
 					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
 					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\

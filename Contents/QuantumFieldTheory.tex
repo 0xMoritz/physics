@@ -94,6 +94,11 @@
 				0 & \sigma^i \\
 				-\sigma^i & 0
 				)
+				\hsp
+				\gamma^5 = \mqty(
+				-1_2 & 0 \\
+				0 & 1_2
+				)
 			\end{equation}
 
 			\noindent
@@ -102,55 +107,19 @@
 				\begin{aligned}
 					\gamma^0
 					= \left( \begin{matrix}
-							\sigma^0 & \M0       \\
-							0        & -\sigma^0
-						\end{matrix} \right)
-					= \left( \begin{matrix}
-							\M 1 & \M 0 & \M 0 & \M 0 \\
-							\M 0 & \M 1 & \M 0 & \M 0 \\
-							\M 0 & \M 0 & -1   & \M 0 \\
-							\M 0 & \M 0 & \M 0 & -1   \\
-						\end{matrix} \right)
+						\sigma^0 & \M0       \\
+						0        & -\sigma^0
+					\end{matrix} \right)
 					&\hsp
-					\gamma^1
-					= \left( \begin{matrix}
-							\M0       & \sigma^1 \\
-							-\sigma^1 & 0
-						\end{matrix} \right)
-					= \left( \begin{matrix}
-							\M 0 & \M 0 & \M 0 & \M 1 \\
-							\M 0 & \M 0 & \M 1 & \M 0 \\
-							\M 0 & -1   & \M 0 & \M 0 \\
-							-1   & \M 0 & \M 0 & \M 0 \\
-						\end{matrix} \right) \\[8pt]
-					\gamma^2
-					= \left( \begin{matrix}
-							\M0       & \sigma^2 \\
-							-\sigma^2 & 0
-						\end{matrix} \right)
-					= \left( \begin{matrix}
-							\M 0 & \M 0 & \M 0 & -\i  \\
-							\M 0 & \M 0 & \M\i & \M 0 \\
-							\M 0 & \M\i & \M 0 & \M 0 \\
-							-\i  & \M 0 & \M 0 & \M 0 \\
-						\end{matrix} \right)
-					&\hsp
-					\gamma^3
-					= \left( \begin{matrix}
-							\M 0      & \sigma^3 \\
-							-\sigma^3 & 0
-						\end{matrix} \right)
-					= \left( \begin{matrix}
-							\M 0 & \M 0 & \M 1 & \M 0 \\
-							\M 0 & \M 0 & \M 0 & -1   \\
-							-1   & \M 0 & \M 0 & \M 0 \\
-							\M 0 & \M 1 & \M 0 & \M 0 \\
-						\end{matrix} \right) \\
+					\gamma^i = \mqty(
+					0 & \sigma^i \\
+					-\sigma^i & 0
+					)
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Transformation ($U$ unitary: $U U^\dagger=1_4$):
+			Transformation to any other viable representation ($U$ unitary: $U U^\dagger=1_4$):
 			\begin{equation}
 				\tilde{\gamma} = U \gamma^\mu U^\dagger
 			\end{equation}
@@ -173,7 +142,7 @@
 			\end{equation}
 
 			\noindent
-			Chiral spinors (eigenstates of $\gamma^5$ with eigenvalues $\pm 1$):
+			Chiral spinors (eigenstates of $\gamma^5$ with eigenvalues / chirality\index{Chiralität} $\pm 1$; note that while being Lorentz invariant, chirality is not a constant of motion):
 			\begin{equation}
 				\gamma_5 \psi_L = - \psi_L
 				\hsp \gamma_5 \psi_R = \psi_R
@@ -187,7 +156,7 @@
 			\end{equation}
 
 			\noindent
-			Helicity operator (\ie right-handed particles have positive helicity and left-handed particles have negative helicity, while right-handed antiparticles have negative helicity and left-handed antiparticles have positive helicity):
+			Helicity operator (\ie right-handed particles have positive helicity and left-handed particles have negative helicity, while right-handed antiparticles have negative helicity and left-handed antiparticles have positive helicity; Note that while helicity is a constant of motion, it is not Lorentz invariant):
 			\begin{equation}
 				\hat{h} = \frac{\vec{\sigma}\cdot\hat{\vec{p}}}{\abs{\vec{p}}}
 			\end{equation}
@@ -504,7 +473,6 @@
 				J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
 			\end{equation}
 
-
 	\subsection{Bosons}
 		\subsubsection{Bosonic Ladder Operators}
 			\label{Sec:BosonicCreationAndAnnihilationOperators}
@@ -664,9 +632,17 @@
 			\end{equation}
 
 		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
-			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor}:
+			Adjoint spinor $\bar{\psi}$ of a spinor $\psi$:
 			\begin{equation}
-				\psi = \psi_\text{D} = \mqty(\psi_\text{L} \\ \psi_\text{R})
+				\bar{\psi} := \psi^{\dagger} \gamma^0
+			\end{equation}
+
+			\noindent
+			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor} (Chiral representation):
+			\begin{equation}
+				\psi = \mqty(\psi_\text{L} \\ \psi_\text{R})
+				\hsp
+				\bar{\psi} = \mqty(\bar{\psi}_\text{R} & \bar{\psi}_\text{L})
 			\end{equation}
 
 			\noindent
@@ -694,31 +670,30 @@
 
 			\noindent
 			Solutions to the Dirac equation\index{Dirac!Gleichung}:
-			\begin{equation}
-				\begin{aligned}
-					\text{particles} & \hsp
-					\psi(x) = u(p) \ex^{-\i p \cdot x} = \mqty(
-					u_\text{L}(p) \\
-					u_\text{R}(p)
-					) \ex^{-\i p \cdot x} \\
-					\text{antiparticles} & \hsp
-					\bar{\psi}(x) = v(p) \ex^{\i p \cdot x} = \mqty(
-					v_\text{L}(p) \\
-					v_\text{R}(p)
-					) \ex^{\i p \cdot x}
-				\end{aligned}
-			\end{equation}
-			with
-			\begin{equation}
-				u(p) = \mqty(
+			\begin{align}
+				\text{particles}
+				& \hsp
+				\psi(x) = u(p) \ex^{-\i p \cdot x}
+				& \hsp
+				u(p) &= \mqty(
+				u_\text{L}(p) \\
+				u_\text{R}(p)
+				) = \mqty(
 				\sqrt{p\cdot\sigma}\,\xi \\
 				\sqrt{p\cdot\bar{\sigma}}\,\xi
-				)
-				\hsp v(p) = \mqty(
+				) \\
+				\text{antiparticles}
+				& \hsp
+				\bar{\psi}(x) = v(p) \ex^{\i p \cdot x}
+				& \hsp
+				v(p) &= \mqty(
+				v_\text{L}(p) \\
+				v_\text{R}(p)
+				) = \mqty(
 				\M\sqrt{p\cdot\sigma}\,\chi \\
 				-\sqrt{p\cdot\bar{\sigma}}\,\chi
 				)
-			\end{equation}
+			\end{align}
 			\begin{itemize} \itemsep -0pt
 				\item particle with spin up: $\xi=\xi^1 = (1, 0)^\trp$
 				\item particle with spin down: $\xi=\xi^2 = (0, 1)^\trp$
@@ -727,21 +702,21 @@
 			\end{itemize}
 
 			\noindent
-			Adjoint spinor $\bar{\psi}$ of a spinor $\psi$:
-			\begin{equation}
-				\bar{\psi} := \psi^{\dagger} \gamma^0
-			\end{equation}
+			Spinor normalization
+			\begin{align}
+				\bar{u}^r(p) u^s(p) &= 2m \xi^{s\dagger} \xi^s = 2m \delta^{rs}
+				&
+				\bar{v}^r(p) v^s(p) &= - 2m\chi^{s\dagger}\chi^s = - 2m\delta^{rs} \\
+				u^{r\dagger}(p) u^s(p) &= 2E(\vec{p}) \delta^{rs}
+				&
+				v^{r\dagger}(p) v^s(p) &= 2E(\vec{p}) \delta^{rs}
+			\end{align}
 
 			\noindent
 			Spinor orthogonality
 			\begin{align}
-				\bar{u}^r(p) u^s(p) &= 2m \xi^{s\dagger} \xi^s = 2m \delta^{rs} 
-				&
-				\bar{v}^r(p) v^s(p) &= - 2m\chi^{s\dagger}\chi^s = - 2m\delta^{rs} \\
-				u^{r\dagger}(p) u^s(p) &= 2E(\vec{p}) \delta^{rs} 
-				&
-				v^{r\dagger}(p) v^s(p) &= 2E(\vec{p}) \delta^{rs} \\
-				\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0
+				\bar{u}^r(p) v^s(p) &= \bar{v}^r(p) u^s(p) = 0 \\
+				u^{r \dagger}(\vec{p}) v^s(-\vec{p}) &= v^{r \dagger}(-\vec{p}) u^s(\vec{p}) = 0
 			\end{align}
 
 			\noindent
@@ -798,9 +773,15 @@
 			\end{equation}
 
 			\noindent
-			Noether current operator / probability current operator:
+			Noether current operator / probability current operator (resulting from the symmetry $\psi \to \ex^{\i \alpha} \psi$):
 			\begin{equation}
 				\hat{J}^\mu = \hat{\bar{\psi}} \gamma^\mu \hat{\psi}
+			\end{equation}
+
+			\noindent
+			Axial current operator (conserved if the chiral symmetry $\psi \to \ex^{\i \alpha \gamma^5} \psi$ is present, typically when $m=0$):
+			\begin{equation}
+				\hat{J}^\mu_5 = \hat{\bar{\psi}} \gamma^\mu \gamma^5 \hat{\psi}
 			\end{equation}
 
 			\noindent
@@ -811,6 +792,46 @@
 					&= \int \frac{\dd^4 p}{(2\pi)^4} \frac{\i(\slashed{p}+m)}{p^2-m^2+\i\epsilon} \ex^{-\i p\cdot(x-y)} \\
 					&= \wick{\c{\hat{\psi}}(x) \c{\hat{\bar{\psi}}}(y)} = - \wick{\c{\hat{\bar{\psi}}}(y) \c{\hat\psi}(x)}
 				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Orthogonal basis for spinor bilinears (scalar, vector, tensor, pseudovector, pseudoscalar):
+			\begin{equation}
+				O_S = 1_4
+				\hsp
+				O_V = \gamma_\mu
+				\hsp
+				O_T = \frac{1}{\sqrt{2}} \sigma_{\mu\nu}
+				\hsp
+				O_A = \i \gamma_\mu \gamma_5
+				\hsp
+				O_P = \gamma_5
+			\end{equation}
+
+			\noindent
+			Bispinor decomposition:
+			\begin{align}
+				\psi\bar{\chi} &= \frac{1}{4} \qty( c_S 1_4 + c_V^\mu \gamma_\mu + c_T^{\mu\nu} \sigma_{\mu\nu} + c_A^\mu \gamma_\mu \gamma_5 + c_P \gamma_5 ) \\
+				c_S &= \frac{1}{4} \tr(\gamma_A \gamma_A) \tr(\psi \bar{\chi} \gamma_A)
+			\end{align}
+
+			\noindent
+			Fierz identities\index{Fierz!Identitäten}:
+			\begin{equation}
+				\qty(\bar{\psi}_a O_X \psi_b) \qty(\bar{\psi}^c O_X \psi_d)
+				= \sum_Y C_{XY} \qty(\bar{\psi}_a O_Y \psi_d) \qty(\bar{\psi}^c O_Y \psi_b)
+			\end{equation}
+
+			\noindent
+			Fierz Table\index{Fierz!Tabelle} ($X\in\qty{S,V,T,A,P}$; note: signs depend on metric signature, order of $\gamma^5 \gamma^\mu$ for the pseudovector and euclidean vs. minkowski space but not representation):
+			\begin{equation}
+				C_{XY} = \mqty(
+				+\frac{1}{4} & +\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} \\
+				+1 & -\frac{1}{2} & 0 & -\frac{1}{2} & -1 \\
+				-\frac{3}{2} & 0 & -\frac{1}{2} & 0 & -\frac{3}{2} \\
+				-1 & -\frac{1}{2} & 0 & -\frac{1}{2} & +1 \\
+				+\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} & +\frac{1}{4} \\
+				)
 			\end{equation}
 
 	\subsection{Quantum Electrodynamics}
@@ -866,13 +887,12 @@
 
 		\noindent
 		Structure constant identities:
-		\begin{equation}
-			\begin{aligned}
-				f^{abc} f^{ade} &= f^{abc} f^{dae} \\
-				f^{abc} f^{cde} &= \frac{1}{2} f^{abc} f^{cde} + \frac{1}{2} f^{abc} f^{ced} = \frac{1}{2} C_A \delta^{ad} \\
-				f^{acd} f^{bcd} &= C_A \delta^{ab}
-			\end{aligned}
-		\end{equation}
+		\begin{align}
+			%WTF ? % f^{abc} f^{ade} &= f^{abc} f^{dae} \\
+			% f^{abc} f^{cde} &= \frac{1}{2} f^{abc} f^{cde} + \frac{1}{2} f^{abc} f^{ced} = \frac{1}{2} C_A \delta^{ad} \\
+			f^{acd} f^{bcd} &= C_A \delta^{ab} \\
+			0 &= f^{ade} f^{bcd} + f^{bde} f^{cad} + f^{cde} f^{abd} 
+		\end{align}
 
 		\noindent
 		Covariant derivative\index{Kovariante Ableitung} for Yang--Mills Theory:

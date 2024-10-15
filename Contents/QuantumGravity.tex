@@ -37,6 +37,12 @@
 			\Avg{\Psi[\varphi]} \fdv{\Gamma[\phi]}{\phi(x)} = \Avg{\Psi[\varphi] \fdv{S[\varphi]}{\varphi(x)}} - \Avg{\fdv{\Psi[\varphi]}{\varphi(x)}}
 		\end{equation}
 
+		\noindent
+		Ward--Takahashi identity\index{Ward!--Takahashi Identität}\index{Takahashi!Ward--Takahashi Identität} for a gauge invariance of the effective action $\Gamma[\phi]$ with generator $G$ and the corresponding gauge fixing and ghost actions:
+		\begin{equation}
+			0 = G \Gamma[\phi] - \Avg{G(S_\text{g.f.} + S_\text{gh.})}_{J[\phi]}
+		\end{equation}
+
 	\subsection{Flow Equations}
 		Infrared regularized generating functional with a hard infrared cutoff scale $k$:
 		\begin{equation}
@@ -63,7 +69,7 @@
 
 		\noindent
 		Example regulators ($R_k(p^2) = p^2 r(y)$ with $y=p^2/k^2$):
-		\begin{itemize}
+		\begin{itemize} \itemsep -0pt
 			\item Litim regulator\index{Litim!Regulator}: $r(y) = \qty(\dfrac{1}{y}-1)\theta(1-y)$, \ie $R_k(p^2) = (k^2 - p^2) \Theta(k^2 - p^2)$ \\
 			\item Exponential regulator: $r(y) = \dfrac{cy^{b-1}}{\exp(y^b) - 1}$ \\
 			\item Sharp regulator $r(y) = \dfrac{1}{\Theta(y-1)}-1$
@@ -83,9 +89,9 @@
 		\end{equation}
 
 		\noindent
-		Flowing / Scale dependent effective action / Effective average action and modified quantum equations of motion / effective field equations ($\phi(x)= \fdv{W_k[J]}{J(x)}$):
+		Flowing / Scale dependent effective action / Effective average action and modified quantum equations of motion / effective field equations ($\phi(x)= \fdv{W_k[J_k]}{J_k(x)}$):
 		\begin{equation}
-			\Gamma_k[\phi] = \sup_J \qty{\int \dd^d x\, J(x) \phi(x) - W_k[J] - \Delta S_k[\phi]}
+			\Gamma_k[\phi] = \sup_{J_k} \qty{\int \dd^d x\, J_k(x) \phi(x) - W_k[J_k] - \Delta S_k[\phi]}
 			\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J(x)
 		\end{equation}
 
@@ -100,6 +106,12 @@
 		Beta functions:
 		\begin{equation}
 			\beta_g = \dot{g} = k \partial_k g
+		\end{equation}
+
+		\noindent
+		Definition of a fixed point $\vec{g}_{*}$:
+		\begin{equation}
+			\beta_{g_i}(\vec{g}_{*}) = 0 \quad \forall i
 		\end{equation}
 
 		\noindent
@@ -120,13 +132,63 @@
 			g_i(k) = g_{i*} + \sum_I c_I V_I \qty(\frac{k}{k_0})^{-\theta_I}
 		\end{equation}
 		\begin{itemize}
-			\item $\theta_I > 0$: relevant direction $V_I$, contributing a free parameter $c_I$
-			\item $\theta_I < 0$: irrelevant direction $V_I$, no free parameter $c_I$ insignificant
-			\item $\theta_I = 0$: marginal?, idk\dots
+			\item $\Re(\theta_I) > 0$: relevant direction $V_I$ (IR repulsive, UV attractive), contributing a free parameter $c_I$
+			\item $\Re(\theta_I) < 0$: irrelevant direction $V_I$ (IR attractive, UV repulsive), no free parameter $c_I$ insignificant
+			\item $\Re(\theta_I) = 0$: marginal, look at higher order contributions
 		\end{itemize}
 
 	\subsection{Application to Quantum Gravity}
+		Assumptions:
+		\begin{itemize}
+			\item Diffeomorphism invariance is the fundamental symmetry of spacetime.
+			\item The metric carries the fundamental degrees of freedom.
+		\end{itemize}
+
+		\noindent
+		Partition function:
+		\begin{equation}
+			Z[j] = \int \mathcal{D} g_{\mu\nu} \exp{-S_\text{gravity}[g_{\mu\nu}] + \int J^{\mu\nu}(x) g_{\mu\nu}(x) \dd[4]{x}}
+		\end{equation}
+
+		\noindent
 		Effective Action (Using a background metric $g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu}$):
 		\begin{equation}
-			\exp(-\Gamma_k[g_{\mu\nu}]) = \int \mathcal{D}h_{\mu\nu} \, \exp(-S[h_{\mu\nu}] - \int h_{\mu\nu} R_k(-\bar{D})^{\mu\nu\rho\sigma}h_{\rho\sigma})
+			\exp(-\Gamma_k[g_{\mu\nu}]) = \int \mathcal{D}h_{\mu\nu} \, \exp(-S[h_{\mu\nu}] - \int h_{\mu\nu} R_k(-\bar{D})^{\mu\nu\rho\sigma}h_{\rho\sigma} \dd[4]{x})
 		\end{equation}
+
+		\noindent
+		Gauß--Bonnet term\index{Gauß!--Bonnet Term}:
+		\begin{equation}
+			E = R_{\mu\nu\rho\sigma}^2 - 4 R_{\mu\nu}^2 + R^2
+			\hsp \fdv{E}{g_{\mu\nu}} = 0
+		\end{equation}
+
+		\noindent
+		Lie derivative (\wrt to a vector field $\omega_\mu$; constitute generators of diffeomorphism transformation)
+		\begin{equation}
+			\begin{aligned}
+				\mathcal{L}_\omega T_{\alpha\beta\dots} 
+				&= \omega^\rho \partial_\rho T_{\alpha\beta\dots} + T_{\rho\beta\dots} \partial_\alpha \omega^\rho + T_{\alpha\rho\dots} \partial_\beta \omega^\rho + \dots \\
+				&= \omega^\rho \nabla_\rho T_{\alpha\beta\dots} + T_{\rho\beta\dots} \nabla_\alpha \omega^\rho + T_{\alpha\rho\dots} \nabla_\beta \omega^\rho + \dots
+			\end{aligned}
+		\end{equation}
+
+		\noindent
+		Separation of background metric $\bar{g}_{\mu\nu}$ and fluctuation metric $h_{\mu\nu}$ in linear or exponential split:
+		\begin{align}
+			g_{\mu\nu} &= \bar{g}_{\mu\nu} + h_{\mu\nu} \\
+			g_{\mu\nu} &= \bar{g}_{\mu\rho}\exp(h)^\rho{}_{\nu} \\
+		\end{align}
+
+		\noindent
+		Split Symmetry:
+		\begin{equation}
+			g(\bar{g},h) \to g(\bar{g}+\delta \bar{g}, h + \delta h) = g(\bar{g},h)
+		\end{equation}
+
+		\noindent
+		(Modified) Nielsen identity\index{Nielsen!Identität}:
+		\begin{align}
+			0 &= \fdv{\Gamma}{\bar{g}_{\mu\nu}} - \fdv{\Gamma}{h_{\mu\nu}} - \Avg{\qty(\fdv{\bar{g}_{\mu\nu}} - \fdv{h_{\mu\nu}})(S_\text{g.f.} + S_\text{gh.})} \\
+			0 &= \mathrm{NI}_k - \frac{1}{2} \tr[\frac{1}{\sqrt{\bar{g}}} \fdv{\sqrt{\bar{g}}R_k}{\bar{g}_{\mu\nu}}G_k]
+		\end{align}

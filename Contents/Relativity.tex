@@ -75,15 +75,15 @@
 			\noindent
 			Covariant derivative\index{Kovariante Ableitung}:
 			\begin{equation}
-				\nabla_\lambda T^{\alpha ...}_{\beta...} =
-				T^{\alpha ...}_{\beta...;\lambda} = T^{\alpha...}_{\beta ...,\lambda}
-				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'...}_{\beta\phantom{\prime}...} + ...
-				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}...}_{\beta'...} - ...
+				\nabla_\lambda T^{\alpha \dots}_{\beta\dots} =
+				T^{\alpha \dots}_{\beta\dots;\lambda} = T^{\alpha\dots}_{\beta \dots,\lambda}
+				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'\dots}_{\beta\phantom{\prime}\dots} + \dots
+				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}\dots}_{\beta'\dots} - \dots
 			\end{equation}
 			The term additional to the partial derivative vanish in locally free falling frames of reference.
 
 			\noindent
-			Riemann curvature tensor\index{Riemann!Krümmungstensor}:
+			Riemann curvature tensor / Riemann tensor\index{Riemann!Krümmungstensor}:
 			\begin{align}
 				R^{\lambda}{}_{\sigma\mu\nu} &=
 				\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma} -
@@ -124,6 +124,16 @@
 			\begin{equation}
 				R = R^\mu_{\phantom{\mu}\mu}
 			\end{equation}
+
+			\noindent
+			Decomposition of the Riemann tensor\index{Riemman!Krümmungstensor} into Weyl tensor\index{Weyl!Tensor} (traceless part), Ricci tensor and Ricci scalar:
+			\begin{align}				
+				\begin{split}
+					R_{\mu\nu\rho\sigma} =&\; C_{\mu\nu\rho\sigma} - \frac{1}{2} \qty(R_{\mu\sigma} g_{\nu\rho} - R_{\mu\rho} g_{\nu\sigma} + R_{\nu\rho} g_{\mu\sigma} - R_{\nu\sigma} g_{\mu\rho}) \\ 
+					&- \frac{1}{6} R \qty(g_{\mu\rho} g_{\nu\sigma} + g_{\mu\sigma} g_{\nu\rho})
+				\end{split} \\
+				C^{\lambda}{}_{\mu\lambda\nu} =&\; 0
+			\end{align}
 
 		\subsubsection{Field Equations\index{Feldgleichungen}}
 			\noindent
@@ -470,7 +480,7 @@
 				\begin{aligned}
 					{x'}^\mu &= \Lambda^{\mu}_{\nu}(\vec{v}) x^\nu \\
 					{x'}_\mu &=  x_\nu \overline{\Lambda}_\mu^{\nu}(\vec{v}) \\
-					{T'}_{\mu_1,\mu_2,...}^{\nu_1,\nu_2,...} &=  \Lambda^{\nu_1}_{\beta_1}(\vec{v}) \Lambda^{\nu_2}_{\beta_2}(\vec{v}) ... T_{\alpha_1,\alpha_2,...}^{\beta_1,\beta_2,...} \overline{\Lambda}_{\mu_1}^{\alpha_1}(\vec{v}) \overline{\Lambda}_{\mu_2}^{\alpha_2}(\vec{v}) ... \\
+					{T'}_{\mu_1,\mu_2,\dots}^{\nu_1,\nu_2,\dots} &=  \Lambda^{\nu_1}_{\beta_1}(\vec{v}) \Lambda^{\nu_2}_{\beta_2}(\vec{v}) \dots T_{\alpha_1,\alpha_2,\dots}^{\beta_1,\beta_2,\dots} \overline{\Lambda}_{\mu_1}^{\alpha_1}(\vec{v}) \overline{\Lambda}_{\mu_2}^{\alpha_2}(\vec{v}) \dots \\
 				\end{aligned}
 			\end{equation}
 
