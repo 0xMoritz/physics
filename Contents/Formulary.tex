@@ -165,7 +165,7 @@
 				\begin{aligned}
 					\fdv{\mathcal{F}\qty[\phi(x)]}{\phi(y)} &= \lim_{\epsilon \to 0} \frac{	\mathcal{F}\qty[\phi(x) + \epsilon\delta\phi(x-y)] - \mathcal{F}\qty[\phi(x)]}{\epsilon} \\
 					\frac{\delta \phi(x)}{\delta \phi(y)} &= \delta(x-y) \\
-					\delta \mathcal{F}\qty[\phi(x)] &= \int_\mathbb{R} \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\dd y \\
+					\delta \mathcal{F}\qty[\phi(x)] &= \int_\reals \frac{\delta \mathcal{F}\qty[\phi(x)]}{\delta \phi(y)}\delta\phi(y)\dd y \\
 					\dv{z} \fdv{\psi(y)} \phi(x) &= \fdv{\psi(y)} \dv{z} \phi(x) \\
 				\end{aligned}
 			\end{equation}
@@ -178,19 +178,19 @@
 			\end{equation}
 
 			\noindent
-			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \mathbb{C}$):
+			Cauchy integral theorem\index{Cauchy!Integralsatz} (for a closed curve $\partial \mathcal{A}$ and a holomorphic function $f(z)$ on a connected domain $G \subseteq \complex $):
 			\begin{equation}
 				\int_{\partial \mathcal{A}} f(z)\dd z = 0
 			\end{equation}
 
 			\noindent
-			Cauchy integral formula\index{Cauchy!Integralformel} (for $z_0$ inside a positively oriented circular loop $\gamma(t)=z_0+r\ex^{\i t}$ with $t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \mathbb{C}$):
+			Cauchy integral formula\index{Cauchy!Integralformel} (for $z_0$ inside a positively oriented circular loop $\gamma(t)=z_0+r\ex^{\i t}$ with $t\in[0,2\pi]$ and a holomorphic function $f(z)$ on a domain $G \subseteq \complex $):
 			\begin{equation}
 				\dv[k]{f}{z} \qty(z_0) = \frac{k!}{2\pi \i} \int_\gamma \frac{f(z)}{(z-z_0)^{k+1}}\dd z
 			\end{equation}
 
 			\noindent
-			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right] \to G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \to \mathbb{C}$ holomorphic,
+			Residue theorem\index{Residuensatz} (for a simple, closed piece wise continuously differentiable path (contour) $\gamma:\left[a,b\right] \to G$ and $f:G\backslash\set{a_1, a_2, .., a_n} \to \complex $ holomorphic,
 			with poles $a_1, a_2, .., a_n$ inside $\gamma$, and corresponding residues $\mathrm{Res}(f; a) = \eval{\frac{1}{(k-1)!}\dv[k-1]{g}{z}}_{z=a}$ for $f(z)=\frac{g(z)}{(z-a)^k}$ near $a$):
 			\begin{equation}
 				\int_\gamma f(z)\dd z = 2\pi \i \sum_{k=1}^{n} \mathrm{Res}(f; a_k)
@@ -224,8 +224,8 @@
 			Famous integrals (Gaußian integral\index{Gauß!Integral}, $\sinc$-integral\index{Sinus Cardinalis}):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} \ex^{-x^2}\dd{x} &= \sqrt{\pi} \\
-					\int_\mathbb{R} \frac{\sin x}{x}\dd{x} &= \pi \\
+					\int_\reals \ex^{-x^2}\dd{x} &= \sqrt{\pi} \\
+					\int_\reals \frac{\sin x}{x}\dd{x} &= \pi \\
 				\end{aligned}
 			\end{equation}
 
@@ -233,10 +233,10 @@
 			Variations of the Gaußian integral\index{Gauß!Integral} (with $A$ symmetric, and $A^{-1}$ being the Greens function of $A$ in the functional case):
 			\begin{equation}
 				\begin{aligned}
-					\int_\mathbb{R} \ex^{-\frac{a x^2}{2}+ b x}\dd{x} &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x}}\dd[n]{x}
+					\int_\reals \ex^{-\frac{a x^2}{2}+ b x}\dd{x} &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
+					\int_{\reals ^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}}\\
-					\int_{\mathbb{R}^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x} + \vec{b}^\trp \vec{x}}\dd[n]{x}
+					\int_{\reals ^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x} + \vec{b}^\trp \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^\trp A^{-1} \vec{b}}\\
 					\int \mathcal{D}\qty[f]\, \ex^{-\frac{1}{2} \int \dd x \dd y \, f(x) A(x, y) f(y) + \int \dd x\,b(x)f(x)}
 					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) A^{-1}(x,y) b(y)}
@@ -244,9 +244,9 @@
 			\end{equation}
 
 			\noindent
-			Convolution\index{Faltung} ($f*g:\mathbb{R}^n \to \mathbb{C}$):
+			Convolution\index{Faltung} ($f*g:\reals ^n \to \complex $):
 			\begin{equation}
-				(f*g)(x) := \int_{\mathbb{R}^n} f(t) g(x-t)\dd{t}
+				(f*g)(x) := \int_{\reals ^n} f(t) g(x-t)\dd{t}
 			\end{equation}
 
 			\noindent
@@ -277,7 +277,7 @@
 					1 & x\ge 0 \\
 					0 & x<0    \\
 				\end{array}\right. \\
-				\int_{\mathbb{R}} f(x)\Theta(x)\dd{x} =& \int_{0}^{\infty} f(x)\dd{x}
+				\int_{\reals } f(x)\Theta(x)\dd{x} =& \int_{0}^{\infty} f(x)\dd{x}
 			\end{align}
 
 			\noindent
@@ -299,7 +299,7 @@
 			\end{equation}
 
 			\noindent
-			Properties ($\forall n\in\mathbb{N}_0$):
+			Properties ($\forall n\in\\naturals _0$):
 			\begin{equation}
 				\begin{aligned}
 					\Gamma(z+1)&=z\Gamma(z) \\
@@ -331,7 +331,7 @@
 			\begin{itemize}
 				\item $C^p(D)$, space of $p$-times continuously differentiable functions
 				\item $L^p(D)$, space of equivalence classes (with respect to lower-dimensional exceptions) of functions which $p$-Norm is Lebesque integrable\index{Lebesque!integrierbar}
-				\item $S(\mathbb{R})$, space of functions that decrease faster than any polynomial function (Schwartz space\index{Schwartz!Raum})
+				\item $S(\reals )$, space of functions that decrease faster than any polynomial function (Schwartz space\index{Schwartz!Raum})
 			\end{itemize}
 
 		\subsubsection{Sequences\index{Folge} and Series\index{Reihe}}
@@ -348,7 +348,7 @@
 			\end{equation}
 
 			\noindent
-			Binomial theorem\index{Binomischer Satz} ($n\in\mathbb{R}$):
+			Binomial theorem\index{Binomischer Satz} ($n\in\reals $):
 			\begin{equation}
 				(x+y)^n=\sum_{k=0}^{n}\binomkoeff{n}{k}x^k y^{n-k}
 			\end{equation}
@@ -398,7 +398,7 @@
 			\end{equation}
 
 			\noindent
-			Multivariate Taylor Expansion ($\alpha = (\alpha_1,\dots,\alpha_n)$ is a multi-index with $\abs{\alpha} = \alpha_1 + \cdots + \alpha_n$, $\alpha!=\alpha_1! \cdots \alpha_n!$ and $\vec{x}^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\in\mathbb{R}$):
+			Multivariate Taylor Expansion ($\alpha = (\alpha_1,\dots,\alpha_n)$ is a multi-index with $\abs{\alpha} = \alpha_1 + \cdots + \alpha_n$, $\alpha!=\alpha_1! \cdots \alpha_n!$ and $\vec{x}^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\in\reals $):
 			\begin{equation}
 				f(\vec{x}) = \sum_{\abs{\alpha}\le k} \frac{1}{\alpha!} \frac{\partial^{\abs{\alpha}} f(\vec{x}_0)}{\partial x_1^{\alpha_1} \cdots \partial x_n^{\alpha_n}} \qty(\vec{x}-\vec{x}_0)^\alpha + \sum_{\abs{\alpha}=k} h_\alpha(\vec{x})\qty(\vec{x}-\vec{x}_0)^\alpha \quad \text{where} \quad \forall \alpha:\; \lim_{\vec{x} \to\vec{x}_0} h_\alpha(\vec{x}) = 0 \quad
 			\end{equation}
@@ -427,7 +427,7 @@
 
 	\subsection{Basis Functions}
 		\noindent
-		Complex inner product\index{Hermite!Skalarprodukt} in $R([0,2\pi],\mathbb{C})$:
+		Complex inner product\index{Hermite!Skalarprodukt} in $R([0,2\pi],\complex )$:
 		\begin{equation}
 			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\dd{x}
 		\end{equation}
@@ -442,7 +442,7 @@
 			\noindent
 			Discrete complex Fourier transformation\index{Fourier!Transformation}:
 			\begin{equation}
-				(Tf)(x)=\sum_{k\in\mathbb{Z}}c_k \ex^{\i kx}
+				(Tf)(x)=\sum_{k\in\integers}c_k \ex^{\i kx}
 			\end{equation}
 
 			\noindent
@@ -477,8 +477,8 @@
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
-					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\dd{\vec{x}} \\
-					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\mathbb{R}^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\dd[3]{\vec{k}} \\
+					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\reals ^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\dd{\vec{x}} \\
+					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\reals ^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\dd[3]{\vec{k}} \\
 				\end{aligned}
 			\end{equation}
 
@@ -488,7 +488,7 @@
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
 					\inv{\mathcal{F}}(k\tilde{f})(x) &= -\i\pdv{x}f(x) \\
-					\delta(x) &= \frac{1}{2\pi}\int_{\mathbb{R}}\ex^{\i kx}\dd{k}
+					\delta(x) &= \frac{1}{2\pi}\int_{\reals}\ex^{\i kx}\dd{k}
 					\label{Eq:FourierIdentities}
 				\end{aligned}
 			\end{equation}
@@ -496,8 +496,8 @@
 			\noindent
 			Plancherel's theorem\index{Plancherel!Theorem}:
 			\begin{equation}
-				\int_{\mathbb{R}} f^{*}(x) g(x)\dd{x} =
-				\int_{\mathbb{R}}\tilde{f}^{*}(k)\tilde{g}(k)\dd{k}
+				\int_{\reals } f^{*}(x) g(x)\dd{x} =
+				\int_{\reals }\tilde{f}^{*}(k)\tilde{g}(k)\dd{k}
 			\end{equation}
 
 			\noindent
@@ -526,7 +526,7 @@
 			\noindent
 			Laurent Series\index{Laurent Reihe}:
 			\begin{equation}
-				f(z)=\sum_{n\in\mathbb{Z}} a_n(z-z_0)^n
+				f(z)=\sum_{n\in\integers} a_n(z-z_0)^n
 			\end{equation}
 
 			\noindent
@@ -630,11 +630,11 @@
 				\begin{tabular}{ l | l | l }
 					Symbol & Name & Example \\ \hline
 					$C_n$ & Cyclic group of $n$ elements & $\set{[0]_n, [1]_n, ..., [n-1]_n}$, $\diamond$: Equivalence class addition \\
-					$GL(n, \mathbb{K})$ & General Linear group & $\mathbb{R}^{n\times n}$, $\mathbb{C}^{n\times n}$, $\diamond$: Matrix multiplication \\
+					$GL(n, \mathbb{K})$ & General Linear group & $\reals ^{n\times n}$, $\complex ^{n\times n}$, $\diamond$: Matrix multiplication \\
 					$SL(n, \mathbb{K})$ & Special linear group & $\set{L: \det L = 1} \subseteq GL(n, \mathbb{K})$ \\
-					$O(n)$ & Orthogonal group & $\set{O: O O^\trp = O^\trp O = 1}\subseteq GL(n, \mathbb{R})$ \\
+					$O(n)$ & Orthogonal group & $\set{O: O O^\trp = O^\trp O = 1}\subseteq GL(n, \reals )$ \\
 					$SO(n)$ & Special orthogonal group& $\set{O: \det O = 1}\subseteq O(n)$\\
-					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \mathbb{C})$ \\
+					$U(n)$ & Unitary group & $\set{U: UU^{\dagger}=U^{\dagger}U=1}\subseteq GL(n, \complex )$ \\
 					$SU(n)$ & Special unitary group & $\set{U: \det U = 1}\subseteq U(n)$ \\
 				\end{tabular}
 				\caption{List of common groups with symbol, name, example set and corresponding example operation. $\mathbb{K}$ is a field\index{Körper}}
@@ -645,7 +645,7 @@
 		% \subsubsection{Selection of Groups Relevant for Physics}
 		% 	Lorentz group $L$ ($\norm{x} = x^\mu x_\mu$, see ):
 		% 	\begin{equation}
-		% 		L = \left( \qty{\Lambda\in GL(4, \mathbb{R}): \norm{\Lambda x}= \norm{x} \quad\forall x \in \mathbb{R}^4}, \text{Matrix multiplication} \right)
+		% 		L = \left( \qty{\Lambda\in GL(4, \reals ): \norm{\Lambda x}= \norm{x} \quad\forall x \in \reals ^4}, \text{Matrix multiplication} \right)
 		% 	\end{equation}
 
 
@@ -669,7 +669,7 @@
 	\subsection{Differential Equations}
 		\subsubsection{General}
 			\noindent
-			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+\i v(z)$ with $z=x+\i y$, where $x,y,u,v\in\mathbb{R}$)
+			Cauchy-Riemann differential Equations\index{Cauchy!-Riemann Differentialgleichungen} (Always hold for complex functions $f(z)=u(z)+\i v(z)$ with $z=x+\i y$, where $x,y,u,v\in\reals $)
 			\begin{equation}
 				\begin{aligned}
 					\pdv{u}{x} &= \phantom{-}\pdv{v}{y} \\
@@ -780,7 +780,7 @@
 
 		\subsubsection{Generalized Legendre Differential Equation}
 			\noindent
-			Differential equation ($l\in\mathbb{N}$ and $m\in\mathbb{Z}, -l\le m\le l$)
+			Differential equation ($l\in\\naturals $ and $m\in\integers, -l\le m\le l$)
 			\begin{equation}
 				\pdv{x}\qty(\qty(1-x^2)\pdv{f}{x})+\qty(l\qty(l+1)-\frac{m^2}{1-x^2})f= 0
 			\end{equation}
@@ -820,7 +820,7 @@
 
 		\subsubsection{Hermite's Differential Equation}
 			\noindent
-			Differential equation\index{Hermite!Differentialgleichung} ($n\in\mathbb{N}_0$):
+			Differential equation\index{Hermite!Differentialgleichung} ($n\in\\naturals _0$):
 			\begin{equation}
 				\dv[2]{x} H_n(x) -2x\dv{x} H_n(x) +2 n H_n(x)=0
 			\end{equation}
@@ -837,12 +837,12 @@
 			\noindent
 			Orthogonality:
 			\begin{equation}
-				\int_{\mathbb{R}} H_m(x) H_n(x) \ex^{-x^2}\dd{x} = \sqrt{\pi}\,2^n n!\delta_{nm}
+				\int_{\reals } H_m(x) H_n(x) \ex^{-x^2}\dd{x} = \sqrt{\pi}\,2^n n!\delta_{nm}
 			\end{equation}
 
 		\subsubsection{Laguerre's Differential Equation}
 			\noindent
-			Differential Equation\index{Laguerre!Differentialgleichung} ($x>0$, $n\in\mathbb{N}_0$):
+			Differential Equation\index{Laguerre!Differentialgleichung} ($x>0$, $n\in\\naturals _0$):
 			\begin{equation}
 				x\dv[2]{x}L_n(x) +(1-x)\dv{x}L_n(x) + nL_n(x) = 0
 			\end{equation}
@@ -860,7 +860,7 @@
 			\end{equation}
 
 			\noindent
-			Associated Laguerre Polynomials ($k\in\mathbb{N}_0$):
+			Associated Laguerre Polynomials ($k\in\\naturals _0$):
 			\begin{equation}
 				L_n^k(x) = (-1)^k\dv[k]{x} L_{n+k}(x)
 			\end{equation}
@@ -878,6 +878,14 @@
 			Surface $S_{n-1}$ of a $n$-dimensional Sphere (Note that the index of $S$ is the dimension of the manifold):
 			\begin{equation}
 				S_{n-1}(R) = \frac{2\sqrt{\pi}^n}{\Gamma\qty(\frac{n}{2})}R^{n-1}
+			\end{equation}
+
+			\noindent
+			Integration of a spherically symmetric argument $f(\vec{x}) = f(r)$ in $n$-dimensional euclidean space:
+			\begin{equation}
+				\int_{\reals ^n} \dd[n]{x} f(r) 
+				= \int_0^\infty \dd{r} S_{n-1}(r) f(r)
+				= \frac{2\sqrt{\pi}^n}{\Gamma\qty(\frac{n}{2})} \int_0^\infty \dd{r} r^{n-1}  f(r)
 			\end{equation}
 
 			\noindent

@@ -161,7 +161,7 @@
 		Position operator\index{Ortsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{x}} :=& \int_{\mathbb{R}^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\dd[n]{\vec{x}} &\hsp
+				\hat{\vec{x}} :=& \int_{\reals ^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\dd[n]{\vec{x}} &\hsp
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{p}) \\
 			\end{aligned}
@@ -171,7 +171,7 @@
 		Momentum operator\index{Impulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{p}} :=& \int_{\mathbb{R}^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\dd^n\vec{p} &\hsp
+				\hat{\vec{p}} :=& \int_{\reals ^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\dd^n\vec{p} &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hsp
 				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pdv{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
@@ -369,13 +369,13 @@
 			\end{equation}
 
 			\noindent
-			Calculation rules:
+			Identities:
 			\begin{equation}
 				\begin{aligned}
 					\comm{\hat{A}}{\hat{B}\hat{C}}
 					&= \hat{B}\comm{\hat{A}}{\hat{C}} + \comm{\hat{A}}{\hat{B}}\hat{C} \\
 					\acomm{\hat{A}}{\hat{B}\hat{C}}
-					&= \hat{B}\acomm{\hat{A}}{\hat{C}} + \acomm{\hat{A}}{\hat{B}}\hat{C} \\
+					&= \hat{B}\comm{\hat{A}}{\hat{C}} + \acomm{\hat{A}}{\hat{B}}\hat{C} \\
 				\end{aligned}
 				\hsp
 				\begin{aligned}
@@ -478,9 +478,9 @@
 			\noindent
 			Quantum numbers:
 			\begin{itemize}
-				\item Principal quantum number $n \in \mathbb{N}$
-				\item Orbital angular momentum quantum number $l \in \mathbb{Z};\; \left|l\right| < n$
-				\item Magnetic quantum number $m_l \in \mathbb{Z};\; \left|m\right| \le \left|l\right|$
+				\item Principal quantum number $n \in \\naturals $
+				\item Orbital angular momentum quantum number $l \in \integers;\; \left|l\right| < n$
+				\item Magnetic quantum number $m_l \in \integers;\; \left|m\right| \le \left|l\right|$
 				\item spin quantum number $s = \frac{1}{2}$ (For fermions)
 				\item spin projection $m_s = \pm \frac{1}{2}$ (For fermions)
 			\end{itemize}
@@ -635,7 +635,7 @@
 		\end{equation}
 
 		\noindent
-		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\mathbb{R}^3} \rho(\vec{r}) \ex^{-\i \vec{q}\cdot\vec{r}/\hbar}\dd[3]{\vec{r}}$):
+		Rutherford cross section\index{Rutherford!Streuquerschnitt} (Form factor\index{Formfaktor} $F(\vec{q}) = \int_{\reals ^3} \rho(\vec{r}) \ex^{-\i \vec{q}\cdot\vec{r}/\hbar}\dd[3]{\vec{r}}$):
 		\begin{equation}
 			\dv{\sigma}{\Omega} = \frac{1}{4} \qty(\frac{e}{4\pi\epsilon_0 m v^2})^2
 			\frac{1}{\sin^4\frac{\theta}{2}} \abs{F}^2(\vec{q})

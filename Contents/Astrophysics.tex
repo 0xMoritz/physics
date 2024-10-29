@@ -10,7 +10,7 @@
 	\subsection{Radiation Processes}
 		Radiation spectrum of a charge with path $\vec{x}(t)$, seen from the direction $\hat{e}$:
 		\begin{equation}
-			\frac{\dd^2 E}{\dd \Omega \dd \omega} = \frac{e^2 \omega^2}{8 \pi^2 c} \abs{\int_{\mathbb{R}}\dd{t'} \qty[\hat{e}\times \qty(\hat{e}\times \dot{\vec{x}}(t'))] \ex^{-\i \omega (t'-\hat{e}\cdot \vec{x}(t')/c)}}
+			\frac{\dd^2 E}{\dd \Omega \dd \omega} = \frac{e^2 \omega^2}{8 \pi^2 c} \abs{\int_{\reals }\dd{t'} \qty[\hat{e}\times \qty(\hat{e}\times \dot{\vec{x}}(t'))] \ex^{-\i \omega (t'-\hat{e}\cdot \vec{x}(t')/c)}}
 		\end{equation}
 
 		\noindent
@@ -201,7 +201,7 @@
 			\begin{equation}
 				\frac{1}{2}\dv[2]{I}{t}
 				= \int \dd[3]{x} \bar{T}
-				= \int \dd[3]{x} \qty(\rho \vec{v}\otimes\vec{v} + 1_3 P + \bar{T}_{\text{grav.}})
+				= \int \dd[3]{x} \qty(\rho \vec{v}\otimes\vec{v} + \mathds{1}_3 P + \bar{T}_{\text{grav.}})
 			\end{equation}
 
 			\noindent
@@ -325,7 +325,7 @@
 			\begin{equation}
 				\pi_\parallel = \frac{1}{k^2}\vec{k}\otimes\vec{k}
 				\hsp
-				\pi_\perp = 1_3 - \pi_\parallel
+				\pi_\perp = \mathds{1}_3 - \pi_\parallel
 			\end{equation}
 
 			\noindent
@@ -368,7 +368,7 @@
 			\noindent
 			Magnetic part of the stress-energy tensor:
 			\begin{equation}
-				\bar{T}_m = -\frac{1}{4\pi} \qty(\vec{B} \otimes \vec{B} - \frac{1}{2}\vec{B}^2 1_3)
+				\bar{T}_m = -\frac{1}{4\pi} \qty(\vec{B} \otimes \vec{B} - \frac{1}{2}\vec{B}^2 \mathds{1}_3)
 			\end{equation}
 
 		\subsubsection{Equations of Motion}
@@ -385,7 +385,7 @@
 			\end{equation}
 
 		\subsubsection{Electromagnetic Waves in Cold Magnetized Plasma}
-			Dielectricity tensor (where $w_p = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = 1_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
+			Dielectricity tensor (where $w_p = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = \mathds{1}_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
 			\begin{equation}
 				\varepsilon = \qty(1 - w_p^2) \pi_\parallel + \qty(1-\frac{w_p^2}{1-w_L^2})\pi_\perp + \i \frac{w_p^2 w_L}{1-w_L^2} \hat{\mathcal{B}}
 			\end{equation}

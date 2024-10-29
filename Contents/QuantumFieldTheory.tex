@@ -10,12 +10,6 @@
 
 	\subsection{Basics}
 		\noindent
-		Feynman slash notation\index{Feynman!Slash Notation} (Note that $\slashed{\partial}^2 = \partial^2$)
-		\begin{equation}
-			\slashed{A} := \gamma_\mu A^\mu
-		\end{equation}
-
-		\noindent
 		Inner product of 4-vectors:
 		\begin{equation}
 			q \cdot p = q^\mu p_\mu
@@ -56,26 +50,38 @@
 			\noindent
 			Clifford Algebra\index{Clifford!Algebra} (defining properties of the gamma matrices):
 			\begin{equation}
-				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2g^{\mu\nu}
+				\acomm{\gamma^\mu}{\gamma^\nu} = \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2 \eta^{\mu\nu}
 			\end{equation}
 
 			\noindent
 			Identities:
 			\begin{equation}
 				\qty(\gamma^\mu)^\dagger = \eta^{\mu\mu} \gamma^\mu = \gamma^0 \gamma^\mu \gamma^0
-				\hsp \gamma^\mu \gamma^\mu = \eta^{\mu\mu} 1_4
-				\hsp \gamma_\mu \gamma^\mu = 4 \,1_4
+				\hsp \gamma^\mu \gamma^\mu = \eta^{\mu\mu} \mathds{1}_4
+				\hsp \gamma_\mu \gamma^\mu = 4 \,\mathds{1}_4
+			\end{equation}
+
+			\noindent
+			Feynman slash notation\index{Feynman!Slash Notation}:
+			\begin{equation}
+				\slashed{A} := \gamma_\mu A^\mu
+			\end{equation}
+
+			\noindent
+			Identities
+			\begin{equation}
+				\slashed{a}^2 = a^2
+				\hsp \inv{\slashed{a}} = \frac{\slashed{a}}{a^2}
+				\hsp \qty(\eta^{\mu\nu}\eta^{\rho\sigma} + \eta^{\mu\sigma}\eta^{\nu\rho} - \eta^{\mu\rho}\eta^{\nu\sigma})
+				\gamma_\mu \slashed{a} \gamma^\mu = -2 \slashed{a}
 			\end{equation}
 
 			\noindent
 			Trace Identities:
-			\begin{equation}
-				\begin{aligned}
-					\tr(\gamma^\mu \gamma^\nu) &= 4 g^{\mu\nu} \\
-					\tr(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma) &= 4 \qty(g^{\mu\nu}g^{\rho\sigma} + g^{\mu\sigma}g^{\nu\rho} - g^{\mu\rho}g^{\nu\sigma}) \\
-					\gamma_\mu \slashed{a} \gamma^\mu &= -2 \slashed{a} \\
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				\tr(\gamma^\mu \gamma^\nu) &= 4 \eta^{\mu\nu} \\
+				\tr(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma) &= 4
+			\end{align}
 
 			\noindent
 			Weyl representation / Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
@@ -86,8 +92,8 @@
 				)
 				\hsp
 				\gamma^0 = \mqty(
-				0 & 1_2 \\
-				1_2 & 0
+				0 & \mathds{1}_2 \\
+				\mathds{1}_2 & 0
 				)
 				\hsp
 				\gamma^i = \mqty(
@@ -96,8 +102,8 @@
 				)
 				\hsp
 				\gamma^5 = \mqty(
-				-1_2 & 0 \\
-				0 & 1_2
+				-\mathds{1}_2 & 0 \\
+				0 & \mathds{1}_2
 				)
 			\end{equation}
 
@@ -119,7 +125,7 @@
 			\end{equation}
 
 			\noindent
-			Transformation to any other viable representation ($U$ unitary: $U U^\dagger=1_4$):
+			Transformation to any other viable representation ($U$ unitary: $U U^\dagger=\mathds{1}_4$):
 			\begin{equation}
 				\tilde{\gamma} = U \gamma^\mu U^\dagger
 			\end{equation}
@@ -132,25 +138,27 @@
 
 			\noindent
 			Properties of the $\gamma^5$-matrix:
-			\begin{equation}
-				\begin{aligned}
-					\gamma^5 &= \gamma_5 \\
-					\gamma_5^\dagger &= \gamma_5 \\
-					\gamma_5 \gamma_5 &= 1_4 \\
-					\acomm{\gamma^\mu}{\gamma^5} &= 0 \\
-				\end{aligned}
-			\end{equation}
+			\begin{align}
+				\tr \gamma_5 &= 0 \\
+				\gamma^5 &= \gamma_5 \\
+				\gamma_5^\dagger &= \gamma_5 \\
+				\gamma_5 \gamma_5 &= \mathds{1}_4 \\
+				\acomm{\gamma^\mu}{\gamma^5} &= 0
+			\end{align}
 
 			\noindent
 			Chiral spinors (eigenstates of $\gamma^5$ with eigenvalues / chirality\index{Chiralität} $\pm 1$; note that while being Lorentz invariant, chirality is not a constant of motion):
 			\begin{equation}
 				\gamma_5 \psi_L = - \psi_L
 				\hsp \gamma_5 \psi_R = \psi_R
+				\hsp \bar{\psi}_L \gamma_5 = \bar{\psi}_L
+				\hsp \bar{\psi}_R \gamma_5 = -\bar{\psi}_R
 			\end{equation}
 
 			\noindent
 			Left- and right-handed projection operators:
 			\begin{equation}
+				\label{Eq:SpinorProjectionOperators}
 				\hat{P}_{\mathrm{L}}=\frac{1-\gamma^{5}}{2} \hsp
 				\hat{P}_{\mathrm{R}}=\frac{1+\gamma^{5}}{2}
 			\end{equation}
@@ -484,7 +492,7 @@
 			\end{equation}
 
 			\noindent
-			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \mathbb{N}_0$ the operators have the following qualities:
+			For the basis of occupation numbers $\Ket{n_1, n_2, ..., n_\infty}$ with $\forall i:\;n_i\in \\naturals _0$ the operators have the following qualities:
 			\begin{equation}
 				\begin{aligned}
 					\hat{b}_k \Ket{...,n_k,...} &= \sqrt{n_k} \Ket{...,n_k-1,...} \\
@@ -623,7 +631,7 @@
 			\end{equation}
 
 			\noindent
-			Weyl Equations\index{Weyl!Gleichungen} (Consequence of the massless Dirac Equation, see Eq.~\ref{Eq:DiracInTermsOfWeylSpinors}):
+			Weyl Equations\index{Weyl!Gleichungen} (Consequence of the massless Dirac equation, see Eq.~\ref{Eq:DiracInTermsOfWeylSpinors}):
 			\begin{equation}
 				\begin{aligned}
 					\i \bar{\sigma}^\mu \partial_\mu \psi_\text{L} &= 0 \\
@@ -638,11 +646,19 @@
 			\end{equation}
 
 			\noindent
-			Dirac Spinor\index{Dirac!Spinor} composition of Weyl Spinors\index{Weyl!Spinor} (Chiral representation):
+			Dirac spinor\index{Dirac!Spinor} composition of Weyl spinors\index{Weyl!Spinor} (Chiral representation):
 			\begin{equation}
 				\psi = \mqty(\psi_\text{L} \\ \psi_\text{R})
 				\hsp
 				\bar{\psi} = \mqty(\bar{\psi}_\text{R} & \bar{\psi}_\text{L})
+			\end{equation}
+
+			\noindent
+			Weyl spinors in terms of Dirac spinors (Eq.~\ref{Eq:SpinorProjectionOperators}):
+			\begin{equation}
+				\psi_L = \hat{P}_L \psi \hsp \psi_R = \hat{P}_R \psi
+				\hsp
+				\bar{\psi}_L = \bar{\psi} \hat{P}_R \hsp \bar{\psi}_R = \bar{\psi} \hat{P}_L
 			\end{equation}
 
 			\noindent
@@ -797,7 +813,7 @@
 			\noindent
 			Orthogonal basis for spinor bilinears (scalar, vector, tensor, pseudovector, pseudoscalar):
 			\begin{equation}
-				O_S = 1_4
+				O_S = \mathds{1}_4
 				\hsp
 				O_V = \gamma_\mu
 				\hsp
@@ -811,7 +827,7 @@
 			\noindent
 			Bispinor decomposition:
 			\begin{align}
-				\psi\bar{\chi} &= \frac{1}{4} \qty( c_S 1_4 + c_V^\mu \gamma_\mu + c_T^{\mu\nu} \sigma_{\mu\nu} + c_A^\mu \gamma_\mu \gamma_5 + c_P \gamma_5 ) \\
+				\psi\bar{\chi} &= \frac{1}{4} \qty( c_S \mathds{1}_4 + c_V^\mu \gamma_\mu + c_T^{\mu\nu} \sigma_{\mu\nu} + c_A^\mu \gamma_\mu \gamma_5 + c_P \gamma_5 ) \\
 				c_S &= \frac{1}{4} \tr(\gamma_A \gamma_A) \tr(\psi \bar{\chi} \gamma_A)
 			\end{align}
 
@@ -891,7 +907,7 @@
 			%WTF ? % f^{abc} f^{ade} &= f^{abc} f^{dae} \\
 			% f^{abc} f^{cde} &= \frac{1}{2} f^{abc} f^{cde} + \frac{1}{2} f^{abc} f^{ced} = \frac{1}{2} C_A \delta^{ad} \\
 			f^{acd} f^{bcd} &= C_A \delta^{ab} \\
-			0 &= f^{ade} f^{bcd} + f^{bde} f^{cad} + f^{cde} f^{abd} 
+			0 &= f^{ade} f^{bcd} + f^{bde} f^{cad} + f^{cde} f^{abd}
 		\end{align}
 
 		\noindent
@@ -995,6 +1011,16 @@
 		\begin{equation}
 			\mathcal{L}_\text{QCD} = -\frac{1}{4} G^a_{\mu\nu} G^{a\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
 		\end{equation}
+
+		\subsubsection{NJL Model}
+			The Nambu--Jona-Lasino\index{Nambu--Jona-Lasino Model} is the chiral limit of QCD (with $N$ flavors):
+			\begin{equation}
+				\begin{aligned}
+					\mathcal{L}
+					&= \i \bar{\psi}_a \slashed{\partial} \psi^a + \frac{\lambda}{4 N} \qty[(\bar{\psi}_a\psi^b)(\bar{\psi}_b\psi^a) - (\bar{\psi}_a\gamma_5 \psi^b) (\bar{\psi}_b\gamma_5 \psi^a)] \\
+					&= \i \bar{\psi}_{La} \slashed{\partial} \psi_L^a + \i \bar{\psi}_{Ra} \slashed{\partial} \psi_R^a + \frac{\lambda}{N} (\bar{\psi}_{La}\psi_R^b)(\bar{\psi}_{Rb}\psi_L^a)
+				\end{aligned}
+			\end{equation}
 
 
 
