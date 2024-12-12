@@ -103,19 +103,21 @@
 		\end{equation}
 
 		\noindent
-		The flowing effective action interpolates between the classical action $S = \Gamma_\Lambda$ where quantum fluctuations are suppressed and the full quantum effective action $\Gamma$ where all fluctuations are included:
+		The flowing effective action interpolates between the classical action $S = \Gamma_\Lambda$ where quantum fluctuations are fully suppressed and the full quantum effective action $\Gamma$ where all fluctuations are included:
 		\begin{equation}
 			\Gamma \;\stackrel{k \to 0}{\longleftarrow}\; \Gamma_{k} \stackrel{k \to \infty}{\longrightarrow} S
 		\end{equation}
 
 		\noindent
-		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation:
+		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices):
 		\begin{equation}
 			\begin{aligned}
-				\partial_t \Gamma_k[\phi] 
-				&= \frac{1}{2} \tr G_k \partial_t R_k \\
-				&= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\phi] + R_k}(p,-p) \partial_t R_k(p^2) \\
-				&= \frac{1}{2} \tr \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\phi] + R_{\tilde{k}})}_{\tilde{k} = k}
+				\partial_t \Gamma_k[\vec{\Phi}] 
+				&= \frac{1}{2} \tr G_k \;\partial_t R_k \\
+				&= \frac{1}{2} \tr \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
+				&= \frac{1}{2} \tr \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
+				&= \frac{1}{2} \sum_I \pm \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\frac{\delta^2 \Gamma_k[\vec{\Phi}]}{\delta \Phi^I(-p) \delta \Phi_I(p)} + R_k(p^2)} \partial_t R_k(p^2) \\
+				&= \frac{1}{2} \tr \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\vec{\Phi}] + R_{\tilde{k}})}_{\tilde{k} = k}
 			\end{aligned}
 		\end{equation}
 
