@@ -11,7 +11,9 @@
         "Becchi",
         "Bekenstein",
         "Bianchi",
+        "bilinears",
         "Biot",
+        "Bispinor",
         "Bondi",
         "bosonic",
         "BRST",
@@ -62,11 +64,13 @@
         "Isochoric",
         "Isospin",
         "Isothermic",
+        "Jona",
         "Kruskal",
         "Laguerre",
         "Landauer",
         "Landé",
         "Larmor",
+        "Lasino",
         "Lebesque",
         "Lenz",
         "Liénard",
@@ -80,6 +84,7 @@
         "microcanonical",
         "Minkowski",
         "Multipole",
+        "Nambu",
         "Navier",
         "Neumann",
         "Nishijima",
@@ -140,5 +145,15 @@
         "%TMPFILE%",
         "-l=%DIR%/localIndentSettings"
     ],
-    "workbench.colorTheme": "Solarized Dark"
+    "workbench.colorTheme": "Solarized Dark",
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/{info,lfs,logs,refs,objects}/**",
+        ".git/{index,*refs,*HEAD}",
+        ".vscode",
+        ".vscode-insiders",
+        "physicsutils.sty"
+    ]
 }
