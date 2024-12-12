@@ -230,16 +230,16 @@
 			\end{equation}
 
 			\noindent
-			Variations of the Gaußian integral\index{Gauß!Integral} (with $A$ symmetric, and $A^{-1}$ being the Greens function of $A$ in the functional case):
+			Variations of the Gaußian integral\index{Gauß!Integral} (with $A$ symmetric, and $\inv{A}$ being the Greens function of $A$ in the functional case):
 			\begin{equation}
 				\begin{aligned}
 					\int_\reals \ex^{-\frac{a x^2}{2}+ b x}\dd{x} &= \sqrt{\frac{2\pi}{a}} \ex^{\frac{b^2}{2 a}}\\
 					\int_{\reals ^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x}}\dd[n]{x}
 					&= \sqrt{\frac{(2\pi)^n}{\det A}}\\
 					\int_{\reals ^n} \ex^{-\frac{1}{2} \vec{x}^\trp A \vec{x} + \vec{b}^\trp \vec{x}}\dd[n]{x}
-					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^\trp A^{-1} \vec{b}}\\
+					&= \sqrt{\frac{(2\pi)^n}{\det A}} \ex^{\vec{b}^\trp \inv{A} \vec{b}}\\
 					\int \mathcal{D}\qty[f]\, \ex^{-\frac{1}{2} \int \dd x \dd y \, f(x) A(x, y) f(y) + \int \dd x\,b(x)f(x)}
-					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) A^{-1}(x,y) b(y)}
+					&\propto \frac{1}{\sqrt{\det(A)}}\ex^{\frac{1}{2} \int \dd x \dd y \, b(x) \inv{A}(x,y) b(y)}
 				\end{aligned}
 			\end{equation}
 

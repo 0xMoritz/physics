@@ -30,10 +30,19 @@
 			= \mathcal{H_\pm}^{(0)} \oplus \mathcal{H_\pm}^{(1)} \oplus \mathcal{H_\pm}^{(2)} \oplus ...
 		\end{equation}
 
+		\noindent
+		Wick rotation\index{Wick!Rotation} (rotating Minkowski spacetime $(c t,x,y,z)$ into Euclidean $(\tau,x,y,z)$ space):
+		\begin{equation}
+			\tau \longleftrightarrow \i c t
+		\end{equation}
+		Connection between QFT and Statistical Mechanics:
+		\begin{equation}
+			\frac{\i t}{\hbar} \longleftrightarrow \frac{1}{\kB T}
+		\end{equation}
+
 		\subsubsection{Scattering}
-		\subsubsection{Mandelstam Variables\index{Mandelstam!Variablen}}
 			\noindent
-			Lorentz scalars\index{Lorentz!Skalare} in scattering processes of the form: $P_1 + P_2 \to P_3 + P_4$:
+			Mandelstam Variables\index{Mandelstam!Variablen}, \ie Lorentz scalars\index{Lorentz!Skalare} in 4 particle scattering processes: $P_1 + P_2 \to P_3 + P_4$:
 			\begin{itemize}\itemsep -0pt
 				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
 				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
@@ -121,6 +130,11 @@
 					0 & \sigma^i \\
 					-\sigma^i & 0
 					)
+					&\hsp
+					\gamma^5 = \mqty(
+					0 & \mathds{1}_2 \\
+					\mathds{1}_2 & 0
+					)
 				\end{aligned}
 			\end{equation}
 
@@ -131,9 +145,10 @@
 			\end{equation}
 
 			\noindent
-			$\gamma^5$-Matrix:
+			$\gamma^5$-Matrix (using the convention $\levicivita{0123} = +1$):
 			\begin{equation}
-				\gamma^5 := \i\gamma^0 \gamma^1 \gamma^2 \gamma^3 = -\frac{1}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
+				\gamma^5 := \i\gamma^0 \gamma^1 \gamma^2 \gamma^3
+				= \frac{\i}{4!}\levicivita{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
 			\end{equation}
 
 			\noindent
@@ -145,29 +160,6 @@
 				\gamma_5 \gamma_5 &= \mathds{1}_4 \\
 				\acomm{\gamma^\mu}{\gamma^5} &= 0
 			\end{align}
-
-			\noindent
-			Chiral spinors (eigenstates of $\gamma^5$ with eigenvalues / chirality\index{Chiralität} $\pm 1$; note that while being Lorentz invariant, chirality is not a constant of motion):
-			\begin{equation}
-				\gamma_5 \psi_L = - \psi_L
-				\hsp \gamma_5 \psi_R = \psi_R
-				\hsp \bar{\psi}_L \gamma_5 = \bar{\psi}_L
-				\hsp \bar{\psi}_R \gamma_5 = -\bar{\psi}_R
-			\end{equation}
-
-			\noindent
-			Left- and right-handed projection operators:
-			\begin{equation}
-				\label{Eq:SpinorProjectionOperators}
-				\hat{P}_{\mathrm{L}}=\frac{1-\gamma^{5}}{2} \hsp
-				\hat{P}_{\mathrm{R}}=\frac{1+\gamma^{5}}{2}
-			\end{equation}
-
-			\noindent
-			Helicity operator (\ie right-handed particles have positive helicity and left-handed particles have negative helicity, while right-handed antiparticles have negative helicity and left-handed antiparticles have positive helicity; Note that while helicity is a constant of motion, it is not Lorentz invariant):
-			\begin{equation}
-				\hat{h} = \frac{\vec{\sigma}\cdot\hat{\vec{p}}}{\abs{\vec{p}}}
-			\end{equation}
 
 			\noindent
 			$\sigma^{\mu\nu}$ matrices:
@@ -260,6 +252,13 @@
 				F_{\mu\nu} =  \frac{\i}{q} \comm{D_\mu}{D_\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 			\end{equation}
 
+
+			\noindent
+			Wilson Loop\index{Wilson!Loop} (Path ordered $\mathcal{P}$ exponential of the gauge field along a closed path $\Gamma$):
+			\begin{equation}
+				W(\Gamma) =\tr{\mathcal{P}\exp(\i\oint_\Gamma A_\mu \dd{x^\mu})}
+			\end{equation}
+
 		\subsubsection{Discrete Symmetry}
 			Charge conjugation $\hat{\mathsf{C}}$ (For any quantum charge operator $\hat{Q}$, i.e. electric charge, lepton / baryon number, hypercharge,\dots; $\bar{p}$ is the antiparticle of $p$):
 			\begin{equation}
@@ -274,6 +273,10 @@
 					\hsp \inv{\hat{\mathsf{C}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{C}} = \hat{a}^\dagger_{\vec{p}} \\
 				\end{aligned}
 			\end{equation}
+			in Chiral representation
+			\begin{equation}
+				\hat{C} = \i \gamma^2 \gamma^0
+			\end{equation}
 
 			\noindent
 			Parity inversion $\hat{\mathsf{P}}$
@@ -285,6 +288,10 @@
 					\inv{\hat{\mathsf{P}}}\hat{a}_{\vec{p}} \hat{\mathsf{P}} &= \hat{b}_{\vec{p}}
 					\hsp \inv{\hat{\mathsf{P}}}\hat{b}^\dagger_{\vec{p}} \hat{\mathsf{P}} = \hat{a} ^\dagger_{\vec{p}} \\
 				\end{aligned}
+			\end{equation}
+			in Chiral representation
+			\begin{equation}
+				\hat{C} = \gamma^0
 			\end{equation}
 
 			\noindent
@@ -828,7 +835,7 @@
 			Bispinor decomposition:
 			\begin{align}
 				\psi\bar{\chi} &= \frac{1}{4} \qty( c_S \mathds{1}_4 + c_V^\mu \gamma_\mu + c_T^{\mu\nu} \sigma_{\mu\nu} + c_A^\mu \gamma_\mu \gamma_5 + c_P \gamma_5 ) \\
-				c_S &= \frac{1}{4} \tr(\gamma_A \gamma_A) \tr(\psi \bar{\chi} \gamma_A)
+				c_X &= \frac{1}{4} \tr(O_X O_X) \tr(\psi \bar{\chi} O_X)
 			\end{align}
 
 			\noindent
@@ -849,6 +856,46 @@
 				+\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} & +\frac{1}{4} \\
 				)
 			\end{equation}
+
+		\subsubsection{Chirality}
+			\noindent
+			Chiral spinors (eigenstates of $\gamma^5$ with eigenvalues / chirality\index{Chiralität} $\pm 1$; note that while being Lorentz invariant, chirality is not a constant of motion):
+			\begin{equation}
+				\gamma_5 \psi_L = - \psi_L
+				\hsp \gamma_5 \psi_R = \psi_R
+				\hsp \bar{\psi}_L \gamma_5 = \bar{\psi}_L
+				\hsp \bar{\psi}_R \gamma_5 = -\bar{\psi}_R
+			\end{equation}
+
+			\noindent
+			Left- and right-handed projection operators:
+			\begin{equation}
+				\label{Eq:SpinorProjectionOperators}
+				\hat{P}_{\mathrm{L}}=\frac{1-\gamma^{5}}{2} \hsp
+				\hat{P}_{\mathrm{R}}=\frac{1+\gamma^{5}}{2}
+			\end{equation}
+
+			\noindent
+			Helicity operator (\ie right-handed particles have positive helicity and left-handed particles have negative helicity, while right-handed antiparticles have negative helicity and left-handed antiparticles have positive helicity; Note that while helicity is a constant of motion, it is not Lorentz invariant):
+			\begin{equation}
+				\hat{h} = \frac{\vec{\sigma}\cdot\hat{\vec{p}}}{\abs{\vec{p}}}
+			\end{equation}
+
+			\noindent
+			Chiral $U(1)_A$ transformation / Axial phase transformation:
+			\begin{equation}
+				\psi(x) \to \ex^{\i \gamma_5 \alpha} \psi(x)
+				\hsp \bar{\psi}(x) \to \bar{\psi}(x) \ex^{\i \gamma_5 \alpha}
+			\end{equation}
+			left- and right-handed chiral transformations:
+			\begin{align}
+				U(1)_L:&\quad U(\alpha) = U(\alpha/2)_V U(-\alpha/2)_A,
+				\hsp \psi \to \ex^{\i P_L \alpha} \psi
+				\hsp \bar{\psi} \to \bar{\psi} \ex^{-\i P_R \alpha} \\
+				U(1)_R:&\quad U(\alpha) = U(\alpha/2)_V U(\alpha/2)_A, \phantom{-}
+				\hsp \psi \to \ex^{\i P_R \alpha} \psi
+				\hsp \bar{\psi} \to \bar{\psi} \ex^{-\i P_L \alpha}
+			\end{align}
 
 	\subsection{Quantum Electrodynamics}
 		Lagrangian of Quantum Electrodynamics\index{Quanten Elektrodynamik} ($U(1)$ gauge)

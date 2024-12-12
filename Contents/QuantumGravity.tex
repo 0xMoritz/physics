@@ -66,20 +66,27 @@
 		\begin{equation}
 			Z_k[J] := \ex^{-\Delta S_k [\fdv{J}]}Z[J]
 		\end{equation}
+		Note that there are complications when dealing with fermionic regulators
 
 		\noindent
 		Example regulators ($R_k(p^2) = p^2 r(y)$ with $y=p^2/k^2$):
 		\begin{itemize} \itemsep -0pt
-			\item Litim regulator\index{Litim!Regulator}: $r(y) = \qty(\dfrac{1}{y}-1)\theta(1-y)$, \ie $R_k(p^2) = (k^2 - p^2) \Theta(k^2 - p^2)$ \\
-			\item Exponential regulator: $r(y) = \dfrac{cy^{b-1}}{\exp(y^b) - 1}$ \\
+			\item Litim regulator\index{Litim!Regulator}: $r(y) = \qty(\dfrac{1}{y}-1)\theta(1-y)$, \ie $R_k(p^2) = (k^2 - p^2) \Theta(k^2 - p^2)$
+			\item Exponential regulator: $r(y) = \dfrac{cy^{b-1}}{\exp(y^b) - 1}$
 			\item Sharp regulator $r(y) = \dfrac{1}{\Theta(y-1)}-1$
 		\end{itemize}
 
 		\noindent
-		Renormalization group / RG time:
+		Renormalization group time / RG time and beta functions (using a UV cutoff $\Lambda$):
 		\begin{equation}
 			t = \ln \frac{k}{\Lambda}
-			\hsp \dot{f} = \partial_t f = k \partial_k f
+			\hsp \beta_g := \dot{g} = \partial_t g = k \partial_k g
+		\end{equation}
+
+		\noindent
+		Anomalous dimension (where $Z_\psi(k)$ is the wave function renormalization):
+		\begin{equation}
+			\eta_\psi = -\partial_t \ln Z_\psi
 		\end{equation}
 
 		\noindent
@@ -92,22 +99,27 @@
 		Flowing / Scale dependent effective action / Effective average action and modified quantum equations of motion / effective field equations ($\phi(x)= \fdv{W_k[J_k]}{J_k(x)}$):
 		\begin{equation}
 			\Gamma_k[\phi] = \sup_{J_k} \qty{\int \dd^d x\, J_k(x) \phi(x) - W_k[J_k] - \Delta S_k[\phi]}
-			\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J(x)
+			\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J_k(x)
+		\end{equation}
+
+		\noindent
+		The flowing effective action interpolates between the classical action $S = \Gamma_\Lambda$ where quantum fluctuations are suppressed and the full quantum effective action $\Gamma$ where all fluctuations are included:
+		\begin{equation}
+			\Gamma \;\stackrel{k \to 0}{\longleftarrow}\; \Gamma_{k} \stackrel{k \to \infty}{\longrightarrow} S
 		\end{equation}
 
 		\noindent
 		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation:
 		\begin{equation}
-			\partial_t \Gamma_k[\phi] = \frac{1}{2} \tr G_k \partial_t R_k
-			=\frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\phi] + R_k}(p,-p) \partial_t R_k(p^2)
+			\begin{aligned}
+				\partial_t \Gamma_k[\phi] 
+				&= \frac{1}{2} \tr G_k \partial_t R_k \\
+				&= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\phi] + R_k}(p,-p) \partial_t R_k(p^2) \\
+				&= \frac{1}{2} \tr \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\phi] + R_{\tilde{k}})}_{\tilde{k} = k}
+			\end{aligned}
 		\end{equation}
 
 	\subsection{Asymptotic Safety}
-		Beta functions:
-		\begin{equation}
-			\beta_g = \dot{g} = k \partial_k g
-		\end{equation}
-
 		\noindent
 		Definition of a fixed point $\vec{g}_{*}$:
 		\begin{equation}
@@ -119,9 +131,10 @@
 		\begin{equation}
 			\mathcal{M}_{ij} = \eval{\pdv{\beta_{g_i}}{g_j}}_{\vec{g} = \vec{g_*}}
 		\end{equation}
-		Critical Exponent (corresponding eigenvectors of the stability matrix $V_I$)
+		Critical Exponent (they correspond to eigenvectors $V_I$ of the stability matrix)
 		\begin{equation}
-			\theta_I = - \mathrm{eig}(\mathcal{M}_{ij})
+			\theta_I = - \mathrm{eig}(\mathcal{M})
+			\hsp \theta_I V_I = \mathcal{M} V_I
 		\end{equation}
 		Fixed point expansion of the beta functions:
 		\begin{equation}
@@ -187,7 +200,7 @@
 		\end{equation}
 
 		\noindent
-		(Modified) Nielsen identity\index{Nielsen!Identität}:
+		Nielsen identity\index{Nielsen!Identität} (Applying the Ward--Takahashi identity to the split symmetry):
 		\begin{align}
 			0 &= \fdv{\Gamma}{\bar{g}_{\mu\nu}} - \fdv{\Gamma}{h_{\mu\nu}} - \Avg{\qty(\fdv{\bar{g}_{\mu\nu}} - \fdv{h_{\mu\nu}})(S_\text{g.f.} + S_\text{gh.})} \\
 			0 &= \mathrm{NI}_k - \frac{1}{2} \tr[\frac{1}{\sqrt{\bar{g}}} \fdv{\sqrt{\bar{g}}R_k}{\bar{g}_{\mu\nu}}G_k]

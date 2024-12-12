@@ -64,9 +64,9 @@
 		\noindent
 		De Broglie wavelength\index{De Broglie!Wellenlänge} (Scale at which quantum effects become important):
 		\begin{equation}
-				p = \frac{h}{\lambda} 
-				\hsp
-				\vec{p} = \hbar \vec{k}
+			p = \frac{h}{\lambda}
+			\hsp
+			\vec{p} = \hbar \vec{k}
 		\end{equation}
 
 		\noindent
@@ -311,18 +311,17 @@
 
 			\noindent
 			Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
-			\begin{equation}
+			\begin{align}
 				\label{Eq:PauliMatrices}
-				\begin{aligned}
-					\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
-					\det\qty(\hat{\sigma}_j) &= -1 \\
-					\tr\qty(\hat{\sigma}_j) &= 0 \\
-					\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
-					\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita{jkl}\hat{\sigma}_l \\
-					\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita{\mu\nu\lambda}\sigma_\lambda \\
-					\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita{\xi\mu\nu\lambda}\sigma_\xi \\
-				\end{aligned}
-			\end{equation}
+				\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
+				\det\qty(\hat{\sigma}_j) &= -1 \\
+				\tr\qty(\hat{\sigma}_j) &= 0 \\
+				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita{jkl}\hat{\sigma}_l \\
+				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita{\mu\nu\lambda}\sigma_\lambda \\
+				\acomm{\sigma_i}{\sigma_j} &= 2\delta_{ij}\hat{1} \\
+				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita{\xi\mu\nu\lambda}\sigma_\xi \\
+			\end{align}
 
 			\noindent
 			Pauli Vector\index{Pauli!Vektor}
