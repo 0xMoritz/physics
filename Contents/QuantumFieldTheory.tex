@@ -222,10 +222,12 @@
 			\end{equation}
 
 			\noindent
-			General Lorentz Transformation (angles $\vec{\theta}$ and rapidities $\vec{\psi}$)
+			General Lorentz Transformation $\Lambda\in SO(3,1)$ (angles $\vec{\theta}$ and rapidities $\vec{\psi}$)
 			\begin{equation}
 				\label{Eq:GeneralLorentzTransformation}
-				\Lambda(\vec{\theta}, \vec{\psi}) = \exp(-\i(\hat{\vec{J}}\cdot\vec{\theta} - \hat{\vec{K}}\cdot\vec{\psi}))
+				\Lambda(\vec{\theta}, \vec{\psi})
+				= \exp(-\i(\hat{\vec{J}}\cdot\vec{\theta} - \hat{\vec{K}}\cdot\vec{\psi}))
+				= \exp(\frac{1}{2}\i \theta^{\alpha\beta} M_{\alpha\beta})
 			\end{equation}
 
 		\subsubsection{Gauge Invariance}
@@ -605,7 +607,7 @@
 
 		\subsubsection{Weyl Spinors\index{Weyl!Spinor}}
 			\noindent
-			Lorentz Transformation (using \ref{Eq:GeneralLorentzTransformation} with the generators $\hat{\vec{J}} = \vec{\sigma}/2$ and $\hat{\vec{K}} = \pm \i\vec{\sigma}/2$):
+			Decomposition of the Dirac-Spinor $(\frac{1}{2},0)\oplus(0,\frac{1}{2})$ Lorentz transformation $\Lambda\in SO(3,1)$ into the left-handed $(\frac{1}{2},0)$ representation $\Lambda_L$ and right-handed $(0,\frac{1}{2})$ representation $\Lambda_R$ (using \ref{Eq:GeneralLorentzTransformation} with the generators $\hat{\vec{J}} = \vec{\sigma}/2$ and $\hat{\vec{K}} = \pm \i\vec{\sigma}/2$):
 			\begin{equation}
 				\Lambda
 				= \mqty(\Lambda_\text{L} & 0 \\ 0 & \Lambda_\text{R})
@@ -615,7 +617,7 @@
 				)
 			\end{equation}
 			\begin{equation}
-				\Lambda_\text{L}^\dagger = \Lambda_\text{R}^{-1} \hsp \Lambda_\text{R}^\dagger = \Lambda_\text{L}^{-1}
+				\Lambda_\text{L}^{*} = \inv{\Lambda_\text{R}} \hsp \Lambda_\text{R}^{*} = \inv{\Lambda_\text{L}}
 			\end{equation}
 
 			\noindent
@@ -623,8 +625,8 @@
 			\begin{equation}
 				\begin{aligned}
 					\tilde{x} &= \sigma_\mu x^\mu \doteq \mqty(
-					x^0 - x^3 & x^1 + \i x^2 \\
-					x^1 - \i x^2 & x^0 + x^3 \\
+					-x^0 + x^3 & \phantom{-}x^1 - \i x^2 \\
+					\phantom{-}x^1 + \i x^2 & -x^0 - x^3 \\
 					) \hsp \\
 					x^\mu x_\mu &= \det(\tilde{x}) = x^2 \\
 				\end{aligned}
@@ -633,8 +635,12 @@
 			\noindent
 			Weyl Spinor\index{Weyl!Spinor} transformation rules
 			\begin{equation}
-				\psi_\text{L}' = \Lambda_\text{L} \psi_\text{L} \Lambda_\text{L}^\dagger \hsp
-				\psi_\text{R}' = \Lambda_\text{R} \psi_\text{R} \Lambda_\text{R}^\dagger
+				\psi_\text{L}{}_{\alpha} \to \Lambda_\text{L}{}_{\alpha}{}^\beta \psi_\text{L}{}_{\beta} \Lambda_\text{L}^\dagger \hsp
+				\psi_\text{R}{}_{\dot{\alpha}} \to \Lambda_\text{R}{}_{\dot{\alpha}}{}^{\dot{\beta}} \psi_\text{R}{}_{\dot{\beta}} \Lambda_\text{R}^\dagger
+			\end{equation}
+			\begin{equation}
+				\psi_{\alpha} \to M_{\alpha}{}^\beta \psi_\beta
+				\psi_\text{R}{}_{\dot{\alpha}} \to \Lambda_\text{R}{}_{\dot{\alpha}}{}^{\dot{\beta}} \psi_\text{R}{}_{\dot{\beta}} \Lambda_\text{R}^\dagger
 			\end{equation}
 
 			\noindent
@@ -645,6 +651,52 @@
 					\i \sigma^\mu \partial_\mu \psi_\text{R} &= 0 \\
 				\end{aligned}
 			\end{equation}
+
+		\subsubsection{Two-component Spinor Formalism}
+			Note that this section is still very much under confusion and $\bar{\psi} = \psi^{*} = 	\psi^\dagger$ for Weyl spinors is probably valid.
+
+			Spinor representation of the Lorentz transformation:
+			\begin{equation}
+				M=M_{\frac{1}{2},0} = \exp(-\frac{\i}{2} \vec{\theta}\cdot\vec{\sigma} - \frac{1}{2} \vec{\psi}\cdot\vec{\sigma})
+			\end{equation}
+
+			\noindent
+			Weyl Spinors:
+			\begin{itemize}
+				\item A left-handed two-component $(\frac{1}{2},0)$ spinor is denoted $\psi_{\alpha}$ and transforms as $\psi_{\alpha} \to (M)_{\alpha}{}^{\beta} \psi_{\beta}$ under a Lorentz transformation $M=M_{(\frac{1}{2},0)}$.
+				\item A right-handed two-component $(0,\frac{1}{2})$ spinor is denoted $\psi_{\dot{\alpha}}^\dagger$ and transforms as $\psi_{\dot{\alpha}}^\dagger \to \psi_{\dot{\beta}}^\dagger (M^{*}){}^{\dot{\beta}}{}_{\dot{\alpha}}$ under a Lorentz transformation $M^{*}=M^\dagger =M_{(0,\frac{1}{2})}$.
+			\end{itemize}
+			where $\psi_\alpha$ and $\psi^{\dagger\dot{\alpha}}$ are column vectors, $\psi^\alpha$ and $\psi^\dagger_{\dot{\alpha}}$ are row vectors, and $\alpha,\dot{\alpha}\in\set{1,2}$.
+			\begin{equation}
+				\psi^\dagger_{\dot{\alpha}} = (\psi^\dagger)_{\dot{\alpha}} = (\psi_\alpha)^\dagger
+				\hsp
+				(\psi^\dagger)^{\dot{\alpha}} = (\psi^\alpha)^\dagger
+			\end{equation}
+			the spinor metric tensor is the totally antisymmetric two-component Levi-Civita tensor (equally for dotted as for undotted indices):
+			\begin{equation}
+				\varepsilon^{12} = - \varepsilon^{21} = \varepsilon_{21} = - \varepsilon_{12} = 1
+			\end{equation}
+
+			\noindent
+			Dirac fermion\index{Dirac!Fermion} $\Psi$ is described by a pair of Graßmann-valued fields $\psi_{\alpha}, \bar{\psi}^c_{\dot{\alpha}}$.
+			\begin{align}
+				\Psi &= \mqty(\psi_{\alpha} \\ \bar{\psi}^c_{\dot{\alpha}})
+				& \bar{\Psi} &= \Psi^\dagger\gamma^0 = \mqty(\psi^c_{\alpha} & \bar{\psi}_{\dot{\alpha}})
+			\end{align}
+			these can be projected out using the projection operators
+			\begin{equation}
+				\psi = \psi_L = \hat{P}_L \Psi
+				\hsp \bar{\psi} = \bar{\Psi} \hat{P}_R
+			\end{equation}
+
+			\begin{equation}
+				\bar{\psi} = \psi^{*} = \psi^\dagger
+				\hsp \bar{\psi} \bar{\sigma}^\mu \partial_\mu \psi = \bar{\psi}_{\dot{\alpha}} (\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu \psi_{\alpha}
+				\hsp \psi^c \sigma^\mu \partial_\mu \bar{\psi}^c = \psi^{c\,\alpha} (\sigma^\mu)_{\alpha\dot{\alpha}}\partial_\mu \bar{\psi}^{c\,\dot{\alpha}}
+			\end{equation}
+
+
+
 
 		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
 			Adjoint spinor $\bar{\psi}$ of a spinor $\psi$:
