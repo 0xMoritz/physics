@@ -2,7 +2,7 @@
 \section{Astrophysics\index{Astrophysik}}
 	Conventions used in this section:
 	\begin{itemize}
-		\item Gaußian cgs units ($4\pi\epsilon_0 = 4 \pi / \mu_0 c = 1$)
+		\item Gaußian cgs units ($4\pi\varepsilon_0 = 4 \pi / \mu_0 c = 1$)
 		\item Metric signature $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)_{\mu\nu}$
 		\item Fourier transforms: the factors $(2\pi)^{-d}$ are placed in the back-transform.
 	\end{itemize}
@@ -385,7 +385,7 @@
 			\end{equation}
 
 		\subsubsection{Electromagnetic Waves in Cold Magnetized Plasma}
-			Dielectricity tensor (where $w_p = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = \mathds{1}_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \varepsilon_{ijk} b_k$ projects onto the antisymmetric contribution):
+			Dielectricity tensor (where $w_p = \omega_p / \omega$ with the plasma frequency $\omega_p = \sqrt{4\pi e^2 n_e/m}$ and $w_L = \omega_L / \omega$ with the Larmor frequency $\omega_L = e B_0/mc$, $\pi_\parallel = \vec{b}\otimes\vec{b}$ projects parallel to the magnetic field, $\pi_\perp = \mathds{1}_3 - \pi_\parallel$ orthogonal to it; $\hat{\mathcal{B}}_{ij} = \levicivita_{ijk} b_k$ projects onto the antisymmetric contribution):
 			\begin{equation}
 				\varepsilon = \qty(1 - w_p^2) \pi_\parallel + \qty(1-\frac{w_p^2}{1-w_L^2})\pi_\perp + \i \frac{w_p^2 w_L}{1-w_L^2} \hat{\mathcal{B}}
 			\end{equation}
