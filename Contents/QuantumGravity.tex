@@ -51,10 +51,11 @@
 		\end{equation}
 
 		\noindent
-		Soft cutoff integration measure
+		Soft cutoff integration measure $\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D}\varphi \exp(-\Delta S_k[\varphi])$:
 		\begin{equation}
-			\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D} \exp(-\Delta S_k[\varphi])
-			\hsp \Delta S_k[\varphi] := \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(p)R_k(p^2) \varphi(-p)
+			\Delta S_k[\varphi] 
+			:= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p) 
+			= \frac{1}{2} \int \dd[d]{x} \varphi(x) R_k(-\partial^2) \varphi(x)
 		\end{equation}
 		with a Regulator function\index{Regulator Funktion} $R_k(p^2)$ that satisfies
 		\begin{itemize}\itemsep -0pt
@@ -109,14 +110,14 @@
 		\end{equation}
 
 		\noindent
-		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices):
+		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices of the superfield $\vec{\Phi}$):
 		\begin{equation}
 			\begin{aligned}
 				\partial_t \Gamma_k[\vec{\Phi}] 
 				&= \frac{1}{2} \tr G_k \;\partial_t R_k \\
 				&= \frac{1}{2} \tr \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
 				&= \frac{1}{2} \tr \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
-				&= \frac{1}{2} \sum_I \pm \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\frac{\delta^2 \Gamma_k[\vec{\Phi}]}{\delta \Phi^I(-p) \delta \Phi_I(p)} + R_k(p^2)} \partial_t R_k(p^2) \\
+				&= \frac{1}{2} \sum_I \pm \int \frac{\dd^d p}{(2\pi)^d} \, \inv{\qty(\frac{\delta^2 \Gamma_k[\vec{\Phi}]}{\delta \Phi^I(-p) \delta \Phi_I(p)} + R_k(p^2))} \cdot \partial_t R_k(p^2) \\
 				&= \frac{1}{2} \tr \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\vec{\Phi}] + R_{\tilde{k}})}_{\tilde{k} = k}
 			\end{aligned}
 		\end{equation}
@@ -207,3 +208,9 @@
 			0 &= \fdv{\Gamma}{\bar{g}_{\mu\nu}} - \fdv{\Gamma}{h_{\mu\nu}} - \Avg{\qty(\fdv{\bar{g}_{\mu\nu}} - \fdv{h_{\mu\nu}})(S_\text{g.f.} + S_\text{gh.})} \\
 			0 &= \mathrm{NI}_k - \frac{1}{2} \tr[\frac{1}{\sqrt{\bar{g}}} \fdv{\sqrt{\bar{g}}R_k}{\bar{g}_{\mu\nu}}G_k]
 		\end{align}
+
+	\subsection{Standard Model Effective Field Theory\index{SMEFT}}
+		SMEFT Lagrangian (with $i$ labeling independent gauge-invariant operators $O_{i,D}$ of mass dimension $D$ which are constructed out of the SM fields and dimensionless Wilson coefficients $c_i$ and $\Lambda$ as the new physics scale):
+		\begin{equation}
+			\lagrangian_{SMEFT} = \sum_{D=2}^{\infty} \sum_{i} O_{i,D} \frac{c_i}{\Lambda^{D-4}}
+		\end{equation}
