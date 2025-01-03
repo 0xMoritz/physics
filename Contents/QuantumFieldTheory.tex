@@ -1041,12 +1041,12 @@
 		\end{equation}
 
 		\noindent
-		Gauge Transformation:
+		Gauge Transformation ($\alpha(x) = \alpha^a(x) T^a$):
 		\begin{equation}
 			\begin{aligned}
-				\psi(x) & \to \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
-				A_\mu(x) & \to A'_\mu(x) = A_\mu(x) - \frac{1}{g} \partial_\mu \alpha(x) \\
-				F_{\mu\nu}(x) & \to F'_{\mu\nu}(x) = F_{\mu\nu}(x)
+				\psi^a(x) & \to \psi'^a(x) = \ex^{\i g \alpha(x)} \psi^a(x) \\
+				A_\mu^a(x) & \to {A'_\mu}^a(x) = A_\mu^a(x) - \frac{1}{g} \partial_\mu \alpha^a(x) \\
+				F_{\mu\nu}^a(x) & \to {F'_{\mu\nu}}^a(x) = F_{\mu\nu}^a(x) - f^{abc} \alpha^b F_{\mu\nu}^c(x)
 			\end{aligned}
 		\end{equation}
 
@@ -1099,26 +1099,67 @@
 		\subsubsection{Electroweak Theory\index{EW Theory}}
 			$SU(2)_L \times U(1)_Y$ gauge theory.
 
-			Electroweak Lagrangian before symmetry breaking ($W_a^{\mu\nu}$ is the field strength tensor of the weak isospin gauge field, $B^{\mu\nu}$ is the field strength tensor of the hypercharge gauge field; $j$ denotes flavour; $Q_j$ are the left-handed quark doublets, $u_j$ are the right-handed up-like singlets, $d_j$ are the right-handed down-like singlets, $L_j$ are the left-handed lepton doublets, $e_j$ are the right-handed charged lepton singlets; $h$ is the higgs field, with vacuum expectation value $v$; $y^a_{ij}$ are the Yukawa couplings for $a \in \set{u,d,e}$):
+			Electroweak Lagrangian before symmetry breaking ($W_a^{\mu\nu}$ is the field strength tensor of the weak isospin gauge field, $B^{\mu\nu}$ is the field strength tensor of the hypercharge gauge field; $j$ denotes flavour; $Q_j$ are the left-handed quark doublets, $u_j$ are the right-handed up-like singlets, $d_j$ are the right-handed down-like singlets, $L_j$ are the left-handed lepton doublets, $e_j$ are the right-handed charged lepton singlets; $H$ is the higgs field, with vacuum expectation value $v$, fluctuation $h$, with $\tilde{H}=\i\sigma_2 H^{*}$; $y^a_{ij}$ are the Yukawa couplings for $a \in \set{u,d,e}$. Note the absence of neutrino masses):
 			\begin{equation}
 				\begin{aligned}
 					\lagrangian_{EW} &= \lagrangian_{\text{gauge}} + \lagrangian_{\text{fermion}} + \lagrangian_{\text{Higgs}} + \lagrangian_{\text{Yukawa}} \\
 					\lagrangian_{\text{gauge}} &= -\frac{1}{4} W_a^{\mu\nu} W^a_{\mu\nu} -\frac{1}{4} B^{\mu\nu} B_{\mu\nu} \\
-					\lagrangian_{\text{fermion}} &= \bar{Q}_j \i \slashed{D} Q_j + \bar{d}_j \i \slashed{D} d_j + \bar{L}_j \i \slashed{D} L_j + \bar{e}_j \i \slashed{D} e_j \\
+					\lagrangian_{\text{fermion}} &= \bar{Q}_j \i \slashed{D} Q_j + \bar{u}_j \i \slashed{D} u_j + \bar{d}_j \i \slashed{D} d_j + \bar{L}_j \i \slashed{D} L_j + \bar{e}_j \i \slashed{D} e_j \\
 					\lagrangian_{\text{Higgs}} &= \abs{D_\mu h}^2 - \lambda\qty(\abs{h}^2 -\frac{v^2}{2})^2 \\
-					\lagrangian_{\text{Yukawa}} &= - y^u_{jk} \epsilon^{ab} h^\dagger_b \bar{Q}_{ia}  u_j^c - y^d_{ij} h \bar{Q}_i d_j^c - y^e_{ij} h \bar{L}_i e_j^c + \text{h.c.}
+					\lagrangian_{\text{Yukawa}} &= - y^u_{ij} \bar{Q}_{i} \tilde{H}  u_j - y^d_{ij} \bar{Q}_i H d_j - y^e_{ij} \bar{L}_i H e_j + \text{h.c.}
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Gauge transformation ($\vec{I}=\frac{1}{2}\sigma$ for doublets and $0$ for singlets):
+			Gauge transformation ($\vec{T}=T\vec{\sigma}=\frac{1}{2}\vec{\sigma}$ for doublets and $0$ for singlets):
 			\begin{equation}
-				\Psi \to \Psi' = \exp(\i g \vec{\omega}(x)\cdot\vec{I}	+ \i g' \omega_0(x) Y) \Psi
+				\Psi \to \Psi' = \exp(\i g \vec{\omega}(x)\cdot\vec{T}	+ \i g' \omega_0(x) Y) \Psi
+			\end{equation}
+
+			\noindent
+			Fermion masses can be acquired after symmetry breaking via the Yukawa couplings (with $U,K$ unitary and $M$ diagonal with eigenvalues $m_{u,d}^i$):
+			\begin{equation}
+				y_{u,d} = U_{u,d} M_{u,d} K_{u,d}^\dagger
+			\end{equation}
+
+			\noindent
+			Transformation from flavor basis to mass basis:
+			\begin{equation}
+				\begin{aligned}
+					&u_L^i \leftrightarrow U^{ij}_u u_L^j
+					\hsp
+					&d_L^i \leftrightarrow U^{ij}_d d_L^j
+					\\
+					&u_R^i \leftrightarrow K^{ij}_u u_R^j
+					\hsp
+					&d_R^i \leftrightarrow K^{ij}_d d_R^j
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			CKM (Cabibbo--Kobayashi--Maskawa) matrix\index{CKM Matrix} (which taken arbitrary phase factors into account can be parametrized by 4 real \dof $\theta_{12}, \theta_{13}, \theta_{23}, \delta$):
+			\begin{equation}
+				\begin{aligned}
+					V &:= U_u^\dagger U_d = \mqty(V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb}) \\
+					&= \mqty(
+						1 & 0 & 0 \\
+						\cos\theta_{23} & \sin\theta_{23} & 0 \\
+						-\sin\theta_{23} & \cos\theta_{23} & 0)
+					\mqty(
+						\cos\theta_{13} & 0 & \sin\theta_{13} \ex^{-\i\delta} \\ 
+						0 & 1 & 0 \\ 
+						-\sin\theta_{13} \ex^{\i\delta} & 0 & \cos\theta_{13})
+					\mqty(
+						\cos\theta_{12} & \sin\theta_{12} & 0 \\
+						-\sin\theta_{12} & \cos\theta_{12} & 0 \\
+						0 & 0 & 1)
+				\end{aligned}
 			\end{equation}
 
 			\noindent
 			Gell-Mann--Nishijima formula\index{Gell-Mann!--Nishijima Formel}\index{Nishijima!Gell-Mann--Nishijima Formel} (Charge $Q$, third component of the weak isospin $T_3$, hypercharge $Y$):
 			\begin{equation}
+				\label{Eq:GellMannNishijima}
 				Q = T_3 + \frac{Y}{2}
 			\end{equation}
 
@@ -1129,25 +1170,30 @@
 			\end{equation}
 
 			\noindent
-			Relation of coupling constants:
-			\begin{equation}
-				g \sin\theta_W = g' \cos\theta_W = e
-			\end{equation}
+			Relation of coupling constants to the Weinberg angle:
+			\begin{align}
+				e = g \sin\theta_W = g' \cos\theta_W
+				\hsp \sin \theta_W = \frac{g'}{\sqrt{g^2 + g'^2}}
+				\hsp \cos \theta_W = \frac{g}{\sqrt{g^2 + g'^2}}
+			\end{align}
 
 			\noindent
 			Weak boson mass relation:
 			\begin{equation}
-				m_Z = \frac{m_W}{\cos(\theta_W)}
+				m_Z \cos(\theta_W) = m_W = \frac{v}{2} g
 			\end{equation}
 
 			\noindent
 			Boson mixing due to spontaneous symmetry breaking:
+			\begin{align}
+				A_\mu &= \phantom{-}\cos\theta_W B_\mu + \sin\theta_W W^3_\mu \\
+				Z^0_\mu &= -\sin\theta_W B_\mu + \cos\theta_W W^3_\mu
+			\end{align}
+
+			\noindent
+			Charged weak boson field decomposition:
 			\begin{equation}
-				\begin{aligned}
-					W^\pm &= \frac{1}{\sqrt{2}}(W^1 \mp \i W^2) \\
-					\gamma &= \cos\theta_W B + \sin\theta_W W^3 \\
-					Z^0 &= -\sin\theta_W B + \cos\theta_W W^3
-				\end{aligned}
+				W^\pm = \frac{1}{\sqrt{2}}(W^1 \mp \i W^2) \\
 			\end{equation}
 
 
@@ -1155,6 +1201,18 @@
 			Lagrangian:
 			\begin{equation}
 				\mathcal{L}_\text{QCD} = -\frac{1}{4} G^a_{\mu\nu} G^{a\mu\nu} + \bar{\psi}(\i\slashed{D}-m)\psi
+			\end{equation}
+
+			\noindent
+			QCD field strength $G^a_{\mu\nu}$ and gauge field $G^a_\mu$ (gauge coupling $g_s$) and relation to covariant derivative:
+			\begin{equation}
+				G^a_{\mu\nu} = \partial_\mu G^a_\nu - \partial_\nu G^a_\mu + g_s f^{abc} G^b_\mu G^c_\nu
+			\end{equation}
+
+			\noindent
+			Covariant derivative
+			\begin{equation}
+				D_\mu = \partial_\mu + \i g_s G^a_\mu T^a
 			\end{equation}
 
 
