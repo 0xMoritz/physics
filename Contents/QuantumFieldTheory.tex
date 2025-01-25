@@ -55,6 +55,63 @@
 				s+t+u = \sum_i m_i^2
 			\end{equation}
 
+			\noindent
+			Non-Relativistic Limit ($c \to\infty$):
+			\begin{equation}
+				\phi(x) \to \phi(x) \ex^{-\i m c^2 t/\hbar}
+			\end{equation}
+
+		\subsubsection{Pauli Matrices}
+			Clifford Algebra\index{Clifford!Algebra} (defining properties of the Pauli matrices):
+			\begin{equation}
+				\acomm{\sigma_i}{\sigma_j} = 2\delta_{ij}\hat{1}
+			\end{equation}
+
+
+			\noindent
+			Matrix representation of the Pauli matrices\index{Pauli!Matrizen}:
+			\begin{equation}
+				\label{Eq:PauliMatricesQFT}
+				\begin{aligned}
+					\sigma^0 \doteq \mqty(
+					1 & 0 \\
+					0 & 1 \\
+					) &&\hsp
+					\sigma^1 \doteq \mqty(
+					0 & 1 \\
+					1 & 0 \\
+					) &&\hsp
+					\sigma^2 \doteq \mqty(
+					0 & -\i \\
+					\i & 0 \\
+					) &&\hsp
+					\sigma^3 \doteq \mqty(
+					1 & 0 \\
+					0 & -1 \\
+					)
+				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Properties of the Pauli matrices\index{Pauli!Spinmatrizen} (see also Eq.~\ref{Eq:PauliMatricesQFT}):
+			\begin{align}
+				\label{Eq:PauliMatrices}
+				\hat{\sigma}_j^\dagger &= \hat{\sigma}_j \\
+				\det\qty(\hat{\sigma}_j) &= -1 \\
+				\tr\qty(\hat{\sigma}_j) &= 0 \\
+				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
+				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita_{jkl}\hat{\sigma}_l \\
+				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita_{\mu\nu\lambda}\sigma_\lambda \\
+				\acomm{\sigma_i}{\sigma_j} &= 2\delta_{ij}\hat{1} \\
+				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita_{\xi\mu\nu\lambda}\sigma_\xi \\
+			\end{align}
+
+			\noindent
+			Fierz completeness relation:
+			\begin{align}
+				\sigma^k_{ij} \sigma^k_{kl} &= 2 \delta_{il} \delta_{jk} - \delta_{ij} \delta_{kl}
+			\end{align}
+
 		\subsubsection{Gamma Matrices}
 			\noindent
 			Clifford Algebra\index{Clifford!Algebra} (defining properties of the gamma matrices):
