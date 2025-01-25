@@ -225,10 +225,65 @@
 			\end{equation}
 
 			\noindent
-			Non-Relativistic Limit ($c \to\infty$):
+			Generalized $\gamma$-matrices of $n$ Lorentz indices:
 			\begin{equation}
-				\phi(x) \to \phi(x) \ex^{-\i m c^2 t/\hbar}
+				\gamma^{\mu\dots\nu} = \frac{1}{n!} \gamma^{[\mu} \dots \gamma^{\nu]}
+				= \frac{1}{n!}\levicivita_{\mu\dots\nu\alpha\dots\beta} \gamma^\alpha \dots \gamma^\beta
 			\end{equation}
+
+		\subsubsection{Gell-Mann Matrices}
+			Matrix representation of the Gell-Mann matrices\index{Gell-Mann!Matrizen} (conventional choice of linearly independent traceless Hermitian matrices spanning the Lie algebra of $SU(3)$):
+			\begin{alignat}{2}
+				\lambda_1 = \mqty(
+				0 & 1 & 0 \\
+				1 & 0 & 0 \\
+				0 & 0 & 0
+				) &\hsp
+				\lambda_2 = \mqty(
+				0 & -\i & 0 \\
+				\i & 0 & 0 \\
+				0 & 0 & 0
+				) &&\hsp
+				\lambda_3 = \mqty(
+				1 & 0 & 0 \\
+				0 & -1 & 0 \\
+				0 & 0 & 0
+				) \\
+				\lambda_4 = \mqty(
+				0 & 0 & 1 \\
+				0 & 0 & 0 \\
+				1 & 0 & 0
+				) &\hsp
+				\lambda_5 = \mqty(
+				0 & 0 & -\i \\
+				0 & 0 & 0 \\
+				\i & 0 & 0
+				) &&\\
+				\lambda_6 = \mqty(
+				0 & 0 & 0 \\
+				0 & 0 & 1 \\
+				0 & 1 & 0
+				) &\hsp
+				\lambda_7 = \mqty(
+				0 & 0 & 0 \\
+				0 & 0 & -\i \\
+				0 & \i & 0
+				) &&\hsp
+				\lambda_8 = \frac{1}{\sqrt{3}}\mqty(
+				1 & 0 & 0 \\
+				0 & 1 & 0 \\
+				0 & 0 & -2
+				)
+			\end{alignat}
+
+			\noindent
+			Properties:
+			\begin{align}
+				\tr(\lambda_a) &= 0 \\
+				\tr(\lambda_a \lambda_b) &= 2\delta_{ab} \\
+				\comm{\lambda_a}{\lambda_b} &= 2\i f_{abc} \lambda_c \\
+				\lambda_a^\dagger &= \lambda_a \\
+			\end{align}
 
 	\subsection{Gauge and Symmetry}
 		\subsubsection{Symmetry Operations}
