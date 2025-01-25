@@ -34,7 +34,7 @@
 			\noindent
 			Torsion-free connection assumption / condition:
 			\begin{equation}
-				\Gamma^{\lambda}_{\qty[\mu\nu]} = 0
+				\Gamma^{\lambda}_{\qty[\mu\nu]} = 2 T_{\mu\nu}{}^{\lambda} = 0
 			\end{equation}
 
 		\subsubsection{Metric Tensor\index{Metrischer Tensor}}
@@ -83,7 +83,7 @@
 			The term additional to the partial derivative vanish in locally free falling frames of reference.
 
 			\noindent
-			Riemann curvature tensor / Riemann tensor\index{Riemann!Krümmungstensor}:
+			Riemann curvature tensor / Riemann tensor\index{Riemann!Krümmungstensor} ($T$ is the torsion tensor):
 			\begin{align}
 				R^{\lambda}{}_{\sigma\mu\nu} &=
 				\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma} -
@@ -95,7 +95,7 @@
 				+ g_{\alpha\beta} \qty(
 				\Gamma^{\alpha}_{\mu\sigma} \Gamma^{\beta}_{\nu\lambda} - \Gamma^{\alpha}_{\nu\sigma} \Gamma^{\beta}_{\mu\lambda})
 				\\
-				R^{\lambda}{}_{\sigma\mu\nu}v^\sigma &= \qty(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu) v^\lambda = \nabla_{\left[\mu\right.}\nabla_{\left.\nu\right]} v^\lambda
+				R^{\lambda}{}_{\sigma\mu\nu}V^\sigma &= \qty(\nabla_\mu \nabla_\nu - \nabla_\nu \nabla_\mu) V^\lambda + T_{\mu\nu}{}^\sigma \nabla_\sigma V^\lambda = 2 \nabla_{\left[\mu\right.}\nabla_{\left.\nu\right]} V^\lambda + T_{\mu\nu}{}^\sigma \nabla_\sigma V^\lambda 
 			\end{align}
 
 			\noindent
@@ -109,8 +109,8 @@
 			\noindent
 			Bianchi Identities\index{Bianchi!Identitäten}:
 			\begin{align}
-				0 &= R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} \\
-				0 &= \nabla_\gamma R^{\lambda}_{\phantom{\lambda}\mu\alpha\beta} + \nabla_\alpha R^{\lambda}_{\phantom{\lambda}\mu\beta\gamma} + \nabla_\beta R^{\lambda}_{\phantom{\lambda}\mu\gamma\alpha}
+				0 &= R^\lambda_{\qty[\alpha\beta\gamma]} = R^{\lambda}_{\phantom{\lambda}\alpha\beta\gamma} + R^{\lambda}_{\phantom{\lambda}\beta\gamma\alpha} + R^{\lambda}_{\phantom{\lambda}\gamma\alpha\beta} \\
+				0 &= \nabla_{\left[\gamma\right.} R_{\left.\beta\gamma\right]\mu\nu} = \nabla_\alpha R_{\beta\gamma\lambda\mu} + \nabla_\beta R_{\gamma\alpha\lambda\mu} + \nabla_\gamma R_{\alpha\beta\lambda\mu} 
 			\end{align}
 
 			\noindent
@@ -120,6 +120,12 @@
 					= - T_{\rho\sigma}{}^{\lambda} \nabla_\lambda V^{\alpha\dots}{}_{\beta\dots} 
 					+ R^{\alpha}{}_{\rho\mu\nu} V^{\rho \dots}{}_{\beta \dots} + \dots
 					- R^{\sigma}{}_{\beta\mu\nu} V^{\alpha \dots}{}_{\sigma \dots} - \dots
+			\end{equation}
+
+			\noindent
+			Jacobi identity\index{Jacobi!Identität} of the covariant derivative:
+			\begin{equation}
+				[[\nabla_{\lambda},\nabla_{\rho}],\nabla_{\sigma}]+[[\nabla_{\rho},\nabla_{\sigma}],\nabla_{\lambda}]+[[\nabla_{\sigma},\nabla_{\lambda}],\nabla_{\rho}]=0
 			\end{equation}
 
 			\noindent
@@ -135,13 +141,10 @@
 			\end{equation}
 
 			\noindent
-			Decomposition of the Riemann tensor\index{Riemman!Krümmungstensor} into Weyl tensor\index{Weyl!Tensor} (traceless part), Ricci tensor and Ricci scalar:
-			\begin{align}				
-				\begin{split}
-					R_{\mu\nu\rho\sigma} =&\; C_{\mu\nu\rho\sigma} - \frac{1}{2} \qty(R_{\mu\sigma} g_{\nu\rho} - R_{\mu\rho} g_{\nu\sigma} + R_{\nu\rho} g_{\mu\sigma} - R_{\nu\sigma} g_{\mu\rho}) - \frac{1}{6} R \qty(g_{\mu\rho} g_{\nu\sigma} + g_{\mu\sigma} g_{\nu\rho})
-				\end{split} \\
-				C^{\lambda}{}_{\mu\lambda\nu} =&\; 0
-			\end{align}
+			Decomposition of the Riemann tensor\index{Riemman!Krümmungstensor} into Weyl tensor\index{Weyl!Tensor} (completely traceless part, $C^{\lambda}{}_{\mu\lambda\nu} = 0$), Ricci tensor and Ricci scalar:
+			\begin{equation}				
+				R_{\mu\nu\rho\sigma} = C_{\mu\nu\rho\sigma} - \frac{1}{2} \qty(R_{\mu\sigma} g_{\nu\rho} - R_{\mu\rho} g_{\nu\sigma} + R_{\nu\rho} g_{\mu\sigma} - R_{\nu\sigma} g_{\mu\rho}) - \frac{1}{6} R \qty(g_{\mu\rho} g_{\nu\sigma} + g_{\mu\sigma} g_{\nu\rho})				
+			\end{equation}
 
 		\subsubsection{Field Equations\index{Feldgleichungen}}
 			\noindent
@@ -208,6 +211,12 @@
 					T^a &= \dd e^a + \omega^a{}_b \wedge e^b \\
 					R^a_b &= \dd \omega^a{}_b + \omega^a_{}c \wedge \omega^c{}_b
 				\end{aligned}
+			\end{equation}
+
+			\noindent
+			Divergence of the Einstein tensor:
+			\begin{equation}
+				\nabla_\mu G^{\mu\nu} = 0
 			\end{equation}
 
 		\subsubsection{Gauge Freedom}
@@ -278,6 +287,10 @@
 			\end{equation}
 
 		\subsubsection{Black Holes}
+			Birkhoff's theorem\index{Birkhoff!Theorem}: \\
+			\indent \emph{Any spherically symmetric solution of the Einstein vacuum field equations must be static and asymptotically flat, such that the exterior metric is given by the Schwarzschild metric.}\vsp
+
+			\noindent
 			Schwarzschild Metric\index{Schwarzschild!Metrik} ($\dd \Omega^2 = \dd{\theta^2} + \sin^2 \theta \dd{\phi^2}$, the Schwarzschild radius\index{Schwarzschild!Radius} is $r_s = 2 G M/c^2$):
 			\begin{equation}
 				\dd s^2 = - \qty(1-\frac{r_s}{r}) \dd t^2 + \qty(1 - \frac{r_s}{r})^{-1} \dd r^2 + r^2 \dd \Omega^2
@@ -316,6 +329,7 @@
 			\noindent
 			Black Hole Entropy\index{Schwarzes Loch!Entropie} / Bekenstein--Hawking formula\index{Bekenstein!--Hawking Formel}\index{Hawking!Bekenstein--Hawking Formel} ($A$ is the event horizon area, \eg a Schwarzschild black hole has $A=4\pi r_s^2$):
 			\begin{equation}
+				\label{eq:BekensteinHawkingEntropy}
 				S_\mathrm{BH} = \frac{\kB A}{4 l_P^2}
 				= \frac{\kB c^3 A}{4 G \hbar}
 			\end{equation}
