@@ -53,8 +53,8 @@
 		\noindent
 		Soft cutoff integration measure $\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D}\varphi \exp(-\Delta S_k[\varphi])$:
 		\begin{equation}
-			\Delta S_k[\varphi] 
-			:= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p) 
+			\Delta S_k[\varphi]
+			:= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p)
 			= \frac{1}{2} \int \dd[d]{x} \varphi(x) R_k(-\partial^2) \varphi(x)
 		\end{equation}
 		with a Regulator function\index{Regulator Funktion} $R_k(p^2)$ that satisfies
@@ -113,7 +113,7 @@
 		Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices of the superfield $\vec{\Phi}$ and $\Str$ is the supertrace):
 		\begin{equation}
 			\begin{aligned}
-				\partial_t \Gamma_k[\vec{\Phi}] 
+				\partial_t \Gamma_k[\vec{\Phi}]
 				&= \frac{1}{2} \Str G_k \;\partial_t R_k \\
 				&= \frac{1}{2} \Str \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
 				&= \frac{1}{2} \Str \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
@@ -183,7 +183,7 @@
 		Lie derivative (\wrt to a vector field $\omega_\mu$; constitute generators of diffeomorphism transformation)
 		\begin{equation}
 			\begin{aligned}
-				\mathcal{L}_\omega T_{\alpha\beta\dots} 
+				\mathcal{L}_\omega T_{\alpha\beta\dots}
 				&= \omega^\rho \partial_\rho T_{\alpha\beta\dots} + T_{\rho\beta\dots} \partial_\alpha \omega^\rho + T_{\alpha\rho\dots} \partial_\beta \omega^\rho + \dots \\
 				&= \omega^\rho \nabla_\rho T_{\alpha\beta\dots} + T_{\rho\beta\dots} \nabla_\alpha \omega^\rho + T_{\alpha\rho\dots} \nabla_\beta \omega^\rho + \dots
 			\end{aligned}
@@ -212,5 +212,21 @@
 	\subsection{Standard Model Effective Field Theory\index{SMEFT}}
 		SMEFT Lagrangian (with $i$ labeling independent gauge-invariant operators $O_{i,D}$ of mass dimension $D$ which are constructed out of the SM fields and dimensionless Wilson coefficients $c_i$ and $\Lambda$ as the new physics scale):
 		\begin{equation}
-			\lagrangian_{SMEFT} = \sum_{D=2}^{\infty} \sum_{i} O_{i,D} \frac{c_i}{\Lambda^{D-4}}
+			\lagrangian_{\mathrm{SMEFT}} = \sum_{D=2}^{\infty} \sum_{i} O_{i,D} \frac{c_i}{\Lambda^{D-4}}
+		\end{equation}
+
+	\subsection{Four Fermion Vertices}
+		Thirring model:
+		\begin{equation}
+			\Gamma_k[\bar{\psi},\psi] = \int\dd[d]{x} \qty{\bar{\psi} \i \slashed{\partial} \psi + \frac{g_k}{2} (\bar{\psi} \gamma^\mu \psi) (\bar{\psi} \gamma_\mu \psi)}
+		\end{equation}
+
+		\noindent
+		Gross-Neveu model:
+		\begin{equation}
+			\Gamma_k[\bar{\psi},\psi] = \int \dd[d]{x} \qty{Z_\psi \bar{\psi} \i \slashed{\partial} \psi + \frac{1}{2} \bar{\lambda}_\sigma(\bar{\psi} \psi)^2}
+		\end{equation}
+
+		\begin{equation}
+			\Gamma_k[\bar{\psi},\psi] = \int \dd[d]{x} \qty{ Z_\psi \bar{\psi} \i \slashed{\partial} \psi + \frac{1}{2} \bar{\lambda}_\sigma[(\bar{\psi} \psi)^2 - (\bar{\psi} \gamma^5 \psi)^2] - \frac{1}{2} \bar{\lambda}_V (\bar{\psi} \gamma_{\mu} \psi)^2 - \frac{1}{2} \bar{\lambda}_A[(\bar{\psi} \gamma_{\mu} \gamma_5 \psi)^2]}
 		\end{equation}
