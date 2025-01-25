@@ -765,8 +765,6 @@
 			\end{equation}
 
 		\subsubsection{Two-component Spinor Formalism}
-			Note that this section is still very much under confusion and $\bar{\psi} = \psi^{*} = 	\psi^\dagger$ for Weyl spinors is probably valid.
-
 			Spinor representation of the Lorentz transformation:
 			\begin{equation}
 				M=M_{\frac{1}{2},0} = \exp(-\frac{\i}{2} \vec{\theta}\cdot\vec{\sigma} - \frac{1}{2} \vec{\psi}\cdot\vec{\sigma})
@@ -776,13 +774,13 @@
 			Weyl Spinors:
 			\begin{itemize}
 				\item A left-handed two-component $(\frac{1}{2},0)$ spinor is denoted $\psi_{\alpha}$ and transforms as $\psi_{\alpha} \to (M)_{\alpha}{}^{\beta} \psi_{\beta}$ under a Lorentz transformation $M=M_{(\frac{1}{2},0)}$.
-				\item A right-handed two-component $(0,\frac{1}{2})$ spinor is denoted $\psi_{\dot{\alpha}}^\dagger$ and transforms as $\psi_{\dot{\alpha}}^\dagger \to \psi_{\dot{\beta}}^\dagger (M^{*}){}^{\dot{\beta}}{}_{\dot{\alpha}}$ under a Lorentz transformation $M^{*}=M^\dagger =M_{(0,\frac{1}{2})}$.
+				\item A right-handed two-component $(0,\frac{1}{2})$ spinor is denoted $\psi_{\dot{\alpha}}^\dagger$ and transforms as $\psi_{\dot{\alpha}}^{*} \to \psi_{\dot{\beta}}^{*} (M^{*}){}^{\dot{\beta}}{}_{\dot{\alpha}}$ under a Lorentz transformation $M^{*}=M^\dagger =M_{(0,\frac{1}{2})}$.
 			\end{itemize}
-			where $\psi_\alpha$ and $\psi^{\dagger\dot{\alpha}}$ are column vectors, $\psi^\alpha$ and $\psi^\dagger_{\dot{\alpha}}$ are row vectors, and $\alpha,\dot{\alpha}\in\set{1,2}$.
+			where $\psi_\alpha$ and $\psi^{{*}\dot{\alpha}}$ are column vectors, $\psi^\alpha$ and $\psi^{*}_{\dot{\alpha}}$ are row vectors, and $\alpha,\dot{\alpha}\in\set{1,2}$.
 			\begin{equation}
-				\psi^\dagger_{\dot{\alpha}} = (\psi^\dagger)_{\dot{\alpha}} = (\psi_\alpha)^\dagger
+				\psi^{*}_{\dot{\alpha}} = (\psi^{*})_{\dot{\alpha}} = (\psi_\alpha)^{*}
 				\hsp
-				(\psi^\dagger)^{\dot{\alpha}} = (\psi^\alpha)^\dagger
+				(\psi^{*})^{\dot{\alpha}} = (\psi^\alpha)^{*}
 			\end{equation}
 			the spinor metric tensor is the totally antisymmetric two-component Levi-Civita tensor (equally for dotted as for undotted indices):
 			\begin{equation}
@@ -790,21 +788,30 @@
 			\end{equation}
 
 			\noindent
-			Dirac fermion\index{Dirac!Fermion} $\Psi$ is described by a pair of Graßmann-valued fields $\psi_{\alpha}, \bar{\psi}^c_{\dot{\alpha}}$.
-			\begin{align}
-				\Psi &= \mqty(\psi_{\alpha} \\ \bar{\psi}^c_{\dot{\alpha}})
-				& \bar{\Psi} &= \Psi^\dagger\gamma^0 = \mqty(\psi^c_{\alpha} & \bar{\psi}_{\dot{\alpha}})
-			\end{align}
-			these can be projected out using the projection operators
+			Dirac fermion\index{Dirac!Fermion} $\Psi$ is described by a pair of Weyl fermions $\psi_{\alpha}, \psi^{*c}_{\dot{\alpha}}$.
+			\begin{alignat}{3}
+				\Psi &\doteq \mqty(\psi_{\alpha} \\ \psi^{*c}_{\dot{\alpha}})
+				\hsp &&
+				\bar{\Psi} &&= \Psi^\dagger\gamma^0 \doteq \mqty(\psi^c_{\alpha} & \psi^{*}_{\dot{\alpha}})
+			\end{alignat}
+			these can be singled out using the projection operators
+			\begin{alignat}{3}
+				\psi_L &= \hat{P}_L \Psi \doteq \mqty(\psi \\ 0)
+				\hsp &&
+				\psi_R^{*} &&= \hat{P}_R \Psi \doteq \mqty(0 \\ \psi^{*c})
+			\end{alignat}
+
+			\noindent
+			Contractions can be formed with $\sigma^\mu=\sigma^\mu_{\alpha\dot{\alpha}}$ and $\bar{\sigma}_\mu=\bar{\sigma}_\mu^{\dot{\alpha}\alpha} = \levicivita^{\alpha\beta}\levicivita^{\dot{\alpha}\dot{\beta}}\sigma_{\mu\,\beta\dot{\beta}}$:
 			\begin{equation}
-				\psi = \psi_L = \hat{P}_L \Psi
-				\hsp \bar{\psi} = \bar{\Psi} \hat{P}_R
+				\psi^{*} \bar{\sigma}^\mu \partial_\mu \psi = \psi^{*}_{\dot{\alpha}} (\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu \psi_{\alpha}
+				\hsp \psi^c \sigma^\mu \partial_\mu \psi^{*c} = \psi^{c\,\alpha} (\sigma^\mu)_{\alpha\dot{\alpha}}\partial_\mu \psi^{*c\,\dot{\alpha}}
 			\end{equation}
 
+			\noindent
+			Weak isospinor\index{Weak!Isospinor} doublet:
 			\begin{equation}
-				\bar{\psi} = \psi^{*} = \psi^\dagger
-				\hsp \bar{\psi} \bar{\sigma}^\mu \partial_\mu \psi = \bar{\psi}_{\dot{\alpha}} (\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu \psi_{\alpha}
-				\hsp \psi^c \sigma^\mu \partial_\mu \bar{\psi}^c = \psi^{c\,\alpha} (\sigma^\mu)_{\alpha\dot{\alpha}}\partial_\mu \bar{\psi}^{c\,\dot{\alpha}}
+				q_{\alpha}^i \doteq \mqty(u_{\alpha} \\ d_{\alpha}) = \mqty(u^L_{\alpha} \\ d^L_{\alpha})
 			\end{equation}
 
 
@@ -820,6 +827,8 @@
 			Dirac spinor\index{Dirac!Spinor} composition of Weyl spinors\index{Weyl!Spinor} (Chiral representation):
 			\begin{equation}
 				\psi = \mqty(\psi_\text{L} \\ \psi_\text{R})
+				\hsp
+				\psi^\dagger = \mqty(\bar{\psi}_\text{L} & \bar{\psi}_\text{R})
 				\hsp
 				\bar{\psi} = \mqty(\bar{\psi}_\text{R} & \bar{\psi}_\text{L})
 			\end{equation}
@@ -933,7 +942,7 @@
 			\end{equation}
 
 			\noindent
-			Pauli Equation\index{Pauli!Gleichung} (non relativistic limit of the Dirac equation):
+			Pauli Equation\index{Pauli!Gleichung} (non-relativistic limit of the Dirac equation):
 			\begin{equation}
 				\hat{H}\psi = \frac{\qty(\vec{\sigma}\cdot\hat{\vec{p}})^2}{2m} \psi
 			\end{equation}
@@ -1005,8 +1014,8 @@
 			\noindent
 			Fierz identities\index{Fierz!Identitäten}:
 			\begin{equation}
-				\qty(\bar{\psi}_a O_X \psi_b) \qty(\bar{\psi}^c O_X \psi_d)
-				= \sum_Y C_{XY} \qty(\bar{\psi}_a O_Y \psi_d) \qty(\bar{\psi}^c O_Y \psi_b)
+				\qty(\bar{\psi}_a O_X \psi_b) \qty(\bar{\psi}_c O_X \psi_d)
+				= \sum_Y C_{XY} \qty(\bar{\psi}_a O_Y \psi_d) \qty(\bar{\psi}_c O_Y \psi_b)
 			\end{equation}
 
 			\noindent
@@ -1020,6 +1029,12 @@
 				+\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} & +\frac{1}{4} \\
 				)
 			\end{equation}
+
+			\noindent
+			Selection of important Fierz identities:
+			\begin{align}
+				(\bar{\psi}_1 \bar{\sigma}^\mu \psi_2) (\bar{\psi}_3 \bar{\sigma}^\mu \psi_4) = (\bar{\psi}_1 \bar{\sigma}^\mu \psi_4) (\bar{\psi}_3 \bar{\sigma}^\mu \psi_2)
+			\end{align}
 
 		\subsubsection{Chirality}
 			\noindent
@@ -1211,7 +1226,7 @@
 		\subsubsection{Electroweak Theory\index{EW Theory}}
 			$SU(2)_L \times U(1)_Y$ gauge theory.
 
-			Electroweak Lagrangian before symmetry breaking ($W_a^{\mu\nu}$ is the field strength tensor of the weak isospin gauge field, $B^{\mu\nu}$ is the field strength tensor of the hypercharge gauge field; $j$ denotes flavour; $Q_j$ are the left-handed quark doublets, $u_j$ are the right-handed up-like singlets, $d_j$ are the right-handed down-like singlets, $L_j$ are the left-handed lepton doublets, $e_j$ are the right-handed charged lepton singlets; $H$ is the higgs field, with vacuum expectation value $v$, fluctuation $h$, with $\tilde{H}=\i\sigma_2 H^{*}$; $y^a_{ij}$ are the Yukawa couplings for $a \in \set{u,d,e}$. Note the absence of neutrino masses):
+			Electroweak Lagrangian before symmetry breaking ($W_a^{\mu\nu}$ is the field strength tensor of the weak isospin gauge field, $B^{\mu\nu}$ is the field strength tensor of the hypercharge gauge field; $j$ denotes flavor; $Q_j$ are the left-handed quark doublets, $u_j$ are the right-handed up-like singlets, $d_j$ are the right-handed down-like singlets, $L_j$ are the left-handed lepton doublets, $e_j$ are the right-handed charged lepton singlets; $H$ is the higgs field, with vacuum expectation value $v$, fluctuation $h$, with $\tilde{H}=\i\sigma_2 H^{*}$; $y^a_{ij}$ are the Yukawa couplings for $a \in \set{u,d,e}$. Note the absence of neutrino masses):
 			\begin{equation}
 				\begin{aligned}
 					\lagrangian_{EW} &= \lagrangian_{\text{gauge}} + \lagrangian_{\text{fermion}} + \lagrangian_{\text{Higgs}} + \lagrangian_{\text{Yukawa}} \\
@@ -1236,17 +1251,13 @@
 
 			\noindent
 			Transformation from flavor basis to mass basis:
-			\begin{equation}
-				\begin{aligned}
-					&u_L^i \leftrightarrow U^{ij}_u u_L^j
-					\hsp
-					&d_L^i \leftrightarrow U^{ij}_d d_L^j
-					\\
-					&u_R^i \leftrightarrow K^{ij}_u u_R^j
-					\hsp
-					&d_R^i \leftrightarrow K^{ij}_d d_R^j
-				\end{aligned}
-			\end{equation}
+			\begin{alignat}{3}
+				u_L^i &\leftrightarrow U^{ij}_u u_L^j
+				\hsp && d_L^i &&\leftrightarrow U^{ij}_d d_L^j
+				\\
+				u_R^i &\leftrightarrow K^{ij}_u u_R^j
+				\hsp && d_R^i &&\leftrightarrow K^{ij}_d d_R^j
+			\end{alignat}
 
 			\noindent
 			CKM (Cabibbo--Kobayashi--Maskawa) matrix\index{CKM Matrix} (which taken arbitrary phase factors into account can be parametrized by 4 real \dof $\theta_{12}, \theta_{13}, \theta_{23}, \delta$):
@@ -1254,17 +1265,17 @@
 				\begin{aligned}
 					V &:= U_u^\dagger U_d = \mqty(V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb}) \\
 					&= \mqty(
-						1 & 0 & 0 \\
-						\cos\theta_{23} & \sin\theta_{23} & 0 \\
-						-\sin\theta_{23} & \cos\theta_{23} & 0)
+					1 & 0 & 0 \\
+					\cos\theta_{23} & \sin\theta_{23} & 0 \\
+					-\sin\theta_{23} & \cos\theta_{23} & 0)
 					\mqty(
-						\cos\theta_{13} & 0 & \sin\theta_{13} \ex^{-\i\delta} \\ 
-						0 & 1 & 0 \\ 
-						-\sin\theta_{13} \ex^{\i\delta} & 0 & \cos\theta_{13})
+					\cos\theta_{13} & 0 & \sin\theta_{13} \ex^{-\i\delta} \\
+					0 & 1 & 0 \\
+					-\sin\theta_{13} \ex^{\i\delta} & 0 & \cos\theta_{13})
 					\mqty(
-						\cos\theta_{12} & \sin\theta_{12} & 0 \\
-						-\sin\theta_{12} & \cos\theta_{12} & 0 \\
-						0 & 0 & 1)
+					\cos\theta_{12} & \sin\theta_{12} & 0 \\
+					-\sin\theta_{12} & \cos\theta_{12} & 0 \\
+					0 & 0 & 1)
 				\end{aligned}
 			\end{equation}
 
@@ -1284,7 +1295,7 @@
 			\noindent
 			Relation of weak isospin coupling $g=g_W$ and weak hypercharge coupling $g'$ and effective neutral current coupling $g_Z$ to the Weinberg angle\index{Weinberg!Winkel}:
 			\begin{align}
-				e &= g \sin\theta_W = g' \cos\theta_W 
+				e &= g \sin\theta_W = g' \cos\theta_W
 				\hsp g_Z = \frac{g}{\cos\theta} \\
 				\sin \theta_W &= \frac{g'}{\sqrt{g^2 + g'^2}}
 				\hsp \cos \theta_W = \frac{g}{\sqrt{g^2 + g'^2}}
