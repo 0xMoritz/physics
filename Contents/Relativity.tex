@@ -75,10 +75,10 @@
 			\noindent
 			Covariant derivative\index{Kovariante Ableitung}:
 			\begin{equation}
-				\nabla_\lambda T^{\alpha \dots}_{\beta\dots} =
-				T^{\alpha \dots}_{\beta\dots;\lambda} = T^{\alpha\dots}_{\beta \dots,\lambda}
-				+ \Gamma^\alpha_{\lambda\alpha'} T^{\alpha'\dots}_{\beta\phantom{\prime}\dots} + \dots
-				-\Gamma^{\beta'}_{\lambda\beta} T^{\alpha\phantom{\prime}\dots}_{\beta'\dots} - \dots
+				\nabla_\lambda V^{\alpha \dots}{}_{\beta\dots} =
+				V^{\alpha \dots}_{\beta\dots;\lambda} = V^{\alpha\dots}_{}{\beta \dots,\lambda}
+				+ \Gamma^\alpha_{\lambda\alpha'} V^{\alpha'\dots}{}_{\beta\phantom{\prime}\dots} + \dots
+				-\Gamma^{\beta'}_{\lambda\beta} V^{\alpha\phantom{\prime}\dots}{}_{\beta'\dots} - \dots
 			\end{equation}
 			The term additional to the partial derivative vanish in locally free falling frames of reference.
 
@@ -114,6 +114,15 @@
 			\end{align}
 
 			\noindent
+			Commutator of the covariant derivative (with torsion $T$ and Riemann tensor $R$):			
+			\begin{equation}
+					\comm{\nabla_\mu}{\nabla_\nu} V^{\alpha \dots}{}_{\beta \dots} 
+					= - T_{\rho\sigma}{}^{\lambda} \nabla_\lambda V^{\alpha\dots}{}_{\beta\dots} 
+					+ R^{\alpha}{}_{\rho\mu\nu} V^{\rho \dots}{}_{\beta \dots} + \dots
+					- R^{\sigma}{}_{\beta\mu\nu} V^{\alpha \dots}{}_{\sigma \dots} - \dots
+			\end{equation}
+
+			\noindent
 			Ricci-Tensor\index{Ricci!Tensor}:
 			\begin{equation}
 				R_{\mu\nu} = R^\lambda_{\phantom{\lambda}\mu\lambda\nu}
@@ -129,8 +138,7 @@
 			Decomposition of the Riemann tensor\index{Riemman!Krümmungstensor} into Weyl tensor\index{Weyl!Tensor} (traceless part), Ricci tensor and Ricci scalar:
 			\begin{align}				
 				\begin{split}
-					R_{\mu\nu\rho\sigma} =&\; C_{\mu\nu\rho\sigma} - \frac{1}{2} \qty(R_{\mu\sigma} g_{\nu\rho} - R_{\mu\rho} g_{\nu\sigma} + R_{\nu\rho} g_{\mu\sigma} - R_{\nu\sigma} g_{\mu\rho}) \\ 
-					&- \frac{1}{6} R \qty(g_{\mu\rho} g_{\nu\sigma} + g_{\mu\sigma} g_{\nu\rho})
+					R_{\mu\nu\rho\sigma} =&\; C_{\mu\nu\rho\sigma} - \frac{1}{2} \qty(R_{\mu\sigma} g_{\nu\rho} - R_{\mu\rho} g_{\nu\sigma} + R_{\nu\rho} g_{\mu\sigma} - R_{\nu\sigma} g_{\mu\rho}) - \frac{1}{6} R \qty(g_{\mu\rho} g_{\nu\sigma} + g_{\mu\sigma} g_{\nu\rho})
 				\end{split} \\
 				C^{\lambda}{}_{\mu\lambda\nu} =&\; 0
 			\end{align}
