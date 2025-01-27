@@ -425,6 +425,23 @@
 			\end{equation}
 
 
+		\subsubsection{Conformal Symmetry}
+		A map $x\to f(x)$ is a conformal symmetry if the Jacobian $J$ fulfills:
+		\begin{equation}
+			J^\mu{}_\nu(x) = \pdv{x^\nu} f^\mu(x) = \Omega(x) \Lambda^\mu{}_\nu(x)
+		\end{equation}
+		where $\Lambda$ is a general Lorentz transformation (\ie combination of boost and rotation).
+		A special conformal transformation $S_\mu$ can be created from any translation $T_a(x) = x+a$ as 
+		\begin{equation}
+			(S_a)_{\mu} = I\circ T_a \circ I \hsp\text{with}\quad I(x^\mu) = \frac{x^\mu}{x^2}.
+		\end{equation}
+		The conformal group is locally isomorphic to $SO(2,d)$ in a Minkowskian spacetime which includes translations, Lorentz transformations and dilations $x^\mu \to \omega x^\mu$. The Lie algebra can be deconstructed into translations $P$, dilations $D$, special conformal transformations $S_\mu$ and general Lorentz transformations $M_{\mu\nu}$ which satisfy the commutation relations
+		\begin{alignat}{3}
+			\comm{P_\mu}{P_\nu} &= 0,\hsp&&\comm{S_\mu}{S_\nu} &&= 0, \\
+			\comm{D}{S_\mu} &= - S_\mu,\hsp&& \comm{D}{P_\mu} &&= P_\mu, \\
+			\comm{S_\mu}{P_\nu} &= \eta_{\mu\nu} D - \i M_{\mu\nu}
+		\end{alignat}
+
 
 	\subsection{Operators}
 		\subsubsection{Operator Ordering}
