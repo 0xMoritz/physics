@@ -58,7 +58,7 @@
 			\noindent
 			Christoffel symbols\index{Christoffel!Symbole} (local inertial frame with coordinates $\xi^\alpha$):
 			\begin{equation}
-				\Gamma_{\mu\nu}^{\kappa} := \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}
+				\Gamma_{\mu\nu}^{\kappa} \defeq \frac{\partial x^\kappa}{\partial \xi^\alpha}\frac{\partial^2 \xi^\alpha}{\partial x^\mu\partial x^\nu}
 				=\frac{1}{2}g^{\kappa\lambda}\qty(\partial_\mu g_{\nu\lambda} + \partial_\nu g_{\mu\lambda} - \partial_\lambda g_{\nu\mu})
 			\end{equation}
 			The Christoffel symbols are symmetric in the lower indices $\Gamma_{\mu\nu}^{\kappa} = \Gamma_{\nu\mu}^{\kappa}$. In local frames of reference $\partial^\mu g_{\mu\nu} = 0$ and the Christoffel symbols vanish.
@@ -69,7 +69,7 @@
 			\noindent
 			Proper time\index{Eigenzeit}:
 			\begin{equation}
-				\Delta\tau := \frac{1}{c}\int_A^B\sqrt{-g_{\mu\nu}\dd x^\mu \dd x^\nu}
+				\Delta\tau \defeq \frac{1}{c}\int_A^B\sqrt{-g_{\mu\nu}\dd x^\mu \dd x^\nu}
 			\end{equation}
 
 			\noindent
@@ -214,7 +214,7 @@
 			\end{equation}
 
 			\noindent
-			Divergence of the Einstein tensor:
+			Divergence of the Einstein tensor / Bianchi identity\index{Bianchi!Identitäten} for the Einstein tensor\index{Einstein!Tensor} / Noether identity for the diffeomorphism symmetry:
 			\begin{equation}
 				\nabla_\mu G^{\mu\nu} = 0
 			\end{equation}
@@ -312,7 +312,7 @@
 			\end{equation}
 
 			\noindent
-			Kerr Metric\index{Kerr!Metrik} (in Boyer--Lindquist coordinates\index{Boyer!--Lindquist Koordinaten}\index{Lindquist!Boyer--Lindquist Koordinaten}, where $\Delta:=r^2 - 2Mr + a^2$ and $\rho^2:=r^2+a^2\cos^2\theta$):
+			Kerr Metric\index{Kerr!Metrik} (in Boyer--Lindquist coordinates\index{Boyer!--Lindquist Koordinaten}\index{Lindquist!Boyer--Lindquist Koordinaten}, where $\Delta\defeq r^2 - 2Mr + a^2$ and $\rho^2\defeq r^2+a^2\cos^2\theta$):
 			\begin{equation}
 				\begin{aligned}
 					\dd s^2 =& - \frac{\Delta - a^2 \sin^2\theta}{\rho^2} \dd t^2 - 2a\frac{2Mr\sin^2\theta}{\rho^2}\dd t \dd \varphi \\
@@ -383,7 +383,7 @@
 			Trace-reversed metric pertubation:
 			\begin{equation}
 				\begin{aligned}
-					\bar{h}_{\mu\nu} :=&\, h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} h \\
+					\bar{h}_{\mu\nu} \defeq &\, h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} h \\
 					\partial^2 \bar{h}_{\mu\nu} =&\, -16\pi G T_{\mu\nu}
 				\end{aligned}
 			\end{equation}

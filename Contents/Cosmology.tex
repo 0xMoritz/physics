@@ -19,7 +19,7 @@
 			\item $k=1$ for a closed universe, \ie $0 < \Omega + \Omega_\Lambda < 1$
 			\item $k=-1$ for an open universe, \ie $\Omega + \Omega_\Lambda > 1$
 		\end{itemize}
-		The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$. We define $a_0 := 1$ for todays value.
+		The scale factor $a(t)$ is a function of time only. Note that any other $k$ can always be transformed into one of these three via rescaling of $r$. We define $a_0 \defeq 1$ for todays value.
 
 		\noindent
 		Friedmann equations (Applying the FLRW metric to the Einstein equations, using an ideal, motionless fluid $T^\mu_\nu = \text{diag}(-\rho, p, p, p)$):
@@ -33,7 +33,7 @@
 		\noindent
 		Definition Hubble Function / Hubble Parameter{\index{Hubble!Funktion}} (Hubble function today is $H_0$, also called Hubble ``constant''\index{Hubble!Konstante}):
 		\begin{equation}
-			H(t) := \frac{\dot{a}}{a}
+			H(t) \defeq \frac{\dot{a}}{a}
 		\end{equation}
 
 		\noindent
@@ -195,7 +195,7 @@
 		\noindent
 		Conformal time (makes the metric look nicer):
 		\begin{equation}
-			\dd \eta := \frac{\dd t}{a(t)}
+			\dd \eta \defeq \frac{\dd t}{a(t)}
 		\end{equation}
 
 		\subsubsection{Inflation}
@@ -225,9 +225,9 @@
 			\end{equation}
 			Slow roll condition and parameters:
 			\begin{equation}
-				\epsilon := \frac{c^2}{24\pi G} \qty(\frac{V'}{V})^2 \ll 1
+				\epsilon \defeq \frac{c^2}{24\pi G} \qty(\frac{V'}{V})^2 \ll 1
 				\hsp
-				\eta := \frac{c^2}{8\pi G} \frac{V''}{V} \ll 1
+				\eta \defeq \frac{c^2}{8\pi G} \frac{V''}{V} \ll 1
 			\end{equation}
 
 	\subsection{Structure Formation}
@@ -266,7 +266,7 @@
 		\begin{align}
 			\avg{\hat{\delta}(\vec{k}) \hat{\delta}^{*}(\vec{k}')} &=: (2\pi)^3 P(k) \delta (\vec{k}-\vec{k}') \\
 			\avg{\delta(\vec{x} + \vec{y}) \delta(\vec{x})} &=: \xi(y) = \int \frac{\dd[3]k}{(2\pi)^3} P(k) \ex^{\i \vec{k} \cdot \vec{y}}\\
-			\sigma^2 &:= 4\pi\int \frac{k^2 \dd k}{(2 \pi)^3} P(k)
+			\sigma^2 &\defeq 4\pi\int \frac{k^2 \dd k}{(2 \pi)^3} P(k)
 		\end{align}
 
 		\noindent
@@ -303,7 +303,7 @@
 		\noindent
 		Filtered density contrast:
 		\begin{equation}
-			\bar{\delta} := \int \dd[3]{y} \delta(\vec{x}) W_R(\abs{\vec{x}-\vec{y}})
+			\bar{\delta} \defeq \int \dd[3]{y} \delta(\vec{x}) W_R(\abs{\vec{x}-\vec{y}})
 		\end{equation}
 
 	\subsection{Observations}
@@ -337,7 +337,7 @@
 			\noindent
 			Jacobian matrix of the linearized lens equation (decomposed in magnification $(1-\kappa) 1_{2}$ and shear $\gamma =\gamma_1 + \i \gamma_2$ ):
 			\begin{equation}
-				A := \dv{\vec{\beta}}{\vec{\theta}} = \mqty(
+				A \defeq \dv{\vec{\beta}}{\vec{\theta}} = \mqty(
 				1 - \kappa - \gamma_1 & -\gamma_2 \\
 				-\gamma_2 & 1 - \kappa + \gamma_1)
 			\end{equation}

@@ -45,6 +45,11 @@
 % Custom Section titles prefixes
 \makeatletter
 
+\newcommand*{\defeq }{\mathrel{\rlap{%
+                     \raisebox{0.3ex}{$\m@th\cdot$}}%
+                     \raisebox{-0.3ex}{$\m@th\cdot$}}%
+                     =}
+
 \DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
 \def\@onedot{\ifx\@let@token.\else.\null\fi\xspace} % cspell:disable-line
 \def\eg{e.g\onedot} \def\Eg{E.g\onedot}

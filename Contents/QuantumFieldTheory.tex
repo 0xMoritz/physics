@@ -44,9 +44,9 @@
 			\noindent
 			Mandelstam Variables\index{Mandelstam!Variablen}, \ie Lorentz scalars\index{Lorentz!Skalare} in 4 particle scattering processes: $P_1 + P_2 \to P_3 + P_4$:
 			\begin{itemize}\itemsep -0pt
-				\item $s:=(p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
-				\item $t:=(p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
-				\item $u:=(p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
+				\item $s\defeq (p_1+p_2)^2=(p_3+p_4)^2$ \hfill{(Square of the invariant mass\index{Schwerpunktsenergie})}
+				\item $t\defeq (p_1-p_3)^2=(p_2-p_4)^2$ \hfill{(Square of the four-momentum transfer)}
+				\item $u\defeq (p_1-p_4)^2=(p_2-p_3)^2$ \hfill{(Four-momentum transfer of the rebound particle)}
 			\end{itemize}
 
 			\noindent
@@ -130,7 +130,7 @@
 			\noindent
 			Feynman slash notation\index{Feynman!Slash Notation}:
 			\begin{equation}
-				\slashed{A} := \gamma_\mu A^\mu
+				\slashed{A} \defeq \gamma_\mu A^\mu
 			\end{equation}
 
 			\noindent
@@ -152,7 +152,7 @@
 			\end{align}
 
 			\noindent
-			Weyl representation / Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu := \eta^{\mu\mu}\sigma^\mu$):
+			Weyl representation / Chiral representation\index{Weyl!Darstellung}  (using $\bar{\sigma}^\mu \defeq \eta^{\mu\mu}\sigma^\mu$):
 			\begin{equation}
 				\gamma^\mu = \mqty(
 				0 & \sigma^\mu \\
@@ -206,7 +206,7 @@
 			\noindent
 			$\gamma^5$-Matrix (using the convention $\levicivita_{0123} = +1$):
 			\begin{equation}
-				\gamma^5 := \i\gamma^0 \gamma^1 \gamma^2 \gamma^3
+				\gamma^5 \defeq \i\gamma^0 \gamma^1 \gamma^2 \gamma^3
 				= \frac{\i}{4!}\levicivita_{\mu\nu\rho\sigma} \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma
 			\end{equation}
 
@@ -543,7 +543,7 @@
 		Gell-Mann and Low Theorem\index{Gell-Mann! und Low Theorem}:
 		\begin{equation}
 			\begin{aligned}
-				&\hat{H} := \hat{H}_0 + \ex^{-\epsilon \abs{t}} \hat{H}' \\
+				&\hat{H} \defeq \hat{H}_0 + \ex^{-\epsilon \abs{t}} \hat{H}' \\
 				&\hat{H}_0 \Ket{\phi_0} = E_0 + \Ket{\phi_0} \\
 				&\text{if}\quad \lim_{\epsilon\to 0} \frac{\hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}{\Bra{\phi_0} \hat{U}_\epsilon(0,-\infty)\Ket{\phi_0}}
 				= \frac{\Ket{\psi_0}}{\Braket{\phi_0|\psi_0}} \quad\text{exists}\quad
@@ -661,10 +661,10 @@
 			\end{equation}
 
 			\noindent
-			Soft cutoff integration measure $\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D}\varphi \exp(-\Delta S_k[\varphi])$:
+			Soft cutoff integration measure $\mathcal{D}\varphi_{p^2 \ge k^2} \defeq \mathcal{D}\varphi \exp(-\Delta S_k[\varphi])$:
 			\begin{equation}
 				\Delta S_k[\varphi]
-				:= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p)
+				\defeq \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p)
 				= \frac{1}{2} \int \dd[d]{x} \varphi(x) R_k(-\partial^2) \varphi(x)
 			\end{equation}
 			with a Regulator function\index{Regulator Funktion} $R_k(p^2)$ that satisfies
@@ -675,7 +675,7 @@
 			\end{itemize}
 			hence, the generating functional with a soft cutoff is
 			\begin{equation}
-				Z_k[J] := \ex^{-\Delta S_k [\fdv{J}]}Z[J]
+				Z_k[J] \defeq \ex^{-\Delta S_k [\fdv{J}]}Z[J]
 			\end{equation}
 			Note that there are complications when dealing with fermionic regulators
 
@@ -691,7 +691,7 @@
 			Renormalization group time / RG time and beta functions (using a UV cutoff $\Lambda$):
 			\begin{equation}
 				t = \ln \frac{k}{\Lambda}
-				\hsp \beta_g := \dot{g} = \partial_t g = k \partial_k g
+				\hsp \beta_g \defeq \dot{g} = \partial_t g = k \partial_k g
 			\end{equation}
 
 			\noindent
@@ -981,7 +981,7 @@
 		\subsubsection{Dirac Spinors\index{Dirac!Spinor}}
 			Adjoint spinor $\bar{\psi}$ of a spinor $\psi$:
 			\begin{equation}
-				\bar{\psi} := \psi^{\dagger} \gamma^0
+				\bar{\psi} \defeq \psi^{\dagger} \gamma^0
 			\end{equation}
 
 			\noindent
@@ -1430,7 +1430,7 @@
 			CKM (Cabibbo--Kobayashi--Maskawa) matrix\index{CKM Matrix} (which taken arbitrary phase factors into account can be parametrized by 4 real \dof $\theta_{12}, \theta_{13}, \theta_{23}, \delta$):
 			\begin{equation}
 				\begin{aligned}
-					V &:= U_u^\dagger U_d = \mqty(V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb}) \\
+					V &\defeq U_u^\dagger U_d = \mqty(V_{ud} & V_{us} & V_{ub} \\ V_{cd} & V_{cs} & V_{cb} \\ V_{td} & V_{ts} & V_{tb}) \\
 					&= \mqty(
 					1 & 0 & 0 \\
 					\cos\theta_{23} & \sin\theta_{23} & 0 \\

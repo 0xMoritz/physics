@@ -42,7 +42,7 @@
 				\begin{equation}
 					\begin{aligned}
 						\Ket{\psi} & \to \frac{\hat{P}_n\Ket{\psi}} {\sqrt{\Bra{\psi}\hat{P}_n\Ket{\psi}}} \\
-						\hat{P}_n &:= \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu}. \\
+						\hat{P}_n &\defeq \SumInt_\nu \Ket{a_n,\nu}\Bra{a_n,\nu}. \\
 					\end{aligned}
 				\end{equation}
 			\item[Postulate 6]\hfill \\
@@ -140,8 +140,8 @@
 			Probability density (Born rule\index{Born!Wahrscheinlichkeitsinterpretation}) and probability current density:
 			\begin{equation}
 				\begin{aligned}
-					\rho(t,x) :=& \left|\psi(t,x)\right|^2 \\
-					j(t,x) :=& \frac{\hbar}{2mi}\left(
+					\rho(t,x) \defeq & \left|\psi(t,x)\right|^2 \\
+					j(t,x) \defeq & \frac{\hbar}{2mi}\left(
 					\psi^*(t,x)\pdv{x}\psi(t,x) - \psi(t,x)\pdv{x}\psi^*(t,x)
 					\right) \\
 					=& \frac{\hbar}{m} \mathrm{Im}\left(
@@ -161,7 +161,7 @@
 		Position operator\index{Ortsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{x}} :=& \int_{\reals ^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\dd[n]{\vec{x}} &\hsp
+				\hat{\vec{x}} \defeq & \int_{\reals ^n} \Ket{\vec{x}} \vec{x} \Bra{\vec{x}\,}\dd[n]{\vec{x}} &\hsp
 				\Bra{\vec{x}\,}\hat{\vec{x}}\Ket{\psi} =& \,\vec{x}\, \psi(\vec{x}) &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{x}}\Ket{\psi} =& \,\i\hbar\pdv{\vec{p}}\tilde{\psi}(\vec{p}) \\
 			\end{aligned}
@@ -171,7 +171,7 @@
 		Momentum operator\index{Impulsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{\vec{p}} :=& \int_{\reals ^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\dd^n\vec{p} &\hsp
+				\hat{\vec{p}} \defeq & \int_{\reals ^n} \Ket{\vec{p}} \vec{p} \Bra{\vec{p}\,}\dd^n\vec{p} &\hsp
 				\Bra{\vec{p}\,}\hat{\vec{p}}\Ket{\psi} =& \,\vec{p}\, \tilde{\psi}(\vec{p}) &\hsp
 				\Bra{\vec{x}}\hat{\vec{p}}\Ket{\psi} =& -\i\hbar\pdv{\vec{x}} \psi(\vec{x}) \\
 			\end{aligned}
@@ -210,7 +210,7 @@
 		Parity operator\index{Paritätsoperator} and properties (Definition, self-adjointness, unitarity, eigenvalue, eigenstate):
 		\begin{equation}
 			\begin{aligned}
-				\Bra{\vec{x}} \hat{\Pi} \Ket{\Psi} :=& \Braket{-\vec{x} | \psi} = \psi(-\vec{x}) \\
+				\Bra{\vec{x}} \hat{\Pi} \Ket{\Psi} \defeq & \Braket{-\vec{x} | \psi} = \psi(-\vec{x}) \\
 				\hat{\Pi} =& \hat{\Pi}^\dagger\\
 				1 =& \hat{\Pi} \,\hat{\Pi}^\dagger = \hat{\Pi}^\dagger \hat{\Pi} \\
 				\psi(\vec{x}) = \psi(-\vec{x}) \implies&\; \hat{\Pi}\Ket{\psi} = \Ket{\psi} \\
@@ -222,7 +222,7 @@
 		Displacement operator\index{Translationsoperator}:
 		\begin{equation}
 			\begin{aligned}
-				\hat{T}_{\vec{y}}\Ket{\vec{x}} :=& \Ket{\vec{x} + \vec{y}} = \ex^{-\i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
+				\hat{T}_{\vec{y}}\Ket{\vec{x}} \defeq & \Ket{\vec{x} + \vec{y}} = \ex^{-\i\hat{\vec{p}}\cdot\vec{y}/\hbar}\Ket{\vec{x}} \\
 			\end{aligned}
 		\end{equation}
 
@@ -485,8 +485,8 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{H} =& \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 = \hbar\omega\qty(\hat{a}^\dagger \hat{a} + \frac{1}{2}) \\
-					\hat{a} :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
-					\hat{a}^\dagger :=& \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+					\hat{a} \defeq & \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
+					\hat{a}^\dagger \defeq & \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - \frac{\i}{\sqrt{2m\hbar\omega}}\hat{p} \\
 				\end{aligned}
 			\end{equation}
 
@@ -511,7 +511,7 @@
 			\end{equation}
 
 			\noindent
-			Eigenstates and energy eigenvalues (With the substitution $q:=\sqrt{\frac{m\omega}{\hbar}}x$ and the Hermite polynomials\index{Hermite!Polynome} $H_n(q)$ (Eq.~\ref{Eq:HermitePolynomials})):
+			Eigenstates and energy eigenvalues (With the substitution $q\defeq \sqrt{\frac{m\omega}{\hbar}}x$ and the Hermite polynomials\index{Hermite!Polynome} $H_n(q)$ (Eq.~\ref{Eq:HermitePolynomials})):
 			\begin{equation}
 				\begin{aligned}
 					\Ket{n} &= \frac{1}{\sqrt{n!}}\left(\hat{a}^\dagger\right)^n\Ket{0} \\
@@ -570,9 +570,9 @@
 			\begin{equation}
 				\begin{aligned}
 					\hat{H} =&\, \hat{H}_0 + \hat{H}' \\
-					\Ket{\psi_I(t)} :=&\, \ex^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
+					\Ket{\psi_I(t)} \defeq &\, \ex^{\i \hat{H}_0 t / \hbar} \Ket{\psi(t)}
 					= \hat{U}_0^\dagger \Ket{\psi(t)} \\
-					\Hat{A}_I(t) :=&\, \ex^{\i \hat{H}_0 t / \hbar} \hat{A} \ex^{-\i \hat{H}_0 t / \hbar}
+					\Hat{A}_I(t) \defeq &\, \ex^{\i \hat{H}_0 t / \hbar} \hat{A} \ex^{-\i \hat{H}_0 t / \hbar}
 					= \hat{U}_0^\dagger \hat{A} \hat{U}_0
 				\end{aligned}
 			\end{equation}

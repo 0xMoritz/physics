@@ -252,7 +252,7 @@
 			\noindent
 			Convolution\index{Faltung} ($f*g:\reals ^n \to \complex $):
 			\begin{equation}
-				(f*g)(x) := \int_{\reals} f(t) g(x-t)\dd{t}
+				(f*g)(x) \defeq \int_{\reals} f(t) g(x-t)\dd{t}
 			\end{equation}
 
 			\noindent
@@ -283,7 +283,7 @@
 			\noindent
 			Heaviside function\index{Heaviside!Funktion} $\Theta(x)$:
 			\begin{align}
-				\Theta(x) :=& \left\{\begin{array}{ll}
+				\Theta(x) \defeq & \left\{\begin{array}{ll}
 					1 & x\ge 0 \\
 					0 & x<0    \\
 				\end{array}\right. \\
@@ -439,14 +439,14 @@
 		\noindent
 		Complex inner product\index{Hermite!Skalarprodukt} in $R([0,2\pi],\complex )$:
 		\begin{equation}
-			\left<f,g\right>:=\frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\dd{x}
+			\left<f,g\right>\defeq \frac{1}{2\pi}\int_0^{2\pi} f(x)g^* (x)\dd{x}
 		\end{equation}
 
 		\subsubsection{Discrete Fourier Analysis\index{Fourier!Analyse}}
 			\noindent
 			Complex trigonometric basis functions:
 			\begin{equation}
-				\hat{e}_k(x):=\ex^{\i kx}
+				\hat{e}_k(x)\defeq \ex^{\i kx}
 			\end{equation}
 
 			\noindent
@@ -487,13 +487,13 @@
 			Continuous Fourier transformation\index{Fourier!Transformation} and inverse transformation:
 			\begin{equation}
 				\begin{aligned}
-					(\mathcal{F}f)(\vec{k}) :=& \frac{1}{\sqrt{2\pi}^n}\int_{\reals ^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\dd{\vec{x}} \\
+					(\mathcal{F}f)(\vec{k}) \defeq & \frac{1}{\sqrt{2\pi}^n}\int_{\reals ^n} \phantom{(\mathcal{F})}f(\vec{x})\, \ex^{-\i\vec{k}\cdot\vec{x}}\dd{\vec{x}} \\
 					\phantom{(\mathcal{F})}f(\vec{x}) =& \frac{1}{\sqrt{2\pi}^n}\int_{\reals ^n} (\mathcal{F}f)(\vec{k}) \,\ex^{\i\vec{k}\cdot\vec{x}}\dd[3]{\vec{k}} \\
 				\end{aligned}
 			\end{equation}
 
 			\noindent
-			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) := \left(\mathcal{F}f\right)(k)$)
+			Identities of the continuous Fourier transformation\index{Fourier Transformation} (where $\tilde{f}(k) \defeq \left(\mathcal{F}f\right)(k)$)
 			\begin{equation}
 				\begin{aligned}
 					\mathcal{F}\left(xf\right)(k) &= \phantom{-}\i \pdv{k}\tilde{f}(k) \\
@@ -995,7 +995,7 @@
 		\subsubsection{Determinants}
 			Definition Determinant\index{Determinante} ($S_n$ is the set of all permutations of $n$ indices, the signum $\sgn(\sigma)$ is $+1$ for even and $-1$ for odd permutations):
 			\begin{equation}
-				\det(A) := \sum_{\sigma\in S_n}\qty(\sgn(\sigma)\prod_{i=1}^{n} a_{i,\sigma(i)})
+				\det(A) \defeq \sum_{\sigma\in S_n}\qty(\sgn(\sigma)\prod_{i=1}^{n} a_{i,\sigma(i)})
 			\end{equation}
 
 			\noindent
@@ -1204,13 +1204,13 @@
 			\noindent
 			Definition of the expectation value:
 			\begin{equation}
-				\mu = E\left[ X \right] := \int_{-\infty}^{\infty} xf(x)\dd{x}
+				\mu = E\left[ X \right] \defeq \int_{-\infty}^{\infty} xf(x)\dd{x}
 			\end{equation}
 
 			\noindent
 			Definition of variance and standard deviation:
 			\begin{equation}
-				\sigma^2 = V\left[ X \right] := \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\dd{x} = E\left[X^2\right]-E^2\left[X\right]
+				\sigma^2 = V\left[ X \right] \defeq \int_{-\infty}^{\infty} (x-E\left[X\right])^2f(x)\dd{x} = E\left[X^2\right]-E^2\left[X\right]
 			\end{equation}
 
 			\noindent
@@ -1303,7 +1303,7 @@
 			\noindent
 			Definition of conditional probability:
 			\begin{equation}
-				P(A|B) := \frac{P(A \cap B)}{P(B)}
+				P(A|B) \defeq \frac{P(A \cap B)}{P(B)}
 			\end{equation}
 
 			\noindent
