@@ -611,15 +611,157 @@
 			\end{equation}
 
 			\noindent
+			Propagator:
+			\begin{equation}
+				\frac{\delta^2 W[J]}{\delta J(x) \delta J(y)} = G(x,y) = \qty(\frac{\delta^2\Gamma[\phi]}{\delta \phi(x) \delta \phi(y)})^{-1}
+			\end{equation}
+
+			\noindent
 			Effective Action\index{Effektive!Wirkung} (\ie the Legendre Transformation\index{Legendre!Transformation} of the Schwinger Functional\index{Schwinger!Funktional}; generates 1 particle irreducible (1PI) correlation functions; $\phi(x) = \Avg{\varphi(x)}_J = \fdv{W\qty[J]}{J(x)}$):
 			\begin{equation}
 				\Gamma(\phi) = \sup_{J} \qty( \int \dd^d x \, J(x) \phi(x) - W[J])
 			\end{equation}
 
+			\noindent
 			Quantum equations of motion:
 			\begin{equation}
 				J(x)=\fdv{\Gamma\qty[\phi]}{\phi(x)}
 			\end{equation}
+
+			\noindent
+			Expansion of the $n$-point correlation function:
+			\begin{equation}
+				\Avg{\varphi(x_1) \hdots\varphi(x_n)}_J = \prod_{i=1}^{n} \qty(\int \dd^d x'_i \;G(x_i,x'_i) \fdv{\phi(x'_i)} + \phi(x_i))
+			\end{equation}
+
+			\noindent
+			Functional Dyson--Schwinger Equation\index{Dyson--Schwinger Gleichung!funktional}:
+			\begin{equation}
+				\fdv{\Gamma[\phi]}{\phi(x)} = \fdv{S}{\varphi(x)}\qty[\varphi = \phi + \int \dd^d y\; G(x,y) \fdv{}{\phi(y)}]
+			\end{equation}
+
+			\noindent
+			General Dyson--Schwinger Equation:
+			\begin{equation}
+				\Avg{\Psi[\varphi]} \fdv{\Gamma[\phi]}{\phi(x)} = \Avg{\Psi[\varphi] \fdv{S[\varphi]}{\varphi(x)}} - \Avg{\fdv{\Psi[\varphi]}{\varphi(x)}}
+			\end{equation}
+
+			\noindent
+			Ward--Takahashi identity\index{Ward!--Takahashi Identität}\index{Takahashi!Ward--Takahashi Identität} for a gauge invariance of the effective action $\Gamma[\phi]$ with generator $G$ and the corresponding gauge fixing and ghost actions:
+			\begin{equation}
+				0 = G \Gamma[\phi] - \Avg{G(S_\text{g.f.} + S_\text{gh.})}_{J[\phi]}
+			\end{equation}
+
+	\subsection{Functional Renormalization}
+		\subsubsection{General Concepts}
+			Infrared regularized generating functional with a hard infrared cutoff scale $k$:
+			\begin{equation}
+				Z_k[J] = \int \mathcal{D}\varphi_{p^2 \ge k^2} \exp(-S[\varphi] - \int \dd^d x \, J(x) \varphi(x))
+				\hsp \mathcal{D}\varphi_{p^2 \ge k^2} = \prod_{p^2 \ge k^2} \frac{\dd \varphi_p}{(2\pi)^d}
+			\end{equation}
+
+			\noindent
+			Soft cutoff integration measure $\mathcal{D}\varphi_{p^2 \ge k^2} := \mathcal{D}\varphi \exp(-\Delta S_k[\varphi])$:
+			\begin{equation}
+				\Delta S_k[\varphi]
+				:= \frac{1}{2} \int \frac{\dd^d p}{(2\pi)^d}\, \varphi(-p) R_k(p^2) \varphi(p)
+				= \frac{1}{2} \int \dd[d]{x} \varphi(x) R_k(-\partial^2) \varphi(x)
+			\end{equation}
+			with a Regulator function\index{Regulator Funktion} $R_k(p^2)$ that satisfies
+			\begin{itemize}\itemsep -0pt
+				\item $\displaystyle\lim_{p^2 \to 0} R_k(p^2) > 0$ \hfill{(Suppression of IR modes)}
+				\item $\displaystyle\lim_{k \to 0} R_k(p^2) = 0$ \hfill{(Physical limit)}
+				\item $\displaystyle\lim_{k \to \Lambda \to \infty} R_k(p^2) = \infty$ \hfill{(UV limit)}
+			\end{itemize}
+			hence, the generating functional with a soft cutoff is
+			\begin{equation}
+				Z_k[J] := \ex^{-\Delta S_k [\fdv{J}]}Z[J]
+			\end{equation}
+			Note that there are complications when dealing with fermionic regulators
+
+			\noindent
+			Example regulators ($R_k(p^2) = p^2 r(y)$ with $y=p^2/k^2$):
+			\begin{itemize} \itemsep -0pt
+				\item Litim regulator\index{Litim!Regulator}: $r(y) = \qty(\dfrac{1}{y}-1)\theta(1-y)$, \ie $R_k(p^2) = (k^2 - p^2) \Theta(k^2 - p^2)$
+				\item Exponential regulator: $r(y) = \dfrac{cy^{b-1}}{\exp(y^b) - 1}$
+				\item Sharp regulator $r(y) = \dfrac{1}{\Theta(y-1)}-1$
+			\end{itemize}
+
+			\noindent
+			Renormalization group time / RG time and beta functions (using a UV cutoff $\Lambda$):
+			\begin{equation}
+				t = \ln \frac{k}{\Lambda}
+				\hsp \beta_g := \dot{g} = \partial_t g = k \partial_k g
+			\end{equation}
+
+			\noindent
+			Anomalous dimension (where $Z_\psi(k)$ is the wave function renormalization):
+			\begin{equation}
+				\eta_\psi = -\partial_t \ln Z_\psi
+			\end{equation}
+
+			\noindent
+			Flow equation for the Schwinger Functional\index{Schwinger!Funktional}:
+			\begin{equation}
+				\partial_t W_k[J] = -\frac{1}{2}\int \frac{\dd^d p}{(2\pi)^d} \, \qty[W^{(2)}_k[J]+(W_k^{(1)}[J])^2](p,-p) \partial_t R_k(p^2)
+			\end{equation}
+
+			\noindent
+			Flowing / Scale dependent effective action / Effective average action and modified quantum equations of motion / effective field equations ($\phi(x)= \fdv{W_k[J_k]}{J_k(x)}$):
+			\begin{equation}
+				\Gamma_k[\phi] = \sup_{J_k} \qty{\int \dd^d x\, J_k(x) \phi(x) - W_k[J_k] - \Delta S_k[\phi]}
+				\hsp \fdv{(\Gamma_k[\phi] + \Delta S_k[\phi])}{\phi(x)} = J_k(x)
+			\end{equation}
+
+			\noindent
+			The flowing effective action interpolates between the classical action $S = \Gamma_\Lambda$ where quantum fluctuations are fully suppressed and the full quantum effective action $\Gamma$ where all fluctuations are included:
+			\begin{equation}
+				\Gamma \;\stackrel{k \to 0}{\longleftarrow}\; \Gamma_{k} \stackrel{k \to \infty}{\longrightarrow} S
+			\end{equation}
+
+			\noindent
+			Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices of the superfield $\vec{\Phi}$ and $\Str$ is the supertrace):
+			\begin{equation}
+				\begin{aligned}
+					\partial_t \Gamma_k[\vec{\Phi}]
+					&= \frac{1}{2} \Str G_k \;\partial_t R_k \\
+					&= \frac{1}{2} \Str \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
+					&= \frac{1}{2} \Str \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
+					&= \frac{1}{2} \sum_I \pm \int \frac{\dd^d p}{(2\pi)^d} \, \inv{\qty(\frac{\delta^2 \Gamma_k[\vec{\Phi}]}{\delta \Phi^I(-p) \delta \Phi_I(p)} + R_k(p^2))} \cdot \partial_t R_k(p^2) \\
+					&= \frac{1}{2} \Str \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\vec{\Phi}] + R_{\tilde{k}})}_{\tilde{k} = k}
+				\end{aligned}
+			\end{equation}
+
+		\subsubsection{Asymptotic Safety}
+			\noindent
+			Definition of a fixed point $\vec{g}_{*}$:
+			\begin{equation}
+				\beta_{g_i}(\vec{g}_{*}) = 0 \quad \forall i
+			\end{equation}
+
+			\noindent
+			Stability Matrix:
+			\begin{equation}
+				\mathcal{M}_{ij} = \eval{\pdv{\beta_{g_i}}{g_j}}_{\vec{g} = \vec{g_*}}
+			\end{equation}
+			Critical Exponent (they correspond to eigenvectors $V_I$ of the stability matrix)
+			\begin{equation}
+				\theta_I = - \mathrm{eig}(\mathcal{M})
+				\hsp \theta_I V_I = \mathcal{M} V_I
+			\end{equation}
+			Fixed point expansion of the beta functions:
+			\begin{equation}
+				\beta_{g_i} = \sum_{j} \mathcal{M}_{ij} \qty(g_j - g_{j*}) + \mathcal{O}\qty(g_j - g_{j*})^2
+			\end{equation}
+			Solution (where $c_i$ are integration constants):
+			\begin{equation}
+				g_i(k) = g_{i*} + \sum_I c_I V_I \qty(\frac{k}{k_0})^{-\theta_I}
+			\end{equation}
+			\begin{itemize}
+				\item $\Re(\theta_I) > 0$: relevant direction $V_I$ (IR repulsive, UV attractive), contributing a free parameter $c_I$
+				\item $\Re(\theta_I) < 0$: irrelevant direction $V_I$ (IR attractive, UV repulsive), no free parameter $c_I$ insignificant
+				\item $\Re(\theta_I) = 0$: marginal, look at higher order contributions
+			\end{itemize}
 
 	\subsection{Bosons}
 		\subsubsection{Bosonic Ladder Operators}
