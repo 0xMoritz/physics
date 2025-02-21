@@ -62,6 +62,8 @@
 			\end{equation}
 
 		\subsubsection{Pauli Matrices}
+			The Pauli matrices are self hermitian, traceless, $2\times 2$-matrices with determinant $-1$, they are the generators of the Lie algebra of $SU(2)$:
+
 			Clifford Algebra\index{Clifford!Algebra} (defining properties of the Pauli matrices):
 			\begin{equation}
 				\acomm{\sigma_i}{\sigma_j} = 2\delta_{ij}\hat{1}
@@ -734,9 +736,9 @@
 
 		\subsubsection{Asymptotic Safety}
 			\noindent
-			Definition of a fixed point $\vec{g}_{*}$:
+			Definition of a fixed point $\vec{g}^{*}$:
 			\begin{equation}
-				\beta_{g_i}(\vec{g}_{*}) = 0 \quad \forall i
+				\beta_{g_i}(\vec{g}^{*}) = 0 \quad \forall i
 			\end{equation}
 
 			\noindent
@@ -744,22 +746,22 @@
 			\begin{equation}
 				\mathcal{M}_{ij} = \eval{\pdv{\beta_{g_i}}{g_j}}_{\vec{g} = \vec{g_*}}
 			\end{equation}
-			Critical Exponent (they correspond to eigenvectors $V_I$ of the stability matrix)
+			Critical Exponent (they correspond to eigenvectors $\vec{V}_I$ of the stability matrix)
 			\begin{equation}
 				\theta_I = - \mathrm{eig}(\mathcal{M})
-				\hsp \theta_I V_I = \mathcal{M} V_I
+				\hsp \theta_I \vec{V}_I = \mathcal{M} \vec{V}_I
 			\end{equation}
 			Fixed point expansion of the beta functions:
 			\begin{equation}
-				\beta_{g_i} = \sum_{j} \mathcal{M}_{ij} \qty(g_j - g_{j*}) + \mathcal{O}\qty(g_j - g_{j*})^2
+				\beta_{g_i} = \sum_{j} \mathcal{M}_{ij} \qty(g_j - g^{*}_{j}) + \mathcal{O}\qty(g_j - g^{*}_{j})^2
 			\end{equation}
-			Solution (where $c_i$ are integration constants):
+			Solution (where $c_I$ are integration constants and $k_0$ is a reference scale):
 			\begin{equation}
-				g_i(k) = g_{i*} + \sum_I c_I V_I \qty(\frac{k}{k_0})^{-\theta_I}
+				\vec{g}(k) = \vec{g}^{*} + \sum_I c_I \vec{V}_I \qty(\frac{k}{k_0})^{-\theta_I}
 			\end{equation}
 			\begin{itemize}
-				\item $\Re(\theta_I) > 0$: relevant direction $V_I$ (IR repulsive, UV attractive), contributing a free parameter $c_I$
-				\item $\Re(\theta_I) < 0$: irrelevant direction $V_I$ (IR attractive, UV repulsive), no free parameter $c_I$ insignificant
+				\item $\Re(\theta_I) > 0$: relevant direction $\vec{V}_I$ (IR repulsive, UV attractive), contributing a free parameter $c_I$
+				\item $\Re(\theta_I) < 0$: irrelevant direction $\vec{V}_I$ (IR attractive, UV repulsive), no free parameter $c_I$ insignificant
 				\item $\Re(\theta_I) = 0$: marginal, look at higher order contributions
 			\end{itemize}
 
@@ -1338,7 +1340,7 @@
 		Gauge Transformation ($\alpha(x) = \alpha^a(x) T^a$):
 		\begin{equation}
 			\begin{aligned}
-				\psi^a(x) & \to \psi'^a(x) = \ex^{\i g \alpha(x)} \psi^a(x) \\
+				\psi(x) & \to \psi'(x) = \ex^{\i g \alpha(x)} \psi(x) \\
 				A_\mu^a(x) & \to {A'_\mu}^a(x) = A_\mu^a(x) - \frac{1}{g} \partial_\mu \alpha^a(x) \\
 				F_{\mu\nu}^a(x) & \to {F'_{\mu\nu}}^a(x) = F_{\mu\nu}^a(x) - f^{abc} \alpha^b F_{\mu\nu}^c(x)
 			\end{aligned}
@@ -1450,7 +1452,7 @@
 			Gell-Mann--Nishijima formula\index{Gell-Mann!--Nishijima Formel}\index{Nishijima!Gell-Mann--Nishijima Formel} (Charge $Q$, third component of the weak isospin $T_3$, hypercharge $Y$):
 			\begin{equation}
 				\label{Eq:GellMannNishijima}
-				Q = T_3 + \frac{Y}{2}
+				Q = T_3 + Y
 			\end{equation}
 
 			\noindent
