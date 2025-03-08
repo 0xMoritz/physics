@@ -1,7 +1,7 @@
 % !TEX root = ../physics.tex
 \section{Quantum Field Theory\index{QFT}\index{Quantenfeldtheorie}} % QFT
 
-	Conventions in this section:
+	Conventions in section:
 	\begin{itemize}
 		\item $\hbar = c = 1$
 		\item Metric signature: $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)_{\mu\nu}$
@@ -114,18 +114,6 @@
 				\sigma^k_{ij} \sigma^k_{kl} &= 2 \delta_{il} \delta_{jk} - \delta_{ij} \delta_{kl}
 			\end{align}
 
-		\subsubsection{Generalized Pauli Matrices}
-		Definition of the generalized Pauli matrices\index{Pauli!Matrizen}:
-		\begin{equation}
-			\bar{\sigma}^\mu \defeq \mqty(\mathds{1}_2 & -\vec{\sigma})^\mu
-		\end{equation}
-
-		\noindent
-		Clifford Algebra
-		\begin{equation}
-			\acomm{\bar{\sigma}^\mu}{\bar{\sigma}^\nu} = 2\eta^{\mu\nu}
-		\end{equation}
-		
 
 		\subsubsection{Gamma Matrices}
 			\noindent
@@ -165,6 +153,17 @@
 				\tr(\gamma^\mu \gamma^\nu) &= 4 \eta^{\mu\nu} \\
 				\tr(\gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma) &= 4\qty(\eta^{\mu\nu}\eta^{\rho\sigma} - \eta^{\mu\rho}\eta^{\nu\sigma} + \eta^{\mu\sigma}\eta^{\nu\rho})
 			\end{align}
+
+			\noindent
+			Generalized Pauli matrices
+			\begin{equation}
+				\sigma^\mu = \mqty(\mathds{1}_2 & \vec{\sigma})^\mu
+				\hsp \bar{\sigma}^\mu \defeq \eta^{\mu\mu}\sigma^\mu = \mqty(\eta^{00} \mathds{1}_2 & \eta^{ii}\vec{\sigma})^\mu
+			\end{equation}
+			useful identity
+			\begin{equation}
+				\barsigma^\mu \sigma^\nu + \barsigma^\nu \sigma^\mu = 2\eta^{\mu\nu}\mathds{1}= \sigma^\mu \barsigma^\nu + \sigma^\nu \barsigma^\mu\,.
+			\end{equation}
 
 			\noindent
 			Weyl representation / Chiral representation\index{Weyl!Darstellung}:
