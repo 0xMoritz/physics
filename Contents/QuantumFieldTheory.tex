@@ -158,7 +158,7 @@
 			Generalized Pauli matrices
 			\begin{equation}
 				\sigma^\mu = \mqty(\mathds{1}_2 & \vec{\sigma})^\mu
-				\hsp \bar{\sigma}^\mu \defeq \eta^{\mu\mu}\sigma^\mu = \mqty(\eta^{00} \mathds{1}_2 & \eta^{ii}\vec{\sigma})^\mu
+				\hsp \barsigma^\mu \defeq \eta^{\mu\mu}\sigma^\mu = \mqty(\eta^{00} \mathds{1}_2 & \eta^{ii}\vec{\sigma})^\mu
 			\end{equation}
 			useful identity
 			\begin{equation}
@@ -170,7 +170,7 @@
 			\begin{equation}
 				\gamma^\mu = \mqty(
 				0 & \sigma^\mu \\
-				\bar{\sigma}^\mu & 0
+				\barsigma^\mu & 0
 				)
 				\hsp
 				\gamma^0 = \mqty(
@@ -237,6 +237,7 @@
 			\noindent
 			$\sigma^{\mu\nu}$ matrices:
 			\begin{equation}
+				\label{eq:GammaCommutatorMatrix}
 				\sigma^{\mu\nu} = \frac{\i}{2}\comm{\gamma^\mu}{\gamma^\nu} = -\sigma^{\nu\mu}
 			\end{equation}
 
@@ -934,7 +935,7 @@
 			Weyl Equations\index{Weyl!Gleichungen} (Consequence of the massless Dirac equation, see Eq.~\ref{Eq:DiracInTermsOfWeylSpinors}):
 			\begin{equation}
 				\begin{aligned}
-					\i \bar{\sigma}^\mu \partial_\mu \psi_\text{L} &= 0 \\
+					\i \barsigma^\mu \partial_\mu \psi_\text{L} &= 0 \\
 					\i \sigma^\mu \partial_\mu \psi_\text{R} &= 0 \\
 				\end{aligned}
 			\end{equation}
@@ -977,9 +978,9 @@
 			\end{alignat}
 
 			\noindent
-			Contractions can be formed with $\sigma^\mu=\sigma^\mu_{\alpha\dot{\alpha}}$ and $\bar{\sigma}_\mu=\bar{\sigma}_\mu^{\dot{\alpha}\alpha} = \levicivita^{\alpha\beta}\levicivita^{\dot{\alpha}\dot{\beta}}\sigma_{\mu\,\beta\dot{\beta}}$:
+			Contractions can be formed with $\sigma^\mu=\sigma^\mu_{\alpha\dot{\alpha}}$ and $\barsigma_\mu=\barsigma_\mu^{\dot{\alpha}\alpha} = \levicivita^{\alpha\beta}\levicivita^{\dot{\alpha}\dot{\beta}}\sigma_{\mu\,\beta\dot{\beta}}$:
 			\begin{equation}
-				\psi^{*} \bar{\sigma}^\mu \partial_\mu \psi = \psi^{*}_{\dot{\alpha}} (\bar{\sigma}^\mu)^{\dot{\alpha}\alpha}\partial_\mu \psi_{\alpha}
+				\psi^{*} \barsigma^\mu \partial_\mu \psi = \psi^{*}_{\dot{\alpha}} (\barsigma^\mu)^{\dot{\alpha}\alpha}\partial_\mu \psi_{\alpha}
 				\hsp \psi^c \sigma^\mu \partial_\mu \psi^{*c} = \psi^{c\,\alpha} (\sigma^\mu)_{\alpha\dot{\alpha}}\partial_\mu \psi^{*c\,\dot{\alpha}}
 			\end{equation}
 
@@ -1051,7 +1052,7 @@
 				u_\text{R}(p)
 				) = \mqty(
 				\sqrt{p\cdot\sigma}\,\xi \\
-				\sqrt{p\cdot\bar{\sigma}}\,\xi
+				\sqrt{p\cdot\barsigma}\,\xi
 				) \\
 				\text{antiparticles}
 				& \hsp
@@ -1062,7 +1063,7 @@
 				v_\text{R}(p)
 				) = \mqty(
 				\M\sqrt{p\cdot\sigma}\,\chi \\
-				-\sqrt{p\cdot\bar{\sigma}}\,\chi
+				-\sqrt{p\cdot\barsigma}\,\chi
 				)
 			\end{align}
 			\begin{itemize} \itemsep -0pt
@@ -1166,7 +1167,7 @@
 			\end{equation}
 
 			\noindent
-			Orthogonal basis for spinor bilinears (scalar, vector, tensor, pseudovector, pseudoscalar):
+			Orthogonal basis for spinor bilinears (scalar, vector, tensor, pseudovector, pseudoscalar, for definition of $\sigma^{\mu\nu}$ see eq.~\ref{eq:GammaCommutatorMatrix}):
 			\begin{equation}
 				O_S = \mathds{1}_4
 				\hsp
@@ -1197,18 +1198,19 @@
 			Fierz Table\index{Fierz!Tabelle} ($X\in\qty{S,V,T,A,P}$; note: signs depend on metric signature, order of $\gamma^5 \gamma^\mu$ for the pseudovector and euclidean vs. minkowski space but not representation):
 			\begin{equation}
 				C_{XY} = \mqty(
-				+\frac{1}{4} & +\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} \\
-				+1 & -\frac{1}{2} & 0 & -\frac{1}{2} & -1 \\
-				-\frac{3}{2} & 0 & -\frac{1}{2} & 0 & -\frac{3}{2} \\
-				-1 & -\frac{1}{2} & 0 & -\frac{1}{2} & +1 \\
-				+\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} & +\frac{1}{4} \\
+				-\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} & -\frac{1}{4} \\
+				-1 & +\frac{1}{2} & 0 & -\frac{1}{2} & +1 \\
+				-\frac{3}{2} & 0 & +\frac{1}{2} & 0 & -\frac{3}{2} \\
+				-1 & -\frac{1}{2} & 0 & +\frac{1}{2} & +1 \\
+				-\frac{1}{4} & +\frac{1}{4} & -\frac{1}{4} & +\frac{1}{4} & -\frac{1}{4} \\
 				)
 			\end{equation}
 
 			\noindent
-			Selection of important Fierz identities:
+			Useful consequences of Fierz identities:
 			\begin{align}
-				(\bar{\psi}_1 \bar{\sigma}^\mu \psi_2) (\bar{\psi}_3 \bar{\sigma}^\mu \psi_4) = (\bar{\psi}_1 \bar{\sigma}^\mu \psi_4) (\bar{\psi}_3 \bar{\sigma}^\mu \psi_2)
+				(\bar{\psi}_L^1 \barsigma^\mu \psi_L^2) (\bar{\psi}_L^3 \barsigma^\mu \psi_L^4) &= (\bar{\psi}_L^1 \barsigma^\mu \psi_L^4) (\bar{\psi}_L^3 \barsigma^\mu \psi_L^2) \\
+				(\bar{\psi}_R^1 \sigma^\mu \psi_R^2) (\bar{\psi}_R^3 \sigma^\mu \psi_R^4) &= (\bar{\psi}_R^1 \sigma^\mu \psi_R^4) (\bar{\psi}_R^3 \sigma^\mu \psi_R^2) \\
 			\end{align}
 
 		\subsubsection{Chirality}
