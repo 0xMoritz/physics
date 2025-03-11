@@ -104,8 +104,7 @@
 				\qty(\hat{\sigma}_1)^2 = \qty(\hat{\sigma}_2)^2 = \qty(\hat{\sigma}_3)^2 &= -\i\hat{\sigma}_1\hat{\sigma}_2\hat{\sigma}_3 = \hat{1} \\
 				\hat{\sigma}_j \hat{\sigma}_k &= \delta_{jk}\hat{1} + \i\levicivita_{jkl}\hat{\sigma}_l \\
 				\comm{\sigma_\mu}{\sigma_\nu} &= 2\i\levicivita_{\mu\nu\lambda}\sigma_\lambda \\
-				\acomm{\sigma_i}{\sigma_j} &= 2\delta_{ij}\hat{1} \\
-				\sigma_\mu \sigma_\nu \sigma_\lambda &= \i\levicivita_{\xi\mu\nu\lambda}\sigma_\xi \\
+				\acomm{\sigma_i}{\sigma_j} &= 2\delta_{ij}\hat{1}
 			\end{align}
 
 			\noindent
@@ -160,7 +159,7 @@
 				\sigma^\mu = \mqty(\mathds{1}_2 & \vec{\sigma})^\mu
 				\hsp \barsigma^\mu \defeq \eta^{\mu\mu}\sigma^\mu = \mqty(\eta^{00} \mathds{1}_2 & \eta^{ii}\vec{\sigma})^\mu
 			\end{equation}
-			useful identity
+			which satisfy
 			\begin{equation}
 				\barsigma^\mu \sigma^\nu + \barsigma^\nu \sigma^\mu = 2\eta^{\mu\nu}\mathds{1}= \sigma^\mu \barsigma^\nu + \sigma^\nu \barsigma^\mu\,.
 			\end{equation}
@@ -233,6 +232,12 @@
 				\gamma_5 \gamma_5 &= \mathds{1}_4 \\
 				\acomm{\gamma^\mu}{\gamma^5} &= 0
 			\end{align}
+
+			\noindent
+			Another important identity:
+			\begin{equation}
+				\gamma_\mu \gamma_\nu \gamma_\rho = \eta_{\mu\nu}\gamma_\rho - \eta_{\mu\rho} \gamma_{\nu} + \eta_{\nu\rho} \gamma_\mu - \i\levicivita_{\mu\nu\rho\sigma}\gamma^\sigma \gamma^5\,.
+			\end{equation}
 
 			\noindent
 			$\sigma^{\mu\nu}$ matrices:
