@@ -236,7 +236,7 @@
 			\noindent
 			Another important identity:
 			\begin{equation}
-				\gamma_\mu \gamma_\nu \gamma_\rho = \eta_{\mu\nu}\gamma_\rho - \eta_{\mu\rho} \gamma_{\nu} + \eta_{\nu\rho} \gamma_\mu - \i\levicivita_{\mu\nu\rho\sigma}\gamma^\sigma \gamma^5\,.
+				\gamma^\mu \gamma^\nu \gamma^\rho = \eta^{\mu\nu}\gamma^\rho - \eta^{\mu\rho} \gamma^{\nu} + \eta^{\nu\rho} \gamma^\mu + \i\levicivita^{\mu\nu\rho\sigma}\gamma_\sigma \gamma^5\,.
 			\end{equation}
 
 			\noindent
@@ -740,15 +740,15 @@
 			\end{equation}
 
 			\noindent
-			Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices of the superfield $\vec{\Phi}$ and $\Str$ is the supertrace):
+			Wetterich Equation\index{Wetterich!Gleichung} / flow equation for the effective action / functional renormalization group equation (Note the inclusion of a minus sign in tracing out fermionic fields, and the change of sign for the momentum of transposed field derivatives, the multi-Index $I$ denotes the combination of all occurring internal indices of the superfield $\vec{\Phi}$ and $\STr$ is the supertrace):
 			\begin{equation}
 				\begin{aligned}
 					\partial_t \Gamma_k[\vec{\Phi}]
-					&= \frac{1}{2} \Str G_k \;\partial_t R_k \\
-					&= \frac{1}{2} \Str \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
-					&= \frac{1}{2} \Str \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
+					&= \frac{1}{2} \STr G_k \;\partial_t R_k \\
+					&= \frac{1}{2} \STr \frac{1}{\Gamma^{(2)}_k + R_k} \partial_t R_k \\
+					&= \frac{1}{2} \STr \int \frac{\dd^d p}{(2\pi)^d} \, \frac{1}{\Gamma^{(2)}_k[\vec{\Phi}] + R_k}(p,-p) \partial_t R_k(p^2) \\
 					&= \frac{1}{2} \sum_I \pm \int \frac{\dd^d p}{(2\pi)^d} \, \inv{\qty(\frac{\delta^2 \Gamma_k[\vec{\Phi}]}{\delta \Phi^I(-p) \delta \Phi_I(p)} + R_k(p^2))} \cdot \partial_t R_k(p^2) \\
-					&= \frac{1}{2} \Str \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\vec{\Phi}] + R_{\tilde{k}})}_{\tilde{k} = k}
+					&= \frac{1}{2} \STr \eval{\partial_{\tilde{t}} \ln(\Gamma^{(2)}_k[\vec{\Phi}] + R_{\tilde{k}})}_{\tilde{k} = k}
 				\end{aligned}
 			\end{equation}
 
