@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{physicsutils}[2014/08/21 Example package]
+\ProvidesPackage{physicsutils}[2025/07/21 Example package]
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{a4}
@@ -22,10 +22,11 @@
 \RequirePackage{imakeidx}
 \RequirePackage{hyperref}
 \hypersetup{
+    bookmarksopen=true,
     colorlinks=true,       % Links will be colored
     linkcolor=red,        % Color for internal links
     citecolor=green,       % Color for citation links
-    urlcolor=magenta,      % Color for external URLs
+    urlcolor=blue,      % Color for external URLs
     pdfborder={0 0 0}      % Remove boxes around links (no borders)
 }
 \RequirePackage{xparse}
@@ -148,6 +149,7 @@
 \newcommand{\perm}			{\mathrm{perm}}
 \newcommand{\sgn}			{\mathrm{sgn}}
 \newcommand{\inv}[1]		{{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}}
+\newcommand{\invExp}		{{\scriptscriptstyle-\!1}}
 \newcommand{\levicivita} 	{\epsilon}
 \newcommand{\micro}			{\text{µ}}
 \newcommand{\e}[1]			{\times 10^{#1}}
