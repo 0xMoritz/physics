@@ -793,6 +793,133 @@
 				\item $\Re(\theta_I) = 0$: marginal, look at higher order contributions
 			\end{itemize}
 
+		\subsection{Heat Kernel Methods}
+
+\cite{basile_lectures_2024}
+Fundamental equation for the world function:
+\begin{equation}
+	\sigma(x,y) = \frac{1}{2} \big(\nabla_\mu\sigma(x,y)\big)\big(\nabla^\mu\sigma(x,y)\big)
+\end{equation}
+With $\nabla^2 = g^{\mu\nu} \nabla_\mu \nabla_\nu = g^{\mu\nu} \pdv{}{x^\mu} \pdv{}{x^\nu}$ we define the heat kernel $H(x,y;s)$:
+\begin{equation}
+	H(x,y; s) \defeq \mel{y}{H(s)}{x}
+	\hsp H(s) \defeq\ex^{-s \nabla^2}
+\end{equation}
+which fulfills the heat equation
+\begin{equation}
+	\partial_s H(x,y;s) = -\nabla^2_x H(x,y;s)
+	\hsp H(x,y;0) = \delta(x-y)
+\end{equation}
+The coincidence limit
+\begin{equation}
+	\bar{H}(s) \defeq H(x,x;s) = \lim_{y\to x} H(x,y;s)
+\end{equation}
+note that
+\begin{equation}
+	\bar{\sigma} = \sigma(x,x) = 0
+\end{equation}
+As a general ansatz we use
+\begin{equation}
+	H(x,y;s) = \qty(\frac{1}{4 \pi s})^{d/2} \ex^{-\frac{\sigma(x,y)}{2s}} \Omega(x,y;s)
+\end{equation}
+The heat equation becomes
+\begin{equation}
+	\qty[\qty(-\frac{d}{2s} + \partial_s - \nabla^2 + (\nabla^2 \sigma(x,y)))\Omega(x,y;s) + \frac{1}{s} \qty(\nabla_\nu \sigma(x,y)) \qty(\nabla^\mu \Omega(x,y;s))] = 0
+\end{equation}
+The function $\Omega$ can be computed as a series in $s$
+\begin{equation}
+	\Omega(x,y;s) \sim \sum_{n\ge 0} s^n A_n(x,y)\,,\quad s\to 0
+	\hsp \bar{A}_0 = 1
+\end{equation}
+which leads to a recursive relation for $n\in\mathds{N}$ (starting with $A_{-1}(x,y) = 0)$
+\begin{equation}
+	\qty(n-\frac{d}{2} + \frac{1}{2}\qty(\nabla^2\sigma(x,y))) A_n(x,y) + \qty(\nabla_\mu \sigma(x,y)) \qty(\nabla^\mu A_n(x,y)) - \nabla^2 A_{n-1}(x,y) = 0
+\end{equation}
+which can be iteratively solved, resulting in
+\begin{equation}
+	\bar{\Omega}(s) \sim 1 + \frac{1}{6}s R + \mathcal{O}(s^2)
+\end{equation}
+Assuming an inverse Laplace transform $\tilde{W}(s)$ of $W(x) = \int_0^\infty \dd{s} \tilde{W}(s) \ex^{-sx}$, we can relate the supertrace to the heat kernel
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{2}\STr W(\nabla^2) \sim \frac{1}{2}\frac{1}{(4\pi)^{d/2}} \int \dd[d]{x} \sqrt{g} \bigg[
+		\frac{1}{\Gamma(d/2)} & \int_0^\infty \dd{z} z^{d/2-1} W(z)                                                    \\
+		                      & + \frac{1}{6}\frac{1}{\Gamma(d/2-1)} R \int_0^\infty \dd{z} z^{d/2-2} W(z)+\dots\bigg]
+	\end{aligned}
+\end{equation}
+
+\chapter{Calculating the Reuter fixed point \tmp{remove}}
+\label{sec:reuter_fixed_point}
+Assuming the Einstein--Hilbert truncation \ref{eq:EH_action}
+\begin{equation}
+	\Gamma_k^{\text{EH}} = \frac{1}{16\pi G_k} \int \dd[4]{x}\sqrt{g}\, (2\Lambda_k - R)
+\end{equation}
+using the background field method we linearly split the metric into background and fluctuation
+\begin{equation}
+	g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu}
+\end{equation}
+We fix the gauge with
+\begin{equation}
+	S_{\mathrm{g.f.}} = \frac{1}{2} \int\dd[4]{x \sqrt{\bar{g}} \mathcal{F}_{\mu}} \bar{g}^{\mu\nu} \mathcal{F}_{\nu}
+\end{equation}
+with a linear gauge fixing condition
+\begin{equation}
+	\mathcal{F}_\mu = \mathcal{F}_\mu{}^{\alpha\beta} h_{\alpha\beta} = \frac{1}{\sqrt{16 \pi G_k \alpha_k}} \qty[\delta_\mu{}^{(\alpha}\bar{\nabla}^{\beta)} - \frac{1 + \beta_k}{4}\bar{g}^{\alpha\beta} \bar{\nabla}_\mu] h_{\alpha\beta}
+\end{equation}
+where $\alpha_k$ and $\beta_k$ are the gauge fixing parameter, in the simplest approximation these are kept fixed. This introduces Fadeev--Popov ghosts
+\begin{equation}
+	S_{\mathrm{gh.}} = \int\dd[4]{x \sqrt{\bar{g}}} \bar{c}^\mu \mathcal{F}_{\mu}{}^{\alpha\beta} \qty(\nabla_\alpha c_\beta - \nabla_\beta c_\alpha)
+\end{equation}
+The regulator is chosen as
+\begin{equation}
+	\Delta S_k = \frac{1}{2} \int\dd[4]{x \sqrt{\bar{g}}} \qty{h_{\mu\nu} R_k^{h,\mu\nu\rho\sigma}h_{\rho\sigma} + \bar{c}_\mu R_k^{c,\mu\nu} c_\nu}
+\end{equation}
+where $R_k^h$ and $R_k^c$ are constructed from background fields only.
+TODO: in the functional derivative in curved spacetime, do I need to define it with a factor 1/sqrt{g} ?
+The total effective action is then
+\begin{equation}
+	\Gamma_k = \Gamma_k^{\text{EH}} + S_{\text{g.f.}} + S_{\text{gh.}}\,.
+\end{equation}
+
+Conveniently, in the \lhs of the Wetterich equation, separates into metric and ghost contributions 
+\begin{equation}
+	\begin{aligned}
+		k \partial_k \Gamma_k & = \left.\frac{1}{2}\STr\qty[\mqty(\delta_h\Gamma_k\delta_h+R_k^h                                                                                                                                                                & \delta_h \Gamma_k\delta_{c} & \delta_h \Gamma_k\delta_{\bar{c}} \\ \delta_c \Gamma_k\delta_h  & \delta_c \Gamma_k\delta_c + R_k^c & \delta_c \Gamma_k \delta_{\bar{c}} \\ \delta_{\bar{c}} \Gamma_k \delta_h & \delta_{\bar{c}} \Gamma_k \delta_c & \delta_{\bar{c}} \Gamma_k \delta_{\bar{c}} + R_k^c)^{-1} k\partial_k \mqty(R_k^h & 0 & 0 \\ 0 & 0 & R_k^c\\ 0 & R_k^c & 0)]\right|_{\vec{\Phi} =0}\,. \\
+		                      & = \left.\frac{1}{2} \STr\qty[\qty(\fdv[2]{\Gamma_k}{h} + R^h_k)^{-1}k\partial_k R_k^h] + \STr\qty[\qty(\fdv{\bar{c}} \Gamma_k \fdv{c} + R^c_k)^{-1}k\partial_k R_k^c]\right|_{\vec{\Phi} =0} + \mathcal{O}(\text{higher order})
+	\end{aligned}
+\end{equation}
+
+For $\alpha_k = \beta_k = 1$ the graviton two point function separates
+\begin{equation}
+	\begin{aligned}
+		\Gamma_k^{h^2} = \frac{1}{32\pi G_k}\int \dd[4]{x \sqrt{\bar{g}}} h_{\mu\nu} \Bigg[
+		 & \qty{\qty(\bar{\Lambda} + \frac{2}{3} \bar{R})\mathds{1}^{\mu\nu\alpha\beta} - 2 C^{\mu\alpha\nu\beta} - 2\Lambda_k \mathds{1}^{\mu\nu\alpha\beta}} {(\Pi_{\text{TL}})}_{\alpha\beta}{}^{\rho\sigma} \\
+		 & - \qty{\bar{\Delta}-2\Lambda_k} (\Pi_{\text{Tr}})^{\mu\nu\rho\sigma}
+			\Bigg] h_{\rho\sigma}
+	\end{aligned}
+\end{equation}
+defining
+\begin{equation}
+	\bar{\Delta}_{\text{TL}}{}^{\mu\nu\alpha\beta} = \qty(\bar{\Delta} + \frac{2}{3} \bar{R})\mathds{1}^{\mu\nu\alpha\beta} - 2C^{\mu\alpha\nu\beta}
+\end{equation}
+we get
+\begin{equation}
+	\fdv[2]{\Gamma_k}{h} + R_k^h = \frac{1}{16\pi G_k} \int \dd[4]{x \sqrt{\bar{g}}} \qty{
+	\qty(\bar{\Delta}_{\text{TL}} + R_k^h(\bar{\Delta}_{\text{TL}}) - 2\Lambda_k)\cdot \Pi_{\text{TL}}
+	+ \qty(\bar{\Delta} + R_k^h(\bar{\Delta}) - 2\Lambda_k) \cdot\Pi_{\text{Tr}}
+	}
+\end{equation}
+This allows us to calculate the supertrace via the heat kernel
+\begin{equation}
+	\STr\qty{\qty(\fdv[2]{\Gamma_k}{h} + R_k^h)\cdot k\partial_k R_k^h} = \STr_{\text{TL}} W(\bar{\Delta}_{\text{TL}}) + \STr_{\text{Tr}} W(\bar{\Delta})
+\end{equation}
+as for a general $\Lambda$ in $d=4$ dimensions
+\begin{equation} %cf. Bennie 4.108
+	\frac{1}{2} \STr W(\Delta) \sim \frac{1}{2} \frac{1}{(4\pi)^{2}} \int\dd[4]{x \sqrt{\bar{g}}} \qty[
+		\int_0^\infty \dd{z} z W(z) + \qty(\frac{\bar{R}}{6} - E)\int_0^\infty \dd{z} W(z) + \dots]
+\end{equation}
+
+
 	\subsection{Bosons}
 		\subsubsection{Bosonic Ladder Operators}
 			\label{Sec:BosonicCreationAndAnnihilationOperators}
